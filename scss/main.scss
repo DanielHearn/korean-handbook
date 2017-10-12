@@ -1,0 +1,145 @@
+$accent: #595EE6;
+$white: #fefefe;
+$dark: #222;
+$nav-height: 2.5em;
+$container-padding: 1em;
+$nav-link-size: 1.1em;
+$intro-h1-size: 3em;
+$intro-h2-size: 1.75em;
+$section-title-size: 1.5em;
+$content-text-size: 1.15em;
+$content-title-size: 1.3em;
+$grid-element-padding: 1.5em;
+$grid-element-korean-size: 2.75em;
+$grid-element-pronunciation-size: 1.4em;
+
+@import 'partials/mixins';
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.nav {
+  height: $nav-height;
+  .nav__content {
+    @include nav-container;
+    height: 100%;
+  }
+  .nav__link {
+    font-size: $nav-link-size;
+    font-weight: 700;
+    @include link;
+    margin-left: 0.8em;
+    margin-right: 0.8em;
+  }
+}
+
+.intro {
+  @include flex-container;
+  padding: $container-padding;
+  background: $accent;
+  color: $white;
+  min-height: calc(100vh - #{$nav-height});
+  text-align: center;
+  .intro__title {
+    font-family: 'Raleway', sans-serif;
+    font-size: $intro-h1-size;
+    font-weight: 800;
+    margin-bottom: 0.75em;
+  }
+  .intro__subheading {
+    font-size: $intro-h2-size;
+    font-weight: 300;
+  }
+}
+
+.icon--arrow {
+  border: solid $white;
+  border-width: 0 0.2em 0.2em 0;
+  display: inline-block;
+  padding: 1em;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: absolute;
+  bottom: 5%;
+}
+
+.about {
+  @include flex-container;
+  padding: $container-padding;
+  .about__title {
+    @include section-title;
+  }
+  .about__content {
+    @include flex-container;
+    @include content-container;
+    .content__text {
+      @include content-text;
+    }
+    .content__title {
+      @include content-title;
+    }
+  }
+}
+
+.hangul {
+  @include flex-container;
+  padding: $container-padding;
+  .hangul__title {
+    @include section-title;
+  }
+  .hangul__content {
+    @include flex-container;
+    @include content-container;
+    .content__text {
+      @include content-text;
+    }
+    .content__title {
+      @include content-title;
+    }
+    .content__consonants {
+      @include flex-container;
+    }
+  }
+}
+
+.content__consonantlist {
+  @include list-wrap;
+  .consonantlist__consonant {
+    @include list-container;
+    .consonant__korean {
+      @include list-korean;
+    }
+    .consonant__pronunciation {
+      @include list-pronunciation;
+    }
+  }
+}
+
+.content__doublelist {
+  @include list-wrap;
+  .doublelist__vowel {
+    @include list-container;
+    .double__korean {
+      @include list-korean;
+    }
+    .double__pronunciation {
+      @include list-pronunciation;
+    }
+  }
+}
+
+.content__vowellist {
+  @include list-wrap;
+  .vowellist__vowel {
+    @include list-container;
+    .vowel__korean {
+      @include list-korean;
+    }
+    .vowel__pronunciation {
+      @include list-pronunciation;
+    }
+  }
+}

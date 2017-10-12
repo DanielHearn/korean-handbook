@@ -1,0 +1,99 @@
+@mixin flex-container {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+@mixin nav-container {
+  @include flex-container;
+  flex-direction: row;
+}
+
+
+@mixin link {
+  color: $accent;
+  text-decoration: none;
+  backface-visibility: hidden;
+  position: relative;
+  display: inline-block;
+  &:visited {
+    color: $accent;
+    text-decoration: none;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -0px;
+    height: 2px;
+    left: 0;
+    background: $accent;
+    transform: scaleX(0);
+    transition: transform 0.18s;
+  }
+  &:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}
+
+@mixin section-title {
+  font-size: $section-title-size;
+  font-weight: 700;
+  color: $dark;
+  text-align: center;
+}
+
+
+@mixin content-title {
+  font-size: $content-title-size;
+  font-weight: 600;
+  color: $dark;
+  margin-bottom: 0.25em;
+  text-align: center;
+}
+
+@mixin content-text {
+  font-size: $content-text-size;
+  font-weight: 400;
+  color: $dark;
+}
+
+@mixin content-container {
+  max-width: 50em;
+}
+
+@mixin list-container {
+  padding: $grid-element-padding;
+  text-align: center;
+}
+
+@mixin list-korean {
+  color: $accent;
+  font-weight: 700;
+  font-size: $grid-element-korean-size;
+  font-family: 'Jeju Gothic', sans-serif;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+@mixin list-pronunciation {
+  font-weight: 400;
+  font-size: $grid-element-pronunciation-size;
+  color: $dark;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+@mixin list-wrap {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}

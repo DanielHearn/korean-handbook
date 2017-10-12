@@ -1,0 +1,223 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif; }
+
+.nav {
+  height: 2.5em; }
+  .nav .nav__content {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-direction: row;
+    height: 100%; }
+  .nav .nav__link {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #595EE6;
+    text-decoration: none;
+    backface-visibility: hidden;
+    position: relative;
+    display: inline-block;
+    margin-left: 0.8em;
+    margin-right: 0.8em; }
+    .nav .nav__link:visited {
+      color: #595EE6;
+      text-decoration: none; }
+    .nav .nav__link:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      bottom: -0px;
+      height: 2px;
+      left: 0;
+      background: #595EE6;
+      transform: scaleX(0);
+      transition: transform 0.18s; }
+    .nav .nav__link:hover:before {
+      visibility: visible;
+      transform: scaleX(1); }
+
+.intro {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1em;
+  background: #595EE6;
+  color: #fefefe;
+  min-height: calc(100vh - 2.5em);
+  text-align: center; }
+  .intro .intro__title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3em;
+    font-weight: 800;
+    margin-bottom: 0.75em; }
+  .intro .intro__subheading {
+    font-size: 1.75em;
+    font-weight: 300; }
+
+.icon--arrow {
+  border: solid #fefefe;
+  border-width: 0 0.2em 0.2em 0;
+  display: inline-block;
+  padding: 1em;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: absolute;
+  bottom: 5%; }
+
+.about {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1em; }
+  .about .about__title {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #222;
+    text-align: center; }
+  .about .about__content {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    max-width: 50em; }
+    .about .about__content .content__text {
+      font-size: 1.15em;
+      font-weight: 400;
+      color: #222; }
+    .about .about__content .content__title {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 0.25em;
+      text-align: center; }
+
+.hangul {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1em; }
+  .hangul .hangul__title {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #222;
+    text-align: center; }
+  .hangul .hangul__content {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    max-width: 50em; }
+    .hangul .hangul__content .content__text {
+      font-size: 1.15em;
+      font-weight: 400;
+      color: #222; }
+    .hangul .hangul__content .content__title {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 0.25em;
+      text-align: center; }
+    .hangul .hangul__content .content__consonants {
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      box-sizing: border-box; }
+
+.content__consonantlist {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center; }
+  .content__consonantlist .consonantlist__consonant {
+    padding: 1.5em;
+    text-align: center; }
+    .content__consonantlist .consonantlist__consonant .consonant__korean {
+      color: #595EE6;
+      font-weight: 700;
+      font-size: 2.75em;
+      font-family: 'Jeju Gothic', sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em; }
+    .content__consonantlist .consonantlist__consonant .consonant__pronunciation {
+      font-weight: 400;
+      font-size: 1.4em;
+      color: #222;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em; }
+
+.content__doublelist {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center; }
+  .content__doublelist .doublelist__vowel {
+    padding: 1.5em;
+    text-align: center; }
+    .content__doublelist .doublelist__vowel .double__korean {
+      color: #595EE6;
+      font-weight: 700;
+      font-size: 2.75em;
+      font-family: 'Jeju Gothic', sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em; }
+    .content__doublelist .doublelist__vowel .double__pronunciation {
+      font-weight: 400;
+      font-size: 1.4em;
+      color: #222;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em; }
+
+.content__vowellist {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center; }
+  .content__vowellist .vowellist__vowel {
+    padding: 1.5em;
+    text-align: center; }
+    .content__vowellist .vowellist__vowel .vowel__korean {
+      color: #595EE6;
+      font-weight: 700;
+      font-size: 2.75em;
+      font-family: 'Jeju Gothic', sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em; }
+    .content__vowellist .vowellist__vowel .vowel__pronunciation {
+      font-weight: 400;
+      font-size: 1.4em;
+      color: #222;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em; }

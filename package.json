@@ -1,0 +1,28 @@
+{
+  "name": "korean-handbook",
+  "version": "1.0.0",
+  "description": "A website that teaches the basics of the Korean language, made with Vue.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielHearn/Korean-Handbook.git"
+  },
+  "author": "Daniel Hearn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielHearn/Korean-Handbook/issues"
+  },
+  "homepage": "https://github.com/DanielHearn/Korean-Handbook#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp-cache": "^0.4.6",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "run-sequence": "^2.2.0",
+    "vue-smooth-scroll": "^1.0.13"
+  }
+}
