@@ -103,6 +103,15 @@ body {
     .content__consonants {
       @include flex-container;
     }
+    .content__doubles {
+      @include flex-container;
+    }
+    .content__vowels {
+      @include flex-container;
+    }
+    .content__combinations {
+      @include flex-container;
+    }
   }
 }
 

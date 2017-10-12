@@ -153,6 +153,30 @@ body {
       flex-wrap: wrap;
       flex-direction: column;
       box-sizing: border-box; }
+    .hangul .hangul__content .content__doubles {
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      box-sizing: border-box; }
+    .hangul .hangul__content .content__vowels {
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      box-sizing: border-box; }
+    .hangul .hangul__content .content__combinations {
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      box-sizing: border-box; }
 
 .content__koreanlist {
   list-style: none;
