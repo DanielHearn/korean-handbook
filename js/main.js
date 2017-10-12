@@ -38,5 +38,14 @@ var list = new Vue({
       { korean: 'ㅜ', pronunciation: 'u'},
       { korean: 'ㅠ', pronunciation: 'yu'},
     ],
+    combinations: [
+      { korean: 'ㅘ', pronunciation: 'wa'},
+      { korean: 'ㅙ', pronunciation: 'wae'},
+      { korean: 'ㅚ', pronunciation: 'oe'},
+      { korean: 'ㅝ', pronunciation: 'wo'},
+      { korean: 'ㅞ', pronunciation: 'we'},
+      { korean: 'ㅟ', pronunciation: 'wi'},
+      { korean: 'ㅢ', pronunciation: 'ui'},
+    ],
   }
 })

@@ -14,6 +14,7 @@ $grid-element-korean-size: 2.75em;
 $grid-element-pronunciation-size: 1.4em;
 
 @import 'partials/mixins';
+@import 'partials/media-queries';
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 
 body {
@@ -105,40 +106,14 @@ body {
   }
 }
 
-.content__consonantlist {
+.content__koreanlist {
   @include list-wrap;
-  .consonantlist__consonant {
+  .koreanlist__item {
     @include list-container;
-    .consonant__korean {
+    .item__korean {
       @include list-korean;
     }
-    .consonant__pronunciation {
-      @include list-pronunciation;
-    }
-  }
-}
-
-.content__doublelist {
-  @include list-wrap;
-  .doublelist__vowel {
-    @include list-container;
-    .double__korean {
-      @include list-korean;
-    }
-    .double__pronunciation {
-      @include list-pronunciation;
-    }
-  }
-}
-
-.content__vowellist {
-  @include list-wrap;
-  .vowellist__vowel {
-    @include list-container;
-    .vowel__korean {
-      @include list-korean;
-    }
-    .vowel__pronunciation {
+    .item__pronunciation {
       @include list-pronunciation;
     }
   }

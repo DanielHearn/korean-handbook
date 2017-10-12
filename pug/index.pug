@@ -35,40 +35,46 @@ html
       section.intro
         section.intro__content
           h1.intro__title The Korean Handbook
-          h2.intro__subheading An intro to the Korean language
+          h2.intro__subheading An intro and reference to the Korean language
         a.icon--arrow.scroll(href="#about")
       section.about#about
         h3.about__title About
         section.about__content
-          p.content__text Welcome to the Korean Handbook where you will get to learn the basic Korean language known as Hangul or 한굴. 
+          p.content__text 
+           | Welcome to The Korean Handbook where you will get to learn the basic Korean language known as Hangul or 한굴. This website is developed and maintained by 
+           a(href="http://danielhearn.co.uk") Daniel Hearn
+           |  but is open source on 
+           a(href="https://github.com/DanielHearn/Korean-Handbook") Github
+           |  if you would like to contribute content (I would especially appreciate audio).
+          p.content__text But enough with the introduction, lets get started!
       section.hangul#hangul
         h3.hangul__title Hangul
         section.hangul__content
           p.content__text Hangul consists of rgreuigbnhgkr reigebgh regrergo er hgnberkhjgbegkqe p qjehbq wjeq jfb rikregej gbnrgerg kgjergenqwb dekjbf rkgrg rekgnb kegbkwg krbg keerngk jeger.
           section.content__consonants
             h4.content__title Consonants
-            ul.content__consonantlist
-              li.consonantlist__consonant(v-for="consonant in consonants")
-                p.consonant__korean {{consonant.korean}}
-                p.consonant__pronunciation {{consonant.pronunciation}}
+            ul.content__koreanlist
+              li.koreanlist__item(v-for="consonant in consonants")
+                p.item__korean {{consonant.korean}}
+                p.item__pronunciation {{consonant.pronunciation}}
           section.content__vowels
             h4.content__title Doubled Consonants
-            ul.content__doublelist
-              li.doublelist__vowel(v-for="double in doubles")
-                p.double__korean {{double.korean}}
-                p.double__pronunciation {{double.pronunciation}}
+            ul.content__koreanlist
+              li.koreanlist__item(v-for="double in doubles")
+                p.item__korean {{double.korean}}
+                p.item__pronunciation {{double.pronunciation}}
           section.content__vowels
             h4.content__title Vowels
-            ul.content__vowellist
-              li.vowellist__vowel(v-for="vowel in vowels")
-                p.vowel__korean {{vowel.korean}}
-                p.vowel__pronunciation {{vowel.pronunciation}}
+            ul.content__koreanlist
+              li.koreanlist__item(v-for="vowel in vowels")
+                p.item__korean {{vowel.korean}}
+                p.item__pronunciation {{vowel.pronunciation}}
           section.content__combinations
             h4.content__title Vowel Combinations
-            ul.content__combinationlist
-              li.combinationlist__combination(v-for="combination in combinations")
-                p.combination__korean {{combination.korean}}
-                p.combination__pronunciation {{combination.pronunciation}}
+            ul.content__koreanlist
+              li.koreanlist__item(v-for="combination in combinations")
+                p.item__korean {{combination.korean}}
+                p.item__pronunciation {{combination.pronunciation}}
             
           
 

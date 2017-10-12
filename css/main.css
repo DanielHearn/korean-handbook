@@ -1,4 +1,8 @@
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+@media screen and (max-width: 30em) {
+  .hangul__content .content__koreanList .koreanlist__item {
+    padding: 0.75em; } }
+
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif; }
@@ -150,72 +154,24 @@ body {
       flex-direction: column;
       box-sizing: border-box; }
 
-.content__consonantlist {
+.content__koreanlist {
   list-style: none;
   padding-left: 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center; }
-  .content__consonantlist .consonantlist__consonant {
+  .content__koreanlist .koreanlist__item {
     padding: 1.5em;
     text-align: center; }
-    .content__consonantlist .consonantlist__consonant .consonant__korean {
+    .content__koreanlist .koreanlist__item .item__korean {
       color: #595EE6;
       font-weight: 700;
       font-size: 2.75em;
       font-family: 'Jeju Gothic', sans-serif;
       margin-top: 0.2em;
       margin-bottom: 0.2em; }
-    .content__consonantlist .consonantlist__consonant .consonant__pronunciation {
-      font-weight: 400;
-      font-size: 1.4em;
-      color: #222;
-      margin-top: 0.2em;
-      margin-bottom: 0.2em; }
-
-.content__doublelist {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center; }
-  .content__doublelist .doublelist__vowel {
-    padding: 1.5em;
-    text-align: center; }
-    .content__doublelist .doublelist__vowel .double__korean {
-      color: #595EE6;
-      font-weight: 700;
-      font-size: 2.75em;
-      font-family: 'Jeju Gothic', sans-serif;
-      margin-top: 0.2em;
-      margin-bottom: 0.2em; }
-    .content__doublelist .doublelist__vowel .double__pronunciation {
-      font-weight: 400;
-      font-size: 1.4em;
-      color: #222;
-      margin-top: 0.2em;
-      margin-bottom: 0.2em; }
-
-.content__vowellist {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center; }
-  .content__vowellist .vowellist__vowel {
-    padding: 1.5em;
-    text-align: center; }
-    .content__vowellist .vowellist__vowel .vowel__korean {
-      color: #595EE6;
-      font-weight: 700;
-      font-size: 2.75em;
-      font-family: 'Jeju Gothic', sans-serif;
-      margin-top: 0.2em;
-      margin-bottom: 0.2em; }
-    .content__vowellist .vowellist__vowel .vowel__pronunciation {
+    .content__koreanlist .koreanlist__item .item__pronunciation {
       font-weight: 400;
       font-size: 1.4em;
       color: #222;
