@@ -12,15 +12,20 @@ $content-title-size: 1.3em;
 $grid-element-padding: 1.5em;
 $grid-element-korean-size: 2.75em;
 $grid-element-pronunciation-size: 1.4em;
+$colour-selection: #c8c5cc;
 
 @import 'partials/mixins';
 @import 'partials/media-queries';
 //@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif;
 }
+
+::-moz-selection { background: $colour-selection; }
+::selection { background: $colour-selection; }
 
 .nav {
   height: $nav-height;
@@ -35,6 +40,11 @@ body {
     margin-left: 0.8em;
     margin-right: 0.8em;
   }
+}
+
+.content__korean {
+  color: $accent;
+  font-weight: 600;
 }
 
 .intro {
@@ -56,16 +66,21 @@ body {
   }
 }
 
-.icon--arrow {
-  border: solid $white;
-  border-width: 0 0.2em 0.2em 0;
-  display: inline-block;
-  padding: 1em;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+
+.intro__arrow {
   position: absolute;
-  bottom: 5%;
+  bottom: 5vh;
+  padding: 1em;
+  .icon--arrow {
+    border: solid $white;
+    border-width: 0 0.2em 0.2em 0;
+    display: inline-block;
+    padding: 1em;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
 }
+
 
 .content__link {
   @include link;

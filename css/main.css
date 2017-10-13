@@ -1,10 +1,21 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 @media screen and (max-width: 30em) {
   .hangul__content .content__koreanList .koreanlist__item {
     padding: 0.75em; } }
 
+@media screen and (max-height: 30em) {
+  .intro .intro__arrow {
+    bottom: 3.5vh; } }
+
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif; }
+
+::-moz-selection {
+  background: #c8c5cc; }
+
+::selection {
+  background: #c8c5cc; }
 
 .nav {
   height: 2.5em; }
@@ -45,6 +56,10 @@ body {
       visibility: visible;
       transform: scaleX(1); }
 
+.content__korean {
+  color: #595EE6;
+  font-weight: 600; }
+
 .intro {
   display: -webkit-flex;
   display: flex;
@@ -67,15 +82,17 @@ body {
     font-size: 1.75em;
     font-weight: 300; }
 
-.icon--arrow {
-  border: solid #fefefe;
-  border-width: 0 0.2em 0.2em 0;
-  display: inline-block;
-  padding: 1em;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+.intro__arrow {
   position: absolute;
-  bottom: 5%; }
+  bottom: 5vh;
+  padding: 1em; }
+  .intro__arrow .icon--arrow {
+    border: solid #fefefe;
+    border-width: 0 0.2em 0.2em 0;
+    display: inline-block;
+    padding: 1em;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg); }
 
 .content__link {
   color: #595EE6;
@@ -215,6 +232,7 @@ body {
       color: #595EE6;
       font-weight: 700;
       font-size: 2.75em;
+      font-family: 'Noto Sans KR', sans-serif;
       margin-top: 0.2em;
       margin-bottom: 0.2em; }
     .content__koreanlist .koreanlist__item .item__pronunciation {
