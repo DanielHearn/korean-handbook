@@ -1,4 +1,3 @@
-@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 @media screen and (max-width: 30em) {
   .hangul__content .content__koreanList .koreanlist__item {
     padding: 0.75em; } }
@@ -192,7 +191,6 @@ body {
       color: #595EE6;
       font-weight: 700;
       font-size: 2.75em;
-      font-family: 'Jeju Gothic', sans-serif;
       margin-top: 0.2em;
       margin-bottom: 0.2em; }
     .content__koreanlist .koreanlist__item .item__pronunciation {
