@@ -31,6 +31,7 @@ html
       div.nav__content
         a.nav__link.scroll(href="#about") About
         a.nav__link.scroll(href="#hangul") Hangul  
+        a.nav__link.scroll(href="#rules") Rules  
     main#app
       section.intro
         section.intro__content
@@ -53,32 +54,86 @@ html
       section.hangul#hangul
         h3.hangul__title Hangul
         section.hangul__content
-          p.content__text Hangul consists of rgreuigbnhgkr reigebgh regrergo er hgnberkhjgbegkqe p qjehbq wjeq jfb rikregej gbnrgerg kgjergenqwb dekjbf rkgrg rekgnb kegbkwg krbg keerngk jeger.
+          p.content__text 
+            | The Korean alphabet is actually very easy to learn compared to alphabets from other languages such as Chinese and Japanese.
+            | As Korean as it requires little memorisation, the following sections will teach you the Hangul and romanized versions of the 
+            | consonants, vowels as well as the basic combinations and the additional outlier combinations. Once you understand Hangul you 
+            | should then avoid looking at romanized versions of words, the romanizations used below aim to be the best representations using
+            | English but you should instead use audio of the words and practice with them to ensure accurate pronunciation. 
+          section.content__blocks
+            h4.content__title Blocks
+            p.content__text 
+              | Korean is made up of blocks that each contain a syllable but can be drawn in different ways as summarised below.
+              | The first element is a consonant which can also be pronounced silently or be a double consonant as you will learn further on. Next
+              | will be either one or two vowels below or to the right of the block, finally sometimes there will be a final consonant at the bottom
+              | of the block.
+            ul.content__blocklist
+              li.blocklist__item--12vertical
+                div 1 
+                div 2
+              li.blocklist__item--123vertical
+                div 1 
+                div 2
+                div 3
+              li.blocklist__item--12horizontal
+                div 1 
+                div 2
+              li.blocklist__item--123horizontal
+                div 1 
+                div 2
+                div 3
           section.content__consonants
             h4.content__title Consonants
+            p.content__text
+              | Below are all of the basic Korean consonants, most of which are very straightforward as most are unique with the only ㅈ(j) and
+              | ㅊ(ch) being similar. In terms of their pronunciation only ㄹ is difficult 
+              | as it sounds like a mix between r and l, and may require time to get used to.
+            p.content__text
+             | Another part that will require remembering is that ㅇ(ng) will be silent and not pronounced if placed in the initial
+             | position of a block and required if vowel is being placed at the front of a block/syllable, otherwise it is pronounced normally.
+             | For example 엄마 is pronounced eomma with the ㅇ(ng) being silent, while 강 is pronounced kang as ㅇ is in the final position.
             ul.content__koreanlist
               li.koreanlist__item(v-for="consonant in consonants")
                 p.item__korean {{consonant.korean}}
                 p.item__pronunciation {{consonant.pronunciation}}
           section.content__doubles
             h4.content__title Doubled Consonants
+            p.content__text
+              | The consonants can also be doubled causing their sound to be pronounced stronger.
             ul.content__koreanlist
               li.koreanlist__item(v-for="double in doubles")
                 p.item__korean {{double.korean}}
                 p.item__pronunciation {{double.pronunciation}}
           section.content__vowels
             h4.content__title Vowels
+            p.content__text
+              | Next are the vowels, as you will notice the vowels are seperated into vertical and horizontal alignments, with vowels that use 
+              | vertical lines being placed to the right of the block vertically, while the vowels with horizontal line then being placed horizontally.
             ul.content__koreanlist
               li.koreanlist__item(v-for="vowel in vowels")
                 p.item__korean {{vowel.korean}}
                 p.item__pronunciation {{vowel.pronunciation}}
           section.content__combinations
             h4.content__title Vowel Combinations
+            p.content__text
+              | While most blocks/syllables will be pronounced according to the placement of their elements their are other combinations mainly
+              | focused on the pronunciation of w sounds.
             ul.content__koreanlist
               li.koreanlist__item(v-for="combination in combinations")
                 p.item__korean {{combination.korean}}
                 p.item__pronunciation {{combination.pronunciation}}
-            
+          section.content__outliers#rules
+            h4.content__title Additional Rules or Outliers
+            p.content__text
+              | Additionally there are additional rules or outliers to the language as summarised below.
+            p.content__text
+              | ㅇ(ng) will be silent and not pronounced if placed in the initial
+              | position of a block and required if vowel is being placed at the front of a block/syllable, otherwise it is pronounced normally.
+              | For example 엄마 is pronounced eomma with the ㅇ(ng) being silent, while 강 is pronounced kang as ㅇ is in the final position.
+            p.content__text
+              | There are also some consonants that if placed in the final position within a block will be pronounced with ㅌ(t) sound, these 
+              | characters are ㄷ, ㅅ, ㅆ, ㅈ, ㅊ, and ㅌ. For example 맛 is pronounced as mat, 꽃 pronounced as got, and 있다 pronounced as itda.
+                  
           
 
       

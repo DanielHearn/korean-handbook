@@ -67,6 +67,16 @@
   max-width: 50em;
 }
 
+@mixin blocklist-item {
+  padding: 0 1em;
+  border-left: solid 2px $dark;
+  color: $accent;
+  font-size: 2em;
+  font-weight: 600;
+  display: flex;
+  align-items: flex-start;
+}
+
 @mixin list-container {
   padding: $grid-element-padding;
   text-align: center;

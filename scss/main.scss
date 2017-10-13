@@ -87,6 +87,29 @@ body {
   font-weight: 600;
 }
 
+.content__blocklist {
+  @include list-wrap;
+  .blocklist__item--12vertical {
+    @include blocklist-item;
+    flex-direction: column;
+  }
+  .blocklist__item--123vertical {
+    @include blocklist-item;
+    flex-direction: column;
+  }
+  .blocklist__item--12horizontal {
+    @include blocklist-item;
+  }
+  .blocklist__item--123horizontal {
+    @include blocklist-item;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    div {
+      width: 50%;
+    }
+  }
+}
+
 .about {
   @include flex-container;
   padding: $container-padding;
@@ -119,6 +142,9 @@ body {
     }
     .content__title {
       @include content-title;
+    }
+    .content__blocks {
+      @include flex-container;
     }
     .content__consonants {
       @include flex-container;

@@ -4,18 +4,18 @@ var list = new Vue({
     consonants: [
       { korean: 'ㄴ', pronunciation: 'n'},
       { korean: 'ㄱ', pronunciation: 'k'},
-      { korean: 'ㅁ', pronunciation: 'm' },
-      { korean: 'ㄷ', pronunciation: 'd'  },
+      { korean: 'ㅁ', pronunciation: 'm'},
+      { korean: 'ㄷ', pronunciation: 'd'},
       { korean: 'ㄹ', pronunciation: 'r/l'},
-      { korean: 'ㅂ', pronunciation: 'b' },
-      { korean: 'ㅅ', pronunciation: 's'  },
-      { korean: 'ㅈ', pronunciation: 'j' },
-      { korean: 'ㅎ', pronunciation: 'h'  },
-      { korean: 'ㅇ', pronunciation: 'ng'  },
-      { korean: 'ㅂ', pronunciation: 'b'  },
-      { korean: 'ㅍ', pronunciation: 'p'  },
-      { korean: 'ㅋ', pronunciation: 'k'  },
-      { korean: 'ㅊ', pronunciation: 'ch'  }
+      { korean: 'ㅂ', pronunciation: 'b'},
+      { korean: 'ㅅ', pronunciation: 's'},
+      { korean: 'ㅈ', pronunciation: 'j'},
+      { korean: 'ㅎ', pronunciation: 'h'},
+      { korean: 'ㅇ', pronunciation: 'ng'},
+      { korean: 'ㅍ', pronunciation: 'p'},
+      { korean: 'ㅋ', pronunciation: 'k'},
+      { korean: 'ㅊ', pronunciation: 'ch'},
+      { korean: 'ㅌ', pronunciation: 't'}
     ],
     doubles: [
       { korean: 'ㄲ', pronunciation: 'kk'},
@@ -46,6 +46,9 @@ var list = new Vue({
       { korean: 'ㅞ', pronunciation: 'we'},
       { korean: 'ㅟ', pronunciation: 'wi'},
       { korean: 'ㅢ', pronunciation: 'ui'},
+    ],
+    outliers: [
+      { korean: '', pronunciation: 'wa'},
     ],
   }
 })

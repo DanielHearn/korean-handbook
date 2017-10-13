@@ -118,6 +118,52 @@ body {
     visibility: visible;
     transform: scaleX(1); }
 
+.content__blocklist {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center; }
+  .content__blocklist .blocklist__item--12vertical {
+    padding: 0 1em;
+    border-left: solid 2px #222;
+    color: #595EE6;
+    font-size: 2em;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column; }
+  .content__blocklist .blocklist__item--123vertical {
+    padding: 0 1em;
+    border-left: solid 2px #222;
+    color: #595EE6;
+    font-size: 2em;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column; }
+  .content__blocklist .blocklist__item--12horizontal {
+    padding: 0 1em;
+    border-left: solid 2px #222;
+    color: #595EE6;
+    font-size: 2em;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start; }
+  .content__blocklist .blocklist__item--123horizontal {
+    padding: 0 1em;
+    border-left: solid 2px #222;
+    color: #595EE6;
+    font-size: 2em;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-end; }
+    .content__blocklist .blocklist__item--123horizontal div {
+      width: 50%; }
+
 .about {
   display: -webkit-flex;
   display: flex;
@@ -185,6 +231,14 @@ body {
       color: #222;
       margin-bottom: 0.25em;
       text-align: center; }
+    .hangul .hangul__content .content__blocks {
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      box-sizing: border-box; }
     .hangul .hangul__content .content__consonants {
       display: -webkit-flex;
       display: flex;
