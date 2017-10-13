@@ -77,6 +77,30 @@ body {
   position: absolute;
   bottom: 5%; }
 
+.content__link {
+  color: #595EE6;
+  text-decoration: none;
+  backface-visibility: hidden;
+  position: relative;
+  display: inline-block;
+  font-weight: 600; }
+  .content__link:visited {
+    color: #595EE6;
+    text-decoration: none; }
+  .content__link:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -0px;
+    height: 2px;
+    left: 0;
+    background: #595EE6;
+    transform: scaleX(0);
+    transition: transform 0.18s; }
+  .content__link:hover:before {
+    visibility: visible;
+    transform: scaleX(1); }
+
 .about {
   display: -webkit-flex;
   display: flex;
@@ -106,7 +130,7 @@ body {
       color: #222; }
     .about .about__content .content__title {
       font-size: 1.3em;
-      font-weight: 600;
+      font-weight: 700;
       color: #222;
       margin-bottom: 0.25em;
       text-align: center; }
@@ -140,7 +164,7 @@ body {
       color: #222; }
     .hangul .hangul__content .content__title {
       font-size: 1.3em;
-      font-weight: 600;
+      font-weight: 700;
       color: #222;
       margin-bottom: 0.25em;
       text-align: center; }

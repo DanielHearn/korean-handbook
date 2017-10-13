@@ -67,6 +67,11 @@ body {
   bottom: 5%;
 }
 
+.content__link {
+  @include link;
+  font-weight: 600;
+}
+
 .about {
   @include flex-container;
   padding: $container-padding;
