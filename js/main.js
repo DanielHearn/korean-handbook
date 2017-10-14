@@ -1,3 +1,9 @@
+function overlay() {
+   document.querySelector(".overlay").classList.toggle("active");
+   document.querySelector(".button--overlay").classList.toggle("active");
+   document.querySelector(".body").classList.toggle("noscroll");
+};
+
 var list = new Vue({
   el: '#app',
   data: {

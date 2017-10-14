@@ -2,6 +2,26 @@
   .hangul__content .content__koreanList .koreanlist__item {
     padding: 0.75em;
   }
+  .intro .intro__content {
+    .intro__title {
+      font-size: 2.5em;
+    }
+    .intro__subheading {
+      font-size: 1.5em;
+    }
+  }
+  .nav .nav__content {
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 30em) {
+  .button--overlay {
+    display: none;
+  }
+  .body .overlay.active {
+    visibility: hidden;
+  }
 }
 
 @media screen and (max-height: 30em) {

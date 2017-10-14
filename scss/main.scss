@@ -1,9 +1,9 @@
 $accent: #595EE6;
 $white: #fefefe;
 $dark: #222;
-$nav-height: 2.5em;
+$nav-height: 3em;
+$nav-link-size: 1.2em;
 $container-padding: 1em;
-$nav-link-size: 1.1em;
 $intro-h1-size: 3em;
 $intro-h2-size: 1.75em;
 $section-title-size: 1.5em;
@@ -26,6 +26,115 @@ body {
 
 ::-moz-selection { background: $colour-selection; }
 ::selection { background: $colour-selection; }
+
+.noscroll {
+  overflow: hidden;
+}
+
+.button--overlay {
+  position: absolute;
+  right: 0.5em;
+  top: 0em;
+  padding: 22px 11px;
+  z-index: 5;
+  width: 50%;
+  margin: auto;
+  span {
+      height: 4px;
+      width: 35px;
+      border-radius: 2px;
+      background-color: $accent;
+      position: relative;
+      display: block;
+      transition: all .2s ease-in-out;
+      &:before {
+        top: -10px;
+        visibility: visible;
+      }
+      &:after {
+        top: 10px;
+      }
+      &:before, &:after {
+          height: 4px;
+          width: 35px;
+          border-radius: 2px;
+          background-color: $accent;
+          position: absolute;
+          content: "";
+          transition: all .2s ease-in-out;
+      }
+    }
+}
+
+.button--overlay.active {
+  &:hover span, span{
+    background: transparent;
+  }
+  span {
+    &:before {
+      transform: rotate(45deg) translate(7px, 7px);
+      opacity: 1;
+      background: $white;
+    }
+    &:after {
+      transform: rotate(-45deg) translate(7px, -7px);
+      background: $white;
+    }
+  }
+}
+
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  background: $accent;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  transition: opacity 0.2s;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    padding-left: 0;
+    list-style-type: none;
+    li {
+      padding: 1em;
+      a {
+        color: white;
+        text-decoration: none;
+        backface-visibility: hidden;
+        position: relative;
+        display: inline-block;
+        font-size: 1.5em;
+        font-weight: bold;
+        &:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          bottom: -0px;
+          height: 2px;
+          left: 0;
+          background: $white;
+          transform: scaleX(0);
+          transition: transform 0.18s;
+        }
+        &:hover:before {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
 
 .nav {
   height: $nav-height;
@@ -128,48 +237,62 @@ body {
   }
 }
 
+.main {
+  padding: $container-padding;
+}
+
+/*
 .hangul {
   @include flex-container;
   padding: $container-padding;
-  .hangul__title {
-    @include section-title;
-  }
-  .hangul__content {
-    @include flex-container;
-    @include content-container;
-    .content__text {
-      @include content-text;
-    }
-    .content__title {
-      @include content-title;
-    }
-    .content__blocks {
-      @include flex-container;
-    }
-    .content__consonants {
-      @include flex-container;
-    }
-    .content__doubles {
-      @include flex-container;
-    }
-    .content__vowels {
-      @include flex-container;
-    }
-    .content__combinations {
-      @include flex-container;
-    }
-  }
+}*/
+
+.content__title {
+  @include section-title;
+}
+
+/*.hangul__content {
+  @include flex-container;
+  @include content-container;
+}*/
+
+.content--container {
+  @include flex-container;
+  padding-bottom: 2em;
+}
+
+.content__text {
+  @include content-text;
+}
+/*
+.content__title {
+  @include content-title;
+}*/
+
+.content {
+  @include content-container;
+  @include flex-container;
 }
 
 .content__koreanlist {
   @include list-wrap;
-  .koreanlist__item {
-    @include list-container;
-    .item__korean {
-      @include list-korean;
-    }
-    .item__pronunciation {
-      @include list-pronunciation;
-    }
-  }
+}
+
+.koreanlist__item {
+  @include list-container;
+}
+
+.item__korean {
+  @include list-korean;
+}
+
+.item__korean--blocks {
+  @include list-korean;
+  text-align: center;
+  font-size: 2em;
+}
+
+
+.item__pronunciation {
+  @include list-pronunciation;
 }
