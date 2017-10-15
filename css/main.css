@@ -17,7 +17,7 @@
 
 @media screen and (max-height: 30em) {
   .intro .intro__arrow {
-    bottom: 3.5vh; } }
+    bottom: 0vh; } }
 
 body {
   margin: 0;
@@ -120,7 +120,12 @@ body {
           transform: scaleX(1); }
 
 .nav {
-  height: 3em; }
+  height: 3em;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background: #fefefe;
+  transition: all 0.2s; }
   .nav .nav__content {
     display: -webkit-flex;
     display: flex;
@@ -130,7 +135,7 @@ body {
     flex-direction: column;
     box-sizing: border-box;
     flex-direction: row;
-    height: 100%; }
+    height: 3em; }
   .nav .nav__link {
     font-size: 1.2em;
     font-weight: 700;
@@ -140,7 +145,8 @@ body {
     position: relative;
     display: inline-block;
     margin-left: 0.8em;
-    margin-right: 0.8em; }
+    margin-right: 0.8em;
+    transition: all 0.2s; }
     .nav .nav__link:visited {
       color: #595EE6;
       text-decoration: none; }
@@ -158,6 +164,24 @@ body {
       visibility: visible;
       transform: scaleX(1); }
 
+.nav--white {
+  background: #fefefe; }
+  .nav--white .nav__link {
+    color: #595EE6; }
+    .nav--white .nav__link:visited {
+      color: #595EE6; }
+  .nav--white .button--overlay span, .nav--white .button--overlay span:before, .nav--white .button--overlay span:after {
+    background: #595EE6; }
+
+.nav--purple {
+  background: #595EE6; }
+  .nav--purple .nav__link {
+    color: #fefefe; }
+    .nav--purple .nav__link:visited {
+      color: #fefefe; }
+  .nav--purple .button--overlay span, .nav--purple .button--overlay span:before, .nav--purple .button--overlay span:after {
+    background: #fefefe; }
+
 .content__korean {
   color: #595EE6;
   font-weight: 600; }
@@ -173,7 +197,7 @@ body {
   padding: 1em;
   background: #595EE6;
   color: #fefefe;
-  min-height: calc(100vh - 3em);
+  min-height: 100vh;
   text-align: center; }
   .intro .intro__title {
     font-family: 'Raleway', sans-serif;
@@ -312,21 +336,12 @@ body {
 .main {
   padding: 1em; }
 
-/*
-.hangul {
-  @include flex-container;
-  padding: $container-padding;
-}*/
 .content__title {
   font-size: 1.5em;
   font-weight: 700;
   color: #222;
   text-align: center; }
 
-/*.hangul__content {
-  @include flex-container;
-  @include content-container;
-}*/
 .content--container {
   display: -webkit-flex;
   display: flex;
@@ -335,6 +350,7 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   box-sizing: border-box;
+  padding-top: 2em;
   padding-bottom: 2em; }
 
 .content__text {
@@ -342,10 +358,6 @@ body {
   font-weight: 400;
   color: #222; }
 
-/*
-.content__title {
-  @include content-title;
-}*/
 .content {
   max-width: 50em;
   padding: 1em;
@@ -355,7 +367,8 @@ body {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding-top: 1.5em; }
 
 .content__koreanlist {
   list-style: none;

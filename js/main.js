@@ -4,6 +4,19 @@ function overlay() {
    document.querySelector(".body").classList.toggle("noscroll");
 };
 
+function onscroll() {
+    var nav = document.querySelector('nav');
+    var height = window.innerHeight - 100;
+    if ( window.pageYOffset > height ) {
+        nav.classList.add("nav--purple");
+        nav.classList.remove("nav--white");
+    } else {
+        nav.classList.add("nav--white");
+        nav.classList.remove("nav--purple");
+    }
+};
+window.addEventListener("scroll", onscroll);
+
 var list = new Vue({
   el: '#app',
   data: {
@@ -58,16 +71,3 @@ var list = new Vue({
     ],
   }
 })
-
-var nav = document.querySelector('.nav');
-window.onscroll = function () {
-    "use strict";
-    if (document.body.scrollTop >= 200 ) {
-        nav.classList.add("nav-colored");
-        nav.classList.remove("nav-transparent");
-    }
-    else {
-        nav.classList.add("nav-transparent");
-        nav.classList.remove("nav-colored");
-    }
-};

@@ -28,8 +28,6 @@ html
       ga('create', 'UA-80868144-1', 'auto');
       ga('send', 'pageview');
   body.body
-    a.button--overlay(href="#", onclick="overlay()")
-      span
     div.overlay
       ul
         li
@@ -41,6 +39,8 @@ html
         li
           a.overlay__link.scroll(href="#words", onclick="overlay()") Words
     nav.nav
+      a.button--overlay(onclick="overlay()")
+        span
       div.nav__content
         a.nav__link.scroll(href="#about") About
         a.nav__link.scroll(href="#hangul") Hangul  
@@ -57,7 +57,7 @@ html
         section.content#about
           h3.content__title About
           section.about__content
-            p.content__text 
+            p.content__text  
              | Welcome to The Korean Handbook where you will get to learn the basic Korean language known as Hangul or 
              span.content__korean 한굴
              | . This website is developed and maintained by 
@@ -67,14 +67,16 @@ html
              |  if you would like to contribute content (I would especially appreciate audio).
             p.content__text But enough with the introduction, lets get started!
         section.content#hangul
-          h3.content__title Hangul
+          h3.content__title Intro to Hangul/한굴
           section.hangul__content
             p.content__text 
-              | The Korean alphabet is actually very easy to learn when compared to alphabets from others such as Chinese and Japanese.
-              | As Korean as it requires little memorisation, the following sections will teach you the Hangul and romanized versions of the 
+              | The Korean alphabet is actually easy to learn when compared to alphabets from other languages such as Chinese and Japanese.
+              | As Korean requires considerably less memorisation, the following sections will teach you the Hangul and romanized versions of the 
               | consonants, vowels as well as the basic combinations and the additional rules. Once you understand Hangul you 
               | should then avoid looking at romanized versions of words, the romanizations used below aim to be the best representations using
               | English but you should use audio of the characters and words ensure accurate pronunciation. 
+            p.content__text 
+              | Some examples of hangul e.g characters, words
         section.content
           h4.content__title Blocks
           p.content__text 
@@ -158,7 +160,7 @@ html
           p.content__text
             | Basic words.
         section.content
-          h4.content__title NextSteps
+          h4.content__title Next Steps
           p.content__text
             | Now that you understand the very basics of the Korean language you can start to learn words, sentence structure and the really
             | start learning fully. Below are a list of recommended sites for continuing you learning.
