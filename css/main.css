@@ -170,6 +170,8 @@ body {
     color: #595EE6; }
     .nav--white .nav__link:visited {
       color: #595EE6; }
+    .nav--white .nav__link:before {
+      background: #595EE6; }
   .nav--white .button--overlay span, .nav--white .button--overlay span:before, .nav--white .button--overlay span:after {
     background: #595EE6; }
 
@@ -179,6 +181,8 @@ body {
     color: #fefefe; }
     .nav--purple .nav__link:visited {
       color: #fefefe; }
+    .nav--purple .nav__link:before {
+      background: #fefefe; }
   .nav--purple .button--overlay span, .nav--purple .button--overlay span:before, .nav--purple .button--overlay span:after {
     background: #fefefe; }
 
