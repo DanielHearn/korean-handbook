@@ -6,6 +6,8 @@ Live at www.danielhearn.co.uk/Korean-Handbook
 
 Built with Pug, SCSS, Vue2, and gulp for workflow tools.
 
+![GitHub Logo](readme-assets/korean1.png)
+
 ### TODO
 - Finish v1 implementation with all basic content.
 - Get audio for all characters and basic words, and let them be played when the character is clicked.
