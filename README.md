@@ -15,3 +15,4 @@ Built with Pug, SCSS, Vue2, and gulp for workflow tools.
 ### Contributions
 
 Contributions are welcome for corrections, new ideas on helping to teach the language (interesting visual ideas would be nice), and audio for each character and the basic words.
+ 
