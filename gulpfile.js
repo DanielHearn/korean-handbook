@@ -87,7 +87,7 @@ gulp.task('build', function (callback) {
 })
 
 gulp.task('default', function(callback) {
-  runSequence(['sass', 'pug', 'browserSync'], 'watch',
+  runSequence(['sass', 'pug'], 'watch',
     callback
   )
 })
