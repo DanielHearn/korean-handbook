@@ -12,7 +12,10 @@ Built with Pug, SCSS, Vue2, and gulp for workflow tools.
 - Finish v1 implementation with all basic content.
 - Get audio for all characters and basic words, and let them be played when the character is clicked.
 
+### Gulp tasks
+- Watch: Use browsersync to reload files and compiles scss, pug.
+- Build: Builds files from src to dist, including compressing images, js, css
+
 ### Contributions
 
 Contributions are welcome for corrections, new ideas on helping to teach the language (interesting visual ideas would be nice), and audio for each character and the basic words.
- 

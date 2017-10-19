@@ -1,4 +1,4 @@
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 35em) {
   .hangul__content .content__koreanList .koreanlist__item {
     padding: 0.75em;
   }
@@ -12,6 +12,9 @@
   }
   .nav .nav__content {
     visibility: hidden;
+  }
+  .content__wordList .wordList__word {
+    width: 100%;
   }
 }
 

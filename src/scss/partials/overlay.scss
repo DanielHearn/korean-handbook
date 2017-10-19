@@ -1,0 +1,101 @@
+.button--overlay {
+  position: absolute;
+  right: 0.5em;
+  top: 0em;
+  padding: 22px 11px;
+  z-index: 5;
+  span {
+      height: 4px;
+      width: 35px;
+      border-radius: 2px;
+      background-color: $accent;
+      position: relative;
+      display: block;
+      transition: all .2s ease-in-out;
+      &:before {
+        top: -10px;
+        visibility: visible;
+      }
+      &:after {
+        top: 10px;
+      }
+      &:before, &:after {
+          height: 4px;
+          width: 35px;
+          border-radius: 2px;
+          background-color: $accent;
+          position: absolute;
+          content: "";
+          transition: all .2s ease-in-out;
+      }
+    }
+}
+
+.button--overlay.active {
+  &:hover span, span{
+    background: transparent;
+  }
+  span {
+    &:before {
+      transform: rotate(45deg) translate(7px, 7px);
+      opacity: 1;
+      background: $accent;
+    }
+    &:after {
+      transform: rotate(-45deg) translate(7px, -7px);
+      background: $accent;
+    }
+  }
+}
+
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  background: $accent;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  transition: opacity 0.2s;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    padding-left: 0;
+    list-style-type: none;
+    li {
+      padding: 1em;
+      a {
+        color: white;
+        text-decoration: none;
+        backface-visibility: hidden;
+        position: relative;
+        display: inline-block;
+        font-size: 1.5em;
+        font-weight: bold;
+        &:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          bottom: -0px;
+          height: 2px;
+          left: 0;
+          background: $white;
+          transform: scaleX(0);
+          transition: transform 0.18s;
+        }
+        &:hover:before {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}

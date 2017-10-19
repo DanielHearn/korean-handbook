@@ -1,52 +1,31 @@
+//- index.pug
 doctype html
 html
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    meta(name="description", content="Learn the basics of the Korean language. ")
-    title The Korean Handbook
-
-    link(rel="icon", type="image/png", sizes="32x32", href="favicons/favicon-32x32.png")
-    link(rel="icon", type="image/png", sizes="16x16", href="favicons/favicon-16x16.png")
-    link(rel="apple-touch-icon", sizes="180x180", href="favicons/apple-touch-icon.png")
-    link(rel="manifest", href="favicons/manifest.json")
-    link(rel="mask-icon", href="favicons/safari-pinned-tab.svg", color="#5bbad5")
-    meta(name="theme-color", content="#ffffff")
-
-    link(rel="stylesheet", href="css/main.css")
-
-    script(src="js/vue.min.js" defer)
-    script(src="js/main.js" defer)
-    script(src="js/smooth-scroll.min.js")
-
-    link(href="https://fonts.googleapis.com/css?family=Raleway:700,800,900", rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900", rel="stylesheet")
-    script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-80868144-1', 'auto');
-      ga('send', 'pageview');
+  include includes/head.pug
   body.body
     div.overlay
       ul
         li
-          a.overlay__link.scroll(href="#about",  data-scroll, onclick="overlay()") About
+          a.overlay__link.scroll(href="#hangul",  data-scroll, onclick="overlay()") Intro
         li
-          a.overlay__link.scroll(href="#hangul",  data-scroll, onclick="overlay()") Hangul
+          a.overlay__link.scroll(href="#consonants",  data-scroll, onclick="overlay()") Consonants
         li
-          a.overlay__link.scroll(href="#rules",  data-scroll, onclick="overlay()") Rules
+          a.overlay__link.scroll(href="#vowels",  data-scroll, onclick="overlay()") Vowels
+        li
+            a.overlay__link.scroll(href="#rules",  data-scroll, onclick="overlay()") Rules
         li
           a.overlay__link.scroll(href="#words",  data-scroll, onclick="overlay()") Words
     nav.nav
       a.button--overlay(onclick="overlay()")
         span
+      a.button--logo(href="#")
+        img(src="img/logo.svg").logo  
       div.nav__content
-        a.nav__link.scroll(href="#about",  data-scroll) About
-        a.nav__link.scroll(href="#hangul",  data-scroll) Hangul  
+        a.nav__link.scroll(href="#hangul",  data-scroll) Intro  
+        a.nav__link.scroll(href="#consonants",  data-scroll) Consonants  
+        a.nav__link.scroll(href="#vowels",  data-scroll) Vowels  
         a.nav__link.scroll(href="#rules",  data-scroll) Rules  
-        a.nav__link.scroll(href="#words",  data-scroll) Words  
+        a.nav__link.scroll(href="#words",  data-scroll) Words 
     main#app
       section.intro
         section.intro__content
@@ -60,7 +39,9 @@ html
           section.about__content
             p.content__text  
              | Welcome to The Korean Handbook where you will get to learn the basic Korean language known as Hangul or 
-             span.content__korean 한굴
+             span.content__korean 한굴 
+             | there is also a quick 
+             a.content__link(href="/reference.html") reference page
              | . This website is developed and maintained by 
              a.content__link(href="http://danielhearn.co.uk") Daniel Hearn
              |  but is open source on 
@@ -68,16 +49,37 @@ html
              |  if you would like to contribute content (I would especially appreciate audio).
             p.content__text But enough with the introduction, lets get started!
         section.content#hangul
-          h3.content__title Intro to Hangul/한굴
+          h3.content__title Intro to Hangul
           section.hangul__content
             p.content__text 
-              | The Korean alphabet is actually easy to learn when compared to alphabets from other languages such as Chinese and Japanese.
+              | The Korean alphabet or Hangul (
+              span.content__korean 한굴
+              | ) is actually easy to learn when compared to alphabets from other languages such as Chinese and Japanese.
               | As Korean requires considerably less memorisation, the following sections will teach you the Hangul and romanized versions of the 
               | consonants, vowels as well as the basic combinations and the additional rules. Once you understand Hangul you 
               | should then avoid looking at romanized versions of words, the romanizations used below aim to be the best representations using
               | English but you should use audio of the characters and words ensure accurate pronunciation. 
             p.content__text 
-              | Some examples of hangul e.g characters, words
+              | The Korean language was originally written using Chinese characters known as Hanja but is now written using Hangul which was 
+              | was introduced and official published in 1446 by King Sejong.
+            p.content__text 
+              | Korean contains consonants and vowels assembled into blocks which are similar to syllables. Basic words include 
+              span.content__korean 안녕하세요
+              |(hello) pronounced as an-nyeong-ha-se-yo, 
+              span.content__korean 년 
+              | (year) pronounced as nyeon. 
+        section.content
+          h3.content__title Loan words and Konglish
+          section.hangul__content
+            p.content__text 
+              | There are also loan words from English such as 
+              span.content__korean 메뉴 
+              | which is both pronounced and written as menyu (menu), or 
+              span.content__korean 주스 
+              | also pronounced and written as juseu (juice). As well there is also the commonly misunderstood Konglish which are often confused with the loan words, this term is used for words
+              | that use English words but have a different meaning in Korean such as 
+              span.content__korean 개그맨 
+              | or gag man which means comedian in Korean.
         section.content
           h4.content__title Blocks
           p.content__text 
@@ -109,12 +111,16 @@ html
                 div 2
                 div 3
               p.item__korean--blocks 긱
-        section.content
+        section.content#consonants
           h4.content__title Consonants
           p.content__text
-            | Below are all of the Korean consonants, most of which are very straightforward due to their uniqueness with the only ㅈ(j) and
-            | ㅊ(ch) being similar. In terms of their pronunciation only ㄹ is should require more practice
-            | as it sounds like a mix between r and l, and may require time to get used to.
+            | Below are all of the Korean consonants, most of which are very straightforward due to their uniqueness with the only 
+            span.content__korean ㅈ
+            | (j) and
+            span.content__korean ㅊ
+            | (ch) being similar in shape. In terms of their pronunciation only 
+            span.content__korean ㄹ 
+            | is should require more practice as it sounds like a mix between r and l, and may require time to get used to.
           ul.content__koreanlist
             li.koreanlist__item(v-for="consonant in consonants")
               p.item__korean {{consonant.korean}}
@@ -127,7 +133,7 @@ html
             li.koreanlist__item(v-for="double in doubles")
               p.item__korean {{double.korean}}
               p.item__pronunciation {{double.pronunciation}}
-        section.content
+        section.content#vowels
           h4.content__title Vowels
           p.content__text
             | Next are the vowels, as you will notice the vowels are seperated into vertical and horizontal alignments, with vowels being aligned 
@@ -150,32 +156,100 @@ html
           p.content__text
             | Additionally there are additional rules or outliers to the language as summarised below.
           p.content__text
-            | ㅇ(ng) will be silent and not pronounced if placed in the initial
+            span.content__korean ㅇ
+            | (ng) will be silent and not pronounced if placed in the initial
             | position of a block and required if vowel is being placed at the front of a block/syllable, otherwise it is pronounced normally.
-            | For example 엄마 is pronounced eomma with the ㅇ(ng) being silent, while 강 is pronounced kang as ㅇ is in the final position.
+            | For example 
+            span.content__korean 엄마 
+            | is pronounced eomma with the 
+            span.content__korean ㅇ
+            | (ng) being silent, while 
+            span.content__korean 강 
+            | is pronounced kang as 
+            span.content__korean ㅇ
+            | is in the final position.
           p.content__text
-            | There are also some consonants that if placed in the final position within a block will be pronounced with ㅌ(t) sound, these 
-            | characters are ㄷ, ㅅ, ㅆ, ㅈ, ㅊ, and ㅌ. For example 맛 is pronounced as mat, 꽃 pronounced as got, and 있다 pronounced as itda.
+            | There are also some consonants that if placed in the final position within a block will be pronounced with the
+            span.content__korean ㅌ
+            | (t) sound, these 
+            | characters are 
+            span.content__korean ㄷ
+            | , 
+            span.content__korean ㅅ
+            | , 
+            span.content__korean ㅆ
+            | , 
+            span.content__korean ㅈ
+            | , 
+            span.content__korean ㅊ
+            | , and 
+            span.content__korean ㅌ
+            | . For example 
+            span.content__korean 맛
+            |  is pronounced as mat, 
+            span.content__korean 꽃 
+            | pronounced as got, and 
+            span.content__korean 있다 
+            | pronounced as itda.
         section.content#words
-          h4.content__title Words
+          h4.content__title Basic Words
           p.content__text
-            | Basic words and stuff.
+            | Next use the consonants and vowels you just learnt and try reading various beginner words and phrases with just hangul and without romanizations.
+            ul.content__wordList
+              li.wordList__word(v-for="word in words")
+                p.content__korean--wordList {{ word.word }}
+                p.content__text {{ word.meaning }}
         section.content
           h4.content__title Next Steps
           p.content__text
             | Now that you understand the very basics of the Korean language you can start to learn words, sentence structure and the really
             | start learning fully. Below are a list of recommended sites for continuing you learning.
+            ul.content__next-steps
+              li.next-steps__source
+                a.source__link--next-steps(href="https://www.howtostudykorean.com/unit1/") howtostudykorean.com
+                p.source__price Free lessons and paid PDFs
+                p.source__description 
+                  | A collection of over 130 lessons which are regulary updated, all lessons are free but paid PDF workbooks 
+                  | are available with additional information and explanations. Audio pronunciation is also
+                  | available from a native speaker, some beginner lessons have also been translated into other languages such as Spanish, German and Portuguese languages available at the 
+                  a.content__link(href="https://www.howtostudykorean.com/about/") bottom of their about page
+                  | .
+              li.next-steps__source
+                a.source__link--next-steps(href="https://www.duolingo.com/course/ko/en/Learn-Korean-Online") DuoLingo
+                p.source__price Free 
+                p.source__description DuoLingo offers a gamification of language learning with their emphasis on short daily learning via their app and website.
+              li.next-steps__source
+                a.source__link--next-steps(href="http://domandhyo.com/") Dom & Hyo
+                p.source__price Free infographics and paid PDFs
+                p.source__description Dom & Hyo offer a large amount of infographics teach basic Korean vocabulary and grammar. Additional paid PDFs are for sale as well to assist with your learning.
+              li.next-steps__source
+                a.source__link--next-steps(href="http://www.sejonghakdang.org") King Sejong Insitute
+                p.source__price Free 
+                p.source__description 
+                  | The official South Korean insitute dedicated to teaching Korean, their website offers various videos and materials (ps the website will start in Korean but can be changed to English via the top right button).
+                  | They also have a very useful app with daily words, vocabulary, games and other materials, this app is available on both 
+                  a.content__link(href="https://itunes.apple.com/us/app/sejong-korean-vocab-basic/id1225535651?mt=8") iTunes  
+                  |  and 
+                  a.content__link(href="https://play.google.com/store/apps/details?id=schoolview.dcn.com.kingsejong&hl=en_GB") Google Play
+              li.next-steps__source
+                a.source__link--next-steps(href="https://www.koreanclass101.com/") KoreanClass101
+                p.source__price Limited free materials and multiple paid plans
+                p.source__description KoreanClass offer over 1600 audio and video lessons focused on more fun learning rather than heavy text based learning, there free content is fairly limited but there are multiple payment options to 
+                  | ensure that you can get the materials suited to your learning needs. They also have a regularly updated 
+                  a.content__link(href="https://www.youtube.com/user/koreanclass101/videos") Youtube channel  
+                  |  with various Korean language tips and guides.
+              li.next-steps__source
+                a.source__link--next-steps(href="https://en.wikibooks.org/wiki/Korean/Lesson_I1") Wikibooks Korean
+                p.source__price Free 
+                p.source__description Wikibooks contains lessons teaching basic conversational Korean, but as it is open source is not fully complete and looks like it could do we more contributions with its more advanced content.
         section.content
           h4.content__title Sources
           p.content__text
             | Below are the sources used to construct this guide and confirm that the information is correct.
-            a.content__link(href="https://en.wiktionary.org/wiki/Category:Korean_letters") Wiktionary.org
-    footer
-      script.
-        var scroll = new SmoothScroll('a[href*="#"]', {
-          speed: 750, // Integer. How fast to complete the scroll in milliseconds
-        	offset: 40, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
-        	easing: 'easeInOutCubic', // Easing pattern to use
-        });
+            ul.content__sources
+              li.sources__source(v-for="source in sources")
+                a.source__link(v-bind:href="source.url") {{ source.name }}
+                p.source__description {{ source.description }}
+      include includes/footer.pug
 
         

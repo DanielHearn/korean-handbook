@@ -14,7 +14,7 @@
 }
 
 
-@mixin link {
+@mixin nav-link {
   color: $accent;
   text-decoration: none;
   backface-visibility: hidden;
@@ -40,6 +40,32 @@
     transform: scaleX(1);
   }
 }
+
+@mixin content-link {
+  color: $accent;
+  text-decoration: none;
+  backface-visibility: hidden;
+  position: relative;
+  display: inline-block;
+  &:visited {
+    color: $accent;
+    text-decoration: none;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -0px;
+    height: 2px;
+    left: 0;
+    background: $accent;
+    transform: scaleX(0);
+    transition: transform 0.18s;
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}
+
 
 @mixin section-title {
   font-size: $section-title-size;
