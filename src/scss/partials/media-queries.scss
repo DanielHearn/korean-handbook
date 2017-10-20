@@ -25,6 +25,9 @@
   .body .overlay.active {
     visibility: hidden;
   }
+  .body {
+    overflow: auto !important;
+  }
 }
 
 @media screen and (min-width: 30em) {

@@ -15,7 +15,9 @@
   .button--overlay {
     display: none; }
   .body .overlay.active {
-    visibility: hidden; } }
+    visibility: hidden; }
+  .body {
+    overflow: auto !important; } }
 
 @media screen and (min-width: 30em) {
   .nav .button--logo {
@@ -151,6 +153,9 @@
   .logo .shape {
     fill: #595EE6; }
 
+.noscroll {
+  overflow: hidden; }
+
 .button--overlay {
   position: absolute;
   right: 0.5em;
@@ -271,19 +276,6 @@
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg); }
 
-body {
-  margin: 0;
-  font-family: 'Nunito', sans-serif; }
-
-::-moz-selection {
-  background: #c8c5cc; }
-
-::selection {
-  background: #c8c5cc; }
-
-.noscroll {
-  overflow: hidden; }
-
 .content__korean {
   color: #595EE6;
   font-weight: 600; }
@@ -399,9 +391,6 @@ body {
       color: #222;
       margin-bottom: 0.25em;
       text-align: center; }
-
-.main {
-  padding: 1em; }
 
 .content__title {
   font-size: 1.5em;
@@ -577,3 +566,16 @@ body {
   font-weight: 600;
   padding-right: 0.5em;
   font-size: 1.15em; }
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif; }
+
+::-moz-selection {
+  background: #c8c5cc; }
+
+::selection {
+  background: #c8c5cc; }
+
+.main {
+  padding: 1em; }

@@ -18,7 +18,7 @@ html
     nav.nav
       a.button--overlay(onclick="overlay()")
         span
-      a.button--logo(href="#")
+      a.button--logo(href="#home")
         include includes/logo.pug
       div.nav__content
         a.nav__link.scroll(href="#intro",  data-scroll) Intro  
@@ -27,7 +27,7 @@ html
         a.nav__link.scroll(href="#rules",  data-scroll) Rules  
         a.nav__link.scroll(href="#words",  data-scroll) Words 
     main#app
-      section.intro
+      section.intro#home
         section.intro__content
           h1.intro__title The Korean Handbook
           h2.intro__subheading An intro and reference to the basics of Korean
@@ -44,7 +44,9 @@ html
              a.content__link(href="/reference.html") reference page
              | . This website is developed and maintained by 
              a.content__link(href="http://danielhearn.co.uk") Daniel Hearn
-             |  but is open source on 
+             | feel free to 
+             a.content__link(href="mailto:korean@danielhearn.co.uk") email me
+             |  , but is open source on 
              a.content__link(href="https://github.com/DanielHearn/Korean-Handbook") Github
              |  if you would like to contribute content (I would especially appreciate audio).
             p.content__text But enough with the introduction, lets get started!
