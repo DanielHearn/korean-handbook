@@ -278,7 +278,8 @@
 
 .content__korean {
   color: #595EE6;
-  font-weight: 600; }
+  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif; }
 
 .content__link {
   color: #595EE6;
@@ -320,6 +321,7 @@
     align-items: flex-start;
     margin-left: 0.25em;
     margin-right: 0.25em;
+    text-align: center;
     flex-direction: column; }
   .content__blocklist .blocklist__item--123vertical {
     padding: 0 1em;
@@ -331,6 +333,7 @@
     align-items: flex-start;
     margin-left: 0.25em;
     margin-right: 0.25em;
+    text-align: center;
     flex-direction: column; }
   .content__blocklist .blocklist__item--12horizontal {
     padding: 0 1em;
@@ -341,7 +344,8 @@
     display: flex;
     align-items: flex-start;
     margin-left: 0.25em;
-    margin-right: 0.25em; }
+    margin-right: 0.25em;
+    text-align: center; }
   .content__blocklist .blocklist__item--123horizontal {
     padding: 0 1em;
     border: solid 2px #222;
@@ -352,6 +356,7 @@
     align-items: flex-start;
     margin-left: 0.25em;
     margin-right: 0.25em;
+    text-align: center;
     flex-wrap: wrap;
     justify-content: flex-end; }
     .content__blocklist .blocklist__item--123horizontal div {
