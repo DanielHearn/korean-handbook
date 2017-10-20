@@ -6,7 +6,7 @@ html
     div.overlay
       ul
         li
-          a.overlay__link.scroll(href="#hangul",  data-scroll, onclick="overlay()") Intro
+          a.overlay__link.scroll(href="#intro",  data-scroll, onclick="overlay()") Intro
         li
           a.overlay__link.scroll(href="#consonants",  data-scroll, onclick="overlay()") Consonants
         li
@@ -19,9 +19,9 @@ html
       a.button--overlay(onclick="overlay()")
         span
       a.button--logo(href="#")
-        img(src="img/logo.svg").logo  
+        include includes/logo.pug
       div.nav__content
-        a.nav__link.scroll(href="#hangul",  data-scroll) Intro  
+        a.nav__link.scroll(href="#intro",  data-scroll) Intro  
         a.nav__link.scroll(href="#consonants",  data-scroll) Consonants  
         a.nav__link.scroll(href="#vowels",  data-scroll) Vowels  
         a.nav__link.scroll(href="#rules",  data-scroll) Rules  
@@ -48,7 +48,7 @@ html
              a.content__link(href="https://github.com/DanielHearn/Korean-Handbook") Github
              |  if you would like to contribute content (I would especially appreciate audio).
             p.content__text But enough with the introduction, lets get started!
-        section.content#hangul
+        section.content#intro
           h3.content__title Intro to Hangul
           section.hangul__content
             p.content__text 
