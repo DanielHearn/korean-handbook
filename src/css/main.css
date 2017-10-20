@@ -462,7 +462,11 @@
   margin-top: 0.2em;
   margin-bottom: 0.2em;
   text-align: center;
-  font-size: 2em; }
+  font-size: 2em;
+  background: #f1f1f1;
+  margin-top: 0;
+  margin-left: 0.25em;
+  margin-right: 0.25em; }
 
 .item__pronunciation {
   font-weight: 400;
