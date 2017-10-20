@@ -267,7 +267,10 @@
 .intro__arrow {
   position: absolute;
   bottom: 5vh;
-  padding: 1em; }
+  padding: 1em;
+  margin: 0 auto;
+  left: 0;
+  right: 0; }
   .intro__arrow .icon--arrow {
     border: solid #fefefe;
     border-width: 0 0.2em 0.2em 0;
