@@ -156,6 +156,18 @@ html
             li.koreanlist__item(v-for="double in doubles")
               p.item__korean {{double.korean}}
               p.item__pronunciation {{double.pronunciation}}
+          div.content__ad
+              script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+              ins.adsbygoogle(
+                   style="display:block; text-align:center;",
+                   data-ad-layout="in-article",
+                   data-ad-format="fluid",
+                   data-ad-client="ca-pub-6075240542580801",
+                   data-ad-slot="9785943306")
+              script.
+                document.addEventListener("DOMContentLoaded", function() {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                });
         section.content#vowels
           h4.content__title Vowels
           p.content__text
