@@ -579,6 +579,11 @@
   padding-right: 0.5em;
   font-size: 1.15em; }
 
+.content__ad {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  width: 100%; }
+
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif; }
@@ -591,3 +596,7 @@ body {
 
 .main {
   padding: 1em; }
+
+ins {
+  min-width: 300px;
+  min-height: 50px; }
