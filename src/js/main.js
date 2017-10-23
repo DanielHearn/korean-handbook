@@ -17,6 +17,10 @@ function onscroll() {
 };
 window.addEventListener("scroll", onscroll);
 
+document.addEventListener("DOMContentLoaded", function() {
+  onscroll();
+});
+
 var list = new Vue({
   el: '#app',
   data: {
