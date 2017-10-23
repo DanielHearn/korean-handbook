@@ -74,6 +74,12 @@ gulp.task('clean:dist', function() {
   return del.sync(['dist/**/*']);
 });
 
+gulp.task('CNAME', function(){
+  return gulp.src('CNAME')
+  .pipe(gulp.dest('dist/'))
+});
+
+
 gulp.task('watch', ['browserSync', 'pug', 'sass'], function (callback){
   gulp.watch('src/pug/*.pug', ['pug']);
   gulp.watch(scssSource, ['sass']);
@@ -83,7 +89,7 @@ gulp.task('watch', ['browserSync', 'pug', 'sass'], function (callback){
 
 gulp.task('build', function (callback) {
   runSequence('clean:dist',
-    ['pug', 'sass', 'images', 'favicons', 'js', 'css'], 'useref',
+    ['pug', 'sass', 'images', 'favicons', 'js', 'css', 'CNAME'], 'useref',
     callback
   )
 })
