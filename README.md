@@ -2,7 +2,7 @@
 
 ## A website that teaches the basics of the Korean language, made with Vue.
 
-Live at www.danielhearn.co.uk/Korean-Handbook
+Live at www.thekoreanhandbook.com
 
 Built with Pug, SCSS, Vue2, and gulp for workflow tools.
 
