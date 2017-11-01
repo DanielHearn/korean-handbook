@@ -9,8 +9,8 @@ Built with Pug, SCSS, Vue2, and gulp for workflow tools.
 ![GitHub Logo](readme-assets/korean1.png)
 
 ### TODO
-- Finish v1 implementation with all basic content.
-- Get audio for all characters and basic words, and let them be played when the character is clicked.
+- Get and implement audio for all characters and basic words, and let them be played when the character is clicked.
+- Work out additional features e.g weekly blog or additional basic lessons.
 
 ### Gulp tasks
 - Watch: Use browsersync to reload files and compiles scss, pug.
