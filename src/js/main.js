@@ -86,9 +86,9 @@ var list = new Vue({
       { word: '안녕하세요', meaning: 'Hello'},
     ],
     sources: [
-      { url: 'https://en.wiktionary.org/wiki/Category:Korean_letters', name: 'wiktionary.org', description: 'Reference to the korean letters and their pronunciation.'},
-      { url: 'https://en.wikibooks.org/wiki/Korean/Alphabet/', name: 'wikibooks.com', description: 'Reference to the korean letters, blocks and their pronunciation.'},
-      { url: 'https://www.howtostudykorean.com/unit0/unit0lesson1/', name: 'howtostudykorean.com', description: 'Reference to the korean letters, and their pronunciation.'},
+      { url: 'https://en.wiktionary.org/wiki/Category:Korean_letters', name: 'wiktionary.org', description: 'Reference to the hangul and pronunciation.'},
+      { url: 'https://en.wikibooks.org/wiki/Korean/Alphabet/', name: 'wikibooks.com', description: 'Reference to the hangul, block structure and pronunciation.'},
+      { url: 'https://www.howtostudykorean.com/unit0/unit0lesson1/', name: 'howtostudykorean.com', description: 'Reference to the hangul, and pronunciation.'},
     ],
   }
 })
