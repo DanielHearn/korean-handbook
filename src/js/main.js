@@ -72,7 +72,7 @@ var list = new Vue({
     ],
     words: [
       { word: '날씨', meaning: 'Weather'},
-      { word: '한국', meaning: 'Korea'},
+      { word: '대한민국', meaning: 'South Korea'},
       { word: '네', meaning: 'Yes'},
       { word: '아니', meaning: 'No'},
       { word: '나', meaning: 'I'},
@@ -87,7 +87,7 @@ var list = new Vue({
     ],
     sources: [
       { url: 'https://en.wiktionary.org/wiki/Category:Korean_letters', name: 'wiktionary.org', description: 'Reference to the hangul and pronunciation.'},
-      { url: 'https://en.wikibooks.org/wiki/Korean/Alphabet/', name: 'wikibooks.com', description: 'Reference to the hangul, block structure and pronunciation.'},
+      { url: 'https://en.wikibooks.org/wiki/Korean/Alphabet', name: 'wikibooks.com', description: 'Reference to the hangul, block structure and pronunciation.'},
       { url: 'https://www.howtostudykorean.com/unit0/unit0lesson1/', name: 'howtostudykorean.com', description: 'Reference to the hangul, and pronunciation.'},
     ],
   }
