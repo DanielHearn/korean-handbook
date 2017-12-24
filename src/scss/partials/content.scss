@@ -9,6 +9,10 @@
   font-weight: 700;
 }
 
+ol {
+  @include content-text;
+}
+
 .content__blocklist {
   @include list-wrap;
   .blocklist__item--12vertical {

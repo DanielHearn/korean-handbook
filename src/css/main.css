@@ -307,6 +307,11 @@
     visibility: visible;
     transform: scaleX(1); }
 
+ol {
+  font-size: 1.15em;
+  font-weight: 400;
+  color: #222; }
+
 .content__blocklist {
   list-style: none;
   padding-left: 0;

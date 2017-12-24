@@ -30,7 +30,7 @@ html
       section.intro#home
         section.intro__content
           h1.intro__title The Korean Handbook
-          h2.intro__subheading An intro and reference to the basics of Korean
+          h2.intro__subheading An intro to the basics of Korean
         a.intro__arrow.scroll(href="#about")
           div.icon--arrow 
       section.content--container
@@ -56,7 +56,7 @@ html
               span.content__korean 한굴
               | ) is actually easy to learn when compared to alphabets from other languages such as Chinese and Japanese.
               | As Korean requires considerably less memorisation, the following sections will teach you the Hangul and romanized versions of the 
-              | consonants, vowels as well as the basic combinations and additional rules. Once you understand Hangul you 
+              | consonants, vowels, basic combinations and basic language rules. Once you understand Hangul you 
               | should then avoid looking at romanized versions of words, the romanizations used below aim to be the best representations using
               | English but you should use audio of the characters and words ensure accurate pronunciation. 
             p.content__text 
@@ -85,7 +85,9 @@ html
         section.content
           h4.content__title Blocks
           p.content__text 
-            | Korean is made up of blocks which also act as syllables, these are made up of the individual characters. These blocks
+            | Korean is made up of blocks which also act as syllables, these are made up of the individual korean characters known as 
+            span.content__korean 자모 
+            | (pronounced as jamo) . These blocks
             | can be constructed in different ways as summarised below.
             | The first element is always a consonant which can also be pronounced silently if it is a ㅇ (ng) as you will learn within the rules later on. Next
             | will be either one or two vowels below or to the right inside of the block, finally sometimes there will be a final consonant at the bottom
@@ -164,22 +166,46 @@ html
               p.item__korean {{combination.korean}}
               p.item__pronunciation {{combination.pronunciation}}
         section.content#rules
-          h4.content__title Additional Rules or Outliers
+          h4.content__title Basic Language Rules
           p.content__text
-            | Additionally there are rules or outliers to the language as summarised below.
+            | Additionally there are rules or outliers to the korean language, the basics of these rules are summarised below.
           p.content__text
+            | The character 
             span.content__korean ㅇ
-            | (ng) will be silent and not pronounced if placed in the initial
-            | position of a block and required if vowel is being placed at the front of a block/syllable, otherwise it is pronounced normally.
-            | For example 
+            | (ng) will be pronounced differently depending on its location within the block, which are described in the next few lines.
+          p.content__text
+            | The 
+            span.content__korean ㅇ 
+            | character is silent and not pronounced if placed as the initial character in a block. For example 
             span.content__korean 엄마 
             | is pronounced eomma with the 
             span.content__korean ㅇ
-            | (ng) being silent, while 
-            span.content__korean 강 
-            | is pronounced kang as 
-            span.content__korean ㅇ
-            | is in the final position.
+            | (ng) being silent.
+          p.content__text
+            | If the 
+            span.content__korean ㅇ 
+            | is positioned somewhere in the middle of a word there are two possibilities as shown below:
+            ol 
+              li
+                | If 
+                span.content__korean ㅇ 
+                | follows a consonant the 
+                span.content__korean ㅇ 
+                | replaces the preceding consonant, for example 
+                span.content__korean 한국어 
+                | is instead pronounced as 
+                span.content__korean 한구거 
+                | .
+              li
+                | If 
+                span.content__korean ㅇ 
+                | is not preceded by a consonant the character is silent.
+            p.content__text
+              | If 
+              span.content__korean ㅇ 
+              | is in the final position it is pronounced with an ng sound, for example 
+              span.content__korean 강 
+              | is pronounced as kang.
           p.content__text
             | There are also some consonants that if placed in the final position within a block will be pronounced with the
             span.content__korean ㅌ
@@ -246,7 +272,7 @@ html
               li.next-steps__source
                 a.source__link--next-steps(href="https://www.koreanclass101.com/") KoreanClass101
                 p.source__price Limited free materials and multiple paid plans
-                p.source__description KoreanClass101 offer over 1600 audio and video lessons focused on more fun learning rather than heavy text based learning, their free content is fairly limited but there are multiple payment options to 
+                p.source__description KoreanClass101 offer over 1600 audio and video lessons focused on fun learning rather than heavy text based learning, their free content is limited but there are multiple paid subscription levels to 
                   | ensure that you can get the materials suited to your learning needs. They also have a regularly updated 
                   a.content__link(href="https://www.youtube.com/user/koreanclass101/videos") Youtube channel  
                   |  with various Korean language tips and guides.
