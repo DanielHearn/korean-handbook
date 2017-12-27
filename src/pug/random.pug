@@ -1,0 +1,26 @@
+//- random.pug
+doctype html
+html
+  include includes/head-random.pug
+  body.body
+    div#app
+      div.overlay
+        ul
+          li
+            a.overlay__link.scroll(href="../",  data-scroll, @click="overlay()") Korean Intro  
+      nav.nav
+        a.button--overlay(@click="overlay()")
+          span
+        a.button--logo(href="../")
+          include includes/logo.pug
+        div.nav__content
+          a.nav__link.scroll(href="../",  data-scroll) Korean Intro  
+      main#app
+        section.intro#home
+          section.intro__content
+            h1.intro__title Random Korean Words
+            h2.intro__subheading Click below to generate a random Korean word
+            
+        include includes/footer.pug
+
+          
