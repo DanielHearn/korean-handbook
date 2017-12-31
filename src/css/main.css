@@ -279,7 +279,7 @@
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg); }
 
-.content__korean {
+.k {
   color: #595EE6;
   font-weight: 600;
   font-family: 'Noto Sans KR', sans-serif; }
@@ -311,6 +311,11 @@ ol {
   font-size: 1.15em;
   font-weight: 400;
   color: #222; }
+
+#generatedWord {
+  color: #fefefe; }
+  #generatedWord p {
+    color: #fefefe; }
 
 .content__blocklist {
   list-style: none;
@@ -439,7 +444,7 @@ ol {
   box-sizing: border-box;
   padding-top: 1.5em; }
 
-.content__koreanlist {
+.klist {
   list-style: none;
   padding-left: 0;
   display: flex;
@@ -578,7 +583,7 @@ ol {
   width: 50%;
   display: flex; }
 
-.content__korean--wordList {
+.k--wordList {
   color: #595EE6;
   font-weight: 600;
   padding-right: 0.5em;

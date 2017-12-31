@@ -1,4 +1,4 @@
-.content__korean {
+.k {
   color: $accent;
   font-weight: 600;
   font-family: 'Noto Sans KR', sans-serif;
@@ -11,6 +11,13 @@
 
 ol {
   @include content-text;
+}
+
+#generatedWord {
+  color: $white;
+  p {
+    color: $white;
+  }
 }
 
 .content__blocklist {
@@ -74,7 +81,7 @@ ol {
   padding-top: 1.5em;
 }
 
-.content__koreanlist {
+.klist {
   @include list-wrap;
 }
 
@@ -150,7 +157,7 @@ ol {
   display: flex;
 }
 
-.content__korean--wordList {
+.k--wordList {
   color: $accent;
   font-weight: 600;
   padding-right: 0.5em;

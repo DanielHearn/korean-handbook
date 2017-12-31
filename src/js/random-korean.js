@@ -16,6 +16,19 @@ var app = new Vue({
           nav.classList.add("nav--white");
           nav.classList.remove("nav--purple");
       }
+    },
+    loadWord () {
+      console.log("Load new word");
+      var config = {
+        apiKey: "AIzaSyAL7PmrjeNVvwniFOL3U-ShJK4jHZ2t0eg",
+        authDomain: "korean-words.firebaseapp.com",
+        databaseURL: "https://korean-words.firebaseio.com",
+        projectId: "korean-words",
+        storageBucket: "korean-words.appspot.com",
+        messagingSenderId: "542877320049"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
     }
   },
   created () {

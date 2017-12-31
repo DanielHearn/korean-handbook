@@ -20,7 +20,10 @@ html
           section.intro__content
             h1.intro__title Random Korean Words
             h2.intro__subheading Click below to generate a random Korean word
-            
+            button(@click="loadWord()") Generate Word
+            div#generatedWord
+              p.content__korean Korean Word
+              p.content__text Description
         include includes/footer.pug
 
           
