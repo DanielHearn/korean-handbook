@@ -1,6 +1,24 @@
 var app = new Vue({
   el: '#app',
+  data: {
+     word: 'ㅁ',
+     korean: '용국',
+     entryCount: 58,
+  },
   methods: {
+    initDB () {
+      var config = {
+        apiKey: "AIzaSyAL7PmrjeNVvwniFOL3U-ShJK4jHZ2t0eg",
+        authDomain: "korean-words.firebaseapp.com",
+        databaseURL: "https://korean-words.firebaseio.com",
+        projectId: "korean-words",
+        storageBucket: "korean-words.appspot.com",
+        messagingSenderId: "542877320049"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+      this.generateWord();
+    },
     overlay () {
       document.querySelector(".overlay").classList.toggle("active");
       document.querySelector(".button--overlay").classList.toggle("active");
@@ -17,22 +35,29 @@ var app = new Vue({
           nav.classList.remove("nav--purple");
       }
     },
-    loadWord () {
+    async generateWord () {
       console.log("Load new word");
-      var config = {
-        apiKey: "AIzaSyAL7PmrjeNVvwniFOL3U-ShJK4jHZ2t0eg",
-        authDomain: "korean-words.firebaseapp.com",
-        databaseURL: "https://korean-words.firebaseio.com",
-        projectId: "korean-words",
-        storageBucket: "korean-words.appspot.com",
-        messagingSenderId: "542877320049"
-      };
-      firebase.initializeApp(config);
-      var database = firebase.database();
+      const rand = Math.floor(Math.random() * this.entryCount);
+
+      let entry = await this.retrieveWord(rand);
+      //console.log(entry.val());//this.word = entry.val().promenade;
+    },
+    async retrieveWord (key) {
+      let that = this;
+      return firebase.database().ref('/' + key).once('value').then(function(snapshot) {
+        //this.thisole.log(snapshot.val());
+        const entry = snapshot.val();
+        that.word = entry.promenade;
+        that.korean = entry.korean;
+      });
+    },
+    loadWord: function (entry) {
+      console.log(entry);
     }
   },
   created () {
     window.addEventListener('scroll', this.handleScroll);
     this.handleScroll();
+    this.initDB();
   }
 })
