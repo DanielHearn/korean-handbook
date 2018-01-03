@@ -3,7 +3,7 @@ var app = new Vue({
   data: {
      word: 'ㅁ',
      korean: '용국',
-     entryCount: 58,
+     entryCount: 1000,
   },
   methods: {
     initDB () {
@@ -47,8 +47,8 @@ var app = new Vue({
       return firebase.database().ref('/' + key).once('value').then(function(snapshot) {
         //this.thisole.log(snapshot.val());
         const entry = snapshot.val();
-        that.word = entry.promenade;
-        that.korean = entry.korean;
+        that.word = entry.KOREAN;
+        that.korean = entry.ENGLISH;
       });
     },
     loadWord: function (entry) {

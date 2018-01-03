@@ -1,0 +1,5002 @@
+[
+ {
+   "ID": 1,
+   "KOREAN": "것",
+   "ENGLISH": "A thing or  an object"
+ },
+ {
+   "ID": 2,
+   "KOREAN": "하다",
+   "ENGLISH": "To do"
+ },
+ {
+   "ID": 3,
+   "KOREAN": "있다",
+   "ENGLISH": "To be"
+ },
+ {
+   "ID": 4,
+   "KOREAN": "수",
+   "ENGLISH": "way, method, Number"
+ },
+ {
+   "ID": 5,
+   "KOREAN": "하다",
+   "ENGLISH": "To do"
+ },
+ {
+   "ID": 6,
+   "KOREAN": "나",
+   "ENGLISH": "I"
+ },
+ {
+   "ID": 7,
+   "KOREAN": "없다",
+   "ENGLISH": "Do not exist, absent"
+ },
+ {
+   "ID": 8,
+   "KOREAN": "않다",
+   "ENGLISH": "To not do"
+ },
+ {
+   "ID": 9,
+   "KOREAN": "사람",
+   "ENGLISH": "Person"
+ },
+ {
+   "ID": 10,
+   "KOREAN": "우리",
+   "ENGLISH": "we, our"
+ },
+ {
+   "ID": 11,
+   "KOREAN": "그",
+   "ENGLISH": "He, That"
+ },
+ {
+   "ID": 12,
+   "KOREAN": "아니다",
+   "ENGLISH": "To not be"
+ },
+ {
+   "ID": 13,
+   "KOREAN": "보다",
+   "ENGLISH": "To try"
+ },
+ {
+   "ID": 14,
+   "KOREAN": "거",
+   "ENGLISH": "thing"
+ },
+ {
+   "ID": 15,
+   "KOREAN": "보다",
+   "ENGLISH": "To see"
+ },
+ {
+   "ID": 16,
+   "KOREAN": "같다",
+   "ENGLISH": "To be similar"
+ },
+ {
+   "ID": 17,
+   "KOREAN": "주다",
+   "ENGLISH": "To give, to do for a person"
+ },
+ {
+   "ID": 18,
+   "KOREAN": "대하다",
+   "ENGLISH": "Face, confront"
+ },
+ {
+   "ID": 19,
+   "KOREAN": "가다",
+   "ENGLISH": "To go"
+ },
+ {
+   "ID": 20,
+   "KOREAN": "년",
+   "ENGLISH": "Year"
+ },
+ {
+   "ID": 21,
+   "KOREAN": "한",
+   "ENGLISH": "One, a single"
+ },
+ {
+   "ID": 22,
+   "KOREAN": "말",
+   "ENGLISH": "words,speaking"
+ },
+ {
+   "ID": 23,
+   "KOREAN": "일",
+   "ENGLISH": "Work"
+ },
+ {
+   "ID": 24,
+   "KOREAN": "이",
+   "ENGLISH": "A person, This"
+ },
+ {
+   "ID": 25,
+   "KOREAN": "말하다",
+   "ENGLISH": "Speak"
+ },
+ {
+   "ID": 26,
+   "KOREAN": "위하다",
+   "ENGLISH": "To do for the sake of"
+ },
+ {
+   "ID": 27,
+   "KOREAN": "그러나",
+   "ENGLISH": "However or  but still"
+ },
+ {
+   "ID": 28,
+   "KOREAN": "오다",
+   "ENGLISH": "To come"
+ },
+ {
+   "ID": 29,
+   "KOREAN": "알다",
+   "ENGLISH": "To know"
+ },
+ {
+   "ID": 30,
+   "KOREAN": "씨",
+   "ENGLISH": "~ Mr."
+ },
+ {
+   "ID": 31,
+   "KOREAN": "그렇다",
+   "ENGLISH": "That is right or  yes."
+ },
+ {
+   "ID": 32,
+   "KOREAN": "크다",
+   "ENGLISH": "To be big, large"
+ },
+ {
+   "ID": 33,
+   "KOREAN": "일",
+   "ENGLISH": "One day"
+ },
+ {
+   "ID": 34,
+   "KOREAN": "사회",
+   "ENGLISH": "culture,society"
+ },
+ {
+   "ID": 35,
+   "KOREAN": "많다",
+   "ENGLISH": "many, much"
+ },
+ {
+   "ID": 36,
+   "KOREAN": "안",
+   "ENGLISH": "~ not ~ + VERB"
+ },
+ {
+   "ID": 37,
+   "KOREAN": "좋다",
+   "ENGLISH": "To be good"
+ },
+ {
+   "ID": 38,
+   "KOREAN": "더",
+   "ENGLISH": "More"
+ },
+ {
+   "ID": 39,
+   "KOREAN": "받다",
+   "ENGLISH": "Receive"
+ },
+ {
+   "ID": 40,
+   "KOREAN": "그것",
+   "ENGLISH": "That thing"
+ },
+ {
+   "ID": 41,
+   "KOREAN": "집",
+   "ENGLISH": "House"
+ },
+ {
+   "ID": 42,
+   "KOREAN": "나오다",
+   "ENGLISH": "Come out"
+ },
+ {
+   "ID": 43,
+   "KOREAN": "그리고",
+   "ENGLISH": "And or  and then"
+ },
+ {
+   "ID": 44,
+   "KOREAN": "문제",
+   "ENGLISH": "question,problem"
+ },
+ {
+   "ID": 45,
+   "KOREAN": "그런",
+   "ENGLISH": "Such a"
+ },
+ {
+   "ID": 46,
+   "KOREAN": "살다",
+   "ENGLISH": "To live"
+ },
+ {
+   "ID": 47,
+   "KOREAN": "저",
+   "ENGLISH": "That"
+ },
+ {
+   "ID": 48,
+   "KOREAN": "못하다",
+   "ENGLISH": "Be impossible"
+ },
+ {
+   "ID": 49,
+   "KOREAN": "생각하다",
+   "ENGLISH": "To think"
+ },
+ {
+   "ID": 50,
+   "KOREAN": "모르다",
+   "ENGLISH": "To not know"
+ },
+ {
+   "ID": 51,
+   "KOREAN": "속",
+   "ENGLISH": "The inside"
+ },
+ {
+   "ID": 52,
+   "KOREAN": "만들다",
+   "ENGLISH": "To make"
+ },
+ {
+   "ID": 53,
+   "KOREAN": "데",
+   "ENGLISH": "Place, point, instance"
+ },
+ {
+   "ID": 54,
+   "KOREAN": "앞",
+   "ENGLISH": "In front of, before"
+ },
+ {
+   "ID": 55,
+   "KOREAN": "경우",
+   "ENGLISH": "A case or  an instance"
+ },
+ {
+   "ID": 56,
+   "KOREAN": "중",
+   "ENGLISH": "The center, the middle"
+ },
+ {
+   "ID": 57,
+   "KOREAN": "어떤",
+   "ENGLISH": "What kind of, what sort of"
+ },
+ {
+   "ID": 58,
+   "KOREAN": "잘",
+   "ENGLISH": "Well"
+ },
+ {
+   "ID": 59,
+   "KOREAN": "그녀",
+   "ENGLISH": "She"
+ },
+ {
+   "ID": 60,
+   "KOREAN": "먹다",
+   "ENGLISH": "Eat, chow down on"
+ },
+ {
+   "ID": 61,
+   "KOREAN": "자신",
+   "ENGLISH": "one’s own self, one\\’s own body"
+ },
+ {
+   "ID": 62,
+   "KOREAN": "문화",
+   "ENGLISH": "culture"
+ },
+ {
+   "ID": 63,
+   "KOREAN": "원",
+   "ENGLISH": "A unit of south korean  money, KRW"
+ },
+ {
+   "ID": 64,
+   "KOREAN": "생각",
+   "ENGLISH": "Thought"
+ },
+ {
+   "ID": 65,
+   "KOREAN": "어떻다",
+   "ENGLISH": "how,what.. do you think of"
+ },
+ {
+   "ID": 66,
+   "KOREAN": "명",
+   "ENGLISH": "Person counter"
+ },
+ {
+   "ID": 67,
+   "KOREAN": "통하다",
+   "ENGLISH": "Run, lead; flow; go through"
+ },
+ {
+   "ID": 68,
+   "KOREAN": "그러다",
+   "ENGLISH": "and so, and then, well"
+ },
+ {
+   "ID": 69,
+   "KOREAN": "그러다",
+   "ENGLISH": "and so, and then, well"
+ },
+ {
+   "ID": 70,
+   "KOREAN": "소리",
+   "ENGLISH": "A sound,noise"
+ },
+ {
+   "ID": 71,
+   "KOREAN": "다시",
+   "ENGLISH": "Again"
+ },
+ {
+   "ID": 72,
+   "KOREAN": "다른",
+   "ENGLISH": "Different"
+ },
+ {
+   "ID": 73,
+   "KOREAN": "이런",
+   "ENGLISH": "Such, like this"
+ },
+ {
+   "ID": 74,
+   "KOREAN": "여자",
+   "ENGLISH": "woman,female"
+ },
+ {
+   "ID": 75,
+   "KOREAN": "개",
+   "ENGLISH": "Unit or  piece"
+ },
+ {
+   "ID": 76,
+   "KOREAN": "정도",
+   "ENGLISH": "grade,degree"
+ },
+ {
+   "ID": 77,
+   "KOREAN": "다",
+   "ENGLISH": "All, everything"
+ },
+ {
+   "ID": 78,
+   "KOREAN": "좀",
+   "ENGLISH": "A little"
+ },
+ {
+   "ID": 79,
+   "KOREAN": "싶다",
+   "ENGLISH": "want,hope"
+ },
+ {
+   "ID": 80,
+   "KOREAN": "보이다",
+   "ENGLISH": "see,catch sight of"
+ },
+ {
+   "ID": 81,
+   "KOREAN": "가지다",
+   "ENGLISH": "To have or  take or  hold"
+ },
+ {
+   "ID": 82,
+   "KOREAN": "함께",
+   "ENGLISH": "Together, with"
+ },
+ {
+   "ID": 83,
+   "KOREAN": "아이",
+   "ENGLISH": "Child"
+ },
+ {
+   "ID": 84,
+   "KOREAN": "지나다",
+   "ENGLISH": "pass,elapse,go on"
+ },
+ {
+   "ID": 85,
+   "KOREAN": "많이",
+   "ENGLISH": "A lot"
+ },
+ {
+   "ID": 86,
+   "KOREAN": "시간",
+   "ENGLISH": "Time"
+ },
+ {
+   "ID": 87,
+   "KOREAN": "너",
+   "ENGLISH": "You"
+ },
+ {
+   "ID": 88,
+   "KOREAN": "인간",
+   "ENGLISH": "A person, a human being"
+ },
+ {
+   "ID": 89,
+   "KOREAN": "사실",
+   "ENGLISH": "The truth, a fact"
+ },
+ {
+   "ID": 90,
+   "KOREAN": "나다",
+   "ENGLISH": "To be born"
+ },
+ {
+   "ID": 91,
+   "KOREAN": "이렇다",
+   "ENGLISH": "Like this"
+ },
+ {
+   "ID": 92,
+   "KOREAN": "어머니",
+   "ENGLISH": "Mom"
+ },
+ {
+   "ID": 93,
+   "KOREAN": "눈",
+   "ENGLISH": "Eyes"
+ },
+ {
+   "ID": 94,
+   "KOREAN": "뭐",
+   "ENGLISH": "Huh? (2) something"
+ },
+ {
+   "ID": 95,
+   "KOREAN": "점",
+   "ENGLISH": "Store"
+ },
+ {
+   "ID": 96,
+   "KOREAN": "의하다",
+   "ENGLISH": "To be due to, owing to"
+ },
+ {
+   "ID": 97,
+   "KOREAN": "시대",
+   "ENGLISH": "An age,period"
+ },
+ {
+   "ID": 98,
+   "KOREAN": "다음",
+   "ENGLISH": "Next"
+ },
+ {
+   "ID": 99,
+   "KOREAN": "이러하다",
+   "ENGLISH": "Be this way, be like follows"
+ },
+ {
+   "ID": 100,
+   "KOREAN": "누구",
+   "ENGLISH": "Who"
+ },
+ {
+   "ID": 101,
+   "KOREAN": "곳",
+   "ENGLISH": "Place"
+ },
+ {
+   "ID": 102,
+   "KOREAN": "여러",
+   "ENGLISH": "many,various"
+ },
+ {
+   "ID": 103,
+   "KOREAN": "안",
+   "ENGLISH": "Inside"
+ },
+ {
+   "ID": 104,
+   "KOREAN": "하나",
+   "ENGLISH": "One"
+ },
+ {
+   "ID": 105,
+   "KOREAN": "세계",
+   "ENGLISH": "World"
+ },
+ {
+   "ID": 106,
+   "KOREAN": "버리다",
+   "ENGLISH": "(following a verb) the verb\\’s action is over, perhaps in a sad way"
+ },
+ {
+   "ID": 107,
+   "KOREAN": "위",
+   "ENGLISH": "The upper part, above"
+ },
+ {
+   "ID": 108,
+   "KOREAN": "운동",
+   "ENGLISH": "Motion, movement"
+ },
+ {
+   "ID": 109,
+   "KOREAN": "퍼센트",
+   "ENGLISH": "Percent"
+ },
+ {
+   "ID": 110,
+   "KOREAN": "학교",
+   "ENGLISH": "School"
+ },
+ {
+   "ID": 111,
+   "KOREAN": "자기",
+   "ENGLISH": "Oneself, number one, numerouno, self"
+ },
+ {
+   "ID": 112,
+   "KOREAN": "가장",
+   "ENGLISH": "Most"
+ },
+ {
+   "ID": 113,
+   "KOREAN": "대통령",
+   "ENGLISH": "The president"
+ },
+ {
+   "ID": 114,
+   "KOREAN": "가지",
+   "ENGLISH": "One of the kind or  a sort"
+ },
+ {
+   "ID": 115,
+   "KOREAN": "시작하다",
+   "ENGLISH": "To start,begin"
+ },
+ {
+   "ID": 116,
+   "KOREAN": "바로",
+   "ENGLISH": "Right, correctly"
+ },
+ {
+   "ID": 117,
+   "KOREAN": "어느",
+   "ENGLISH": "Some, a certain"
+ },
+ {
+   "ID": 118,
+   "KOREAN": "그래서",
+   "ENGLISH": "And so accordingly"
+ },
+ {
+   "ID": 119,
+   "KOREAN": "무엇",
+   "ENGLISH": "That thing,whatever"
+ },
+ {
+   "ID": 120,
+   "KOREAN": "정부",
+   "ENGLISH": "Government"
+ },
+ {
+   "ID": 121,
+   "KOREAN": "모든",
+   "ENGLISH": "Every one"
+ },
+ {
+   "ID": 122,
+   "KOREAN": "번",
+   "ENGLISH": "Number, how many times"
+ },
+ {
+   "ID": 123,
+   "KOREAN": "그거",
+   "ENGLISH": "That thing"
+ },
+ {
+   "ID": 124,
+   "KOREAN": "돈",
+   "ENGLISH": "Money"
+ },
+ {
+   "ID": 125,
+   "KOREAN": "국가",
+   "ENGLISH": "A state or  a nation"
+ },
+ {
+   "ID": 126,
+   "KOREAN": "그런데",
+   "ENGLISH": "But or  however"
+ },
+ {
+   "ID": 127,
+   "KOREAN": "날",
+   "ENGLISH": "Day"
+ },
+ {
+   "ID": 128,
+   "KOREAN": "여기",
+   "ENGLISH": "A hobby"
+ },
+ {
+   "ID": 129,
+   "KOREAN": "모두",
+   "ENGLISH": "Everybody"
+ },
+ {
+   "ID": 130,
+   "KOREAN": "여성",
+   "ENGLISH": "Female"
+ },
+ {
+   "ID": 131,
+   "KOREAN": "친구",
+   "ENGLISH": "A friend"
+ },
+ {
+   "ID": 132,
+   "KOREAN": "마음",
+   "ENGLISH": "Heart"
+ },
+ {
+   "ID": 133,
+   "KOREAN": "후",
+   "ENGLISH": "After"
+ },
+ {
+   "ID": 134,
+   "KOREAN": "놓다",
+   "ENGLISH": "Put, place"
+ },
+ {
+   "ID": 135,
+   "KOREAN": "관계",
+   "ENGLISH": "Connection or  relation"
+ },
+ {
+   "ID": 136,
+   "KOREAN": "아버지",
+   "ENGLISH": "Father"
+ },
+ {
+   "ID": 137,
+   "KOREAN": "남자",
+   "ENGLISH": "Boy"
+ },
+ {
+   "ID": 138,
+   "KOREAN": "어디",
+   "ENGLISH": "Where?"
+ },
+ {
+   "ID": 139,
+   "KOREAN": "몸",
+   "ENGLISH": "body,physique"
+ },
+ {
+   "ID": 140,
+   "KOREAN": "얼굴",
+   "ENGLISH": "Face"
+ },
+ {
+   "ID": 141,
+   "KOREAN": "왜",
+   "ENGLISH": "Why?"
+ },
+ {
+   "ID": 142,
+   "KOREAN": "나타나다",
+   "ENGLISH": "Come out, appear"
+ },
+ {
+   "ID": 143,
+   "KOREAN": "지역",
+   "ENGLISH": "An area, region"
+ },
+ {
+   "ID": 144,
+   "KOREAN": "다르다",
+   "ENGLISH": "Be different"
+ },
+ {
+   "ID": 145,
+   "KOREAN": "모습",
+   "ENGLISH": "shape,body"
+ },
+ {
+   "ID": 146,
+   "KOREAN": "물",
+   "ENGLISH": "Water"
+ },
+ {
+   "ID": 147,
+   "KOREAN": "만나다",
+   "ENGLISH": "Meet"
+ },
+ {
+   "ID": 148,
+   "KOREAN": "내다",
+   "ENGLISH": "produce something"
+ },
+ {
+   "ID": 149,
+   "KOREAN": "보이다",
+   "ENGLISH": "show,let see"
+ },
+ {
+   "ID": 150,
+   "KOREAN": "쓰다",
+   "ENGLISH": "To write"
+ },
+ {
+   "ID": 151,
+   "KOREAN": "이것",
+   "ENGLISH": "This thing"
+ },
+ {
+   "ID": 152,
+   "KOREAN": "없이",
+   "ENGLISH": "Without"
+ },
+ {
+   "ID": 153,
+   "KOREAN": "이번",
+   "ENGLISH": "This time"
+ },
+ {
+   "ID": 154,
+   "KOREAN": "길",
+   "ENGLISH": "Road"
+ },
+ {
+   "ID": 155,
+   "KOREAN": "생활",
+   "ENGLISH": "lifestyle,livelihood"
+ },
+ {
+   "ID": 156,
+   "KOREAN": "쓰다",
+   "ENGLISH": "Take (medicine)"
+ },
+ {
+   "ID": 157,
+   "KOREAN": "뿐",
+   "ENGLISH": "only,alone,merely"
+ },
+ {
+   "ID": 158,
+   "KOREAN": "사이",
+   "ENGLISH": "space between 2 points; the relationship between 2 people"
+ },
+ {
+   "ID": 159,
+   "KOREAN": "방법",
+   "ENGLISH": "Way, method"
+ },
+ {
+   "ID": 160,
+   "KOREAN": "새롭다",
+   "ENGLISH": "To be new,novel"
+ },
+ {
+   "ID": 161,
+   "KOREAN": "내다",
+   "ENGLISH": "to see through, to make it through sth"
+ },
+ {
+   "ID": 162,
+   "KOREAN": "앉다",
+   "ENGLISH": "To sit down"
+ },
+ {
+   "ID": 163,
+   "KOREAN": "처음",
+   "ENGLISH": "First"
+ },
+ {
+   "ID": 164,
+   "KOREAN": "손",
+   "ENGLISH": "The hand"
+ },
+ {
+   "ID": 165,
+   "KOREAN": "몇",
+   "ENGLISH": "A few"
+ },
+ {
+   "ID": 166,
+   "KOREAN": "그때",
+   "ENGLISH": "Then or  at that time"
+ },
+ {
+   "ID": 167,
+   "KOREAN": "과정",
+   "ENGLISH": "Process or  course"
+ },
+ {
+   "ID": 168,
+   "KOREAN": "삶",
+   "ENGLISH": "Life"
+ },
+ {
+   "ID": 169,
+   "KOREAN": "갖다",
+   "ENGLISH": "To hold"
+ },
+ {
+   "ID": 170,
+   "KOREAN": "찾다",
+   "ENGLISH": "seek,look for"
+ },
+ {
+   "ID": 171,
+   "KOREAN": "특히",
+   "ENGLISH": "Especially"
+ },
+ {
+   "ID": 172,
+   "KOREAN": "시",
+   "ENGLISH": "Time"
+ },
+ {
+   "ID": 173,
+   "KOREAN": "이상",
+   "ENGLISH": "More than, above"
+ },
+ {
+   "ID": 174,
+   "KOREAN": "지금",
+   "ENGLISH": "Now"
+ },
+ {
+   "ID": 175,
+   "KOREAN": "나가다",
+   "ENGLISH": "To go out"
+ },
+ {
+   "ID": 176,
+   "KOREAN": "이야기",
+   "ENGLISH": "Conversation, talk"
+ },
+ {
+   "ID": 177,
+   "KOREAN": "교육",
+   "ENGLISH": "Education"
+ },
+ {
+   "ID": 178,
+   "KOREAN": "사다",
+   "ENGLISH": "To buy, purchase"
+ },
+ {
+   "ID": 179,
+   "KOREAN": "경제",
+   "ENGLISH": "Economy"
+ },
+ {
+   "ID": 180,
+   "KOREAN": "아직",
+   "ENGLISH": "Still"
+ },
+ {
+   "ID": 181,
+   "KOREAN": "잡다",
+   "ENGLISH": "seize,catch"
+ },
+ {
+   "ID": 182,
+   "KOREAN": "같이",
+   "ENGLISH": "Together"
+ },
+ {
+   "ID": 183,
+   "KOREAN": "선생님",
+   "ENGLISH": "Teacher"
+ },
+ {
+   "ID": 184,
+   "KOREAN": "예술",
+   "ENGLISH": "Art, an art"
+ },
+ {
+   "ID": 185,
+   "KOREAN": "서다",
+   "ENGLISH": "To stand"
+ },
+ {
+   "ID": 186,
+   "KOREAN": "못",
+   "ENGLISH": "Cannot"
+ },
+ {
+   "ID": 187,
+   "KOREAN": "역사",
+   "ENGLISH": "History"
+ },
+ {
+   "ID": 188,
+   "KOREAN": "읽다",
+   "ENGLISH": "To read"
+ },
+ {
+   "ID": 189,
+   "KOREAN": "결과",
+   "ENGLISH": "Result"
+ },
+ {
+   "ID": 190,
+   "KOREAN": "내용",
+   "ENGLISH": "Contents"
+ },
+ {
+   "ID": 191,
+   "KOREAN": "물론",
+   "ENGLISH": "Of course"
+ },
+ {
+   "ID": 192,
+   "KOREAN": "책",
+   "ENGLISH": "A book"
+ },
+ {
+   "ID": 193,
+   "KOREAN": "일어나다",
+   "ENGLISH": "To rise, get up"
+ },
+ {
+   "ID": 194,
+   "KOREAN": "당신",
+   "ENGLISH": "Formal you"
+ },
+ {
+   "ID": 195,
+   "KOREAN": "시장",
+   "ENGLISH": "market,fair"
+ },
+ {
+   "ID": 196,
+   "KOREAN": "넣다",
+   "ENGLISH": "Put in, set in"
+ },
+ {
+   "ID": 197,
+   "KOREAN": "중요하다",
+   "ENGLISH": "To be important,weighty"
+ },
+ {
+   "ID": 198,
+   "KOREAN": "무슨",
+   "ENGLISH": "What, what kind of"
+ },
+ {
+   "ID": 199,
+   "KOREAN": "느끼다",
+   "ENGLISH": "To feel"
+ },
+ {
+   "ID": 200,
+   "KOREAN": "어렵다",
+   "ENGLISH": "To be hard, difficult"
+ },
+ {
+   "ID": 201,
+   "KOREAN": "힘",
+   "ENGLISH": "Power"
+ },
+ {
+   "ID": 202,
+   "KOREAN": "너무",
+   "ENGLISH": "Too much"
+ },
+ {
+   "ID": 203,
+   "KOREAN": "나라",
+   "ENGLISH": "A country"
+ },
+ {
+   "ID": 204,
+   "KOREAN": "부르다",
+   "ENGLISH": "To call"
+ },
+ {
+   "ID": 205,
+   "KOREAN": "의미",
+   "ENGLISH": "A meaning, a sense"
+ },
+ {
+   "ID": 206,
+   "KOREAN": "자리",
+   "ENGLISH": "seat,spot"
+ },
+ {
+   "ID": 207,
+   "KOREAN": "밝히다",
+   "ENGLISH": "To light up"
+ },
+ {
+   "ID": 208,
+   "KOREAN": "죽다",
+   "ENGLISH": "die,pass away"
+ },
+ {
+   "ID": 209,
+   "KOREAN": "이미",
+   "ENGLISH": "Already"
+ },
+ {
+   "ID": 210,
+   "KOREAN": "쪽",
+   "ENGLISH": "Way, direction"
+ },
+ {
+   "ID": 211,
+   "KOREAN": "정치",
+   "ENGLISH": "Politics"
+ },
+ {
+   "ID": 212,
+   "KOREAN": "국민",
+   "ENGLISH": "The people or  a nationality"
+ },
+ {
+   "ID": 213,
+   "KOREAN": "생명",
+   "ENGLISH": "Life"
+ },
+ {
+   "ID": 214,
+   "KOREAN": "얘기",
+   "ENGLISH": "Story"
+ },
+ {
+   "ID": 215,
+   "KOREAN": "학생",
+   "ENGLISH": "Student"
+ },
+ {
+   "ID": 216,
+   "KOREAN": "연구",
+   "ENGLISH": "Research"
+ },
+ {
+   "ID": 217,
+   "KOREAN": "엄마",
+   "ENGLISH": "Mamma"
+ },
+ {
+   "ID": 218,
+   "KOREAN": "이름",
+   "ENGLISH": "Name"
+ },
+ {
+   "ID": 219,
+   "KOREAN": "하나",
+   "ENGLISH": "One"
+ },
+ {
+   "ID": 220,
+   "KOREAN": "내리다",
+   "ENGLISH": "Descend"
+ },
+ {
+   "ID": 221,
+   "KOREAN": "사건",
+   "ENGLISH": "An event,incident"
+ },
+ {
+   "ID": 222,
+   "KOREAN": "및",
+   "ENGLISH": "As well as"
+ },
+ {
+   "ID": 223,
+   "KOREAN": "쉽다",
+   "ENGLISH": "To be easy"
+ },
+ {
+   "ID": 224,
+   "KOREAN": "짓다",
+   "ENGLISH": "To make, build ; to form a line (a group)"
+ },
+ {
+   "ID": 225,
+   "KOREAN": "이유",
+   "ENGLISH": "Reason"
+ },
+ {
+   "ID": 226,
+   "KOREAN": "필요하다",
+   "ENGLISH": "To need"
+ },
+ {
+   "ID": 227,
+   "KOREAN": "글",
+   "ENGLISH": "words, a verse"
+ },
+ {
+   "ID": 228,
+   "KOREAN": "생기다",
+   "ENGLISH": "arise,occur,happen"
+ },
+ {
+   "ID": 229,
+   "KOREAN": "사용하다",
+   "ENGLISH": "To use"
+ },
+ {
+   "ID": 230,
+   "KOREAN": "남편",
+   "ENGLISH": "Husband"
+ },
+ {
+   "ID": 231,
+   "KOREAN": "밖",
+   "ENGLISH": "The outside"
+ },
+ {
+   "ID": 232,
+   "KOREAN": "세상",
+   "ENGLISH": "The world,society"
+ },
+ {
+   "ID": 233,
+   "KOREAN": "작다",
+   "ENGLISH": "Small"
+ },
+ {
+   "ID": 234,
+   "KOREAN": "타다",
+   "ENGLISH": "Ride (bus)"
+ },
+ {
+   "ID": 235,
+   "KOREAN": "대학",
+   "ENGLISH": "University"
+ },
+ {
+   "ID": 236,
+   "KOREAN": "작품",
+   "ENGLISH": "A work of art"
+ },
+ {
+   "ID": 237,
+   "KOREAN": "상황",
+   "ENGLISH": "State of things"
+ },
+ {
+   "ID": 238,
+   "KOREAN": "가운데",
+   "ENGLISH": "In the middle"
+ },
+ {
+   "ID": 239,
+   "KOREAN": "보내다",
+   "ENGLISH": "Send"
+ },
+ {
+   "ID": 240,
+   "KOREAN": "즉",
+   "ENGLISH": "namely,that is to say"
+ },
+ {
+   "ID": 241,
+   "KOREAN": "상태",
+   "ENGLISH": "condition,state"
+ },
+ {
+   "ID": 242,
+   "KOREAN": "이후",
+   "ENGLISH": "After that"
+ },
+ {
+   "ID": 243,
+   "KOREAN": "당시",
+   "ENGLISH": "At that time"
+ },
+ {
+   "ID": 244,
+   "KOREAN": "문학",
+   "ENGLISH": "Literature"
+ },
+ {
+   "ID": 245,
+   "KOREAN": "더욱",
+   "ENGLISH": "More and more"
+ },
+ {
+   "ID": 246,
+   "KOREAN": "아주",
+   "ENGLISH": "Extremely"
+ },
+ {
+   "ID": 247,
+   "KOREAN": "지방",
+   "ENGLISH": "A locality, district"
+ },
+ {
+   "ID": 248,
+   "KOREAN": "밤",
+   "ENGLISH": "Night"
+ },
+ {
+   "ID": 249,
+   "KOREAN": "높다",
+   "ENGLISH": "High"
+ },
+ {
+   "ID": 250,
+   "KOREAN": "최근",
+   "ENGLISH": "Recently"
+ },
+ {
+   "ID": 251,
+   "KOREAN": "채",
+   "ENGLISH": "As it is, no change"
+ },
+ {
+   "ID": 252,
+   "KOREAN": "현실",
+   "ENGLISH": "Actuality, reality"
+ },
+ {
+   "ID": 253,
+   "KOREAN": "환경",
+   "ENGLISH": "Environment"
+ },
+ {
+   "ID": 254,
+   "KOREAN": "컴퓨터",
+   "ENGLISH": "Computer"
+ },
+ {
+   "ID": 255,
+   "KOREAN": "먼저",
+   "ENGLISH": "First"
+ },
+ {
+   "ID": 256,
+   "KOREAN": "다니다",
+   "ENGLISH": "Go to and from a aplace"
+ },
+ {
+   "ID": 257,
+   "KOREAN": "얼마나",
+   "ENGLISH": "How many, how much"
+ },
+ {
+   "ID": 258,
+   "KOREAN": "자체",
+   "ENGLISH": "one’s own body"
+ },
+ {
+   "ID": 259,
+   "KOREAN": "열다",
+   "ENGLISH": "Open"
+ },
+ {
+   "ID": 260,
+   "KOREAN": "머리",
+   "ENGLISH": "Head"
+ },
+ {
+   "ID": 261,
+   "KOREAN": "묻다",
+   "ENGLISH": "to Ask"
+ },
+ {
+   "ID": 262,
+   "KOREAN": "남다",
+   "ENGLISH": "Remain, be left over"
+ },
+ {
+   "ID": 263,
+   "KOREAN": "부분",
+   "ENGLISH": "part,portion"
+ },
+ {
+   "ID": 264,
+   "KOREAN": "기업",
+   "ENGLISH": "An enterprise or business"
+ },
+ {
+   "ID": 265,
+   "KOREAN": "변화",
+   "ENGLISH": "Change, transformation"
+ },
+ {
+   "ID": 266,
+   "KOREAN": "아들",
+   "ENGLISH": "son,baby"
+ },
+ {
+   "ID": 267,
+   "KOREAN": "아",
+   "ENGLISH": "Oh dear"
+ },
+ {
+   "ID": 268,
+   "KOREAN": "선거",
+   "ENGLISH": "An election"
+ },
+ {
+   "ID": 269,
+   "KOREAN": "관하다",
+   "ENGLISH": "Refer to or  be about"
+ },
+ {
+   "ID": 270,
+   "KOREAN": "분",
+   "ENGLISH": "Minutes"
+ },
+ {
+   "ID": 271,
+   "KOREAN": "그냥",
+   "ENGLISH": "Just because or  in that condition"
+ },
+ {
+   "ID": 272,
+   "KOREAN": "나누다",
+   "ENGLISH": "To divide"
+ },
+ {
+   "ID": 273,
+   "KOREAN": "이용하다",
+   "ENGLISH": "To use, make use of"
+ },
+ {
+   "ID": 274,
+   "KOREAN": "거의",
+   "ENGLISH": "Almost or  nearly"
+ },
+ {
+   "ID": 275,
+   "KOREAN": "곧",
+   "ENGLISH": "Soon"
+ },
+ {
+   "ID": 276,
+   "KOREAN": "중심",
+   "ENGLISH": "The nucleus, the focus, the heart"
+ },
+ {
+   "ID": 277,
+   "KOREAN": "활동",
+   "ENGLISH": "Activity"
+ },
+ {
+   "ID": 278,
+   "KOREAN": "오늘",
+   "ENGLISH": "Today"
+ },
+ {
+   "ID": 279,
+   "KOREAN": "서로",
+   "ENGLISH": "mutually,one another"
+ },
+ {
+   "ID": 280,
+   "KOREAN": "관심",
+   "ENGLISH": "Concern or  interest"
+ },
+ {
+   "ID": 281,
+   "KOREAN": "역시",
+   "ENGLISH": "As expected, likewise"
+ },
+ {
+   "ID": 282,
+   "KOREAN": "이거",
+   "ENGLISH": "This thing"
+ },
+ {
+   "ID": 283,
+   "KOREAN": "애",
+   "ENGLISH": "A baby, or a slightly derogative word for person"
+ },
+ {
+   "ID": 284,
+   "KOREAN": "광고",
+   "ENGLISH": "Advertisement"
+ },
+ {
+   "ID": 285,
+   "KOREAN": "나다",
+   "ENGLISH": "To come out, grow, spring up"
+ },
+ {
+   "ID": 286,
+   "KOREAN": "방",
+   "ENGLISH": "A room"
+ },
+ {
+   "ID": 287,
+   "KOREAN": "정신",
+   "ENGLISH": "mind,spirit"
+ },
+ {
+   "ID": 288,
+   "KOREAN": "이르다",
+   "ENGLISH": "To reach, arrive, get at"
+ },
+ {
+   "ID": 289,
+   "KOREAN": "이루다",
+   "ENGLISH": "Accomplish, complete"
+ },
+ {
+   "ID": 290,
+   "KOREAN": "아침",
+   "ENGLISH": "Morning"
+ },
+ {
+   "ID": 291,
+   "KOREAN": "웃다",
+   "ENGLISH": "To laugh, smile"
+ },
+ {
+   "ID": 292,
+   "KOREAN": "현상",
+   "ENGLISH": "The present situation, state"
+ },
+ {
+   "ID": 293,
+   "KOREAN": "기술",
+   "ENGLISH": "Art or  technique or  ability"
+ },
+ {
+   "ID": 294,
+   "KOREAN": "전체",
+   "ENGLISH": "The whole, the entire section"
+ },
+ {
+   "ID": 295,
+   "KOREAN": "그래",
+   "ENGLISH": "So or  yes or  that’s right"
+ },
+ {
+   "ID": 296,
+   "KOREAN": "얻다",
+   "ENGLISH": "Get, obtain"
+ },
+ {
+   "ID": 297,
+   "KOREAN": "아름답다",
+   "ENGLISH": "To be beautiful"
+ },
+ {
+   "ID": 298,
+   "KOREAN": "끝",
+   "ENGLISH": "The end"
+ },
+ {
+   "ID": 299,
+   "KOREAN": "민족",
+   "ENGLISH": "race,nation,people"
+ },
+ {
+   "ID": 300,
+   "KOREAN": "간",
+   "ENGLISH": "The interval between"
+ },
+ {
+   "ID": 301,
+   "KOREAN": "조사",
+   "ENGLISH": "investigation,inquiry"
+ },
+ {
+   "ID": 302,
+   "KOREAN": "듯",
+   "ENGLISH": "To be like something"
+ },
+ {
+   "ID": 303,
+   "KOREAN": "입",
+   "ENGLISH": "Mouth"
+ },
+ {
+   "ID": 304,
+   "KOREAN": "뭐",
+   "ENGLISH": "Huh? (2) something"
+ },
+ {
+   "ID": 305,
+   "KOREAN": "그대로",
+   "ENGLISH": "Like that"
+ },
+ {
+   "ID": 306,
+   "KOREAN": "영화",
+   "ENGLISH": "A movie"
+ },
+ {
+   "ID": 307,
+   "KOREAN": "필요",
+   "ENGLISH": "Need, requirement,necessity"
+ },
+ {
+   "ID": 308,
+   "KOREAN": "줄",
+   "ENGLISH": "way,method"
+ },
+ {
+   "ID": 309,
+   "KOREAN": "하늘",
+   "ENGLISH": "The sky"
+ },
+ {
+   "ID": 310,
+   "KOREAN": "년대",
+   "ENGLISH": "Year"
+ },
+ {
+   "ID": 311,
+   "KOREAN": "과학",
+   "ENGLISH": "Science"
+ },
+ {
+   "ID": 312,
+   "KOREAN": "자연",
+   "ENGLISH": "Nature"
+ },
+ {
+   "ID": 313,
+   "KOREAN": "정말",
+   "ENGLISH": "Really"
+ },
+ {
+   "ID": 314,
+   "KOREAN": "구조",
+   "ENGLISH": "Construction or  structure"
+ },
+ {
+   "ID": 315,
+   "KOREAN": "결국",
+   "ENGLISH": "After all or  in the end"
+ },
+ {
+   "ID": 316,
+   "KOREAN": "밥",
+   "ENGLISH": "Rice, a meal"
+ },
+ {
+   "ID": 317,
+   "KOREAN": "입다",
+   "ENGLISH": "To wear"
+ },
+ {
+   "ID": 318,
+   "KOREAN": "오히려",
+   "ENGLISH": "Rather,preferably"
+ },
+ {
+   "ID": 319,
+   "KOREAN": "프로그램",
+   "ENGLISH": "Program"
+ },
+ {
+   "ID": 320,
+   "KOREAN": "네",
+   "ENGLISH": "Yes"
+ },
+ {
+   "ID": 321,
+   "KOREAN": "이루어지다",
+   "ENGLISH": "Get accomplished, achieved"
+ },
+ {
+   "ID": 322,
+   "KOREAN": "남",
+   "ENGLISH": "Others, other people"
+ },
+ {
+   "ID": 323,
+   "KOREAN": "하루",
+   "ENGLISH": "A day"
+ },
+ {
+   "ID": 324,
+   "KOREAN": "그림",
+   "ENGLISH": "A picture"
+ },
+ {
+   "ID": 325,
+   "KOREAN": "적",
+   "ENGLISH": "The time,the occasion,when"
+ },
+ {
+   "ID": 326,
+   "KOREAN": "터",
+   "ENGLISH": "one’s status, one’s lot"
+ },
+ {
+   "ID": 327,
+   "KOREAN": "마시다",
+   "ENGLISH": "To drink"
+ },
+ {
+   "ID": 328,
+   "KOREAN": "치다",
+   "ENGLISH": "to attack, assault"
+ },
+ {
+   "ID": 329,
+   "KOREAN": "혼자",
+   "ENGLISH": "Alone"
+ },
+ {
+   "ID": 330,
+   "KOREAN": "나가다",
+   "ENGLISH": "To advance, proceed, go forward"
+ },
+ {
+   "ID": 331,
+   "KOREAN": "이제",
+   "ENGLISH": "Now"
+ },
+ {
+   "ID": 332,
+   "KOREAN": "교수",
+   "ENGLISH": "Teaching or  instruction"
+ },
+ {
+   "ID": 333,
+   "KOREAN": "술",
+   "ENGLISH": "Alcohol"
+ },
+ {
+   "ID": 334,
+   "KOREAN": "사랑",
+   "ENGLISH": "Love"
+ },
+ {
+   "ID": 335,
+   "KOREAN": "전화",
+   "ENGLISH": "Telephone"
+ },
+ {
+   "ID": 336,
+   "KOREAN": "끝나다",
+   "ENGLISH": "To draw to a close or  to end"
+ },
+ {
+   "ID": 337,
+   "KOREAN": "맞다",
+   "ENGLISH": "Be right, correct; to match, be fitting for"
+ },
+ {
+   "ID": 338,
+   "KOREAN": "아빠",
+   "ENGLISH": "Dad"
+ },
+ {
+   "ID": 339,
+   "KOREAN": "걸리다",
+   "ENGLISH": "To be hung up or  suspended"
+ },
+ {
+   "ID": 340,
+   "KOREAN": "지키다",
+   "ENGLISH": "Protect, maintain"
+ },
+ {
+   "ID": 341,
+   "KOREAN": "한번",
+   "ENGLISH": "Once"
+ },
+ {
+   "ID": 342,
+   "KOREAN": "커피",
+   "ENGLISH": "Coffee"
+ },
+ {
+   "ID": 343,
+   "KOREAN": "가슴",
+   "ENGLISH": "Chest"
+ },
+ {
+   "ID": 344,
+   "KOREAN": "길다",
+   "ENGLISH": "To be long"
+ },
+ {
+   "ID": 345,
+   "KOREAN": "바라보다",
+   "ENGLISH": "Look at, watch ; to look forward to, hope for"
+ },
+ {
+   "ID": 346,
+   "KOREAN": "알아보다",
+   "ENGLISH": "To investigate, examine, search"
+ },
+ {
+   "ID": 347,
+   "KOREAN": "맛",
+   "ENGLISH": "Flavor"
+ },
+ {
+   "ID": 348,
+   "KOREAN": "대부분",
+   "ENGLISH": "Most"
+ },
+ {
+   "ID": 349,
+   "KOREAN": "산업",
+   "ENGLISH": "Industry"
+ },
+ {
+   "ID": 350,
+   "KOREAN": "매우",
+   "ENGLISH": "Very"
+ },
+ {
+   "ID": 351,
+   "KOREAN": "오르다",
+   "ENGLISH": "Go up, climb, ascend"
+ },
+ {
+   "ID": 352,
+   "KOREAN": "음식",
+   "ENGLISH": "Food"
+ },
+ {
+   "ID": 353,
+   "KOREAN": "표정",
+   "ENGLISH": "Facial expression, look"
+ },
+ {
+   "ID": 354,
+   "KOREAN": "꼭",
+   "ENGLISH": "For sure"
+ },
+ {
+   "ID": 355,
+   "KOREAN": "일부",
+   "ENGLISH": "A part, a portion"
+ },
+ {
+   "ID": 356,
+   "KOREAN": "요즘",
+   "ENGLISH": "Recently, nowadays"
+ },
+ {
+   "ID": 357,
+   "KOREAN": "계획",
+   "ENGLISH": "A plan or  a project"
+ },
+ {
+   "ID": 358,
+   "KOREAN": "느낌",
+   "ENGLISH": "Touch, feel"
+ },
+ {
+   "ID": 359,
+   "KOREAN": "얼마",
+   "ENGLISH": "How many, how much"
+ },
+ {
+   "ID": 360,
+   "KOREAN": "고개",
+   "ENGLISH": "The nape of the neck"
+ },
+ {
+   "ID": 361,
+   "KOREAN": "성격",
+   "ENGLISH": "Personality ; character, nature"
+ },
+ {
+   "ID": 362,
+   "KOREAN": "계속",
+   "ENGLISH": "Continuously"
+ },
+ {
+   "ID": 363,
+   "KOREAN": "세기",
+   "ENGLISH": "Century"
+ },
+ {
+   "ID": 364,
+   "KOREAN": "세우다",
+   "ENGLISH": "Stand up, erect"
+ },
+ {
+   "ID": 365,
+   "KOREAN": "아내",
+   "ENGLISH": "Wife"
+ },
+ {
+   "ID": 366,
+   "KOREAN": "가족",
+   "ENGLISH": "Family"
+ },
+ {
+   "ID": 367,
+   "KOREAN": "현재",
+   "ENGLISH": "The present time, now, at present"
+ },
+ {
+   "ID": 368,
+   "KOREAN": "세",
+   "ENGLISH": "Three"
+ },
+ {
+   "ID": 369,
+   "KOREAN": "발전",
+   "ENGLISH": "Development"
+ },
+ {
+   "ID": 370,
+   "KOREAN": "차",
+   "ENGLISH": "A vehicle, train/auto car"
+ },
+ {
+   "ID": 371,
+   "KOREAN": "놀다",
+   "ENGLISH": "Play, amuse oneself"
+ },
+ {
+   "ID": 372,
+   "KOREAN": "향하다",
+   "ENGLISH": "To face, look out on"
+ },
+ {
+   "ID": 373,
+   "KOREAN": "관련",
+   "ENGLISH": "Relation or  connection or  reference"
+ },
+ {
+   "ID": 374,
+   "KOREAN": "형태",
+   "ENGLISH": "Form, shape"
+ },
+ {
+   "ID": 375,
+   "KOREAN": "각",
+   "ENGLISH": "Each or  every"
+ },
+ {
+   "ID": 376,
+   "KOREAN": "도시",
+   "ENGLISH": "City"
+ },
+ {
+   "ID": 377,
+   "KOREAN": "작업",
+   "ENGLISH": "Work"
+ },
+ {
+   "ID": 378,
+   "KOREAN": "분위기",
+   "ENGLISH": "atmosphere,surroundings"
+ },
+ {
+   "ID": 379,
+   "KOREAN": "그러하다",
+   "ENGLISH": "To be so or  right"
+ },
+ {
+   "ID": 380,
+   "KOREAN": "나이",
+   "ENGLISH": "Age"
+ },
+ {
+   "ID": 381,
+   "KOREAN": "우선",
+   "ENGLISH": "First of all, before everything"
+ },
+ {
+   "ID": 382,
+   "KOREAN": "믿다",
+   "ENGLISH": "Believe"
+ },
+ {
+   "ID": 383,
+   "KOREAN": "바꾸다",
+   "ENGLISH": "change,exchange"
+ },
+ {
+   "ID": 384,
+   "KOREAN": "낳다",
+   "ENGLISH": "To give birth"
+ },
+ {
+   "ID": 385,
+   "KOREAN": "바",
+   "ENGLISH": "A thing, what"
+ },
+ {
+   "ID": 386,
+   "KOREAN": "정보",
+   "ENGLISH": "information,intelligence"
+ },
+ {
+   "ID": 387,
+   "KOREAN": "열리다",
+   "ENGLISH": "Open, be opened, be unlocked"
+ },
+ {
+   "ID": 388,
+   "KOREAN": "좋아하다",
+   "ENGLISH": "To like, be fond of"
+ },
+ {
+   "ID": 389,
+   "KOREAN": "그리다",
+   "ENGLISH": "Picture or  draw a picture"
+ },
+ {
+   "ID": 390,
+   "KOREAN": "만큼",
+   "ENGLISH": "Of that amount"
+ },
+ {
+   "ID": 391,
+   "KOREAN": "배우다",
+   "ENGLISH": "To learn"
+ },
+ {
+   "ID": 392,
+   "KOREAN": "시",
+   "ENGLISH": "Poetry, lines of verse"
+ },
+ {
+   "ID": 393,
+   "KOREAN": "역할",
+   "ENGLISH": "A part, a role"
+ },
+ {
+   "ID": 394,
+   "KOREAN": "옆",
+   "ENGLISH": "Next to"
+ },
+ {
+   "ID": 395,
+   "KOREAN": "행동",
+   "ENGLISH": "Action, behavior"
+ },
+ {
+   "ID": 396,
+   "KOREAN": "어",
+   "ENGLISH": "Oh, well, why"
+ },
+ {
+   "ID": 397,
+   "KOREAN": "국내",
+   "ENGLISH": "Inside the country"
+ },
+ {
+   "ID": 398,
+   "KOREAN": "비하다",
+   "ENGLISH": "Compare to"
+ },
+ {
+   "ID": 399,
+   "KOREAN": "기관",
+   "ENGLISH": "An engine or  a machine"
+ },
+ {
+   "ID": 400,
+   "KOREAN": "입장",
+   "ENGLISH": "A position, situation"
+ },
+ {
+   "ID": 401,
+   "KOREAN": "만하다",
+   "ENGLISH": "Be of the extent of"
+ },
+ {
+   "ID": 402,
+   "KOREAN": "예",
+   "ENGLISH": "Example"
+ },
+ {
+   "ID": 403,
+   "KOREAN": "아래",
+   "ENGLISH": "The bottom, the lower part"
+ },
+ {
+   "ID": 404,
+   "KOREAN": "방식",
+   "ENGLISH": "A form, method, process"
+ },
+ {
+   "ID": 405,
+   "KOREAN": "영향",
+   "ENGLISH": "Influence, consequences"
+ },
+ {
+   "ID": 406,
+   "KOREAN": "그럼",
+   "ENGLISH": "Certainly or  of course."
+ },
+ {
+   "ID": 407,
+   "KOREAN": "나서다",
+   "ENGLISH": "Come out, come forth"
+ },
+ {
+   "ID": 408,
+   "KOREAN": "흐르다",
+   "ENGLISH": "Flow, stream"
+ },
+ {
+   "ID": 409,
+   "KOREAN": "저",
+   "ENGLISH": "Uh, well,  …"
+ },
+ {
+   "ID": 410,
+   "KOREAN": "깊다",
+   "ENGLISH": "Deep"
+ },
+ {
+   "ID": 411,
+   "KOREAN": "배",
+   "ENGLISH": "A boat (boating)"
+ },
+ {
+   "ID": 412,
+   "KOREAN": "내",
+   "ENGLISH": "Inside"
+ },
+ {
+   "ID": 413,
+   "KOREAN": "모양",
+   "ENGLISH": "A shape, form"
+ },
+ {
+   "ID": 414,
+   "KOREAN": "산",
+   "ENGLISH": "A mountain"
+ },
+ {
+   "ID": 415,
+   "KOREAN": "새",
+   "ENGLISH": "New"
+ },
+ {
+   "ID": 416,
+   "KOREAN": "하지만",
+   "ENGLISH": "But, nevertheless"
+ },
+ {
+   "ID": 417,
+   "KOREAN": "조건",
+   "ENGLISH": "condition,stipulation"
+ },
+ {
+   "ID": 418,
+   "KOREAN": "문",
+   "ENGLISH": "Door"
+ },
+ {
+   "ID": 419,
+   "KOREAN": "꽃",
+   "ENGLISH": "Flower"
+ },
+ {
+   "ID": 420,
+   "KOREAN": "단계",
+   "ENGLISH": "A step, phase"
+ },
+ {
+   "ID": 421,
+   "KOREAN": "올리다",
+   "ENGLISH": "Raise, lift up"
+ },
+ {
+   "ID": 422,
+   "KOREAN": "그동안",
+   "ENGLISH": "During that time"
+ },
+ {
+   "ID": 423,
+   "KOREAN": "교사",
+   "ENGLISH": "Instructor"
+ },
+ {
+   "ID": 424,
+   "KOREAN": "갑자기",
+   "ENGLISH": "Suddenly"
+ },
+ {
+   "ID": 425,
+   "KOREAN": "넘다",
+   "ENGLISH": "Cross or go across"
+ },
+ {
+   "ID": 426,
+   "KOREAN": "지니다",
+   "ENGLISH": "Carry with, hold, possess"
+ },
+ {
+   "ID": 427,
+   "KOREAN": "바람",
+   "ENGLISH": "Wind"
+ },
+ {
+   "ID": 428,
+   "KOREAN": "잘하다",
+   "ENGLISH": "To do well"
+ },
+ {
+   "ID": 429,
+   "KOREAN": "마을",
+   "ENGLISH": "Town"
+ },
+ {
+   "ID": 430,
+   "KOREAN": "어리다",
+   "ENGLISH": "To be very young, juvenile"
+ },
+ {
+   "ID": 431,
+   "KOREAN": "대표",
+   "ENGLISH": "Representative"
+ },
+ {
+   "ID": 432,
+   "KOREAN": "가능성",
+   "ENGLISH": "Possibility"
+ },
+ {
+   "ID": 433,
+   "KOREAN": "방향",
+   "ENGLISH": "Direction"
+ },
+ {
+   "ID": 434,
+   "KOREAN": "대회",
+   "ENGLISH": "A great meeting"
+ },
+ {
+   "ID": 435,
+   "KOREAN": "목소리",
+   "ENGLISH": "Voice"
+ },
+ {
+   "ID": 436,
+   "KOREAN": "노래",
+   "ENGLISH": "Song"
+ },
+ {
+   "ID": 437,
+   "KOREAN": "바다",
+   "ENGLISH": "Sea"
+ },
+ {
+   "ID": 438,
+   "KOREAN": "힘들다",
+   "ENGLISH": "To be hard, difficult"
+ },
+ {
+   "ID": 439,
+   "KOREAN": "공부",
+   "ENGLISH": "Study"
+ },
+ {
+   "ID": 440,
+   "KOREAN": "움직이다",
+   "ENGLISH": "To move, stir"
+ },
+ {
+   "ID": 441,
+   "KOREAN": "의원",
+   "ENGLISH": "A member"
+ },
+ {
+   "ID": 442,
+   "KOREAN": "노력",
+   "ENGLISH": "Effort"
+ },
+ {
+   "ID": 443,
+   "KOREAN": "전혀",
+   "ENGLISH": "entirely,utterly,completely"
+ },
+ {
+   "ID": 444,
+   "KOREAN": "언니",
+   "ENGLISH": "Older sister"
+ },
+ {
+   "ID": 445,
+   "KOREAN": "단체",
+   "ENGLISH": "A corps, a group"
+ },
+ {
+   "ID": 446,
+   "KOREAN": "분",
+   "ENGLISH": "One part"
+ },
+ {
+   "ID": 447,
+   "KOREAN": "알려지다",
+   "ENGLISH": "To become known"
+ },
+ {
+   "ID": 448,
+   "KOREAN": "가능하다",
+   "ENGLISH": "To be possible"
+ },
+ {
+   "ID": 449,
+   "KOREAN": "능력",
+   "ENGLISH": "Ability, capability, how much and how well"
+ },
+ {
+   "ID": 450,
+   "KOREAN": "주장하다",
+   "ENGLISH": "To assert,maintain"
+ },
+ {
+   "ID": 451,
+   "KOREAN": "자식",
+   "ENGLISH": "one’s children"
+ },
+ {
+   "ID": 452,
+   "KOREAN": "불",
+   "ENGLISH": "Fire"
+ },
+ {
+   "ID": 453,
+   "KOREAN": "주민",
+   "ENGLISH": "inhabitants,dwellers"
+ },
+ {
+   "ID": 454,
+   "KOREAN": "모으다",
+   "ENGLISH": "gather,get together"
+ },
+ {
+   "ID": 455,
+   "KOREAN": "자료",
+   "ENGLISH": "materials,data"
+ },
+ {
+   "ID": 456,
+   "KOREAN": "존재",
+   "ENGLISH": "Existence"
+ },
+ {
+   "ID": 457,
+   "KOREAN": "학년",
+   "ENGLISH": "A school year"
+ },
+ {
+   "ID": 458,
+   "KOREAN": "신문",
+   "ENGLISH": "A newspaper"
+ },
+ {
+   "ID": 459,
+   "KOREAN": "가지다",
+   "ENGLISH": "Entertain or  hold or  have"
+ },
+ {
+   "ID": 460,
+   "KOREAN": "이해하다",
+   "ENGLISH": "To understand"
+ },
+ {
+   "ID": 461,
+   "KOREAN": "제품",
+   "ENGLISH": "Manufactured goods"
+ },
+ {
+   "ID": 462,
+   "KOREAN": "분야",
+   "ENGLISH": "Field"
+ },
+ {
+   "ID": 463,
+   "KOREAN": "선생",
+   "ENGLISH": "Teacher"
+ },
+ {
+   "ID": 464,
+   "KOREAN": "사업",
+   "ENGLISH": "Business"
+ },
+ {
+   "ID": 465,
+   "KOREAN": "행위",
+   "ENGLISH": "An act, deed, behavior"
+ },
+ {
+   "ID": 466,
+   "KOREAN": "수준",
+   "ENGLISH": "Level"
+ },
+ {
+   "ID": 467,
+   "KOREAN": "지난해",
+   "ENGLISH": "Last year"
+ },
+ {
+   "ID": 468,
+   "KOREAN": "표현",
+   "ENGLISH": "Verbal expression, representation, manifestation"
+ },
+ {
+   "ID": 469,
+   "KOREAN": "기분",
+   "ENGLISH": "Mood"
+ },
+ {
+   "ID": 470,
+   "KOREAN": "대",
+   "ENGLISH": "Era, period"
+ },
+ {
+   "ID": 471,
+   "KOREAN": "젊다",
+   "ENGLISH": "To be young,youthful"
+ },
+ {
+   "ID": 472,
+   "KOREAN": "옷",
+   "ENGLISH": "Clothes"
+ },
+ {
+   "ID": 473,
+   "KOREAN": "기능",
+   "ENGLISH": "Function or  functionality"
+ },
+ {
+   "ID": 474,
+   "KOREAN": "순간",
+   "ENGLISH": "A moment,a second"
+ },
+ {
+   "ID": 475,
+   "KOREAN": "전쟁",
+   "ENGLISH": "War"
+ },
+ {
+   "ID": 476,
+   "KOREAN": "전",
+   "ENGLISH": "Before"
+ },
+ {
+   "ID": 477,
+   "KOREAN": "꿈",
+   "ENGLISH": "A Dream"
+ },
+ {
+   "ID": 478,
+   "KOREAN": "할머니",
+   "ENGLISH": "Grandmother"
+ },
+ {
+   "ID": 479,
+   "KOREAN": "회의",
+   "ENGLISH": "A meeting, a conference"
+ },
+ {
+   "ID": 480,
+   "KOREAN": "방송",
+   "ENGLISH": "Broadcast"
+ },
+ {
+   "ID": 481,
+   "KOREAN": "이야기하다",
+   "ENGLISH": "To talk"
+ },
+ {
+   "ID": 482,
+   "KOREAN": "나무",
+   "ENGLISH": "Tree"
+ },
+ {
+   "ID": 483,
+   "KOREAN": "자다",
+   "ENGLISH": "To sleep"
+ },
+ {
+   "ID": 484,
+   "KOREAN": "연극",
+   "ENGLISH": "drama,a play"
+ },
+ {
+   "ID": 485,
+   "KOREAN": "마찬가지",
+   "ENGLISH": "The same"
+ },
+ {
+   "ID": 486,
+   "KOREAN": "걷다",
+   "ENGLISH": "To walk"
+ },
+ {
+   "ID": 487,
+   "KOREAN": "노동",
+   "ENGLISH": "Labor, work"
+ },
+ {
+   "ID": 488,
+   "KOREAN": "이때",
+   "ENGLISH": "At this time, moment"
+ },
+ {
+   "ID": 489,
+   "KOREAN": "과거",
+   "ENGLISH": "The past"
+ },
+ {
+   "ID": 490,
+   "KOREAN": "가치",
+   "ENGLISH": "Price"
+ },
+ {
+   "ID": 491,
+   "KOREAN": "시간",
+   "ENGLISH": "a Length of time (한시간 동안)"
+ },
+ {
+   "ID": 492,
+   "KOREAN": "집단",
+   "ENGLISH": "A group, a collective body"
+ },
+ {
+   "ID": 493,
+   "KOREAN": "현대",
+   "ENGLISH": "The present age, times"
+ },
+ {
+   "ID": 494,
+   "KOREAN": "살펴보다",
+   "ENGLISH": "Watch closely"
+ },
+ {
+   "ID": 495,
+   "KOREAN": "장관",
+   "ENGLISH": "A government cabinet minister"
+ },
+ {
+   "ID": 496,
+   "KOREAN": "차이",
+   "ENGLISH": "difference,disparity"
+ },
+ {
+   "ID": 497,
+   "KOREAN": "풀다",
+   "ENGLISH": "Untie, loosen ; to melt into"
+ },
+ {
+   "ID": 498,
+   "KOREAN": "시절",
+   "ENGLISH": "season,time,occasion"
+ },
+ {
+   "ID": 499,
+   "KOREAN": "물건",
+   "ENGLISH": "A thing"
+ },
+ {
+   "ID": 500,
+   "KOREAN": "직접",
+   "ENGLISH": "Directly"
+ },
+ {
+   "ID": 501,
+   "KOREAN": "개인",
+   "ENGLISH": "Private or  individual"
+ },
+ {
+   "ID": 502,
+   "KOREAN": "근데",
+   "ENGLISH": "But or  however"
+ },
+ {
+   "ID": 503,
+   "KOREAN": "발",
+   "ENGLISH": "Foot"
+ },
+ {
+   "ID": 504,
+   "KOREAN": "작가",
+   "ENGLISH": "writer,author"
+ },
+ {
+   "ID": 505,
+   "KOREAN": "효과",
+   "ENGLISH": "Effect, effectiveness"
+ },
+ {
+   "ID": 506,
+   "KOREAN": "불교",
+   "ENGLISH": "Buddhism"
+ },
+ {
+   "ID": 507,
+   "KOREAN": "끌다",
+   "ENGLISH": "Pull"
+ },
+ {
+   "ID": 508,
+   "KOREAN": "대로",
+   "ENGLISH": "Like, according to"
+ },
+ {
+   "ID": 509,
+   "KOREAN": "빨리",
+   "ENGLISH": "Quickly"
+ },
+ {
+   "ID": 510,
+   "KOREAN": "시작되다",
+   "ENGLISH": "To begin,start"
+ },
+ {
+   "ID": 511,
+   "KOREAN": "말다",
+   "ENGLISH": "Cease"
+ },
+ {
+   "ID": 512,
+   "KOREAN": "설명하다",
+   "ENGLISH": "To explain"
+ },
+ {
+   "ID": 513,
+   "KOREAN": "우주",
+   "ENGLISH": "The universe"
+ },
+ {
+   "ID": 514,
+   "KOREAN": "시기",
+   "ENGLISH": "An opportunity,chance"
+ },
+ {
+   "ID": 515,
+   "KOREAN": "마치",
+   "ENGLISH": "As though, as if"
+ },
+ {
+   "ID": 516,
+   "KOREAN": "살",
+   "ENGLISH": "Years old"
+ },
+ {
+   "ID": 517,
+   "KOREAN": "생산",
+   "ENGLISH": "1) production 2)birth"
+ },
+ {
+   "ID": 518,
+   "KOREAN": "바라다",
+   "ENGLISH": "Wish, hope"
+ },
+ {
+   "ID": 519,
+   "KOREAN": "강하다",
+   "ENGLISH": "To be strong or  powerful"
+ },
+ {
+   "ID": 520,
+   "KOREAN": "경험",
+   "ENGLISH": "Experience or  undergo or  suffer"
+ },
+ {
+   "ID": 521,
+   "KOREAN": "음악",
+   "ENGLISH": "Music"
+ },
+ {
+   "ID": 522,
+   "KOREAN": "최고",
+   "ENGLISH": "The best"
+ },
+ {
+   "ID": 523,
+   "KOREAN": "나타내다",
+   "ENGLISH": "Show, display"
+ },
+ {
+   "ID": 524,
+   "KOREAN": "아프다",
+   "ENGLISH": "To hurt"
+ },
+ {
+   "ID": 525,
+   "KOREAN": "적다",
+   "ENGLISH": "To be small, few in number"
+ },
+ {
+   "ID": 526,
+   "KOREAN": "비",
+   "ENGLISH": "Rain"
+ },
+ {
+   "ID": 527,
+   "KOREAN": "고향",
+   "ENGLISH": "Hometown"
+ },
+ {
+   "ID": 528,
+   "KOREAN": "놀라다",
+   "ENGLISH": "Be surprised"
+ },
+ {
+   "ID": 529,
+   "KOREAN": "다양하다",
+   "ENGLISH": "To be various, diverse"
+ },
+ {
+   "ID": 530,
+   "KOREAN": "울다",
+   "ENGLISH": "To cry, weep"
+ },
+ {
+   "ID": 531,
+   "KOREAN": "농민",
+   "ENGLISH": "A farmer"
+ },
+ {
+   "ID": 532,
+   "KOREAN": "은행",
+   "ENGLISH": "A bank"
+ },
+ {
+   "ID": 533,
+   "KOREAN": "지내다",
+   "ENGLISH": "To pass, spend time"
+ },
+ {
+   "ID": 534,
+   "KOREAN": "결혼",
+   "ENGLISH": "Marriage"
+ },
+ {
+   "ID": 535,
+   "KOREAN": "법",
+   "ENGLISH": "A law, the law"
+ },
+ {
+   "ID": 536,
+   "KOREAN": "소설",
+   "ENGLISH": "A novel, fiction story"
+ },
+ {
+   "ID": 537,
+   "KOREAN": "예",
+   "ENGLISH": "Yes, certainly, right"
+ },
+ {
+   "ID": 538,
+   "KOREAN": "오후",
+   "ENGLISH": "The afternoon"
+ },
+ {
+   "ID": 539,
+   "KOREAN": "질서",
+   "ENGLISH": "Order, system"
+ },
+ {
+   "ID": 540,
+   "KOREAN": "담다",
+   "ENGLISH": "Put in a bottle"
+ },
+ {
+   "ID": 541,
+   "KOREAN": "모이다",
+   "ENGLISH": "Meet, assemble"
+ },
+ {
+   "ID": 542,
+   "KOREAN": "시민",
+   "ENGLISH": "Residents of a city"
+ },
+ {
+   "ID": 543,
+   "KOREAN": "회장",
+   "ENGLISH": "Chariman, the president"
+ },
+ {
+   "ID": 544,
+   "KOREAN": "빠르다",
+   "ENGLISH": "Be fast, quick"
+ },
+ {
+   "ID": 545,
+   "KOREAN": "스스로",
+   "ENGLISH": "On its own, of its own free will"
+ },
+ {
+   "ID": 546,
+   "KOREAN": "아기",
+   "ENGLISH": "baby,infant"
+ },
+ {
+   "ID": 547,
+   "KOREAN": "아저씨",
+   "ENGLISH": "Sir, calling an unknown male"
+ },
+ {
+   "ID": 548,
+   "KOREAN": "옛날",
+   "ENGLISH": "Ancient times, antiquity"
+ },
+ {
+   "ID": 549,
+   "KOREAN": "이날",
+   "ENGLISH": "Today, this day"
+ },
+ {
+   "ID": 550,
+   "KOREAN": "제대로",
+   "ENGLISH": "As properly is suitable"
+ },
+ {
+   "ID": 551,
+   "KOREAN": "달",
+   "ENGLISH": "The moon"
+ },
+ {
+   "ID": 552,
+   "KOREAN": "던지다",
+   "ENGLISH": "To throw"
+ },
+ {
+   "ID": 553,
+   "KOREAN": "참",
+   "ENGLISH": "really,truly"
+ },
+ {
+   "ID": 554,
+   "KOREAN": "공간",
+   "ENGLISH": "Space or  room"
+ },
+ {
+   "ID": 555,
+   "KOREAN": "이곳",
+   "ENGLISH": "This place, here"
+ },
+ {
+   "ID": 556,
+   "KOREAN": "마지막",
+   "ENGLISH": "Last, final"
+ },
+ {
+   "ID": 557,
+   "KOREAN": "벌이다",
+   "ENGLISH": "(1) to plan to start a job/project (2) to play a table game"
+ },
+ {
+   "ID": 558,
+   "KOREAN": "병원",
+   "ENGLISH": "Hospital"
+ },
+ {
+   "ID": 559,
+   "KOREAN": "자세",
+   "ENGLISH": "Position, posture"
+ },
+ {
+   "ID": 560,
+   "KOREAN": "강조하다",
+   "ENGLISH": "Place empasis upon"
+ },
+ {
+   "ID": 561,
+   "KOREAN": "경찰",
+   "ENGLISH": "The police"
+ },
+ {
+   "ID": 562,
+   "KOREAN": "맡다",
+   "ENGLISH": "Take charge of"
+ },
+ {
+   "ID": 563,
+   "KOREAN": "저녁",
+   "ENGLISH": "Evening"
+ },
+ {
+   "ID": 564,
+   "KOREAN": "한편",
+   "ENGLISH": "One side, one way"
+ },
+ {
+   "ID": 565,
+   "KOREAN": "그러면",
+   "ENGLISH": "If so or  if that is the case"
+ },
+ {
+   "ID": 566,
+   "KOREAN": "기자",
+   "ENGLISH": "A journalist"
+ },
+ {
+   "ID": 567,
+   "KOREAN": "넓다",
+   "ENGLISH": "Broad"
+ },
+ {
+   "ID": 568,
+   "KOREAN": "시험",
+   "ENGLISH": "A test"
+ },
+ {
+   "ID": 569,
+   "KOREAN": "잠",
+   "ENGLISH": "Sleep"
+ },
+ {
+   "ID": 570,
+   "KOREAN": "주로",
+   "ENGLISH": "principally,mainly"
+ },
+ {
+   "ID": 571,
+   "KOREAN": "훨씬",
+   "ENGLISH": "By far, very much so"
+ },
+ {
+   "ID": 572,
+   "KOREAN": "면",
+   "ENGLISH": "Side"
+ },
+ {
+   "ID": 573,
+   "KOREAN": "통일",
+   "ENGLISH": "Unification"
+ },
+ {
+   "ID": 574,
+   "KOREAN": "건강",
+   "ENGLISH": "Health"
+ },
+ {
+   "ID": 575,
+   "KOREAN": "가깝다",
+   "ENGLISH": "Close"
+ },
+ {
+   "ID": 576,
+   "KOREAN": "건물",
+   "ENGLISH": "Building"
+ },
+ {
+   "ID": 577,
+   "KOREAN": "시설",
+   "ENGLISH": "establishment,institution"
+ },
+ {
+   "ID": 578,
+   "KOREAN": "외국",
+   "ENGLISH": "A foreign country"
+ },
+ {
+   "ID": 579,
+   "KOREAN": "밑",
+   "ENGLISH": "The bottom"
+ },
+ {
+   "ID": 580,
+   "KOREAN": "어른",
+   "ENGLISH": "A man, an adult"
+ },
+ {
+   "ID": 581,
+   "KOREAN": "주변",
+   "ENGLISH": "A circumference"
+ },
+ {
+   "ID": 582,
+   "KOREAN": "대신",
+   "ENGLISH": "Instead of"
+ },
+ {
+   "ID": 583,
+   "KOREAN": "원인",
+   "ENGLISH": "A cause,a factor"
+ },
+ {
+   "ID": 584,
+   "KOREAN": "팔다",
+   "ENGLISH": "To sell"
+ },
+ {
+   "ID": 585,
+   "KOREAN": "차례",
+   "ENGLISH": "(1) order,precedence  (2) one time, one round"
+ },
+ {
+   "ID": 586,
+   "KOREAN": "군",
+   "ENGLISH": "An army"
+ },
+ {
+   "ID": 587,
+   "KOREAN": "열심히",
+   "ENGLISH": "Enthusiastically,with zeal"
+ },
+ {
+   "ID": 588,
+   "KOREAN": "일하다",
+   "ENGLISH": "To work, labor"
+ },
+ {
+   "ID": 589,
+   "KOREAN": "재산",
+   "ENGLISH": "property,fortune, assets, possessions"
+ },
+ {
+   "ID": 590,
+   "KOREAN": "팀",
+   "ENGLISH": "Team"
+ },
+ {
+   "ID": 591,
+   "KOREAN": "부모",
+   "ENGLISH": "Parents"
+ },
+ {
+   "ID": 592,
+   "KOREAN": "약간",
+   "ENGLISH": "Somewhat"
+ },
+ {
+   "ID": 593,
+   "KOREAN": "언어",
+   "ENGLISH": "language,speech"
+ },
+ {
+   "ID": 594,
+   "KOREAN": "요구하다",
+   "ENGLISH": "To demand,claim,request"
+ },
+ {
+   "ID": 595,
+   "KOREAN": "올라가다",
+   "ENGLISH": "To go up, ascend"
+ },
+ {
+   "ID": 596,
+   "KOREAN": "첫",
+   "ENGLISH": "First"
+ },
+ {
+   "ID": 597,
+   "KOREAN": "감독",
+   "ENGLISH": "The director"
+ },
+ {
+   "ID": 598,
+   "KOREAN": "그날",
+   "ENGLISH": "That day or  that same day"
+ },
+ {
+   "ID": 599,
+   "KOREAN": "사실",
+   "ENGLISH": "Actually, really"
+ },
+ {
+   "ID": 600,
+   "KOREAN": "자주",
+   "ENGLISH": "Always, constantly"
+ },
+ {
+   "ID": 601,
+   "KOREAN": "당하다",
+   "ENGLISH": "Have, encounter"
+ },
+ {
+   "ID": 602,
+   "KOREAN": "삼다",
+   "ENGLISH": "Make a thing of"
+ },
+ {
+   "ID": 603,
+   "KOREAN": "약",
+   "ENGLISH": "About, approximately"
+ },
+ {
+   "ID": 604,
+   "KOREAN": "기간",
+   "ENGLISH": "A period or  a time or"
+ },
+ {
+   "ID": 605,
+   "KOREAN": "담배",
+   "ENGLISH": "Tobacco"
+ },
+ {
+   "ID": 606,
+   "KOREAN": "일으키다",
+   "ENGLISH": "Riase, get up; start, commence"
+ },
+ {
+   "ID": 607,
+   "KOREAN": "일단",
+   "ENGLISH": "Temporarily"
+ },
+ {
+   "ID": 608,
+   "KOREAN": "할아버지",
+   "ENGLISH": "Grandfather"
+ },
+ {
+   "ID": 609,
+   "KOREAN": "조직",
+   "ENGLISH": "Organization (composition, structure)"
+ },
+ {
+   "ID": 610,
+   "KOREAN": "태어나다",
+   "ENGLISH": "To be born, see the light of day"
+ },
+ {
+   "ID": 611,
+   "KOREAN": "공장",
+   "ENGLISH": "Construction site"
+ },
+ {
+   "ID": 612,
+   "KOREAN": "벌써",
+   "ENGLISH": "Already"
+ },
+ {
+   "ID": 613,
+   "KOREAN": "즐기다",
+   "ENGLISH": "Enjoy oneself,take pleasure,delight"
+ },
+ {
+   "ID": 614,
+   "KOREAN": "지",
+   "ENGLISH": "since,from"
+ },
+ {
+   "ID": 615,
+   "KOREAN": "환자",
+   "ENGLISH": "A patient"
+ },
+ {
+   "ID": 616,
+   "KOREAN": "변하다",
+   "ENGLISH": "Change"
+ },
+ {
+   "ID": 617,
+   "KOREAN": "사고",
+   "ENGLISH": "An accident"
+ },
+ {
+   "ID": 618,
+   "KOREAN": "그래도",
+   "ENGLISH": "All the same"
+ },
+ {
+   "ID": 619,
+   "KOREAN": "아무리",
+   "ENGLISH": "However much"
+ },
+ {
+   "ID": 620,
+   "KOREAN": "맞추다",
+   "ENGLISH": "Adjust, adapt"
+ },
+ {
+   "ID": 621,
+   "KOREAN": "쌀",
+   "ENGLISH": "Uncooked rice"
+ },
+ {
+   "ID": 622,
+   "KOREAN": "일반",
+   "ENGLISH": "universal,common,usual"
+ },
+ {
+   "ID": 623,
+   "KOREAN": "재미있다",
+   "ENGLISH": "interesting,fun"
+ },
+ {
+   "ID": 624,
+   "KOREAN": "가르치다",
+   "ENGLISH": "To teach"
+ },
+ {
+   "ID": 625,
+   "KOREAN": "대화",
+   "ENGLISH": "Conversation"
+ },
+ {
+   "ID": 626,
+   "KOREAN": "막다",
+   "ENGLISH": "Stop, obstruct"
+ },
+ {
+   "ID": 627,
+   "KOREAN": "올해",
+   "ENGLISH": "This year"
+ },
+ {
+   "ID": 628,
+   "KOREAN": "형",
+   "ENGLISH": "An elder brother"
+ },
+ {
+   "ID": 629,
+   "KOREAN": "달리",
+   "ENGLISH": "Differently"
+ },
+ {
+   "ID": 630,
+   "KOREAN": "버리다",
+   "ENGLISH": "Throw away"
+ },
+ {
+   "ID": 631,
+   "KOREAN": "붙이다",
+   "ENGLISH": "affix,put on"
+ },
+ {
+   "ID": 632,
+   "KOREAN": "인물",
+   "ENGLISH": "A man, a person"
+ },
+ {
+   "ID": 633,
+   "KOREAN": "늘",
+   "ENGLISH": "Always"
+ },
+ {
+   "ID": 634,
+   "KOREAN": "모두",
+   "ENGLISH": "everything"
+ },
+ {
+   "ID": 635,
+   "KOREAN": "전국",
+   "ENGLISH": "The whole country"
+ },
+ {
+   "ID": 636,
+   "KOREAN": "마치다",
+   "ENGLISH": "Finish, complete"
+ },
+ {
+   "ID": 637,
+   "KOREAN": "전",
+   "ENGLISH": "all,every"
+ },
+ {
+   "ID": 638,
+   "KOREAN": "다만",
+   "ENGLISH": "Only, merely"
+ },
+ {
+   "ID": 639,
+   "KOREAN": "도움",
+   "ENGLISH": "Help"
+ },
+ {
+   "ID": 640,
+   "KOREAN": "가정",
+   "ENGLISH": "Famly"
+ },
+ {
+   "ID": 641,
+   "KOREAN": "걸다",
+   "ENGLISH": "Hang up or  suspend"
+ },
+ {
+   "ID": 642,
+   "KOREAN": "빠지다",
+   "ENGLISH": "To fall into"
+ },
+ {
+   "ID": 643,
+   "KOREAN": "멀다",
+   "ENGLISH": "To be far"
+ },
+ {
+   "ID": 644,
+   "KOREAN": "버스",
+   "ENGLISH": "Bus"
+ },
+ {
+   "ID": 645,
+   "KOREAN": "오늘날",
+   "ENGLISH": "These days, nowadays"
+ },
+ {
+   "ID": 646,
+   "KOREAN": "잠시",
+   "ENGLISH": "For a little while"
+ },
+ {
+   "ID": 647,
+   "KOREAN": "농업",
+   "ENGLISH": "Agriculture"
+ },
+ {
+   "ID": 648,
+   "KOREAN": "대다",
+   "ENGLISH": "Put, place up to"
+ },
+ {
+   "ID": 649,
+   "KOREAN": "식",
+   "ENGLISH": "form,style"
+ },
+ {
+   "ID": 650,
+   "KOREAN": "의견",
+   "ENGLISH": "An opinion,a suggestion"
+ },
+ {
+   "ID": 651,
+   "KOREAN": "무대",
+   "ENGLISH": "Stage"
+ },
+ {
+   "ID": 652,
+   "KOREAN": "사진",
+   "ENGLISH": "Picture"
+ },
+ {
+   "ID": 653,
+   "KOREAN": "주장",
+   "ENGLISH": "assertion,insistance"
+ },
+ {
+   "ID": 654,
+   "KOREAN": "표현하다",
+   "ENGLISH": "To express, make known by saying"
+ },
+ {
+   "ID": 655,
+   "KOREAN": "인하다",
+   "ENGLISH": "To be due to, caused by"
+ },
+ {
+   "ID": 656,
+   "KOREAN": "이상하다",
+   "ENGLISH": "To be strange,queer"
+ },
+ {
+   "ID": 657,
+   "KOREAN": "제일",
+   "ENGLISH": "The first"
+ },
+ {
+   "ID": 658,
+   "KOREAN": "붙다",
+   "ENGLISH": "Stick, adhere to"
+ },
+ {
+   "ID": 659,
+   "KOREAN": "아마",
+   "ENGLISH": "Probably"
+ },
+ {
+   "ID": 660,
+   "KOREAN": "얘기하다",
+   "ENGLISH": "To tell a story"
+ },
+ {
+   "ID": 661,
+   "KOREAN": "잇다",
+   "ENGLISH": "Join, connect"
+ },
+ {
+   "ID": 662,
+   "KOREAN": "조금",
+   "ENGLISH": "A little"
+ },
+ {
+   "ID": 663,
+   "KOREAN": "경기",
+   "ENGLISH": "Race or  match or  contest"
+ },
+ {
+   "ID": 664,
+   "KOREAN": "목적",
+   "ENGLISH": "goal,purpose"
+ },
+ {
+   "ID": 665,
+   "KOREAN": "태도",
+   "ENGLISH": "attitude,comportment"
+ },
+ {
+   "ID": 666,
+   "KOREAN": "남성",
+   "ENGLISH": "Male"
+ },
+ {
+   "ID": 667,
+   "KOREAN": "주위",
+   "ENGLISH": "The circumference,the girth"
+ },
+ {
+   "ID": 668,
+   "KOREAN": "대책",
+   "ENGLISH": "Countermeasure"
+ },
+ {
+   "ID": 669,
+   "KOREAN": "그만",
+   "ENGLISH": "That much or  a little amount"
+ },
+ {
+   "ID": 670,
+   "KOREAN": "발생하다",
+   "ENGLISH": "Originate, come from"
+ },
+ {
+   "ID": 671,
+   "KOREAN": "다리",
+   "ENGLISH": "Leg"
+ },
+ {
+   "ID": 672,
+   "KOREAN": "아무",
+   "ENGLISH": "anybody,everybody"
+ },
+ {
+   "ID": 673,
+   "KOREAN": "어쩌다",
+   "ENGLISH": "By chance, accident"
+ },
+ {
+   "ID": 674,
+   "KOREAN": "재료",
+   "ENGLISH": "stuff,material"
+ },
+ {
+   "ID": 675,
+   "KOREAN": "각각",
+   "ENGLISH": "Each and every"
+ },
+ {
+   "ID": 676,
+   "KOREAN": "결코",
+   "ENGLISH": "Never or  by no means"
+ },
+ {
+   "ID": 677,
+   "KOREAN": "옮기다",
+   "ENGLISH": "Move, transfer (2)(sickness) communicate, transfer to"
+ },
+ {
+   "ID": 678,
+   "KOREAN": "항상",
+   "ENGLISH": "Always"
+ },
+ {
+   "ID": 679,
+   "KOREAN": "해",
+   "ENGLISH": "A year"
+ },
+ {
+   "ID": 680,
+   "KOREAN": "잃다",
+   "ENGLISH": "To lose, to miss, to be deprived"
+ },
+ {
+   "ID": 681,
+   "KOREAN": "자유",
+   "ENGLISH": "Freedom"
+ },
+ {
+   "ID": 682,
+   "KOREAN": "책임",
+   "ENGLISH": "Responsibility"
+ },
+ {
+   "ID": 683,
+   "KOREAN": "바뀌다",
+   "ENGLISH": "Be changed"
+ },
+ {
+   "ID": 684,
+   "KOREAN": "비슷하다",
+   "ENGLISH": "To resemble"
+ },
+ {
+   "ID": 685,
+   "KOREAN": "심하다",
+   "ENGLISH": "To be extreme,intense"
+ },
+ {
+   "ID": 686,
+   "KOREAN": "경쟁",
+   "ENGLISH": "Competition or  rivalry"
+ },
+ {
+   "ID": 687,
+   "KOREAN": "사랑하다",
+   "ENGLISH": "To love"
+ },
+ {
+   "ID": 688,
+   "KOREAN": "아니",
+   "ENGLISH": "No!"
+ },
+ {
+   "ID": 689,
+   "KOREAN": "여름",
+   "ENGLISH": "summer,summertime"
+ },
+ {
+   "ID": 690,
+   "KOREAN": "자라다",
+   "ENGLISH": "To grow up"
+ },
+ {
+   "ID": 691,
+   "KOREAN": "회",
+   "ENGLISH": "A time, an inning, a round in a game"
+ },
+ {
+   "ID": 692,
+   "KOREAN": "구체적",
+   "ENGLISH": "Concretely"
+ },
+ {
+   "ID": 693,
+   "KOREAN": "기회",
+   "ENGLISH": "An opportunity"
+ },
+ {
+   "ID": 694,
+   "KOREAN": "실시하다",
+   "ENGLISH": "To enforce,put into effect"
+ },
+ {
+   "ID": 695,
+   "KOREAN": "지구",
+   "ENGLISH": "The earth"
+ },
+ {
+   "ID": 696,
+   "KOREAN": "번째",
+   "ENGLISH": "How many times"
+ },
+ {
+   "ID": 697,
+   "KOREAN": "소비자",
+   "ENGLISH": "A consumer"
+ },
+ {
+   "ID": 698,
+   "KOREAN": "싫다",
+   "ENGLISH": "To not like, to hate"
+ },
+ {
+   "ID": 699,
+   "KOREAN": "규모",
+   "ENGLISH": "Scale or  scope or  structure"
+ },
+ {
+   "ID": 700,
+   "KOREAN": "기준",
+   "ENGLISH": "A standard or basis"
+ },
+ {
+   "ID": 701,
+   "KOREAN": "말",
+   "ENGLISH": "End"
+ },
+ {
+   "ID": 702,
+   "KOREAN": "반드시",
+   "ENGLISH": "Most certainly"
+ },
+ {
+   "ID": 703,
+   "KOREAN": "셈",
+   "ENGLISH": "An intention,design,purpose"
+ },
+ {
+   "ID": 704,
+   "KOREAN": "갖추다",
+   "ENGLISH": "Make or  get ready or  prepare"
+ },
+ {
+   "ID": 705,
+   "KOREAN": "그러니까",
+   "ENGLISH": "And so it is that"
+ },
+ {
+   "ID": 706,
+   "KOREAN": "받아들이다",
+   "ENGLISH": "Accept"
+ },
+ {
+   "ID": 707,
+   "KOREAN": "값",
+   "ENGLISH": "Price"
+ },
+ {
+   "ID": 708,
+   "KOREAN": "현장",
+   "ENGLISH": "on site, on location, at the site in question"
+ },
+ {
+   "ID": 709,
+   "KOREAN": "건설",
+   "ENGLISH": "Construction"
+ },
+ {
+   "ID": 710,
+   "KOREAN": "꺼내다",
+   "ENGLISH": "To get out or  draw out"
+ },
+ {
+   "ID": 711,
+   "KOREAN": "노동자",
+   "ENGLISH": "Laborer, worker"
+ },
+ {
+   "ID": 712,
+   "KOREAN": "언제나",
+   "ENGLISH": "everytime,always"
+ },
+ {
+   "ID": 713,
+   "KOREAN": "완전히",
+   "ENGLISH": "completely,perfectly"
+ },
+ {
+   "ID": 714,
+   "KOREAN": "자동차",
+   "ENGLISH": "Car"
+ },
+ {
+   "ID": 715,
+   "KOREAN": "전하다",
+   "ENGLISH": "To transmit,convey"
+ },
+ {
+   "ID": 716,
+   "KOREAN": "존재하다",
+   "ENGLISH": "To exist"
+ },
+ {
+   "ID": 717,
+   "KOREAN": "개월",
+   "ENGLISH": "Each and every month"
+ },
+ {
+   "ID": 718,
+   "KOREAN": "맞다",
+   "ENGLISH": "receive,welcome (note, usually this is 맞히다)"
+ },
+ {
+   "ID": 719,
+   "KOREAN": "별로",
+   "ENGLISH": "Especially, particularly"
+ },
+ {
+   "ID": 720,
+   "KOREAN": "어린이",
+   "ENGLISH": "A youngster, a child"
+ },
+ {
+   "ID": 721,
+   "KOREAN": "정하다",
+   "ENGLISH": "To set,determine"
+ },
+ {
+   "ID": 722,
+   "KOREAN": "한마디",
+   "ENGLISH": "One word"
+ },
+ {
+   "ID": 723,
+   "KOREAN": "유지하다",
+   "ENGLISH": "To preserve, maintain"
+ },
+ {
+   "ID": 724,
+   "KOREAN": "이데올로기",
+   "ENGLISH": "Ideology"
+ },
+ {
+   "ID": 725,
+   "KOREAN": "공부하다",
+   "ENGLISH": "To study"
+ },
+ {
+   "ID": 726,
+   "KOREAN": "대중",
+   "ENGLISH": "The masses"
+ },
+ {
+   "ID": 727,
+   "KOREAN": "늘어나다",
+   "ENGLISH": "Grow longer"
+ },
+ {
+   "ID": 728,
+   "KOREAN": "닦다",
+   "ENGLISH": "Wipe clean, polish"
+ },
+ {
+   "ID": 729,
+   "KOREAN": "만",
+   "ENGLISH": "As many as, full, complete"
+ },
+ {
+   "ID": 730,
+   "KOREAN": "말씀",
+   "ENGLISH": "Speech"
+ },
+ {
+   "ID": 731,
+   "KOREAN": "괜찮다",
+   "ENGLISH": "To be okay"
+ },
+ {
+   "ID": 732,
+   "KOREAN": "눈물",
+   "ENGLISH": "A tear"
+ },
+ {
+   "ID": 733,
+   "KOREAN": "각종",
+   "ENGLISH": "All sorts or  varieties"
+ },
+ {
+   "ID": 734,
+   "KOREAN": "빛",
+   "ENGLISH": "Light"
+ },
+ {
+   "ID": 735,
+   "KOREAN": "아니",
+   "ENGLISH": "Not"
+ },
+ {
+   "ID": 736,
+   "KOREAN": "피하다",
+   "ENGLISH": "avoid,keep away"
+ },
+ {
+   "ID": 737,
+   "KOREAN": "거치다",
+   "ENGLISH": "Pass or  go through"
+ },
+ {
+   "ID": 738,
+   "KOREAN": "나아가다",
+   "ENGLISH": "Advance, go forward"
+ },
+ {
+   "ID": 739,
+   "KOREAN": "야",
+   "ENGLISH": "(Word to get somebody’s attention) Hey!! (2) impolite speech for 이다, to be"
+ },
+ {
+   "ID": 740,
+   "KOREAN": "지식",
+   "ENGLISH": "Knowledge, information"
+ },
+ {
+   "ID": 741,
+   "KOREAN": "여전히",
+   "ENGLISH": "As it used to be, as before ; still, persistently, even still"
+ },
+ {
+   "ID": 742,
+   "KOREAN": "주인",
+   "ENGLISH": "The head of a family,the owner"
+ },
+ {
+   "ID": 743,
+   "KOREAN": "발견하다",
+   "ENGLISH": "To discover"
+ },
+ {
+   "ID": 744,
+   "KOREAN": "선",
+   "ENGLISH": "A line, a route"
+ },
+ {
+   "ID": 745,
+   "KOREAN": "인류",
+   "ENGLISH": "The human race"
+ },
+ {
+   "ID": 746,
+   "KOREAN": "특징",
+   "ENGLISH": "A special feature, a distinguishing feature"
+ },
+ {
+   "ID": 747,
+   "KOREAN": "선수",
+   "ENGLISH": "An athlete"
+ },
+ {
+   "ID": 748,
+   "KOREAN": "형식",
+   "ENGLISH": "A form, formality, mold"
+ },
+ {
+   "ID": 749,
+   "KOREAN": "마련하다",
+   "ENGLISH": "To plan, arrange"
+ },
+ {
+   "ID": 750,
+   "KOREAN": "반",
+   "ENGLISH": "Half"
+ },
+ {
+   "ID": 751,
+   "KOREAN": "발표하다",
+   "ENGLISH": "To announce"
+ },
+ {
+   "ID": 752,
+   "KOREAN": "주제",
+   "ENGLISH": "Subject, theme, topic"
+ },
+ {
+   "ID": 753,
+   "KOREAN": "걸치다",
+   "ENGLISH": "1) put a thing over or across 2) to range from A to B"
+ },
+ {
+   "ID": 754,
+   "KOREAN": "겪다",
+   "ENGLISH": "Experience or  undergo or  suffer"
+ },
+ {
+   "ID": 755,
+   "KOREAN": "관점",
+   "ENGLISH": "A point of view or a standpoint/outlook"
+ },
+ {
+   "ID": 756,
+   "KOREAN": "귀",
+   "ENGLISH": "Ear"
+ },
+ {
+   "ID": 757,
+   "KOREAN": "기본",
+   "ENGLISH": "A foundation"
+ },
+ {
+   "ID": 758,
+   "KOREAN": "미터",
+   "ENGLISH": "Meter"
+ },
+ {
+   "ID": 759,
+   "KOREAN": "사라지다",
+   "ENGLISH": "To disappear"
+ },
+ {
+   "ID": 760,
+   "KOREAN": "어떠하다",
+   "ENGLISH": "To be how"
+ },
+ {
+   "ID": 761,
+   "KOREAN": "감정",
+   "ENGLISH": "Feelings"
+ },
+ {
+   "ID": 762,
+   "KOREAN": "기억",
+   "ENGLISH": "A memory"
+ },
+ {
+   "ID": 763,
+   "KOREAN": "놈",
+   "ENGLISH": "A fellow"
+ },
+ {
+   "ID": 764,
+   "KOREAN": "인기",
+   "ENGLISH": "Popularity"
+ },
+ {
+   "ID": 765,
+   "KOREAN": "배",
+   "ENGLISH": "Abdomen"
+ },
+ {
+   "ID": 766,
+   "KOREAN": "아파트",
+   "ENGLISH": "Apartment"
+ },
+ {
+   "ID": 767,
+   "KOREAN": "가끔",
+   "ENGLISH": "Sometimes"
+ },
+ {
+   "ID": 768,
+   "KOREAN": "구성",
+   "ENGLISH": "Organization or  constitution , the framework of something"
+ },
+ {
+   "ID": 769,
+   "KOREAN": "술",
+   "ENGLISH": "Spoonful"
+ },
+ {
+   "ID": 770,
+   "KOREAN": "실제로",
+   "ENGLISH": "In reality"
+ },
+ {
+   "ID": 771,
+   "KOREAN": "짧다",
+   "ENGLISH": "Short, brief"
+ },
+ {
+   "ID": 772,
+   "KOREAN": "고맙다",
+   "ENGLISH": "To thank"
+ },
+ {
+   "ID": 773,
+   "KOREAN": "관리",
+   "ENGLISH": "Management or  administration"
+ },
+ {
+   "ID": 774,
+   "KOREAN": "그곳",
+   "ENGLISH": "That place"
+ },
+ {
+   "ID": 775,
+   "KOREAN": "보다",
+   "ENGLISH": "More than, greater than …."
+ },
+ {
+   "ID": 776,
+   "KOREAN": "비롯하다",
+   "ENGLISH": "begin,start"
+ },
+ {
+   "ID": 777,
+   "KOREAN": "과연",
+   "ENGLISH": "Just as one thought"
+ },
+ {
+   "ID": 778,
+   "KOREAN": "달리다",
+   "ENGLISH": "run, make do fast"
+ },
+ {
+   "ID": 779,
+   "KOREAN": "바쁘다",
+   "ENGLISH": "Busy"
+ },
+ {
+   "ID": 780,
+   "KOREAN": "이전",
+   "ENGLISH": "Former days/times"
+ },
+ {
+   "ID": 781,
+   "KOREAN": "인정하다",
+   "ENGLISH": "To acknowledge,authorize"
+ },
+ {
+   "ID": 782,
+   "KOREAN": "자",
+   "ENGLISH": "A person"
+ },
+ {
+   "ID": 783,
+   "KOREAN": "중앙",
+   "ENGLISH": "The middle and the heart"
+ },
+ {
+   "ID": 784,
+   "KOREAN": "나쁘다",
+   "ENGLISH": "To be bad"
+ },
+ {
+   "ID": 785,
+   "KOREAN": "불구하다",
+   "ENGLISH": "Deformity, malformation"
+ },
+ {
+   "ID": 786,
+   "KOREAN": "시키다",
+   "ENGLISH": "To make"
+ },
+ {
+   "ID": 787,
+   "KOREAN": "게임",
+   "ENGLISH": "Game"
+ },
+ {
+   "ID": 788,
+   "KOREAN": "국제",
+   "ENGLISH": "International"
+ },
+ {
+   "ID": 789,
+   "KOREAN": "그룹",
+   "ENGLISH": "Group"
+ },
+ {
+   "ID": 790,
+   "KOREAN": "인생",
+   "ENGLISH": "Life"
+ },
+ {
+   "ID": 791,
+   "KOREAN": "전통",
+   "ENGLISH": "tradition,convention"
+ },
+ {
+   "ID": 792,
+   "KOREAN": "기르다",
+   "ENGLISH": "Educate or  train or  cultivate"
+ },
+ {
+   "ID": 793,
+   "KOREAN": "잔",
+   "ENGLISH": "A cup, wine glass"
+ },
+ {
+   "ID": 794,
+   "KOREAN": "조사하다",
+   "ENGLISH": "To examine,investigate"
+ },
+ {
+   "ID": 795,
+   "KOREAN": "커다랗다",
+   "ENGLISH": "To be very big/large"
+ },
+ {
+   "ID": 796,
+   "KOREAN": "있다",
+   "ENGLISH": "To be"
+ },
+ {
+   "ID": 797,
+   "KOREAN": "시인",
+   "ENGLISH": "A poet"
+ },
+ {
+   "ID": 798,
+   "KOREAN": "언제",
+   "ENGLISH": "when,at what time"
+ },
+ {
+   "ID": 799,
+   "KOREAN": "외",
+   "ENGLISH": "Except, save for"
+ },
+ {
+   "ID": 800,
+   "KOREAN": "평가",
+   "ENGLISH": "Evaluation, appraisal"
+ },
+ {
+   "ID": 801,
+   "KOREAN": "내려오다",
+   "ENGLISH": "Come down"
+ },
+ {
+   "ID": 802,
+   "KOREAN": "위치",
+   "ENGLISH": "A position, a location"
+ },
+ {
+   "ID": 803,
+   "KOREAN": "줄이다",
+   "ENGLISH": "reduce,decrease"
+ },
+ {
+   "ID": 804,
+   "KOREAN": "가격",
+   "ENGLISH": "Price"
+ },
+ {
+   "ID": 805,
+   "KOREAN": "달라지다",
+   "ENGLISH": "To change, vary"
+ },
+ {
+   "ID": 806,
+   "KOREAN": "비다",
+   "ENGLISH": "To be empty, vacant"
+ },
+ {
+   "ID": 807,
+   "KOREAN": "삼국",
+   "ENGLISH": "Three countries"
+ },
+ {
+   "ID": 808,
+   "KOREAN": "손님",
+   "ENGLISH": "Customer"
+ },
+ {
+   "ID": 809,
+   "KOREAN": "원하다",
+   "ENGLISH": "To want"
+ },
+ {
+   "ID": 810,
+   "KOREAN": "통신",
+   "ENGLISH": "communications,correspondance"
+ },
+ {
+   "ID": 811,
+   "KOREAN": "확인하다",
+   "ENGLISH": "To confirm,corroborate"
+ },
+ {
+   "ID": 812,
+   "KOREAN": "모임",
+   "ENGLISH": "A group, a party"
+ },
+ {
+   "ID": 813,
+   "KOREAN": "수",
+   "ENGLISH": "The number of sth"
+ },
+ {
+   "ID": 814,
+   "KOREAN": "웃음",
+   "ENGLISH": "Laughter, a smile"
+ },
+ {
+   "ID": 815,
+   "KOREAN": "기계",
+   "ENGLISH": "An instrument or  a machine"
+ },
+ {
+   "ID": 816,
+   "KOREAN": "모양",
+   "ENGLISH": "signs,indications"
+ },
+ {
+   "ID": 817,
+   "KOREAN": "물질",
+   "ENGLISH": "matter,material"
+ },
+ {
+   "ID": 818,
+   "KOREAN": "아나운서",
+   "ENGLISH": "Announcer"
+ },
+ {
+   "ID": 819,
+   "KOREAN": "뉴스",
+   "ENGLISH": "News"
+ },
+ {
+   "ID": 820,
+   "KOREAN": "살아가다",
+   "ENGLISH": "Lead a life, get along"
+ },
+ {
+   "ID": 821,
+   "KOREAN": "펴다",
+   "ENGLISH": "Spread out, unfold"
+ },
+ {
+   "ID": 822,
+   "KOREAN": "배",
+   "ENGLISH": "Times, x-fold"
+ },
+ {
+   "ID": 823,
+   "KOREAN": "수업",
+   "ENGLISH": "school,teaching"
+ },
+ {
+   "ID": 824,
+   "KOREAN": "겨울",
+   "ENGLISH": "Winter"
+ },
+ {
+   "ID": 825,
+   "KOREAN": "종교",
+   "ENGLISH": "religion,a faith"
+ },
+ {
+   "ID": 826,
+   "KOREAN": "층",
+   "ENGLISH": "floor,grade,class"
+ },
+ {
+   "ID": 827,
+   "KOREAN": "자연스럽다",
+   "ENGLISH": "To be natural"
+ },
+ {
+   "ID": 828,
+   "KOREAN": "장",
+   "ENGLISH": "One piece of sth flat"
+ },
+ {
+   "ID": 829,
+   "KOREAN": "식사",
+   "ENGLISH": "A meal"
+ },
+ {
+   "ID": 830,
+   "KOREAN": "안다",
+   "ENGLISH": "To hold, embrace"
+ },
+ {
+   "ID": 831,
+   "KOREAN": "이해",
+   "ENGLISH": "Understanding"
+ },
+ {
+   "ID": 832,
+   "KOREAN": "잊다",
+   "ENGLISH": "To forget"
+ },
+ {
+   "ID": 833,
+   "KOREAN": "제시하다",
+   "ENGLISH": "To present"
+ },
+ {
+   "ID": 834,
+   "KOREAN": "반",
+   "ENGLISH": "Group, company, party"
+ },
+ {
+   "ID": 835,
+   "KOREAN": "불과하다",
+   "ENGLISH": "Nothing more than"
+ },
+ {
+   "ID": 836,
+   "KOREAN": "혹은",
+   "ENGLISH": "If that’s not the case"
+ },
+ {
+   "ID": 837,
+   "KOREAN": "엄청나다",
+   "ENGLISH": "To be absurd,wild,terribly large"
+ },
+ {
+   "ID": 838,
+   "KOREAN": "편",
+   "ENGLISH": "Direction, way (the wind is blowing that ~)"
+ },
+ {
+   "ID": 839,
+   "KOREAN": "텔레비전",
+   "ENGLISH": "Television"
+ },
+ {
+   "ID": 840,
+   "KOREAN": "파악하다",
+   "ENGLISH": "Grasp, seize, understand"
+ },
+ {
+   "ID": 841,
+   "KOREAN": "편",
+   "ENGLISH": "Compilation, editing"
+ },
+ {
+   "ID": 842,
+   "KOREAN": "실천",
+   "ENGLISH": "Practice"
+ },
+ {
+   "ID": 843,
+   "KOREAN": "노력하다",
+   "ENGLISH": "To try hard, strive"
+ },
+ {
+   "ID": 844,
+   "KOREAN": "보호",
+   "ENGLISH": "protection,shelter"
+ },
+ {
+   "ID": 845,
+   "KOREAN": "씻다",
+   "ENGLISH": "To wash,cleanse"
+ },
+ {
+   "ID": 846,
+   "KOREAN": "늦다",
+   "ENGLISH": "To be late (time)"
+ },
+ {
+   "ID": 847,
+   "KOREAN": "이웃",
+   "ENGLISH": "The neighborhood"
+ },
+ {
+   "ID": 848,
+   "KOREAN": "편지",
+   "ENGLISH": "Letter"
+ },
+ {
+   "ID": 849,
+   "KOREAN": "공동",
+   "ENGLISH": "Association or  union or  collaboration"
+ },
+ {
+   "ID": 850,
+   "KOREAN": "까닭",
+   "ENGLISH": "Reason"
+ },
+ {
+   "ID": 851,
+   "KOREAN": "방안",
+   "ENGLISH": "A plan, scheme"
+ },
+ {
+   "ID": 852,
+   "KOREAN": "센티미터",
+   "ENGLISH": "Centimeter"
+ },
+ {
+   "ID": 853,
+   "KOREAN": "팔",
+   "ENGLISH": "An arm"
+ },
+ {
+   "ID": 854,
+   "KOREAN": "분명하다",
+   "ENGLISH": "To be clear/obvious"
+ },
+ {
+   "ID": 855,
+   "KOREAN": "분석",
+   "ENGLISH": "Analysis"
+ },
+ {
+   "ID": 856,
+   "KOREAN": "소녀",
+   "ENGLISH": "A young girl"
+ },
+ {
+   "ID": 857,
+   "KOREAN": "지나가다",
+   "ENGLISH": "To pass, elapse"
+ },
+ {
+   "ID": 858,
+   "KOREAN": "차",
+   "ENGLISH": "order,sequence,degree"
+ },
+ {
+   "ID": 859,
+   "KOREAN": "상품",
+   "ENGLISH": "Product"
+ },
+ {
+   "ID": 860,
+   "KOREAN": "설명",
+   "ENGLISH": "Explanation"
+ },
+ {
+   "ID": 861,
+   "KOREAN": "훌륭하다",
+   "ENGLISH": "To be excellent"
+ },
+ {
+   "ID": 862,
+   "KOREAN": "관계자",
+   "ENGLISH": "The interested or affected parties"
+ },
+ {
+   "ID": 863,
+   "KOREAN": "새로",
+   "ENGLISH": "newly,anew"
+ },
+ {
+   "ID": 864,
+   "KOREAN": "세",
+   "ENGLISH": "Age in years"
+ },
+ {
+   "ID": 865,
+   "KOREAN": "이어지다",
+   "ENGLISH": "Get joined, be connected"
+ },
+ {
+   "ID": 866,
+   "KOREAN": "티브이",
+   "ENGLISH": "TV"
+ },
+ {
+   "ID": 867,
+   "KOREAN": "봄",
+   "ENGLISH": "Spring"
+ },
+ {
+   "ID": 868,
+   "KOREAN": "종류",
+   "ENGLISH": "kind,sort,species"
+ },
+ {
+   "ID": 869,
+   "KOREAN": "낮다",
+   "ENGLISH": "Be low"
+ },
+ {
+   "ID": 870,
+   "KOREAN": "어깨",
+   "ENGLISH": "Shoulder"
+ },
+ {
+   "ID": 871,
+   "KOREAN": "부부",
+   "ENGLISH": "Man and wife"
+ },
+ {
+   "ID": 872,
+   "KOREAN": "오래",
+   "ENGLISH": "Long, for a long time"
+ },
+ {
+   "ID": 873,
+   "KOREAN": "요구",
+   "ENGLISH": "A demand, claim, request"
+ },
+ {
+   "ID": 874,
+   "KOREAN": "키우다",
+   "ENGLISH": "To raise, bring up, rear"
+ },
+ {
+   "ID": 875,
+   "KOREAN": "눕다",
+   "ENGLISH": "Lie down"
+ },
+ {
+   "ID": 876,
+   "KOREAN": "발전하다",
+   "ENGLISH": "To develop, grow"
+ },
+ {
+   "ID": 877,
+   "KOREAN": "여행",
+   "ENGLISH": "Trip"
+ },
+ {
+   "ID": 878,
+   "KOREAN": "죽음",
+   "ENGLISH": "Death"
+ },
+ {
+   "ID": 879,
+   "KOREAN": "고통",
+   "ENGLISH": "Suffering or  agony"
+ },
+ {
+   "ID": 880,
+   "KOREAN": "공",
+   "ENGLISH": "Ball"
+ },
+ {
+   "ID": 881,
+   "KOREAN": "어울리다",
+   "ENGLISH": "To be becoming, suiting"
+ },
+ {
+   "ID": 882,
+   "KOREAN": "오월",
+   "ENGLISH": "May"
+ },
+ {
+   "ID": 883,
+   "KOREAN": "쉬다",
+   "ENGLISH": "to relax, take a break"
+ },
+ {
+   "ID": 884,
+   "KOREAN": "알리다",
+   "ENGLISH": "To inform, tell a person"
+ },
+ {
+   "ID": 885,
+   "KOREAN": "차다",
+   "ENGLISH": "To be full, to be filled with (PASSIVE)"
+ },
+ {
+   "ID": 886,
+   "KOREAN": "과",
+   "ENGLISH": "A lesson or  a section or  a department"
+ },
+ {
+   "ID": 887,
+   "KOREAN": "멀리",
+   "ENGLISH": "Far away"
+ },
+ {
+   "ID": 888,
+   "KOREAN": "빼다",
+   "ENGLISH": "Pull out, extract"
+ },
+ {
+   "ID": 889,
+   "KOREAN": "예정",
+   "ENGLISH": "A program, schedule"
+ },
+ {
+   "ID": 890,
+   "KOREAN": "오빠",
+   "ENGLISH": "Older brother"
+ },
+ {
+   "ID": 891,
+   "KOREAN": "즐겁다",
+   "ENGLISH": "Be pleasant,agreeable"
+ },
+ {
+   "ID": 892,
+   "KOREAN": "한계",
+   "ENGLISH": "Boundary, limits"
+ },
+ {
+   "ID": 893,
+   "KOREAN": "흔히",
+   "ENGLISH": "Generally, commonly ; often"
+ },
+ {
+   "ID": 894,
+   "KOREAN": "바탕",
+   "ENGLISH": "Natural disposition ; to go all out in a fight, 아주 크게 싸우다 ; the background"
+ },
+ {
+   "ID": 895,
+   "KOREAN": "사월",
+   "ENGLISH": "April"
+ },
+ {
+   "ID": 896,
+   "KOREAN": "싸우다",
+   "ENGLISH": "To fight"
+ },
+ {
+   "ID": 897,
+   "KOREAN": "예쁘다",
+   "ENGLISH": "Pretty, lovely"
+ },
+ {
+   "ID": 898,
+   "KOREAN": "갈등",
+   "ENGLISH": "Conflict or  troubles"
+ },
+ {
+   "ID": 899,
+   "KOREAN": "느껴지다",
+   "ENGLISH": "Feel"
+ },
+ {
+   "ID": 900,
+   "KOREAN": "의지",
+   "ENGLISH": "will,volition"
+ },
+ {
+   "ID": 901,
+   "KOREAN": "전문",
+   "ENGLISH": "A specialty"
+ },
+ {
+   "ID": 902,
+   "KOREAN": "정확하다",
+   "ENGLISH": "To be exact"
+ },
+ {
+   "ID": 903,
+   "KOREAN": "초기",
+   "ENGLISH": "The early days, the initial period"
+ },
+ {
+   "ID": 904,
+   "KOREAN": "나중",
+   "ENGLISH": "The last, the latter part"
+ },
+ {
+   "ID": 905,
+   "KOREAN": "맛있다",
+   "ENGLISH": "Delicious"
+ },
+ {
+   "ID": 906,
+   "KOREAN": "며칠",
+   "ENGLISH": "How many days"
+ },
+ {
+   "ID": 907,
+   "KOREAN": "쓴 맛",
+   "ENGLISH": "see 6000"
+ },
+ {
+   "ID": 908,
+   "KOREAN": "찾아오다",
+   "ENGLISH": "To go meet somebody, to go get sth"
+ },
+ {
+   "ID": 909,
+   "KOREAN": "미",
+   "ENGLISH": "beauty,grace"
+ },
+ {
+   "ID": 910,
+   "KOREAN": "사용",
+   "ENGLISH": "use,emply"
+ },
+ {
+   "ID": 911,
+   "KOREAN": "시선",
+   "ENGLISH": "one’s line of vision"
+ },
+ {
+   "ID": 912,
+   "KOREAN": "아무런",
+   "ENGLISH": "No sort of"
+ },
+ {
+   "ID": 913,
+   "KOREAN": "언론",
+   "ENGLISH": "A speech, discussion"
+ },
+ {
+   "ID": 914,
+   "KOREAN": "투자",
+   "ENGLISH": "Investment"
+ },
+ {
+   "ID": 915,
+   "KOREAN": "지원",
+   "ENGLISH": "helping, supporting, aiding"
+ },
+ {
+   "ID": 916,
+   "KOREAN": "결정하다",
+   "ENGLISH": "To decide"
+ },
+ {
+   "ID": 917,
+   "KOREAN": "경영",
+   "ENGLISH": "Management or  administration"
+ },
+ {
+   "ID": 918,
+   "KOREAN": "목표",
+   "ENGLISH": "goal,object"
+ },
+ {
+   "ID": 919,
+   "KOREAN": "성장",
+   "ENGLISH": "Growth"
+ },
+ {
+   "ID": 920,
+   "KOREAN": "숲",
+   "ENGLISH": "Forest"
+ },
+ {
+   "ID": 921,
+   "KOREAN": "없어지다",
+   "ENGLISH": "To lose, get lost"
+ },
+ {
+   "ID": 922,
+   "KOREAN": "작년",
+   "ENGLISH": "Last year"
+ },
+ {
+   "ID": 923,
+   "KOREAN": "내려가다",
+   "ENGLISH": "To go down"
+ },
+ {
+   "ID": 924,
+   "KOREAN": "미치다",
+   "ENGLISH": "To reach"
+ },
+ {
+   "ID": 925,
+   "KOREAN": "새벽",
+   "ENGLISH": "dawn,daybreak"
+ },
+ {
+   "ID": 926,
+   "KOREAN": "쓰레기",
+   "ENGLISH": "Garbage"
+ },
+ {
+   "ID": 927,
+   "KOREAN": "얼른",
+   "ENGLISH": "Fast, quickly, rapidly"
+ },
+ {
+   "ID": 928,
+   "KOREAN": "임금",
+   "ENGLISH": "Wages, pay"
+ },
+ {
+   "ID": 929,
+   "KOREAN": "피해",
+   "ENGLISH": "Damage"
+ },
+ {
+   "ID": 930,
+   "KOREAN": "한",
+   "ENGLISH": "A limit"
+ },
+ {
+   "ID": 931,
+   "KOREAN": "무섭다",
+   "ENGLISH": "fearful,dreadful"
+ },
+ {
+   "ID": 932,
+   "KOREAN": "직장",
+   "ENGLISH": "one’s work place"
+ },
+ {
+   "ID": 933,
+   "KOREAN": "참다",
+   "ENGLISH": "Bear, endure"
+ },
+ {
+   "ID": 934,
+   "KOREAN": "크기",
+   "ENGLISH": "Size, dimensions"
+ },
+ {
+   "ID": 935,
+   "KOREAN": "고기",
+   "ENGLISH": "Meat"
+ },
+ {
+   "ID": 936,
+   "KOREAN": "남기다",
+   "ENGLISH": "To leave behind"
+ },
+ {
+   "ID": 937,
+   "KOREAN": "서양",
+   "ENGLISH": "The Western countries"
+ },
+ {
+   "ID": 938,
+   "KOREAN": "주요",
+   "ENGLISH": "The major, the chief thing"
+ },
+ {
+   "ID": 939,
+   "KOREAN": "가져오다",
+   "ENGLISH": "To bring or  get"
+ },
+ {
+   "ID": 940,
+   "KOREAN": "냄새",
+   "ENGLISH": "Smell"
+ },
+ {
+   "ID": 941,
+   "KOREAN": "부드럽다",
+   "ENGLISH": "soft,tender"
+ },
+ {
+   "ID": 942,
+   "KOREAN": "여기다",
+   "ENGLISH": "Think, consider as"
+ },
+ {
+   "ID": 943,
+   "KOREAN": "이",
+   "ENGLISH": "this,this thing"
+ },
+ {
+   "ID": 944,
+   "KOREAN": "공연",
+   "ENGLISH": "A public performance"
+ },
+ {
+   "ID": 945,
+   "KOREAN": "남녀",
+   "ENGLISH": "Man and woman"
+ },
+ {
+   "ID": 946,
+   "KOREAN": "내놓다",
+   "ENGLISH": "Put out, take out"
+ },
+ {
+   "ID": 947,
+   "KOREAN": "만들어지다",
+   "ENGLISH": "Make, create"
+ },
+ {
+   "ID": 948,
+   "KOREAN": "속도",
+   "ENGLISH": "Speed"
+ },
+ {
+   "ID": 949,
+   "KOREAN": "심각하다",
+   "ENGLISH": "seriousness,gravity"
+ },
+ {
+   "ID": 950,
+   "KOREAN": "준비",
+   "ENGLISH": "Preparation"
+ },
+ {
+   "ID": 951,
+   "KOREAN": "계속되다",
+   "ENGLISH": "To continue"
+ },
+ {
+   "ID": 952,
+   "KOREAN": "구월",
+   "ENGLISH": "September"
+ },
+ {
+   "ID": 953,
+   "KOREAN": "맑다",
+   "ENGLISH": "clean,pure"
+ },
+ {
+   "ID": 954,
+   "KOREAN": "소년",
+   "ENGLISH": "A boy"
+ },
+ {
+   "ID": 955,
+   "KOREAN": "소식",
+   "ENGLISH": "News, information"
+ },
+ {
+   "ID": 956,
+   "KOREAN": "유월",
+   "ENGLISH": "June"
+ },
+ {
+   "ID": 957,
+   "KOREAN": "작용",
+   "ENGLISH": "Application"
+ },
+ {
+   "ID": 958,
+   "KOREAN": "허리",
+   "ENGLISH": "The waist, the small of the back"
+ },
+ {
+   "ID": 959,
+   "KOREAN": "골",
+   "ENGLISH": "Goal"
+ },
+ {
+   "ID": 960,
+   "KOREAN": "공업",
+   "ENGLISH": "The industry or  manufacturing industry"
+ },
+ {
+   "ID": 961,
+   "KOREAN": "그중",
+   "ENGLISH": "Among the rest of them"
+ },
+ {
+   "ID": 962,
+   "KOREAN": "노인",
+   "ENGLISH": "Old person"
+ },
+ {
+   "ID": 963,
+   "KOREAN": "벌다",
+   "ENGLISH": "To earn (money) ; (2) to invite, to bring onto oneself"
+ },
+ {
+   "ID": 964,
+   "KOREAN": "살리다",
+   "ENGLISH": "1) revive, bring around, restore to life  2) save,spare,rescue"
+ },
+ {
+   "ID": 965,
+   "KOREAN": "새",
+   "ENGLISH": "A bird"
+ },
+ {
+   "ID": 966,
+   "KOREAN": "영어",
+   "ENGLISH": "The english language"
+ },
+ {
+   "ID": 967,
+   "KOREAN": "출신",
+   "ENGLISH": "A native, place one is from"
+ },
+ {
+   "ID": 968,
+   "KOREAN": "결정",
+   "ENGLISH": "A decision or  determination"
+ },
+ {
+   "ID": 969,
+   "KOREAN": "경향",
+   "ENGLISH": "Tendency or  trend"
+ },
+ {
+   "ID": 970,
+   "KOREAN": "기록",
+   "ENGLISH": "A record or  a document"
+ },
+ {
+   "ID": 971,
+   "KOREAN": "나름",
+   "ENGLISH": "Depending on"
+ },
+ {
+   "ID": 972,
+   "KOREAN": "대답하다",
+   "ENGLISH": "To answer, reply"
+ },
+ {
+   "ID": 973,
+   "KOREAN": "반면",
+   "ENGLISH": "One side"
+ },
+ {
+   "ID": 974,
+   "KOREAN": "썰다",
+   "ENGLISH": "Chip, mince,dice"
+ },
+ {
+   "ID": 975,
+   "KOREAN": "움직임",
+   "ENGLISH": "movement,motion,activity"
+ },
+ {
+   "ID": 976,
+   "KOREAN": "이미지",
+   "ENGLISH": "Image"
+ },
+ {
+   "ID": 977,
+   "KOREAN": "터지다",
+   "ENGLISH": "Break, be torn, get away from"
+ },
+ {
+   "ID": 978,
+   "KOREAN": "특성",
+   "ENGLISH": "A special/unique characteristic (individuality making, peculiarity)"
+ },
+ {
+   "ID": 979,
+   "KOREAN": "교장",
+   "ENGLISH": "Principal"
+ },
+ {
+   "ID": 980,
+   "KOREAN": "벗다",
+   "ENGLISH": "Take off, remove"
+ },
+ {
+   "ID": 981,
+   "KOREAN": "업무",
+   "ENGLISH": "Buisness, duty"
+ },
+ {
+   "ID": 982,
+   "KOREAN": "입시",
+   "ENGLISH": "An entrance examination"
+ },
+ {
+   "ID": 983,
+   "KOREAN": "준비하다",
+   "ENGLISH": "To prepare"
+ },
+ {
+   "ID": 984,
+   "KOREAN": "청소년",
+   "ENGLISH": "Young boys and girls, teenagers"
+ },
+ {
+   "ID": 985,
+   "KOREAN": "응",
+   "ENGLISH": "Yes, i see!"
+ },
+ {
+   "ID": 986,
+   "KOREAN": "이기다",
+   "ENGLISH": "To win"
+ },
+ {
+   "ID": 987,
+   "KOREAN": "찾아보다",
+   "ENGLISH": "To go meet somebody"
+ },
+ {
+   "ID": 988,
+   "KOREAN": "취하다",
+   "ENGLISH": "To adopt, assume, take"
+ },
+ {
+   "ID": 989,
+   "KOREAN": "다루다",
+   "ENGLISH": "Treat, deal with"
+ },
+ {
+   "ID": 990,
+   "KOREAN": "달",
+   "ENGLISH": "The moon"
+ },
+ {
+   "ID": 991,
+   "KOREAN": "사장",
+   "ENGLISH": "Company boss"
+ },
+ {
+   "ID": 992,
+   "KOREAN": "삼월",
+   "ENGLISH": "March"
+ },
+ {
+   "ID": 993,
+   "KOREAN": "그렇지만",
+   "ENGLISH": "But or  however"
+ },
+ {
+   "ID": 994,
+   "KOREAN": "선배",
+   "ENGLISH": "one’s senior"
+ },
+ {
+   "ID": 995,
+   "KOREAN": "업체",
+   "ENGLISH": "A business enterprise"
+ },
+ {
+   "ID": 996,
+   "KOREAN": "키",
+   "ENGLISH": "stature,height"
+ },
+ {
+   "ID": 997,
+   "KOREAN": "구하다",
+   "ENGLISH": "1) To buy or  purchase or  2) look for or  seek or  want"
+ },
+ {
+   "ID": 998,
+   "KOREAN": "국회",
+   "ENGLISH": "The National Assembly"
+ },
+ {
+   "ID": 999,
+   "KOREAN": "그러므로",
+   "ENGLISH": "So or  hence or  therefore"
+ },
+ {
+   "ID": 1000,
+   "KOREAN": "포함하다",
+   "ENGLISH": "To include,contain"
+ }
+]
