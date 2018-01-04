@@ -169,3 +169,7 @@ ol {
   margin-bottom: 3em;
   width: 100%;
 }
+
+button {
+  @include button-white;
+}

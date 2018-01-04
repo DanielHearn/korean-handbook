@@ -594,6 +594,19 @@ ol {
   margin-bottom: 3em;
   width: 100%; }
 
+button {
+  font-size: 1.15em;
+  font-weight: 400;
+  color: #222;
+  background: #fefefe;
+  border: none;
+  -webkit-appearance: none;
+  padding: 0.75em 1.5em;
+  border-radius: 0.2em; }
+  button:hover {
+    background: #f3f3f3;
+    cursor: pointer; }
+
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif; }

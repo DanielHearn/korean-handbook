@@ -1,8 +1,8 @@
 var app = new Vue({
   el: '#app',
   data: {
-     word: 'ㅁ',
-     korean: '용국',
+     word: 'Loading English Word',
+     korean: 'Loading Korean Word',
      entryCount: 1000,
   },
   methods: {

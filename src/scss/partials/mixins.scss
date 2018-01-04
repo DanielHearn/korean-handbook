@@ -137,3 +137,16 @@
   flex-direction: row;
   justify-content: center;
 }
+
+@mixin button-white {
+  @include content-text;
+  background: $white;
+  border: none;
+  -webkit-appearance: none;
+  padding: 0.75em 1.5em;
+  border-radius: 0.2em;
+  &:hover {
+    background: $grey;
+    cursor: pointer;
+  }
+}
