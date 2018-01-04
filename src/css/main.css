@@ -312,11 +312,6 @@ ol {
   font-weight: 400;
   color: #222; }
 
-#generatedWord {
-  color: #fefefe; }
-  #generatedWord p {
-    color: #fefefe; }
-
 .content__blocklist {
   list-style: none;
   padding-left: 0;
@@ -598,14 +593,69 @@ button {
   font-size: 1.15em;
   font-weight: 400;
   color: #222;
+  font-family: 'Nunito', sans-serif;
   background: #fefefe;
   border: none;
+  font-weight: 600;
+  color: #595EE6;
   -webkit-appearance: none;
-  padding: 0.75em 1.5em;
+  padding: 0.6em 1.3em;
   border-radius: 0.2em; }
   button:hover {
     background: #f3f3f3;
     cursor: pointer; }
+
+#generatedWord {
+  padding: 1.5em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#generatedWord_korean {
+  font-weight: 600;
+  color: #fefefe;
+  text-align: center;
+  font-size: 1.85em; }
+
+#generatedWord_english {
+  font-weight: 600;
+  color: #fefefe;
+  text-align: center;
+  font-size: 1.5em; }
+
+.pulseLoader.hideLoader {
+  display: none; }
+
+.pulseLoader {
+  display: block;
+  width: 4em;
+  height: 4em;
+  position: relative;
+  top: 35%; }
+  .pulseLoader .pulse {
+    width: 4em;
+    height: 4em;
+    border-radius: 4em;
+    position: absolute;
+    background-color: white;
+    animation: pulseanim 1.2s ease-in-out infinite;
+    transform: scale(0);
+    outline: 1px solid transparent; }
+    .pulseLoader .pulse:nth-child(2) {
+      animation-delay: 0.22s; }
+
+@keyframes pulseanim {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1);
+    opacity: 0; } }
+
+@media screen and (max-height: 30em) {
+  #generatedWord {
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-around; } }
 
 body {
   margin: 0;

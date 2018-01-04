@@ -66,14 +66,12 @@
   }
 }
 
-
 @mixin section-title {
   font-size: $section-title-size;
   font-weight: 700;
   color: $dark;
   text-align: center;
 }
-
 
 @mixin content-title {
   font-size: $content-title-size;
@@ -140,13 +138,22 @@
 
 @mixin button-white {
   @include content-text;
+  font-family: 'Nunito', sans-serif;
   background: $white;
   border: none;
+  font-weight: 600;
+  color: $accent;
   -webkit-appearance: none;
-  padding: 0.75em 1.5em;
+  padding: 0.6em 1.3em;
   border-radius: 0.2em;
   &:hover {
     background: $grey;
     cursor: pointer;
   }
+}
+
+@mixin random-text {
+  font-weight: 600;
+  color: $white;
+  text-align: center;
 }

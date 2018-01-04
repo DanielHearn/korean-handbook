@@ -13,13 +13,6 @@ ol {
   @include content-text;
 }
 
-#generatedWord {
-  color: $white;
-  p {
-    color: $white;
-  }
-}
-
 .content__blocklist {
   @include list-wrap;
   .blocklist__item--12vertical {
