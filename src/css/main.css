@@ -83,7 +83,7 @@
     .nav .nav__link:hover:before {
       visibility: visible;
       transform: scaleX(1); }
-  .nav .nav__link--reference {
+  .nav .nav__link--focused {
     font-size: 1.2em;
     font-weight: 700;
     margin-left: 0.8em;
@@ -91,11 +91,10 @@
     transition: all 0.2s;
     color: #fefefe;
     background: #595EE6;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding: 0.2em 0.6em;
     border-radius: 0.4em;
     text-decoration: none; }
-    .nav .nav__link--reference:visited {
+    .nav .nav__link--focused:visited {
       color: #fefefe;
       text-decoration: none; }
 
@@ -119,9 +118,9 @@
       color: #595EE6; }
     .nav--white .nav__link:before {
       background: #595EE6; }
-  .nav--white .nav__link--reference {
+  .nav--white .nav__link--focused {
     background: #595EE6; }
-    .nav--white .nav__link--reference:visited {
+    .nav--white .nav__link--focused:visited {
       color: #fefefe; }
   .nav--white .button--overlay span, .nav--white .button--overlay span:before, .nav--white .button--overlay span:after {
     background: #595EE6; }
@@ -136,9 +135,10 @@
       color: #fefefe; }
     .nav--purple .nav__link:before {
       background: #fefefe; }
-  .nav--purple .nav__link--reference {
-    background: #fefefe; }
-    .nav--purple .nav__link--reference:visited {
+  .nav--purple .nav__link--focused {
+    background: #fefefe;
+    color: #595EE6; }
+    .nav--purple .nav__link--focused:visited {
       color: #595EE6; }
   .nav--purple .button--overlay span, .nav--purple .button--overlay span:before, .nav--purple .button--overlay span:after {
     background: #fefefe; }

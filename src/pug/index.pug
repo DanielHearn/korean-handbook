@@ -15,7 +15,7 @@ html
           li
             a.overlay__link.scroll(href="#rules",  data-scroll, @click="overlay()") Rules
           li
-            a.overlay__link.scroll(href="#words",  data-scroll, @click="overlay()") Words
+            a.overlay__link.scroll(href="/random.html",  data-scroll, @click="overlay()") Random Words
       nav.nav
         a.button--overlay(@click="overlay()")
           span
@@ -26,7 +26,7 @@ html
           a.nav__link.scroll(href="#consonants",  data-scroll) Consonants  
           a.nav__link.scroll(href="#vowels",  data-scroll) Vowels  
           a.nav__link.scroll(href="#rules",  data-scroll) Rules  
-          a.nav__link.scroll(href="#words",  data-scroll) Words 
+          a.nav__link--focused.scroll(href="/random.html",  data-scroll) Random Words 
       main#app
         section.intro#home
           section.intro__content
