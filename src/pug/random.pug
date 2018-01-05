@@ -20,12 +20,12 @@ html
           section.intro__content
             h1.intro__title Random Korean Words
             h2.intro__subheading Click below to generate a random Korean word
-            div#generatedWord
+            div#genWord
               .pulseLoader(v-bind:class="{ hideLoader: dbLoaded }")
                 .pulse
                 .pulse
-              h2#generatedWord_korean {{word}}
-              h3#generatedWord_english {{korean}}
+              h2#genWord__korean(v-bind:class="{ visible: wordVisible }") {{word}}
+              h3#genWord__english(v-bind:class="{ visible: wordVisible }") {{korean}}
             button(@click="generateWord()") Generate Word
         include includes/footer.pug
 

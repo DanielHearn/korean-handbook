@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
-@media screen and (max-width: 37em) {
+@media screen and (max-width: 45em) {
   .hangul__content .content__koreanList .koreanlist__item {
     padding: 0.75em; }
   .intro .intro__content .intro__title {
@@ -11,7 +11,7 @@
   .content__wordList .wordList__word {
     width: 100%; } }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 45em) {
   .button--overlay {
     display: none; }
   .body .overlay.active {
@@ -605,23 +605,28 @@ button {
     background: #f3f3f3;
     cursor: pointer; }
 
-#generatedWord {
+#genWord {
   padding: 1.5em 0;
   display: flex;
   flex-direction: column;
   align-items: center; }
 
-#generatedWord_korean {
+#genWord__korean {
   font-weight: 600;
   color: #fefefe;
   text-align: center;
+  display: none;
   font-size: 1.85em; }
 
-#generatedWord_english {
+#genWord__english {
   font-weight: 600;
   color: #fefefe;
   text-align: center;
+  display: none;
   font-size: 1.5em; }
+
+.visible {
+  display: block !important; }
 
 .pulseLoader.hideLoader {
   display: none; }

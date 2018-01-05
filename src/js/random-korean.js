@@ -6,11 +6,12 @@ var app = new Vue({
      korean: '',
      wordCount: 0,
      dbLoaded: false,
+     wordVisible: true,
      prevWordID: [],
   },
   methods: {
     initDB () {
-      var config = {
+      const config = {
         apiKey: 'AIzaSyAL7PmrjeNVvwniFOL3U-ShJK4jHZ2t0eg',
         authDomain: 'korean-words.firebaseapp.com',
         databaseURL: 'https://korean-words.firebaseio.com',
@@ -19,23 +20,36 @@ var app = new Vue({
         messagingSenderId: '542877320049'
       };
       firebase.initializeApp(config);
-      var database = firebase.database();
+      let database = firebase.database();
+      this.getWordCount();
+    },
+    getWordCount () {
+      let retrieveWordCount = new Promise((resolve, reject) => {
+        let data = this;
+        return firebase.database().ref('/' + 'wordCount').once('value').then(function(snapshot) {
+          data.wordCount = snapshot.val();
+          if(data.wordCount > 0) {
+            resolve();
+          } else {
+            reject();
+          }
+        });
+      });
+      retrieveWordCount.then(
+        () => {
+          this.dbLoaded = true;
+          this.generateWord();
+        },
+        () => {
+          this.dbLoaded = true;
+          this.korean = "Database cannot be reached";
+        }
+      );
     },
     overlay () {
       document.querySelector('.overlay').classList.toggle('active');
       document.querySelector('.button--overlay').classList.toggle('active');
       document.querySelector('.body').classList.toggle('noscroll');
-    },
-    handleScroll () {
-      var nav = document.querySelector('nav');
-      var height = window.innerHeight - 75;
-      if (window.pageYOffset > height) {
-          nav.classList.add('nav--purple');
-          nav.classList.remove('nav--white');
-      } else {
-          nav.classList.add('nav--white');
-          nav.classList.remove('nav--purple');
-      }
     },
     async generateWord () {
       const rand = Math.floor(Math.random() * this.wordCount);
@@ -57,31 +71,11 @@ var app = new Vue({
         data.id = key;
         data.word = entry.KOREAN;
         data.korean = entry.ENGLISH;
+        data.wordVisible = true;
       });
     }
   },
   created () {
-    window.addEventListener('scroll', this.handleScroll);
-    this.handleScroll();
     this.initDB();
-
-    let retrieveWordCount = new Promise((resolve, reject) => {
-      let data = this;
-      return firebase.database().ref('/' + 'wordCount').once('value').then(function(snapshot) {
-        data.wordCount = snapshot.val();
-        if(data.wordCount > 0) {
-          resolve();
-        } else {
-          reject();
-        }
-      });
-    });
-    retrieveWordCount.then(
-      () => {
-        this.dbLoaded = true;
-        this.generateWord();
-      },
-      () => { statusText.ENGLISH = "Database cannot be reached"; }
-    );
   }
 })

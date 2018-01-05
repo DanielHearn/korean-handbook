@@ -1,18 +1,22 @@
-#generatedWord {
+#genWord {
   padding: 1.5em 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#generatedWord_korean {
+#genWord__korean {
   @include random-text;
   font-size: 1.85em;
 }
 
-#generatedWord_english {
+#genWord__english {
   @include random-text;
   font-size: 1.5em;
+}
+
+.visible {
+  display: block !important;
 }
 
 .pulseLoader.hideLoader {
