@@ -15,7 +15,7 @@ html
           li
             a.overlay__link.scroll(href="#rules",  data-scroll, @click="overlay()") Rules
           li
-            a.overlay__link.scroll(href="/random.html",  data-scroll, @click="overlay()") Random Words
+            a.overlay__link.scroll(href="/random",  data-scroll, @click="overlay()") Random Words
       nav.nav
         a.button--overlay(@click="overlay()")
           span
@@ -26,7 +26,7 @@ html
           a.nav__link.scroll(href="#consonants",  data-scroll) Consonants  
           a.nav__link.scroll(href="#vowels",  data-scroll) Vowels  
           a.nav__link.scroll(href="#rules",  data-scroll) Rules  
-          a.nav__link--focused.scroll(href="/random.html",  data-scroll) Random Words 
+          a.nav__link--focused.scroll(href="/random",  data-scroll) Random Words 
       main#app
         section.intro#home
           section.intro__content
@@ -49,7 +49,7 @@ html
                a.content__link(href="https://github.com/DanielHearn/Korean-Handbook") Github
                |  if you would like to contribute content (I would especially appreciate audio).
               p.content__text I also developed a random korean word generator available 
-                a.content__link(href="../random.html") here
+                a.content__link(href="../random") here
                 | .
               p.content__text But enough with the introduction, lets get started!
           section.content#intro
@@ -190,7 +190,7 @@ html
             p.content__text
               | Next use the consonants and vowels you just learnt and try reading various beginner words and phrases with just hangul and without romanizations.
             p.content__text You can also test your new knowledge on my random korean word generator available 
-              a.content__link(href="../random.html") here
+              a.content__link(href="../random") here
                 | .
             ul.content__wordList
               li.wordList__word(v-for="word in words")

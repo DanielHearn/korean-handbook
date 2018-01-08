@@ -27,9 +27,7 @@
     "email": "blaine.bublitz@gmail.com"
   },
   "_npmVersion": "2.15.2",
-  "_phantomChildren": {
-    "homedir-polyfill": "1.0.1"
-  },
+  "_phantomChildren": {},
   "_requested": {
     "raw": "fined@^1.0.1",
     "scope": null,

@@ -17,10 +17,11 @@
   },
   "homepage": "https://github.com/DanielHearn/Korean-Handbook#readme",
   "dependencies": {
+    "async": "^2.6.0",
     "base64url": "^2.0.0",
     "browser-sync": "^2.18.13",
     "del": "^3.0.0",
-    "gh-pages": "^1.0.0",
+    "gh-pages": "^1.1.0",
     "gulp-cache": "^0.4.6",
     "gulp-cssnano": "^2.1.2",
     "gulp-if": "^2.0.2",
@@ -29,8 +30,10 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-useref": "^3.1.2",
+    "internal": "^1.0.8",
     "path": "^0.12.7",
     "run-sequence": "^2.2.0",
+    "slice": "0.0.5",
     "smooth-scroll": "^12.1.5",
     "vue-smooth-scroll": "^1.0.13"
   },
