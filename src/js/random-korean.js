@@ -12,12 +12,12 @@ var app = new Vue({
   methods: {
     initDB () {
       const config = {
-        apiKey: 'AIzaSyAL7PmrjeNVvwniFOL3U-ShJK4jHZ2t0eg',
-        authDomain: 'korean-words.firebaseapp.com',
-        databaseURL: 'https://korean-words.firebaseio.com',
-        projectId: 'korean-words',
-        storageBucket: 'korean-words.appspot.com',
-        messagingSenderId: '542877320049'
+        apiKey: "AIzaSyDpdCyIU1xaKISrFtnjBN52xKwoisFQN1Q",
+        authDomain: "korean-words-2.firebaseapp.com",
+        databaseURL: "https://korean-words-2.firebaseio.com",
+        projectId: "korean-words-2",
+        storageBucket: "korean-words-2.appspot.com",
+        messagingSenderId: "616204191652"
       };
       firebase.initializeApp(config);
       let database = firebase.database();
