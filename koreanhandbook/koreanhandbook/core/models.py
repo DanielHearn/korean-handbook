@@ -20,6 +20,7 @@ class Info(models.Model):
     num_colums =  models.IntegerField()
     column_1_name = models.CharField(max_length=100)
     column_2_name =  models.CharField(max_length=100)
+    alphanumeric_order = models.BooleanField(default=False)
     icon_name = models.CharField(max_length=100, default='priority_high')
     description = models.TextField(default='')
     def __str__(self):

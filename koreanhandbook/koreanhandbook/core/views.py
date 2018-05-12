@@ -30,8 +30,11 @@ def tool(request, tool_name):
 def info(request, info_name):
     info_name = info_name[0:len(info_name)-1]
     info = Info.objects.get(short_name=info_name)
-    info_rows = Row_2.objects.filter(info=info)
     if info.num_colums == 2:
+        if info.alphanumeric_order == True:
+            info_rows = Row_2.objects.filter(info=info).order_by('col_1')
+        else:
+            info_rows = Row_2.objects.filter(info=info)
         return render(request, 'info_table.html', {'info': info, 'rows': info_rows})
     else:
         return redirect ('/')
