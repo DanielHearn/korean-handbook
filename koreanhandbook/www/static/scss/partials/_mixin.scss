@@ -1,0 +1,72 @@
+@mixin smooth-transition {
+  transition: all 0.2s ease-in-out;
+}
+
+@mixin button {
+  display: flex;
+  font-size: $p-size;
+  font-family: 'Nunito', sans-serif;
+  border: none;
+  font-weight: 600;
+  -webkit-appearance: none;
+  .material-icons {
+    font-size: 1.5em;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin link-underline {
+  @include thick-underline;
+  font-size: $sub-heading-size;
+  font-weight: $sub-heading-weight;
+  &:before {
+    transform: scaleX(0);
+  }
+  &:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}
+
+@mixin bottom-shadow {
+  -webkit-box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.07);
+  -moz-box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.07);
+  box-shadow: 0px 0px 8px 5px rgba(0,0,0,0.07);
+}
+
+@mixin random-text {
+  font-size: $heading-size;
+  font-weight: $heading-weight;
+  color: $accent;
+  text-align: center;
+  display: none;
+}
+
+@mixin text-link {
+  text-decoration: none;
+}
+
+@mixin rows_2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $content-padding*2;
+  border-bottom: 2px $dark-grey solid;
+}
+
+@mixin thick-underline {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -0px;
+    height: 2px;
+    left: 0;
+    background: $white;
+    transition: transform 0.18s;
+  }
+}

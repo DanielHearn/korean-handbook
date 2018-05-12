@@ -1,0 +1,40 @@
+$accent: #595EE6;
+$accent-dark: #4e53d0;
+$white: #fefefe;
+$grey: #f7f7f7;
+$dark-grey: #d4d4d4;
+$darker-grey: #555;
+$dark: #333;
+$colour-selection: #c8c5cc;
+
+$heading-size: 1.75em;
+$heading-weight: 800;
+$sub-heading-size: 1.25em;
+$sub-heading-weight: 700;
+$p-size: 1.1em;
+$p-weight: 400;
+$input-size: 1em;
+$input-weight: 700;
+
+$content-padding: 2em;
+
+@import 'partials/mixin';
+@import 'partials/nav';
+@import 'partials/overlay';
+@import 'partials/content';
+@import 'partials/random';
+@import 'partials/media-queries';
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+::-moz-selection { background: $colour-selection; }
+::selection { background: $colour-selection; }
+::-webkit-input-placeholder { color: $white; }
+::-moz-placeholder { color: $white; }
+:-ms-input-placeholder { color: $white; }
+:-moz-placeholder { color: $white; }

@@ -1,20 +1,14 @@
 # Korean Handbook
 
-## A website that teaches the basics of the Korean language, made with Vue.
+## A website that teaches the basics of the Korean language though tool apps and information pages
 
 Live at www.thekoreanhandbook.com
 
-Built with Pug, SCSS, Vue2, and gulp for workflow tools.
-
-![GitHub Logo](readme-assets/korean1.png)
+Built with Django, SCSS and Vue2 for the tool apps
+Uses material icons 
 
 ### TODO
-- Get and implement audio for all characters and basic words, and let them be played when the character is clicked.
-- Work out additional features e.g weekly blog or additional basic lessons.
-
-### Gulp tasks
-- Watch: Use browsersync to reload files and compiles scss, pug.
-- Build: Builds files from src to dist, including compressing images, js, css
+- Get and implement audio
 
 ### Contributions
 

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+    <title>{% block title %}Korean Handbook - Home{% endblock %}</title>
+      <section id="content">
+        <h2 class="content__title">The Korean Handbook</h2>
+        <p class="content__subheading">Collection of Korean Language learning tools and information.</p>
+        <h2 class="content__heading">Tools</h2>
+        <p>{{ tool_status }}</p>
+        <section class="grid">
+          {% for tool in tools %}
+            <a class="grid__item" href="/tool/{{ tool.short_name }}">
+              <div class="grid__info">
+                <i class="material-icons">{{ tool.icon_name }}</i>
+                <h2 class="item__name">{{ tool.full_name }}</h2>
+              </div>
+            </a>
+          {% endfor %}
+        </section>
+        <h2 class="content__heading">Information</h2>
+        <p>{{ info_status }}</p>
+        <section class="grid">
+          {% for infoPage in info %}
+            <a class="grid__item" href="/info/{{ infoPage.short_name }}">
+              <div class="grid__info">
+                <i class="material-icons">{{ infoPage.icon_name }}</i>
+                <h2 class="item__name" >{{ infoPage.full_name }}</h2>
+              </div>
+            </a>
+          {% endfor %}
+        </section>
+        <section class="ad-container grid">
+            <div class="grid__item">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-format="fluid"
+                   data-ad-layout-key="-fb+5w+4e-db+86"
+                   data-ad-client="ca-pub-6075240542580801"
+                   data-ad-slot="1650569465"></ins>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+            <div class="grid__item">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-format="fluid"
+                   data-ad-layout-key="-fb+5w+4e-db+86"
+                   data-ad-client="ca-pub-6075240542580801"
+                   data-ad-slot="1650569465"></ins>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+        </section>
+      </section>
+    </main>
+    <script src="{% static 'js/koreanHandbook_home.js' %}"></script>
+{% endblock %}

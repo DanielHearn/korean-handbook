@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <header>
+      {% csrf_token %}
+    </header>
+    <title>{% block title %}Korean Handbook - {{ info.full_name }}{% endblock %}</title>
+    <main>
+      <section id="content">
+        <h2 class="content__heading">{{ info.full_name }}</h2>
+        <p>{{ info.description }}</p>
+        <input id="page__search" class="input__search" type="text" name="" value="" placeholder="Search this page">
+        <p class="resultsCounter"></p>
+        <ul class="list">
+          <li class="column__title inline">
+            <p> {{ info.column_1_name }} </p>
+            <p> {{ info.column_2_name }} </p>
+          </li>
+          {% for row in rows %}
+            <li data-key1="{{ row.col_1 }}" data-key2="{{ row.col_2 }}" class="list__row inline">
+              <p> {{ row.col_1 }} </p>
+              <p> {{ row.col_2 }} </p>
+            </li>
+          {% endfor %}
+        </ul>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-format="fluid"
+             data-ad-layout-key="-fb+5w+4e-db+86"
+             data-ad-client="ca-pub-6075240542580801"
+             data-ad-slot="1650569465"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
+    </main>
+    <script src="{% static 'js/koreanHandbook_data.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,105 @@
+.button--logo {
+  height: 2.5em;
+  width: 4em;
+  z-index: 5;
+  .logo {
+    height: 100%;
+    width: 100%;
+    .shape {
+      fill: $white !important;
+    }
+  }
+}
+
+.nav {
+  background: $accent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  @include bottom-shadow;
+  .nav__content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    max-width: 55em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include smooth-transition;
+    .input__search {
+      width: 100%;
+      @include smooth-transition;
+    }
+    .form--search {
+      display: flex;
+    }
+  }
+}
+
+
+.nav--white {
+  background: $white;
+  .nav__link {
+      color: $accent;
+    &:visited {
+      color: $accent;
+    }
+    &:before {
+      background: $accent;
+    }
+  }
+  .nav__link--focused {
+    background: $accent;
+    &:visited {
+      color: $white;
+    }
+  }
+  .button--overlay {
+    span, span:before, span:after {
+      background: $accent;
+    }
+  }
+  .button--logo .shape {
+    fill: $accent !important;
+  }
+}
+
+.nav--purple {
+  background: $accent;
+  .nav__link {
+      color: $white;
+    &:visited {
+      color: $white;
+    }
+    &:before {
+      background: $white;
+    }
+  }
+  .nav__link--focused {
+    background: $white;
+    color: $accent;
+    &:visited {
+      color: $accent;
+    }
+  }
+  .button--overlay {
+    span, span:before, span:after {
+      background: $white;
+      &.active {
+        background: transparent;
+      }
+    }
+  }
+  .active.button--overlay {
+    span:before, span:after {
+      background: $white;
+    }
+  }
+  .button--logo .shape {
+    fill: $white !important;
+  }
+}

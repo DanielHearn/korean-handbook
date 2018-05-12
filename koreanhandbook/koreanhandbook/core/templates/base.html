@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Daniel Hearn">
+    <meta name="description" content="The Korean Handbook is a collection of Korean language learning tools and information.">
+    <title>{% block title %}Korean Handbook{% endblock %}</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
+    <link rel="manifest" href="{% static 'favicons/manifest.json' %}">
+    <link rel="mask-icon" href="{% static 'favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <link async href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet" defer>
+    <link async href="{% static 'css/main.css' %}" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108490580-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108490580-1');
+    </script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-6075240542580801",
+              enable_page_level_ads: true
+         });
+    </script>
+  </head>
+  <body>
+    <div class="overlay">
+      <ul>
+        <li><a href="/" class="overlay__link link--underline">Home</a></li>
+        <li><a href="/tool/randomwords/" class="overlay__link">Random Words</a></li>
+        <li><a href="/about" class="overlay__link">About</a></li>
+      </ul>
+    </div>
+    <nav class="nav">
+      <div class="nav__content">
+        <a href="/" class="button--logo"><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" id="svg8" version="1.1" viewBox="0 0 150 100" height="100mm" width="100mm" class="logo"><defs id="defs2"></defs><metadata id="metadata5"></metadata><g transform="translate(0,-100)" id="layer3" style="display: inline;"><g transform="matrix(1.6607495,0,0,1.6607495,-27.391721,-97.587624)" id="g5688" class="shape"><path d="M 20.708554,126.46606 H 46.20405 l -13.682253,22.73177 13.511422,22.5 -25.324665,-0.009 c 0,0 0.177679,-15.29921 0.180076,-22.52289 0.0026,-7.85095 -0.180076,-22.70005 -0.180076,-22.70005 z" id="path5657" class="shape" style="fill: rgb(89, 94, 230); fill-opacity: 1; stroke: none; stroke-width: 0.0910492px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;"></path><circle id="path5661" cx="59.799267" cy="159.10349" r="12.594335" class="shape" style="fill: rgb(89, 94, 230); fill-opacity: 1; stroke: none; stroke-width: 6.97366; stroke-linecap: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;"></circle><g transform="matrix(1.1210374,0,0,1.1210374,-6.8195464,-20.781859)" id="g5704" class="shape"><rect y="140.33861" x="48.199764" height="4.6655374" width="22.403643" id="rect5665" class="shape" style="fill: rgb(89, 94, 230); fill-opacity: 1; stroke: none; stroke-width: 7.46241; stroke-linecap: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;"></rect><rect y="131.27011" x="57.089748" height="9.3310747" width="4.6655374" id="rect5665-5" class="shape" style="display: inline; fill: rgb(89, 94, 230); fill-opacity: 1; stroke: none; stroke-width: 4.81599; stroke-linecap: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;"></rect></g></g></g><g transform="translate(0,-100)" id="layer1"></g></svg></a>
+        <form class="form--search" action="/search/" method="get">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.path }}">
+          <input class="input__search" type="text" placeholder="Search site" value=""  name="search_text">
+          <button class="button--white" type="submit" name="sumbitSearch">  <i class="material-icons">search</i></button>
+        </form>
+        <a class="button--overlay"><span></span></a>
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <footer>
+      <p>Developed by <a class="link--text white" href="http://danielhearn.co.uk">Daniel Hearn</a></p>
+    </footer>
+  </body>
+</html>
