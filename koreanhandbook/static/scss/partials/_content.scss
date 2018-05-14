@@ -15,7 +15,7 @@ main {
   padding-left: $content-padding;
   padding-right: $content-padding;
   padding-top: 5em;
-  max-width: 55em;
+  max-width: 65em;
   &:last-child {
     padding-bottom: $content-padding*2;
   }
@@ -45,7 +45,7 @@ main {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-row-gap: $content-padding;
   grid-column-gap: $content-padding*2;
   padding-bottom: $content-padding;
