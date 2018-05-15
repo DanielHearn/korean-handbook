@@ -15,7 +15,7 @@ main {
   padding-left: $content-padding;
   padding-right: $content-padding;
   padding-top: 5em;
-  max-width: 65em;
+  max-width: $content-width;
   &:last-child {
     padding-bottom: $content-padding*2;
   }
@@ -41,6 +41,10 @@ main {
 
 .inline *{
   display: inline-block;
+}
+
+.flex {
+  display: flex;
 }
 
 .grid {
@@ -117,6 +121,8 @@ main {
     @include rows_2;
     font-size: $p-size;
     font-weight: $sub-heading-weight;
+    background: $accent;
+    color: $white;
   }
 }
 

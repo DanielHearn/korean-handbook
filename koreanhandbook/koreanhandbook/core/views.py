@@ -32,7 +32,7 @@ def info(request, info_name):
     info = Info.objects.get(short_name=info_name)
     if info.num_colums == 2:
         if info.alphanumeric_order == True:
-            info_rows = Row_2.objects.filter(info=info).order_by('col_1')
+            info_rows = castAsInt(Row_2.objects.filter(info=info), 'col_1', 'col_1_numeric')
         else:
             info_rows = Row_2.objects.filter(info=info)
         return render(request, 'info_table.html', {'info': info, 'rows': info_rows})

@@ -11,3 +11,8 @@ def searchString(matchString, searchString):
         return True
     else:
         return False
+
+def castAsInt(querySet, intColumn, newColumn):
+    return querySet.extra(
+        select={newColumn: 'CAST(' + intColumn + ' AS INTEGER)'}
+    ).order_by(newColumn)
