@@ -271,24 +271,27 @@ main {
   padding-bottom: 4em; }
   .list .list__row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-gap: 4em;
-    border-bottom: 2px #d4d4d4 solid;
+    grid-template-columns: repeat(2, 1fr);
     padding: 0 1em 0 1em;
     font-size: 1.1em;
     font-weight: 400; }
     .list .list__row p {
       font-size: 1.05em; }
+    .list .list__row:nth-child(n+2) {
+      border-bottom: 2px #d4d4d4 solid; }
   .list .column__title {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-gap: 4em;
-    border-bottom: 2px #d4d4d4 solid;
+    grid-template-columns: repeat(2, 1fr);
     padding: 0 1em 0 1em;
     font-size: 1.1em;
     font-weight: 700;
     background: #595EE6;
-    color: #fefefe; }
+    color: #fefefe;
+    padding: 0.5em 1em 0.5em 1em; }
+    .list .column__title p {
+      margin: 0.25em; }
 
 footer {
   background: #595EE6;
@@ -435,6 +438,9 @@ footer {
     padding-left: 1em; }
     html body .nav .nav__content .input__search {
       width: 65%; }
+  html body main #content {
+    padding-left: 1em;
+    padding-right: 1em; }
   html body main .grid {
     grid-template-columns: repeat(1, 1fr); } }
 @media screen and (max-width: 60em) {

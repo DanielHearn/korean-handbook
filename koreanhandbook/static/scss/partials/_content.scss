@@ -116,6 +116,9 @@ main {
     p {
       font-size: 1.05em;
     }
+    &:nth-child(n+2) {
+      border-bottom: 2px $dark-grey solid;
+    }
   }
   .column__title {
     @include rows_2;
@@ -123,6 +126,10 @@ main {
     font-weight: $sub-heading-weight;
     background: $accent;
     color: $white;
+    padding: 0.5em 1em 0.5em 1em;
+    p {
+      margin: 0.25em;
+    }
   }
 }
 
