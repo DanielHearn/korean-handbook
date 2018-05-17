@@ -434,6 +434,9 @@ footer {
     padding: 0;
     flex-direction: row;
     justify-content: space-around; } }
+@media screen and (min-width: 45.01em) and (max-width: 60em) {
+  html body main .grid {
+    grid-template-columns: repeat(2, 1fr); } }
 @media screen and (max-width: 45em) {
   html body .nav .nav__content {
     padding-right: 1em;
@@ -443,11 +446,8 @@ footer {
   html body main #content {
     padding-left: 1em;
     padding-right: 1em; }
-  html body main .grid {
-    grid-template-columns: repeat(1, 1fr); } }
-@media screen and (max-width: 60em) {
-  html body main .grid {
-    grid-template-columns: repeat(2, 1fr); } }
+    html body main #content .grid {
+      grid-template-columns: repeat(1, 1fr); } }
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif; }
