@@ -393,7 +393,9 @@ footer {
   display: none; }
 
 .korean__container {
-  text-align: center; }
+  text-align: center;
+  margin: auto;
+  width: 50em; }
   .korean__container button {
     margin: auto; }
 
