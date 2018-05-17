@@ -131,6 +131,17 @@ main {
       margin: 0.25em;
     }
   }
+  .row__search {
+    background: $accent;
+    padding: 0.5em 1em 0.5em 1em;
+    display: flex;
+    flex-wrap: wrap;
+    .resultsCounter {
+      color: $white;
+      margin: 0.5em;
+      margin-left: 2em;
+    }
+  }
 }
 
 footer {
