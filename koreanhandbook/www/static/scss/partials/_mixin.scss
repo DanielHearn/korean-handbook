@@ -50,9 +50,9 @@
 
 @mixin rows_2 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   grid-gap: $content-padding*2;
-  border-bottom: 2px $dark-grey solid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 1em 0 1em;
 }
 
 @mixin thick-underline {
