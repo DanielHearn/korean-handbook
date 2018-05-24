@@ -1,5 +1,3 @@
-console.log('Data Script Loaded');
-
 const menuButton = document.querySelector(".button--overlay")
 menuButton.addEventListener('click', overlay)
 
@@ -23,6 +21,10 @@ function searchPage() {
       const key1 = rowElement.dataset.key1.toLowerCase();
       const key2 = rowElement.dataset.key2.toLowerCase();
       const tags = [key1, key2]
+      if("key3" in rowElement.dataset) {
+        const key3 = rowElement.dataset.key3.toLowerCase();
+        tags[2] = key3
+      }
       if (searchText.length > 0) {
         if (search(tags, searchText) == true) {
           numOfResults ++;

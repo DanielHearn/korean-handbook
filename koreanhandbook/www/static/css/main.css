@@ -272,7 +272,7 @@ main {
   .list .list__row {
     display: grid;
     grid-gap: 4em;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     padding: 0 1em 0 1em;
     font-size: 1.1em;
     font-weight: 400; }
@@ -283,7 +283,7 @@ main {
   .list .column__title {
     display: grid;
     grid-gap: 4em;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     padding: 0 1em 0 1em;
     font-size: 1.1em;
     font-weight: 700;
