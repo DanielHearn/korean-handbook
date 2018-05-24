@@ -271,7 +271,7 @@ main {
   padding-bottom: 4em; }
   .list .list__row {
     display: grid;
-    grid-gap: 4em;
+    grid-gap: 5vw;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     padding: 0 1em 0 1em;
     font-size: 1.1em;
@@ -282,7 +282,7 @@ main {
       border-bottom: 2px #d4d4d4 solid; }
   .list .column__title {
     display: grid;
-    grid-gap: 4em;
+    grid-gap: 5vw;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     padding: 0 1em 0 1em;
     font-size: 1.1em;
@@ -453,12 +453,16 @@ footer {
     html body .nav .nav__content .input__search {
       width: 65%; }
   html body main #content {
-    padding-left: 1em;
-    padding-right: 1em; }
+    padding-left: 0.9em;
+    padding-right: 0.9em; }
     html body main #content .grid {
       grid-template-columns: repeat(1, 1fr); }
     html body main #content .row__search .resultsCounter {
-      margin-left: 0; } }
+      margin-left: 0; }
+    html body main #content .list .row__search {
+      padding: 0.5em; }
+    html body main #content .list .list__row, html body main #content .list .column__title {
+      padding: 0 0.5em 0 0.5em; } }
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif; }

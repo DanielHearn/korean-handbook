@@ -50,7 +50,7 @@
 
 @mixin rows_2 {
   display: grid;
-  grid-gap: $content-padding*2;
+  grid-gap: 5vw;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   padding: 0 1em 0 1em;
 }
