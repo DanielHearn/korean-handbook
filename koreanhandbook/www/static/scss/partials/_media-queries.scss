@@ -1,3 +1,13 @@
+@media screen and (min-width: 45.01em ) and (max-width: 60em) {
+  html body {
+    main {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 45em) {
   html body {
     .nav {
@@ -13,19 +23,12 @@
       #content {
         padding-left: 1em;
         padding-right: 1em;
-      }
-      .grid {
-        grid-template-columns: repeat(1, 1fr);
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 60em) {
-  html body {
-    main {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
+        .grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .row__search .resultsCounter {
+          margin-left: 0;
+        }
       }
     }
   }

@@ -292,6 +292,15 @@ main {
     padding: 0.5em 1em 0.5em 1em; }
     .list .column__title p {
       margin: 0.25em; }
+  .list .row__search {
+    background: #595EE6;
+    padding: 0.5em 1em 0.5em 1em;
+    display: flex;
+    flex-wrap: wrap; }
+    .list .row__search .resultsCounter {
+      color: #fefefe;
+      margin: 0.5em;
+      margin-left: 2em; }
 
 footer {
   background: #595EE6;
@@ -393,7 +402,9 @@ footer {
   display: none; }
 
 .korean__container {
-  text-align: center; }
+  text-align: center;
+  margin: auto;
+  width: 50em; }
   .korean__container button {
     margin: auto; }
 
@@ -432,6 +443,9 @@ footer {
     padding: 0;
     flex-direction: row;
     justify-content: space-around; } }
+@media screen and (min-width: 45.01em) and (max-width: 60em) {
+  html body main .grid {
+    grid-template-columns: repeat(2, 1fr); } }
 @media screen and (max-width: 45em) {
   html body .nav .nav__content {
     padding-right: 1em;
@@ -441,11 +455,10 @@ footer {
   html body main #content {
     padding-left: 1em;
     padding-right: 1em; }
-  html body main .grid {
-    grid-template-columns: repeat(1, 1fr); } }
-@media screen and (max-width: 60em) {
-  html body main .grid {
-    grid-template-columns: repeat(2, 1fr); } }
+    html body main #content .grid {
+      grid-template-columns: repeat(1, 1fr); }
+    html body main #content .row__search .resultsCounter {
+      margin-left: 0; } }
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif; }
