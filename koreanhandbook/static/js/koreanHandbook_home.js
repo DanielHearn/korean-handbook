@@ -1,5 +1,3 @@
-console.log('Home Script Loaded');
-
 const menuButton = document.querySelector(".button--overlay")
 menuButton.addEventListener('click', overlay)
 
