@@ -29,6 +29,14 @@
         .row__search .resultsCounter {
           margin-left: 0;
         }
+        .list {
+          .row__search {
+            padding: 0.5em;
+          }
+          .list__row, .column__title {
+            padding: 0 0.5em 0 0.5em;
+          }
+        }
       }
     }
   }
