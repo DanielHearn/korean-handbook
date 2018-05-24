@@ -41,7 +41,7 @@ def info(request, info_name):
             if info.alphanumeric_order == True:
                 info_rows = Row_2.objects.filter(info=info).order_by('col_1')
             else:
-                info_rows = Row_2.objects.filter(info=info)
+                info_rows = Row_2.objects.filter(info=info).order_by('date_inserted')
         return render(request, 'info_table_row_2.html', {'info': info, 'rows': info_rows})
     elif info.num_colums == 3:
         if info.numeric_first_col == True:
@@ -53,7 +53,7 @@ def info(request, info_name):
             if info.alphanumeric_order == True:
                 info_rows = Row_3.objects.filter(info=info).order_by('col_1')
             else:
-                info_rows = Row_3.objects.filter(info=info)
+                info_rows = Row_3.objects.filter(info=info).order_by('date_inserted')
         return render(request, 'info_table_row_3.html', {'info': info, 'rows': info_rows})
     else:
         return redirect ('/')

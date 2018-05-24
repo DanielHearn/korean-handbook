@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 # Django imports
 from django.conf import settings
 from django.db import models
-
+from django.utils.timezone import now
 
 class Tool(models.Model):
     full_name = models.CharField(max_length=100)
@@ -32,6 +32,7 @@ class Row_2(models.Model):
     info = models.ForeignKey(Info, on_delete=models.CASCADE)
     col_1 = models.CharField(max_length=255)
     col_2 = models.CharField(max_length=255)
+    date_inserted = models.DateTimeField(default=now, blank=True)
     def __str__(self):
       return 'Row2' + self.info.short_name + ' : ' + str(self.id)
 
@@ -40,5 +41,6 @@ class Row_3(models.Model):
     col_1 = models.CharField(max_length=255)
     col_2 = models.CharField(max_length=255)
     col_3 = models.CharField(max_length=255)
+    date_inserted = models.DateTimeField(default=now, blank=True)
     def __str__(self):
       return 'Row3' + self.info.short_name + ' : ' + str(self.id)
