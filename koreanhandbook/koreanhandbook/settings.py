@@ -26,7 +26,7 @@ SECRET_KEY = 'p=i+%d=o(9-+tzt=el9j3uyn(1459*)zd*u4ft+!4jd&8@)*vq'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'koreanhandbook-dev.eu-west-2.elasticbeanstalk.com',
+    'koreanhandbook-prod.fnks76p4cs.eu-west-2.elasticbeanstalk.com',
     '127.0.0.1',
     'www.thekoreanhandbook.com',
     'thekoreanhandbook.com',
