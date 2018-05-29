@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: koreanhandbook-dev
+    environment: koreanhandbook-prod
 global:
   application_name: koreanhandbook
   branch: null
