@@ -225,17 +225,48 @@ main {
   grid-column-gap: 4em;
   padding-bottom: 2em; }
   .grid .grid__item {
+    display: flex;
+    background: #d4d4d4;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out; }
+    .grid .grid__item:hover {
+      background: #b9b9b9; }
+    .grid .grid__item .grid__info {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1em;
+      height: 100%;
+      width: 100%;
+      text-align: center; }
+      .grid .grid__item .grid__info .full__name {
+        font-size: 1.25em;
+        font-weight: 700; }
+      .grid .grid__item .grid__info .korean__name {
+        font-size: 1.25em;
+        font-weight: 700; }
+
+.content__slider {
+  margin: 2em 0; }
+  .content__slider .slider__item {
     display: block;
     background: #595EE6;
     color: #fefefe;
     text-decoration: none;
     transition: all 0.2s ease-in-out; }
-    .grid .grid__item:hover {
+    .content__slider .slider__item:hover {
       background: #4e53d0; }
-    .grid .grid__item .grid__info {
+    .content__slider .slider__item .item__info {
       padding: 1em;
       text-align: center; }
-      .grid .grid__item .grid__info .item__name {
+      .content__slider .slider__item .item__info .full__name {
+        font-size: 1.25em;
+        font-weight: 700; }
+      .content__slider .slider__item .item__info .korean__name {
         font-size: 1.25em;
         font-weight: 700; }
 
@@ -311,6 +342,16 @@ footer {
   footer p {
     font-weight: 600; }
 
+.button--accent {
+  text-decoration: none;
+  background: #595EE6;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  color: #fefefe; }
+  .button--accent:hover {
+    background: #4e53d0;
+    transition: all 0.2s ease-in-out; }
+
 .link--text {
   text-decoration: none;
   text-decoration: none;
@@ -382,20 +423,20 @@ footer {
   border-radius: 0.2em; }
 
 #genWord {
-  padding: 1.5em 0;
+  padding: 0.25em 0;
   display: flex;
   flex-direction: column;
   align-items: center; }
 
 #genWord__korean {
-  font-size: 1.75em;
+  font-size: 1.5em;
   font-weight: 800;
   color: #595EE6;
   text-align: center;
   display: none; }
 
 #genWord__english {
-  font-size: 1.75em;
+  font-size: 1.5em;
   font-weight: 800;
   color: #595EE6;
   text-align: center;
@@ -404,7 +445,8 @@ footer {
 .korean__container {
   text-align: center;
   margin: auto;
-  width: 50em; }
+  max-width: 50em;
+  padding-bottom: 3em; }
   .korean__container button {
     margin: auto; }
 
@@ -462,7 +504,9 @@ footer {
     html body main #content .list .row__search {
       padding: 0.5em; }
     html body main #content .list .list__row, html body main #content .list .column__title {
-      padding: 0 0.5em 0 0.5em; } }
+      padding: 0 0.5em 0 0.5em; }
+    html body main #content #genWord h2, html body main #content #genWord h3 {
+      margin: 0.25em 0; } }
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif; }

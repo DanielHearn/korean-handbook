@@ -11,13 +11,11 @@ from .functions import *
 def home(request):
     tools = Tool.objects.all()
     info = Info.objects.all()
-    tool_status = ''
-    info_status = ''
-    if len(tools) == 0:
-        tool_status = 'No tools available'
-    if len(info) == 0:
-        info_status = 'No info available'
-    return render(request, 'home.html', {'tool_status': tool_status, 'info_status': info_status, 'tools': tools, 'info': info})
+    status = ''
+    if len(tools) and len(info) == 0:
+        status = 'No tools or information available'
+    focusData = info.filter(home_focus=True)
+    return render(request, 'home.html', {'status': status, 'focusData': focusData, 'tools': tools, 'info': info})
 
 def about(request):
     return render(request, 'about.html')

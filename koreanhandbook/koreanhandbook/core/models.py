@@ -10,17 +10,20 @@ class Tool(models.Model):
     full_name = models.CharField(max_length=100)
     short_name = models.CharField(max_length=100)
     url = models.CharField(max_length=100)
+    home_focus = models.BooleanField(default=False)
     icon_name = models.CharField(max_length=100, default='priority_high')
     def __str__(self):
        return 'Tool: ' + self.full_name
 
 class Info(models.Model):
-    full_name = models.CharField(max_length=100)
-    short_name = models.CharField(max_length=100)
+    full_name = models.CharField(max_length=100, default='Full Name')
+    short_name = models.CharField(max_length=100, default='shortname')
+    korean_name = models.CharField(max_length=100, default='한국어')
     num_colums =  models.IntegerField(default='2')
     column_1_name = models.CharField(max_length=100, default='col1')
     column_2_name =  models.CharField(max_length=100, default='col2')
     column_3_name =  models.CharField(max_length=100, default='col3')
+    home_focus = models.BooleanField(default=False)
     alphanumeric_order = models.BooleanField(default=False)
     numeric_first_col = models.BooleanField(default=False)
     icon_name = models.CharField(max_length=100, default='priority_high')
