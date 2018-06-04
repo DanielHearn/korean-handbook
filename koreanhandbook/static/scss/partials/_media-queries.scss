@@ -23,6 +23,15 @@
       #content {
         padding-left: 0.9em;
         padding-right: 0.9em;
+        .slider__prev, .slider__next {
+          padding: 0.5em
+        }
+        .slider__prev {
+          margin-left: 0.5em;
+        } 
+        .slider__next {
+          margin-left: -0.5em;
+        }
         .grid {
           grid-template-columns: repeat(1, 1fr);
         }
@@ -41,18 +50,6 @@
           h2, h3 {
             margin: 0.25em 0;
           }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 25em) {
-  html body {
-    .nav {
-      .nav__content {
-        .button--logo {
-          //display: none;
         }
       }
     }

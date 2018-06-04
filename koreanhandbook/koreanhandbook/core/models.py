@@ -8,10 +8,10 @@ from django.utils.timezone import now
 
 class Tool(models.Model):
     full_name = models.CharField(max_length=100)
+    korean_name = models.CharField(max_length=100, default='한국어')
     short_name = models.CharField(max_length=100)
     url = models.CharField(max_length=100)
     home_focus = models.BooleanField(default=False)
-    icon_name = models.CharField(max_length=100, default='priority_high')
     def __str__(self):
        return 'Tool: ' + self.full_name
 
@@ -26,7 +26,6 @@ class Info(models.Model):
     home_focus = models.BooleanField(default=False)
     alphanumeric_order = models.BooleanField(default=False)
     numeric_first_col = models.BooleanField(default=False)
-    icon_name = models.CharField(max_length=100, default='priority_high')
     description = models.TextField(default='')
     def __str__(self):
        return 'Info: ' + self.full_name

@@ -197,6 +197,10 @@ main {
   #content:last-child {
     padding-bottom: 4em; }
 
+.content__header {
+  display: flex;
+  align-items: center; }
+
 .content__title {
   font-size: 2.1em;
   font-weight: 800;
@@ -226,12 +230,12 @@ main {
   padding-bottom: 2em; }
   .grid .grid__item {
     display: flex;
-    background: #d4d4d4;
+    background: #ececec;
     color: #333;
     text-decoration: none;
     transition: all 0.2s ease-in-out; }
     .grid .grid__item:hover {
-      background: #b9b9b9; }
+      background: #dcdcdc; }
     .grid .grid__item .grid__info {
       display: flex;
       flex-wrap: wrap;
@@ -250,25 +254,75 @@ main {
         font-size: 1.25em;
         font-weight: 700; }
 
-.content__slider {
-  margin: 2em 0; }
-  .content__slider .slider__item {
-    display: block;
-    background: #595EE6;
-    color: #fefefe;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out; }
-    .content__slider .slider__item:hover {
-      background: #4e53d0; }
-    .content__slider .slider__item .item__info {
-      padding: 1em;
-      text-align: center; }
-      .content__slider .slider__item .item__info .full__name {
-        font-size: 1.25em;
-        font-weight: 700; }
-      .content__slider .slider__item .item__info .korean__name {
-        font-size: 1.25em;
-        font-weight: 700; }
+.slider__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center; }
+  .slider__container .slider__content {
+    height: 15em;
+    margin: 2em 0; }
+    .slider__container .slider__content div:nth-child(odd) > .slider__item {
+      background: #3a5684; }
+    .slider__container .slider__content .slider__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #2e476f;
+      color: #fefefe;
+      text-decoration: none;
+      height: 15em;
+      transition: all 0.2s ease-in-out; }
+      .slider__container .slider__content .slider__item .item__info {
+        padding: 1em;
+        text-align: center; }
+        .slider__container .slider__content .slider__item .item__info .full__name {
+          font-size: 1.25em;
+          font-weight: 700; }
+        .slider__container .slider__content .slider__item .item__info .korean__name {
+          font-size: 1.25em;
+          font-weight: 700; }
+  .slider__container .slider__prev, .slider__container .slider__next {
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button;
+    /* for input */
+    -webkit-user-select: none;
+    /* for button */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    font-size: 1.1em;
+    font-family: 'Nunito', sans-serif;
+    border: none;
+    font-weight: 600;
+    -webkit-appearance: none;
+    position: absolute;
+    color: #333;
+    background: #fefefe;
+    border-radius: 50%;
+    padding: 1em; }
+    .slider__container .slider__prev .material-icons, .slider__container .slider__next .material-icons {
+      font-size: 1.5em; }
+    .slider__container .slider__prev:hover, .slider__container .slider__next:hover {
+      cursor: pointer; }
+    .slider__container .slider__prev:hover, .slider__container .slider__next:hover {
+      background: #f7f7f7; }
+  .slider__container .slider__prev {
+    align-self: flex-start;
+    margin-left: 1em; }
+    .slider__container .slider__prev .material-icons {
+      transform: rotate(180deg); }
+  .slider__container .slider__next {
+    margin-left: -1em;
+    align-self: flex-end; }
 
 .ad-container {
   padding-top: 2em;
@@ -310,7 +364,7 @@ main {
     .list .list__row p {
       font-size: 1.05em; }
     .list .list__row:nth-child(n+2) {
-      border-bottom: 2px #d4d4d4 solid; }
+      border-bottom: 2px #ececec solid; }
   .list .column__title {
     display: grid;
     grid-gap: 5vw;
@@ -322,7 +376,7 @@ main {
     color: #fefefe;
     padding: 0.5em 1em 0.5em 1em; }
     .list .column__title p {
-      margin: 0.25em; }
+      margin: 0.75em 0.25em; }
   .list .row__search {
     background: #595EE6;
     padding: 0.5em 1em 0.5em 1em;
@@ -345,12 +399,12 @@ footer {
 .button--accent {
   text-decoration: none;
   background: #595EE6;
-  padding: 0.5em 1em;
+  padding: 0.5em 1.25em;
   border-radius: 0.5em;
-  color: #fefefe; }
+  color: #fefefe;
+  transition: all 0.2s ease-in-out; }
   .button--accent:hover {
-    background: #4e53d0;
-    transition: all 0.2s ease-in-out; }
+    background: #4e53d0; }
 
 .link--text {
   text-decoration: none;
@@ -386,6 +440,21 @@ footer {
       color: #fefefe; }
 
 .button--purple {
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button;
+  /* for input */
+  -webkit-user-select: none;
+  /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  transition: all 0.2s ease-in-out;
   display: flex;
   font-size: 1.1em;
   font-family: 'Nunito', sans-serif;
@@ -403,6 +472,21 @@ footer {
     background: #4e53d0; }
 
 .button--white {
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button;
+  /* for input */
+  -webkit-user-select: none;
+  /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  transition: all 0.2s ease-in-out;
   display: flex;
   font-size: 1.1em;
   font-family: 'Nunito', sans-serif;
@@ -497,6 +581,12 @@ footer {
   html body main #content {
     padding-left: 0.9em;
     padding-right: 0.9em; }
+    html body main #content .slider__prev, html body main #content .slider__next {
+      padding: 0.5em; }
+    html body main #content .slider__prev {
+      margin-left: 0.5em; }
+    html body main #content .slider__next {
+      margin-left: -0.5em; }
     html body main #content .grid {
       grid-template-columns: repeat(1, 1fr); }
     html body main #content .row__search .resultsCounter {
