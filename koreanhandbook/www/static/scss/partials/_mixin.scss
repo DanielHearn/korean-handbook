@@ -3,6 +3,8 @@
 }
 
 @mixin button {
+  @include reset-button-style;
+  @include smooth-transition;
   display: flex;
   font-size: $p-size;
   font-family: 'Nunito', sans-serif;
@@ -15,6 +17,21 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+@mixin reset-button-style {
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button; /* for input */
+  -webkit-user-select: none; /* for button */
+     -moz-user-select: none;
+      -ms-user-select: none;
 }
 
 @mixin link-underline {
@@ -37,7 +54,7 @@
 }
 
 @mixin random-text {
-  font-size: $heading-size;
+  font-size: 1.5em;
   font-weight: $heading-weight;
   color: $accent;
   text-align: center;

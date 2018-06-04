@@ -21,6 +21,11 @@ main {
   }
 }
 
+.content__header {
+  display: flex;
+  align-items: center;
+}
+
 .content__title {
   font-size: $heading-size*1.2;
   font-weight: $heading-weight;
@@ -36,7 +41,7 @@ main {
 .content__subheading {
   font-size: $sub-heading-size;
   font-weight: $sub-heading-weight;
-  color: $darker-grey;
+  color: $grey-darkest;
 }
 
 .inline *{
@@ -54,22 +59,95 @@ main {
   grid-column-gap: $content-padding*2;
   padding-bottom: $content-padding;
   .grid__item {
-    display: block;
-    background: $accent;
-    color: $white;
+    display: flex;
+    background: $grey-dark;
+    color: $dark;
     text-decoration: none;
     @include smooth-transition;
     &:hover {
-      background: $accent-dark;
+      background: #dcdcdc;
     }
     .grid__info {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: space-between;
       padding: 1em;
+      height: 100%;
+      width: 100%;
       text-align: center;
-      .item__name {
+      .full__name {
+        font-size: $sub-heading-size;
+        font-weight: $sub-heading-weight;
+      }
+      .korean__name {
         font-size: $sub-heading-size;
         font-weight: $sub-heading-weight;
       }
     }
+  }
+}
+
+.slider__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  .slider__content {
+    height: 15em;
+    margin: 2em 0;
+    div:nth-child(odd) > .slider__item {
+      background: #3a5684;
+    }
+    .slider__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #2e476f;
+      color: $white;
+      text-decoration: none;
+      height: 15em;
+      @include smooth-transition;
+      //&:hover {
+      //  background: #3a5684;
+      //}
+      .item__info {
+        padding: 1em;
+        text-align: center;
+        .full__name {
+          font-size: $sub-heading-size;
+          font-weight: $sub-heading-weight;
+        }
+        .korean__name {
+          font-size: $sub-heading-size;
+          font-weight: $sub-heading-weight;
+        }
+      }
+    }
+  }
+  .slider__prev, .slider__next {
+    @include button;
+    position: absolute;
+    color: $dark;
+    background: $white;
+    border-radius: 50%;
+    padding: 1em;
+    &:hover {
+      background: $grey;
+    }
+  }
+  .slider__prev {
+    align-self: flex-start;
+    margin-left: 1em;
+    .material-icons {
+      transform: rotate(180deg);
+    }
+  }
+  .slider__next {
+    margin-left: -1em;
+    align-self: flex-end;
   }
 }
 
@@ -117,7 +195,7 @@ main {
       font-size: 1.05em;
     }
     &:nth-child(n+2) {
-      border-bottom: 2px $dark-grey solid;
+      border-bottom: 2px $grey-dark solid;
     }
   }
   .column__title {
@@ -128,7 +206,7 @@ main {
     color: $white;
     padding: 0.5em 1em 0.5em 1em;
     p {
-      margin: 0.25em;
+      margin: 0.75em 0.25em;
     }
   }
   .row__search {
@@ -152,6 +230,18 @@ footer {
   font-size: $p-size;
   p {
     font-weight: 600;
+  }
+}
+
+.button--accent {
+  text-decoration: none;
+  background: $accent;
+  padding: 0.5em 1.25em;
+  border-radius: 0.5em;
+  color: $white;
+  @include smooth-transition;
+  &:hover {
+    background: $accent-dark;
   }
 }
 
