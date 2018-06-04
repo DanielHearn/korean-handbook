@@ -57,7 +57,7 @@ main {
     background: $grey-dark;
     color: $dark;
     text-decoration: none;
-    height: 13em;
+    min-height: 13em;
     @include smooth-transition;
     &:hover {
       background: #dcdcdc;
@@ -92,6 +92,7 @@ main {
   display: flex;
   flex-direction: column;
   position: relative;
+  height: 19em;
   justify-content: center;
   .slider__content {
     height: 15em;
