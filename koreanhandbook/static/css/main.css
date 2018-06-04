@@ -178,11 +178,6 @@
     visibility: visible;
     transform: scaleX(1); }
 
-.k {
-  color: #595EE6;
-  font-weight: 600;
-  font-family: 'Noto Sans KR', sans-serif; }
-
 main {
   background: #f7f7f7;
   min-height: 100vh; }
@@ -254,6 +249,8 @@ main {
       .grid .grid__item .grid__info .korean__name {
         font-size: 1.25em;
         font-weight: 700; }
+    .grid .grid__item ins {
+      width: 100%; }
 
 .slider__container {
   display: flex;

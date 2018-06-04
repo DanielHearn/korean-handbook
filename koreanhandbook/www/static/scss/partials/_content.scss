@@ -1,9 +1,3 @@
-.k {
-  color: $accent;
-  font-weight: 600;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
 main {
   background: $grey;
   min-height: 100vh;
@@ -87,6 +81,9 @@ main {
         font-size: $sub-heading-size;
         font-weight: $sub-heading-weight;
       }
+    }
+    ins {
+      width: 100%;
     }
   }
 }
