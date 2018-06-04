@@ -27,7 +27,6 @@ def about(request):
 
 def tool(request, tool_name):
     tool_name = tool_name[0:len(tool_name)-1]
-    tool = Tool.objects.get(short_name=tool_name)
     return render(request, tool_name + '.html')
 
 def info(request, info_name):

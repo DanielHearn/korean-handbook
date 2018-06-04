@@ -9,13 +9,17 @@ function overlay () {
 
 const siema = new Siema({
   selector: '.jsSeimaSlider',
-  duration: 750,
+  duration: 1000,
   easing: 'ease-out',
-  loop: true
+  threshold: 500,
+  loop: true,
+  onChange: () => sliderAutoPlay(),
+  onInit: () => sliderAutoPlay()
 })
 const prevButton = document.querySelector('.slider__prev')
 const nextButton = document.querySelector('.slider__next')
-setInterval(() => siema.next(), 3000)
-
+function sliderAutoPlay () {
+  setTimeout(() => siema.next(), 3000)
+}
 prevButton.addEventListener('click', () => siema.prev())
 nextButton.addEventListener('click', () => siema.next())
