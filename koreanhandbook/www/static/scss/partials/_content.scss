@@ -63,6 +63,7 @@ main {
     background: $grey-dark;
     color: $dark;
     text-decoration: none;
+    height: 13em;
     @include smooth-transition;
     &:hover {
       background: #dcdcdc;

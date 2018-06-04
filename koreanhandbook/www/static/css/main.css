@@ -233,6 +233,7 @@ main {
     background: #ececec;
     color: #333;
     text-decoration: none;
+    height: 13em;
     transition: all 0.2s ease-in-out; }
     .grid .grid__item:hover {
       background: #dcdcdc; }
