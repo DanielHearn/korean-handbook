@@ -10,11 +10,19 @@
 
         <div class="slider__container">
           <div class="slider__content jsSeimaSlider">
-            {% for focus in focusData %}
-              <div class="slider__item" href="/info/{{ focus.short_name }}">
+            {% for focusTool in focusTools %}
+              <div class="slider__item" href="/tool/{{ focusTool.short_name }}">
                 <div class="item__info">
-                  <h2 class="full__name">{{ focus.full_name }}    <h2 class="korean__name" >{{ focus.korean_name }}</h2>
-                  <a class="button--accent" href="/tool/{{ tool.short_name }}">View</a>
+                  <h2 class="full__name">{{ focusTool.full_name }}    <h2 class="korean__name" >{{ focusTool.korean_name }}</h2>
+                  <a class="button--accent" href="/tool/{{ focusTool.short_name }}">View</a>
+                </div>
+              </div>
+            {% endfor %}
+            {% for focusInfo in focusInfo %}
+              <div class="slider__item" href="/info/{{ focusInfo.short_name }}">
+                <div class="item__info">
+                  <h2 class="full__name">{{ focusInfo.full_name }}    <h2 class="korean__name" >{{ focusInfo.korean_name }}</h2>
+                  <a class="button--accent" href="/info/{{ focusInfo.short_name }}">View</a>
                 </div>
               </div>
             {% endfor %}

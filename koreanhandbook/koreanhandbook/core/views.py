@@ -14,8 +14,9 @@ def home(request):
     status = ''
     if len(tools) and len(info) == 0:
         status = 'No tools or information available'
-    focusData = info.filter(home_focus=True)
-    return render(request, 'home.html', {'status': status, 'focusData': focusData, 'tools': tools, 'info': info})
+    focusInfo = info.filter(home_focus=True)
+    focusTools = tools.filter(home_focus=True)
+    return render(request, 'home.html', {'status': status, 'focusInfo': focusInfo, 'focusTools': focusTools, 'tools': tools, 'info': info})
 
 def about(request):
     return render(request, 'about.html')
