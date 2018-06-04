@@ -7,7 +7,7 @@
       <section id="content">
         <h2 class="content__title">The Korean Handbook</h2>
         <p class="content__subheading">Collection of Korean Language learning tools and information.</p>
-
+        {% if sliderVisible %}
         <div class="slider__container">
           <div class="slider__content jsSeimaSlider">
             {% for focusTool in focusTools %}
@@ -30,6 +30,7 @@
           <button class="slider__prev"><i class="material-icons">arrow_forward_ios</i></button>
           <button class="slider__next"><i class="material-icons">arrow_forward_ios</i></button>
         </div>
+        {% endif %}
         <p>{{ status }}</p>
         <section class="grid">
           {% for tool in tools %}

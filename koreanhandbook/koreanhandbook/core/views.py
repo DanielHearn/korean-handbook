@@ -16,7 +16,11 @@ def home(request):
         status = 'No tools or information available'
     focusInfo = info.filter(home_focus=True)
     focusTools = tools.filter(home_focus=True)
-    return render(request, 'home.html', {'status': status, 'focusInfo': focusInfo, 'focusTools': focusTools, 'tools': tools, 'info': info})
+    if (len(focusInfo) > 0 or len(focusTools)):
+        sliderVisible = True
+    else:
+        sliderVisible = False
+    return render(request, 'home.html', {'status': status, 'sliderVisible': sliderVisible, 'focusInfo': focusInfo, 'focusTools': focusTools, 'tools': tools, 'info': info})
 
 def about(request):
     return render(request, 'about.html')
