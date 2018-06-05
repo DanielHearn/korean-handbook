@@ -13,7 +13,7 @@ const siema = new Siema({
   selector: '.jsSeimaSlider',
   duration: 1000,
   easing: 'ease-out',
-  threshold: 200,
+  threshold: window.innerWidth / 6,
   loop: true,
   onChange: sliderAutoPlay
 })
@@ -39,3 +39,27 @@ prevButton.addEventListener('click', () => siema.prev())
 nextButton.addEventListener('click', () => siema.next())
 sliderContainer.addEventListener('mousedown', () => mouseDownInterval())
 sliderContainer.addEventListener('mouseup', () => clearMouseDownInterval())
+
+function showAdblockMessages () {
+  const ads = document.querySelectorAll('ins.adsbygoogle')
+  for (let ad of ads) {
+    if (ad && ad.innerHTML.replace(/\s/g, '').length === 0) {
+      ad.style.cssText = 'display:block !important'
+      const adMessageElement = ad.parentElement.querySelector('.ad__message')
+      if (adMessageElement !== null) {
+        adMessageElement.style = 'display:block !important'
+      }
+    } else {
+      ad.parentElement.classList.add('loaded')
+    }
+  }
+}
+
+window.onload = function () {
+  setTimeout(function () {
+    showAdblockMessages()
+  }, 100)
+  setTimeout(function () {
+    showAdblockMessages()
+  }, 3000)
+}

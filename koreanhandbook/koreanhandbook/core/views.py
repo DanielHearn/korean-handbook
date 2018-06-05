@@ -25,10 +25,10 @@ def home(request):
     else:
         sliderVisible = False
     for toolPage in range(len(tools)):
-        if (toolPage % 5 == 0):
+        if ((toolPage+1) % 4 == 0):
             tools[toolPage].ad = True      
     for infoPage in range(len(info)):
-        if (infoPage % 5 == 0):
+        if ((infoPage+1) % 4 == 0):
             info[infoPage].ad = True     
         if (infoPage == (len(info)-1)):
             info[infoPage].ad = True     

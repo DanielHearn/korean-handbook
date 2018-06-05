@@ -6,7 +6,6 @@
     <title>{% block title %}Korean Handbook - Home{% endblock %}</title>
       <section id="content">
         <h2 class="content__title">The Korean Handbook</h2>
-        <p class="content__subheading">Collection of Korean Language learning tools and information.</p>
         {% if sliderVisible %}
         <div class="slider__container">
           <div class="slider__content jsSeimaSlider">
@@ -31,6 +30,7 @@
           <button class="slider__next"><i class="material-icons">arrow_forward_ios</i></button>
         </div>
         {% endif %}
+        <p class="content__subheading">The Korean Handbook is home to an evergrowing collection of Korean Language learning tools and information.</p>
         <p>{{ status }}</p>
         <section class="grid">
           {% for tool in tools %}
@@ -53,6 +53,9 @@
                 <script>
                      (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
+                <div class="ad__message">
+                  <h2>Turn off adblock to support us</h2>
+                </div>
               </div>
             {% else %}
               <div class="grid__item">
@@ -84,6 +87,9 @@
                 <script>
                      (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
+                <div class="ad__message">
+                  <h2>Turn off adblock to support us</h2>
+                </div>
               </div>
             {% else %}
               <div class="grid__item">
