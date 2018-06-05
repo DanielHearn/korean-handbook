@@ -225,6 +225,8 @@ main {
   text-align: center; }
   .ad .ad__message {
     display: none; }
+    .ad .ad__message h2 {
+      padding: 1em; }
   .ad.loaded {
     background: #f7f7f7 !important; }
 

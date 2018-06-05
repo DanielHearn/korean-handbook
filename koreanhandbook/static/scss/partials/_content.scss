@@ -54,6 +54,9 @@ main {
   text-align: center;
   .ad__message {
     display: none;
+    h2 {
+      padding: 1em;
+    }
   }
   &.loaded {
     background: $grey !important;
