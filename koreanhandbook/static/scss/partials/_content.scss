@@ -53,11 +53,11 @@ main {
   grid-column-gap: $content-padding*2;
   padding-bottom: $content-padding;
   .grid__item {
-    display: flex;
+    display: block;
     background: $grey-dark;
     color: $dark;
     text-decoration: none;
-    min-height: 13em;
+    //min-height: 13em;
     @include smooth-transition;
     &:hover {
       background: #dcdcdc;

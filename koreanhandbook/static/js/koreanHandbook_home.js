@@ -15,7 +15,7 @@ const siema = new Siema({
   easing: 'ease-out',
   threshold: 200,
   loop: true,
-  onChange: () => sliderAutoPlay()
+  onChange: sliderAutoPlay
 })
 const prevButton = document.querySelector('.slider__prev')
 const nextButton = document.querySelector('.slider__next')
