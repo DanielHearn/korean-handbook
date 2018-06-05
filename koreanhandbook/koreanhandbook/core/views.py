@@ -8,6 +8,10 @@ from .forms import *
 from .models import *
 from .functions import *
 
+class Ad:
+    def __init__(self):
+        self.ad = True
+
 def home(request):
     tools = Tool.objects.all()
     info = Info.objects.all()
@@ -20,6 +24,14 @@ def home(request):
         sliderVisible = True
     else:
         sliderVisible = False
+    for toolPage in range(len(tools)):
+        if (toolPage % 5 == 0):
+            tools[toolPage].ad = True      
+    for infoPage in range(len(info)):
+        if (infoPage % 5 == 0):
+            info[infoPage].ad = True     
+        if (infoPage == (len(info)-1)):
+            info[infoPage].ad = True     
     return render(request, 'home.html', {'status': status, 'sliderVisible': sliderVisible, 'focusInfo': focusInfo, 'focusTools': focusTools, 'tools': tools, 'info': info})
 
 def about(request):
