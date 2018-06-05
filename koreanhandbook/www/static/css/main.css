@@ -224,11 +224,10 @@ main {
   grid-column-gap: 4em;
   padding-bottom: 2em; }
   .grid .grid__item {
-    display: flex;
+    display: block;
     background: #ececec;
     color: #333;
     text-decoration: none;
-    min-height: 13em;
     transition: all 0.2s ease-in-out; }
     .grid .grid__item:hover {
       background: #dcdcdc; }
