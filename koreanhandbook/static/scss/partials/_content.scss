@@ -127,11 +127,18 @@ main {
       text-decoration: none;
       height: 15em;
       @include smooth-transition;
-      //&:hover {
-      //  background: #3a5684;
-      //}
       .item__info {
         padding: 1em;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        padding: 1em;
+        height: 100%;
+        width: 100%;
         text-align: center;
         .full__name {
           font-size: $sub-heading-size;
@@ -150,7 +157,7 @@ main {
     color: $dark;
     background: $white;
     border-radius: 50%;
-    padding: 1em;
+    padding: 0.75em;
     &:hover {
       background: $grey;
     }
