@@ -79,6 +79,12 @@ main {
     &:hover {
       background: #dcdcdc;
     }
+    &.tool {
+      border-top: solid 0.5em $blue;
+    }
+    &.info {
+      border-top: solid 0.5em $accent;
+    }
     .grid__info {
       display: flex;
       flex-wrap: wrap;
@@ -116,13 +122,13 @@ main {
     height: 15em;
     margin: 1em 0;
     div:nth-child(odd) > .slider__item {
-      background: #3a5684;
+      background: $blue;
     }
     .slider__item {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #2e476f;
+      background: $blue-dark;
       color: $white;
       text-decoration: none;
       height: 15em;
@@ -266,6 +272,18 @@ footer {
   @include smooth-transition;
   &:hover {
     background: $accent-dark;
+  }
+}
+
+.button--dark {
+  text-decoration: none;
+  background: $blue;
+  padding: 0.5em 1.25em;
+  border-radius: 0.5em;
+  color: $white;
+  @include smooth-transition;
+  &:hover {
+    background: $blue-dark;
   }
 }
 

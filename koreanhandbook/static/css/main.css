@@ -245,6 +245,10 @@ main {
     transition: all 0.2s ease-in-out; }
     .grid .grid__item:hover {
       background: #dcdcdc; }
+    .grid .grid__item.tool {
+      border-top: solid 0.5em #3a5684; }
+    .grid .grid__item.info {
+      border-top: solid 0.5em #595EE6; }
     .grid .grid__item .grid__info {
       display: flex;
       flex-wrap: wrap;
@@ -427,6 +431,16 @@ footer {
   transition: all 0.2s ease-in-out; }
   .button--accent:hover {
     background: #4e53d0; }
+
+.button--dark {
+  text-decoration: none;
+  background: #3a5684;
+  padding: 0.5em 1.25em;
+  border-radius: 0.5em;
+  color: #fefefe;
+  transition: all 0.2s ease-in-out; }
+  .button--dark:hover {
+    background: #2e476f; }
 
 .link--text {
   text-decoration: none;
