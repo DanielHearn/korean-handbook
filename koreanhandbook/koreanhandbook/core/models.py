@@ -26,7 +26,7 @@ class Info(models.Model):
     home_focus = models.BooleanField(default=False)
     alphanumeric_order = models.BooleanField(default=False)
     numeric_first_col = models.BooleanField(default=False)
-    description = models.TextField(default='')
+    description = models.TextField(default='The Korean names for the _ with their English translations.')
     def __str__(self):
        return 'Info: ' + self.full_name
 
