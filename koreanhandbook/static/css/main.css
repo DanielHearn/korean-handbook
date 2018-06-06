@@ -277,7 +277,8 @@ main {
   justify-content: center; }
   .slider__container .slider__content {
     height: 15em;
-    margin: 1em 0; }
+    margin: 1em 0;
+    overflow: hidden; }
     .slider__container .slider__content div:nth-child(odd) > .slider__item {
       background: #3a5684; }
     .slider__container .slider__content .slider__item {
@@ -334,7 +335,9 @@ main {
     color: #333;
     background: #fefefe;
     border-radius: 50%;
-    padding: 0.75em; }
+    padding: 0.75em;
+    max-height: 52px;
+    max-width: 52px; }
     .slider__container .slider__prev .material-icons, .slider__container .slider__next .material-icons {
       font-size: 1.5em; }
     .slider__container .slider__prev:hover, .slider__container .slider__next:hover {
