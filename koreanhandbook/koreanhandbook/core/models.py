@@ -30,8 +30,34 @@ class Info(models.Model):
     def __str__(self):
        return 'Info: ' + self.full_name
 
+class Profile(models.Model):
+    full_name = models.CharField(max_length=100, default='Full Name')
+    short_name = models.CharField(max_length=100, default='shortname')
+    korean_name = models.CharField(max_length=100, default='한국어')
+    picture = models.ImageField(upload_to='media/images')
+    home_focus = models.BooleanField(default=False)
+
+    def __str__(self):
+       return 'Profile: ' + self.full_name
+
+class Member(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    stage_name = models.CharField(max_length=100, default='Stage Name')
+    birth_name = models.CharField(max_length=100, default='Birth Name')
+    birth_date = models.DateTimeField(default=now, blank=True)
+    def __str__(self):
+       return 'Member: ' + self.stage_name
+
+class Member_Info(models.Model):
+    member = models.ForeignKey(Member, on_delete=models.CASCADE)
+    col_1 = models.CharField(max_length=255)
+    col_2 = models.CharField(max_length=255)
+    date_inserted = models.DateTimeField(default=now, blank=True)
+    def __str__(self):
+      return 'MemberInfo' + self.member.stage_name
+
 class Row_2(models.Model):
-    info = models.ForeignKey(Info, on_delete=models.CASCADE)
+    info = models.ForeignKey(Info, on_delete=models.CASCADE, blank=True)
     col_1 = models.CharField(max_length=255)
     col_2 = models.CharField(max_length=255)
     date_inserted = models.DateTimeField(default=now, blank=True)
@@ -39,7 +65,7 @@ class Row_2(models.Model):
       return 'Row2' + self.info.short_name + ' : ' + str(self.id)
 
 class Row_3(models.Model):
-    info = models.ForeignKey(Info, on_delete=models.CASCADE)
+    info = models.ForeignKey(Info, on_delete=models.CASCADE, blank=True)
     col_1 = models.CharField(max_length=255)
     col_2 = models.CharField(max_length=255)
     col_3 = models.CharField(max_length=255)

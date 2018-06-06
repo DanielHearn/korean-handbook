@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+    <title>{% block title %}Korean Handbook - Home{% endblock %}</title>
+      <section id="content">
+        <h2 class="content__title">KPOP Profiles</h2>
+        <h2 class="content__heading">{{ profile.full_name }}</h2>
+        <section class="grid">
+          {% for member in members %}
+            <div class="grid__item profile">
+              <div class="grid__info">
+                <h2 class="full__name">{{ member.stage_name }}</h2>
+                <h2 class="korean__name" >{{ member.birth_name }}</h2>
+              </div>
+            </div>
+            {% if profile.ad %}
+              {% include "ad_incontent.html" %}
+            {% endif %}
+          {% endfor %}
+        </section>
+      </section>
+    </main>
+{% endblock %}

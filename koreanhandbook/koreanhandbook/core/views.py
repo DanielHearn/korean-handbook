@@ -39,6 +39,29 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+def kpopprofiles(request):
+    profiles = Profile.objects.all()
+    status = ''
+    if len(profiles) == 0:
+        status = 'No profiles available'
+    focusProfiles = profiles.filter(home_focus=True)
+    if (len(focusProfiles) > 0):
+        sliderVisible = True
+    else:
+        sliderVisible = False
+    for profile in range(len(profiles)):
+        if ((profile+1) % 4 == 0):
+            profiles[profile].ad = True   
+        if (profile == (len(profiles)-1)):
+            profiles[profile].ad = True   
+    return render(request, 'kpopprofiles.html', {'status': status, 'sliderVisible': sliderVisible, 'profiles': profiles, 'focusProfiles': focusProfiles})
+
+def kpopprofile(request, profile_name):
+    profile_name = profile_name[0:len(profile_name)-1]
+    profile = Profile.objects.get(short_name=profile_name)
+    members = Member.objects.filter(profile=profile).order_by('birth_date')
+    return render(request, 'kpopprofile.html', {'profile': profile, 'members': members})
+
 def tool(request, tool_name):
     tool_name = tool_name[0:len(tool_name)-1]
     return render(request, tool_name + '.html')
@@ -83,19 +106,27 @@ def search(request):
                 return redirect ('/')
             tools = Tool.objects.all()
             infos = Info.objects.all()
+            kpopprofiles = Profile.objects.all()
             filteredTools = []
             filteredInfo = []
+            filteredProfiles = []
             for tool in tools:
                 if searchString(tool.full_name, search_text):
                     filteredTools.append(tool)
             for info in infos:
                 if searchString(info.full_name, search_text):
                     filteredInfo.append(info)
+            for profile in kpopprofiles:
+                if searchString(profile.full_name, search_text):
+                    filteredProfiles.append(info)     
             tool_status = ''
             info_status = ''
+            profile_status = ''
             if len(filteredTools) == 0:
                 tool_status = 'No tools matched the search'
             if len(filteredInfo) == 0:
                 info_status = 'No info matched the search'
-            return render(request, 'home.html', {'tool_status': tool_status, 'info_status': info_status, 'tools': filteredTools, 'info': filteredInfo})
+            if len(filteredProfiles) == 0:
+                profile_status = 'No kpop profiles matched the search'
+            return render(request, 'home.html', {'tool_status': tool_status, 'info_status': info_status, 'tools': filteredTools, 'info': filteredInfo, 'profiles': filteredProfiles})
     return redirect ('/')

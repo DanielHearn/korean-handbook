@@ -27,17 +27,22 @@ function sliderAutoPlay () {
 function clearSliderAutoPlay () {
   clearInterval(intervalID)
 }
-function mouseDownInterval () {
-  clearSliderAutoPlay()
-  clearMouseDownInterval()
-  mouseDownIntervalID = setInterval(() => mouseDownInterval(), 200)
+function mouseDownInterval (e) {
+  if (e.target.tagName !== 'A') {
+    console.log('Drag')
+    clearSliderAutoPlay()
+    clearMouseDownInterval()
+    mouseDownIntervalID = setInterval(() => mouseDownInterval(e), 200)
+  } else {
+    e.target.click()
+  }
 }
 function clearMouseDownInterval () {
   clearInterval(mouseDownIntervalID)
 }
 prevButton.addEventListener('click', () => siema.prev())
 nextButton.addEventListener('click', () => siema.next())
-sliderContainer.addEventListener('mousedown', () => mouseDownInterval())
+sliderContainer.addEventListener('mousedown', mouseDownInterval, false)
 sliderContainer.addEventListener('mouseup', () => clearMouseDownInterval())
 
 function showAdblockMessages () {
