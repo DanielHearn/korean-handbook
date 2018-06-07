@@ -9,6 +9,8 @@ $dark: #333;
 $colour-selection: #c8c5cc;
 $blue: #3a5684;
 $blue-dark: #2e476f;
+$kpop-accent: #d15bb4;
+$kpop-dark: #b9489d;
 
 $heading-size: 1.75em;
 $heading-weight: 800;
@@ -26,6 +28,10 @@ $content-width: 65em;
 @import 'partials/nav';
 @import 'partials/overlay';
 @import 'partials/content';
+@import 'partials/ad';
+@import 'partials/slider';
+@import 'partials/footer';
+@import 'partials/button';
 @import 'partials/random';
 @import 'partials/media-queries';
 

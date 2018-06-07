@@ -1,0 +1,10 @@
+footer {
+    background: $accent;
+    color: $white;
+    text-align: center;
+    padding: $content-padding/2;
+    font-size: $p-size;
+    p {
+      font-weight: 600;
+    }
+}
