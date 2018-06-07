@@ -223,6 +223,9 @@ main {
 .flex {
   display: flex; }
 
+.profile__image {
+  height: 15em; }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
