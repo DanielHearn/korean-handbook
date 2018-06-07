@@ -7,7 +7,7 @@
       <section id="content">
         <h2 class="content__title"><a href="/kpopprofiles/">KPOP Profiles</a></h2>
         <h2 class="content__heading">{{ profile.full_name }}</h2>
-        <img class="profile__image" src="/{{ profile.picture.url }}" alt="">
+        <img class="profile__image" src="{% static %}{{ profile.picture.url }}" alt="">
         <section class="grid">
           {% for member in members %}
             <div class="grid__item profile">
