@@ -78,6 +78,11 @@ main {
     &.kpop {
       border-top: solid 0.5em $kpop-accent;
     }
+    &.profile {
+      img {
+        height: 12em;
+      }
+    }
     .grid__info {
       display: flex;
       flex-wrap: wrap;

@@ -12,9 +12,10 @@
             {% for focusProfile in focusProfiles %}
               <div class="slider__item">
                 <div class="item__info">
+                  <img src="{% get_static_prefix %}/media/image/{{ focusProfile.picture.url }}" alt="">
                   <h2 class="full__name">{{ focusProfile.full_name }}</h2>
                   <h2 class="korean__name" >{{ focusProfile.korean_name }}</h2>
-                  <a class="button--dark" href="/kpopprofiles/{{ profile.short_name }}/">View</a>
+                  <a class="button--dark" href="/kpopprofiles/{{ focusProfile.short_name }}/">View</a>
                 </div>
               </div>
             {% endfor %}
@@ -29,6 +30,7 @@
           {% for profile in profiles %}
             <div class="grid__item profile">
               <div class="grid__info">
+                  <img src="/{{ profile.picture.url }}" alt="">
                 <h2 class="full__name">{{ profile.full_name }}</h2>
                 <h2 class="korean__name" >{{ profile.korean_name }}</h2>
                 <a class="button--dark" href="/kpopprofiles/{{ profile.short_name }}/">View</a>

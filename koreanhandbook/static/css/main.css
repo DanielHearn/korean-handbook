@@ -244,6 +244,8 @@ main {
       border-top: solid 0.5em #595EE6; }
     .grid .grid__item.kpop {
       border-top: solid 0.5em #d15bb4; }
+    .grid .grid__item.profile img {
+      height: 12em; }
     .grid .grid__item .grid__info {
       display: flex;
       flex-wrap: wrap;

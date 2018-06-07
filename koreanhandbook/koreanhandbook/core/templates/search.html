@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+    <title>{% block title %}Korean Handbook - Home{% endblock %}</title>
+      <section id="content">
+        <h2 class="content__title">The Korean Handbook</h2>
+        <h2 class="content__heading">Available Information</h2>
+        <p>{{ status }}</p>
+        <section class="grid">
+          {% for tool in tools %}
+            <div class="grid__item tool">
+              <div class="grid__info">
+                <h2 class="full__name">{{ tool.full_name }}</h2>
+                <h2 class="korean__name" >{{ tool.korean_name }}</h2>
+                <a class="button--dark" href="/tool/{{ tool.short_name }}">View</a>
+              </div>
+            </div>
+            {% if tool.ad %}
+              {% include "ad_incontent.html" %}
+            {% endif %}
+          {% endfor %}
+          {% for infoPage in info %}
+            <div class="grid__item info">
+              <div class="grid__info">
+                <h2 class="full__name" >{{ infoPage.full_name }}</h2>
+                <h2 class="korean__name" >{{ infoPage.korean_name }}</h2>
+                <a class="button--accent" href="/info/{{ infoPage.short_name }}">View</a>
+              </div>
+            </div>
+            {% if infoPage.ad %}
+              {% include "ad_incontent.html" %}
+            {% endif %}
+          {% endfor %}
+          {% for kpopProfile in kpopProfiles %}
+            <div class="grid__item info">
+              <div class="grid__info">
+                <h2 class="full__name" >{{ kpopProfile.full_name }}</h2>
+                <h2 class="korean__name" >{{ kpopProfile.korean_name }}</h2>
+                <a class="button--accent" href="/kpopprofiles/{{ kpopProfile.short_name }}">View</a>
+              </div>
+            </div>
+            {% if kpopProfile.ad %}
+              {% include "ad_incontent.html" %}
+            {% endif %}
+          {% endfor %}
+        </section>
+      </section>
+    </main>
+{% endblock %}

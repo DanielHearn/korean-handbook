@@ -33,6 +33,7 @@ class MemberAdmin(admin.ModelAdmin):
 
 class MemberInLine(admin.TabularInline):
     model = Member
+    extra = 1
 
 class ProfileAdmin(admin.ModelAdmin):
     actions_on_bottom = False

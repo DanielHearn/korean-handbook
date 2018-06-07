@@ -34,7 +34,7 @@ class Profile(models.Model):
     full_name = models.CharField(max_length=100, default='Full Name')
     short_name = models.CharField(max_length=100, default='shortname')
     korean_name = models.CharField(max_length=100, default='한국어')
-    picture = models.ImageField(upload_to='media/images')
+    picture = models.ImageField(upload_to='./static/media/images')
     home_focus = models.BooleanField(default=False)
 
     def __str__(self):
