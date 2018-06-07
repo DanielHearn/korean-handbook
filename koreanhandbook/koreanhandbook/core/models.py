@@ -5,6 +5,8 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import models
 from django.utils.timezone import now
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill
 
 class Tool(models.Model):
     full_name = models.CharField(max_length=100)
@@ -34,7 +36,11 @@ class Profile(models.Model):
     full_name = models.CharField(max_length=100, default='Full Name')
     short_name = models.CharField(max_length=100, default='shortname')
     korean_name = models.CharField(max_length=100, default='한국어')
-    picture = models.ImageField(upload_to='./static/media/images')
+    picture = ProcessedImageField(upload_to='./images',
+                                           processors=[ResizeToFill(600, 400)],
+                                           format='JPEG',
+                                           options={'quality': 60},
+                                           default='default.jpg')
     home_focus = models.BooleanField(default=False)
 
     def __str__(self):
@@ -42,19 +48,19 @@ class Profile(models.Model):
 
 class Member(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    picture = ProcessedImageField(upload_to='./images',
+                                           processors=[ResizeToFill(600, 400)],
+                                           format='JPEG',
+                                           options={'quality': 60},
+                                           default='default.jpg')
     stage_name = models.CharField(max_length=100, default='Stage Name')
     birth_name = models.CharField(max_length=100, default='Birth Name')
     birth_date = models.DateTimeField(default=now, blank=True)
+    birth_place = models.TextField(default='Birth Place')
+    position = models.TextField(default='Position')
+    height = models.TextField(default='Height')
     def __str__(self):
        return 'Member: ' + self.stage_name
-
-class Member_Info(models.Model):
-    member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    col_1 = models.CharField(max_length=255)
-    col_2 = models.CharField(max_length=255)
-    date_inserted = models.DateTimeField(default=now, blank=True)
-    def __str__(self):
-      return 'MemberInfo' + self.member.stage_name
 
 class Row_2(models.Model):
     info = models.ForeignKey(Info, on_delete=models.CASCADE, blank=True)

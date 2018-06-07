@@ -224,7 +224,11 @@ main {
   display: flex; }
 
 .profile__image {
-  height: 15em; }
+  height: 15em;
+  padding: 1em 0 1em 0; }
+
+.focusProfile {
+  background-size: cover; }
 
 .grid {
   display: grid;
@@ -232,6 +236,14 @@ main {
   grid-row-gap: 2em;
   grid-column-gap: 4em;
   padding-bottom: 2em; }
+  .grid.profile {
+    grid-template-columns: repeat(2, 1fr); }
+  .grid.kpop .grid__item {
+    justify-content: flex-start; }
+    .grid.kpop .grid__item .grid__info {
+      padding: 0 0 1em 0; }
+    .grid.kpop .grid__item img {
+      width: 100%; }
   .grid .grid__item {
     display: block;
     background: #ececec;
@@ -247,8 +259,44 @@ main {
       border-top: solid 0.5em #595EE6; }
     .grid .grid__item.kpop {
       border-top: solid 0.5em #d15bb4; }
-    .grid .grid__item.profile img {
-      height: 12em; }
+    .grid .grid__item.profile {
+      justify-content: flex-start; }
+      .grid .grid__item.profile img {
+        width: 100%; }
+      .grid .grid__item.profile .info__header {
+        background: #595EE6;
+        color: #fefefe;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: left;
+        text-align: left; }
+        .grid .grid__item.profile .info__header .row__info {
+          margin: 0.5em 0 0.5em 0;
+          text-align: left;
+          font-size: 1.25em;
+          font-weight: 600; }
+      .grid .grid__item.profile .info__content {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: left;
+        text-align: left; }
+        .grid .grid__item.profile .info__content .row__info {
+          font-size: 1.05em; }
+      .grid .grid__item.profile .content__row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 1em;
+        grid-column-gap: 1em;
+        padding: 0 0.5em 0 0.5em; }
+      .grid .grid__item.profile .grid__info {
+        padding: 0;
+        justify-content: flex-start; }
     .grid .grid__item .grid__info {
       display: flex;
       flex-wrap: wrap;
@@ -394,6 +442,7 @@ main {
       color: #fefefe;
       text-decoration: none;
       height: 15em;
+      cursor: pointer;
       transition: all 0.2s ease-in-out; }
       .slider__container .slider__content .slider__item .item__info {
         padding: 1em;

@@ -7,13 +7,40 @@
       <section id="content">
         <h2 class="content__title"><a href="/kpopprofiles/">KPOP Profiles</a></h2>
         <h2 class="content__heading">{{ profile.full_name }}</h2>
-        <img class="profile__image" src="{% static %}{{ profile.picture.url }}" alt="">
-        <section class="grid">
+        <img class="profile__image" src="{{ profile.picture.url }}" alt="">
+        <section class="grid profile">
           {% for member in members %}
             <div class="grid__item profile">
               <div class="grid__info">
-                <h2 class="full__name">{{ member.stage_name }}</h2>
-                <h2 class="korean__name" >{{ member.birth_name }}</h2>
+                <img class="info__image" src="{{ member.picture.url }}" alt="">
+                <div class="info__header">
+                  <div class="content__row">
+                    <h2 class="row__info" >Stage Name:</h2>
+                    <h2 class="row__info">{{ member.stage_name }}</h2>
+                  </div>
+                  <div class="content__row">
+                    <h2 class="row__info" >Birth Name:</h2>
+                    <h2 class="row__info">{{ member.birth_name }}</h2>
+                  </div>
+                </div>
+                <div class="info__content"> 
+                  <div class="content__row">
+                    <p class="row__info" >Birthday:</p>
+                    <p class="row__info" >{{ member.birth_date|date:"M d, Y" }}</p>
+                  </div>
+                  <div class="content__row">
+                    <p class="row__info" >Birth Place:</p>
+                    <p class="row__info" >{{ member.birth_place }}</p>
+                  </div>
+                  <div class="content__row">
+                      <p class="row__info" >Height:</p>
+                      <p class="row__info" >{{ member.height }}</p>
+                  </div>
+                  <div class="content__row">
+                      <p class="row__info" >Position:</p>
+                      <p class="row__info" >{{ member.position }}</p>
+                  </div>
+                </div>
               </div>
             </div>
             {% if profile.ad %}

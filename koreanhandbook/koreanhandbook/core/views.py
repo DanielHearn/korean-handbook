@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
 from .functions import *
+from datetime import datetime
 
 class Ad:
     def __init__(self):

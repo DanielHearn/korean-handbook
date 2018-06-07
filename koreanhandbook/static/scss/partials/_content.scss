@@ -56,6 +56,11 @@ main {
 
 .profile__image {
   height: 15em;
+  padding: 1em 0 1em 0;
+}
+
+.focusProfile {
+  background-size: cover;
 }
 
 .grid {
@@ -64,6 +69,20 @@ main {
   grid-row-gap: $content-padding;
   grid-column-gap: $content-padding*2;
   padding-bottom: $content-padding;
+  &.profile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &.kpop {
+    .grid__item {
+      justify-content: flex-start;
+      .grid__info {
+        padding: 0 0 1em 0;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
   .grid__item {
     display: block;
     background: $grey-dark;
@@ -84,8 +103,49 @@ main {
       border-top: solid 0.5em $kpop-accent;
     }
     &.profile {
+      justify-content: flex-start;
       img {
-        height: 12em;
+        width: 100%;
+      }
+      .info__header {
+        background: $accent;
+        color: $white;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: left;
+        text-align: left;
+        .row__info {
+          margin: 0.5em 0 0.5em 0;
+          text-align: left;
+          font-size: $sub-heading-size;
+          font-weight: 600;
+        }
+      }
+      .info__content {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: left;
+        text-align: left;
+        .row__info {
+          font-size: 1.05em;
+        }
+      }
+      .content__row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 1em;
+        grid-column-gap: 1em;
+        padding: 0 0.5em 0 0.5em;
+      }
+      .grid__info {
+        padding: 0;
+        justify-content: flex-start;
       }
     }
     .grid__info {

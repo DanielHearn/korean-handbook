@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'koreanhandbook',
     'koreanhandbook.core',
     'storages',
+    'imagekit',
 ]
 
 MIDDLEWARE = [
@@ -128,7 +129,6 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
 USE_L10N = True
 
 USE_TZ = True
@@ -137,20 +137,11 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 3000
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-#if 'RDS_DB_NAME' in os.environ:
-#    STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
-#    STATIC_URL = '/static/'
-#else:
-#    STATIC_URL = '/static/'
-#   STATICFILES_DIRS = (
-#        os.path.join(BASE_DIR, 'static'),
-#   )
-#   STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
-   )
+)
 STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',

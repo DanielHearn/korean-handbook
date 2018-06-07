@@ -15,7 +15,7 @@ function searchPage () {
   const searchText = pageSearch.value.toLowerCase()
   const listContainer = document.querySelector('.list')
   const dataRows = listContainer.querySelectorAll('.list__row')
-  for (row in dataRows) {
+  for (let row in dataRows) {
     const rowElement = dataRows[row]
     if (rowElement.dataset != null) {
       const key1 = rowElement.dataset.key1.toLowerCase()
