@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'koreanhandbook',
     'koreanhandbook.core',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -135,12 +136,30 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 3000
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-if 'RDS_DB_NAME' in os.environ:
-    STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
-    STATIC_URL = '/static/'
-else:
-    STATIC_URL = '/static/'
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+#if 'RDS_DB_NAME' in os.environ:
+#    STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
+#    STATIC_URL = '/static/'
+#else:
+#    STATIC_URL = '/static/'
+#   STATICFILES_DIRS = (
+#        os.path.join(BASE_DIR, 'static'),
+#   )
+#   STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+
+AWS_STORAGE_BUCKET_NAME = 'koreanhandbook'
+AWS_S3_REGION_NAME = 'eu-west-2'  # e.g. us-east-2
+AWS_ACCESS_KEY_ID = 'AKIAJEBG6LHTSGQ3GKXA'
+AWS_SECRET_ACCESS_KEY = 'mjeSShx8FfTaA2wAHOUBZ22I/UqU5EoB3w2mKZDi'
+
+# Tell django-storages the domain to use to refer to static files.
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+# Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
+# you run `collectstatic`).
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
