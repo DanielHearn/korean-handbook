@@ -50,7 +50,7 @@ def kpopprofile(request, profile_name):
     profile_name = profile_name[0:len(profile_name)-1]
     profile = Profile.objects.get(short_name=profile_name)
     members = Member.objects.filter(profile=profile).order_by('birth_date')
-    profiles = addAdToArray(members, 2)
+    members = addAdToArray(members, 2)
     return render(request, 'kpopprofile.html', {'profile': profile, 'members': members})
 
 def tool(request, tool_name):
@@ -103,7 +103,7 @@ def search(request):
             filteredProfiles = findMatchingInfo(kpopprofiles, searchText)
             filteredTools = addAdToArray(filteredTools, 4)
             filteredInfo = addAdToArray(filteredInfo, 4)
-            filteredProfiles = addAdToArray(filteredProfile, 4)
+            filteredProfiles = addAdToArray(filteredProfiles, 4)
             if len(filteredProfiles) == 0 and len(filteredInfo) == 0 and len(filteredTools) == 0:
                 status = 'No information matched the search criteria'
             else :
