@@ -97,7 +97,6 @@ function clearSliderAutoPlay () {
 }
 function mouseDownInterval (e) {
   if (e.target.tagName !== 'A') {
-    console.log('Drag')
     clearSliderAutoPlay()
     clearMouseDownInterval()
     mouseDownIntervalID = setInterval(() => mouseDownInterval(e), 200)

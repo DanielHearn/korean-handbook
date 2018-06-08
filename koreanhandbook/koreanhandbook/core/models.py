@@ -59,6 +59,7 @@ class Profile(models.Model):
                                            options={'quality': 80},
                                            default='default.jpg')
     home_focus = models.BooleanField(default=False)
+    date_inserted = models.DateTimeField(default=now, blank=True)
 
     def __str__(self):
        return 'Profile: ' + self.full_name

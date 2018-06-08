@@ -42,6 +42,7 @@ def kpopprofiles(request):
         sliderVisible = True
     else:
         sliderVisible = False
+    profiles = profiles.order_by('date_inserted').reverse()
     profiles = addAdToArray(profiles, 4)
     return render(request, 'kpopprofiles.html', {'status': status, 'sliderVisible': sliderVisible, 'profiles': profiles, 'focusProfiles': focusProfiles})
 
