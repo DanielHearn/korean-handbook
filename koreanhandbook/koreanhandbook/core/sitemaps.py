@@ -1,23 +1,15 @@
 from django.contrib.sitemaps import Sitemap
+from django.urls import reverse
 from .models import *
 
-from koreanhandbook.urls import urlpatterns
-from django.core.urlresolvers import reverse
-
 class StaticSitemap(Sitemap):
-     priority = 0.8
-     changefreq = 'weekly'
+    changefreq = "weekly"
+    priority = 0.7
 
-     # The below method returns all urls defined in urls.py file
-     def items(self):
-        mylist = [ ]
-        for url in urlpatterns:
-            mylist.append('home:'+url.name) 
-        return mylist
-
-     def location(self, item):
-         return reverse(item)
-
+    def items(self):
+       return ['kpopprofiles']
+    def location(self, item):
+        return reverse(item)
 
 class InfoSitemap(Sitemap):
     changefreq = "weekly"

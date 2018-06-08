@@ -44,7 +44,7 @@ class Info(models.Model):
     numeric_first_col = models.BooleanField(default=False)
     description = models.TextField(default='The Korean names for the _ with their English translations.')
     def __str__(self):
-       return 'Info: ' + self.full_name
+        return 'Info: ' + self.full_name
     def get_absolute_url(self):
         return '/info/'+ self.short_name
 
@@ -65,7 +65,7 @@ class Profile(models.Model):
     home_focus = models.BooleanField(default=False)
     date_inserted = models.DateTimeField(default=now, blank=True)
     def __str__(self):
-       return 'Profile: ' + self.full_name
+        return 'Profile: ' + self.full_name
     def get_absolute_url(self):
         return '/kpopprofiles/'+ self.short_name
 
