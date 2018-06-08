@@ -49,6 +49,10 @@ class Profile(models.Model):
     short_name = models.CharField(max_length=100, default='shortname')
     korean_name = models.CharField(max_length=100, default='한국어')
     group_type = models.CharField(max_length=100, choices=PROFILE_CHOICES, default='1')
+    debut_date = models.DateTimeField(default=now, blank=True)
+    debut = models.CharField(max_length=100, default='Debut')
+    agency = models.CharField(max_length=100, default='Agency')
+    fandom = models.CharField(max_length=100, default='Fandom')
     picture = ProcessedImageField(upload_to='./images',
                                            processors=[ResizeToFill(600, 400)],
                                            format='JPEG',

@@ -5,10 +5,41 @@
     <main>
     <title>{% block title %}Korean Handbook - Home{% endblock %}</title>
       <section id="content">
-        <h2 class="content__title"><a href="/kpopprofiles/">KPOP Profiles</a></h2>
+        <a class="link--text accent" href="/kpopprofiles/">Back to KPOP Profiles</a>
+        <h2 class="content__title">KPOP Profile</h2>
         <h2 class="content__heading">{{ profile.full_name }}</h2>
-        <img class="profile__image" src="{{ profile.picture.url }}" alt="">
         <section class="grid profile">
+            <div class="grid__item profile__header">
+              <div class="grid__image">
+                <img class="profile__image" src="{{ profile.picture.url }}" alt="">
+              </div>
+              <div class="grid__info">
+                <div class="info__header">
+                  <div class="content__row">
+                    <h2 class="row__info" >Name: </h2>
+                    <h2 class="row__info">{{ profile.full_name}}</h2>
+                  </div>
+                </div>
+                <div class="info__content"> 
+                  <div class="content__row">
+                    <p class="row__info" >Debut Date:</p>
+                    <p class="row__info" >{{ profile.debut_date}}</p>
+                  </div>
+                  <div class="content__row">
+                      <p class="row__info" >Debut:</p>
+                      <p class="row__info" >{{ profile.debut}}</p>
+                    </div>
+                  <div class="content__row">
+                      <p class="row__info" >Agency:</p>
+                      <p class="row__info" >{{ profile.agency}}</p>
+                  </div>
+                  <div class="content__row">
+                    <p class="row__info" >Fandom:</p>
+                    <p class="row__info" >{{ profile.fandom}}</p>
+                  </div>
+                </div> 
+              </div>
+            </div>
           {% for member in members %}
             <div class="grid__item profile">
               <div class="grid__info">

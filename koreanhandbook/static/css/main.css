@@ -223,9 +223,54 @@ main {
 .flex {
   display: flex; }
 
-.profile__image {
-  height: 15em;
-  padding: 1em 0 1em 0; }
+.profile__header {
+  grid-column: span 2;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: flex-start; }
+  .profile__header img {
+    width: 100%; }
+  .profile__header .info__header {
+    background: #595EE6;
+    color: #fefefe;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: left;
+    text-align: left; }
+    .profile__header .info__header .row__info {
+      margin: 0.5em 0 0.5em 0;
+      text-align: left;
+      font-size: 1.1em;
+      font-weight: 400; }
+  .profile__header .info__content {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: left;
+    text-align: left; }
+    .profile__header .info__content .row__info {
+      font-size: 1.05em;
+      margin: 0.6em 0 0.6em 0; }
+  .profile__header .content__row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+    padding: 0 0.5em 0 0.5em; }
+  .profile__header .grid__info {
+    padding: 0 !important;
+    justify-content: flex-start; }
+  .profile__header .grid__image {
+    flex: 1; }
+    .profile__header .grid__image img {
+      width: 100%; }
+  .profile__header .grid__info {
+    flex: 1; }
 
 .focusProfile {
   background-size: cover; }
@@ -287,7 +332,8 @@ main {
         align-items: left;
         text-align: left; }
         .grid .grid__item.profile .info__content .row__info {
-          font-size: 1.05em; }
+          font-size: 1.05em;
+          margin: 0.6em 0 0.6em 0; }
       .grid .grid__item.profile .content__row {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -422,7 +468,8 @@ main {
   padding-left: 35px;
   margin: 0 1em 0.5em 0;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 1.1em;
+  font-weight: 400;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -765,7 +812,9 @@ footer {
     html body main #content .list .list__row, html body main #content .list .column__title {
       padding: 0 0.5em 0 0.5em; }
     html body main #content #genWord h2, html body main #content #genWord h3 {
-      margin: 0.25em 0; } }
+      margin: 0.25em 0; }
+  html body main .profile__header {
+    grid-column: 1; } }
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif; }

@@ -53,10 +53,69 @@ main {
   display: flex;
 }
 
+.profile__header {
+  grid-column: span 2;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: flex-start;
+  img {
+    width: 100%;
+  }
+  .info__header {
+    background: $accent;
+    color: $white;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: left;
+    text-align: left;
+    .row__info {
+      margin: 0.5em 0 0.5em 0;
+      text-align: left;
+      font-size: $p-size;
+      font-weight: $p-weight;
+    }
+  }
+  .info__content {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: left;
+    text-align: left;
+    .row__info {
+      font-size: 1.05em;
+      margin: 0.6em 0 0.6em 0;
+    }
+  }
+  .content__row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+    padding: 0 0.5em 0 0.5em;
+  }
+  .grid__info {
+    padding: 0 !important;
+    justify-content: flex-start;
+  }
+  .grid__image {
+    flex: 1;
+    img {
+      width: 100%;
+    }
+  }
+  .grid__info {
+    flex: 1;
+  }
+}
 
 .profile__image {
-  height: 15em;
-  padding: 1em 0 1em 0;
+  //height: 15em;
+  //padding: 1em 0 1em 0;
 }
 
 .focusProfile {
@@ -134,6 +193,7 @@ main {
         text-align: left;
         .row__info {
           font-size: 1.05em;
+          margin: 0.6em 0 0.6em 0;
         }
       }
       .content__row {
@@ -274,7 +334,8 @@ main {
   padding-left: 35px;
   margin: 0 1em 0.5em 0;
   cursor: pointer;
-  font-size: 22px;
+  font-size: $p-size;
+  font-weight: $p-weight;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
