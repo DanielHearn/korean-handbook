@@ -8,6 +8,18 @@ from django.utils.timezone import now
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 
+BOYGROUP = "BOYGROUP"
+GIRLGROUP = "GIRLGROUP"
+COEDGROUP = "COEDGROUP"
+SOLOIST = "SOLOIST"
+
+PROFILE_CHOICES = (
+    (BOYGROUP, "Boy Group"),
+    (GIRLGROUP, "Girl Group"),
+    (COEDGROUP, "Co-ed Group"),
+    (SOLOIST, "Soloist"),
+)
+
 class Tool(models.Model):
     full_name = models.CharField(max_length=100)
     korean_name = models.CharField(max_length=100, default='한국어')
@@ -36,10 +48,11 @@ class Profile(models.Model):
     full_name = models.CharField(max_length=100, default='Full Name')
     short_name = models.CharField(max_length=100, default='shortname')
     korean_name = models.CharField(max_length=100, default='한국어')
+    group_type = models.CharField(max_length=100, choices=PROFILE_CHOICES, default='1')
     picture = ProcessedImageField(upload_to='./images',
                                            processors=[ResizeToFill(600, 400)],
                                            format='JPEG',
-                                           options={'quality': 60},
+                                           options={'quality': 80},
                                            default='default.jpg')
     home_focus = models.BooleanField(default=False)
 
@@ -51,7 +64,7 @@ class Member(models.Model):
     picture = ProcessedImageField(upload_to='./images',
                                            processors=[ResizeToFill(600, 400)],
                                            format='JPEG',
-                                           options={'quality': 60},
+                                           options={'quality': 80},
                                            default='default.jpg')
     stage_name = models.CharField(max_length=100, default='Stage Name')
     birth_name = models.CharField(max_length=100, default='Birth Name')

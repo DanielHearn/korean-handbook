@@ -16,9 +16,9 @@ def castAsInt(querySet, intColumn, newColumn):
         select={newColumn: 'CAST(' + intColumn + ' AS INTEGER)'}
     ).order_by(newColumn)
 
-def addAdToArray(array):
+def addAdToArray(array, itemsBetweenAds):
     for item in range(len(array)):
-        if ((item+1) % 4 == 0):
+        if ((item+1) % itemsBetweenAds == 0):
             array[item].ad = True   
         elif (item == (len(array)-1)):
             array[item].ad = True   

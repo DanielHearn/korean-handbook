@@ -25,8 +25,8 @@ def home(request):
         sliderVisible = True
     else:
         sliderVisible = False
-    tools = addAdToArray(tools)
-    info = addAdToArray(info) 
+    tools = addAdToArray(tools, 4)
+    info = addAdToArray(info, 4) 
     return render(request, 'home.html', {'status': status, 'sliderVisible': sliderVisible, 'focusInfo': focusInfo, 'focusTools': focusTools, 'tools': tools, 'info': info})
 
 def about(request):
@@ -42,13 +42,14 @@ def kpopprofiles(request):
         sliderVisible = True
     else:
         sliderVisible = False
-    profiles = addAdToArray(profiles)
+    profiles = addAdToArray(profiles, 4)
     return render(request, 'kpopprofiles.html', {'status': status, 'sliderVisible': sliderVisible, 'profiles': profiles, 'focusProfiles': focusProfiles})
 
 def kpopprofile(request, profile_name):
     profile_name = profile_name[0:len(profile_name)-1]
     profile = Profile.objects.get(short_name=profile_name)
     members = Member.objects.filter(profile=profile).order_by('birth_date')
+    profiles = addAdToArray(members, 2)
     return render(request, 'kpopprofile.html', {'profile': profile, 'members': members})
 
 def tool(request, tool_name):
@@ -99,9 +100,9 @@ def search(request):
             filteredTools = findMatchingInfo(tools, searchText)
             filteredInfo = findMatchingInfo(infos, searchText)
             filteredProfiles = findMatchingInfo(kpopprofiles, searchText)
-            filteredTools = addAdToArray(filteredTools)
-            filteredInfo = addAdToArray(filteredInfo)
-            filteredProfiles = addAdToArray(filteredProfiles)
+            filteredTools = addAdToArray(filteredTools, 4)
+            filteredInfo = addAdToArray(filteredInfo, 4)
+            filteredProfiles = addAdToArray(filteredProfile, 4)
             if len(filteredProfiles) == 0 and len(filteredInfo) == 0 and len(filteredTools) == 0:
                 status = 'No information matched the search criteria'
             else :

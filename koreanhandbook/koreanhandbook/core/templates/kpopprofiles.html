@@ -24,10 +24,28 @@
         </div>
         {% endif %}
         <h2 class="content__heading">Available Profiles</h2>
-        <p>{{ status }}</p>
+        <div class="content__filter"> 
+          <label class="filter__container">Girl Groups
+            <input type="checkbox" data-type="filter-girl" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          <label class="filter__container">Boy Groups
+            <input type="checkbox" data-type="filter-boy" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          <label class="filter__container">Co-ed Groups
+            <input type="checkbox" data-type="filter-coed" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          <label class="filter__container">Soloists
+            <input type="checkbox" data-type="filter-soloist" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <p class="resultsCounter">{{ status }}</p>
         <section class="grid kpop">
           {% for profile in profiles %}
-            <div class="grid__item">
+            <div class="grid__item" data-type="{{ profile.group_type }}">
               <div class="grid__info">
                 <img class="info__image" src="{{ profile.picture.url }}" alt="">
                 <h2 class="full__name">{{ profile.full_name }}</h2>
@@ -43,5 +61,5 @@
       </section>
     </main>
     <script src="{% static 'js/siema.min.js' %}"></script>
-    <script src="{% static 'js/koreanHandbook_home.js' %}"></script>
+    <script src="{% static 'js/koreanHandbook.js' %}"></script>
 {% endblock %}
