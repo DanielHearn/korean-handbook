@@ -101,7 +101,9 @@ function mouseDownInterval (e) {
     clearMouseDownInterval()
     mouseDownIntervalID = setInterval(() => mouseDownInterval(e), 200)
   } else {
-    e.target.click()
+    if (e.button === 0) {
+      e.target.click()
+    }
   }
 }
 function clearMouseDownInterval () {

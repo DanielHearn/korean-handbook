@@ -223,66 +223,12 @@ main {
 .flex {
   display: flex; }
 
-.profile__header {
-  grid-column: span 2;
-  display: flex !important;
-  flex-direction: row;
-  justify-content: flex-start; }
-  .profile__header .profile__image {
-    height: 100%;
-    width: 50%; }
-  .profile__header .info__header {
-    background: #595EE6;
-    color: #fefefe;
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    box-sizing: border-box;
-    align-items: left;
-    text-align: left; }
-    .profile__header .info__header .row__info {
-      margin: 0.5em 0 0.5em 0;
-      text-align: left;
-      font-size: 1.1em;
-      font-weight: 400; }
-  .profile__header .info__content {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    box-sizing: border-box;
-    align-items: left;
-    text-align: left; }
-    .profile__header .info__content .row__info {
-      font-size: 1.05em;
-      margin: 0.6em 0 0.6em 0; }
-  .profile__header .content__row {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-row-gap: 1em;
-    grid-column-gap: 1em;
-    padding: 0 0.5em 0 0.5em; }
-  .profile__header .grid__info {
-    padding: 0 !important;
-    justify-content: flex-start !important; }
-  .profile__header .grid__info {
-    flex: 1; }
-
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 2em;
   grid-column-gap: 4em;
   padding-bottom: 2em; }
-  .grid.profile {
-    grid-template-columns: repeat(2, 1fr); }
-  .grid.kpop .grid__item {
-    justify-content: flex-start; }
-    .grid.kpop .grid__item .grid__info {
-      padding: 0 0 1em 0; }
-    .grid.kpop .grid__item img {
-      width: 100%; }
   .grid .grid__item {
     display: block;
     background: #ececec;
@@ -296,47 +242,6 @@ main {
       border-top: solid 0.5em #3a5684; }
     .grid .grid__item.info {
       border-top: solid 0.5em #595EE6; }
-    .grid .grid__item.kpop {
-      border-top: solid 0.5em #d15bb4; }
-    .grid .grid__item.profile {
-      justify-content: flex-start; }
-      .grid .grid__item.profile img {
-        width: 100%; }
-      .grid .grid__item.profile .info__header {
-        background: #595EE6;
-        color: #fefefe;
-        width: 100%;
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        box-sizing: border-box;
-        align-items: left;
-        text-align: left; }
-        .grid .grid__item.profile .info__header .row__info {
-          margin: 0.5em 0 0.5em 0;
-          text-align: left;
-          font-size: 1.1em;
-          font-weight: 400; }
-      .grid .grid__item.profile .info__content {
-        width: 100%;
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        box-sizing: border-box;
-        align-items: left;
-        text-align: left; }
-        .grid .grid__item.profile .info__content .row__info {
-          font-size: 1.05em;
-          margin: 0.6em 0 0.6em 0; }
-      .grid .grid__item.profile .content__row {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-row-gap: 1em;
-        grid-column-gap: 1em;
-        padding: 0 0.5em 0 0.5em; }
-      .grid .grid__item.profile .grid__info {
-        padding: 0;
-        justify-content: flex-start; }
     .grid .grid__item .grid__info {
       display: flex;
       flex-wrap: wrap;
@@ -449,6 +354,102 @@ main {
 .rounded {
   border-radius: 0.2em; }
 
+.profile__header {
+  grid-column: span 2;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: flex-start; }
+  .profile__header .profile__image {
+    height: 100%;
+    width: 50%; }
+  .profile__header .info__header {
+    background: #595EE6;
+    color: #fefefe;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: left;
+    text-align: left; }
+    .profile__header .info__header .row__info {
+      margin: 0.5em 0 0.5em 0;
+      text-align: left;
+      font-size: 1.1em;
+      font-weight: 400; }
+  .profile__header .info__content {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: left;
+    text-align: left; }
+    .profile__header .info__content .row__info {
+      font-size: 1.05em;
+      margin: 0.6em 0 0.6em 0; }
+  .profile__header .content__row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+    padding: 0 0.5em 0 0.5em; }
+  .profile__header .grid__info {
+    padding: 0 !important;
+    justify-content: flex-start !important; }
+  .profile__header .grid__info {
+    flex: 1; }
+
+.grid.profile {
+  grid-template-columns: repeat(2, 1fr); }
+.grid.kpop .grid__item {
+  justify-content: flex-start; }
+  .grid.kpop .grid__item .grid__info {
+    padding: 0 0 1em 0; }
+  .grid.kpop .grid__item img {
+    width: 100%; }
+.grid .grid__item.kpop {
+  border-top: solid 0.5em #d15bb4; }
+.grid .grid__item.profile {
+  justify-content: flex-start; }
+  .grid .grid__item.profile img {
+    width: 100%; }
+  .grid .grid__item.profile .info__header {
+    background: #595EE6;
+    color: #fefefe;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: left;
+    text-align: left; }
+    .grid .grid__item.profile .info__header .row__info {
+      margin: 0.5em 0 0.5em 0;
+      text-align: left;
+      font-size: 1.1em;
+      font-weight: 400; }
+  .grid .grid__item.profile .info__content {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: left;
+    text-align: left; }
+    .grid .grid__item.profile .info__content .row__info {
+      font-size: 1.05em;
+      margin: 0.6em 0 0.6em 0; }
+  .grid .grid__item.profile .content__row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+    padding: 0 0.5em 0 0.5em; }
+  .grid .grid__item.profile .grid__info {
+    padding: 0;
+    justify-content: flex-start; }
+
 .content__filter {
   display: flex;
   flex-direction: row;
@@ -482,15 +483,15 @@ main {
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee; }
+  background-color: #ececec; }
 
 /* On mouse-over, add a grey background color */
 .filter__container:hover input ~ .checkmark {
-  background-color: #ccc; }
+  background-color: #dcdcdc; }
 
 /* When the checkbox is checked, add a blue background */
 .filter__container input:checked ~ .checkmark {
-  background-color: #2196F3; }
+  background-color: #595EE6; }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
