@@ -18,9 +18,16 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from koreanhandbook.core import views as core_views
+from koreanhandbook.core.sitemaps import InfoSiteMap
+
+sitemaps = {
+    'info': InfoSiteMap()
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
+    url(r'^robots.txt$', include('robots.urls')),
     url(r'^$', core_views.home, name='home'),
     url('search/', core_views.search, name='search'),
     url('about/', core_views.about, name='about'),
