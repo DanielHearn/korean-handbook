@@ -120,8 +120,8 @@ main {
         .row__info {
           margin: 0.5em 0 0.5em 0;
           text-align: left;
-          font-size: $sub-heading-size;
-          font-weight: 600;
+          font-size: $p-size;
+          font-weight: $p-weight;
         }
       }
       .info__content {
