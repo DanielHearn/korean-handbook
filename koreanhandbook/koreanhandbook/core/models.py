@@ -67,7 +67,7 @@ class Profile(models.Model):
     def __str__(self):
         return 'Profile: ' + self.full_name
     def get_absolute_url(self):
-        return '/kpopprofiles/'+ self.short_name
+        return '/kpopprofiles/' + self.short_name + '/'
 
 class Member(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
