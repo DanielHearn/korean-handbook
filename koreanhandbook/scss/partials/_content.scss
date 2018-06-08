@@ -58,8 +58,9 @@ main {
   display: flex !important;
   flex-direction: row;
   justify-content: flex-start;
-  img {
-    width: 100%;
+  .profile__image {
+    height: 100%;
+    width: 50%;
   }
   .info__header {
     background: $accent;
@@ -100,26 +101,11 @@ main {
   }
   .grid__info {
     padding: 0 !important;
-    justify-content: flex-start;
-  }
-  .grid__image {
-    flex: 1;
-    img {
-      width: 100%;
-    }
+    justify-content: flex-start !important;
   }
   .grid__info {
     flex: 1;
   }
-}
-
-.profile__image {
-  //height: 15em;
-  //padding: 1em 0 1em 0;
-}
-
-.focusProfile {
-  background-size: cover;
 }
 
 .grid {

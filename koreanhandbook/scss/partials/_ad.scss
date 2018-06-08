@@ -1,18 +1,19 @@
 .ad {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    .ad__message {
-      display: none;
-      h2 {
-        padding: 1em;
-      }
-    }
-    ins {
-      width: 100%;
-    }
-    &.loaded {
-      background: $grey !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  .ad__message {
+    display: none;
+    h2 {
+      padding: 1em;
     }
   }
+  ins {
+    width: 100%;
+  }
+  &.loaded {
+    background: $grey !important;
+  }
+}

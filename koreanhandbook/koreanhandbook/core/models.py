@@ -54,9 +54,9 @@ class Profile(models.Model):
     agency = models.CharField(max_length=100, default='Agency')
     fandom = models.CharField(max_length=100, default='Fandom')
     picture = ProcessedImageField(upload_to='./images',
-                                           processors=[ResizeToFill(600, 400)],
+                                           processors=[ResizeToFill(1000, 600)],
                                            format='JPEG',
-                                           options={'quality': 80},
+                                           options={'quality': 70},
                                            default='default.jpg')
     home_focus = models.BooleanField(default=False)
     date_inserted = models.DateTimeField(default=now, blank=True)
@@ -69,7 +69,7 @@ class Member(models.Model):
     picture = ProcessedImageField(upload_to='./images',
                                            processors=[ResizeToFill(600, 400)],
                                            format='JPEG',
-                                           options={'quality': 80},
+                                           options={'quality': 70},
                                            default='default.jpg')
     stage_name = models.CharField(max_length=100, default='Stage Name')
     birth_name = models.CharField(max_length=100, default='Birth Name')

@@ -52,9 +52,12 @@
           }
         }
       }
-
       .profile__header {
         grid-column: 1;
+        flex-direction: column;
+        .profile__image {
+          width: 100%;
+        }
       }      
     }
   }
