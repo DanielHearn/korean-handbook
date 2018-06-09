@@ -111,10 +111,10 @@ def search(request):
                 tool.type = 'tool'
                 searchResults.append(tool)
             for info in filteredInfo:
-                info.type = 'tool'
+                info.type = 'info'
                 searchResults.append(info)
             for kpopprofile in filteredProfiles:
-                kpopprofile.type = 'tool'
+                kpopprofile.type = 'kpop'
                 searchResults.append(kpopprofile)
             if len(searchResults) > 0:
                 searchResults.sort(key=lambda obj: obj.searchScore)
