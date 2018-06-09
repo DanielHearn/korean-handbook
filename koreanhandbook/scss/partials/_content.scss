@@ -60,11 +60,15 @@ main {
   grid-column-gap: $content-padding*2;
   padding-bottom: $content-padding;
   .grid__item {
-    display: block;
     background: $grey-dark;
     color: $dark;
     text-decoration: none;
     min-height: 13em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: $white;
     @include smooth-transition;
     &:hover {
       background: #dcdcdc;
@@ -75,17 +79,23 @@ main {
     &.info {
       border-top: solid 0.5em $accent;
     }
+    .item__bg {
+      @include background-image;
+    }
     .grid__info {
+      padding: 1em;
+      text-align: center;
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
       box-sizing: border-box;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       padding: 1em;
       height: 100%;
       width: 100%;
       text-align: center;
+      z-index: 2;
       .full__name {
         font-size: $sub-heading-size;
         font-weight: $sub-heading-weight;

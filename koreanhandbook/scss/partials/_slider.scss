@@ -23,13 +23,7 @@
             cursor: pointer;
             @include smooth-transition;
             .item__bg {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-                background-repeat: no-repeat !important;
-                background-size: cover !important;
-                filter: brightness(65%);
+                @include background-image;
             }
             .item__info {
                 padding: 1em;

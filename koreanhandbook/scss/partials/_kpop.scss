@@ -65,6 +65,7 @@
             }
             img {
                 width: 100%;
+                max-height: 12em;
             }
         }
     }
@@ -76,6 +77,7 @@
             justify-content: flex-start;
         img {
             width: 100%;
+
         }
         .info__header {
             background: $accent;
@@ -88,10 +90,10 @@
             align-items: left;
             text-align: left;
             .row__info {
-            margin: 0.5em 0 0.5em 0;
-            text-align: left;
-            font-size: $p-size;
-            font-weight: $p-weight;
+                margin: 0.5em 0 0.5em 0;
+                text-align: left;
+                font-size: $p-size;
+                font-weight: $p-weight;
             }
         }
         .info__content {

@@ -25,9 +25,10 @@ def home(request):
         sliderVisible = True
     else:
         sliderVisible = False
+    kpopProfileSliderImage = Profile.objects.all().first().picture.url
     tools = addAdToArray(tools, 4)
     info = addAdToArray(info, 4) 
-    return render(request, 'home.html', {'status': status, 'sliderVisible': sliderVisible, 'focusInfo': focusInfo, 'focusTools': focusTools, 'tools': tools, 'info': info})
+    return render(request, 'home.html', {'status': status, 'sliderVisible': sliderVisible, 'focusInfo': focusInfo, 'focusTools': focusTools, 'kpopProfileImage': kpopProfileSliderImage, 'tools': tools, 'info': info})
 
 def about(request):
     return render(request, 'about.html')

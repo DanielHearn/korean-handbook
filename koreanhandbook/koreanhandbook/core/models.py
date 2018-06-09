@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import models
 from django.utils.timezone import now
-from imagekit.models import ProcessedImageField
+from imagekit.models import ProcessedImageField, ImageSpecField
 from imagekit.processors import ResizeToFill
 
 BOYGROUP = "BOYGROUP"
@@ -26,6 +26,15 @@ class Tool(models.Model):
     short_name = models.CharField(max_length=100)
     url = models.CharField(max_length=100)
     home_focus = models.BooleanField(default=False)
+    picture = ProcessedImageField(upload_to='./images',
+                                           processors=[ResizeToFill(800, 500)],
+                                           format='JPEG',
+                                           options={'quality': 70},
+                                           default='default.jpg')
+    thumbnail = ImageSpecField(source='picture',
+                                           processors=[ResizeToFill(400, 200)],
+                                           format='JPEG',
+                                           options={'quality': 70})     
     def __str__(self):
        return 'Tool: ' + self.full_name
     def get_absolute_url(self):
@@ -43,6 +52,15 @@ class Info(models.Model):
     alphanumeric_order = models.BooleanField(default=False)
     numeric_first_col = models.BooleanField(default=False)
     description = models.TextField(default='The Korean names for the _ with their English translations.')
+    picture = ProcessedImageField(upload_to='./images',
+                                           processors=[ResizeToFill(800, 500)],
+                                           format='JPEG',
+                                           options={'quality': 70},
+                                           default='default.jpg')
+    thumbnail = ImageSpecField(source='picture',
+                                           processors=[ResizeToFill(400, 200)],
+                                           format='JPEG',
+                                           options={'quality': 70})                                     
     def __str__(self):
         return 'Info: ' + self.full_name
     def get_absolute_url(self):
