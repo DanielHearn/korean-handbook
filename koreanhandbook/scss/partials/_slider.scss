@@ -64,14 +64,12 @@
         }
     }
     .slider__prev {
-        align-self: flex-start;
-        margin-left: 1em;
+        left: 1em;
         .material-icons {
-        transform: rotate(180deg);
+            transform: rotate(180deg);
         }
     }
     .slider__next {
-        margin-left: -1em;
-        align-self: flex-end;
+        right: 1em;
     }
 }

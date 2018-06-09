@@ -57,9 +57,10 @@
     &.profile {
         grid-template-columns: repeat(2, 1fr);
       }
-      &.kpop {
+    &.kpop {
         .grid__item {
             justify-content: flex-start;
+            color: $dark;
             .grid__info {
                 padding: 0 0 1em 0;
             }
@@ -75,6 +76,7 @@
         }
         &.profile {
             justify-content: flex-start;
+            color: $dark;
         img {
             width: 100%;
 
@@ -105,8 +107,8 @@
             align-items: left;
             text-align: left;
             .row__info {
-            font-size: 1.05em;
-            margin: 0.6em 0 0.6em 0;
+                font-size: 1.05em;
+                margin: 0.6em 0 0.6em 0;
             }
         }
         .content__row {
