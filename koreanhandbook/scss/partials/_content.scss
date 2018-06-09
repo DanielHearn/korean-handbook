@@ -70,9 +70,6 @@ main {
     position: relative;
     color: $white;
     @include smooth-transition;
-    &:hover {
-      background: #dcdcdc;
-    }
     &.tool {
       border-top: solid 0.5em $blue;
     }

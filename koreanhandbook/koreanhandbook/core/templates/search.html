@@ -5,17 +5,34 @@
     <main>
     <title>{% block title %}Korean Handbook - Home{% endblock %}</title>
       <section id="content">
+        <a class="link--text accent" href="/">Back to Home</a>
         <h2 class="content__title">The Korean Handbook</h2>
         <h2 class="content__heading">Available Information</h2>
         <p>{{ status }}</p>
         <section class="grid">
-          {% for tool in tools %}
+          {% for result in searchResults %}
+            <div class="grid__item {{ result.type }}">
+              <div class="grid__info">
+                <h2 class="full__name">{{ result.full_name }}</h2>
+                {% if result.korean_name %}
+                  <h2 class="korean__name" >{{ result.korean_name }}</h2>
+                {% endif %}
+                <a class="button--dark" href="/{{ result.type }}/{{ result.short_name }}">View</a>
+              </div>
+              <div class="item__bg" style="background: url({{ result.thumbnail.url }});"></div>
+            </div>
+            {% if result.ad %}
+              {% include "ad_incontent.html" %}
+            {% endif %}
+          {% endfor %}
+          <!--{% for tool in tools %}
             <div class="grid__item tool">
               <div class="grid__info">
                 <h2 class="full__name">{{ tool.full_name }}</h2>
                 <h2 class="korean__name" >{{ tool.korean_name }}</h2>
                 <a class="button--dark" href="/tool/{{ tool.short_name }}">View</a>
               </div>
+              <div class="item__bg" style="background: url({{ tool.thumbnail.url }});"></div>
             </div>
             {% if tool.ad %}
               {% include "ad_incontent.html" %}
@@ -28,6 +45,7 @@
                 <h2 class="korean__name" >{{ infoPage.korean_name }}</h2>
                 <a class="button--accent" href="/info/{{ infoPage.short_name }}">View</a>
               </div>
+              <div class="item__bg" style="background: url({{ infoPage.thumbnail.url }});"></div>
             </div>
             {% if infoPage.ad %}
               {% include "ad_incontent.html" %}
@@ -40,11 +58,12 @@
                 <h2 class="korean__name" >{{ kpopProfile.korean_name }}</h2>
                 <a class="button--kpop" href="/kpopprofiles/{{ kpopProfile.short_name }}">View</a>
               </div>
+              <div class="item__bg" style="background: url({{ kpopProfile.picture.url }});"></div>
             </div>
             {% if kpopProfile.ad %}
               {% include "ad_incontent.html" %}
             {% endif %}
-          {% endfor %}
+          {% endfor %}-->
         </section>
       </section>
     </main>

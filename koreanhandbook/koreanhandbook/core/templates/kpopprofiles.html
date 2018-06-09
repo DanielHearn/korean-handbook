@@ -49,7 +49,7 @@
           {% for profile in profiles %}
             <div class="grid__item" data-type="{{ profile.group_type }}">
               <div class="grid__info">
-                <img class="info__image" src="{{ profile.picture.url }}" alt="">
+                <img class="info__image" src="{{ profile.thumbnail.url }}" alt="">
                 <h2 class="full__name">{{ profile.full_name }}</h2>
                 <h2 class="korean__name" >{{ profile.korean_name }}</h2>
                 <a class="button--accent" href="/kpopprofiles/{{ profile.short_name }}/">View</a>

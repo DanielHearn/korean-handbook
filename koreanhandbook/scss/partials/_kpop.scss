@@ -18,10 +18,10 @@
         align-items: left;
         text-align: left;
         .row__info {
-        margin: 0.5em 0 0.5em 0;
-        text-align: left;
-        font-size: $p-size;
-        font-weight: $p-weight;
+            margin: 0.5em 0 0.5em 0;
+            text-align: left;
+            font-size: $p-size;
+            font-weight: $p-weight;
         }
     }
     .info__content {
@@ -32,9 +32,10 @@
         box-sizing: border-box;
         align-items: left;
         text-align: left;
+        color: $dark;
         .row__info {
-        font-size: 1.05em;
-        margin: 0.6em 0 0.6em 0;
+            font-size: 1.05em;
+            margin: 0.6em 0 0.6em 0;
         }
     }
     .content__row {

@@ -80,6 +80,10 @@ class Profile(models.Model):
                                            format='JPEG',
                                            options={'quality': 70},
                                            default='default.jpg')
+    thumbnail = ImageSpecField(source='picture',
+                                           processors=[ResizeToFill(400, 200)],
+                                           format='JPEG',
+                                           options={'quality': 70})                                   
     home_focus = models.BooleanField(default=False)
     date_inserted = models.DateTimeField(default=now, blank=True)
     def __str__(self):

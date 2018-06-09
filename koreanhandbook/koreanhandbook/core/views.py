@@ -99,15 +99,28 @@ def search(request):
             tools = Tool.objects.all()
             infos = Info.objects.all()
             kpopprofiles = Profile.objects.all()
+
+            searchResults = []
             filteredTools = findMatchingInfo(tools, searchText)
             filteredInfo = findMatchingInfo(infos, searchText)
             filteredProfiles = findMatchingInfo(kpopprofiles, searchText)
             filteredTools = addAdToArray(filteredTools, 4)
             filteredInfo = addAdToArray(filteredInfo, 4)
             filteredProfiles = addAdToArray(filteredProfiles, 4)
-            if len(filteredProfiles) == 0 and len(filteredInfo) == 0 and len(filteredTools) == 0:
-                status = 'No information matched the search criteria'
-            else :
+            for tool in filteredTools:
+                tool.type = 'tool'
+                searchResults.append(tool)
+            for info in filteredInfo:
+                info.type = 'tool'
+                searchResults.append(info)
+            for kpopprofile in filteredProfiles:
+                kpopprofile.type = 'tool'
+                searchResults.append(kpopprofile)
+            if len(searchResults) > 0:
+                searchResults.sort(key=lambda obj: obj.searchScore)
+                searchResults = reversed(searchResults)
                 status = ''
-            return render(request, 'search.html', {'status': status, 'tools': filteredTools, 'info': filteredInfo, 'kpopProfiles': filteredProfiles})
+            else:
+                status = 'No information matched the search criteria'
+            return render(request, 'search.html', {'status': status, 'tools': filteredTools, 'info': filteredInfo, 'kpopProfiles': filteredProfiles, 'searchResults': searchResults})
     return redirect ('/')
