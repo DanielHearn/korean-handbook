@@ -4,8 +4,10 @@
   align-items: center;
   text-align: center;
   overflow: hidden;
+  min-height: unset !important;
   .ad__message {
     display: none;
+    color: $dark;
     h2 {
       padding: 1em;
     }

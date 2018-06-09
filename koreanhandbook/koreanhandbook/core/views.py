@@ -2,12 +2,12 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
+from datetime import datetime
 
 # Local app imports
 from .forms import *
 from .models import *
 from .functions import *
-from datetime import datetime
 
 class Ad:
     def __init__(self):
@@ -52,7 +52,8 @@ def kpopprofile(request, profile_name):
     profile = Profile.objects.get(short_name=profile_name)
     members = Member.objects.filter(profile=profile).order_by('birth_date')
     members = addAdToArray(members, 2)
-    return render(request, 'kpopprofile.html', {'profile': profile, 'members': members})
+    relatedContent = generateRelatedContent(Profile, 2)
+    return render(request, 'kpopprofile.html', {'profile': profile, 'members': members, 'relatedContent': relatedContent})
 
 def tool(request, tool_name):
     tool_name = tool_name[0:len(tool_name)-1]
@@ -73,7 +74,8 @@ def info(request, info_name):
                 info_rows = Row_2.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_2.objects.filter(info=info).order_by('date_inserted')
-        return render(request, 'info_table_row_2.html', {'info': info, 'rows': info_rows})
+        relatedContent = generateRelatedContent(Info, 3)
+        return render(request, 'info_table_row_2.html', {'info': info, 'rows': info_rows, 'relatedContent': relatedContent})
     elif info.num_colums == 3:
         if info.numeric_first_col == True:
             if info.alphanumeric_order == True:
@@ -85,6 +87,7 @@ def info(request, info_name):
                 info_rows = Row_3.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_3.objects.filter(info=info).order_by('date_inserted')
+        relatedContent = generateRelatedContent(Info, 3)
         return render(request, 'info_table_row_3.html', {'info': info, 'rows': info_rows})
     else:
         return redirect ('/')

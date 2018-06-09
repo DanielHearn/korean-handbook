@@ -40,6 +40,19 @@
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+        <p>Related Content</p>
+        <section class="grid">
+            {% for content in relatedContent %}
+              <div class="grid__item">
+                <div class="grid__info">
+                  <h2 class="full__name">{{ content.full_name }}</h2>
+                  <h2 class="korean__name" >{{ content.korean_name }}</h2>
+                  <a class="button--dark" href="/info/{{ content.short_name }}">View</a>
+                </div>
+                <div class="item__bg" style="background: url({{ content.thumbnail.url }});"></div>
+              </div>
+            {% endfor %}
+        </section>
       </section>
     </main>
     <script src="{% static 'js/koreanHandbook.js' %}"></script>

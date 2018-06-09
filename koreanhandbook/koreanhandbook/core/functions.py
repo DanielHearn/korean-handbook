@@ -1,8 +1,23 @@
 # Standard library imports
+from random import randint
+from django.db.models import Max
 
 # Local app imports
 from .models import *
-from difflib import SequenceMatcher
+
+def generateRelatedContent(model, numOfContent):
+    max_id = Profile.objects.all().aggregate(max_id=Max("id"))['max_id']
+    relatedContent = []
+    for content in range(numOfContent):
+        relatedContent.append(getRelatedContent(model, max_id))
+    return relatedContent
+
+def getRelatedContent(model, max_id):
+    while True:
+        pk = randint(1, max_id)
+        relatedContent = model.objects.filter(pk=pk).first()
+        if relatedContent:
+            return relatedContent
 
 def searchString(matchString, searchString):
     matchSubString = get_all_substrings(matchString.lower())
@@ -18,8 +33,6 @@ def get_all_substrings(string):
     for i in range(length):
         for j in range(i + 1, length + 1):
             yield(string[i:j]) 
-
-
 
 def castAsInt(querySet, intColumn, newColumn):
     return querySet.extra(
