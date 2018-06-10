@@ -6,6 +6,7 @@
       {% csrf_token %}
     </header>
     <title>{% block title %}Korean Handbook - {{ info.full_name }}{% endblock %}</title>
+    <meta name="description" content="{{ info.description }}">
     <main>
       <section id="content">
         <a class="link--text accent" href="/">Back to Home</a>
