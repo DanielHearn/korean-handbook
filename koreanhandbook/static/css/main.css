@@ -244,6 +244,11 @@ main {
       border-top: solid 0.5em #3a5684; }
     .grid .grid__item.info {
       border-top: solid 0.5em #595EE6; }
+    .grid .grid__item.related-title {
+      min-height: unset;
+      grid-column: span 2;
+      color: #333;
+      background: none; }
     .grid .grid__item .item__bg {
       position: absolute;
       width: 100%;

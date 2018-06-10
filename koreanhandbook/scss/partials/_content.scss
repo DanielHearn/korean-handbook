@@ -53,6 +53,7 @@ main {
   display: flex;
 }
 
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -75,6 +76,12 @@ main {
     }
     &.info {
       border-top: solid 0.5em $accent;
+    }
+    &.related-title {
+      min-height: unset;
+      grid-column: span 2;
+      color: $dark;
+      background: none;
     }
     .item__bg {
       @include background-image;
@@ -193,4 +200,3 @@ main {
 .rounded {
   border-radius: 0.2em;
 }
-

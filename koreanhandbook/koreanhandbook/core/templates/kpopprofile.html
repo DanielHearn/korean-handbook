@@ -82,7 +82,9 @@
               {% include "ad_incontent.html" %}
             {% endif %}
           {% endfor %}
-          <p>Related Content</p>
+          <div class="grid__item related-title">
+            <p>Related Content</p>
+          </div>
           {% for content in relatedContent %}
             <div class="grid__item">
               <div class="grid__info">
