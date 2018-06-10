@@ -51,7 +51,7 @@ def kpopprofile(request, profile_name):
     profile_name = profile_name[0:len(profile_name)-1]
     profile = Profile.objects.get(short_name=profile_name)
     members = Member.objects.filter(profile=profile).order_by('birth_date')
-    members = addAdToArray(members, 3)
+    members = addAdToArray(members, 2)
     relatedContent = generateRelatedContent(Profile, 2)
     return render(request, 'kpopprofile.html', {'profile': profile, 'members': members, 'relatedContent': relatedContent})
 
