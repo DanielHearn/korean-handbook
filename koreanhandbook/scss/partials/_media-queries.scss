@@ -52,13 +52,17 @@
           }
         }
       }
-      .profile__header {
-        grid-column: 1;
-        flex-direction: column;
-        .profile__image {
-          width: 100%;
+      .profile {
+        .profile__header {
+          flex-direction: column;
+          .profile__image {
+            width: 100%;
+          }
         }
-      }      
+        .grid__item {
+          grid-column: span 2;
+        }      
+      }
     }
   }
 }

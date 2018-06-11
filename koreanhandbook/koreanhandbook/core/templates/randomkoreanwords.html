@@ -2,27 +2,27 @@
 {% load static %}
 
 {% block content %}
-		<script src="https://unpkg.com/vue"></script>
-		<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-		<script src="{% static 'js/random-korean.js' %}" defer></script>
     <title>{% block title %}Korean Handbook - Random Korean Word Generator{% endblock %}</title>
-		<main id="app">
-			<section id="content">
-					<a class="link--text accent" href="/">Back to Home</a>
-				    <section class="korean__container">
-			       <h1 class="content__heading">Random Korean Word Generator</h1>
-			       <h2 class="content__subheading">Click below to generate a random Korean word based from over 5000 of the most common Korean words.</h2>
-			       <div id="genWord">
-			          <div class="pulseLoader" v-bind:class="{ hideLoader: dbLoaded }">
-			             <div class="pulse"></div>
-			             <div class="pulse"></div>
-			          </div>
-			          <h2 id="genWord__korean" v-bind:class="{ visible: wordVisible }">[[ english ]]</h2>
-			          <h3 id="genWord__english" v-bind:class="{ visible: wordVisible }">[[ korean ]]</h3>
-			       </div>
-			       <button class="button--purple" @click="generateWord()">Generate Word</button>
-			    </section>
-				{% include "ad_incontent.html" %}
+	<main id="app">
+		<section id="content">
+				<a class="link--text accent" href="/">Back to Home</a>
+				<section class="korean__container">
+				<h1 class="content__heading">Random Korean Word Generator</h1>
+				<h2 class="content__subheading">Click below to generate a random Korean word based from over 5000 of the most common Korean words.</h2>
+				<div id="genWord">
+					<div class="pulseLoader" v-bind:class="{ hideLoader: dbLoaded }">
+						<div class="pulse"></div>
+						<div class="pulse"></div>
+					</div>
+					<h2 id="genWord__korean" v-bind:class="{ visible: wordVisible }">[[ english ]]</h2>
+					<h3 id="genWord__english" v-bind:class="{ visible: wordVisible }">[[ korean ]]</h3>
+				</div>
+				<button class="button--purple" @click="generateWord()">Generate Word</button>
 			</section>
-		</main>
+			{% include "ad_incontent.html" %}
+		</section>
+	</main>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script src="{% static 'js/random-korean.js' %}" defer></script>
 {% endblock %}

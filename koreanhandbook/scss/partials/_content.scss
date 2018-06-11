@@ -53,6 +53,11 @@ main {
   display: flex;
 }
 
+.content__navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .grid {
   display: grid;

@@ -223,6 +223,11 @@ main {
 .flex {
   display: flex; }
 
+.content__navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -374,7 +379,7 @@ main {
   border-radius: 0.2em; }
 
 .profile__header {
-  grid-column: span 2;
+  grid-column: span 2 !important;
   display: flex !important;
   flex-direction: row;
   justify-content: flex-start; }
@@ -843,11 +848,12 @@ footer {
       padding: 0 0.5em 0 0.5em; }
     html body main #content #genWord h2, html body main #content #genWord h3 {
       margin: 0.25em 0; }
-  html body main .profile__header {
-    grid-column: 1;
+  html body main .profile .profile__header {
     flex-direction: column; }
-    html body main .profile__header .profile__image {
-      width: 100%; } }
+    html body main .profile .profile__header .profile__image {
+      width: 100%; }
+  html body main .profile .grid__item {
+    grid-column: span 2; } }
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif; }

@@ -5,7 +5,10 @@
     <main>
     <title>{% block title %}Korean Handbook - {{ profile.full_name }} Profile{% endblock %}</title>
       <section id="content">
-        <a class="link--text accent" href="/kpopprofiles/">Back to KPOP Profiles</a>
+        <div class="content__navigation">
+          <a class="link--text accent" href="/kpopprofiles/">Back to KPOP Profiles</a>
+          <a class="link--text accent" href="https://docs.google.com/forms/d/1Qh9351_dNYD_Yy2z81zTWa5gckMZFLp11StxyJXeqIQ/">Send page feedback</a>
+        </div>
         <h2 class="content__title">KPOP Profile</h2>
         <h2 class="content__heading">{{ profile.full_name }}</h2>
         <section class="grid profile">
@@ -35,9 +38,6 @@
                     <p class="row__info" >Fandom:</p>
                     <p class="row__info" >{{ profile.fandom}}</p>
                   </div>
-                  <div class="content__row">
-                      <p class="row__info" >                  <a class="link--text accent" href="https://docs.google.com/forms/d/1Qh9351_dNYD_Yy2z81zTWa5gckMZFLp11StxyJXeqIQ/">Send page feedback</a></p>
-                    </div>
                 </div> 
               </div>
             </div>
