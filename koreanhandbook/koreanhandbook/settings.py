@@ -18,6 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
+
 if 'SECRET_KEY' in os.environ:
     SECRET_KEY = os.environ['SECRET_KEY']
     DEBUG = False
@@ -140,6 +141,7 @@ USE_L10N = True
 
 USE_TZ = True
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 3000
+IMAGEKIT_DEFAULT_CACHEFILE_STRATEGY = 'koreanhandbook.core.imagegenerators.FixJustInTime'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/

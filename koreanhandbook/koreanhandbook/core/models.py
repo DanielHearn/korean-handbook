@@ -7,6 +7,7 @@ from django.db import models
 from django.utils.timezone import now
 from imagekit.models import ProcessedImageField, ImageSpecField
 from imagekit.processors import ResizeToFill
+from storages.backends.s3boto3 import S3Boto3Storage
 
 BOYGROUP = "BOYGROUP"
 GIRLGROUP = "GIRLGROUP"
@@ -58,9 +59,9 @@ class Info(models.Model):
                                            options={'quality': 70},
                                            default='default.jpg')
     thumbnail = ImageSpecField(source='picture',
-                                           processors=[ResizeToFill(400, 200)],
-                                           format='JPEG',
-                                           options={'quality': 70})                                     
+                                processors=[ResizeToFill(400, 200)],
+                                format='JPEG',
+                                 options={'quality': 70})                                     
     def __str__(self):
         return 'Info: ' + self.full_name
     def get_absolute_url(self):
@@ -80,14 +81,14 @@ class Profile(models.Model):
     vlive = models.CharField(max_length=200, default='', blank=True)
     youtube = models.CharField(max_length=200, default='', blank=True)
     picture = ProcessedImageField(upload_to='./images',
-                                           processors=[ResizeToFill(1000, 600)],
-                                           format='JPEG',
-                                           options={'quality': 70},
-                                           default='default.jpg')
+                                    processors=[ResizeToFill(1000, 600)],
+                                    format='JPEG',
+                                    options={'quality': 70},
+                                    default='default.jpg')
     thumbnail = ImageSpecField(source='picture',
-                                           processors=[ResizeToFill(400, 200)],
-                                           format='JPEG',
-                                           options={'quality': 70})                                   
+                                processors=[ResizeToFill(400, 200)],
+                                format='JPEG',
+                                options={'quality': 70})                                   
     home_focus = models.BooleanField(default=False)
     date_inserted = models.DateTimeField(default=now, blank=True)
     def __str__(self):
