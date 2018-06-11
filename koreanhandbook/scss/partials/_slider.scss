@@ -24,6 +24,10 @@
             @include smooth-transition;
             .item__bg {
                 @include background-image;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                filter: brightness(50%);
             }
             .item__info {
                 padding: 1em;
