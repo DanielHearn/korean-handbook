@@ -13,7 +13,9 @@
         <h2 class="content__heading">{{ profile.full_name }}</h2>
         <section class="grid profile">
             <div class="grid__item profile__header">
-              <img class="profile__image" src="{{ profile.picture.url }}" alt="">
+              <div class="grid__image" style="background: url({{ profile.picture.url }})">
+                <!--<img class="profile__image" src="{{ profile.picture.url }}" alt="">-->
+              </div>
               <div class="grid__info">
                 <div class="info__header">
                   <div class="content__row">
@@ -34,10 +36,36 @@
                       <p class="row__info" >Agency:</p>
                       <p class="row__info" >{{ profile.agency}}</p>
                   </div>
-                  <div class="content__row">
-                    <p class="row__info" >Fandom:</p>
-                    <p class="row__info" >{{ profile.fandom}}</p>
-                  </div>
+                  {% if profile.fandom %}
+                    <div class="content__row">
+                      <p class="row__info" >Fandom:</p>
+                      <p class="row__info" >{{ profile.fandom}}</p>
+                    </div>
+                  {% endif %}
+                  {% if profile.twitter %}
+                    <div class="content__row">
+                      <p class="row__info" >Twitter:</p>
+                      <p class="row__info" ><a class="link--text accent" href="{{ profile.twitter}}">Twitter</a></p>
+                    </div>
+                  {% endif %}
+                  {% if profile.instagram %}
+                    <div class="content__row">
+                      <p class="row__info" >Instagram:</p>
+                      <p class="row__info" ><a class="link--text accent" href="{{ profile.instagram}}">Instagram</a></p>
+                    </div>
+                  {% endif %}
+                  {% if profile.vlive %}
+                    <div class="content__row">
+                      <p class="row__info" >vLive:</p>
+                      <p class="row__info" ><a class="link--text accent" href="{{ profile.vlive}}">vLive</a></p>
+                    </div>
+                  {% endif %}
+                  {% if profile.youtube %}
+                    <div class="content__row">
+                      <p class="row__info" >Youtube:</p>
+                      <p class="row__info" ><a class="link--text accent" href="{{ profile.youtube}}">Youtube</a></p>
+                    </div>
+                  {% endif %}
                 </div> 
               </div>
             </div>
@@ -53,27 +81,45 @@
                 <img class="info__image" src="{{ member.picture.url }}" alt="">
                 <div class="info__header">
                   <div class="content__row">
-                    <h2 class="row__info" >Stage Name:</h2>
+                    <h2 class="row__info">Stage Name:</h2>
                     <h2 class="row__info">{{ member.stage_name }}</h2>
                   </div>
                   <div class="content__row">
-                    <h2 class="row__info" >Birth Name:</h2>
+                    <h2 class="row__info">Birth Name:</h2>
                     <h2 class="row__info">{{ member.birth_name }}</h2>
                   </div>
                 </div>
                 <div class="info__content"> 
                   <div class="content__row">
-                    <p class="row__info" >Birthday:</p>
-                    <p class="row__info" >{{ member.birth_date|date:"M d, Y" }}</p>
+                    <p class="row__info">Birthday:</p>
+                    <p class="row__info">{{ member.birth_date|date:"M d, Y" }}</p>
                   </div>
                   <div class="content__row">
-                    <p class="row__info" >Birth Place:</p>
-                    <p class="row__info" >{{ member.birth_place }}</p>
+                    <p class="row__info">Birth Place:</p>
+                    <p class="row__info">{{ member.birth_place }}</p>
                   </div>
+                  {% if member.height %} 
+                    <div class="content__row">
+                      <p class="row__info">Height:</p>
+                      <p class="row__info">{{ member.height }}</p>
+                    </div>   
+                  {% endif %}   
+                  {% if member.blood_type %}
+                    <div class="content__row">
+                      <p class="row__info">Blood Type:</p>
+                      <p class="row__info">{{ member.blood_type }}</p>
+                    </div>   
+                  {% endif %}      
                   <div class="content__row">
-                      <p class="row__info" >Position:</p>
-                      <p class="row__info" >{{ member.position }}</p>
+                    <p class="row__info">Position:</p>
+                    <p class="row__info">{{ member.position }}</p>
                   </div>
+                  {% if member.instagram %}
+                    <div class="content__row">
+                      <p class="row__info">Instagram:</p>
+                      <p class="row__info">{{ member.instagram }}</p>
+                    </div>
+                  {% endif %}
                 </div>
               </div>
             </div>

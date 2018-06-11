@@ -74,7 +74,11 @@ class Profile(models.Model):
     debut_date = models.DateTimeField(default=now, blank=True)
     debut = models.CharField(max_length=100, default='Debut')
     agency = models.CharField(max_length=100, default='Agency')
-    fandom = models.CharField(max_length=100, default='Fandom')
+    fandom = models.CharField(max_length=100, default='', blank=True)
+    twitter = models.CharField(max_length=200, default='', blank=True)
+    instagram = models.CharField(max_length=200, default='', blank=True)
+    vlive = models.CharField(max_length=200, default='', blank=True)
+    youtube = models.CharField(max_length=200, default='', blank=True)
     picture = ProcessedImageField(upload_to='./images',
                                            processors=[ResizeToFill(1000, 600)],
                                            format='JPEG',
@@ -101,9 +105,11 @@ class Member(models.Model):
     stage_name = models.CharField(max_length=100, default='Stage Name')
     birth_name = models.CharField(max_length=100, default='Birth Name')
     birth_date = models.DateTimeField(default=now, blank=True)
-    birth_place = models.TextField(default='Birth Place')
-    position = models.TextField(default='Position')
-    height = models.TextField(default='Height')
+    birth_place = models.TextField(default='Birth Place', blank=True)
+    position = models.CharField(max_length=100, default='', blank=True)
+    height = models.CharField(max_length=100, default='', blank=True)
+    blood_type = models.CharField(max_length=100, default='', blank=True)
+    instagram = models.CharField(max_length=100, default='', blank=True)
     def __str__(self):
        return 'Member: ' + self.stage_name
 

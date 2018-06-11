@@ -3,6 +3,14 @@
     display: flex !important;
     flex-direction: row;
     justify-content: flex-start;
+    .grid__image {
+        @include background-image;
+        display: flex;
+        flex: 1;
+        height: 100%;
+        min-height: 20em;
+        width: 100%;
+    }
     .profile__image {
         height: 100%;
         width: 50%;
@@ -33,24 +41,17 @@
         align-items: left;
         text-align: left;
         color: $dark;
+        background: #ececec;
         .row__info {
             font-size: 1.05em;
             margin: 0.6em 0 0.6em 0;
         }
     }
-    .content__row {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-row-gap: 1em;
-        grid-column-gap: 1em;
-        padding: 0 0.5em 0 0.5em;
-    }
     .grid__info {
         padding: 0 !important;
         justify-content: flex-start !important;
+        flex-direction: row !important;
         align-self: flex-start !important;
-    }
-    .grid__info {
         flex: 1;
     }
 }
@@ -70,6 +71,14 @@
                 width: 100%;
             }
         }
+    }
+    .content__row {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-row-gap: 1em;
+        grid-column-gap: 1em;
+        padding: 0 0.5em 0 0.5em;
+        width: 100%;
     }
     .grid__item {
         &.kpop {
@@ -111,13 +120,6 @@
                 font-size: 1.05em;
                 margin: 0.6em 0 0.6em 0;
             }
-        }
-        .content__row {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            grid-row-gap: 1em;
-            grid-column-gap: 1em;
-            padding: 0 0.5em 0 0.5em;
         }
         .grid__info {
             padding: 0;

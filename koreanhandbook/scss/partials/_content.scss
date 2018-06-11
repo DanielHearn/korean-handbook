@@ -10,6 +10,7 @@ main {
   padding-right: $content-padding;
   padding-top: 5em;
   max-width: $content-width;
+  height: 100%;
   &:last-child {
     padding-bottom: $content-padding*2;
   }
@@ -65,11 +66,13 @@ main {
   grid-row-gap: $content-padding;
   grid-column-gap: $content-padding*2;
   padding-bottom: $content-padding;
+  height: 100%;
   .grid__item {
     background: $grey-dark;
     color: $dark;
     text-decoration: none;
     min-height: 13em;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -90,6 +93,10 @@ main {
     }
     .item__bg {
       @include background-image;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      filter: brightness(50%);
     }
     .grid__info {
       padding: 1em;

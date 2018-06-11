@@ -116,7 +116,7 @@
   height: 100vh;
   width: 100vw;
   background: #595EE6;
-  z-index: 2;
+  z-index: 3;
   visibility: hidden;
   opacity: 0;
   position: fixed;
@@ -188,7 +188,8 @@ main {
   padding-left: 2em;
   padding-right: 2em;
   padding-top: 5em;
-  max-width: 65em; }
+  max-width: 65em;
+  height: 100%; }
   #content:last-child {
     padding-bottom: 4em; }
 
@@ -233,12 +234,14 @@ main {
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 2em;
   grid-column-gap: 4em;
-  padding-bottom: 2em; }
+  padding-bottom: 2em;
+  height: 100%; }
   .grid .grid__item {
     background: #ececec;
     color: #333;
     text-decoration: none;
     min-height: 13em;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -255,13 +258,13 @@ main {
       color: #333;
       background: none; }
     .grid .grid__item .item__bg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
       z-index: 1;
       background-repeat: no-repeat !important;
       background-size: cover !important;
       background-position-x: center !important;
+      position: absolute;
+      width: 100%;
+      height: 100%;
       filter: brightness(50%); }
     .grid .grid__item .grid__info {
       padding: 1em;
@@ -383,6 +386,16 @@ main {
   display: flex !important;
   flex-direction: row;
   justify-content: flex-start; }
+  .profile__header .grid__image {
+    z-index: 1;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position-x: center !important;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    min-height: 20em;
+    width: 100%; }
   .profile__header .profile__image {
     height: 100%;
     width: 50%; }
@@ -409,21 +422,16 @@ main {
     box-sizing: border-box;
     align-items: left;
     text-align: left;
-    color: #333; }
+    color: #333;
+    background: #ececec; }
     .profile__header .info__content .row__info {
       font-size: 1.05em;
       margin: 0.6em 0 0.6em 0; }
-  .profile__header .content__row {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-row-gap: 1em;
-    grid-column-gap: 1em;
-    padding: 0 0.5em 0 0.5em; }
   .profile__header .grid__info {
     padding: 0 !important;
     justify-content: flex-start !important;
-    align-self: flex-start !important; }
-  .profile__header .grid__info {
+    flex-direction: row !important;
+    align-self: flex-start !important;
     flex: 1; }
 
 .grid.profile {
@@ -435,6 +443,13 @@ main {
     padding: 0 0 1em 0; }
   .grid.kpop .grid__item img {
     width: 100%; }
+.grid .content__row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+  padding: 0 0.5em 0 0.5em;
+  width: 100%; }
 .grid .grid__item.kpop {
   border-top: solid 0.5em #d15bb4; }
 .grid .grid__item.profile {
@@ -468,12 +483,6 @@ main {
     .grid .grid__item.profile .info__content .row__info {
       font-size: 1.05em;
       margin: 0.6em 0 0.6em 0; }
-  .grid .grid__item.profile .content__row {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-row-gap: 1em;
-    grid-column-gap: 1em;
-    padding: 0 0.5em 0 0.5em; }
   .grid .grid__item.profile .grid__info {
     padding: 0;
     justify-content: flex-start; }
@@ -584,14 +593,10 @@ main {
       cursor: pointer;
       transition: all 0.2s ease-in-out; }
       .slider__container .slider__content .slider__item .item__bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
         z-index: 1;
         background-repeat: no-repeat !important;
         background-size: cover !important;
-        background-position-x: center !important;
-        filter: brightness(50%); }
+        background-position-x: center !important; }
       .slider__container .slider__content .slider__item .item__info {
         padding: 1em;
         text-align: center;
@@ -820,10 +825,10 @@ footer {
     padding: 0;
     flex-direction: row;
     justify-content: space-around; } }
-@media screen and (min-width: 45.01em) and (max-width: 60em) {
+@media screen and (min-width: 50.01em) and (max-width: 60em) {
   html body main .grid {
     grid-template-columns: repeat(2, 1fr); } }
-@media screen and (max-width: 45em) {
+@media screen and (max-width: 50em) {
   html body .nav .nav__content {
     padding-right: 1em;
     padding-left: 1em; }
@@ -856,7 +861,8 @@ footer {
     grid-column: span 2; } }
 body {
   margin: 0;
-  font-family: 'Nunito Sans', sans-serif; }
+  font-family: 'Nunito Sans', sans-serif;
+  height: 100%; }
 
 ::-moz-selection {
   background: #c8c5cc; }
