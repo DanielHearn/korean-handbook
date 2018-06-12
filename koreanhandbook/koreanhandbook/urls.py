@@ -39,4 +39,5 @@ urlpatterns = [
     url('kpopprofiles/', core_views.kpopprofiles, name='kpopprofiles'),
     url(r'tool/(?P<tool_name>\w+/)$', core_views.tool, name='tool'),
     url(r'info/(?P<info_name>\w+/)$', core_views.info, name='info'),
+    url('info/', core_views.infos, name='infos'),
 ]

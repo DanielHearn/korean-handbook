@@ -15,12 +15,12 @@ class Ad:
 
 def home(request):
     tools = Tool.objects.all()
-    info = Info.objects.all()
+    info = Info.objects.all()[:20]
     status = ''
     if len(tools) and len(info) == 0:
         status = 'No tools or information available'
-    focusInfo = info.filter(home_focus=True)
-    focusTools = tools.filter(home_focus=True)
+    focusInfo = Info.objects.filter(home_focus=True)
+    focusTools = Tool.objects.filter(home_focus=True)
     if (len(focusInfo) > 0 or len(focusTools)):
         sliderVisible = True
     else:
@@ -58,6 +58,17 @@ def kpopprofile(request, profile_name):
 def tool(request, tool_name):
     tool_name = tool_name[0:len(tool_name)-1]
     return render(request, tool_name + '.html')
+
+def infos(request):
+    tools = Tool.objects.all()
+    info = Info.objects.all()
+    status = ''
+    if len(tools) and len(info) == 0:
+        status = 'No tools or information available'
+    kpopProfileSliderImage = Profile.objects.all().first().picture.url
+    tools = addAdToArray(tools, 4)
+    info = addAdToArray(info, 4) 
+    return render(request, 'info.html', {'status': status, 'kpopProfileImage': kpopProfileSliderImage, 'tools': tools, 'info': info})
 
 def info(request, info_name):
     info_name = info_name[0:len(info_name)-1]

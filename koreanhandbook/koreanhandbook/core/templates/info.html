@@ -5,52 +5,17 @@
     <main>
     <title>{% block title %}Korean Handbook - Home{% endblock %}</title>
       <section id="content">
+        <a class="link--text accent" href="/">Back to Home</a>
         <h2 class="content__title">The Korean Handbook</h2>
-        {% if sliderVisible %}
-        <div class="slider__container">
-          <div class="slider__content jsSeimaSlider">
-            {% for focusTool in focusTools %}
-              <div class="slider__item">
-                <div class="item__info">
-                  <h2 class="full__name">{{ focusTool.full_name }}</h2>
-                  <h2 class="korean__name" >{{ focusTool.korean_name }}</h2>
-                  <a class="button--accent" href="/tool/{{ focusTool.short_name }}">View</a>
-                </div>
-                <div class="item__bg" style="background: url({{ focusTool.picture.url }});"></div>
-              </div>
-            {% endfor %}
-            <div class="slider__item">
-                <div class="item__info">
-                  <h2 class="full__name">KPOP Profiles</h2>  
-                  <h2 class="korean__name">케이팝 프로필</h2>
-                  <a class="button--accent" href="/kpopprofiles/">View</a>
-                </div>
-                <div class="item__bg" style="background: url({{ kpopProfileImage }});"></div>
-              </div>
-            {% for focusInfo in focusInfo %}
-              <div class="slider__item" href="/info/{{ focusInfo.short_name }}">
-                <div class="item__info">
-                  <h2 class="full__name">{{ focusInfo.full_name }}</h2>   
-                  <h2 class="korean__name" >{{ focusInfo.korean_name }}</h2>
-                  <a class="button--accent" href="/info/{{ focusInfo.short_name }}">View</a>
-                </div>
-                <div class="item__bg" style="background: url({{ focusInfo.picture.url }});"></div>
-              </div>
-            {% endfor %}
-          </div>
-          <button class="slider__prev"><i class="material-icons">arrow_forward_ios</i></button>
-          <button class="slider__next"><i class="material-icons">arrow_forward_ios</i></button>
-        </div>
-        {% endif %}
         <p class="content__text--important">The Korean Handbook is home to an evergrowing collection of Korean Language learning tools and information that's updated daily.</p>
-        <h2 class="content__heading">Available Information</h2>
+        <h2 class="content__heading">All Information</h2>
         <p>{{ status }}</p>
         <section class="grid">
           <div class="grid__item kpop">
               <div class="grid__info">
                 <h2 class="full__name">KPOP Profiles</h2>
                 <h2 class="korean__name" >케이팝 프로필 </h2>
-                <a class="button--kpop" href="/kpopprofiles/">View</a>
+                <a class="button--kpop" href="/kpopprofiles">View</a>
               </div>
               <div class="item__bg" style="background: url({{ kpopProfileImage }});"></div>
           </div>
@@ -81,9 +46,6 @@
             {% endif %}
           {% endfor %}
         </section>
-        <p>
-          <a class="link--text accent" href="/info/">View All Info</a>
-        </p>
       </section>
     </main>
     <script src="{% static 'js/koreanHandbook.js' %}"></script>
