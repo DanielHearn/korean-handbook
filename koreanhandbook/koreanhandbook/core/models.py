@@ -118,6 +118,7 @@ class Row_2(models.Model):
     info = models.ForeignKey(Info, on_delete=models.CASCADE, blank=True)
     col_1 = models.CharField(max_length=255)
     col_2 = models.CharField(max_length=255)
+    is_link = models.BooleanField(default=False)
     date_inserted = models.DateTimeField(default=now, blank=True)
     def __str__(self):
       return 'Row2' + self.info.short_name + ' : ' + str(self.id)

@@ -37,12 +37,10 @@ $content-width: 65em;
 @import 'partials/random';
 @import 'partials/media-queries';
 
-@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
-
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif;
-  height: 100%;
+  height: 100%;  
 }
 
 ::-moz-selection { background: $colour-selection; }
