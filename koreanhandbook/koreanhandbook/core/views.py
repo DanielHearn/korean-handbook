@@ -99,7 +99,7 @@ def info(request, info_name):
             else:
                 info_rows = Row_3.objects.filter(info=info).order_by('date_inserted')
         relatedContent = generateRelatedContent(Info, 3)
-        return render(request, 'info_table_row_3.html', {'info': info, 'rows': info_rows})
+        return render(request, 'info_table_row_3.html', {'info': info, 'rows': info_rows, 'relatedContent': relatedContent})
     else:
         return redirect ('/')
 
