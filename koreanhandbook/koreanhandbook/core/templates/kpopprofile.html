@@ -109,11 +109,13 @@
                       <p class="row__info">Blood Type:</p>
                       <p class="row__info">{{ member.blood_type }}</p>
                     </div>   
-                  {% endif %}      
-                  <div class="content__row">
-                    <p class="row__info">Position:</p>
-                    <p class="row__info">{{ member.position }}</p>
-                  </div>
+                  {% endif %}     
+                  {% if member.position %}
+                    <div class="content__row">
+                      <p class="row__info">Position:</p>
+                      <p class="row__info">{{ member.position }}</p>
+                    </div>
+                  {% endif %}
                   {% if member.instagram %}
                     <div class="content__row">
                       <p class="row__info" >Instagram:</p>
