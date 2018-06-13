@@ -39,7 +39,7 @@ class Tool(models.Model):
     def __str__(self):
        return 'Tool: ' + self.full_name
     def get_absolute_url(self):
-        return '/tool/'+ self.short_name
+        return '/tool/'+ self.short_name + '/'
 
 class Info(models.Model):
     full_name = models.CharField(max_length=100, default='Full Name')
@@ -65,7 +65,7 @@ class Info(models.Model):
     def __str__(self):
         return 'Info: ' + self.full_name
     def get_absolute_url(self):
-        return '/info/'+ self.short_name
+        return '/info/'+ self.short_name + '/'
 
 class Profile(models.Model):
     full_name = models.CharField(max_length=100, default='Full Name')

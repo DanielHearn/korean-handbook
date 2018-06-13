@@ -4,15 +4,15 @@ from .models import *
 
 class StaticSitemap(Sitemap):
     changefreq = "weekly"
-    priority = 0.7
+    priority = 0.8
 
     def items(self):
-       return ['kpopprofiles']
+       return ['kpopprofiles', 'info']
     def location(self, item):
         return reverse(item)
 
 class InfoSitemap(Sitemap):
-    changefreq = "weekly"
+    changefreq = "daily"
     priority = 0.7
 
     def items(self):
@@ -26,7 +26,7 @@ class ToolSitemap(Sitemap):
        return Tool.objects.all()
 
 class ProfileSitemap(Sitemap):
-    changefreq = "weekly"
+    changefreq = "daily"
     priority = 0.7
 
     def items(self):
