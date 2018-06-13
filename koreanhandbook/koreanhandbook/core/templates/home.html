@@ -14,7 +14,7 @@
                 <div class="item__info">
                   <h2 class="full__name">{{ focusTool.full_name }}</h2>
                   <h2 class="korean__name" >{{ focusTool.korean_name }}</h2>
-                  <a class="button--accent" href="/tool/{{ focusTool.short_name }}">View</a>
+                  <a class="button--accent" href="/tool/{{ focusTool.short_name }}/">View</a>
                 </div>
                 <div class="item__bg" style="background: url({{ focusTool.picture.url }});"></div>
               </div>
@@ -28,11 +28,11 @@
                 <div class="item__bg" style="background: url({{ kpopProfileImage }});"></div>
               </div>
             {% for focusInfo in focusInfo %}
-              <div class="slider__item" href="/info/{{ focusInfo.short_name }}">
+              <div class="slider__item">
                 <div class="item__info">
                   <h2 class="full__name">{{ focusInfo.full_name }}</h2>   
                   <h2 class="korean__name" >{{ focusInfo.korean_name }}</h2>
-                  <a class="button--accent" href="/info/{{ focusInfo.short_name }}">View</a>
+                  <a class="button--accent" href="/info/{{ focusInfo.short_name }}/">View</a>
                 </div>
                 <div class="item__bg" style="background: url({{ focusInfo.picture.url }});"></div>
               </div>

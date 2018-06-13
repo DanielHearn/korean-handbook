@@ -264,7 +264,7 @@ main {
       position: absolute;
       width: 100%;
       height: 100%;
-      filter: brightness(50%); }
+      filter: brightness(60%); }
     .grid .grid__item .grid__info {
       padding: 1em;
       text-align: center;
@@ -451,7 +451,7 @@ main {
   padding: 0 0.5em 0 0.5em;
   box-sizing: border-box;
   width: 100%; }
-.grid .grid__item.kpop {
+.grid .grid__item.kpop, .grid .grid__item.kpopprofiles {
   border-top: solid 0.5em #d15bb4; }
 .grid .grid__item.profile {
   justify-content: flex-start;
