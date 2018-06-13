@@ -7,7 +7,7 @@ class StaticSitemap(Sitemap):
     priority = 0.8
 
     def items(self):
-       return ['kpopprofiles', 'info']
+       return ['kpopprofiles']
     def location(self, item):
         return reverse(item)
 
