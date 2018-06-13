@@ -128,7 +128,7 @@ def search(request):
                 info.type = 'info'
                 searchResults.append(info)
             for kpopprofile in filteredProfiles:
-                kpopprofile.type = 'kpop'
+                kpopprofile.type = 'kpopprofiles'
                 searchResults.append(kpopprofile)
             if len(searchResults) > 0:
                 searchResults.sort(key=lambda obj: obj.searchScore)
