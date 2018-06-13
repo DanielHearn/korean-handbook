@@ -449,6 +449,7 @@ main {
   grid-row-gap: 1em;
   grid-column-gap: 1em;
   padding: 0 0.5em 0 0.5em;
+  box-sizing: border-box;
   width: 100%; }
 .grid .grid__item.kpop {
   border-top: solid 0.5em #d15bb4; }
