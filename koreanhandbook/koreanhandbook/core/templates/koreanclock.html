@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <title>{% block title %}Korean Handbook - Korean Clock{% endblock %}</title>
+	<main>
+		<section id="content">
+			<a class="link--text accent" href="/">Back to Home</a>
+			<div id="clock">
+				<h1 class="content__title">Korean Clock</h1>
+				<h2 class="content__subheading">Current date and time using Korean format</h2>
+				<div id="info">
+				  <p id="timeContainer">
+					<span id="prefix"></span><span id="time"></span>
+				  </p>
+				  <p id="date"></p>
+				</div>
+			  </div>
+			  {% include "ad_incontent.html" %}
+		</section>
+	</main>
+	<script src="{% static 'js/korean-clock.js' %}" defer></script>
+{% endblock %}

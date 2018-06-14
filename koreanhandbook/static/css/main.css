@@ -488,6 +488,54 @@ main {
     padding: 0;
     justify-content: flex-start; }
 
+#clock {
+  color: #333;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1s ease-in-out;
+  border-radius: 2em;
+  padding: 0.5em 1em;
+  backface-visibility: hidden;
+  transition: all 0.5s;
+  text-align: center; }
+  #clock h1, #clock h2 {
+    width: 100%; }
+  #clock #info {
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+    #clock #info #timeContainer {
+      display: inline-block;
+      font-weight: 700; }
+      #clock #info #timeContainer #prefix {
+        font-size: 2em;
+        margin: 0; }
+      #clock #info #timeContainer #time {
+        font-size: 3em;
+        margin: 0; }
+    #clock #info #date {
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
+      font-size: 1.75em;
+      display: inline-block; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@media screen and (max-width: 750px) {
+  #clock #info #time {
+    font-size: 2.5em; }
+  #clock #info #date {
+    font-size: 1.5em; } }
+@media screen and (max-width: 450px) {
+  #clock #info #time {
+    font-size: 3em; }
+  #clock #info #date {
+    font-size: 1.4em; } }
 .content__filter {
   display: flex;
   flex-direction: row;
