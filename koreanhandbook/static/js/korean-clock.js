@@ -2,7 +2,12 @@ let hours24 = true
 
 function getTime (date) {
   const minutes = `0${date.getMinutes()}`.slice(-2)
-  const hours = date.getHours()
+  let hours
+  if (date.getHours() <= 12) {
+    hours = date.getHours()
+  } else {
+    hours = date.getHours() - 12
+  }
   const time = `${hours}:${minutes}`
   return time
 }
