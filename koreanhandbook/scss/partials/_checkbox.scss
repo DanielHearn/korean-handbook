@@ -1,11 +1,11 @@
+/*
 .content__filter {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0 0 1em 0;
   }
-  
-  /* Customize the label (the container) */
+
   .filter__container {
     display: block;
     position: relative;
@@ -19,15 +19,13 @@
     -ms-user-select: none;
     user-select: none;
   }
-  
-  /* Hide the browser's default checkbox */
+
   .filter__container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
   }
   
-  /* Create a custom checkbox */
   .checkmark {
     position: absolute;
     top: 0;
@@ -37,29 +35,24 @@
     background-color: $grey-dark;
   }
   
-  /* On mouse-over, add a grey background color */
   .filter__container:hover input ~ .checkmark {
     background-color: $grey-darker;
   }
   
-  /* When the checkbox is checked, add a blue background */
   .filter__container input:checked ~ .checkmark {
     background-color: $accent;
   }
   
-  /* Create the checkmark/indicator (hidden when not checked) */
   .checkmark:after {
     content: "";
     position: absolute;
     display: none;
   }
   
-  /* Show the checkmark when checked */
   .filter__container input:checked ~ .checkmark:after {
     display: block;
   }
-  
-  /* Style the checkmark/indicator */
+
   .filter__container .checkmark:after {
     left: 9px;
     top: 5px;
@@ -70,4 +63,4 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+  }*/

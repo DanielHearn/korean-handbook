@@ -19,31 +19,42 @@
   }
 }
 
+@mixin korean-text {
+  font-family: "Gothic A1";
+}
+
 @mixin reset-button-style {
   background: none;
   border: 0;
   color: inherit;
-  /* cursor: default; */
   font: inherit;
   line-height: normal;
   overflow: visible;
   padding: 0;
-  -webkit-appearance: button; /* for input */
-  -webkit-user-select: none; /* for button */
+  -webkit-appearance: button;
+  -webkit-user-select: none; 
      -moz-user-select: none;
       -ms-user-select: none;
 }
 
 @mixin link-underline {
-  @include thick-underline;
-  font-size: $sub-heading-size;
-  font-weight: $sub-heading-weight;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
   &:before {
-    transform: scaleX(0);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    border-bottom: 0.2em solid $accent;
+    transform:  translateY(0.4em);
+    opacity: 0;
+    transition: all 0.25s;
   }
   &:hover:before {
-    visibility: visible;
-    transform: scaleX(1);
+    transform: translateY(0em) ;
+    opacity: 1;
   }
 }
 
@@ -70,22 +81,6 @@
   grid-gap: 5vw;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   padding: 0 1em 0 1em;
-}
-
-@mixin thick-underline {
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    bottom: -0px;
-    height: 2px;
-    left: 0;
-    background: $white;
-    transition: transform 0.18s;
-  }
 }
 
 @mixin background-image {

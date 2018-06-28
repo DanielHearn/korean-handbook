@@ -13,8 +13,8 @@ function getTime (date) {
 }
 
 function getDay (date) {
-  const days = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일']
-  const dayNumber = date.getDay() - 1
+  const days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
+  const dayNumber = date.getDay()
   return days[dayNumber]
 }
 

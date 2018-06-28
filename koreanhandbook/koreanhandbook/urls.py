@@ -35,9 +35,9 @@ urlpatterns = [
     url(r'^$', core_views.home, name='home'),
     url('search/', core_views.search, name='search'),
     url('about/', core_views.about, name='about'),
-    url(r'kpopprofiles/(?P<profile_name>\w+/)$', core_views.kpopprofile, name='profile_name'),
-    url('kpopprofiles/', core_views.kpopprofiles, name='kpopprofiles'),
-    url(r'tool/(?P<tool_name>\w+/)$', core_views.tool, name='tool'),
-    url(r'info/(?P<info_name>\w+/)$', core_views.info, name='info'),
+    #url(r'kpopprofiles/(?P<profile_name>\w+/)$', core_views.kpopprofile, name='profile_name'),
+    #url('kpopprofiles/', core_views.kpopprofiles, name='kpopprofiles'),
+    url(r'tool/(?P<tool_name>[-\w]+/)$', core_views.tool, name='tool'),
+    url(r'info/(?P<info_name>[-\w]+/)$', core_views.info, name='info'),
     url('info/', core_views.infos, name='infos'),
 ]

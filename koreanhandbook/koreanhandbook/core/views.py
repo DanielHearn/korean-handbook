@@ -15,64 +15,30 @@ class Ad:
 
 def home(request):
     tools = Tool.objects.all()
-    info = Info.objects.all()[:20]
+    info = Info.objects.all()
     status = ''
-    if len(tools) and len(info) == 0:
-        status = 'No tools or information available'
-    focusInfo = Info.objects.filter(home_focus=True)
-    focusTools = Tool.objects.filter(home_focus=True)
-    if (len(focusInfo) > 0 or len(focusTools)):
-        sliderVisible = True
-    else:
-        sliderVisible = False
-    kpopProfileSliderImage = Profile.objects.all().first().picture.url
-    tools = addAdToArray(tools, 4)
+    page_title = 'Korean Handbook - Info'
+    if len(info) == 0:
+        status = 'No information available'
     info = addAdToArray(info, 4) 
-    return render(request, 'home.html', {'status': status, 'sliderVisible': sliderVisible, 'focusInfo': focusInfo, 'focusTools': focusTools, 'kpopProfileImage': kpopProfileSliderImage, 'tools': tools, 'info': info})
+    return render(request, 'home.html', {'pageTitle': page_title, 'status': status, 'tools': tools, 'info': info})
 
 def about(request):
     return render(request, 'about.html')
-
-def kpopprofiles(request):
-    profiles = Profile.objects.all()
-    status = ''
-    if len(profiles) == 0:
-        status = 'No profiles available'
-    focusProfiles = profiles.filter(home_focus=True)
-    if (len(focusProfiles) > 0):
-        sliderVisible = True
-    else:
-        sliderVisible = False
-    profiles = profiles.order_by('date_inserted').reverse()
-    profiles = addAdToArray(profiles, 3)
-    return render(request, 'kpopprofiles.html', {'status': status, 'sliderVisible': sliderVisible, 'profiles': profiles, 'focusProfiles': focusProfiles})
-
-def kpopprofile(request, profile_name):
-    profile_name = profile_name[0:len(profile_name)-1]
-    profile = Profile.objects.get(short_name=profile_name)
-    members = Member.objects.filter(profile=profile).order_by('birth_date')
-    members = addAdToArray(members, 2)
-    relatedContent = generateRelatedContent(Profile, 2)
-    return render(request, 'kpopprofile.html', {'profile': profile, 'members': members, 'relatedContent': relatedContent})
 
 def tool(request, tool_name):
     tool_name = tool_name[0:len(tool_name)-1]
     return render(request, tool_name + '.html')
 
 def infos(request):
-    tools = Tool.objects.all()
-    info = Info.objects.all()
-    status = ''
-    if len(tools) and len(info) == 0:
-        status = 'No tools or information available'
-    kpopProfileSliderImage = Profile.objects.all().first().picture.url
-    tools = addAdToArray(tools, 4)
-    info = addAdToArray(info, 4) 
-    return render(request, 'info.html', {'status': status, 'kpopProfileImage': kpopProfileSliderImage, 'tools': tools, 'info': info})
+    return redirect ('/')
 
 def info(request, info_name):
     info_name = info_name[0:len(info_name)-1]
-    info = Info.objects.get(short_name=info_name)
+    try:
+        info = Info.objects.get(short_name=info_name)
+    except Info.DoesNotExist:
+        return redirect ('/')
     info_rows = ''
     if info.num_colums == 2:
         if info.numeric_first_col == True:
@@ -138,3 +104,27 @@ def search(request):
                 status = 'No information matched the search criteria'
             return render(request, 'search.html', {'status': status, 'tools': filteredTools, 'info': filteredInfo, 'kpopProfiles': filteredProfiles, 'searchResults': searchResults})
     return redirect ('/')
+
+"""
+def kpopprofiles(request):
+    profiles = Profile.objects.all()
+    status = ''
+    if len(profiles) == 0:
+        status = 'No profiles available'
+    focusProfiles = profiles.filter(home_focus=True)
+    if (len(focusProfiles) > 0):
+        sliderVisible = True
+    else:
+        sliderVisible = False
+    profiles = profiles.order_by('date_inserted').reverse()
+    profiles = addAdToArray(profiles, 3)
+    return render(request, 'kpopprofiles.html', {'status': status, 'sliderVisible': sliderVisible, 'profiles': profiles, 'focusProfiles': focusProfiles})
+
+def kpopprofile(request, profile_name):
+    profile_name = profile_name[0:len(profile_name)-1]
+    profile = Profile.objects.get(short_name=profile_name)
+    members = Member.objects.filter(profile=profile).order_by('birth_date')
+    members = addAdToArray(members, 2)
+    relatedContent = generateRelatedContent(Profile, 2)
+    return render(request, 'kpopprofile.html', {'profile': profile, 'members': members, 'relatedContent': relatedContent})
+"""

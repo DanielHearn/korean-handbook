@@ -11,7 +11,7 @@ function overlay () {
   document.querySelector('body').classList.toggle('noscroll')
 }
 
-// DATA PAGE SEARCH
+// INFO PAGE SEARCH
 const pageSearch = document.querySelector('#page__search')
 if (pageSearch != null) {
   pageSearch.addEventListener('input', searchPage)

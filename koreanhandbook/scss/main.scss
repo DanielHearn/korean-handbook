@@ -1,25 +1,19 @@
-$accent: #595EE6;
-$accent-dark: #4e53d0;
+$accent: #9B59E6;
+$accent-dark: #8c4dd4;
 $white: #fefefe;
-$grey: #f7f7f7;
-$grey-dark: #ececec;
-$grey-darker: #dcdcdc;
-$grey-darkest: #555;
+$grey: #999;
 $dark: #333;
+$darker: #222;
 $colour-selection: #c8c5cc;
-$blue: #3a5684;
-$blue-dark: #2e476f;
-$kpop-accent: #d15bb4;
-$kpop-dark: #c54ba7;
 
 $heading-size: 1.75em;
-$heading-weight: 800;
-$sub-heading-size: 1.25em;
+$heading-weight: 700;
+$sub-heading-size: 1.2em;
 $sub-heading-weight: 700;
 $p-size: 1.1em;
 $p-weight: 400;
 $input-size: 1em;
-$input-weight: 700;
+$input-weight: 600;
 
 $content-padding: 2em;
 $content-width: 65em;
@@ -40,13 +34,13 @@ $content-width: 65em;
 
 body {
   margin: 0;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   height: 100%;  
 }
 
 ::-moz-selection { background: $colour-selection; }
 ::selection { background: $colour-selection; }
-::-webkit-input-placeholder { color: $white; }
-::-moz-placeholder { color: $white; }
-:-ms-input-placeholder { color: $white; }
-:-moz-placeholder { color: $white; }
+::-webkit-input-placeholder { color: $grey; }
+::-moz-placeholder { color: $grey; }
+:-ms-input-placeholder { color: $grey; }
+:-moz-placeholder { color: $grey; }

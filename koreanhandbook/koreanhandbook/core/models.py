@@ -30,12 +30,8 @@ class Tool(models.Model):
     picture = ProcessedImageField(upload_to='./images',
                                            processors=[ResizeToFill(800, 500)],
                                            format='JPEG',
-                                           options={'quality': 70},
-                                           default='default.jpg')
-    thumbnail = ImageSpecField(source='picture',
-                                           processors=[ResizeToFill(400, 200)],
-                                           format='JPEG',
-                                           options={'quality': 70})     
+                                           options={'quality': 80},
+                                           default='default.jpg')         
     def __str__(self):
        return 'Tool: ' + self.full_name
     def get_absolute_url(self):
@@ -56,12 +52,8 @@ class Info(models.Model):
     picture = ProcessedImageField(upload_to='./images',
                                            processors=[ResizeToFill(800, 500)],
                                            format='JPEG',
-                                           options={'quality': 70},
-                                           default='default.jpg')
-    thumbnail = ImageSpecField(source='picture',
-                                processors=[ResizeToFill(400, 200)],
-                                format='JPEG',
-                                 options={'quality': 70})                                     
+                                           options={'quality': 80},
+                                           default='default.jpg')       
     def __str__(self):
         return 'Info: ' + self.full_name
     def get_absolute_url(self):
@@ -83,12 +75,8 @@ class Profile(models.Model):
     picture = ProcessedImageField(upload_to='./images',
                                     processors=[ResizeToFill(1000, 600)],
                                     format='JPEG',
-                                    options={'quality': 70},
+                                    options={'quality': 80},
                                     default='default.jpg')
-    thumbnail = ImageSpecField(source='picture',
-                                processors=[ResizeToFill(400, 200)],
-                                format='JPEG',
-                                options={'quality': 70})                                   
     home_focus = models.BooleanField(default=False)
     date_inserted = models.DateTimeField(default=now, blank=True)
     def __str__(self):
@@ -99,10 +87,10 @@ class Profile(models.Model):
 class Member(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     picture = ProcessedImageField(upload_to='./images',
-                                           processors=[ResizeToFill(600, 400)],
+                                           processors=[ResizeToFill(840, 560)],
                                            format='JPEG',
-                                           options={'quality': 70},
-                                           default='default.jpg')
+                                            options={'quality': 80},
+                                            default='default.jpg')            
     stage_name = models.CharField(max_length=100, default='Stage Name')
     birth_name = models.CharField(max_length=100, default='Birth Name')
     birth_date = models.DateTimeField(default=now, blank=True)

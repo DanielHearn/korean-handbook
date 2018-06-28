@@ -2,11 +2,12 @@
     @include button;
     background: $accent;
     color: $white;
-    padding: 0.6em 1.3em;
+    padding: 0.3em 0.75em;
     &:hover {
       background: $accent-dark;
     }
 }
+/*
   
 .button--white {
     @include button;
@@ -54,3 +55,4 @@
         background: $kpop-dark;
     }
 }
+*/

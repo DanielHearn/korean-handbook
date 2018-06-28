@@ -5,8 +5,6 @@
     <header>
       {% csrf_token %}
     </header>
-    <title>{% block title %}Korean Handbook - {{ info.full_name }}{% endblock %}</title>
-    <meta name="description" content="{{ info.description }}">
     <main>
       <section id="content">
         <div class="content__navigation">
@@ -40,16 +38,6 @@
             </li>
           {% endfor %}
         </ul>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-format="fluid"
-             data-ad-layout-key="-fb+5w+4e-db+86"
-             data-ad-client="ca-pub-6075240542580801"
-             data-ad-slot="1650569465"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
         <p>Related Content</p>
         <section class="grid">
             {% for content in relatedContent %}

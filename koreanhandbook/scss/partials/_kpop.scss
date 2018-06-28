@@ -1,3 +1,4 @@
+/*
 .profile__header {
     grid-column: span 2 !important;
     display: flex !important;
@@ -84,7 +85,7 @@
     }
     .grid__item {
         &.kpop, &.kpopprofiles {
-            border-top: solid 0.5em $kpop-accent;
+           // border-top: solid 0.5em $kpop-accent;
         }
         &.profile {
             justify-content: flex-start;
@@ -130,3 +131,4 @@
         }
     }  
 }
+*/
