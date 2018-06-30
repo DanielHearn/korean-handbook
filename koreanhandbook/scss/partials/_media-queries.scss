@@ -1,9 +1,31 @@
 
 @media screen and (max-width: 55em) {
   html body {
+    .nav {
+      background: $dark;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 5;
+      padding: $content-padding/3;
+      @include bottom-shadow;
+      .nav__content {
+        display: none;
+      }
+    }
     main {
       .grid {
         grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 55em) {
+  html body {
+    .nav {
+      .nav__content--mobile {
+        display: none;
       }
     }
   }

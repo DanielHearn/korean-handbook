@@ -2,6 +2,7 @@ main {
   background: $dark;
   min-height: 100vh;
   flex: 5;
+  z-index: 1;
 }
 
 .content {
@@ -72,6 +73,8 @@ a {
         font-size: $sub-heading-size;
         font-weight: $sub-heading-weight;
         color: $white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
       .info__korean-name {
         font-size: $sub-heading-size;

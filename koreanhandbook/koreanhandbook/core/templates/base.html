@@ -35,42 +35,56 @@
     </script>
   </head>
   <body>
-    <!--<div class="overlay">
-      <ul>
-        <li><a href="/" class="overlay__link link--underline">Home</a></li>
-        <li><a href="/tool/randomkoreanwords/" class="overlay__link">Random Word Generator</a></li>
-        <li><a href="/kpopprofiles/" class="overlay__link">KPOP Profiles</a></li>
-        <li><a href="/about" class="overlay__link">About</a></li>
-      </ul>
-    </div>-->
     <section class="content">
-      <nav class="nav">
-        <div class="nav__content">
-          {% include "logo.html" %}
-          <ul class="content__list" >
-            <li>
-              <form class="form--search" action="/search/" method="get">
-                {% csrf_token %}
-                <input type="hidden" name="next" value="{{ request.path }}">
-                <input class="input__search" type="text" placeholder="Search site" value=""  name="search_text">
-                <button class="button--purple" type="submit" name="sumbitSearch">  <i class="material-icons">search</i></button>
-              </form>
-            </li>
-            <li>
-              <a class="content__heading" href="/">INFO</a>
-            </li>
+      <div class="overlay">
+          <ul>
+            <li><a href="/" class="overlay__link link--underline">INFO</a></li>
             {% for tool in tools %}
-              <li>
-                <a class="content__heading"href="/tool/{{ tool.url }}/">{{ tool.short_name }}</a>
+            <li>
+                <a class="overlay__link" href="/tool/{{ tool.url }}/">{{ tool.short_name }}</a>
               </li>
             {% endfor %}
-            <!--<li>
-              <a class="content__heading" href="/tool/randomkoreanwords/">RANDOM WORDS</a>
-            </li>
-            <li>
-              <a class="content__heading" href="/tool/koreanclock/">KOREAN CLOCK</a>
-            </li>-->
           </ul>
+        </div>
+      <nav class="nav">
+        <div class="nav__content--mobile">
+            {% include "logo.html" %}
+            <form class="form--search" action="/search/" method="get">
+              {% csrf_token %}
+              <input type="hidden" name="next" value="{{ request.path }}">
+              <input class="input__search" type="text" placeholder="Search site" value=""  name="search_text">
+              <button class="button--purple" type="submit" name="sumbitSearch">  <i class="material-icons">search</i></button>
+            </form>
+            <a class="button--overlay"><span></span></a>
+          </div>
+        <div class="nav__content">
+          <div class="nav__list">
+            {% include "logo.html" %}
+            <ul class="content__list" >
+              <li>
+                <form class="form--search" action="/search/" method="get">
+                  {% csrf_token %}
+                  <input type="hidden" name="next" value="{{ request.path }}">
+                  <input class="input__search" type="text" placeholder="Search site" value=""  name="search_text">
+                  <button class="button--purple" type="submit" name="sumbitSearch">  <i class="material-icons">search</i></button>
+                </form>
+              </li>
+              <li>
+                <a class="content__heading" href="/">INFO</a>
+              </li>
+              {% for tool in tools %}
+                <li>
+                  <a class="content__heading" href="/tool/{{ tool.url }}/">{{ tool.short_name }}</a>
+                </li>
+              {% endfor %}
+              <!--<li>
+                <a class="content__heading" href="/tool/randomkoreanwords/">RANDOM WORDS</a>
+              </li>
+              <li>
+                <a class="content__heading" href="/tool/koreanclock/">KOREAN CLOCK</a>
+              </li>-->
+            </ul>
+          </div>
         </div>
       </nav>
       <main>

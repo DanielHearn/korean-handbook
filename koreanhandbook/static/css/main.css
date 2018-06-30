@@ -15,62 +15,52 @@
   justify-content: center;
   align-content: center;
   padding: 2em;
-  flex: 1; }
+  flex: 1;
+  z-index: 2;
+  box-sizing: border-box; }
   .nav .nav__content {
     display: flex;
-    flex-direction: column;
-    position: fixed; }
-    .nav .nav__content .content__list {
+    flex-direction: column; }
+    .nav .nav__content .nav__list {
+      position: sticky;
       display: flex;
       flex-direction: column;
-      list-style: none;
-      padding-left: 0; }
-      .nav .nav__content .content__list li {
-        padding: 1em 0;
-        letter-spacing: 1px; }
-        .nav .nav__content .content__list li a {
-          text-transform: uppercase;
-          text-decoration: none;
-          position: relative;
-          display: inline-block; }
-          .nav .nav__content .content__list li a:before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: -6px;
-            border-bottom: 0.2em solid #9B59E6;
-            transform: translateY(0.4em);
-            opacity: 0;
-            transition: all 0.25s; }
-          .nav .nav__content .content__list li a:hover:before {
-            transform: translateY(0em);
-            opacity: 1; }
+      top: 2em; }
+      .nav .nav__content .nav__list .content__list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding-left: 0; }
+        .nav .nav__content .nav__list .content__list li {
+          padding: 1em 0;
+          letter-spacing: 1px; }
+          .nav .nav__content .nav__list .content__list li a {
+            text-transform: uppercase;
+            text-decoration: none;
+            position: relative;
+            display: inline-block; }
+            .nav .nav__content .nav__list .content__list li a:before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              bottom: -6px;
+              border-bottom: 0.2em solid #9B59E6;
+              transform: translateY(0.4em);
+              opacity: 0;
+              transition: all 0.25s; }
+            .nav .nav__content .nav__list .content__list li a:hover:before {
+              transform: translateY(0em);
+              opacity: 1; }
+
+.nav__content--mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transition: all 0.2s ease-in-out; }
 
 /*
-.nav {
-  background: $accent;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 5;
-  @include bottom-shadow;
-  .nav__content {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
-    max-width: $content-width;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @include smooth-transition;
-  }
-}
-
-
 .nav--white {
   background: $white;
   .nav__link {
@@ -234,7 +224,8 @@
 main {
   background: #333;
   min-height: 100vh;
-  flex: 5; }
+  flex: 5;
+  z-index: 1; }
 
 .content {
   display: flex;
@@ -296,7 +287,9 @@ a {
       .grid .grid__item .grid__info .info__full-name {
         font-size: 1.2em;
         font-weight: 700;
-        color: #fefefe; }
+        color: #fefefe;
+        text-transform: uppercase;
+        letter-spacing: 1px; }
       .grid .grid__item .grid__info .info__korean-name {
         font-size: 1.2em;
         font-weight: 700;
@@ -1014,8 +1007,23 @@ footer {
     flex-direction: row;
     justify-content: space-around; } }
 @media screen and (max-width: 55em) {
+  html body .nav {
+    background: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    padding: 0.6666666667em;
+    -webkit-box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.07); }
+    html body .nav .nav__content {
+      display: none; }
   html body main .grid {
     grid-template-columns: repeat(1, 1fr); } }
+@media screen and (min-width: 55em) {
+  html body .nav .nav__content--mobile {
+    display: none; } }
 @media screen and (min-width: 55.01em) and (max-width: 80em) {
   html body main .grid {
     grid-template-columns: repeat(2, 1fr); } }
