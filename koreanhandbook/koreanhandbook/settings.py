@@ -22,12 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if 'SECRET_KEY' in os.environ:
     SECRET_KEY = os.environ['SECRET_KEY']
     DEBUG = False
-# SECURITY WARNING: keep the secret key used in production secret!
 else:
     SECRET_KEY = 'p=i+%d=o(9-+tzt=el9j3uyn(1459*)zd*u4ft+!4jd&8@)*vq'
     DEBUG = True
-
-# SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
     'koreanhandbook-prod.fnks76p4cs.eu-west-2.elasticbeanstalk.com',

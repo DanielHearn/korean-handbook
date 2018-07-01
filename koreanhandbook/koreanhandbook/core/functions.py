@@ -15,12 +15,9 @@ def generateRelatedContent(model, numOfContent, currentID):
 def getRelatedContent(model, max_id, currentID):
     while True:
         pk = randint(1, max_id)
-        if pk == currentID:
-            getRelatedContent(model, max_id, currentID)
-        else: 
-            relatedContent = model.objects.filter(pk=pk).first()
-            if relatedContent:
-                return relatedContent
+        relatedContent = model.objects.filter(pk=pk).first()
+        if relatedContent:
+            return relatedContent
 
 def searchString(matchString, searchString):
     matchSubString = get_all_substrings(matchString.lower())
@@ -67,8 +64,8 @@ def findMatchingInfo(infoArray, searchText):
             info.searchScore = 0
     return filteredArray
 
-def checkScore(score, searchText):
-    if score >= (len(searchText)*0.7):
+def checkScore(score, search_text):
+    if score >= (len(search_text)*0.7):
         return True 
     else:
         return False
@@ -78,3 +75,6 @@ def getSearchScore(item):
 
 def getModelName(object):
     return object.__class__.__name__.lower() 
+
+def generatePageTitle(page_name):
+    return page_name + ' - The Korean Handbook'

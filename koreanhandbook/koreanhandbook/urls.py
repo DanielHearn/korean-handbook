@@ -14,13 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path, reverse
-from django.conf.urls import url, include
+from django.conf.urls import url, include, handler404
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.contrib.sitemaps import Sitemap
 from django.contrib.sitemaps.views import sitemap
+
 from koreanhandbook.core import views as core_views
 from koreanhandbook.core.sitemaps import *
+
 
 sitemaps = {
     'info': InfoSitemap(),

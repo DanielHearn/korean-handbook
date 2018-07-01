@@ -31,7 +31,7 @@ class Tool(models.Model):
     picture = ProcessedImageField(upload_to='./images',
                                            processors=[ResizeToFill(800, 500)],
                                            format='JPEG',
-                                           options={'quality': 80},
+                                           options={'quality': 70},
                                            default='default.jpg')         
     def __str__(self):
        return 'Tool: ' + self.full_name
@@ -53,7 +53,7 @@ class Info(models.Model):
     picture = ProcessedImageField(upload_to='./images',
                                            processors=[ResizeToFill(800, 500)],
                                            format='JPEG',
-                                           options={'quality': 80},
+                                           options={'quality': 70},
                                            default='default.jpg')       
     def __str__(self):
         return 'Info: ' + self.full_name

@@ -7,7 +7,7 @@
   @include smooth-transition;
   display: flex;
   font-size: $p-size;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   border: none;
   font-weight: 600;
   -webkit-appearance: none;
@@ -88,4 +88,5 @@
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position-x: center !important;
+  background-position-y: center !important;
 }

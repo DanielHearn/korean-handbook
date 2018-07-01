@@ -17,7 +17,7 @@ def home(request):
     info = Info.objects.all()
     tools = Tool.objects.all()
     status = ''
-    page_title = 'The Korean Handbook - Info'
+    page_title = generatePageTitle('Info')
     if len(info) == 0:
         status = 'No information available'
     info = addAdToArray(info, 4) 
@@ -28,11 +28,10 @@ def about(request):
 
 def tool(request, tool_name):
     try:
-        print(tool_name[:0])
         tools = Tool.objects.all()
         tool_name = tool_name[0:len(tool_name)-1]
         tool = Tool.objects.get(url=tool_name)
-        page_title = 'The Korean Handbook - ' + tool.full_name
+        page_title = generatePageTitle(tool.full_name)
         related_content = generateRelatedContent(Info, 3, -1)
         return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'tools': tools})
     except Tool.DoesNotExist:
@@ -46,7 +45,7 @@ def info(request, info_name):
     info_name = info_name[0:len(info_name)-1]
     try:
         info = Info.objects.get(short_name=info_name)
-        page_title = 'The Korean Handbook - ' + info.full_name
+        page_title = generatePageTitle(info.full_name)
     except Info.DoesNotExist:
         return redirect ('/')
     info_rows = ''
@@ -92,7 +91,7 @@ def search(request):
             filtered_info = findMatchingInfo(infos, search_text)
             filtered_tools = addAdToArray(filtered_tools, 4)
             filtered_info = addAdToArray(filtered_info, 4)
-            page_title = 'The Korean Handbook - Search'
+            page_title = generatePageTitle('Search')
             search_results = filtered_tools + filtered_info
             for result in search_results:
                 result.type = getModelName(result)

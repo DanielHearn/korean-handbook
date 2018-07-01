@@ -20,6 +20,9 @@
       .grid {
         grid-template-columns: repeat(1, 1fr);
       }
+      .list .list__row, .list .column__title {
+        padding: 0;
+      }
     }
   }
 }
