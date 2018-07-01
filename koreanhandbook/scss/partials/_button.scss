@@ -30,20 +30,20 @@
         background: $accent-dark;
     }
 }
+*/
 
 .button--dark {
-    text-decoration: none;
-    background: $blue;
-    padding: 0.5em 1.25em;
-    border-radius: 0.5em;
+    @include button;
+    background: $dark;
     color: $white;
-    @include smooth-transition;
+    padding: 0.3em 0.75em;
     &:hover {
-        background: $blue-dark;
+      background: $darker;
     }
 }
 
 
+/*
 .button--kpop {
     text-decoration: none;
     background: $kpop-accent;

@@ -2,18 +2,23 @@
 {% load static %}
 
 {% block content %}
+    {% if status %}
+    <section class="header">
+      <p class="content__text status">{{ status }}</p>
+    </section>
+    {% endif %}
     <section class="grid">
-      {% for infoPage in info %}
+      {% for info_page in info %}
         <div class="grid__item">
-          <a class="grid__link" href="/info/{{ infoPage.short_name }}/">
+          <a class="grid__link" href="/info/{{ info_page.short_name }}/">
             <div class="grid__info">
-                <h2 class="info__full-name" >{{ infoPage.full_name }}</h2>
-                <h2 class="info__korean-name" >{{ infoPage.korean_name }}</h2>
+              <h2 class="info__full-name" >{{ info_page.full_name }}</h2>
+              <h2 class="info__korean-name" >{{ info_page.korean_name }}</h2>
             </div>
-            <div class="item__bg" style="background: url({{ infoPage.picture.url }});"></div>
+            <div class="item__bg" style="background: url({{ info_page.picture.url }});"></div>
           </a>
         </div>
-        {% if infoPage.ad %}
+        {% if info_page.ad %}
           {% include "ad_incontent.html" %}
         {% endif %}
       {% endfor %}

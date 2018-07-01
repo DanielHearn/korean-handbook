@@ -1,5 +1,5 @@
 main {
-  background: $dark;
+  background: $white;
   min-height: 100vh;
   flex: 5;
   z-index: 1;
@@ -10,24 +10,51 @@ main {
   flex-direction: row;
 }
 
+.related-content {
+  font-weight: 600;
+  color: $dark;
+}
+
 .form--search {
   display: flex;
   .input__search {
-    width: 100%;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: $input-size;
-    font-weight: $input-weight;
-    height: 2em;
-    color: $grey;
-    background: $white;
-    border: none;
-    padding: 0.2em 0.5em;
-    max-width: 25em;
-    @include smooth-transition;
+    max-width: 8em;
   }
 }
 
+.input__search {
+  width: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: $input-size;
+  font-weight: $input-weight;
+  height: 2em;
+  color: $grey;
+  background: $white;
+  border: none;
+  padding: 0.2em 0.5em;
+  max-width: 10em;
+  @include smooth-transition;
+}
+
 .content__heading {
+  font-size: $heading-size;
+  font-weight: $heading-weight;
+  color: $white;
+}
+
+.content__subheading {
+  font-size: $sub-heading-size;
+  font-weight: $sub-heading-weight;
+  color: $white;
+}
+
+.content__text {
+  font-size: $p-size;
+  font-weight: $p-weight;
+  color: $white;
+}
+
+.content__title {
   font-size: $sub-heading-size;
   font-weight: $sub-heading-weight;
   color: $white;
@@ -44,7 +71,7 @@ a {
     display: flex;
     cursor: pointer;
     &:hover .item__bg {
-      filter: contrast(80%) brightness(50%);
+      filter: contrast(90%) brightness(50%);
     }
     .grid__link {
       display: flex;
@@ -89,12 +116,100 @@ a {
       width: 100%;
       height: 100%;
       filter: contrast(80%) brightness(60%);
-      transition: filter 0.25s ease-in-out;
+      transition: filter 0.15s ease-in-out;
     }
   }
 }
 
+.header {
+  padding: $content-padding/2 $content-padding;
+  background: $accent;
+  color: $white;
+}
+
+.flex {
+  display: flex;
+}
+
+.link-text {
+  @include link-underline;
+  font-weight: 600;
+  &.accent {
+    color: $accent;
+    &:visited {
+      color: $accent;
+    }
+    &:before {
+      border-bottom: 0.2em solid $accent;
+    }
+  }
+  &.white {
+    color: $white;
+    &:visited {
+      color: $white;
+    }
+    &:before {
+      border-bottom: 0.2em solid $white !important;
+    }
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  .list__row {
+    @include rows_2;
+    font-size: $p-size;
+    font-weight: $p-weight;
+    &:nth-child(n) {
+      border-bottom: 2px $off-white solid;
+    }
+  }
+  .column__title {
+    @include rows_2;
+    font-size: $p-size;
+    font-weight: $sub-heading-weight;
+    color: $white;
+    padding: 0.5em 1em 0.5em 1em;
+    p {
+      margin: 0.75em 0;
+    }
+  }
+  .row__search {
+    background: $accent;
+    padding: 0.5em 1em 0.5em 1em;
+    display: flex;
+    flex-wrap: wrap;
+    .resultsCounter {
+      color: $white;
+      margin: 0.5em;
+      margin-left: 2em;
+    }
+  }
+}
+
+.info__content {
+  padding: $content-padding/2 $content-padding;
+}
+
+.content__link {
+  text-transform: uppercase;
+  @include link-underline;
+  &.is-active {
+    &:before {
+      transform: translateY(0em) ;
+      opacity: 1;
+    }  
+  }
+}
+
 /*
+.rounded {
+  border-radius: 0.2em;
+}
+
+
 #content {
   margin-left: auto;
   margin-right: auto;
@@ -141,10 +256,6 @@ a {
 
 .inline *{
   display: inline-block;
-}
-
-.flex {
-  display: flex;
 }
 
 .content__navigation {
@@ -228,63 +339,5 @@ a {
   font-weight: 600;
 }
 
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  padding-bottom: 4em;
-  .list__row {
-    @include rows_2;
-    font-size: $p-size;
-    font-weight: $p-weight;
-    p {
-      font-size: 1.05em;
-    }
-    &:nth-child(n+2) {
-      border-bottom: 2px $grey-dark solid;
-    }
-  }
-  .column__title {
-    @include rows_2;
-    font-size: $p-size;
-    font-weight: $sub-heading-weight;
-    background: $accent;
-    color: $white;
-    padding: 0.5em 1em 0.5em 1em;
-    p {
-      margin: 0.75em 0.25em;
-    }
-  }
-  .row__search {
-    background: $accent;
-    padding: 0.5em 1em 0.5em 1em;
-    display: flex;
-    flex-wrap: wrap;
-    .resultsCounter {
-      color: $white;
-      margin: 0.5em;
-      margin-left: 2em;
-    }
-  }
-}
-*/
-.link--text {
-  @include link-underline;
-  font-size: 1em;
-  &.accent {
-    color: $accent;
-    &:visited {
-      color: $accent;
-    }
-  }
-  &.white {
-    color: $white;
-    &:visited {
-      color: $white;
-    }
-  }
-}
 
-.rounded {
-  border-radius: 0.2em;
-}
+*/

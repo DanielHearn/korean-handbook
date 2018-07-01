@@ -5,19 +5,22 @@ from django.db.models import Max
 # Local app imports
 from .models import *
 
-def generateRelatedContent(model, numOfContent):
-    max_id = Profile.objects.all().aggregate(max_id=Max("id"))['max_id']
+def generateRelatedContent(model, numOfContent, currentID):
+    max_id = model.objects.all().aggregate(max_id=Max("id"))['max_id']
     relatedContent = []
     for content in range(numOfContent):
-        relatedContent.append(getRelatedContent(model, max_id))
+        relatedContent.append(getRelatedContent(model, max_id, currentID))
     return relatedContent
 
-def getRelatedContent(model, max_id):
+def getRelatedContent(model, max_id, currentID):
     while True:
         pk = randint(1, max_id)
-        relatedContent = model.objects.filter(pk=pk).first()
-        if relatedContent:
-            return relatedContent
+        if pk == currentID:
+            getRelatedContent(model, max_id, currentID)
+        else: 
+            relatedContent = model.objects.filter(pk=pk).first()
+            if relatedContent:
+                return relatedContent
 
 def searchString(matchString, searchString):
     matchSubString = get_all_substrings(matchString.lower())
@@ -72,3 +75,6 @@ def checkScore(score, searchText):
 
 def getSearchScore(item):
     return item.searchScore
+
+def getModelName(object):
+    return object.__class__.__name__.lower() 

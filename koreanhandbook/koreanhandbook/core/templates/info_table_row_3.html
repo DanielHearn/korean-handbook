@@ -2,52 +2,60 @@
 {% load static %}
 
 {% block content %}
-    <header>
-      {% csrf_token %}
-    </header>
-    <main>
-      <section id="content">
-        <div class="content__navigation">
-          <a class="link--text accent" href="/">Back to Home</a>
-          <a class="link--text accent" href="https://docs.google.com/forms/d/1Qh9351_dNYD_Yy2z81zTWa5gckMZFLp11StxyJXeqIQ/">Send page feedback</a>
+  <header>
+    {% csrf_token %}
+  </header>
+  <section class="header">
+    <div class="content__navigation">
+      <a class="link-text white" href="/">Back to Info</a>
+    </div>
+    <h2 class="content__heading">{{ info.full_name }} - {{ info.korean_name }}</h2>
+    <p>{{ info.description }}</p>
+    <div class="flex"> 
+      <div class="row__search">
+        <span class="flex">
+          <input id="page__search" class="input__search" type="text" name="" value="" placeholder="Search this page">
+          <button class="button--dark" type="submit" name="sumbitSearch">  <i class="material-icons">search</i></button>
+        </span>
+        <p class="resultsCounter"></p>
+      </div>
+    </div>
+    <ul class="list">
+      <li class="column__title inline">
+        <p> {{ info.column_1_name }} </p>
+        <p> {{ info.column_2_name }} </p>
+        <p> {{ info.column_3_name }} </p>
+      </li>
+    </ul> 
+  </section>
+  <section class="info__content">
+    <ul id="list--info" class="list">
+      {% for row in rows %}
+        <li data-key1="{{ row.col_1 }}" data-key2="{{ row.col_2 }}" data-key3="{{ row.col_3 }}" class="list__row inline">
+          <p> {{ row.col_1 }} </p>
+          <p> {{ row.col_2 }} </p>
+          <p> {{ row.col_3 }} </p>
+        </li>
+      {% endfor %}
+    </ul>
+    
+    <p class="related-content" >Related Content</p>
+    <section class="grid">
+      {% for content in related_content %}
+        <div class="grid__item">
+          <a class="grid__link" href="/info/{{ content.short_name }}/">
+            <div class="grid__info">
+              <h2 class="info__full-name" >{{ content.full_name }}</h2>
+              <h2 class="info__korean-name" >{{ content.korean_name }}</h2>
+            </div>
+            <div class="item__bg" style="background: url({{ content.picture.url }});"></div>
+          </a>
         </div>
-        <h2 class="content__heading">{{ info.full_name }} - {{ info.korean_name }}</h2>
-        <p>{{ info.description }} <a class="link--text accent" href="https://docs.google.com/forms/d/1Qh9351_dNYD_Yy2z81zTWa5gckMZFLp11StxyJXeqIQ/">Send page feedback</a></p>
-        <ul class="list">
-          <li class="row__search">
-            <span class="flex">
-              <input id="page__search" class="input__search" type="text" name="" value="" placeholder="Search this page">
-              <button class="button--white" type="submit" name="sumbitSearch">  <i class="material-icons">search</i></button>
-            </span>
-            <p class="resultsCounter"></p>
-          </li>
-          <li class="column__title inline">
-            <p> {{ info.column_1_name }} </p>
-            <p> {{ info.column_2_name }} </p>
-            <p> {{ info.column_3_name }} </p>
-          </li>
-          {% for row in rows %}
-            <li data-key1="{{ row.col_1 }}" data-key2="{{ row.col_2 }}" data-key3="{{ row.col_3 }}" class="list__row inline">
-              <p> {{ row.col_1 }} </p>
-              <p> {{ row.col_2 }} </p>
-              <p> {{ row.col_3 }} </p>
-            </li>
-          {% endfor %}
-        </ul>
-        <p>Related Content</p>
-        <section class="grid">
-            {% for content in relatedContent %}
-              <div class="grid__item">
-                <div class="grid__info">
-                  <h2 class="full__name">{{ content.full_name }}</h2>
-                  <h2 class="korean__name" >{{ content.korean_name }}</h2>
-                  <a class="button--dark" href="/info/{{ content.short_name }}/">View</a>
-                </div>
-                <div class="item__bg" style="background: url({{ content.thumbnail.url }});"></div>
-              </div>
-            {% endfor %}
-        </section>
-      </section>
-    </main>
-    <script src="{% static 'js/koreanHandbook.js' %}"></script>
+        {% if content.ad %}
+          {% include "ad_incontent.html" %}
+        {% endif %}
+      {% endfor %}
+    </section>
+  </section>
+  <script src="{% static 'js/koreanHandbook.js' %}"></script>
 {% endblock %}

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Daniel Hearn">
     <meta name="description" content="The Korean Handbook is a collection of Korean language learning tools and information.">
-    <title>{% block title %}{{ pageTitle  }}{% endblock %}</title>
+    <title>{% block title %}{{ page_title  }}{% endblock %}</title>
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
@@ -38,12 +38,13 @@
     <section class="content">
       <div class="overlay">
           <ul>
-            <li><a href="/" class="overlay__link link--underline">INFO</a></li>
-            {% for tool in tools %}
+            <li><a href="/" class="overlay__link content__subheading">INFO</a></li>
             <li>
-                <a class="overlay__link" href="/tool/{{ tool.url }}/">{{ tool.short_name }}</a>
-              </li>
-            {% endfor %}
+              <a class="overlay__link content__subheading" href="/tool/random-korean-words/">Random Words</a>
+            </li>
+            <li>
+              <a class="overlay__link content__subheading" href="/tool/korean-clock/">Korean Clock</a>
+            </li>
           </ul>
         </div>
       <nav class="nav">
@@ -60,7 +61,10 @@
         <div class="nav__content">
           <div class="nav__list">
             {% include "logo.html" %}
-            <ul class="content__list" >
+            <ul class="content__list">
+              <li>
+                <a class="content__title" href="/">The Korean Handbook</a>
+              </li>
               <li>
                 <form class="form--search" action="/search/" method="get">
                   {% csrf_token %}
@@ -70,19 +74,21 @@
                 </form>
               </li>
               <li>
-                <a class="content__heading" href="/">INFO</a>
+              {% if page_title == 'The Korean Handbook - Info' %}
+                <a class="content__subheading content__link is-active" href="/">INFO</a>
+              {% else %}
+                <a class="content__subheading content__link " href="/">INFO</a>
+              {% endif %}
               </li>
-              {% for tool in tools %}
-                <li>
-                  <a class="content__heading" href="/tool/{{ tool.url }}/">{{ tool.short_name }}</a>
-                </li>
-              {% endfor %}
-              <!--<li>
-                <a class="content__heading" href="/tool/randomkoreanwords/">RANDOM WORDS</a>
-              </li>
+              {% for nav_tool in tools %}
               <li>
-                <a class="content__heading" href="/tool/koreanclock/">KOREAN CLOCK</a>
-              </li>-->
+                {% if nav_tool.id == tool.id %}
+                  <a class="content__subheading content__link is-active" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
+                {% else %}
+                  <a class="content__subheading content__link" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
+                {% endif %}
+              </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -93,7 +99,7 @@
       </main>
     </section>
     <footer>
-      <p>Developed by <a class="link--text white" href="http://danielhearn.co.uk">Daniel Hearn</a></p>
+      <p>Developed by <a class="link-text white" href="http://danielhearn.co.uk">Daniel Hearn</a></p>
     </footer>
   </body>
 </html>

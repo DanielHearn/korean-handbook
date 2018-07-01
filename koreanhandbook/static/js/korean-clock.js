@@ -3,7 +3,7 @@ let hours24 = true
 function getTime (date) {
   const minutes = `0${date.getMinutes()}`.slice(-2)
   let hours
-  if (date.getHours() <= 12) {
+  if (date.getHours()<=12){
     hours = date.getHours()
   } else {
     hours = date.getHours() - 12
@@ -26,7 +26,7 @@ function displayClock () {
   const date = new Date()
   const time = getTime(date)
   const day = getDay(date)
-  const month = getMonth(date)
+  const month = getMonth(date)  
   const hours = date.getHours()
   const shortDate = `${date.getFullYear()}년 ${month}월 ${date.getDate()}일 ${day}`
   let prefix
@@ -35,9 +35,9 @@ function displayClock () {
   } else {
     prefix = '오전'
   }
-  document.querySelector('#prefix').innerHTML = prefix
-  document.querySelector('#time').innerHTML = time
-  document.querySelector('#date').innerHTML = shortDate
+  document.querySelector('#prefix').textContent = prefix
+  document.querySelector('#time').textContent = time
+  document.querySelector('#date').textContent = shortDate
 }
 
 function startClock () {

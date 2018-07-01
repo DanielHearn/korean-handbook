@@ -76,8 +76,11 @@
     li {
       padding: 1em;
       a {
-        color: white;
+        text-transform: uppercase;
         @include link-underline;
+        &:before {
+          border-bottom: 0.2em solid $white;
+        }
       }
     }
   }

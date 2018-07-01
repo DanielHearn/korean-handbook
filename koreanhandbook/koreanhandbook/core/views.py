@@ -14,29 +14,39 @@ class Ad:
         self.ad = True
 
 def home(request):
-    tools = Tool.objects.all()
     info = Info.objects.all()
+    tools = Tool.objects.all()
     status = ''
-    page_title = 'Korean Handbook - Info'
+    page_title = 'The Korean Handbook - Info'
     if len(info) == 0:
         status = 'No information available'
     info = addAdToArray(info, 4) 
-    return render(request, 'home.html', {'pageTitle': page_title, 'status': status, 'tools': tools, 'info': info})
+    return render(request, 'home.html', {'page_title': page_title, 'status': status, 'info': info, 'tools': tools})
 
 def about(request):
     return render(request, 'about.html')
 
 def tool(request, tool_name):
-    tool_name = tool_name[0:len(tool_name)-1]
-    return render(request, tool_name + '.html')
+    try:
+        print(tool_name[:0])
+        tools = Tool.objects.all()
+        tool_name = tool_name[0:len(tool_name)-1]
+        tool = Tool.objects.get(url=tool_name)
+        page_title = 'The Korean Handbook - ' + tool.full_name
+        related_content = generateRelatedContent(Info, 3, -1)
+        return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'tools': tools})
+    except Tool.DoesNotExist:
+        return redirect ('/')
 
 def infos(request):
     return redirect ('/')
 
 def info(request, info_name):
+    tools = Tool.objects.all()
     info_name = info_name[0:len(info_name)-1]
     try:
         info = Info.objects.get(short_name=info_name)
+        page_title = 'The Korean Handbook - ' + info.full_name
     except Info.DoesNotExist:
         return redirect ('/')
     info_rows = ''
@@ -51,8 +61,8 @@ def info(request, info_name):
                 info_rows = Row_2.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_2.objects.filter(info=info).order_by('date_inserted')
-        relatedContent = generateRelatedContent(Info, 3)
-        return render(request, 'info_table_row_2.html', {'info': info, 'rows': info_rows, 'relatedContent': relatedContent})
+        related_content = generateRelatedContent(Info, 3, info.id)
+        return render(request, 'info_table_row_2.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'tools': tools})
     elif info.num_colums == 3:
         if info.numeric_first_col == True:
             if info.alphanumeric_order == True:
@@ -64,8 +74,8 @@ def info(request, info_name):
                 info_rows = Row_3.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_3.objects.filter(info=info).order_by('date_inserted')
-        relatedContent = generateRelatedContent(Info, 3)
-        return render(request, 'info_table_row_3.html', {'info': info, 'rows': info_rows, 'relatedContent': relatedContent})
+        related_content = generateRelatedContent(Info, 3, info.id)
+        return render(request, 'info_table_row_3.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'tools': tools})
     else:
         return redirect ('/')
 
@@ -73,37 +83,31 @@ def search(request):
     if request.method == 'GET':
         form = SearchForm(request.GET)
         if form.is_valid():
-            searchText = form.cleaned_data.get('search_text')
-            if len(searchText) == 0:
+            search_text = form.cleaned_data.get('search_text')
+            if len(search_text) == 0:
                 return redirect ('/')
             tools = Tool.objects.all()
             infos = Info.objects.all()
-            kpopprofiles = Profile.objects.all()
-
-            searchResults = []
-            filteredTools = findMatchingInfo(tools, searchText)
-            filteredInfo = findMatchingInfo(infos, searchText)
-            filteredProfiles = findMatchingInfo(kpopprofiles, searchText)
-            filteredTools = addAdToArray(filteredTools, 4)
-            filteredInfo = addAdToArray(filteredInfo, 4)
-            filteredProfiles = addAdToArray(filteredProfiles, 4)
-            for tool in filteredTools:
-                tool.type = 'tool'
-                searchResults.append(tool)
-            for info in filteredInfo:
-                info.type = 'info'
-                searchResults.append(info)
-            for kpopprofile in filteredProfiles:
-                kpopprofile.type = 'kpopprofiles'
-                searchResults.append(kpopprofile)
-            if len(searchResults) > 0:
-                searchResults.sort(key=lambda obj: obj.searchScore)
-                searchResults = reversed(searchResults)
-                status = ''
+            filtered_tools = findMatchingInfo(tools, search_text)
+            filtered_info = findMatchingInfo(infos, search_text)
+            filtered_tools = addAdToArray(filtered_tools, 4)
+            filtered_info = addAdToArray(filtered_info, 4)
+            page_title = 'The Korean Handbook - Search'
+            search_results = filtered_tools + filtered_info
+            for result in search_results:
+                result.type = getModelName(result)
+            result_count = len(search_results)
+            if result_count > 1:
+                search_results.sort(key=lambda obj: obj.searchScore)
+                search_results = reversed(search_results)
+                status = 'Found ' + str(result_count) + ' results'
+            elif result_count > 0:
+                status = 'Found ' + str(result_count) + ' result'
             else:
                 status = 'No information matched the search criteria'
-            return render(request, 'search.html', {'status': status, 'tools': filteredTools, 'info': filteredInfo, 'kpopProfiles': filteredProfiles, 'searchResults': searchResults})
-    return redirect ('/')
+            return render(request, 'search.html', {'page_title': page_title, 'status': status, 'search_results': search_results, 'tools': tools})
+    else:
+        return redirect ('/')
 
 """
 def kpopprofiles(request):

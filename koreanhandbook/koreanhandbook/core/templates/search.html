@@ -2,30 +2,30 @@
 {% load static %}
 
 {% block content %}
-    <main>
-    <title>{% block title %}Korean Handbook - Home{% endblock %}</title>
-      <section id="content">
-        <a class="link--text accent" href="/">Back to Home</a>
-        <h2 class="content__title">The Korean Handbook</h2>
-        <h2 class="content__heading">Available Information</h2>
-        <p>{{ status }}</p>
-        <section class="grid">
-          {% for result in searchResults %}
-            <div class="grid__item {{ result.type }}">
-              <div class="grid__info">
-                <h2 class="full__name">{{ result.full_name }}</h2>
-                {% if result.korean_name %}
-                  <h2 class="korean__name" >{{ result.korean_name }}</h2>
-                {% endif %}
-                <a class="button--dark" href="/{{ result.type }}/{{ result.short_name }}/">View</a>
-              </div>
-              <div class="item__bg" style="background: url({{ result.thumbnail.url }});"></div>
+    {% if status %}
+    <section class="header">
+      <p class="content__text status">{{ status }}</p>
+    </section>
+    {% endif %}
+    <section class="grid">
+      {% for search_result in search_results %}
+        <div class="grid__item">
+          {% if search_result.url %}
+            <a class="grid__link" href="/{{ search_result.type }}/{{ search_result.url }}/">
+          {% else %}   
+            <a class="grid__link" href="/{{ search_result.type }}/{{ search_result.short_name }}/"> 
+          {% endif %}
+            <div class="grid__info">
+              <h2 class="info__full-name" >{{ search_result.full_name }}</h2>
+              <h2 class="info__korean-name" >{{ search_result.korean_name }}</h2>
             </div>
-            {% if result.ad %}
-              {% include "ad_incontent.html" %}
-            {% endif %}
-          {% endfor %}
-        </section>
-      </section>
-    </main>
+            <div class="item__bg" style="background: url({{ search_result.picture.url }});"></div>
+          </a>
+        </div>
+        {% if search_result.ad %}
+          {% include "ad_incontent.html" %}
+        {% endif %}
+      {% endfor %}
+    </section>
+    <script src="{% static 'js/koreanHandbook.js' %}"></script>
 {% endblock %}

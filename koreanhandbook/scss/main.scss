@@ -1,6 +1,7 @@
 $accent: #9B59E6;
 $accent-dark: #8c4dd4;
 $white: #fefefe;
+$off-white: #ececec;
 $grey: #999;
 $dark: #333;
 $darker: #222;
@@ -22,7 +23,6 @@ $content-width: 65em;
 @import 'partials/nav';
 @import 'partials/overlay';
 @import 'partials/content';
-@import 'partials/kpop';
 @import 'partials/korean-clock';
 @import 'partials/checkbox';
 @import 'partials/ad';

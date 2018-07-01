@@ -38,10 +38,6 @@
         li {
           padding: $content-padding/2 0;
           letter-spacing: 1px; 
-          a {
-            text-transform: uppercase;
-            @include link-underline;
-          }
         }
       }
     }

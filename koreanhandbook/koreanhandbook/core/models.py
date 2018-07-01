@@ -26,6 +26,7 @@ class Tool(models.Model):
     korean_name = models.CharField(max_length=100, default='한국어')
     short_name = models.CharField(max_length=100)
     url = models.CharField(max_length=100)
+    description = models.TextField(default='Tool description.')
     home_focus = models.BooleanField(default=False)
     picture = ProcessedImageField(upload_to='./images',
                                            processors=[ResizeToFill(800, 500)],
