@@ -26,10 +26,10 @@ main {
   font-family: 'Nunito Sans', sans-serif;
   font-size: $input-size;
   font-weight: $input-weight;
-  height: 2em;
   color: $grey;
   background: $white;
   border: none;
+  margin: 0;
   padding: 0.2em 0.5em;
   max-width: 10em;
   @include smooth-transition;

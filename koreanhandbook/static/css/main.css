@@ -228,10 +228,10 @@ main {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1em;
   font-weight: 600;
-  height: 2em;
   color: #999;
   background: #fefefe;
   border: none;
+  margin: 0;
   padding: 0.2em 0.5em;
   max-width: 10em;
   transition: all 0.2s ease-in-out; }
