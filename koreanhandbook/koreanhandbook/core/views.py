@@ -32,7 +32,7 @@ def tool(request, tool_name):
         tool_name = tool_name[0:len(tool_name)-1]
         tool = Tool.objects.get(url=tool_name)
         page_title = generatePageTitle(tool.full_name)
-        related_content = generateRelatedContent(Info, 3, -1)
+        related_content = generateRelatedContent(Info, 2, -1)
         return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'tools': tools})
     except Tool.DoesNotExist:
         return redirect ('/')
@@ -60,7 +60,7 @@ def info(request, info_name):
                 info_rows = Row_2.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_2.objects.filter(info=info).order_by('date_inserted')
-        related_content = generateRelatedContent(Info, 3, info.id)
+        related_content = generateRelatedContent(Info, 2, info.id)
         return render(request, 'info_table_row_2.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'tools': tools})
     elif info.num_colums == 3:
         if info.numeric_first_col == True:
@@ -73,7 +73,7 @@ def info(request, info_name):
                 info_rows = Row_3.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_3.objects.filter(info=info).order_by('date_inserted')
-        related_content = generateRelatedContent(Info, 3, info.id)
+        related_content = generateRelatedContent(Info, 2, info.id)
         return render(request, 'info_table_row_3.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'tools': tools})
     else:
         return redirect ('/')

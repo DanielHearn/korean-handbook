@@ -12,12 +12,12 @@
         display: none;
       }
       .button--logo {
-        width: 4em;
+        width: 3em;
       }
     }
     main {
       padding-top: 4em;
-      .grid {
+      .grid, .grid--related-content {
         grid-template-columns: repeat(1, 1fr);
       }
       .list .list__row, .list .column__title {
@@ -43,7 +43,7 @@
 @media screen and (min-width: 58.01em ) and (max-width: 80em) {
   html body {
     main {
-      .grid {
+      .grid, .grid--related-content {
         grid-template-columns: repeat(2, 1fr);
       }
     }

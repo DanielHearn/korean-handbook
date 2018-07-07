@@ -2,9 +2,6 @@
 {% load static %}
 
 {% block content %}
-  <header>
-    {% csrf_token %}
-  </header>
   <section class="header">
     <div class="content__navigation">
       <a class="link-text white" href="/">Back to Info</a>
@@ -42,24 +39,7 @@
         </li>
       {% endfor %}
     </ul>
-    
-    <p class="related-content">Related Content</p>
-    <section class="grid">
-      {% for content in related_content %}
-        <div class="grid__item">
-          <a class="grid__link" href="/info/{{ content.short_name }}/">
-            <div class="grid__info">
-              <h2 class="info__full-name" >{{ content.full_name }}</h2>
-              <h2 class="info__korean-name" >{{ content.korean_name }}</h2>
-            </div>
-            <div class="item__bg" style="background: url({{ content.picture.url }});"></div>
-          </a>
-        </div>
-        {% if content.ad %}
-          {% include "ad_incontent.html" %}
-        {% endif %}
-      {% endfor %}
-    </section>
   </section>
+  {% include "related_content.html" %}
   <script src="{% static 'js/koreanHandbook.js' %}"></script>
 {% endblock %}

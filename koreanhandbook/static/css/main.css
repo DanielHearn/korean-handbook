@@ -1,6 +1,6 @@
 .button--logo {
   height: 4em;
-  width: 6em;
+  width: 4em;
   z-index: 5; }
   .button--logo .logo {
     height: 100%;
@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 2em;
+  padding: 1em;
   flex: 1;
   z-index: 2;
   box-sizing: border-box; }
@@ -114,9 +114,8 @@
   z-index: 5;
   cursor: pointer; }
   .button--overlay span {
-    height: 4px;
+    height: 3px;
     width: 35px;
-    border-radius: 2px;
     background-color: #fefefe;
     position: relative;
     display: block;
@@ -127,9 +126,8 @@
     .button--overlay span:after {
       top: 10px; }
     .button--overlay span:before, .button--overlay span:after {
-      height: 4px;
+      height: 3px;
       width: 35px;
-      border-radius: 2px;
       background-color: #fefefe;
       position: absolute;
       content: "";
@@ -209,7 +207,9 @@ main {
   background: #fefefe;
   min-height: 100vh;
   flex: 5;
-  z-index: 1; }
+  z-index: 1;
+  display: flex;
+  flex-direction: column; }
 
 .content {
   display: flex;
@@ -217,7 +217,8 @@ main {
 
 .related-content {
   font-weight: 600;
-  color: #333; }
+  color: #333;
+  padding: 1em 2em; }
 
 .form--search {
   display: flex; }
@@ -246,10 +247,9 @@ main {
   font-weight: 700;
   color: #fefefe; }
 
-.content__text {
-  font-size: 1.1em;
-  font-weight: 400;
-  color: #fefefe; }
+p {
+  font-size: 1.05em;
+  font-weight: 400; }
 
 .content__title {
   font-size: 1.2em;
@@ -259,58 +259,67 @@ main {
 a {
   text-decoration: none; }
 
+.grid--related-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); }
-  .grid .grid__item {
+
+.grid__item {
+  display: flex;
+  cursor: pointer;
+  overflow: hidden; }
+  .grid__item:hover .item__bg {
+    filter: contrast(90%) brightness(55%);
+    transform: scale(1.05); }
+  .grid__item .grid__link {
     display: flex;
-    cursor: pointer; }
-    .grid .grid__item:hover .item__bg {
-      filter: contrast(90%) brightness(50%); }
-    .grid .grid__item .grid__link {
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      text-align: center;
-      flex: 1;
-      position: relative;
-      color: #fefefe; }
-    .grid .grid__item .grid__info {
-      padding: 4em;
-      text-align: center;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      box-sizing: border-box;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      width: 100%;
-      text-align: center;
-      z-index: 2;
-      backface-visibility: hidden; }
-      .grid .grid__item .grid__info .info__full-name {
-        font-size: 1.2em;
-        font-weight: 700;
-        color: #fefefe;
-        text-transform: uppercase;
-        letter-spacing: 1px; }
-      .grid .grid__item .grid__info .info__korean-name {
-        font-size: 1.2em;
-        font-weight: 700;
-        color: #fefefe;
-        font-family: "Gothic A1"; }
-    .grid .grid__item .item__bg {
-      z-index: 1;
-      background-repeat: no-repeat !important;
-      background-size: cover !important;
-      background-position-x: center !important;
-      background-position-y: center !important;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      filter: contrast(80%) brightness(60%);
-      transition: filter 0.15s ease-in-out; }
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    flex: 1;
+    position: relative;
+    color: #fefefe; }
+  .grid__item .grid__info {
+    padding: 4em;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    backface-visibility: hidden; }
+    .grid__item .grid__info .info__full-name {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #fefefe;
+      text-transform: uppercase;
+      letter-spacing: 1px; }
+    .grid__item .grid__info .info__korean-name {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #fefefe;
+      font-family: "Gothic A1"; }
+  .grid__item .item__bg {
+    z-index: 1;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position-x: center !important;
+    background-position-y: center !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: contrast(80%) brightness(60%);
+    backface-visibility: hidden;
+    transform: scale(1.01);
+    transition: filter 0.15s ease-in-out, transform 0.3s ease-in-out; }
 
 .header {
   padding: 1em 2em;
@@ -351,7 +360,20 @@ a {
     .link-text.white:before {
       border-bottom: 0.2em solid #fefefe !important; }
 
+.row__search {
+  background: #9B59E6;
+  padding: 0.5em 1em 0.5em 0;
+  display: flex;
+  flex-wrap: wrap; }
+  .row__search .resultsCounter {
+    color: #fefefe;
+    margin: 0.5em;
+    margin-left: 2em; }
+
 .list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   list-style: none;
   padding: 0;
   margin: 0; }
@@ -359,34 +381,25 @@ a {
     display: grid;
     grid-gap: 5vw;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    padding: 0 1em 0 1em;
-    font-size: 1.1em;
-    font-weight: 400; }
+    padding: 0 1em 0 0; }
     .list .list__row:nth-child(n) {
       border-bottom: 2px #ececec solid; }
   .list .column__title {
     display: grid;
     grid-gap: 5vw;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    padding: 0 1em 0 1em;
-    font-size: 1.1em;
-    font-weight: 700;
-    color: #fefefe;
-    padding: 0.5em 1em 0.5em 1em; }
+    padding: 0 1em 0 0;
+    padding: 0.5em 1em 0.5em 0; }
     .list .column__title p {
-      margin: 0.75em 0; }
-  .list .row__search {
-    background: #9B59E6;
-    padding: 0.5em 1em 0.5em 1em;
-    display: flex;
-    flex-wrap: wrap; }
-    .list .row__search .resultsCounter {
+      font-size: 1.05em;
+      font-weight: 700;
       color: #fefefe;
-      margin: 0.5em;
-      margin-left: 2em; }
+      margin: 0.75em 0; }
 
 .info__content {
-  padding: 1em 2em; }
+  padding: 1em 2em;
+  display: flex;
+  flex: 1; }
 
 .content__link {
   text-transform: uppercase;
@@ -549,6 +562,7 @@ a {
 #clock {
   color: #333;
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -764,7 +778,7 @@ footer {
   color: #fefefe;
   text-align: center;
   padding: 1em;
-  font-size: 1.1em; }
+  font-size: 1.05em; }
   footer p {
     font-weight: 600; }
 
@@ -782,7 +796,7 @@ footer {
   -ms-user-select: none;
   transition: all 0.2s ease-in-out;
   display: flex;
-  font-size: 1.1em;
+  font-size: 1.05em;
   font-family: 'Open Sans', sans-serif;
   border: none;
   font-weight: 600;
@@ -835,7 +849,7 @@ footer {
   -ms-user-select: none;
   transition: all 0.2s ease-in-out;
   display: flex;
-  font-size: 1.1em;
+  font-size: 1.05em;
   font-family: 'Open Sans', sans-serif;
   border: none;
   font-weight: 600;
@@ -863,6 +877,10 @@ footer {
     }
 }
 */
+#app {
+  display: flex;
+  flex: 1; }
+
 #genWord {
   padding: 0.25em 0;
   display: flex;
@@ -889,7 +907,8 @@ footer {
   max-width: 50em;
   padding-bottom: 3em; }
   .korean__container button {
-    margin: auto; }
+    margin: auto;
+    padding: 0.5em 1em; }
 
 .visible {
   display: block !important; }
@@ -940,10 +959,10 @@ footer {
     html body .nav .nav__content {
       display: none; }
     html body .nav .button--logo {
-      width: 4em; }
+      width: 3em; }
   html body main {
     padding-top: 4em; }
-    html body main .grid {
+    html body main .grid, html body main .grid--related-content {
       grid-template-columns: repeat(1, 1fr); }
     html body main .list .list__row, html body main .list .column__title {
       padding: 0; } }
@@ -953,7 +972,7 @@ footer {
   html body .nav .nav__content--mobile {
     display: none; } }
 @media screen and (min-width: 58.01em) and (max-width: 80em) {
-  html body main .grid {
+  html body main .grid, html body main .grid--related-content {
     grid-template-columns: repeat(2, 1fr); } }
 /*
 @media screen and (min-width: 40.01em ) and (max-width: 60em) {

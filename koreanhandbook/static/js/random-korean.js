@@ -1,12 +1,40 @@
-const menuButton = document.querySelector(".button--overlay")
+const menuButton = document.querySelector('.button--overlay')
 menuButton.addEventListener('click', overlay)
 
 function overlay () {
-  document.querySelector(".overlay").classList.toggle("active");
-  menuButton.classList.toggle("active");
-  document.querySelector("body").classList.toggle("noscroll");
+  document.querySelector('.overlay').classList.toggle('active')
+  menuButton.classList.toggle('active')
+  document.querySelector('body').classList.toggle('noscroll')
 }
 
+var app = new Vue({
+  delimiters: ['[[', ']]'],
+  el: '#app',
+  data: {
+    id: -1,
+    english: '',
+    korean: '',
+    wordCount: 0,
+    dbLoaded: false,
+    wordVisible: true,
+    prevWordID: []
+  },
+  methods: {
+    overlay () {
+      document.querySelector('.overlay').classList.toggle('active')
+      document.querySelector('.button--overlay').classList.toggle('active')
+      document.querySelector('.body').classList.toggle('noscroll')
+    },
+    async retrieveWord () {
+
+    },
+    created () {
+      this.retrieveWord()
+    }
+  }
+})
+
+/*
 
 var app = new Vue({
   delimiters: ['[[', ']]'],
@@ -90,3 +118,5 @@ var app = new Vue({
     this.initDB();
   }
 })
+
+*/

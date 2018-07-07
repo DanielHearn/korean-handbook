@@ -3,6 +3,9 @@ main {
   min-height: 100vh;
   flex: 5;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  //justify-content: space-between;
 }
 
 .content {
@@ -13,6 +16,7 @@ main {
 .related-content {
   font-weight: 600;
   color: $dark;
+  padding: $content-padding/2 $content-padding;
 }
 
 .form--search {
@@ -47,10 +51,9 @@ main {
   color: $white;
 }
 
-.content__text {
+p {
   font-size: $p-size;
   font-weight: $p-weight;
-  color: $white;
 }
 
 .content__title {
@@ -63,60 +66,69 @@ a {
   text-decoration: none;
 }
 
+.grid--related-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  .grid__item {
+}
+
+.grid__item {
+  display: flex;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover .item__bg {
+    filter: contrast(90%) brightness(55%);
+    transform: scale(1.05);
+  }
+  .grid__link {
     display: flex;
-    cursor: pointer;
-    &:hover .item__bg {
-      filter: contrast(90%) brightness(50%);
-    }
-    .grid__link {
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      text-align: center;
-      flex: 1;
-      position: relative;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    flex: 1;
+    position: relative;
+    color: $white;
+  }
+  .grid__info {
+    padding: $content-padding*2;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    backface-visibility: hidden;
+    .info__full-name {
+      font-size: $sub-heading-size;
+      font-weight: $sub-heading-weight;
       color: $white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    .grid__info {
-      padding: $content-padding*2;
-      text-align: center;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      box-sizing: border-box;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      width: 100%;
-      text-align: center;
-      z-index: 2;
-      backface-visibility: hidden;
-      .info__full-name {
-        font-size: $sub-heading-size;
-        font-weight: $sub-heading-weight;
-        color: $white;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      .info__korean-name {
-        font-size: $sub-heading-size;
-        font-weight: $sub-heading-weight;
-        color: $white;
-        @include korean-text;
-      }
+    .info__korean-name {
+      font-size: $sub-heading-size;
+      font-weight: $sub-heading-weight;
+      color: $white;
+      @include korean-text;
     }
-    .item__bg {
-      @include background-image;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      filter: contrast(80%) brightness(60%);
-      transition: filter 0.15s ease-in-out;
-    }
+  }
+  .item__bg {
+    @include background-image;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: contrast(80%) brightness(60%);
+    backface-visibility: hidden;
+    transform: scale(1.01);
+    transition: filter 0.15s ease-in-out, transform 0.3s ease-in-out;
   }
 }
 
@@ -153,43 +165,47 @@ a {
   }
 }
 
+.row__search {
+  background: $accent;
+  padding: 0.5em 1em 0.5em 0;
+  display: flex;
+  flex-wrap: wrap;
+  .resultsCounter {
+    color: $white;
+    margin: 0.5em;
+    margin-left: 2em;
+  }
+}
+
 .list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   list-style: none;
   padding: 0;
   margin: 0;
   .list__row {
     @include rows_2;
-    font-size: $p-size;
-    font-weight: $p-weight;
     &:nth-child(n) {
       border-bottom: 2px $off-white solid;
     }
   }
   .column__title {
     @include rows_2;
-    font-size: $p-size;
-    font-weight: $sub-heading-weight;
-    color: $white;
-    padding: 0.5em 1em 0.5em 1em;
+    padding: 0.5em 1em 0.5em 0;
     p {
-      margin: 0.75em 0;
-    }
-  }
-  .row__search {
-    background: $accent;
-    padding: 0.5em 1em 0.5em 1em;
-    display: flex;
-    flex-wrap: wrap;
-    .resultsCounter {
+      font-size: $p-size;
+      font-weight: $sub-heading-weight;
       color: $white;
-      margin: 0.5em;
-      margin-left: 2em;
+      margin: 0.75em 0;
     }
   }
 }
 
 .info__content {
   padding: $content-padding/2 $content-padding;
+  display: flex;
+  flex: 1;
 }
 
 .content__link {

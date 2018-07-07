@@ -1,6 +1,6 @@
 .button--logo {
   height: 4em;
-  width: 6em;
+  width: 4em;
   z-index: 5;
   .logo {
     height: 100%;
@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: $content-padding;
+  padding: $content-padding/2;
   flex: 1;
   z-index: 2;
   box-sizing: border-box;
