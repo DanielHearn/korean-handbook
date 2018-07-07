@@ -11,22 +11,23 @@ var app = new Vue({
   delimiters: ['[[', ']]'],
   el: '#app',
   data: {
-    id: -1,
     english: '',
     korean: '',
-    wordCount: 0,
     dbLoaded: false,
-    wordVisible: true
+    wordVisible: false
   },
   methods: {
     retrieveWord () {
+      const data = this
       fetch('http://thekoreanhandbook.com/api/random-words')
         .then(function (response) {
-          return response.text()
+          return response.json()
         }).then(function (body) {
-          this.english = body.english
-          this.korean = body.korean
-          this.wordVisible = true
+          data.english = body.english
+          data.korean = body.korean
+          data.wordVisible = true
+          data.dbLoaded = true
+          return true
         }).catch(function (error) {
           console.log(error)
         })
@@ -36,6 +37,7 @@ var app = new Vue({
     this.retrieveWord()
   }
 })
+
 /*
 
 var app = new Vue({
