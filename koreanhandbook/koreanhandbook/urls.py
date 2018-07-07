@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.contrib.sitemaps import Sitemap
 from django.contrib.sitemaps.views import sitemap
+from django.views.generic.base import RedirectView
 
 from koreanhandbook.core import views as core_views
 from koreanhandbook.core.sitemaps import *
@@ -43,4 +44,5 @@ urlpatterns = [
     url(r'info/(?P<info_name>[-\w]+/)$', core_views.info, name='info'),
     url('info/', core_views.infos, name='infos'),
     url('api/random-words', core_views.apiRandomWord, name='random-words'),
+    url(r'^.*$', RedirectView.as_view(pattern_name='home', permanent=False))
 ]
