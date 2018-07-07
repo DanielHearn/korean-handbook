@@ -24,17 +24,16 @@ var app = new Vue({
         .then(function (response) {
           return response.text()
         }).then(function (body) {
-          data.english = body.english
-          data.korean = body.korean
-          data.id = key
-          data.wordVisible = true
+          this.english = body.english
+          this.korean = body.korean
+          this.wordVisible = true
         }).catch(function (error) {
           console.log(error)
         })
-    },
-    created () {
-      this.retrieveWord()
     }
+  },
+  created () {
+    this.retrieveWord()
   }
 })
 /*
