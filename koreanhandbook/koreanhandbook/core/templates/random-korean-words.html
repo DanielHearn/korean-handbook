@@ -20,13 +20,12 @@
           <h2 id="genWord__korean" v-bind:class="{ visible: wordVisible }">[[ english ]]</h2>
           <h3 id="genWord__english" v-bind:class="{ visible: wordVisible }">[[ korean ]]</h3>
         </div>
-        <button class="button--purple" @click="generateWord()">Generate Word</button>
+        <button class="button--purple" @click="retrieveWord()">Generate Word</button>
         {% include "ad_incontent.html" %}
       </section>
     </section>
   </section>
   {% include "related_content.html" %}
 	<script src="https://unpkg.com/vue"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 	<script src="{% static 'js/random-korean.js' %}" defer></script>
 {% endblock %}

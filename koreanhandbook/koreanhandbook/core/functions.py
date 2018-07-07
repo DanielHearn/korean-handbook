@@ -4,6 +4,16 @@ from django.db.models import Max
 
 # Local app imports
 from .models import *
+import pyrebase
+
+config = {
+  "apiKey": "AIzaSyDpdCyIU1xaKISrFtnjBN52xKwoisFQN1Q",
+  "authDomain": "korean-words-2.firebaseapp.com",
+  "databaseURL": "https://korean-words-2.firebaseio.com",
+  "storageBucket": "korean-words-2.appspot.com",
+}
+
+firebase = pyrebase.initialize_app(config)
 
 def generateRelatedContent(model, numOfContent, currentID):
     max_id = model.objects.all().aggregate(max_id=Max("id"))['max_id']
@@ -78,3 +88,4 @@ def getModelName(object):
 
 def generatePageTitle(page_name):
     return page_name + ' - The Korean Handbook'
+

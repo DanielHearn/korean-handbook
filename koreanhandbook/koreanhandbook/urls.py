@@ -42,4 +42,5 @@ urlpatterns = [
     url(r'tool/(?P<tool_name>[-\w]+/)$', core_views.tool, name='tool'),
     url(r'info/(?P<info_name>[-\w]+/)$', core_views.info, name='info'),
     url('info/', core_views.infos, name='infos'),
+    url('api/random-words', core_views.apiRandomWord, name='random-words'),
 ]

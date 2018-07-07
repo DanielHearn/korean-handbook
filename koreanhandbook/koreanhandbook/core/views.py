@@ -2,7 +2,9 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from datetime import datetime
+import random
 
 # Local app imports
 from .forms import *
@@ -21,7 +23,8 @@ def home(request):
     if len(info) == 0:
         status = 'No information available'
     info = addAdToArray(info, 4) 
-    return render(request, 'home.html', {'page_title': page_title, 'status': status, 'info': info, 'tools': tools})
+    description = 'The Korean Handbook is a collection of Korean language learning tools and information.'
+    return render(request, 'home.html', {'page_title': page_title, 'status': status, 'description': description, 'info': info, 'tools': tools})
 
 def about(request):
     return render(request, 'about.html')
@@ -32,8 +35,9 @@ def tool(request, tool_name):
         tool_name = tool_name[0:len(tool_name)-1]
         tool = Tool.objects.get(url=tool_name)
         page_title = generatePageTitle(tool.full_name)
+        description = tool.full_name + ' - ' + tool.korean_name + ': ' + tool.description
         related_content = generateRelatedContent(Info, 2, -1)
-        return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'tools': tools})
+        return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'description': description, 'tools': tools})
     except Tool.DoesNotExist:
         return redirect ('/')
 
@@ -60,8 +64,9 @@ def info(request, info_name):
                 info_rows = Row_2.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_2.objects.filter(info=info).order_by('date_inserted')
+        description = info.full_name + ' - ' + info.korean_name + ': ' + info.description
         related_content = generateRelatedContent(Info, 2, info.id)
-        return render(request, 'info_table_row_2.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'tools': tools})
+        return render(request, 'info_table_row_2.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'description': description, 'tools': tools})
     elif info.num_colums == 3:
         if info.numeric_first_col == True:
             if info.alphanumeric_order == True:
@@ -73,8 +78,9 @@ def info(request, info_name):
                 info_rows = Row_3.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_3.objects.filter(info=info).order_by('date_inserted')
+        description = info.full_name + ' - ' + info.korean_name + ': ' + info.description 
         related_content = generateRelatedContent(Info, 2, info.id)
-        return render(request, 'info_table_row_3.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'tools': tools})
+        return render(request, 'info_table_row_3.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'description': description, 'tools': tools})
     else:
         return redirect ('/')
 
@@ -107,6 +113,15 @@ def search(request):
             return render(request, 'search.html', {'page_title': page_title, 'status': status, 'search_results': search_results, 'tools': tools})
     else:
         return redirect ('/')
+
+def apiRandomWord(request):
+    db = firebase.database()
+    word_count = db.child("wordCount").get().val()
+    word_key = random.randint(0, word_count)
+    word = db.child(word_key).get().val()
+    english = word['ENGLISH']
+    korean = word['KOREAN']
+    return JsonResponse({'english': english, 'korean': korean})
 
 """
 def kpopprofiles(request):

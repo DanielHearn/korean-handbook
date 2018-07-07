@@ -16,8 +16,7 @@ var app = new Vue({
     korean: '',
     wordCount: 0,
     dbLoaded: false,
-    wordVisible: true,
-    prevWordID: []
+    wordVisible: true
   },
   methods: {
     overlay () {
@@ -26,7 +25,17 @@ var app = new Vue({
       document.querySelector('.body').classList.toggle('noscroll')
     },
     async retrieveWord () {
-
+      fetch('https://thekoreanhandbook.com/api/random-words')
+        .then(function (response) {
+          return response.text()
+        }).then(function (body) {
+          data.english = body.english
+          data.korean = body.korean
+          data.id = key
+          data.wordVisible = true
+        }).catch(function (error) {
+          console.log(error)
+        })
     },
     created () {
       this.retrieveWord()
