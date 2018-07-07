@@ -19,13 +19,8 @@ var app = new Vue({
     wordVisible: true
   },
   methods: {
-    overlay () {
-      document.querySelector('.overlay').classList.toggle('active')
-      document.querySelector('.button--overlay').classList.toggle('active')
-      document.querySelector('.body').classList.toggle('noscroll')
-    },
-    async retrieveWord () {
-      fetch('https://thekoreanhandbook.com/api/random-words')
+    retrieveWord () {
+      fetch('http://thekoreanhandbook.com/api/random-words')
         .then(function (response) {
           return response.text()
         }).then(function (body) {
@@ -42,7 +37,6 @@ var app = new Vue({
     }
   }
 })
-
 /*
 
 var app = new Vue({
