@@ -6,8 +6,6 @@ class StaticSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.8
 
-    def items(self):
-       return ['kpopprofiles']
     def location(self, item):
         return reverse(item)
 
@@ -24,10 +22,3 @@ class ToolSitemap(Sitemap):
 
     def items(self):
        return Tool.objects.all()
-
-class ProfileSitemap(Sitemap):
-    changefreq = "daily"
-    priority = 0.7
-
-    def items(self):
-       return Profile.objects.all()
