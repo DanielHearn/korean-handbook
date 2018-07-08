@@ -965,7 +965,9 @@ footer {
     html body main .grid, html body main .grid--related-content {
       grid-template-columns: repeat(1, 1fr); }
     html body main .list .list__row, html body main .list .column__title {
-      padding: 0; } }
+      padding: 0; }
+    html body main .row__search .resultsCounter {
+      margin-left: 0; } }
 @media screen and (min-width: 58em) {
   html body .overlay {
     display: none; }
