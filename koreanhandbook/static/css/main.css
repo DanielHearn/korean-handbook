@@ -996,7 +996,9 @@ footer {
     html body main .list .list__row, html body main .list .column__title {
       padding: 0; }
     html body main .row__search .resultsCounter {
-      margin-left: 0; } }
+      margin-left: 0; }
+    html body main .korean__container {
+      flex-direction: column-reverse; } }
 @media screen and (min-width: 58em) {
   html body .overlay {
     display: none; }
