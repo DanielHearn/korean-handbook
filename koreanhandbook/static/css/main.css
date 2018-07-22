@@ -9,7 +9,7 @@
       fill: #fefefe !important; }
 
 .nav {
-  background: #333;
+  background: #323d4a;
   color: #fefefe;
   display: flex;
   justify-content: center;
@@ -270,7 +270,8 @@ a {
 .grid__item {
   display: flex;
   cursor: pointer;
-  overflow: hidden; }
+  overflow: hidden;
+  height: 15em; }
   .grid__item:hover .item__bg {
     filter: contrast(90%) brightness(55%);
     transform: scale(1.05); }
@@ -283,7 +284,6 @@ a {
     position: relative;
     color: #fefefe; }
   .grid__item .grid__info {
-    padding: 4em;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -301,12 +301,14 @@ a {
       font-weight: 700;
       color: #fefefe;
       text-transform: uppercase;
-      letter-spacing: 1px; }
+      letter-spacing: 1px;
+      margin: 1em; }
     .grid__item .grid__info .info__korean-name {
+      font-family: "Gothic A1";
       font-size: 1.2em;
       font-weight: 700;
       color: #fefefe;
-      font-family: "Gothic A1"; }
+      margin: 1em; }
   .grid__item .item__bg {
     z-index: 1;
     background-repeat: no-repeat !important;
@@ -316,7 +318,8 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
-    filter: contrast(80%) brightness(60%);
+    filter: contrast(80%) brightness(50%);
+    object-fit: cover;
     backface-visibility: hidden;
     transform: scale(1.01);
     transition: filter 0.15s ease-in-out, transform 0.3s ease-in-out; }
@@ -361,7 +364,6 @@ a {
       border-bottom: 0.2em solid #fefefe !important; }
 
 .row__search {
-  background: #9B59E6;
   padding: 0.5em 1em 0.5em 0;
   display: flex;
   flex-wrap: wrap; }
@@ -380,14 +382,15 @@ a {
   .list .list__row {
     display: grid;
     grid-gap: 5vw;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    padding: 0 1em 0 0; }
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 15em));
+    padding: 0 1em 0 0;
+    color: #333; }
     .list .list__row:nth-child(n) {
       border-bottom: 2px #ececec solid; }
   .list .column__title {
     display: grid;
     grid-gap: 5vw;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 15em));
     padding: 0 1em 0 0;
     padding: 0.5em 1em 0.5em 0; }
     .list .column__title p {
@@ -680,12 +683,14 @@ a {
   align-items: center;
   text-align: center;
   overflow: hidden;
-  min-height: unset !important; }
+  min-height: unset !important;
+  background: #262d35; }
   .ad .ad__message {
     display: none;
-    color: #333; }
+    color: #fefefe; }
     .ad .ad__message h2 {
-      padding: 1em; }
+      padding: 1em;
+      font-size: 1.2em; }
   .ad ins {
     width: 100%; }
   .ad.loaded {
@@ -774,7 +779,7 @@ a {
 }
 */
 footer {
-  background: #222;
+  background: #262d35;
   color: #fefefe;
   text-align: center;
   padding: 1em;
@@ -879,13 +884,17 @@ footer {
 */
 #app {
   display: flex;
-  flex: 1; }
+  flex: 1;
+  justify-content: center;
+  align-items: center; }
 
 #genWord {
   padding: 0.25em 0;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: center;
+  min-height: 12em; }
 
 #genWord__korean {
   font-size: 1.5em;
@@ -899,16 +908,35 @@ footer {
   font-weight: 700;
   color: #333;
   text-align: center;
-  display: none; }
+  display: none;
+  word-break: break-word; }
 
 .korean__container {
+  display: flex;
+  flex-direction: row;
   text-align: center;
-  margin: auto;
+  padding-bottom: 3em;
   max-width: 50em;
-  padding-bottom: 3em; }
+  width: 100%; }
   .korean__container button {
     margin: auto;
-    padding: 0.5em 1em; }
+    padding: 0.5em 1em;
+    transition: background 0.2s ease-in-out; }
+    .korean__container button[disabled] {
+      background: #999; }
+  .korean__container .word__container {
+    margin: 1em;
+    flex: 1; }
+  .korean__container .option__container {
+    margin: 1em;
+    flex: 1;
+    display: flex;
+    flex-direction: column; }
+    .korean__container .option__container select {
+      margin: 0.5em 0; }
+    .korean__container .option__container P {
+      margin: 0.2em 0;
+      font-weight: 600; }
 
 .visible {
   display: block !important; }
@@ -947,7 +975,7 @@ footer {
     justify-content: space-around; } }
 @media screen and (max-width: 58em) {
   html body .nav {
-    background: #333;
+    background: #323d4a;
     position: fixed;
     top: 0;
     width: 100%;

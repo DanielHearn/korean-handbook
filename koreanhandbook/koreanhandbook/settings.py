@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'www.thekoreanhandbook.com',
     'thekoreanhandbook.com',
+    'localhost',
 ]
 
 
@@ -74,7 +75,7 @@ CACHES = {
         'LOCATION': 'my_cache_table',
     }
 }
-	
+
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 ROOT_URLCONF = 'koreanhandbook.urls'

@@ -11,22 +11,31 @@ var app = new Vue({
   delimiters: ['[[', ']]'],
   el: '#app',
   data: {
-    english: '',
-    korean: '',
+    language: 'English',
+    content: 'Random',
+    word_english: '',
+    word_korean: '',
     dbLoaded: false,
-    wordVisible: false
+    wordVisible: false,
+    buttonDisabled: false
   },
   methods: {
     retrieveWord () {
-      const data = this
-      fetch('http://thekoreanhandbook.com/api/random-words')
+      this.dbLoaded = false
+      this.wordVisible = false
+      this.buttonDisabled = true
+      const app = this
+      const contentName = this.content.replace(/\s/g, '-').toLowerCase()
+      const apiUrl = 'http://localhost:8000/api/random-words?content=' + contentName
+      fetch(apiUrl)
         .then(function (response) {
           return response.json()
-        }).then(function (body) {
-          data.english = body.english
-          data.korean = body.korean
-          data.wordVisible = true
-          data.dbLoaded = true
+        }).then(function (word) {
+          app.word_english = word.english
+          app.word_korean = word.korean
+          app.wordVisible = true
+          app.dbLoaded = true
+          app.buttonDisabled = false
           return true
         }).catch(function (error) {
           console.log(error)

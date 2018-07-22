@@ -89,3 +89,5 @@ def getModelName(object):
 def generatePageTitle(page_name):
     return page_name + ' - The Korean Handbook'
 
+def isDivisble(num1, num2):
+   return (num1 % num2) == 0

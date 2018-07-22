@@ -1,6 +1,8 @@
 #app {
   display: flex;
   flex: 1;
+  justify-content: center;
+  align-items: center;
 }
 
 #genWord {
@@ -8,6 +10,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 12em;
 }
 
 #genWord__korean {
@@ -16,16 +20,40 @@
 
 #genWord__english {
   @include random-text;
+  word-break: break-word;
 }
 
 .korean__container {
+  display: flex;
+  flex-direction: row;
   text-align: center;
-  margin: auto;
-  max-width: 50em;
   padding-bottom: 3em;
+  max-width: 50em;
+  width: 100%;
   button {
     margin: auto;
     padding: 0.5em 1em;
+    transition: background 0.2s ease-in-out;
+    &[disabled] {
+      background: $grey;
+    }
+  }
+  .word__container {
+    margin: 1em;
+    flex: 1;
+  }
+  .option__container {
+    margin: 1em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    select {
+       margin: 0.5em 0;
+    }
+    P {
+      margin: 0.2em 0;
+      font-weight: 600;
+    }
   }
 }
 

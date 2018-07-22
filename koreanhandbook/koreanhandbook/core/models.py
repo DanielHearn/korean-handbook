@@ -120,3 +120,10 @@ class Row_3(models.Model):
     date_inserted = models.DateTimeField(default=now, blank=True)
     def __str__(self):
       return 'Row3' + self.info.short_name + ' : ' + str(self.id)
+
+class Word_Collection(models.Model):
+    full_name = models.CharField(max_length=100, default='Full Name')
+    short_name = models.CharField(max_length=100, default='shortname')
+    korean_name = models.CharField(max_length=100, default='한국어')
+    def __str__(self):
+      return 'Word Collection' + self.full_name+ ' : ' + str(self.id)

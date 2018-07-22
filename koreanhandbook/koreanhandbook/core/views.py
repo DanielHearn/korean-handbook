@@ -10,6 +10,8 @@ import random
 from .forms import *
 from .models import *
 from .functions import *
+db = firebase.database()
+word_count = db.child("wordCount").get().val()
 
 class Ad:
     def __init__(self):
@@ -22,9 +24,20 @@ def home(request):
     page_title = generatePageTitle('Info')
     if len(info) == 0:
         status = 'No information available'
-    info = addAdToArray(info, 4) 
+    info = addAdToArray(info, 5) 
+    itemCount = 1 # One ad always exists after tools
+    for info_page in info:
+        itemCount += 1
+        if info_page.ad == True:
+            itemCount += 1
+    itemCount += len(tools)
+    whiteSpace = 3-(itemCount%3) # Work out number of empty grid items
+    if whiteSpace == 3:
+        additionalAds = []
+    else:
+        additionalAds = range(0, whiteSpace)
     description = 'The Korean Handbook is a collection of Korean language learning tools and information.'
-    return render(request, 'home.html', {'page_title': page_title, 'status': status, 'description': description, 'info': info, 'tools': tools})
+    return render(request, 'home.html', {'page_title': page_title, 'status': status, 'description': description, 'info': info, 'tools': tools, 'additionalAds': additionalAds})
 
 def about(request):
     return render(request, 'about.html')
@@ -34,10 +47,17 @@ def tool(request, tool_name):
         tools = Tool.objects.all()
         tool_name = tool_name[0:len(tool_name)-1]
         tool = Tool.objects.get(url=tool_name)
-        page_title = generatePageTitle(tool.full_name)
+        title = tool.full_name + ' ' + tool.korean_name
+        page_title = generatePageTitle(title)
         description = tool.full_name + ' - ' + tool.korean_name + ': ' + tool.description
         related_content = generateRelatedContent(Info, 2, -1)
-        return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'description': description, 'tools': tools})
+        if(tool_name == 'random-korean-words'):
+            info = Info.objects.all()
+            for info_page in info:
+                info_page.short_name = info_page.short_name.replace('-',' ').title()
+            return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'description': description, 'tools': tools, 'info': info})
+        else:
+            return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'description': description, 'tools': tools})
     except Tool.DoesNotExist:
         return redirect ('/')
 
@@ -49,7 +69,8 @@ def info(request, info_name):
     info_name = info_name[0:len(info_name)-1]
     try:
         info = Info.objects.get(short_name=info_name)
-        page_title = generatePageTitle(info.full_name)
+        title = info.full_name + ' ' + info.korean_name
+        page_title = generatePageTitle(title)
     except Info.DoesNotExist:
         return redirect ('/')
     info_rows = ''
@@ -115,12 +136,30 @@ def search(request):
         return redirect ('/')
 
 def apiRandomWord(request):
-    db = firebase.database()
-    word_count = db.child("wordCount").get().val()
-    word_key = random.randint(0, word_count)
-    word = db.child(word_key).get().val()
-    english = word['ENGLISH']
-    korean = word['KOREAN']
+    content = request.GET.get('content', None)
+    if(content == 'random'):
+        word_key = random.randint(0, word_count)
+        word = db.child(word_key).get().val()
+        english = word['ENGLISH']
+        korean = word['KOREAN']
+    else: 
+        try:
+            info = Info.objects.get(short_name=content)
+            if info.num_colums == 2:
+                words = Row_2.objects.filter(info=info)
+            else:
+                words = Row_3.objects.filter(info=info)
+            if(len(words) > 0):
+                index = random.randint(0, len(words)-1)
+                word = words[index]
+                english = word.col_1
+                korean = word.col_2 
+            else:
+                english = 'Content doesn\'t exist'
+                korean = ''
+        except Info.DoesNotExist:
+            english = 'Invalid Content'
+            korean = ''
     return JsonResponse({'english': english, 'korean': korean})
 
 """

@@ -5,11 +5,13 @@
   text-align: center;
   overflow: hidden;
   min-height: unset !important;
+  background: $blue-darker;
   .ad__message {
     display: none;
-    color: $dark;
+    color: $white;
     h2 {
       padding: 1em;
+      font-size: 1.2em;
     }
   }
   ins {
