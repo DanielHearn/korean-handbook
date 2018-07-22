@@ -691,8 +691,9 @@ a {
     .ad .ad__message h2 {
       padding: 1em;
       font-size: 1.2em; }
-  .ad ins {
-    width: 100%; }
+  .ad .adsbygoogle {
+    width: 100%;
+    heigt: 100%; }
   .ad.loaded {
     background: #fefefe !important; }
 

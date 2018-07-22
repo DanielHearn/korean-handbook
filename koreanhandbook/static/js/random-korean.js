@@ -26,7 +26,7 @@ var app = new Vue({
       this.buttonDisabled = true
       const app = this
       const contentName = this.content.replace(/\s/g, '-').toLowerCase()
-      const apiUrl = 'http://localhost:8000/api/random-words?content=' + contentName
+      const apiUrl = 'http://thekoreanhandbook.com/api/random-words?content=' + contentName
       fetch(apiUrl)
         .then(function (response) {
           return response.json()
