@@ -139,7 +139,7 @@ def search(request):
 def apiRandomWord(request):
     user_url = request.META['HTTP_HOST']
     for url in valid_urls:
-        if (user_url in url):
+        if (user_url not in url):
             return JsonResponse({'error': 'Only same origin url is valid'})
     content = request.GET.get('content', None)
     num_of_words = request.GET.get('number', None)
