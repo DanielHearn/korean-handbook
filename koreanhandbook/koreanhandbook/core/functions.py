@@ -18,6 +18,8 @@ firebase = pyrebase.initialize_app(firebase_config)
 firebase_db = firebase.database()
 firebase_word_count = firebase_db.child("wordCount").get().val()
 
+valid_urls = ['127.0.0.1', 'thekoreanhandbook.com']
+
 def generateRelatedContent(model, numOfContent, currentID):
     max_id = model.objects.all().aggregate(max_id=Max("id"))['max_id']
     relatedContent = []
@@ -142,3 +144,9 @@ def getRandomWords(content, num_of_words):
                 return {'error': 'Invalid content'}
         except Info.DoesNotExist:
             return {'error': 'Invalid content'}
+
+def checkValidDomain(user_url):
+    for url in valid_urls:
+        if (url in user_url):
+            return True
+    return False

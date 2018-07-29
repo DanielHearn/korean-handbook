@@ -12,8 +12,6 @@ from .forms import *
 from .models import *
 from .functions import *
 
-valid_urls = ['127.0.0.1', 'thekoreanhandbook.com']
-
 class Ad:
     def __init__(self):
         self.ad = True
@@ -138,19 +136,19 @@ def search(request):
 
 def apiRandomWord(request):
     user_url = request.META['HTTP_HOST']
-    for url in valid_urls:
-        if (user_url not in url):
-            return JsonResponse({'error': 'Only same origin url is valid'})
-    content = request.GET.get('content', None)
-    num_of_words = request.GET.get('number', None)
-    if content == None:
-        content = 'random'
-    if num_of_words == None:
-        num_of_words = 1
+    if checkValidDomain(user_url):  
+        content = request.GET.get('content', None)
+        num_of_words = request.GET.get('number', None)
+        if content == None:
+            content = 'random'
+        if num_of_words == None:
+            num_of_words = 1
+        else:
+            num_of_words = int(num_of_words)
+        if num_of_words > 0 and num_of_words <= 10:
+            json_response = getRandomWords(content, num_of_words)
+            return JsonResponse(json_response)
+        else:
+            return JsonResponse({'error': 'Only request between 1 to 10 words'})
     else:
-        num_of_words = int(num_of_words)
-    if num_of_words > 0 and num_of_words <= 10:
-        json_response = getRandomWords(content, num_of_words)
-        return JsonResponse(json_response)
-    else:
-        return JsonResponse({'error': 'Only request between 1 to 10 words'})
+        return JsonResponse({'error': 'Invalid domain only works on same origin'})
