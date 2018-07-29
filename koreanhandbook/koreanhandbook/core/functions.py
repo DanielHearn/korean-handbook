@@ -1,19 +1,22 @@
 # Standard library imports
 from random import randint
 from django.db.models import Max
+import random
 
 # Local app imports
 from .models import *
 import pyrebase
 
-config = {
+firebase_config = {
   "apiKey": "AIzaSyDpdCyIU1xaKISrFtnjBN52xKwoisFQN1Q",
   "authDomain": "korean-words-2.firebaseapp.com",
   "databaseURL": "https://korean-words-2.firebaseio.com",
   "storageBucket": "korean-words-2.appspot.com",
 }
 
-firebase = pyrebase.initialize_app(config)
+firebase = pyrebase.initialize_app(firebase_config)
+firebase_db = firebase.database()
+firebase_word_count = firebase_db.child("wordCount").get().val()
 
 def generateRelatedContent(model, numOfContent, currentID):
     max_id = model.objects.all().aggregate(max_id=Max("id"))['max_id']
@@ -91,3 +94,47 @@ def generatePageTitle(page_name):
 
 def isDivisble(num1, num2):
    return (num1 % num2) == 0
+
+def genWordIndices(db_length, num_of_words):
+    return  random.sample(range(0, db_length), num_of_words)
+
+def getRandomWords(content, num_of_words):
+    json_response = {}
+    words = []
+    if(content in ['random', None]):
+        selected_words = genWordIndices(firebase_word_count, num_of_words)
+        for word_count in range(0, num_of_words):
+            word_key = selected_words[word_count]
+            word = {}
+            db_word = firebase_db.child(word_key).get().val()
+            word['english']  = db_word['ENGLISH']
+            word['korean'] = db_word['KOREAN']
+            words.append(word)
+        json_response['num_Words'] = 5666
+        json_response['words'] = words
+        return json_response
+    else: 
+        try:
+            info = Info.objects.get(short_name=content)
+            if info.num_colums == 2:
+                db_words = Row_2.objects.filter(info=info)
+            else:
+                db_words = Row_3.objects.filter(info=info)
+            db_num_words = len(db_words)
+            if(db_num_words > 0):
+                selected_words = genWordIndices(db_num_words, num_of_words)
+                for word_count in range(0, num_of_words):
+                    word = {}
+                    word_key = selected_words[word_count]
+                    db_word = db_words[word_key]
+                    word['wordKey'] = word_key
+                    word['english'] = db_word.col_1
+                    word['korean'] = db_word.col_2 
+                    words.append(word)
+                json_response['num_words'] = db_num_words
+                json_response['words'] = words
+                return json_response
+            else:
+                return {'error': 'Invalid content'}
+        except Info.DoesNotExist:
+            return {'error': 'Invalid content'}

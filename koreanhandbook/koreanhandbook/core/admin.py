@@ -20,19 +20,7 @@ class InfoAdmin(admin.ModelAdmin):
         Row3InLine,
     ]
 
-class MemberInLine(admin.TabularInline):
-    model = Member
-    extra = 1
-
-class ProfileAdmin(admin.ModelAdmin):
-    actions_on_bottom = False
-    actions_on_top = True
-    inlines = [
-        MemberInLine,
-    ]
-
 admin.site.register(Tool)
 admin.site.register(Info, InfoAdmin)
-admin.site.register(Profile, ProfileAdmin)
 admin.site.register(Row_2)
 admin.site.register(Row_3)

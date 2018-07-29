@@ -16,6 +16,7 @@
 
 #genWord__korean {
   @include random-text;
+  word-break: break-word;
 }
 
 #genWord__english {
@@ -35,6 +36,7 @@
     padding: 0.5em 1em;
     transition: background 0.2s ease-in-out;
     &[disabled] {
+      cursor: not-allowed;
       background: $grey;
     }
   }
@@ -47,18 +49,26 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     select {
        margin: 0.5em 0;
     }
-    P {
+    p {
       margin: 0.2em 0;
       font-weight: 600;
     }
+    .link-text {
+      display: none;
+    }
+    .option {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 0.25em 0;
+    }
   }
-}
-
-.visible {
-  display: block !important;
 }
 
 .pulseLoader.hideLoader {

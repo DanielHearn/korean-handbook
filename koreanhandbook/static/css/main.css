@@ -426,6 +426,12 @@ a {
     transform: translateY(0em);
     opacity: 1; }
 
+.hidden {
+  display: none; }
+
+.visible {
+  display: block !important; }
+
 /*
 .rounded {
   border-radius: 0.2em;
@@ -817,30 +823,6 @@ footer {
   .button--purple:hover {
     background: #8c4dd4; }
 
-/*
-  
-.button--white {
-    @include button;
-    background: $white;
-    color: $accent;
-    padding: 0.2em 0.5em;
-    &:hover {
-        background: $grey;
-    }
-}
-
-.button--accent {
-    text-decoration: none;
-    background: $accent;
-    padding: 0.5em 1.25em;
-    border-radius: 0.5em;
-    color: $white;
-    @include smooth-transition;
-    &:hover {
-        background: $accent-dark;
-    }
-}
-*/
 .button--dark {
   background: none;
   border: 0;
@@ -860,7 +842,7 @@ footer {
   border: none;
   font-weight: 600;
   -webkit-appearance: none;
-  background: #333;
+  background: #323d4a;
   color: #fefefe;
   padding: 0.3em 0.75em; }
   .button--dark .material-icons {
@@ -868,21 +850,8 @@ footer {
   .button--dark:hover {
     cursor: pointer; }
   .button--dark:hover {
-    background: #222; }
+    background: #262d35; }
 
-/*
-.button--kpop {
-    text-decoration: none;
-    background: $kpop-accent;
-    padding: 0.5em 1.25em;
-    border-radius: 0.5em;
-    color: $white;
-    @include smooth-transition;
-    &:hover {
-        background: $kpop-dark;
-    }
-}
-*/
 #app {
   display: flex;
   flex: 1;
@@ -902,7 +871,8 @@ footer {
   font-weight: 700;
   color: #333;
   text-align: center;
-  display: none; }
+  display: none;
+  word-break: break-word; }
 
 #genWord__english {
   font-size: 1.5em;
@@ -924,6 +894,7 @@ footer {
     padding: 0.5em 1em;
     transition: background 0.2s ease-in-out; }
     .korean__container button[disabled] {
+      cursor: not-allowed;
       background: #999; }
   .korean__container .word__container {
     margin: 1em;
@@ -932,15 +903,22 @@ footer {
     margin: 1em;
     flex: 1;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; }
     .korean__container .option__container select {
       margin: 0.5em 0; }
-    .korean__container .option__container P {
+    .korean__container .option__container p {
       margin: 0.2em 0;
       font-weight: 600; }
-
-.visible {
-  display: block !important; }
+    .korean__container .option__container .link-text {
+      display: none; }
+    .korean__container .option__container .option {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 0.25em 0; }
 
 .pulseLoader.hideLoader {
   display: none; }

@@ -222,6 +222,14 @@ a {
   }
 }
 
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block !important;
+}
+
 /*
 .rounded {
   border-radius: 0.2em;

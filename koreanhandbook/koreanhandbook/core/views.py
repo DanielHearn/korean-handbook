@@ -6,12 +6,13 @@ from django.http import JsonResponse
 from datetime import datetime
 import random
 
+
 # Local app imports
 from .forms import *
 from .models import *
 from .functions import *
-db = firebase.database()
-word_count = db.child("wordCount").get().val()
+
+valid_urls = ['127.0.0.1', 'thekoreanhandbook.com']
 
 class Ad:
     def __init__(self):
@@ -54,7 +55,7 @@ def tool(request, tool_name):
         if(tool_name == 'random-korean-words'):
             info = Info.objects.all()
             for info_page in info:
-                info_page.short_name = info_page.short_name.replace('-',' ').title()
+                info_page.short_name = info_page.full_name
             return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'description': description, 'tools': tools, 'info': info})
         else:
             return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'description': description, 'tools': tools})
@@ -136,52 +137,20 @@ def search(request):
         return redirect ('/')
 
 def apiRandomWord(request):
+    user_url = request.META['HTTP_HOST']
+    for url in valid_urls:
+        if (user_url in url):
+            return JsonResponse({'error': 'Only same origin url is valid'})
     content = request.GET.get('content', None)
-    if(content == 'random'):
-        word_key = random.randint(0, word_count)
-        word = db.child(word_key).get().val()
-        english = word['ENGLISH']
-        korean = word['KOREAN']
-    else: 
-        try:
-            info = Info.objects.get(short_name=content)
-            if info.num_colums == 2:
-                words = Row_2.objects.filter(info=info)
-            else:
-                words = Row_3.objects.filter(info=info)
-            if(len(words) > 0):
-                index = random.randint(0, len(words)-1)
-                word = words[index]
-                english = word.col_1
-                korean = word.col_2 
-            else:
-                english = 'Content doesn\'t exist'
-                korean = ''
-        except Info.DoesNotExist:
-            english = 'Invalid Content'
-            korean = ''
-    return JsonResponse({'english': english, 'korean': korean})
-
-"""
-def kpopprofiles(request):
-    profiles = Profile.objects.all()
-    status = ''
-    if len(profiles) == 0:
-        status = 'No profiles available'
-    focusProfiles = profiles.filter(home_focus=True)
-    if (len(focusProfiles) > 0):
-        sliderVisible = True
+    num_of_words = request.GET.get('number', None)
+    if content == None:
+        content = 'random'
+    if num_of_words == None:
+        num_of_words = 1
     else:
-        sliderVisible = False
-    profiles = profiles.order_by('date_inserted').reverse()
-    profiles = addAdToArray(profiles, 3)
-    return render(request, 'kpopprofiles.html', {'status': status, 'sliderVisible': sliderVisible, 'profiles': profiles, 'focusProfiles': focusProfiles})
-
-def kpopprofile(request, profile_name):
-    profile_name = profile_name[0:len(profile_name)-1]
-    profile = Profile.objects.get(short_name=profile_name)
-    members = Member.objects.filter(profile=profile).order_by('birth_date')
-    members = addAdToArray(members, 2)
-    relatedContent = generateRelatedContent(Profile, 2)
-    return render(request, 'kpopprofile.html', {'profile': profile, 'members': members, 'relatedContent': relatedContent})
-"""
+        num_of_words = int(num_of_words)
+    if num_of_words > 0 and num_of_words <= 10:
+        json_response = getRandomWords(content, num_of_words)
+        return JsonResponse(json_response)
+    else:
+        return JsonResponse({'error': 'Only request between 1 to 10 words'})

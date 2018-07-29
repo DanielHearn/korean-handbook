@@ -7,52 +7,12 @@
       background: $accent-dark;
     }
 }
-/*
-  
-.button--white {
-    @include button;
-    background: $white;
-    color: $accent;
-    padding: 0.2em 0.5em;
-    &:hover {
-        background: $grey;
-    }
-}
-
-.button--accent {
-    text-decoration: none;
-    background: $accent;
-    padding: 0.5em 1.25em;
-    border-radius: 0.5em;
-    color: $white;
-    @include smooth-transition;
-    &:hover {
-        background: $accent-dark;
-    }
-}
-*/
-
 .button--dark {
     @include button;
-    background: $dark;
+    background: $blue-dark;
     color: $white;
     padding: 0.3em 0.75em;
     &:hover {
-      background: $darker;
+      background: $blue-darker;
     }
 }
-
-
-/*
-.button--kpop {
-    text-decoration: none;
-    background: $kpop-accent;
-    padding: 0.5em 1.25em;
-    border-radius: 0.5em;
-    color: $white;
-    @include smooth-transition;
-    &:hover {
-        background: $kpop-dark;
-    }
-}
-*/

@@ -9,18 +9,6 @@ from imagekit.models import ProcessedImageField, ImageSpecField
 from imagekit.processors import ResizeToFill
 from storages.backends.s3boto3 import S3Boto3Storage
 
-BOYGROUP = "BOYGROUP"
-GIRLGROUP = "GIRLGROUP"
-COEDGROUP = "COEDGROUP"
-SOLOIST = "SOLOIST"
-
-PROFILE_CHOICES = (
-    (BOYGROUP, "Boy Group"),
-    (GIRLGROUP, "Girl Group"),
-    (COEDGROUP, "Co-ed Group"),
-    (SOLOIST, "Soloist"),
-)
-
 class Tool(models.Model):
     full_name = models.CharField(max_length=100)
     korean_name = models.CharField(max_length=100, default='한국어')
@@ -60,49 +48,6 @@ class Info(models.Model):
     def get_absolute_url(self):
         return '/info/'+ self.short_name + '/'
 
-class Profile(models.Model):
-    full_name = models.CharField(max_length=100, default='Full Name')
-    short_name = models.CharField(max_length=100, default='shortname')
-    korean_name = models.CharField(max_length=100, default='한국어')
-    group_type = models.CharField(max_length=100, choices=PROFILE_CHOICES, default='1')
-    debut_date = models.DateTimeField(default=now, blank=True)
-    debut = models.CharField(max_length=100, default='Debut')
-    agency = models.CharField(max_length=100, default='Agency')
-    fandom = models.CharField(max_length=100, default='', blank=True)
-    twitter = models.CharField(max_length=200, default='', blank=True)
-    instagram = models.CharField(max_length=200, default='', blank=True)
-    vlive = models.CharField(max_length=200, default='', blank=True)
-    youtube = models.CharField(max_length=200, default='', blank=True)
-    picture = ProcessedImageField(upload_to='./images',
-                                    processors=[ResizeToFill(1000, 600)],
-                                    format='JPEG',
-                                    options={'quality': 80},
-                                    default='default.jpg')
-    home_focus = models.BooleanField(default=False)
-    date_inserted = models.DateTimeField(default=now, blank=True)
-    def __str__(self):
-        return 'Profile: ' + self.full_name
-    def get_absolute_url(self):
-        return '/kpopprofiles/' + self.short_name + '/'
-
-class Member(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    picture = ProcessedImageField(upload_to='./images',
-                                           processors=[ResizeToFill(840, 560)],
-                                           format='JPEG',
-                                            options={'quality': 80},
-                                            default='default.jpg')            
-    stage_name = models.CharField(max_length=100, default='Stage Name')
-    birth_name = models.CharField(max_length=100, default='Birth Name')
-    birth_date = models.DateTimeField(default=now, blank=True)
-    birth_place = models.TextField(default='Birth Place', blank=True)
-    position = models.CharField(max_length=100, default='', blank=True)
-    height = models.CharField(max_length=100, default='', blank=True)
-    blood_type = models.CharField(max_length=100, default='', blank=True)
-    instagram = models.CharField(max_length=100, default='', blank=True)
-    def __str__(self):
-       return 'Member: ' + self.stage_name
-
 class Row_2(models.Model):
     info = models.ForeignKey(Info, on_delete=models.CASCADE, blank=True)
     col_1 = models.CharField(max_length=255)
@@ -120,10 +65,3 @@ class Row_3(models.Model):
     date_inserted = models.DateTimeField(default=now, blank=True)
     def __str__(self):
       return 'Row3' + self.info.short_name + ' : ' + str(self.id)
-
-class Word_Collection(models.Model):
-    full_name = models.CharField(max_length=100, default='Full Name')
-    short_name = models.CharField(max_length=100, default='shortname')
-    korean_name = models.CharField(max_length=100, default='한국어')
-    def __str__(self):
-      return 'Word Collection' + self.full_name+ ' : ' + str(self.id)

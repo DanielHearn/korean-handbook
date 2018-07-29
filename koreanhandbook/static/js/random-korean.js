@@ -12,124 +12,87 @@ var app = new Vue({
   el: '#app',
   data: {
     language: 'English',
+    prevContent: 'Random',
     content: 'Random',
     word_english: '',
     word_korean: '',
     dbLoaded: false,
     wordVisible: false,
-    buttonDisabled: false
+    linkVisible: false,
+    buttonDisabled: false,
+    categoryLink: 'test',
+    repeatWord: false,
+    words: []
   },
   methods: {
     retrieveWord () {
-      this.dbLoaded = false
-      this.wordVisible = false
-      this.buttonDisabled = true
-      const app = this
-      const contentName = this.content.replace(/\s/g, '-').toLowerCase()
-      const apiUrl = 'http://thekoreanhandbook.com/api/random-words?content=' + contentName
-      fetch(apiUrl)
-        .then(function (response) {
-          return response.json()
-        }).then(function (word) {
-          app.word_english = word.english
-          app.word_korean = word.korean
-          app.wordVisible = true
-          app.dbLoaded = true
-          app.buttonDisabled = false
-          return true
-        }).catch(function (error) {
-          console.log(error)
-        })
+      if (this.words.length === 0 || this.content !== this.prevContent) {
+        this.dbLoaded = false
+        this.wordVisible = false
+        this.buttonDisabled = true
+        this.prevContent = this.content
+        const app = this
+        // Convert word to slug usable by api and equal to model name
+        const contentName = this.fullNameToSlug(this.content)
+        const apiUrl = 'http://127.0.0.1:8000/api/random-words?content=' + contentName + '&number=' + 3
+        fetch(apiUrl)
+          .then(function (response) {
+            return response.json()
+          }).then(function (json) {
+            app.words = json.words.slice()
+            // Show error if invalid user url
+            console.log(json)
+            if (json.error) {
+              app.word_english = json.error
+              app.word_korean = ''
+              app.showWord()
+              return false
+            }
+            const word = json.words[json.words.length - 1]
+            // Check if repeat word and if true early return
+            if (word.english === app.word_english && json.english !== 'Content doesn\'t exist' && json.numWords > 1) {
+              app.retrieveWord()
+              return false
+            }
+            app.word_english = word.english
+            app.word_korean = word.korean
+            app.showWord()
+            if (app.words.length === 1) {
+              app.words = []
+            } else {
+              app.words.splice(-1, 1)
+            }
+            // Only show category page link if not random category
+            if (contentName !== 'random') {
+              app.linkVisible = true
+              app.categoryLink = contentName
+            }
+            return true
+          }).catch(function (error) {
+            console.log(error)
+          })
+      } else {
+        const word = this.words[this.words.length - 1]
+        this.word_english = word.english
+        this.word_korean = word.korean
+        this.showWord()
+        if (this.words.length === 1) {
+          this.words = []
+        } else {
+          this.words.splice(-1, 1)
+        }
+      }
+    },
+    showWord () {
+      app.wordVisible = true
+      app.dbLoaded = true
+      app.buttonDisabled = false
+    },
+    fullNameToSlug (fullName) {
+      return fullName.replace(/\s/g, '-').replace(/\/-/g, '').toLowerCase()
     }
   },
   created () {
     this.retrieveWord()
   }
 })
-
-/*
-
-var app = new Vue({
-  delimiters: ['[[', ']]'],
-  el: '#app',
-  data: {
-     id: -1,
-     english: '',
-     korean: '',
-     wordCount: 0,
-     dbLoaded: false,
-     wordVisible: true,
-     prevWordID: [],
-  },
-  methods: {
-    initDB () {
-      const config = {
-        apiKey: "AIzaSyDpdCyIU1xaKISrFtnjBN52xKwoisFQN1Q",
-        authDomain: "korean-words-2.firebaseapp.com",
-        databaseURL: "https://korean-words-2.firebaseio.com",
-        projectId: "korean-words-2",
-        storageBucket: "korean-words-2.appspot.com",
-        messagingSenderId: "616204191652"
-      };
-      firebase.initializeApp(config);
-      let database = firebase.database();
-      this.getWordCount();
-    },
-    getWordCount () {
-      let retrieveWordCount = new Promise((resolve, reject) => {
-        let data = this;
-        return firebase.database().ref('/' + 'wordCount').once('value').then(function(snapshot) {
-          data.wordCount = snapshot.val();
-          if(data.wordCount > 0) {
-            resolve();
-          } else {
-            reject();
-          }
-        });
-      });
-      retrieveWordCount.then(
-        () => {
-          this.dbLoaded = true;
-          this.generateWord();
-        },
-        () => {
-          this.dbLoaded = true;
-          this.korean = "Database cannot be reached";
-        }
-      );
-    },
-    overlay () {
-      document.querySelector('.overlay').classList.toggle('active');
-      document.querySelector('.button--overlay').classList.toggle('active');
-      document.querySelector('.body').classList.toggle('noscroll');
-    },
-    async generateWord () {
-      const rand = Math.floor(Math.random() * this.wordCount);
-      if (this.prevWordID.includes(rand)) {
-        if (this.prevWordID.length === this.wordCount) {
-          this.prevWordID = [];
-          this.prevWordID.push(this.id);
-        }
-        this.generateWord(rand);
-      } else {
-        this.prevWordID.push(rand);
-        this.retrieveWord(rand);
-      }
-    },
-    async retrieveWord (key) {
-      let data = this;
-      return firebase.database().ref('/' + key).once('value').then(function(snapshot) {
-        const entry = snapshot.val();
-        data.id = key;
-        data.english = entry.KOREAN;
-        data.korean = entry.ENGLISH;
-        data.wordVisible = true;
-      });
-    }
-  },
-  created () {
-    this.initDB();
-  }
-})
-
-*/
