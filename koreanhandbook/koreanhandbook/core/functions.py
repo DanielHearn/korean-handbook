@@ -122,7 +122,11 @@ def getRandomWords(content, num_of_words):
                 db_words = Row_3.objects.filter(info=info)
             db_num_words = len(db_words)
             if(db_num_words > 0):
-                selected_words = genWordIndices(db_num_words, num_of_words)
+                if(db_num_words < 3):
+                    selected_words = [0]
+                    num_of_words = 1
+                else:
+                    selected_words = genWordIndices(db_num_words, num_of_words)
                 for word_count in range(0, num_of_words):
                     word = {}
                     word_key = selected_words[word_count]

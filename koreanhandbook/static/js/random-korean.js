@@ -39,15 +39,14 @@ var app = new Vue({
           .then(function (response) {
             return response.json()
           }).then(function (json) {
-            app.words = json.words.slice()
             // Show error if invalid user url
-            console.log(json)
             if (json.error) {
               app.word_english = json.error
               app.word_korean = ''
               app.showWord()
               return false
             }
+            app.words = json.words.slice()
             const word = json.words[json.words.length - 1]
             // Check if repeat word and if true early return
             if (word.english === app.word_english && json.english !== 'Content doesn\'t exist' && json.numWords > 1) {
