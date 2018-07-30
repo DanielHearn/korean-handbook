@@ -617,6 +617,22 @@ a {
     font-size: 3em; }
   #clock #info #date {
     font-size: 1.4em; } }
+.answers {
+  display: flex;
+  flex-direction: row; }
+  .answers button {
+    margin: 0.5em 0.25em; }
+
+.question {
+  display: flex;
+  flex-direction: column; }
+
+.status {
+  font-weight: 700; }
+
+.correct-answer {
+  font-weight: 700; }
+
 /*
 .content__filter {
     display: flex;
@@ -871,7 +887,6 @@ footer {
   font-weight: 700;
   color: #333;
   text-align: center;
-  display: none;
   word-break: break-word; }
 
 #genWord__english {
@@ -879,7 +894,6 @@ footer {
   font-weight: 700;
   color: #333;
   text-align: center;
-  display: none;
   word-break: break-word; }
 
 .korean__container {
@@ -890,22 +904,29 @@ footer {
   max-width: 50em;
   width: 100%; }
   .korean__container button {
-    margin: auto;
+    margin: 0.2em 0.5em;
     padding: 0.5em 1em;
     transition: background 0.2s ease-in-out; }
     .korean__container button[disabled] {
       cursor: not-allowed;
       background: #999; }
   .korean__container .word__container {
-    margin: 1em;
-    flex: 1; }
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em; }
   .korean__container .option__container {
     margin: 1em;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start; }
+    align-items: flex-start;
+    text-align: left; }
+    .korean__container .option__container a {
+      margin-top: 1em;
+      margin-bottom: 1em; }
     .korean__container .option__container select {
       margin: 0.5em 0; }
     .korean__container .option__container p {

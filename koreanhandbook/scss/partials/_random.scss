@@ -32,7 +32,7 @@
   max-width: 50em;
   width: 100%;
   button {
-    margin: auto;
+    margin: 0.2em 0.5em;
     padding: 0.5em 1em;
     transition: background 0.2s ease-in-out;
     &[disabled] {
@@ -41,8 +41,11 @@
     }
   }
   .word__container {
-    margin: 1em;
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
   }
   .option__container {
     margin: 1em;
@@ -51,6 +54,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    text-align: left;
+    a {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
     select {
        margin: 0.5em 0;
     }

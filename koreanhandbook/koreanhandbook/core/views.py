@@ -50,7 +50,7 @@ def tool(request, tool_name):
         page_title = generatePageTitle(title)
         description = tool.full_name + ' - ' + tool.korean_name + ': ' + tool.description
         related_content = generateRelatedContent(Info, 2, -1)
-        if(tool_name == 'random-korean-words'):
+        if(tool_name in ['random-korean-words', 'quiz']):
             info = Info.objects.all()
             for info_page in info:
                 info_page.short_name = info_page.full_name

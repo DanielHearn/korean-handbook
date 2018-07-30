@@ -21,7 +21,6 @@ var app = new Vue({
     linkVisible: false,
     buttonDisabled: false,
     categoryLink: 'test',
-    repeatWord: false,
     words: []
   },
   methods: {
@@ -49,11 +48,6 @@ var app = new Vue({
             }
             app.words = json.words.slice()
             const word = json.words[json.words.length - 1]
-            // Check if repeat word and if true early return
-            if (word.english === app.word_english && json.english !== 'Content doesn\'t exist' && json.numWords > 1) {
-              app.retrieveWord()
-              return false
-            }
             app.word_english = word.english
             app.word_korean = word.korean
             app.showWord()
