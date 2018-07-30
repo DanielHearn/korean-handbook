@@ -619,7 +619,7 @@ a {
     font-size: 1.4em; } }
 .answers {
   display: flex;
-  flex-direction: row; }
+  flex-direction: column; }
   .answers button {
     margin: 0.5em 0.25em; }
 
@@ -632,6 +632,9 @@ a {
 
 .correct-answer {
   font-weight: 700; }
+
+.question-wrap {
+  display: none; }
 
 /*
 .content__filter {

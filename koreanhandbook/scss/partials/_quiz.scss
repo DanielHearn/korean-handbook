@@ -1,6 +1,6 @@
 .answers {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     button {
         margin: 0.5em 0.25em;
     }
@@ -17,4 +17,8 @@
 
 .correct-answer {
     font-weight: $heading-weight;
+}
+
+.question-wrap {
+    display: none;
 }
