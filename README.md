@@ -8,7 +8,10 @@ Built with Django, SCSS and Vue2 for the tool apps
 Uses material icons 
 
 ### TODO
-- Get and implement audio
+- Design new site design
+- Implement new site design
+- Improve random word generator
+- Improve word quiz
 
 ### Contributions
 
