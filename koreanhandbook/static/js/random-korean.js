@@ -7,34 +7,20 @@ function overlay () {
   document.querySelector('body').classList.toggle('noscroll')
 }
 
-Vue.component('pulse-loader', {
-  template: `<div class="pulseLoader"">
-              <div class="pulse"></div>
-              <div class="pulse"></div>
-            </div>`
-})
-
-Vue.component('word-definition', {
-  props: ['word'],
-  template: `<div class="word-definition">
-              <p class="genWord__korean">{{ word.korean }}</p>
-              <p class="genWord__english">{{ word.english }}</p>
-             </div>`
-})
-
-const app = new Vue({
+var app = new Vue({
   delimiters: ['[[', ']]'],
   el: '#app',
   data: {
     language: 'English',
     prevContent: 'Random',
     content: 'Random',
-    word: {},
+    word_english: '',
+    word_korean: '',
     dbLoaded: false,
     wordVisible: false,
     linkVisible: false,
     buttonDisabled: false,
-    categoryLink: '',
+    categoryLink: 'test',
     words: []
   },
   methods: {
@@ -55,13 +41,15 @@ const app = new Vue({
           }).then(function (json) {
             // Show error if invalid user url
             if (json.error) {
-              app.word = {english: json.error}
+              app.word_english = json.error
+              app.word_korean = ''
               app.showWord()
               return false
             }
             app.words = json.words.slice()
-            app.word = json.words[json.words.length - 1]
-            console.log(app.word.korean)
+            const word = json.words[json.words.length - 1]
+            app.word_english = word.english
+            app.word_korean = word.korean
             app.showWord()
             if (app.words.length === 1) {
               app.words = []
@@ -78,7 +66,9 @@ const app = new Vue({
             console.log(error)
           })
       } else {
-        this.word = this.words[this.words.length - 1]
+        const word = this.words[this.words.length - 1]
+        this.word_english = word.english
+        this.word_korean = word.korean
         this.showWord()
         if (this.words.length === 1) {
           this.words = []
@@ -88,9 +78,9 @@ const app = new Vue({
       }
     },
     showWord () {
-      this.wordVisible = true
-      this.dbLoaded = true
-      this.buttonDisabled = false
+      app.wordVisible = true
+      app.dbLoaded = true
+      app.buttonDisabled = false
     },
     fullNameToSlug (fullName) {
       return fullName.replace(/\s/g, '-').replace(/\/-/g, '').toLowerCase()

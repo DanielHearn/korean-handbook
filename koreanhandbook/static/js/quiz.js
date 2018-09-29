@@ -6,12 +6,8 @@ function overlay () {
   menuButton.classList.toggle('active')
   document.querySelector('body').classList.toggle('noscroll')
 }
-Vue.component('answer', {
-  props: ['answer'],
-  template: `<p> {{ answer.english }} </p>`
-})
 
-const app = new Vue({
+var app = new Vue({
   delimiters: ['[[', ']]'],
   el: '#app',
   data: {
@@ -84,6 +80,8 @@ const app = new Vue({
       return fullName.replace(/\s/g, '-').replace(/\/-/g, '').toLowerCase()
     },
     checkAnswer (english) {
+      console.log(english)
+      console.log(this.answerEnglish)
       if (english === this.answerEnglish) {
         this.status = 'Correct'
       } else {

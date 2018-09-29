@@ -53,34 +53,47 @@
           </ul>
         </div>
       <nav class="nav">
+        <div class="nav__content--mobile">
+            {% include "logo.html" %}
+            <form class="form--search" action="/search/" method="get">
+              {% csrf_token %}
+              <input type="hidden" name="next" value="{{ request.path }}">
+              <input class="input__search" type="text" placeholder="Search site" value=""  name="search_text">
+              <button class="button--purple" type="submit" name="sumbitSearch">  <i class="material-icons">search</i></button>
+            </form>
+            <a class="button--overlay"><span></span></a>
+          </div>
         <div class="nav__content">
           <div class="nav__list">
             {% include "logo.html" %}
             <ul class="content__list">
               <li>
-              {% if page_title == 'Info - The Korean Handbook' %}
-                <a class="content__link is-active" href="/">Info</a>
-              {% else %}
-                <a class="content__link " href="/">Info</a>
-              {% endif %}
+                <a class="content__title" href="/">The Korean Handbook</a>
               </li>
-              {% for nav_tool in tools %}
-              <li>
-                {% if nav_tool.id == tool.id %}
-                  <a class="content__link is-active" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
-                {% else %}
-                  <a class="content__link" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
-                {% endif %}
-              </li>
-              {% endfor %}
               <li>
                 <form class="form--search" action="/search/" method="get">
                   {% csrf_token %}
                   <input type="hidden" name="next" value="{{ request.path }}">
                   <input class="input__search" type="text" placeholder="Search site" value=""  name="search_text">
-                  <button class="button--dark" type="submit" name="sumbitSearch">  <i class="material-icons">search</i></button>
+                  <button class="button--purple" type="submit" name="sumbitSearch">  <i class="material-icons">search</i></button>
                 </form>
               </li>
+              <li>
+              {% if page_title == 'Info - The Korean Handbook' %}
+                <a class="content__subheading content__link is-active" href="/">INFO</a>
+              {% else %}
+                <a class="content__subheading content__link " href="/">INFO</a>
+              {% endif %}
+              </li>
+              {% for nav_tool in tools %}
+              <li>
+                {% if nav_tool.id == tool.id %}
+                  <a class="content__subheading content__link is-active" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
+                {% else %}
+                  <a class="content__subheading content__link" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
+                {% endif %}
+              </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
