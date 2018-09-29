@@ -1,19 +1,7 @@
 @media screen and (max-width: 58em) {
   html body {
-    .nav {
-      background: $blue-dark;;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 5;
-      padding: 0 $content-padding/3;
-      @include bottom-shadow;
-      .nav__content {
-        display: none;
-      }
-      .button--logo {
-        width: 3em;
-      }
+    .nav .nav__content .nav__list .content__list{
+      display: none;
     }
     main {
       padding-top: 4em;
