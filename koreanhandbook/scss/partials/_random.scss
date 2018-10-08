@@ -14,12 +14,12 @@
   min-height: 12em;
 }
 
-.genWord__korean {
+#genWord__korean {
   @include random-text;
   word-break: break-word;
 }
 
-.genWord__english {
+#genWord__english {
   @include random-text;
   word-break: break-word;
 }

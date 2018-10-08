@@ -24,7 +24,7 @@
                 <h3 id="genWord__korean">[[ answerKorean ]]</h3>
               </div>
               <div class="answers">
-                  <answer v-for="word in words" v-bind:answer="word">
+                <button class="button--dark" @click=checkAnswer(word.english) v-for="word in words" v-bind:disabled="answerButtonsDisabled">[[ word.english ]]</button>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@
               </select>
           </div>
           <div class="option">
-            <a v-bind:href="'/info/' + [[ categoryLink ]] + '/'"  v-bind:class="{ visible: linkVisible }" class="link-text accent">View full category page</answer>
+            <a v-bind:href="'/info/' + [[ categoryLink ]] + '/'"  v-bind:class="{ visible: linkVisible }" class="link-text accent">View full category page</a>
           </div>
           <p class="status">[[ status ]]</p>
           <p class="correct-answer">[[ correctAnswer ]]</p>

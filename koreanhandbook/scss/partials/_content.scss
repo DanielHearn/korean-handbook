@@ -1,7 +1,8 @@
 main {
   background: $white;
   min-height: 100vh;
-  max-width: $content-width;
+  flex: 5;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   //justify-content: space-between;
@@ -10,14 +11,13 @@ main {
 .content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
-/*
+
 .related-content {
   font-weight: 600;
   color: $dark;
   padding: $content-padding/2 $content-padding;
-}*/
+}
 
 .form--search {
   display: flex;
@@ -66,7 +66,6 @@ a {
   text-decoration: none;
 }
 
-/*
 .grid--related-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -74,7 +73,7 @@ a {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-}*/
+}
 
 .grid__item {
   display: flex;
@@ -138,8 +137,8 @@ a {
 
 .header {
   padding: $content-padding/2 $content-padding;
-  background: $white;
-  color: $dark;
+  background: $accent;
+  color: $white;
 }
 
 .flex {
@@ -213,9 +212,8 @@ a {
 }
 
 .content__link {
+  text-transform: uppercase;
   @include link-underline;
-  font-size: $p-size;
-  font-weight: 600;
   &.is-active {
     &:before {
       transform: translateY(0em) ;

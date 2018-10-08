@@ -14,8 +14,12 @@
       <section class="korean__container">
         <div class="word__container">
           <div id="genWord">
-            <pulse-loader v-bind:class="{ hideLoader: dbLoaded }"></pulse-loader>
-            <word-definition v-bind:word="word" v-bind:class="{ visible: wordVisible }"> </word-definition>
+            <div class="pulseLoader" v-bind:class="{ hideLoader: dbLoaded }">
+              <div class="pulse"></div>
+              <div class="pulse"></div>
+            </div>
+            <h2 id="genWord__english" v-bind:class="{ visible: wordVisible }">[[ word_english ]]</h2>
+            <h3 id="genWord__korean" v-bind:class="{ visible: wordVisible }">[[ word_korean ]]</h3>
           </div>
           <button class="button--purple" v-bind:disabled="buttonDisabled" @click="retrieveWord()" v-if="language === 'English'">Generate Word</button>
           <button class="button--purple" v-bind:disabled="buttonDisabled" @click="retrieveWord()" v-if="language === 'Korean'">다음 워드</button>
