@@ -23,7 +23,7 @@ from django.views.generic.base import RedirectView
 
 from koreanhandbook.core import views as core_views
 from koreanhandbook.core.sitemaps import *
-
+from koreanhandbook.homestatus import views as homestatus_views
 
 sitemaps = {
     'info': InfoSitemap(),
@@ -40,6 +40,7 @@ urlpatterns = [
     url(r'tool/(?P<tool_name>[-\w]+/)$', core_views.tool, name='tool'),
     url(r'info/(?P<info_name>[-\w]+/)$', core_views.info, name='info'),
     url('info/', core_views.infos, name='infos'),
+    url('homestatus', homestatus_views.status , name='status'),
     url('api/random-words', core_views.apiRandomWord, name='random-words'),
     url(r'^.*$', RedirectView.as_view(pattern_name='home', permanent=False))
 ]

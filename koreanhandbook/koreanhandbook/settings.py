@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'koreanhandbook',
     'koreanhandbook.core',
+    'koreanhandbook.homestatus',
     'storages',
     'imagekit',
     'corsheaders',
