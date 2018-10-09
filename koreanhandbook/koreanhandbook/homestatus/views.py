@@ -24,16 +24,19 @@ def status(request):
 
                 return JsonResponse({'status': 'success', 'temp': floatTemp})
             else:
-                JsonResponse({'status': 'error', 'msg': 'Error: Enter a valid number'})
+                return JsonResponse({'status': 'error', 'msg': 'Error: Enter a valid number'})
         else:
-            JsonResponse({'status': 'error', 'msg': 'Error: Couldn\'t add status'})
+            return JsonResponse({'status': 'error', 'msg': 'Error: Couldn\'t add status'})
     else:
-        latest_temp = Temperature.objects.last()
+        if Temperature.objects.exists():
+            latest_temp = Temperature.objects.last()
 
-        if hasattr(latest_temp, 'temp_value'):
-            temp = str(latest_temp.temp_value)
-            date_inserted = latest_temp.date_inserted
-            date_string = str(date_inserted.month)+ "/" + str(date_inserted.day) + "/" + str(date_inserted.year) + " - " + str(date_inserted.hour) + ":" + str(date_inserted.minute)
-            return JsonResponse({'status': 'success', 'temp': temp, 'date': date_string})
+            if hasattr(latest_temp, 'temp_value'):
+                temp = str(latest_temp.temp_value)
+                date_inserted = latest_temp.date_inserted
+                date_string = str(date_inserted.month)+ "/" + str(date_inserted.day) + "/" + str(date_inserted.year) + " - " + str(date_inserted.hour) + ":" + str(date_inserted.minute)
+                return JsonResponse({'status': 'success', 'temp': temp, 'date': date_string})
+            else:
+                return JsonResponse({'status': 'error', 'msg': 'No available statuses'})
         else:
-            JsonResponse({'status': 'error', 'msg': 'No available statuses'})
+            return JsonResponse({'status': 'error', 'msg': 'No available statuses'})

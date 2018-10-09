@@ -3,6 +3,7 @@ from django.contrib import admin
 
 # Local app imports
 from .models import *
+from koreanhandbook.homestatus.models import Temperature
 
 class Row2InLine(admin.TabularInline):
     model = Row_2
@@ -20,6 +21,7 @@ class InfoAdmin(admin.ModelAdmin):
         Row3InLine,
     ]
 
+admin.site.register(Temperature)
 admin.site.register(Tool)
 admin.site.register(Info, InfoAdmin)
 admin.site.register(Row_2)
