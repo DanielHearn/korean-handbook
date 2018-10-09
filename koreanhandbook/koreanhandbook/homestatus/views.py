@@ -3,12 +3,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from django.http import JsonResponse, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
 
 from .models import *
 
 apikey = 'ertwqe3v34'
 
+@csrf_exempt
 def status(request):
     method = request.GET.get('method', None)
     key = request.GET.get('key', None)
