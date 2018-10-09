@@ -18,28 +18,22 @@ def status(request):
         if method == 'set' and key == apikey:
             if len(temp) > 0:
                 floatTemp = float(temp)
-                #set in db
+
                 temp_row = Temperature(temp_value=floatTemp, date_inserted=datetime.now())
                 temp_row.save()
-                print(temp_row.id)
-                print(temp_row.temp_value)
-                return HttpResponse("Added Status with " + str(floatTemp) + "c")
+
+                return JsonResponse({'status': 'success', 'temp': floatTemp})
             else:
-                return HttpResponse("Error: Enter a valid number")
-        return HttpResponse("Couldn't add status")
+                JsonResponse({'status': 'error', 'msg': 'Error: Enter a valid number'})
+        else:
+            JsonResponse({'status': 'error', 'msg': 'Error: Couldn\'t add status'})
     else:
-        #if a last status exists
-
-        #else render with no status
-
-        #render view with last status
-        print(len( Temperature.objects.all()))
         latest_temp = Temperature.objects.last()
 
         if hasattr(latest_temp, 'temp_value'):
             temp = str(latest_temp.temp_value)
             date_inserted = latest_temp.date_inserted
             date_string = str(date_inserted.month)+ "/" + str(date_inserted.day) + "/" + str(date_inserted.year) + " - " + str(date_inserted.hour) + ":" + str(date_inserted.minute)
-            return HttpResponse("Last temperature: " + temp + "c, Added on: " + date_string)
+            return JsonResponse({'status': 'success', 'temp': temp, 'date': date_string})
         else:
-            return HttpResponse("No available statuses")
+            JsonResponse({'status': 'error', 'msg': 'No available statuses'})
