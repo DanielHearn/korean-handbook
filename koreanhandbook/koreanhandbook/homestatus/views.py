@@ -39,8 +39,8 @@ def status(request):
         if Status.objects.exists():
             if status_quantity != None:
                 status_quantity = int(status_quantity)
-                if status_quantity >= minStatusQuantity and status_quantity < maxStatusQuantity:
-                    retrieved_statuses = Status.objects.order_by("id")[:status_quantity]
+                if status_quantity >= minStatusQuantity and status_quantity <= maxStatusQuantity:
+                    retrieved_statuses = Status.objects.order_by("-id")[:status_quantity]
                     statuses = []
                     for status in range(0, len(retrieved_statuses)):
                         db_status = retrieved_statuses[status]
