@@ -11,7 +11,7 @@ from .functions import *
 
 apikey = 'ertwqe3v34'
 minStatusQuantity = 1
-maxStatusQuantity = 14
+maxStatusQuantity = 336
 
 @csrf_exempt
 def status(request):
@@ -26,7 +26,7 @@ def status(request):
         if method == 'set' and key == apikey:
             if len(temp_value) > 0:
                 float_temp = float(temp_value)
-                print(date)
+                
                 status = Status(temp_value=float_temp, humidity_value=humidity_value, date_inserted=date)
                 status.save()
 
@@ -51,7 +51,7 @@ def status(request):
                         statuses.append(json_status)
                     return JsonResponse({'status': 'success', 'statuses': statuses})
                 else:
-                    return JsonResponse({'status': 'error', 'msg': 'Enter a correct status quantity'})
+                    return JsonResponse({'status': 'error', 'msg': 'Enter a correct status quantity or correct set parameters'})
             else:
                 return JsonResponse({'status': 'error', 'msg': 'Enter a valid status quantity'})
         else:
