@@ -20,13 +20,13 @@ def status(request):
     temp_value = request.GET.get('temp_value', None)
     humidity_value = request.GET.get('humidity_value', None)
     status_quantity = request.GET.get('status_quantity', None)
+    date = request.GET.get('date', None)
 
-    if validInputData(method, key, temp_value, humidity_value):
+    if validInputData(method, key, temp_value, humidity_value, date):
         if method == 'set' and key == apikey:
             if len(temp_value) > 0:
                 float_temp = float(temp_value)
-                date = datetime.now()
-
+                print(date)
                 status = Status(temp_value=float_temp, humidity_value=humidity_value, date_inserted=date)
                 status.save()
 
