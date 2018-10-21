@@ -2,7 +2,7 @@
     @include button;
     background: $accent;
     color: $white;
-    padding: 0.3em 0.75em;
+    padding: 0.5em 1em;
     &:hover {
       background: $accent-dark;
     }
@@ -11,7 +11,7 @@
     @include button;
     background: $dark;
     color: $white;
-    padding: 0.3em 0.75em;
+    padding: 0.5em 1em;
     &:hover {
       background: $darker;
     }
