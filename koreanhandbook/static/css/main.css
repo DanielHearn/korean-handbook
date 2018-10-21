@@ -144,7 +144,7 @@
 .overlay {
   height: 100vh;
   width: 100vw;
-  background: #9B59E6;
+  background: #6E73F2;
   z-index: 3;
   visibility: hidden;
   opacity: 0;
@@ -175,7 +175,7 @@
           width: 100%;
           height: 2px;
           bottom: -6px;
-          border-bottom: 0.2em solid #9B59E6;
+          border-bottom: 0.2em solid #6E73F2;
           transform: translateY(0.4em);
           opacity: 0;
           transition: all 0.25s; }
@@ -195,7 +195,7 @@
     width: 100%;
     height: 2px;
     bottom: -6px;
-    border-bottom: 0.2em solid #9B59E6;
+    border-bottom: 0.2em solid #6E73F2;
     transform: translateY(0.4em);
     opacity: 0;
     transition: all 0.25s; }
@@ -327,7 +327,7 @@ a {
 
 .header {
   padding: 1em 2em;
-  background: #9B59E6;
+  background: #6E73F2;
   color: #fefefe; }
 
 .flex {
@@ -344,7 +344,7 @@ a {
     width: 100%;
     height: 2px;
     bottom: -6px;
-    border-bottom: 0.2em solid #9B59E6;
+    border-bottom: 0.2em solid #6E73F2;
     transform: translateY(0.4em);
     opacity: 0;
     transition: all 0.25s; }
@@ -352,11 +352,11 @@ a {
     transform: translateY(0em);
     opacity: 1; }
   .link-text.accent {
-    color: #9B59E6; }
+    color: #6E73F2; }
     .link-text.accent:visited {
-      color: #9B59E6; }
+      color: #6E73F2; }
     .link-text.accent:before {
-      border-bottom: 0.2em solid #9B59E6; }
+      border-bottom: 0.2em solid #6E73F2; }
   .link-text.white {
     color: #fefefe; }
     .link-text.white:visited {
@@ -416,7 +416,7 @@ a {
     width: 100%;
     height: 2px;
     bottom: -6px;
-    border-bottom: 0.2em solid #9B59E6;
+    border-bottom: 0.2em solid #6E73F2;
     transform: translateY(0.4em);
     opacity: 0;
     transition: all 0.25s; }
@@ -833,7 +833,7 @@ footer {
   border: none;
   font-weight: 600;
   -webkit-appearance: none;
-  background: #9B59E6;
+  background: #6E73F2;
   color: #fefefe;
   padding: 0.3em 0.75em; }
   .button--purple .material-icons {
@@ -841,7 +841,7 @@ footer {
   .button--purple:hover {
     cursor: pointer; }
   .button--purple:hover {
-    background: #8c4dd4; }
+    background: #6367e0; }
 
 .button--dark {
   background: none;
@@ -959,7 +959,7 @@ footer {
     height: 4em;
     border-radius: 4em;
     position: absolute;
-    background-color: #9B59E6;
+    background-color: #6E73F2;
     animation: pulseanim 1.2s ease-in-out infinite;
     transform: scale(0);
     outline: 1px solid transparent; }
