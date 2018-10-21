@@ -73,6 +73,7 @@ a {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  background: $blue-dark;
 }
 
 .grid__item {

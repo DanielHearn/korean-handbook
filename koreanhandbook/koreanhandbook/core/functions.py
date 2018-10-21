@@ -54,6 +54,7 @@ def castAsInt(querySet, intColumn, newColumn):
         select={newColumn: 'CAST(' + intColumn + ' AS INTEGER)'}
     ).order_by(newColumn)
 
+'''
 def addAdToArray(array, itemsBetweenAds):
     for item in range(len(array)):
         if ((item+1) % itemsBetweenAds == 0):
@@ -63,6 +64,7 @@ def addAdToArray(array, itemsBetweenAds):
         else:
             array[item].ad = False
     return array
+'''
 
 def findMatchingInfo(infoArray, searchText):
     filteredArray = []

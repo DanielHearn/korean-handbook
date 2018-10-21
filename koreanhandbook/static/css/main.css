@@ -265,7 +265,8 @@ a {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); }
+  grid-template-columns: repeat(3, 1fr);
+  background: #323d4a; }
 
 .grid__item {
   display: flex;

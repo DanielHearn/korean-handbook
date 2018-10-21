@@ -22,9 +22,6 @@
             <div class="item__bg" style="background: url({{ search_result.picture.url }});"></div>
           </a>
         </div>
-        {% if search_result.ad %}
-          {% include "ad_incontent.html" %}
-        {% endif %}
       {% endfor %}
     </section>
     <script src="{% static 'js/koreanHandbook.js' %}"></script>

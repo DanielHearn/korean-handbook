@@ -6,15 +6,16 @@ from django.http import JsonResponse
 from datetime import datetime
 import random
 
-
 # Local app imports
 from .forms import *
 from .models import *
 from .functions import *
 
+'''
 class Ad:
     def __init__(self):
         self.ad = True
+'''
 
 def home(request):
     info = Info.objects.all()
@@ -23,20 +24,20 @@ def home(request):
     page_title = generatePageTitle('Info')
     if len(info) == 0:
         status = 'No information available'
-    info = addAdToArray(info, 5) 
-    itemCount = 1 # One ad always exists after tools
-    for info_page in info:
-        itemCount += 1
-        if info_page.ad == True:
-            itemCount += 1
-    itemCount += len(tools)
-    whiteSpace = 3-(itemCount%3) # Work out number of empty grid items
-    if whiteSpace == 3:
-        additionalAds = []
-    else:
-        additionalAds = range(0, whiteSpace)
+    #info = addAdToArray(info, 5) 
+    #itemCount = 1 # One ad always exists after tools
+    #for info_page in info:
+    #    itemCount += 1
+    #    if hasattr(info_page, 'ad') and info_page.ad == True:
+    #        itemCount += 1
+    #itemCount += len(tools)
+    #whiteSpace = 3-(itemCount%3) # Work out number of empty grid items
+    #if whiteSpace == 3:
+    #    additionalAds = []
+    #else:
+    #    additionalAds = range(0, whiteSpace)
     description = 'The Korean Handbook is a collection of Korean language learning tools and information.'
-    return render(request, 'home.html', {'page_title': page_title, 'status': status, 'description': description, 'info': info, 'tools': tools, 'additionalAds': additionalAds})
+    return render(request, 'home.html', {'page_title': page_title, 'status': status, 'description': description, 'info': info, 'tools': tools, 'additionalAds': []})
 
 def about(request):
     return render(request, 'about.html')
@@ -115,8 +116,8 @@ def search(request):
             infos = Info.objects.all()
             filtered_tools = findMatchingInfo(tools, search_text)
             filtered_info = findMatchingInfo(infos, search_text)
-            filtered_tools = addAdToArray(filtered_tools, 4)
-            filtered_info = addAdToArray(filtered_info, 4)
+            #filtered_tools = addAdToArray(filtered_tools, 4)
+            #filtered_info = addAdToArray(filtered_info, 4)
             page_title = generatePageTitle('Search')
             search_results = filtered_tools + filtered_info
             for result in search_results:
