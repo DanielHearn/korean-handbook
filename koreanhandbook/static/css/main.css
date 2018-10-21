@@ -9,7 +9,7 @@
       fill: #fefefe !important; }
 
 .nav {
-  background: #323d4a;
+  background: #2e3031;
   color: #fefefe;
   display: flex;
   justify-content: center;
@@ -266,7 +266,7 @@ a {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: #323d4a; }
+  background: #2e3031; }
 
 .grid__item {
   display: flex;
@@ -703,26 +703,6 @@ a {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }*/
-.ad {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  min-height: unset !important;
-  background: #262d35; }
-  .ad .ad__message {
-    display: none;
-    color: #fefefe; }
-    .ad .ad__message h2 {
-      padding: 1em;
-      font-size: 1.2em; }
-  .ad .adsbygoogle {
-    width: 100%;
-    height: 100%; }
-  .ad.loaded {
-    background: #fefefe !important; }
-
 /*
 .slider__container {
     display: flex;
@@ -806,7 +786,7 @@ a {
 }
 */
 footer {
-  background: #262d35;
+  background: #292b2d;
   color: #fefefe;
   text-align: center;
   padding: 1em;
@@ -862,7 +842,7 @@ footer {
   border: none;
   font-weight: 600;
   -webkit-appearance: none;
-  background: #323d4a;
+  background: #333;
   color: #fefefe;
   padding: 0.3em 0.75em; }
   .button--dark .material-icons {
@@ -870,7 +850,7 @@ footer {
   .button--dark:hover {
     cursor: pointer; }
   .button--dark:hover {
-    background: #262d35; }
+    background: #222; }
 
 #app {
   display: flex;
@@ -979,7 +959,7 @@ footer {
     justify-content: space-around; } }
 @media screen and (max-width: 58em) {
   html body .nav {
-    background: #323d4a;
+    background: #2e3031;
     position: fixed;
     top: 0;
     width: 100%;

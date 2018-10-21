@@ -9,10 +9,10 @@
 }
 .button--dark {
     @include button;
-    background: $blue-dark;
+    background: $dark;
     color: $white;
     padding: 0.3em 0.75em;
     &:hover {
-      background: $blue-darker;
+      background: $darker;
     }
 }
