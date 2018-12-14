@@ -9,7 +9,7 @@ function overlay () {
 
 // INFO PAGE SEARCH
 const pageSearch = document.querySelector('#page__search')
-if (pageSearch != null) {
+if (pageSearch !== null) {
   pageSearch.addEventListener('input', searchPage)
 }
 
@@ -20,13 +20,13 @@ function searchPage () {
   const dataRows = listContainer.querySelectorAll('.list__row')
   for (let row in dataRows) {
     const rowElement = dataRows[row]
-    if (rowElement.dataset != null) {
+    if (rowElement.dataset !== null) {
       const key1 = rowElement.dataset.key1.toLowerCase()
       const key2 = rowElement.dataset.key2.toLowerCase()
       const tags = [key1, key2]
       if ('key3' in rowElement.dataset) {
         const key3 = rowElement.dataset.key3.toLowerCase()
-        tags[2] = key3
+        tags = tags.concat([key3])
       }
       if (searchText.length > 0) {
         if (search(tags, searchText) === true) {
@@ -119,31 +119,4 @@ try {
     startClock()
   }
 } catch (e) {
-
-}
-
-// ADS
-
-function showAdblockMessages () {
-  const ads = document.querySelectorAll('ins.adsbygoogle')
-  for (let ad of ads) {
-    if (ad && ad.innerHTML.replace(/\s/g, '').length === 0) {
-      ad.style.cssText = 'display:block !important'
-      const adMessageElement = ad.parentElement.querySelector('.ad__message')
-      if (adMessageElement !== null) {
-        adMessageElement.style = 'display:block !important'
-      }
-    } else {
-      ad.parentElement.classList.add('loaded')
-    }
-  }
-}
-
-window.onload = function () {
-  setTimeout(function () {
-    showAdblockMessages()
-  }, 100)
-  setTimeout(function () {
-    showAdblockMessages()
-  }, 3000)
 }

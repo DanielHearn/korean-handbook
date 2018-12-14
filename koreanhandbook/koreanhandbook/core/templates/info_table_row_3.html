@@ -17,7 +17,7 @@
         <p class="resultsCounter"></p>
       </div>
     </div>
-    <ul class="list">
+    <ul class="list list--col_3">
       <li class="column__title inline">
         <p> {{ info.column_1_name }} </p>
         <p> {{ info.column_2_name }} </p>
@@ -26,7 +26,7 @@
     </ul> 
   </section>
   <section class="info__content">
-    <ul id="list--info" class="list">
+    <ul id="list--info" class="list list--col_3">
       {% for row in rows %}
         <li data-key1="{{ row.col_1 }}" data-key2="{{ row.col_2 }}" data-key3="{{ row.col_3 }}" class="list__row inline">
           <p> {{ row.col_1 }} </p>

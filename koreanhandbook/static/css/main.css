@@ -957,6 +957,35 @@ footer {
     padding: 0;
     flex-direction: row;
     justify-content: space-around; } }
+.list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .list .list__row {
+    display: grid;
+    grid-gap: 5vw;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 15em));
+    padding: 0 1em 0 0;
+    color: #333; }
+    .list .list__row:nth-child(n) {
+      border-bottom: 2px #ececec solid; }
+    .list .list__row p {
+      word-break: break-word; }
+  .list .column__title {
+    display: grid;
+    grid-gap: 5vw;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 15em));
+    padding: 0 1em 0 0;
+    padding: 0.5em 1em 0.5em 0; }
+    .list .column__title p {
+      font-size: 1.05em;
+      font-weight: 700;
+      color: #fefefe;
+      margin: 0.75em 0; }
+
 @media screen and (max-width: 58em) {
   html body .nav {
     background: #2e3031;
@@ -976,6 +1005,18 @@ footer {
     padding-top: 4em; }
     html body main .grid, html body main .grid--related-content {
       grid-template-columns: repeat(1, 1fr); }
+    html body main .list.list--col_2 .column__title {
+      grid-gap: 0;
+      grid-template-columns: repeat(2, minmax(min-content, 15em)); }
+    html body main .list.list--col_2 .list__row {
+      grid-gap: 0;
+      grid-template-columns: repeat(2, minmax(min-content, 15em)); }
+    html body main .list.list--col_3 .column__title {
+      grid-gap: 0;
+      grid-template-columns: repeat(3, minmax(min-content, 15em)); }
+    html body main .list.list--col_3 .list__row {
+      grid-gap: 0;
+      grid-template-columns: repeat(3, minmax(min-content, 15em)); }
     html body main .list .list__row, html body main .list .column__title {
       padding: 0; }
     html body main .row__search .resultsCounter {

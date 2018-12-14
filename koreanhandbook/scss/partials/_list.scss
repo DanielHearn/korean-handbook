@@ -1,0 +1,29 @@
+
+.list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  .list__row {
+    @include rows_2;
+    color: $dark;
+    &:nth-child(n) {
+      border-bottom: 2px $off-white solid;
+    }
+    p {
+      word-break: break-word;
+    }
+  }
+  .column__title {
+    @include rows_2;
+    padding: 0.5em 1em 0.5em 0;
+    p {
+      font-size: $p-size;
+      font-weight: $sub-heading-weight;
+      color: $white;
+      margin: 0.75em 0;
+    }
+  }
+}

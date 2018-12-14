@@ -11,12 +11,6 @@ from .forms import *
 from .models import *
 from .functions import *
 
-'''
-class Ad:
-    def __init__(self):
-        self.ad = True
-'''
-
 def home(request):
     info = Info.objects.all()
     tools = Tool.objects.all()
@@ -24,20 +18,17 @@ def home(request):
     page_title = generatePageTitle('Info')
     if len(info) == 0:
         status = 'No information available'
-    #info = addAdToArray(info, 5) 
-    #itemCount = 1 # One ad always exists after tools
-    #for info_page in info:
-    #    itemCount += 1
-    #    if hasattr(info_page, 'ad') and info_page.ad == True:
-    #        itemCount += 1
-    #itemCount += len(tools)
-    #whiteSpace = 3-(itemCount%3) # Work out number of empty grid items
-    #if whiteSpace == 3:
-    #    additionalAds = []
-    #else:
-    #    additionalAds = range(0, whiteSpace)
     description = 'The Korean Handbook is a collection of Korean language learning tools and information.'
-    return render(request, 'home.html', {'page_title': page_title, 'status': status, 'description': description, 'info': info, 'tools': tools, 'additionalAds': []})
+    render_content = {
+        'page_title': page_title,
+        'status': status,
+        'description': description,
+        'info': info,
+        'tools': tools,
+        'additionalAds': []
+    }
+
+    return render(request, 'home.html', render_content)
 
 def about(request):
     return render(request, 'about.html')
@@ -51,13 +42,25 @@ def tool(request, tool_name):
         page_title = generatePageTitle(title)
         description = tool.full_name + ' - ' + tool.korean_name + ': ' + tool.description
         related_content = generateRelatedContent(Info, 2, -1)
+
+        render_content = {
+            'page_title': page_title,
+            'tool': tool,
+            'related_content': related_content,
+            'description': description,
+            'tools': tools,
+        }
+
         if(tool_name in ['random-korean-words', 'quiz']):
             info = Info.objects.all()
             for info_page in info:
-                info_page.short_name = info_page.full_name
-            return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'description': description, 'tools': tools, 'info': info})
+                if(len(info_page.full_name)):
+                    info_page.short_name = info_page.full_name
+            render_content['info'] = info
+
+            return render(request, tool_name + '.html', render_content)
         else:
-            return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'description': description, 'tools': tools})
+            return render(request, tool_name + '.html', render_content)
     except Tool.DoesNotExist:
         return redirect ('/')
 
@@ -87,7 +90,16 @@ def info(request, info_name):
                 info_rows = Row_2.objects.filter(info=info).order_by('date_inserted')
         description = info.full_name + ' - ' + info.korean_name + ': ' + info.description
         related_content = generateRelatedContent(Info, 2, info.id)
-        return render(request, 'info_table_row_2.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'description': description, 'tools': tools})
+        render_content = {
+            'info': info,
+            'rows': info_rows,
+            'related_content': related_content,
+            'page_title': page_title,
+            'description': description,
+            'tools': tools
+        }
+
+        return render(request, 'info_table_row_2.html', render_content)
     elif info.num_colums == 3:
         if info.numeric_first_col == True:
             if info.alphanumeric_order == True:
@@ -101,7 +113,16 @@ def info(request, info_name):
                 info_rows = Row_3.objects.filter(info=info).order_by('date_inserted')
         description = info.full_name + ' - ' + info.korean_name + ': ' + info.description 
         related_content = generateRelatedContent(Info, 2, info.id)
-        return render(request, 'info_table_row_3.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'description': description, 'tools': tools})
+        render_content = {
+            'info': info,
+            'rows': info_rows,
+            'related_content': related_content,
+            'page_title': page_title,
+            'description': description,
+            'tools': tools
+        }
+
+        return render(request, 'info_table_row_3.html', render_content)
     else:
         return redirect ('/')
 
@@ -116,8 +137,7 @@ def search(request):
             infos = Info.objects.all()
             filtered_tools = findMatchingInfo(tools, search_text)
             filtered_info = findMatchingInfo(infos, search_text)
-            #filtered_tools = addAdToArray(filtered_tools, 4)
-            #filtered_info = addAdToArray(filtered_info, 4)
+
             page_title = generatePageTitle('Search')
             search_results = filtered_tools + filtered_info
             for result in search_results:
@@ -131,7 +151,15 @@ def search(request):
                 status = 'Found ' + str(result_count) + ' result'
             else:
                 status = 'No information matched the search criteria'
-            return render(request, 'search.html', {'page_title': page_title, 'status': status, 'search_results': search_results, 'tools': tools})
+
+            render_content = {
+                'page_title': page_title,
+                'status': status,
+                'search_results': search_results,
+                'tools': tools
+            }
+
+            return render(request, 'search.html', render_content)
     else:
         return redirect ('/')
 
