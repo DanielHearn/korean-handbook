@@ -19,6 +19,7 @@ def home(request):
     if len(info) == 0:
         status = 'No information available'
     description = 'The Korean Handbook is a collection of Korean language learning tools and information.'
+    
     render_content = {
         'page_title': page_title,
         'status': status,
