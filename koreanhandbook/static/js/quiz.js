@@ -1,3 +1,7 @@
+// Only for testing
+const useLocal = false
+let apiRoot = 'http://thekoreanhandbook.com'
+
 const menuButton = document.querySelector('.button--overlay')
 menuButton.addEventListener('click', overlay)
 
@@ -7,7 +11,11 @@ function overlay () {
   document.querySelector('body').classList.toggle('noscroll')
 }
 
-var app = new Vue({
+if (useLocal) {
+  apiRoot = 'http://127.0.0.1:8000'
+}
+
+const app = new Vue({
   delimiters: ['[[', ']]'],
   el: '#app',
   data: {
@@ -36,14 +44,12 @@ var app = new Vue({
       const app = this
       // Convert word to slug usable by api and equal to model name
       const contentName = this.fullNameToSlug(this.content)
-      // const apiUrl = 'http://127.0.0.1:8000/api/random-words?content=' + contentName + '&number=' + 3
-      const apiUrl = 'http://thekoreanhandbook.com/api/random-words?content=' + contentName + '&number=' + 3
+      const apiUrl = apiRoot + '/api/random-words?content=' + contentName + '&number=' + 3
       fetch(apiUrl)
         .then(function (response) {
           return response.json()
         }).then(function (json) {
           // Show error if invalid user url
-          console.log(json)
           if (json.error) {
             app.status = json.error
             app.answerKorean = ''
@@ -80,8 +86,6 @@ var app = new Vue({
       return fullName.replace(/\s/g, '-').replace(/\/-/g, '').toLowerCase()
     },
     checkAnswer (english) {
-      console.log(english)
-      console.log(this.answerEnglish)
       if (english === this.answerEnglish) {
         this.status = 'Correct'
       } else {

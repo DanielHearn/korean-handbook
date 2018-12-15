@@ -15,7 +15,7 @@ def home(request):
     info = Info.objects.all()
     tools = Tool.objects.all()
     status = ''
-    page_title = generatePageTitle('Info')
+    page_title = generate_page_title('Info')
     if len(info) == 0:
         status = 'No information available'
     description = 'The Korean Handbook is a collection of Korean language learning tools and information.'
@@ -39,9 +39,9 @@ def tool(request, tool_name):
         tool_name = tool_name[0:len(tool_name)-1]
         tool = Tool.objects.get(url=tool_name)
         title = tool.full_name + ' ' + tool.korean_name
-        page_title = generatePageTitle(title)
+        page_title = generate_page_title(title)
         description = tool.full_name + ' - ' + tool.korean_name + ': ' + tool.description
-        related_content = generateRelatedContent(Info, 2, -1)
+        related_content = generate_related_content(Info, 2, -1)
 
         render_content = {
             'page_title': page_title,
@@ -73,23 +73,23 @@ def info(request, info_name):
     try:
         info = Info.objects.get(short_name=info_name)
         title = info.full_name + ' ' + info.korean_name
-        page_title = generatePageTitle(title)
+        page_title = generate_page_title(title)
     except Info.DoesNotExist:
         return redirect ('/')
     info_rows = ''
     if info.num_colums == 2:
         if info.numeric_first_col == True:
             if info.alphanumeric_order == True:
-                info_rows = castAsInt(Row_2.objects.filter(info=info).order_by('col_1'), 'col_1', 'col_1_numeric')
+                info_rows = cast_as_int(Row_2.objects.filter(info=info).order_by('col_1'), 'col_1', 'col_1_numeric')
             else:
-                info_rows = castAsInt(Row_2.objects.filter(info=info), 'col_1', 'col_1_numeric')
+                info_rows = cast_as_int(Row_2.objects.filter(info=info), 'col_1', 'col_1_numeric')
         else:
             if info.alphanumeric_order == True:
                 info_rows = Row_2.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_2.objects.filter(info=info).order_by('date_inserted')
         description = info.full_name + ' - ' + info.korean_name + ': ' + info.description
-        related_content = generateRelatedContent(Info, 2, info.id)
+        related_content = generate_related_content(Info, 2, info.id)
         render_content = {
             'info': info,
             'rows': info_rows,
@@ -103,16 +103,16 @@ def info(request, info_name):
     elif info.num_colums == 3:
         if info.numeric_first_col == True:
             if info.alphanumeric_order == True:
-                info_rows = castAsInt(Row_3.objects.filter(info=info).order_by('col_1'), 'col_1', 'col_1_numeric')
+                info_rows = cast_as_int(Row_3.objects.filter(info=info).order_by('col_1'), 'col_1', 'col_1_numeric')
             else:
-                info_rows = castAsInt(Row_3.objects.filter(info=info), 'col_1', 'col_1_numeric')
+                info_rows = cast_as_int(Row_3.objects.filter(info=info), 'col_1', 'col_1_numeric')
         else:
             if info.alphanumeric_order == True:
                 info_rows = Row_3.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_3.objects.filter(info=info).order_by('date_inserted')
         description = info.full_name + ' - ' + info.korean_name + ': ' + info.description 
-        related_content = generateRelatedContent(Info, 2, info.id)
+        related_content = generate_related_content(Info, 2, info.id)
         render_content = {
             'info': info,
             'rows': info_rows,
@@ -135,13 +135,13 @@ def search(request):
                 return redirect ('/')
             tools = Tool.objects.all()
             infos = Info.objects.all()
-            filtered_tools = findMatchingInfo(tools, search_text)
-            filtered_info = findMatchingInfo(infos, search_text)
+            filtered_tools = find_matching_info(tools, search_text)
+            filtered_info = find_matching_info(infos, search_text)
 
-            page_title = generatePageTitle('Search')
+            page_title = generate_page_title('Search')
             search_results = filtered_tools + filtered_info
             for result in search_results:
-                result.type = getModelName(result)
+                result.type = get_model_name(result)
             result_count = len(search_results)
             if result_count > 1:
                 search_results.sort(key=lambda obj: obj.searchScore)
@@ -163,9 +163,9 @@ def search(request):
     else:
         return redirect ('/')
 
-def apiRandomWord(request):
+def api_random_word(request):
     user_url = request.META['HTTP_HOST']
-    if checkValidDomain(user_url):  
+    if check_valid_domain(user_url):  
         content = request.GET.get('content', None)
         num_of_words = request.GET.get('number', None)
         if content == None:
@@ -175,7 +175,7 @@ def apiRandomWord(request):
         else:
             num_of_words = int(num_of_words)
         if num_of_words > 0 and num_of_words <= 10:
-            json_response = getRandomWords(content, num_of_words)
+            json_response = get_random_words(content, num_of_words)
             return JsonResponse(json_response)
         else:
             return JsonResponse({'error': 'Only request between 1 to 10 words'})

@@ -41,6 +41,8 @@ urlpatterns = [
     url(r'info/(?P<info_name>[-\w]+/)$', core_views.info, name='info'),
     url('info/', core_views.infos, name='infos'),
     url('homestatus', homestatus_views.status , name='status'),
-    url('api/random-words', core_views.apiRandomWord, name='random-words'),
+    url('api/random-words', core_views.api_random_word, name='random-words'),
+
+    # Redirect if doesn't url exit
     url(r'^.*$', RedirectView.as_view(pattern_name='home', permanent=False))
 ]

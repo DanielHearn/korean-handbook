@@ -5,46 +5,36 @@ import random
 
 # Local app imports
 from .models import *
-import pyrebase
-
-firebase_config = {
-  "apiKey": "AIzaSyDpdCyIU1xaKISrFtnjBN52xKwoisFQN1Q",
-  "authDomain": "korean-words-2.firebaseapp.com",
-  "databaseURL": "https://korean-words-2.firebaseio.com",
-  "storageBucket": "korean-words-2.appspot.com",
-}
-
-firebase = pyrebase.initialize_app(firebase_config)
-firebase_db = firebase.database()
-firebase_word_count = firebase_db.child("wordCount").get().val()
+from .firebase import *
 
 valid_urls = ['127.0.0.1', 'thekoreanhandbook.com']
+valid_search_score_level = 0.7
 
 # Return list of related content 
-def generateRelatedContent(model, numOfContent, currentID):
+def generate_related_content(model, num_of_content, current_id):
     max_id = model.objects.all().aggregate(max_id=Max("id"))['max_id']
     related_content = []
-    for content in range(0, numOfContent):
-        related_content.append(getRelatedContent(model, max_id, currentID, related_content))
+    for content in range(0, num_of_content):
+        related_content.append(get_related_content(model, max_id, related_content))
     return related_content
 
 # Loop through model objects to find object that doesn't current exist in the related content
-def getRelatedContent(model, max_id, currentID, currentRelatedContent):
+def get_related_content(model, max_id, current_related_content):
     while True:
-        pk = randint(1, max_id)
-        related_content = model.objects.filter(pk=pk).first()
-        if related_content and related_content not in currentRelatedContent:
+        index = randint(1, max_id)
+        related_content = model.objects.filter(pk=index).first()
+        if related_content and related_content not in current_related_content:
             return related_content
 
 # Get search score based on the number of substrings existing between the two strings
-def searchString(matchString, searchString):
-    matchSubString = get_all_substrings(matchString.lower())
-    searchString = searchString.lower()
-    searchScore = 0
-    for subString in matchSubString:
-        if subString in searchString:
-            searchScore += 1
-    return searchScore
+def search_string(match_string, search_string):
+    match_sub_string = get_all_substrings(match_string.lower())
+    search_string = search_string.lower()
+    search_score = 0
+    for sub_string in match_sub_string:
+        if sub_string in search_string:
+            search_score += 1
+    return search_score
     
 def get_all_substrings(string):
     length = len(string)
@@ -52,59 +42,53 @@ def get_all_substrings(string):
         for j in range(i + 1, length + 1):
             yield(string[i:j]) 
 
-def castAsInt(querySet, intColumn, newColumn):
-    return querySet.extra(
-        select={newColumn: 'CAST(' + intColumn + ' AS INTEGER)'}
-    ).order_by(newColumn)
+def cast_as_int(query_set, int_column, new_column):
+    return query_set.extra(
+        select={new_column: 'CAST(' + int_column + ' AS INTEGER)'}
+    ).order_by(new_column)
 
-def findMatchingInfo(infoArray, searchText):
-    filteredArray = []
-    for info in infoArray:
-        infoSearchScoreEng = searchString(info.full_name, searchText)
-        infoSearchScoreKor = searchString(info.korean_name, searchText)
-        if checkScore(infoSearchScoreEng, searchText) or checkScore(infoSearchScoreKor, searchText):
-            if (infoSearchScoreEng > infoSearchScoreKor):
-                info.searchScore = infoSearchScoreEng
+def find_matching_info(info_array, search_text):
+    filtered_array = []
+    for info in info_array:
+        info_search_score_eng = search_string(info.full_name, search_text)
+        info_search_score_kor = search_string(info.korean_name, search_text)
+        if check_score(info_search_score_eng, search_text) or check_score(info_search_score_kor, search_text):
+            if (info_search_score_eng > info_search_score_kor):
+                info.search_score = info_search_score_eng
             else:
-                info.searchScore = infoSearchScoreKor
-            filteredArray.append(info)   
+                info.search_score = info_search_score_kor
+            filtered_array.append(info)   
         else:
-            info.searchScore = 0
-    return filteredArray
+            info.search_score = 0
+    return filtered_array
 
-def checkScore(score, search_text):
-    if score >= (len(search_text)*0.7):
-        return True 
-    else:
-        return False
+def check_score(score, search_text):
+    return score >= (len(search_text)*valid_search_score_level)
 
-def getSearchScore(item):
-    return item.searchScore
-
-def getModelName(object):
+def get_model_name(object):
     return object.__class__.__name__.lower() 
 
-def generatePageTitle(page_name):
+def generate_page_title(page_name):
     return page_name + ' - The Korean Handbook'
 
-def isDivisble(num1, num2):
-   return (num1 % num2) == 0
+def is_divisble(num_1, num_2):
+   return (num_1 % num_2) == 0
 
-def genWordIndices(db_length, num_of_words):
+def gen_word_indices(db_length, num_of_words):
     return  random.sample(range(0, db_length), num_of_words)
 
-def getRandomWords(content, num_of_words):
+def get_random_words(content, num_of_words):
     json_response = {}
     words = []
-    
-    if(content in ['random', None]):
-        # If random content use firebase database
 
-        selected_words = genWordIndices(firebase_word_count, num_of_words)
+    if(content in ['random', None]):
+        # If random content use firebase databa se
+
+        selected_words = gen_word_indices(get_random_word_count(), num_of_words)
         for word_count in range(0, num_of_words):
             word_key = selected_words[word_count]
             word = {}
-            db_word = firebase_db.child(word_key).get().val()
+            db_word = get_random_word(word_key)
             word['english']  = db_word['ENGLISH']
             word['korean'] = db_word['KOREAN']
             words.append(word)
@@ -126,7 +110,7 @@ def getRandomWords(content, num_of_words):
                     selected_words = [0]
                     num_of_words = 1
                 else:
-                    selected_words = genWordIndices(db_num_words, num_of_words)
+                    selected_words = gen_word_indices(db_num_words, num_of_words)
                 for word_count in range(0, num_of_words):
                     word = {}
                     word_key = selected_words[word_count]
@@ -144,7 +128,7 @@ def getRandomWords(content, num_of_words):
             return {'error': 'Invalid content'}
 
 # Check if url is whitelisted
-def checkValidDomain(user_url):
+def check_valid_domain(user_url):
     for url in valid_urls:
         if (url in user_url):
             return True
