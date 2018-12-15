@@ -20,24 +20,26 @@ function searchPage () {
   const listContainer = document.querySelector('#list--info')
   const dataRows = listContainer.querySelectorAll('.list__row')
   for (let row in dataRows) {
-    const rowElement = dataRows[row]
-    if (rowElement.dataset !== null) {
-      const key1 = rowElement.dataset.key1.toLowerCase()
-      const key2 = rowElement.dataset.key2.toLowerCase()
-      let tags = [key1, key2]
-      if ('key3' in rowElement.dataset) {
-        const key3 = rowElement.dataset.key3.toLowerCase()
-        tags = tags.concat([key3])
-      }
-      if (searchText.length > 0) {
-        if (search(tags, searchText) === true) {
-          numOfResults++
-          rowElement.style.display = 'grid'
-        } else {
-          rowElement.style.display = 'none'
+    if (dataRows.hasOwnProperty(row)) {
+      const rowElement = dataRows[row]
+      if (rowElement.dataset !== null) {
+        const key1 = rowElement.dataset.key1.toLowerCase()
+        const key2 = rowElement.dataset.key2.toLowerCase()
+        let tags = [key1, key2]
+        if ('key3' in rowElement.dataset) {
+          const key3 = rowElement.dataset.key3.toLowerCase()
+          tags = tags.concat([key3])
         }
-      } else {
-        rowElement.style.display = 'grid'
+        if (searchText.length > 0) {
+          if (search(tags, searchText) === true) {
+            numOfResults++
+            rowElement.style.display = 'grid'
+          } else {
+            rowElement.style.display = 'none'
+          }
+        } else {
+          rowElement.style.display = 'grid'
+        }
       }
     }
   }
