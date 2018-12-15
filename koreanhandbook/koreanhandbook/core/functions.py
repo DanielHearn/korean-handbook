@@ -20,20 +20,23 @@ firebase_word_count = firebase_db.child("wordCount").get().val()
 
 valid_urls = ['127.0.0.1', 'thekoreanhandbook.com']
 
+# Return list of related content 
 def generateRelatedContent(model, numOfContent, currentID):
     max_id = model.objects.all().aggregate(max_id=Max("id"))['max_id']
-    relatedContent = []
-    for content in range(numOfContent):
-        relatedContent.append(getRelatedContent(model, max_id, currentID))
-    return relatedContent
+    related_content = []
+    for content in range(0, numOfContent):
+        related_content.append(getRelatedContent(model, max_id, currentID, related_content))
+    return related_content
 
-def getRelatedContent(model, max_id, currentID):
+# Loop through model objects to find object that doesn't current exist in the related content
+def getRelatedContent(model, max_id, currentID, currentRelatedContent):
     while True:
         pk = randint(1, max_id)
-        relatedContent = model.objects.filter(pk=pk).first()
-        if relatedContent:
-            return relatedContent
+        related_content = model.objects.filter(pk=pk).first()
+        if related_content and related_content not in currentRelatedContent:
+            return related_content
 
+# Get search score based on the number of substrings existing between the two strings
 def searchString(matchString, searchString):
     matchSubString = get_all_substrings(matchString.lower())
     searchString = searchString.lower()
@@ -53,18 +56,6 @@ def castAsInt(querySet, intColumn, newColumn):
     return querySet.extra(
         select={newColumn: 'CAST(' + intColumn + ' AS INTEGER)'}
     ).order_by(newColumn)
-
-'''
-def addAdToArray(array, itemsBetweenAds):
-    for item in range(len(array)):
-        if ((item+1) % itemsBetweenAds == 0):
-            array[item].ad = True   
-        elif (item == (len(array)-1)):
-            array[item].ad = True   
-        else:
-            array[item].ad = False
-    return array
-'''
 
 def findMatchingInfo(infoArray, searchText):
     filteredArray = []
@@ -105,7 +96,10 @@ def genWordIndices(db_length, num_of_words):
 def getRandomWords(content, num_of_words):
     json_response = {}
     words = []
+    
     if(content in ['random', None]):
+        # If random content use firebase database
+
         selected_words = genWordIndices(firebase_word_count, num_of_words)
         for word_count in range(0, num_of_words):
             word_key = selected_words[word_count]
@@ -118,6 +112,8 @@ def getRandomWords(content, num_of_words):
         json_response['words'] = words
         return json_response
     else: 
+        # Get data from aws database
+
         try:
             info = Info.objects.get(short_name=content)
             if info.num_colums == 2:
@@ -147,6 +143,7 @@ def getRandomWords(content, num_of_words):
         except Info.DoesNotExist:
             return {'error': 'Invalid content'}
 
+# Check if url is whitelisted
 def checkValidDomain(user_url):
     for url in valid_urls:
         if (url in user_url):
