@@ -10,14 +10,16 @@ import random
 from .forms import *
 from .models import *
 from .functions import *
+from .api import *
 
 def home(request):
     info = Info.objects.all()
     tools = Tool.objects.all()
-    status = ''
     page_title = generate_page_title('Info')
     if len(info) == 0:
         status = 'No information available'
+    else: 
+        status = ''
     description = 'The Korean Handbook is a collection of Korean language learning tools and information.'
     
     render_content = {
@@ -37,7 +39,6 @@ def about(request):
 def tool(request, tool_name):
     try:
         tools = Tool.objects.all()
-        tool_name = tool_name[0:len(tool_name)-1]
         tool = Tool.objects.get(url=tool_name)
         title = tool.full_name + ' ' + tool.korean_name
         page_title = generate_page_title(title)
@@ -65,12 +66,9 @@ def tool(request, tool_name):
     except Tool.DoesNotExist:
         return redirect ('/')
 
-def infos(request):
-    return redirect ('/')
-
 def info(request, info_name):
     tools = Tool.objects.all()
-    info_name = info_name[0:len(info_name)-1]
+    print(info_name)
     try:
         info = Info.objects.get(short_name=info_name)
         title = info.full_name + ' ' + info.korean_name
@@ -181,4 +179,4 @@ def api_random_word(request):
         else:
             return JsonResponse({'error': 'Only request between 1 to 10 words'})
     else:
-        return JsonResponse({'error': 'Invalid domain only works on same origin'})
+        return JsonResponse({'error': 'Invalid domain, api only works on same origin url'})

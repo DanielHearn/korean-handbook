@@ -1,8 +1,10 @@
+$button-padding: 0.4em 0.8em;
+
 .button--purple {
     @include button;
     background: $accent;
     color: $white;
-    padding: 0.5em 1em;
+    padding: $button-padding;
     &:hover {
       background: $accent-dark;
     }
@@ -11,7 +13,7 @@
     @include button;
     background: $dark;
     color: $white;
-    padding: 0.5em 1em;
+    padding: $button-padding;
     &:hover {
       background: $darker;
     }
