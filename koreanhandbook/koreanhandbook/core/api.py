@@ -8,6 +8,7 @@ import random
 
 # Local app imports
 from .models import *
+from .firebase import *
 
 def gen_word_indices(db_length, num_of_words):
     return  random.sample(range(0, db_length), num_of_words)
