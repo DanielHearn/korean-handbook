@@ -28,6 +28,7 @@ const app = new Vue({
     genButtonDisabled: false,
     answerButtonsDisabled: false,
     categoryLink: 'test',
+    apiQuantity: 5,
     words: [],
     status: '',
     correctAnswer: ''
@@ -44,7 +45,12 @@ const app = new Vue({
       const app = this
       // Convert word to slug usable by api and equal to model name
       const contentName = this.fullNameToSlug(this.content)
-      const apiUrl = apiRoot + '/api/random-words?content=' + contentName + '&number=' + 3
+      if (contentName === 'random') {
+        this.apiQuantity = 1
+      } else {
+        this.apiQuantity = 5
+      }
+      const apiUrl = apiRoot + '/api/random-words?content=' + contentName + '&number=' + this.apiQuantity
       fetch(apiUrl)
         .then(function (response) {
           return response.json()

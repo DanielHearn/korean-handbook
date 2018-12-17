@@ -75,7 +75,7 @@ def info(request, info_name):
         page_title = generate_page_title(title)
     except Info.DoesNotExist:
         return redirect ('/')
-    info_rows = ''
+    info_rows = None
     if info.num_colums == 2:
         if info.numeric_first_col == True:
             if info.alphanumeric_order == True:

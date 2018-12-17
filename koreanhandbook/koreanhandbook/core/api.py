@@ -16,6 +16,7 @@ def get_random_words(content, num_of_words):
     json_response = {}
     words = []
     if(content in ['random', None]):
+        # Get random info object
         info = Info.objects.order_by('?')[:1][0]
     else:
         info = Info.objects.get(short_name=content)
