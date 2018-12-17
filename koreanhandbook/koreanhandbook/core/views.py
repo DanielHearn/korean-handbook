@@ -167,6 +167,7 @@ def api_random_word(request):
     if check_valid_domain(user_url):  
         content = request.GET.get('content', None)
         num_of_words = request.GET.get('number', None)
+
         if content == None:
             content = 'random'
         if num_of_words == None:

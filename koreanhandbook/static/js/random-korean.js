@@ -48,27 +48,25 @@ const app = new Vue({
           }).then(function (json) {
             // Show error if invalid user url
             if (json.error) {
-              app.word_english = json.error
-              app.word_korean = ''
-              app.showWord()
-              return false
-            }
-            app.words = json.words.slice()
-            const word = json.words[json.words.length - 1]
-            app.word_english = word.english
-            app.word_korean = word.korean
-            app.showWord()
-            if (app.words.length === 1) {
-              app.words = []
+              app.retrieveWord()
             } else {
-              app.words.splice(-1, 1)
+              app.words = json.words.slice()
+              const word = json.words[json.words.length - 1]
+              app.word_english = word.english
+              app.word_korean = word.korean
+              app.showWord()
+              if (app.words.length === 1) {
+                app.words = []
+              } else {
+                app.words.splice(-1, 1)
+              }
+              // Only show category page link if not random category
+              if (contentName !== 'random') {
+                app.linkVisible = true
+                app.categoryLink = contentName
+              }
+              return true
             }
-            // Only show category page link if not random category
-            if (contentName !== 'random') {
-              app.linkVisible = true
-              app.categoryLink = contentName
-            }
-            return true
           }).catch(function (error) {
             console.log(error)
           })
