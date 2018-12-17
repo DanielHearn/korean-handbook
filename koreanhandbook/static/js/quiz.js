@@ -46,7 +46,7 @@ const app = new Vue({
       // Convert word to slug usable by api and equal to model name
       const contentName = this.fullNameToSlug(this.content)
       if (contentName === 'random') {
-        this.apiQuantity = 1
+        this.apiQuantity = 5
       } else {
         this.apiQuantity = 5
       }
