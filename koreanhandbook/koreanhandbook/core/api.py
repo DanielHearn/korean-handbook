@@ -40,11 +40,9 @@ def get_random_words(content, num_of_words):
                 word = {}
                 word_key = selected_words[word_count]
                 db_word = db_words[word_key]
-                word['wordKey'] = word_key
                 word['english'] = db_word.col_1
                 word['korean'] = db_word.col_2 
                 words.append(word)
-            json_response['num_words'] = db_num_words
             json_response['words'] = words
             return json_response
         else:

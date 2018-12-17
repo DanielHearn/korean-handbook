@@ -56,6 +56,7 @@ const app = new Vue({
           return response.json()
         }).then(function (json) {
           // Show error if invalid user url
+          console.log(json)
           if (json.error) {
             app.status = json.error
             app.answerKorean = ''
@@ -66,19 +67,20 @@ const app = new Vue({
             app.wordVisible = true
             app.dbLoaded = true
             return false
+          } else {
+            app.words = json.words.slice()
+            const answerIndex = Math.floor(Math.random() * (2 - 0 + 1)) + 0
+            const answer = app.words[answerIndex]
+            app.answerEnglish = answer.english
+            app.answerKorean = answer.korean
+            app.showWords()
+            // Only show category page link if not random category
+            if (contentName !== 'random') {
+              app.linkVisible = true
+              app.categoryLink = contentName
+            }
+            return true
           }
-          app.words = json.words.slice()
-          const answerIndex = Math.floor(Math.random() * (2 - 0 + 1)) + 0
-          const answer = app.words[answerIndex]
-          app.answerEnglish = answer.english
-          app.answerKorean = answer.korean
-          app.showWords()
-          // Only show category page link if not random category
-          if (contentName !== 'random') {
-            app.linkVisible = true
-            app.categoryLink = contentName
-          }
-          return true
         }).catch(function (e) {
           console.log(e)
         })
