@@ -69,7 +69,7 @@ const app = new Vue({
             return false
           } else {
             app.words = json.words.slice()
-            const answerIndex = Math.floor(Math.random() * (app.words.length - 0 + 1)) + 0
+            const answerIndex = Math.floor(Math.random() * ((app.words.length - 1) - 0 + 1)) + 0
             console.log(answerIndex)
             const answer = app.words[answerIndex]
             app.answerEnglish = answer.english
