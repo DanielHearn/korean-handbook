@@ -56,7 +56,6 @@ const app = new Vue({
           return response.json()
         }).then(function (json) {
           // Show error if invalid user url
-          console.log(json)
           if (json.error) {
             app.status = json.error
             app.answerKorean = ''
@@ -70,7 +69,6 @@ const app = new Vue({
           } else {
             app.words = json.words.slice()
             const answerIndex = Math.floor(Math.random() * ((app.words.length - 1) - 0 + 1)) + 0
-            console.log(answerIndex)
             const answer = app.words[answerIndex]
             app.answerEnglish = answer.english
             app.answerKorean = answer.korean
