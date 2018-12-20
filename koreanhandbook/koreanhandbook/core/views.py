@@ -143,7 +143,7 @@ def search(request):
                 result.type = get_model_name(result)
             result_count = len(search_results)
             if result_count > 1:
-                search_results.sort(key=lambda obj: obj.searchScore)
+                search_results.sort(key=lambda obj: obj.search_score)
                 search_results = reversed(search_results)
                 status = 'Found ' + str(result_count) + ' results'
             elif result_count > 0:

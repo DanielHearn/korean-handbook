@@ -496,6 +496,10 @@ p {
   .button--dark:hover {
     background: #222; }
 
+.grid-container {
+  background: #333;
+  height: 100%; }
+
 .grid--related-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr); }
