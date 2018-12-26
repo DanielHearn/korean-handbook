@@ -7,25 +7,24 @@
       <p class="content__text status">{{ status }}</p>
     </section>
     {% endif %}
-    <section class="grid">
-      {% for search_result in search_results %}
-        <div class="grid__item">
-          {% if search_result.url %}
-            <a class="grid__link" href="/{{ search_result.type }}/{{ search_result.url }}/">
-          {% else %}   
-            <a class="grid__link" href="/{{ search_result.type }}/{{ search_result.short_name }}/"> 
-          {% endif %}
-            <div class="grid__info">
-              <h2 class="info__full-name" >{{ search_result.full_name }}</h2>
-              <h2 class="info__korean-name" >{{ search_result.korean_name }}</h2>
-            </div>
-            <div class="item__bg" style="background: url({{ search_result.picture.url }});"></div>
-          </a>
-        </div>
-        {% if search_result.ad %}
-          {% include "ad_incontent.html" %}
-        {% endif %}
-      {% endfor %}
+    <section class="grid-container">
+      <div class="grid">
+        {% for search_result in search_results %}
+          <div class="grid__item">
+            {% if search_result.url %}
+              <a class="grid__link" href="/{{ search_result.type }}/{{ search_result.url }}/">
+            {% else %}   
+              <a class="grid__link" href="/{{ search_result.type }}/{{ search_result.short_name }}/"> 
+            {% endif %}
+              <div class="grid__info">
+                <h2 class="info__full-name" >{{ search_result.full_name }}</h2>
+                <h2 class="info__korean-name" >{{ search_result.korean_name }}</h2>
+              </div>
+              <div class="item__bg" style="background: url({{ search_result.picture.url }});"></div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
     </section>
     <script src="{% static 'js/koreanHandbook.js' %}"></script>
 {% endblock %}

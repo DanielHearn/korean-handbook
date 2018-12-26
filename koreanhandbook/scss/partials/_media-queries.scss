@@ -1,27 +1,50 @@
 @media screen and (max-width: 58em) {
   html body {
     .nav {
-      background: $blue-dark;;
+      background: $blue-dark;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 5;
-      padding: 0 $content-padding/3;
+      padding: $content-padding/6 $content-padding/3;
       @include bottom-shadow;
       .nav__content {
         display: none;
       }
       .button--logo {
         width: 3em;
+        height: 3em;
       }
     }
     main {
-      padding-top: 4em;
+      padding-top: 3.6em;
       .grid, .grid--related-content {
         grid-template-columns: repeat(1, 1fr);
       }
-      .list .list__row, .list .column__title {
-        padding: 0;
+      .list {
+        &.list--col_2 {
+          .column__title {
+            grid-gap: 0;
+            grid-template-columns: repeat(2, minmax(min-content, 15em));
+          }
+          .list__row {
+            grid-gap: 0;
+            grid-template-columns: repeat(2, minmax(min-content, 15em));
+          }
+        }
+        &.list--col_3 {
+          .column__title {
+            grid-gap: 0;
+            grid-template-columns: repeat(3, minmax(min-content, 15em));
+          }
+          .list__row {
+            grid-gap: 0;
+            grid-template-columns: repeat(3, minmax(min-content, 15em));
+          }
+        }
+        .list__row, .column__title {
+          padding: 0;
+        }
       }
       .row__search .resultsCounter {
         margin-left: 0;
@@ -55,88 +78,3 @@
     }
   }
 }
-
-
-/*
-@media screen and (min-width: 40.01em ) and (max-width: 60em) {
-  html body {
-    main {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  }
-}
-
-
-/*
-@media screen and (min-width: 40.01em ) and (max-width: 60em) {
-  html body {
-    main {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 40em) {
-  html body {
-    .nav {
-      .nav__content {
-        padding-right: 1em;
-        padding-left: 1em;
-        .input__search {
-          width: 65%;
-        }
-      }
-    }
-    main {
-      #content {
-        padding-left: 0.9em;
-        padding-right: 0.9em;
-        .slider__prev, .slider__next {
-          padding: 0.5em
-        }
-        .slider__prev {
-          margin-left: 0.5em;
-        } 
-        .slider__next {
-          margin-left: -0.5em;
-        }
-        .grid {
-          grid-template-columns: repeat(1, 1fr);
-        }
-        .row__search .resultsCounter {
-          margin-left: 0;
-        }
-        .list {
-          .row__search {
-            padding: 0.5em;
-          }
-          .list__row, .column__title {
-            padding: 0 0.5em 0 0.5em;
-          }
-        }
-        #genWord {
-          h2, h3 {
-            margin: 0.25em 0;
-          }
-        }
-      }
-      .profile {
-        .profile__header {
-          flex-direction: column;
-          .profile__image {
-            width: 100%;
-          }
-        }
-        .grid__item {
-          grid-column: span 2;
-        }      
-      }
-    }
-  }
-}
-
-*/

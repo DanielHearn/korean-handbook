@@ -1,11 +1,11 @@
-$accent: #9B59E6;
-$accent-dark: #8c4dd4;
+$accent: #6E73F2;
+$accent-dark: #6367e0;
 $white: #fefefe;
 $off-white: #ececec;
 $grey: #999;
 $grey-dark: #4a4a4a;
-$blue-dark: #323d4a;
-$blue-darker: #262d35;
+$blue-dark: #2e3031;
+$blue-darker: #292b2d;
 $dark: #333;
 $darker: #222;
 $colour-selection: #c8c5cc;
@@ -22,19 +22,23 @@ $input-weight: 500;
 $content-padding: 2em;
 $content-width: 65em;
 
+@import 'partials/normalize';
 @import 'partials/mixin';
+
 @import 'partials/nav';
 @import 'partials/overlay';
 @import 'partials/content';
-@import 'partials/korean-clock';
-@import 'partials/quiz';
-@import 'partials/checkbox';
-@import 'partials/ad';
-@import 'partials/slider';
 @import 'partials/footer';
 @import 'partials/button';
-@import 'partials/random';
+@import 'partials/grid';
+@import 'partials/list';
+
+@import 'partials/apps/korean-clock';
+@import 'partials/apps/random_word';
+@import 'partials/apps/quiz';
+
 @import 'partials/media-queries';
+
 
 body {
   margin: 0;

@@ -3,7 +3,6 @@
 }
 
 @mixin button {
-  @include reset-button-style;
   @include smooth-transition;
   display: flex;
   font-size: $p-size;
@@ -21,20 +20,6 @@
 
 @mixin korean-text {
   font-family: "Gothic A1";
-}
-
-@mixin reset-button-style {
-  background: none;
-  border: 0;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
-  overflow: visible;
-  padding: 0;
-  -webkit-appearance: button;
-  -webkit-user-select: none; 
-     -moz-user-select: none;
-      -ms-user-select: none;
 }
 
 @mixin link-underline {

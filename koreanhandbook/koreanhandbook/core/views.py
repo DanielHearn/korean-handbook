@@ -6,37 +6,32 @@ from django.http import JsonResponse
 from datetime import datetime
 import random
 
-
 # Local app imports
 from .forms import *
 from .models import *
 from .functions import *
-
-class Ad:
-    def __init__(self):
-        self.ad = True
+from .api import *
 
 def home(request):
     info = Info.objects.all()
     tools = Tool.objects.all()
-    status = ''
-    page_title = generatePageTitle('Info')
+    page_title = generate_page_title('Info')
     if len(info) == 0:
         status = 'No information available'
-    info = addAdToArray(info, 5) 
-    itemCount = 1 # One ad always exists after tools
-    for info_page in info:
-        itemCount += 1
-        if info_page.ad == True:
-            itemCount += 1
-    itemCount += len(tools)
-    whiteSpace = 3-(itemCount%3) # Work out number of empty grid items
-    if whiteSpace == 3:
-        additionalAds = []
-    else:
-        additionalAds = range(0, whiteSpace)
+    else: 
+        status = ''
     description = 'The Korean Handbook is a collection of Korean language learning tools and information.'
-    return render(request, 'home.html', {'page_title': page_title, 'status': status, 'description': description, 'info': info, 'tools': tools, 'additionalAds': additionalAds})
+    
+    render_content = {
+        'page_title': page_title,
+        'status': status,
+        'description': description,
+        'info': info,
+        'tools': tools,
+        'additionalAds': []
+    }
+
+    return render(request, 'home.html', render_content)
 
 def about(request):
     return render(request, 'about.html')
@@ -44,63 +39,89 @@ def about(request):
 def tool(request, tool_name):
     try:
         tools = Tool.objects.all()
-        tool_name = tool_name[0:len(tool_name)-1]
         tool = Tool.objects.get(url=tool_name)
         title = tool.full_name + ' ' + tool.korean_name
-        page_title = generatePageTitle(title)
+        page_title = generate_page_title(title)
         description = tool.full_name + ' - ' + tool.korean_name + ': ' + tool.description
-        related_content = generateRelatedContent(Info, 2, -1)
+        related_content = generate_related_content(Info, 2, -1)
+
+        render_content = {
+            'page_title': page_title,
+            'tool': tool,
+            'related_content': related_content,
+            'description': description,
+            'tools': tools,
+        }
+
         if(tool_name in ['random-korean-words', 'quiz']):
             info = Info.objects.all()
             for info_page in info:
-                info_page.short_name = info_page.full_name
-            return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'description': description, 'tools': tools, 'info': info})
+                if(len(info_page.full_name)):
+                    info_page.short_name = info_page.full_name
+            render_content['info'] = info
+
+            return render(request, tool_name + '.html', render_content)
         else:
-            return render(request, tool_name + '.html', {'page_title': page_title, 'tool': tool, 'related_content': related_content, 'description': description, 'tools': tools})
+            return render(request, tool_name + '.html', render_content)
     except Tool.DoesNotExist:
         return redirect ('/')
 
-def infos(request):
-    return redirect ('/')
-
 def info(request, info_name):
     tools = Tool.objects.all()
-    info_name = info_name[0:len(info_name)-1]
+    print(info_name)
     try:
         info = Info.objects.get(short_name=info_name)
         title = info.full_name + ' ' + info.korean_name
-        page_title = generatePageTitle(title)
+        page_title = generate_page_title(title)
     except Info.DoesNotExist:
         return redirect ('/')
-    info_rows = ''
+    info_rows = None
     if info.num_colums == 2:
         if info.numeric_first_col == True:
             if info.alphanumeric_order == True:
-                info_rows = castAsInt(Row_2.objects.filter(info=info).order_by('col_1'), 'col_1', 'col_1_numeric')
+                info_rows = cast_as_int(Row_2.objects.filter(info=info).order_by('col_1'), 'col_1', 'col_1_numeric')
             else:
-                info_rows = castAsInt(Row_2.objects.filter(info=info), 'col_1', 'col_1_numeric')
+                info_rows = cast_as_int(Row_2.objects.filter(info=info), 'col_1', 'col_1_numeric')
         else:
             if info.alphanumeric_order == True:
                 info_rows = Row_2.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_2.objects.filter(info=info).order_by('date_inserted')
         description = info.full_name + ' - ' + info.korean_name + ': ' + info.description
-        related_content = generateRelatedContent(Info, 2, info.id)
-        return render(request, 'info_table_row_2.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'description': description, 'tools': tools})
+        related_content = generate_related_content(Info, 2, info.id)
+        render_content = {
+            'info': info,
+            'rows': info_rows,
+            'related_content': related_content,
+            'page_title': page_title,
+            'description': description,
+            'tools': tools
+        }
+
+        return render(request, 'info_table_row_2.html', render_content)
     elif info.num_colums == 3:
         if info.numeric_first_col == True:
             if info.alphanumeric_order == True:
-                info_rows = castAsInt(Row_3.objects.filter(info=info).order_by('col_1'), 'col_1', 'col_1_numeric')
+                info_rows = cast_as_int(Row_3.objects.filter(info=info).order_by('col_1'), 'col_1', 'col_1_numeric')
             else:
-                info_rows = castAsInt(Row_3.objects.filter(info=info), 'col_1', 'col_1_numeric')
+                info_rows = cast_as_int(Row_3.objects.filter(info=info), 'col_1', 'col_1_numeric')
         else:
             if info.alphanumeric_order == True:
                 info_rows = Row_3.objects.filter(info=info).order_by('col_1')
             else:
                 info_rows = Row_3.objects.filter(info=info).order_by('date_inserted')
         description = info.full_name + ' - ' + info.korean_name + ': ' + info.description 
-        related_content = generateRelatedContent(Info, 2, info.id)
-        return render(request, 'info_table_row_3.html', {'info': info, 'rows': info_rows, 'related_content': related_content, 'page_title': page_title, 'description': description, 'tools': tools})
+        related_content = generate_related_content(Info, 2, info.id)
+        render_content = {
+            'info': info,
+            'rows': info_rows,
+            'related_content': related_content,
+            'page_title': page_title,
+            'description': description,
+            'tools': tools
+        }
+
+        return render(request, 'info_table_row_3.html', render_content)
     else:
         return redirect ('/')
 
@@ -113,32 +134,40 @@ def search(request):
                 return redirect ('/')
             tools = Tool.objects.all()
             infos = Info.objects.all()
-            filtered_tools = findMatchingInfo(tools, search_text)
-            filtered_info = findMatchingInfo(infos, search_text)
-            filtered_tools = addAdToArray(filtered_tools, 4)
-            filtered_info = addAdToArray(filtered_info, 4)
-            page_title = generatePageTitle('Search')
+            filtered_tools = find_matching_info(tools, search_text)
+            filtered_info = find_matching_info(infos, search_text)
+
+            page_title = generate_page_title('Search')
             search_results = filtered_tools + filtered_info
             for result in search_results:
-                result.type = getModelName(result)
+                result.type = get_model_name(result)
             result_count = len(search_results)
             if result_count > 1:
-                search_results.sort(key=lambda obj: obj.searchScore)
+                search_results.sort(key=lambda obj: obj.search_score)
                 search_results = reversed(search_results)
                 status = 'Found ' + str(result_count) + ' results'
             elif result_count > 0:
                 status = 'Found ' + str(result_count) + ' result'
             else:
                 status = 'No information matched the search criteria'
-            return render(request, 'search.html', {'page_title': page_title, 'status': status, 'search_results': search_results, 'tools': tools})
+
+            render_content = {
+                'page_title': page_title,
+                'status': status,
+                'search_results': search_results,
+                'tools': tools
+            }
+
+            return render(request, 'search.html', render_content)
     else:
         return redirect ('/')
 
-def apiRandomWord(request):
+def api_random_word(request):
     user_url = request.META['HTTP_HOST']
-    if checkValidDomain(user_url):  
+    if check_valid_domain(user_url):  
         content = request.GET.get('content', None)
         num_of_words = request.GET.get('number', None)
+
         if content == None:
             content = 'random'
         if num_of_words == None:
@@ -146,9 +175,9 @@ def apiRandomWord(request):
         else:
             num_of_words = int(num_of_words)
         if num_of_words > 0 and num_of_words <= 10:
-            json_response = getRandomWords(content, num_of_words)
+            json_response = get_random_words(content, num_of_words)
             return JsonResponse(json_response)
         else:
             return JsonResponse({'error': 'Only request between 1 to 10 words'})
     else:
-        return JsonResponse({'error': 'Invalid domain only works on same origin'})
+        return JsonResponse({'error': 'Invalid domain, api only works on same origin url'})

@@ -1,3 +1,7 @@
+// Only for testing
+const useLocal = false
+let apiRoot = 'http://thekoreanhandbook.com'
+
 const menuButton = document.querySelector('.button--overlay')
 menuButton.addEventListener('click', overlay)
 
@@ -7,7 +11,11 @@ function overlay () {
   document.querySelector('body').classList.toggle('noscroll')
 }
 
-var app = new Vue({
+if (useLocal) {
+  apiRoot = 'http://127.0.0.1:8000'
+}
+
+const app = new Vue({
   delimiters: ['[[', ']]'],
   el: '#app',
   data: {
@@ -21,6 +29,7 @@ var app = new Vue({
     linkVisible: false,
     buttonDisabled: false,
     categoryLink: 'test',
+    apiQuantity: 5,
     words: []
   },
   methods: {
@@ -33,35 +42,37 @@ var app = new Vue({
         const app = this
         // Convert word to slug usable by api and equal to model name
         const contentName = this.fullNameToSlug(this.content)
-        // const apiUrl = 'http://127.0.0.1:8000/api/random-words?content=' + contentName + '&number=' + 3
-        const apiUrl = 'http://thekoreanhandbook.com/api/random-words?content=' + contentName + '&number=' + 3
+        if (contentName === 'random') {
+          this.apiQuantity = 1
+        } else {
+          this.apiQuantity = 5
+        }
+        const apiUrl = apiRoot + '/api/random-words?content=' + contentName + '&number=' + this.apiQuantity
         fetch(apiUrl)
           .then(function (response) {
             return response.json()
           }).then(function (json) {
             // Show error if invalid user url
             if (json.error) {
-              app.word_english = json.error
-              app.word_korean = ''
-              app.showWord()
-              return false
-            }
-            app.words = json.words.slice()
-            const word = json.words[json.words.length - 1]
-            app.word_english = word.english
-            app.word_korean = word.korean
-            app.showWord()
-            if (app.words.length === 1) {
-              app.words = []
+              app.retrieveWord()
             } else {
-              app.words.splice(-1, 1)
+              app.words = json.words.slice()
+              const word = json.words[json.words.length - 1]
+              app.word_english = word.english
+              app.word_korean = word.korean
+              app.showWord()
+              if (app.words.length === 1) {
+                app.words = []
+              } else {
+                app.words.splice(-1, 1)
+              }
+              // Only show category page link if not random category
+              if (contentName !== 'random') {
+                app.linkVisible = true
+                app.categoryLink = contentName
+              }
+              return true
             }
-            // Only show category page link if not random category
-            if (contentName !== 'random') {
-              app.linkVisible = true
-              app.categoryLink = contentName
-            }
-            return true
           }).catch(function (error) {
             console.log(error)
           })

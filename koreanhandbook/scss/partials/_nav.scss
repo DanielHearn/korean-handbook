@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: $content-padding/2;
+  padding: $content-padding;
   flex: 1;
   z-index: 2;
   box-sizing: border-box;
@@ -51,68 +51,3 @@
   width: 100%;
   @include smooth-transition;
 }
-
-/*
-.nav--white {
-  background: $white;
-  .nav__link {
-      color: $accent;
-    &:visited {
-      color: $accent;
-    }
-    &:before {
-      background: $accent;
-    }
-  }
-  .nav__link--focused {
-    background: $accent;
-    &:visited {
-      color: $white;
-    }
-  }
-  .button--overlay {
-    span, span:before, span:after {
-      background: $accent;
-    }
-  }
-  .button--logo .shape {
-    fill: $accent !important;
-  }
-}
-
-.nav--purple {
-  background: $accent;
-  .nav__link {
-      color: $white;
-    &:visited {
-      color: $white;
-    }
-    &:before {
-      background: $white;
-    }
-  }
-  .nav__link--focused {
-    background: $white;
-    color: $accent;
-    &:visited {
-      color: $accent;
-    }
-  }
-  .button--overlay {
-    span, span:before, span:after {
-      background: $white;
-      &.active {
-        background: transparent;
-      }
-    }
-  }
-  .active.button--overlay {
-    span:before, span:after {
-      background: $white;
-    }
-  }
-  .button--logo .shape {
-    fill: $white !important;
-  }
-}
-*/

@@ -19,7 +19,6 @@
           </a>
         </div>
       {% endfor %}
-      {% include "ad_incontent.html" %}
       {% for info_page in info %}
         <div class="grid__item">
           <a class="grid__link" href="/info/{{ info_page.short_name }}/">
@@ -30,12 +29,6 @@
             <img class="item__bg" src="{{ info_page.picture.url }}"></img>
           </a>
         </div>
-        {% if info_page.ad %}
-          {% include "ad_incontent.html" %}
-        {% endif %}
-      {% endfor %}
-      {% for ad in additionalAds %}
-        {% include "ad_incontent.html" %}
       {% endfor %}
     </section>
     <script src="{% static 'js/koreanHandbook.js' %}"></script>
