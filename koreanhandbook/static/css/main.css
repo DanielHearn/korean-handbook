@@ -197,6 +197,10 @@ template {
     display: flex;
     flex-direction: column; }
     .nav .nav__content .nav__list {
+      position: -webkit-sticky;
+      position: -moz-sticky;
+      position: -ms-sticky;
+      position: -o-sticky;
       position: sticky;
       display: flex;
       flex-direction: column;
