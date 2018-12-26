@@ -68,7 +68,6 @@ def tool(request, tool_name):
 
 def info(request, info_name):
     tools = Tool.objects.all()
-    print(info_name)
     try:
         info = Info.objects.get(short_name=info_name)
         title = info.full_name + ' ' + info.korean_name

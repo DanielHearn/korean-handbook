@@ -15,7 +15,7 @@
               <h2 class="info__full-name" >{{ tool.full_name }}</h2>
               <h2 class="info__korean-name" >{{ tool.korean_name }}</h2>
             </div>
-            <img class="item__bg" src="{{ tool.picture.url }}"></img>
+            <img class="item__bg lazy-bg-image" data-src="{{ tool.picture.url }}"></img>
           </a>
         </div>
       {% endfor %}
@@ -26,7 +26,7 @@
               <h2 class="info__full-name" >{{ info_page.full_name }}</h2>
               <h2 class="info__korean-name" >{{ info_page.korean_name }}</h2>
             </div>
-            <img class="item__bg" src="{{ info_page.picture.url }}"></img>
+            <img class="item__bg lazy-bg-image" data-src="{{ info_page.picture.url }}"></img>
           </a>
         </div>
       {% endfor %}

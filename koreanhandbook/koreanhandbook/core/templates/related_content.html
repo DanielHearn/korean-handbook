@@ -8,7 +8,7 @@
                 <h2 class="info__full-name" >{{ content.full_name }}</h2>
                 <h2 class="info__korean-name" >{{ content.korean_name }}</h2>
               </div>
-              <div class="item__bg" style="background: url({{ content.picture.url }});"></div>
+              <div class="item__bg lazy-bg-image" data-src="{{ content.picture.url }}"></div>
             </a>
         </div>
         {% endfor %}

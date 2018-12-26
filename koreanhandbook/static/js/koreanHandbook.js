@@ -124,7 +124,7 @@ try {
 
 // Lazy load
 document.addEventListener('DOMContentLoaded', function () {
-  let lazyImages = [].slice.call(document.querySelectorAll('img.lazy'))
+  let lazyImages = [].slice.call(document.querySelectorAll('.lazy-bg-image'))
 
   // Check if intersection observer available else switch to less performant fallback
   if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           const lazyImage = entry.target
-          lazyImage.src = lazyImage.dataset.src
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.src})`
           lazyImage.classList.remove('lazy')
           lazyImageObserver.unobserve(lazyImage)
         }
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
           lazyImages.forEach(function (lazyImage) {
             if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== 'none') {
-              lazyImage.src = lazyImage.dataset.src
+              lazyImage.style.backgroundImage = `url(${lazyImage.dataset.src})`
               lazyImage.classList.remove('lazy')
 
               lazyImages = lazyImages.filter(function (image) {
