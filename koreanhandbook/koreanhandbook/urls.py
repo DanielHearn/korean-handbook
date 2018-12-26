@@ -32,11 +32,10 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path('admin/', admin.site.urls, name='admin'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+    url(r'admin/?', admin.site.urls, name='admin'),
     url(r'^$', core_views.home, name='home'),
-    url('search/', core_views.search, name='search'),
-    url('about/', core_views.about, name='about'),
+    url(r'search/?', core_views.search, name='search'),
     url(r'tool/(?P<tool_name>[-\w]+)/?', core_views.tool, name='tool'),
     url(r'info/(?P<info_name>[-\w]+)/?', core_views.info, name='info'),
     url('homestatus', homestatus_views.status , name='status'),

@@ -33,10 +33,13 @@
       <div class="overlay">
           <ul>
             <li>
-              <a href="/" class="overlay__link content__subheading">INFO</a>
+              <a href="/" class="overlay__link content__subheading">Info</a>
             </li>
             <li>
               <a class="overlay__link content__subheading" href="/tool/random-korean-words/">Random Words</a>
+            </li>
+            <li>
+              <a class="overlay__link content__subheading" href="/tool/quiz/">Word Quiz</a>
             </li>
             <li>
               <a class="overlay__link content__subheading" href="/tool/korean-clock/">Korean Clock</a>
@@ -62,7 +65,7 @@
                 <a class="content__title" href="/">The Korean Handbook</a>
               </li>
               <li>
-                <form class="form--search" action="/search/" method="get">
+                <form class="form--search" action="/search" method="get">
                   {% csrf_token %}
                   <input type="hidden" name="next" value="{{ request.path }}">
                   <input class="input__search" type="text" placeholder="Search site" value=""  name="search_text">
