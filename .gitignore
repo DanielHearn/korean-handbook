@@ -1,6 +1,7 @@
 dist
 node_modules
 *.pyc
+*.scssc
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

@@ -451,6 +451,9 @@ p {
 .visible {
   display: block !important; }
 
+.lazy-bg-image {
+  background: #999; }
+
 .footer {
   background: #292b2d;
   color: #fefefe;
