@@ -137,7 +137,9 @@ document.addEventListener('DOMContentLoaded', function () {
           lazyImage.style['transition-duration'] = '20s'
           lazyImage.style['transition-timing-function'] = 'ease-in-out'
           lazyImage.style.backgroundImage = `url(${lazyImage.dataset.src})`
-          lazyImage.style.opacity = '1'
+          setTimeout(function () {
+            lazyImage.style.opacity = '1'
+          }, 10)
 
           lazyImage.classList.remove('lazy')
           lazyImageObserver.unobserve(lazyImage)
