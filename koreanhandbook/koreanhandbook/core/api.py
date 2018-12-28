@@ -7,19 +7,35 @@ from datetime import datetime
 import random
 
 # Local app imports
-from .models import *
+from .models import Info, Row_2, Row_3
 
 def gen_word_indices(db_length, num_of_words):
     return  random.sample(range(0, db_length), num_of_words)
 
+def get_content_names():
+    info_list = Info.objects.all().filter(use_in_api=True)
+    content_names = []
+    if len(info_list):
+        for info in info_list:
+            content = {}
+            content['short_name'] = info.short_name
+            content['full_name'] = info.full_name
+            content_names.append(content)
+    return content_names
+
 def get_random_words(content, num_of_words):
     json_response = {}
     words = []
-    if(content in ['random', None]):
-        # Get random info object
-        info = Info.objects.order_by('?')[:1][0]
-    else:
-        info = Info.objects.get(short_name=content)
+    try:
+        if(content in ['random', None]):
+            # Get random info object
+            info = Info.objects.order_by('?').filter(use_in_api=True)[:1][0]
+        else:
+            info = Info.objects.get(short_name=content)
+            if info.use_in_api == False:
+                return {'error': 'Invalid content name or no available data in category'}
+    except Info.DoesNotExist:
+        return {'error': 'Invalid content'}
 
     # Get data from aws database
     try:

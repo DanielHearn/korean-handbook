@@ -165,7 +165,7 @@ def api_random_word(request):
     user_url = request.META['HTTP_HOST']
     if check_valid_domain(user_url):  
         content = request.GET.get('content', None)
-        num_of_words = request.GET.get('number', None)
+        num_of_words = request.GET.get('quantity', None)
 
         if content == None:
             content = 'random'
@@ -178,5 +178,15 @@ def api_random_word(request):
             return JsonResponse(json_response)
         else:
             return JsonResponse({'error': 'Only request between 1 to 10 words'})
+    else:
+        return JsonResponse({'error': 'Invalid domain, api only works on same origin url'})
+
+def api_get_content_names(request):
+    user_url = request.META['HTTP_HOST']
+    if check_valid_domain(user_url):  
+        info_name_list = get_content_names()
+        json_response = {}
+        json_response['content_names'] = info_name_list
+        return JsonResponse(json_response)
     else:
         return JsonResponse({'error': 'Invalid domain, api only works on same origin url'})

@@ -2,6 +2,7 @@ dist
 node_modules
 *.pyc
 *.scssc
+*.log
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -51,3 +52,4 @@ Temporary Items
 .apdisk
 
 koreanhandbook/static/media/images/
+.vscode/settings.json

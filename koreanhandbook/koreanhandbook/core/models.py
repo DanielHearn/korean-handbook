@@ -38,6 +38,7 @@ class Info(models.Model):
     alphanumeric_order = models.BooleanField(default=False)
     numeric_first_col = models.BooleanField(default=False)
     description = models.TextField(default='The Korean names for the _ with their English translations.')
+    use_in_api = models.BooleanField(default=True)
     picture = ProcessedImageField(upload_to='./images',
                                            processors=[ResizeToFill(800, 500)],
                                            format='JPEG',

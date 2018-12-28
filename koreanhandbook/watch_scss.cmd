@@ -1,1 +1,1 @@
-sass --watch scss:static/css
+sass --watch src/scss:static/css
