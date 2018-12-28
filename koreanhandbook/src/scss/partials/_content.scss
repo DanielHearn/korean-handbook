@@ -141,3 +141,17 @@ p {
 .lazy-bg-image {
   background: $grey;
 }
+
+.lazy-loaded {
+  animation: lazyLoadAnim 0.5s ease-in;
+  opacity: 1;
+}
+
+@keyframes lazyLoadAnim {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1;
+  }
+}

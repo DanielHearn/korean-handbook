@@ -458,6 +458,15 @@ p {
 .lazy-bg-image {
   background: #999; }
 
+.lazy-loaded {
+  animation: lazyLoadAnim 0.5s ease-in;
+  opacity: 1; }
+
+@keyframes lazyLoadAnim {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 .footer {
   background: #292b2d;
   color: #fefefe;

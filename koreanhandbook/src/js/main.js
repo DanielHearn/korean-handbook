@@ -132,16 +132,10 @@ document.addEventListener('DOMContentLoaded', function () {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           const lazyImage = entry.target
-          lazyImage.style.opacity = '0'
-          lazyImage.style['transition-property'] = 'opacity'
-          lazyImage.style['transition-duration'] = '20s'
-          lazyImage.style['transition-timing-function'] = 'ease-in-out'
+          lazyImage.classList.add('lazy-loaded')
           lazyImage.style.backgroundImage = `url(${lazyImage.dataset.src})`
-          setTimeout(function () {
-            lazyImage.style.opacity = '1'
-          }, 10)
 
-          lazyImage.classList.remove('lazy')
+          lazyImage.classList.remove('lazy-bg-image')
           lazyImageObserver.unobserve(lazyImage)
         }
       })
@@ -162,7 +156,8 @@ document.addEventListener('DOMContentLoaded', function () {
           lazyImages.forEach(function (lazyImage) {
             if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== 'none') {
               lazyImage.style.backgroundImage = `url(${lazyImage.dataset.src})`
-              lazyImage.classList.remove('lazy')
+              lazyImage.classList.add('lazy-loaded')
+              lazyImage.classList.remove('lazy-bg-image')
 
               lazyImages = lazyImages.filter(function (image) {
                 return image !== lazyImage
