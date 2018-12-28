@@ -132,7 +132,13 @@ document.addEventListener('DOMContentLoaded', function () {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           const lazyImage = entry.target
+          lazyImage.style.opacity = '0'
+          lazyImage.style['transition-property'] = 'opacity'
+          lazyImage.style['transition-duration'] = '20s'
+          lazyImage.style['transition-timing-function'] = 'ease-in-out'
           lazyImage.style.backgroundImage = `url(${lazyImage.dataset.src})`
+          lazyImage.style.opacity = '1'
+
           lazyImage.classList.remove('lazy')
           lazyImageObserver.unobserve(lazyImage)
         }
@@ -174,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
+    fallbackLazyLoad()
     document.addEventListener('scroll', fallbackLazyLoad)
     window.addEventListener('resize', fallbackLazyLoad)
     window.addEventListener('orientationchange', fallbackLazyLoad)
