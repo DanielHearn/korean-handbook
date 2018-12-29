@@ -1,4 +1,4 @@
-/** Noramlize cross browser CSS
+/** Normalize cross browser CSS
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   line-height: 1.15;
@@ -247,9 +247,11 @@ template {
 
 .button--overlay.active:hover span, .button--overlay.active span {
   background: transparent; }
+
 .button--overlay.active span:before {
   transform: rotate(45deg) translate(7px, 7px);
   opacity: 1; }
+
 .button--overlay.active span:after {
   transform: rotate(-45deg) translate(7px, -7px); }
 
@@ -353,8 +355,7 @@ p {
   border: none;
   margin: 0;
   padding: 0.2em 0.5em;
-  max-width: 10em;
-  transition: all 0.2s ease-in-out; }
+  max-width: 10em; }
 
 .content__heading {
   font-size: 1.75em;
@@ -460,6 +461,7 @@ p {
 
 .lazy-loaded {
   animation: lazyLoadAnim 0.5s ease-in;
+  transform: translate3d(0, 0, 0);
   opacity: 1; }
 
 @keyframes lazyLoadAnim {
@@ -467,6 +469,7 @@ p {
     opacity: 0; }
   to {
     opacity: 1; } }
+
 .footer {
   background: #292b2d;
   color: #fefefe;
@@ -650,16 +653,19 @@ p {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
 @media screen and (max-width: 750px) {
   #clock #info #time {
     font-size: 2.5em; }
   #clock #info #date {
     font-size: 1.5em; } }
+
 @media screen and (max-width: 450px) {
   #clock #info #time {
     font-size: 3em; }
   #clock #info #date {
     font-size: 1.4em; } }
+
 #app {
   display: flex;
   flex: 1;
@@ -760,11 +766,13 @@ p {
   100% {
     transform: scale(1);
     opacity: 0; } }
+
 @media screen and (max-height: 30em) {
   #generatedWord {
     padding: 0;
     flex-direction: row;
     justify-content: space-around; } }
+
 .answers {
   display: flex;
   flex-direction: column; }
@@ -791,7 +799,7 @@ p {
     top: 0;
     width: 100%;
     z-index: 5;
-    padding: 0.3333333333em 0.6666666667em;
+    padding: 0.33333em 0.66667em;
     -webkit-box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.07);
     -moz-box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.07);
     box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.07); }
@@ -822,14 +830,17 @@ p {
       margin-left: 0; }
     html body main .korean__container {
       flex-direction: column-reverse; } }
+
 @media screen and (min-width: 58em) {
   html body .overlay {
     display: none; }
   html body .nav .nav__content--mobile {
     display: none; } }
+
 @media screen and (min-width: 58.01em) and (max-width: 80em) {
   html body main .grid, html body main .grid--related-content {
     grid-template-columns: repeat(2, 1fr); } }
+
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -853,4 +864,3 @@ body {
 :-moz-placeholder {
   color: #999; }
 
-/*# sourceMappingURL=main.css.map */

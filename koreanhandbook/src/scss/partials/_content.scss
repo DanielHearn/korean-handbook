@@ -44,7 +44,6 @@ p {
   margin: 0;
   padding: 0.2em 0.5em;
   max-width: 10em;
-  @include smooth-transition;
 }
 
 .content__heading {
@@ -144,6 +143,7 @@ p {
 
 .lazy-loaded {
   animation: lazyLoadAnim 0.5s ease-in;
+  transform: translate3d(0, 0, 0);
   opacity: 1;
 }
 

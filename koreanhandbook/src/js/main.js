@@ -1,3 +1,5 @@
+import './../scss/main.scss'
+
 const menuButton = document.querySelector('.button--overlay')
 menuButton.addEventListener('click', overlay)
 
