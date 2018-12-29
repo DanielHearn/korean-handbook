@@ -1,14 +1,34 @@
 const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     main: './src/js/main.js',
     quiz: './src/js/quiz.js',
     random: './src/js/random.js'
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: false
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
+  plugins: [
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: './../css/[name].css',
+      chunkFilename: './../css/[[id].css'
+
+    })
+  ],
   module: {
     rules: [
       {
@@ -35,16 +55,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: './../css/[name].css',
-      chunkFilename: './../css/[[id].css'
-
-    })
-  ],
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'static/js')
