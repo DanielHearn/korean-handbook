@@ -2,17 +2,17 @@
 {% load static %}
 
 {% block content %}
-  <section class="header">
-    <div class="content__navigation">
-      <a class="link-text white" href="/">Back to Info</a>
-    </div>
-    <h2 class="content__heading">{{ tool.full_name }} - {{ tool.korean_name }}</h2>
-    <p>{{ tool.description }}</p>
+<section class="header">
+  <div class="content__navigation">
+    <a class="link-text white" href="/">Back to Info</a>
+  </div>
+  <h2 class="content__heading">{{ tool.full_name }} - {{ tool.korean_name }}</h2>
+  <p>{{ tool.description }}</p>
+</section>
+<section class="info__content">
+  <section id="app">
   </section>
-  <section class="info__content">
-    <section id="app">
-    </section>
-  </section>
-  {% include "related_content.html" %}
-  <script defer src="{% static 'js/quiz.js' %}"></script>
+</section>
+{% include "related_content.html" %}
+<script defer src="{% static 'js/quiz-1.0.js' %}"></script>
 {% endblock %}

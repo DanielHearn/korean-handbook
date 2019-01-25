@@ -1,105 +1,108 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Daniel Hearn">
-    <meta name="description" content="{{ description }}">
-    <title>{% block title %}{{ page_title  }}{% endblock %}</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
-    <link rel="manifest" href="{% static 'favicons/manifest.json' %}">
-    <link rel="mask-icon" href="{% static 'favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
-    <link async href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
-    <link async href="https://fonts.googleapis.com/css?family=Gothic+A1:400,500,600,700,800,900" rel="stylesheet">
-    <link async href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-    <link async href="{% static 'css/main.css' %}" rel="stylesheet">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108490580-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-108490580-1');
-    </script>
-  </head>
-  <body>
-    <section class="content">
-      <div class="overlay">
-          <ul>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Daniel Hearn">
+  <meta name="description" content="{{ description }}">
+  <title>{% block title %}{{ page_title }}{% endblock %}</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
+  <link rel="manifest" href="{% static 'favicons/manifest.json' %}">
+  <link rel="mask-icon" href="{% static 'favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+  <link async href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+  <link async href="https://fonts.googleapis.com/css?family=Gothic+A1:400,500,600,700,800,900" rel="stylesheet">
+  <link async href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link async href="{% static 'css/main.css' %}" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108490580-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-108490580-1');
+  </script>
+</head>
+
+<body>
+  <section class="content">
+    <div class="overlay">
+      <ul>
+        <li>
+          <a href="/" class="overlay__link content__subheading">Info</a>
+        </li>
+        <li>
+          <a class="overlay__link content__subheading" href="/tool/random-korean-words/">Random Words</a>
+        </li>
+        <li>
+          <a class="overlay__link content__subheading" href="/tool/quiz/">Word Quiz</a>
+        </li>
+        <li>
+          <a class="overlay__link content__subheading" href="/tool/korean-clock/">Korean Clock</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="nav">
+      <div class="nav__content--mobile">
+        {% include "logo.html" %}
+        <form class="form--search" action="/search/" method="get">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.path }}">
+          <input class="input__search" type="text" placeholder="Search site" value="" name="search_text">
+          <button class="button--purple" type="submit" name="sumbitSearch"> <i class="material-icons">search</i></button>
+        </form>
+        <a class="button--overlay"><span></span></a>
+      </div>
+      <div class="nav__content">
+        <div class="nav__list">
+          {% include "logo.html" %}
+          <ul class="content__list">
             <li>
-              <a href="/" class="overlay__link content__subheading">Info</a>
+              <a class="content__title" href="/">The Korean Handbook</a>
             </li>
             <li>
-              <a class="overlay__link content__subheading" href="/tool/random-korean-words/">Random Words</a>
+              <form class="form--search" action="/search" method="get">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.path }}">
+                <input class="input__search" type="text" placeholder="Search site" value="" name="search_text">
+                <button class="button--purple" type="submit" name="sumbitSearch"> <i class="material-icons">search</i></button>
+              </form>
             </li>
             <li>
-              <a class="overlay__link content__subheading" href="/tool/quiz/">Word Quiz</a>
+              {% if page_title == 'Info - The Korean Handbook' %}
+              <a class="content__subheading content__link is-active" href="/">INFO</a>
+              {% else %}
+              <a class="content__subheading content__link " href="/">INFO</a>
+              {% endif %}
             </li>
+            {% for nav_tool in tools %}
             <li>
-              <a class="overlay__link content__subheading" href="/tool/korean-clock/">Korean Clock</a>
+              {% if nav_tool.id == tool.id %}
+              <a class="content__subheading content__link is-active" href="/tool/{{ nav_tool.url }}/">{{
+                nav_tool.short_name }}</a>
+              {% else %}
+              <a class="content__subheading content__link" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
+              {% endif %}
             </li>
+            {% endfor %}
           </ul>
         </div>
-      <nav class="nav">
-        <div class="nav__content--mobile">
-            {% include "logo.html" %}
-            <form class="form--search" action="/search/" method="get">
-              {% csrf_token %}
-              <input type="hidden" name="next" value="{{ request.path }}">
-              <input class="input__search" type="text" placeholder="Search site" value=""  name="search_text">
-              <button class="button--purple" type="submit" name="sumbitSearch">  <i class="material-icons">search</i></button>
-            </form>
-            <a class="button--overlay"><span></span></a>
-          </div>
-        <div class="nav__content">
-          <div class="nav__list">
-            {% include "logo.html" %}
-            <ul class="content__list">
-              <li>
-                <a class="content__title" href="/">The Korean Handbook</a>
-              </li>
-              <li>
-                <form class="form--search" action="/search" method="get">
-                  {% csrf_token %}
-                  <input type="hidden" name="next" value="{{ request.path }}">
-                  <input class="input__search" type="text" placeholder="Search site" value=""  name="search_text">
-                  <button class="button--purple" type="submit" name="sumbitSearch">  <i class="material-icons">search</i></button>
-                </form>
-              </li>
-              <li>
-              {% if page_title == 'Info - The Korean Handbook' %}
-                <a class="content__subheading content__link is-active" href="/">INFO</a>
-              {% else %}
-                <a class="content__subheading content__link " href="/">INFO</a>
-              {% endif %}
-              </li>
-              {% for nav_tool in tools %}
-              <li>
-                {% if nav_tool.id == tool.id %}
-                  <a class="content__subheading content__link is-active" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
-                {% else %}
-                  <a class="content__subheading content__link" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
-                {% endif %}
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <main>
-        {% block content %}
-        {% endblock %}
-      </main>
-    </section>
-    <footer class="footer">
-      <p>Developed by <a class="link-text white" href="http://danielhearn.co.uk">Daniel Hearn</a></p>
-    </footer>
-    <script defer src="{% static 'js/main.js' %}"></script>
-  </body>
+      </div>
+    </nav>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+  </section>
+  <footer class="footer">
+    <p>Developed by <a class="link-text white" href="http://danielhearn.co.uk">Daniel Hearn</a></p>
+  </footer>
+  <script defer src="{% static 'js/main-1.0.js' %}"></script>
+</body>
+
 </html>

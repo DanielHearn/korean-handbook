@@ -4,6 +4,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
+// TODO: Move version to package.json
+const version = '1.0'
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -57,7 +60,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: '[name].js',
+    filename: `[name]-${version}.js`,
     path: path.resolve(__dirname, 'static/js')
   }
 }
