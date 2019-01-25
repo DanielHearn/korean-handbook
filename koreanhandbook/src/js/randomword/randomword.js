@@ -1,4 +1,9 @@
+import SquareButton from './../shared/squareButton/SquareButton.vue'
+
 export default {
+  components: {
+    SquareButton
+  },
   data: function () {
     return {
       apiRoot: 'http://thekoreanhandbook.com',
@@ -28,7 +33,6 @@ export default {
         // Convert word to slug usable by api and equal to model name
         const contentName = this.fullNameToSlug(this.content)
         const apiUrl = this.apiRoot + '/api/random-words?content=' + contentName + '&quantity=' + this.apiQuantity
-
         fetch(apiUrl)
           .then(function (response) {
             return response.json()
@@ -92,8 +96,13 @@ export default {
       .then(function (response) {
         return response.json()
       }).then(function (json) {
+        let contentIndex = -1
         self.contentNames = json.content_names.map(function (content) {
-          return content.full_name
+          contentIndex += 1
+          return {
+            full_name: content.full_name,
+            key: contentIndex
+          }
         })
 
         self.retrieveWord()

@@ -20,5 +20,33 @@
 }
 
 .question-wrap {
-    display: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    color: $white;
+    background: $grey;
+    p {
+        margin: 0.5em 0;
+    }
+}
+
+.correct {
+    background: $green;
+}
+
+.incorrect {
+    background: $red;
+}
+
+.button-correct {
+    border-right: 2em solid $green;
+}
+
+.button-incorrect {
+    border-right: 2em solid $red;
 }

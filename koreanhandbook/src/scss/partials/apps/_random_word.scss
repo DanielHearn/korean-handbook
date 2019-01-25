@@ -6,7 +6,6 @@
 }
 
 #genWord {
-  padding: 0.25em 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,92 +21,6 @@
 #genWord__english {
   @include random-text;
   word-break: break-word;
-}
-
-.korean__container {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  padding-bottom: 3em;
-  max-width: 50em;
-  width: 100%;
-  button {
-    margin: 0.2em 0.5em;
-    padding: 0.5em 1em;
-    transition: background 0.2s ease-in-out;
-    &[disabled] {
-      cursor: not-allowed;
-      background: $grey;
-    }
-  }
-  .word__container {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    margin: 1em;
-  }
-  .option__container {
-    margin: 1em;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: left;
-    a {
-      margin-top: 1em;
-      margin-bottom: 1em;
-    }
-    select {
-       margin: 0.5em 0;
-    }
-    p {
-      margin: 0.2em 0;
-      font-weight: 600;
-    }
-    .link-text {
-      display: none;
-    }
-    .option {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      margin: 0.25em 0;
-    }
-  }
-}
-
-.pulseLoader.hideLoader {
-  display: none;
-}
-
-$pulseSize: 4em;
-.pulseLoader {
-  display: block;
-  width: $pulseSize;
-  height: $pulseSize;
-  position: relative;
-  top: 35%;
-  .pulse {
-    width: $pulseSize;
-    height: $pulseSize;
-    border-radius: $pulseSize;
-    position: absolute;
-    background-color: $accent;
-    animation: pulseanim 1.2s ease-in-out infinite;
-    transform: scale(0);
-    outline: 1px solid transparent;
-    &:nth-child(2) {
-      animation-delay: 0.22s;
-    }
-  }
-}
-
-@keyframes pulseanim {
-  0% { transform: scale(0);}
-  100% { transform: scale(1); opacity: 0;}
 }
 
 @media screen and (max-height: 30em) {

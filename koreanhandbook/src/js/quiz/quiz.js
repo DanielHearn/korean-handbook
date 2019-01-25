@@ -1,4 +1,9 @@
-module.exports = {
+import SquareButton from './../shared/squareButton/SquareButton.vue'
+
+export default {
+  components: {
+    SquareButton
+  },
   data: function () {
     return {
       apiRoot: 'http://thekoreanhandbook.com',
@@ -15,7 +20,10 @@ module.exports = {
       apiQuantity: 5,
       words: [],
       status: '',
-      correctAnswer: ''
+      wordSelected: false,
+      selectedAnswer: '',
+      correctAnswer: '',
+      wordIndex: -1
     }
   },
   methods: {
@@ -49,8 +57,15 @@ module.exports = {
             self.dbLoaded = true
             return false
           } else {
-            self.words = json.words.slice()
-            const answerIndex = Math.floor(Math.random() * ((self.words.length - 1) - 0 + 1)) + 0
+            self.words = json.words.slice().map(function (word) {
+              self.wordIndex += 1
+              return {
+                english: word.english,
+                korean: word.korean,
+                key: self.wordIndex
+              }
+            })
+            const answerIndex = self.getAnswerIndex()
             const answer = self.words[answerIndex]
             self.answerEnglish = answer.english
             self.answerKorean = answer.korean
@@ -58,7 +73,7 @@ module.exports = {
             // Only show category page link if not random category
             if (contentName !== 'random') {
               self.linkVisible = true
-              self.categoryLink = `info/${contentName}`
+              self.categoryLink = `/info/${contentName}`
             }
             return true
           }
@@ -66,15 +81,20 @@ module.exports = {
           console.log(e)
         })
     },
+    getAnswerIndex () {
+      return Math.floor(Math.random() * ((this.words.length - 1) - 0 + 1)) + 0
+    },
     showWords () {
       this.wordVisible = true
       this.dbLoaded = true
       this.genButtonDisabled = false
+      this.wordSelected = false
     },
     fullNameToSlug (fullName) {
       return fullName.replace(/\s/g, '-').replace(/\/-/g, '').toLowerCase()
     },
     checkAnswer (english) {
+      this.selectedAnswer = english
       if (english === this.answerEnglish) {
         this.status = 'Correct'
       } else {
@@ -98,8 +118,13 @@ module.exports = {
       .then(function (response) {
         return response.json()
       }).then(function (json) {
+        let contentIndex = -1
         self.contentNames = json.content_names.map(function (content) {
-          return content.full_name
+          contentIndex += 1
+          return {
+            full_name: content.full_name,
+            key: contentIndex
+          }
         })
 
         self.retrieveWords()

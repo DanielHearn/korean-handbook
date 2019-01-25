@@ -1,20 +1,28 @@
 $button-padding: 0.4em 0.8em;
 
+.button {
+  @include button;
+}
+
 .button--purple {
-    @include button;
-    background: $accent;
-    color: $white;
-    padding: $button-padding;
-    &:hover {
-      background: $accent-dark;
-    }
+  @include button;
+  background: $accent;
+  color: $white;
+  padding: $button-padding;
+  &:hover:not(:disabled) {
+    background: $accent-dark;
+  }
 }
 .button--dark {
-    @include button;
-    background: $dark;
-    color: $white;
-    padding: $button-padding;
-    &:hover {
-      background: $darker;
-    }
+  @include button;
+  background: $dark;
+  color: $white;
+  padding: $button-padding;
+  &:hover:not(:disabled) {
+    background: $darker;
+  }
+}
+
+button:disabled {
+  cursor: not-allowed !important;
 }

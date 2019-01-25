@@ -1,0 +1,9 @@
+@media screen and (max-width: 58em) {
+  html body {
+    main {
+      .app-content {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
