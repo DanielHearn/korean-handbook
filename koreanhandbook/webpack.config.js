@@ -27,9 +27,7 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: './../css/[name].css',
-      chunkFilename: './../css/[[id].css'
-
+      filename: `./../css/[name]-${version}.css`
     })
   ],
   module: {
