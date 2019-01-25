@@ -83,8 +83,7 @@
             {% for nav_tool in tools %}
             <li>
               {% if nav_tool.id == tool.id %}
-              <a class="content__subheading content__link is-active" href="/tool/{{ nav_tool.url }}/">{{
-                nav_tool.short_name }}</a>
+              <a class="content__subheading content__link is-active" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
               {% else %}
               <a class="content__subheading content__link" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
               {% endif %}
