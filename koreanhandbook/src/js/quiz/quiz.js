@@ -93,9 +93,9 @@ export default {
     fullNameToSlug (fullName) {
       return fullName.replace(/\s/g, '-').replace(/\/-/g, '').toLowerCase()
     },
-    checkAnswer (english) {
-      this.selectedAnswer = english
-      if (english === this.answerEnglish) {
+    checkAnswer (selectedEnglish) {
+      this.selectedAnswer = selectedEnglish
+      if (selectedEnglish === this.answerEnglish) {
         this.status = 'Correct'
       } else {
         this.status = 'Incorrect'
