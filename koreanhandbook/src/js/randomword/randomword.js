@@ -32,6 +32,11 @@ export default {
         const self = this
         // Convert word to slug usable by api and equal to model name
         const contentName = this.fullNameToSlug(this.content)
+
+        if (this.content === 'Random') {
+          this.apiQuantity = 1
+        }
+
         const apiUrl = this.apiRoot + '/api/random-words?content=' + contentName + '&quantity=' + this.apiQuantity
         fetch(apiUrl)
           .then(function (response) {
