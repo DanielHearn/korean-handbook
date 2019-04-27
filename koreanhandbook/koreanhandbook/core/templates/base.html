@@ -54,7 +54,8 @@
           {% csrf_token %}
           <input type="hidden" name="next" value="{{ request.path }}">
           <input class="input__search" type="text" placeholder="Search site" value="" name="search_text">
-          <button class="button--purple" type="submit" name="sumbitSearch"> <i class="material-icons">search</i></button>
+          <button class="button--purple" type="submit" name="sumbitSearch"> <i
+              class="material-icons">search</i></button>
         </form>
         <a class="button--overlay"><span></span></a>
       </div>
@@ -70,7 +71,8 @@
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ request.path }}">
                 <input class="input__search" type="text" placeholder="Search site" value="" name="search_text">
-                <button class="button--purple" type="submit" name="sumbitSearch"> <i class="material-icons">search</i></button>
+                <button class="button--purple" type="submit" name="sumbitSearch"> <i
+                    class="material-icons">search</i></button>
               </form>
             </li>
             <li>
@@ -83,9 +85,11 @@
             {% for nav_tool in tools %}
             <li>
               {% if nav_tool.id == tool.id %}
-              <a class="content__subheading content__link is-active" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
+              <a class="content__subheading content__link is-active"
+                href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
               {% else %}
-              <a class="content__subheading content__link" href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
+              <a class="content__subheading content__link"
+                href="/tool/{{ nav_tool.url }}/">{{ nav_tool.short_name }}</a>
               {% endif %}
             </li>
             {% endfor %}
@@ -101,7 +105,7 @@
   <footer class="footer">
     <p>Developed by <a class="link-text white" href="http://danielhearn.co.uk">Daniel Hearn</a></p>
   </footer>
-  <script defer src="{% static 'js/main-1.0.js' %}"></script>
+  <script defer src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
