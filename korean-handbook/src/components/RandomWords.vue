@@ -2,7 +2,7 @@
 
 <script>
 export default {
-  name: "RandomWords",
+  name: "random-words",
   props: {}
 };
 </script>

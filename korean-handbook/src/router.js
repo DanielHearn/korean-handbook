@@ -29,14 +29,14 @@ export default new Router({
       path: '/info/:id',
       props: true,
       component: () =>
-        import(/* webpackChunkName: "info" */ './views/InfoCat.vue')
+        import(/* webpackChunkName: "info" */ './views/Info.vue')
     },
     {
       name: 'infoHome',
       path: '/info/',
       props: false,
       component: () =>
-        import(/* webpackChunkName: "info" */ './views/InfoHome.vue')
+        import(/* webpackChunkName: "info" */ './views/Info.vue')
     },
     {
       name: '404',
