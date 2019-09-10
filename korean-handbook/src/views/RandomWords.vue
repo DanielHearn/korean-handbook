@@ -19,15 +19,28 @@
     <main-panel>
       <h1>Random Words</h1>
       <h2>{{ category.name }}</h2>
-      <div>
+      <div v-if="flashcardMode">
         <div>
-          <p>{{ englishWord }}</p>
+          <p v-if="wordDirection === 'toEnglish'">{{ koreanWord }}</p>
+          <p v-else>{{ englishWord }}</p>
         </div>
+        <div v-if="showAnswer">
+          <p v-if="wordDirection === 'toEnglish'">{{ englishWord }}</p>
+          <p v-else>{{ koreanWord }}</p>
+        </div>
+      </div>
+      <div v-else>
         <div>
           <p>{{ koreanWord }}</p>
         </div>
+        <div>
+          <p>{{ englishWord }}</p>
+        </div>
       </div>
       <button @click="generateWord">Next Word</button>
+      <input id="flashcardModeToggle" type="checkbox" v-model="flashcardMode" />
+      <label for="flashcardModeToggle">Flashcard Mode</label>
+      <button v-if="flashcardMode" :disabled="showAnswer" @click="showAnswer = true">Show Answer</button>
     </main-panel>
   </div>
 </template>
@@ -56,7 +69,10 @@ export default {
       category: [],
       categoryFilter: "",
       englishWord: "",
-      koreanWord: ""
+      koreanWord: "",
+      flashcardMode: false,
+      wordDirection: "toEnglish",
+      showAnswer: false
     };
   },
   watch: {
@@ -102,6 +118,9 @@ export default {
       } else if (Categories.hasOwnProperty(this.id)) {
         const category = Categories[this.id];
         this.setWordFromCategory(category);
+      }
+      if (this.flashcardMode) {
+        this.showAnswer = false;
       }
     },
     setWordFromCategory(category) {
