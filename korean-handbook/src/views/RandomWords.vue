@@ -19,13 +19,37 @@
     <main-panel>
       <h1>Random Words</h1>
       <h2>{{ category.name }}</h2>
+      <div style="display: flex;">
+        <input id="flashcardModeToggle" type="checkbox" v-model="flashcardMode" />
+        <label for="flashcardModeToggle">Flashcard Mode</label>
+      </div>
+      <div style="display: flex;" v-if="flashcardMode">
+        <div style="display: flex;">
+          <input
+            id="languageDirectionToggle"
+            type="radio"
+            value="toEnglish"
+            v-model="languageDirection"
+          />
+          <label for="languageDirectionToggle">To English</label>
+        </div>
+        <div style="display: flex;">
+          <input
+            id="languageDirectionToggle"
+            type="radio"
+            value="toKorean"
+            v-model="languageDirection"
+          />
+          <label for="languageDirectionToggle">To Korean</label>
+        </div>
+      </div>
       <div v-if="flashcardMode">
         <div>
-          <p v-if="wordDirection === 'toEnglish'">{{ koreanWord }}</p>
+          <p v-if="languageDirection === 'toEnglish'">{{ koreanWord }}</p>
           <p v-else>{{ englishWord }}</p>
         </div>
         <div v-if="showAnswer">
-          <p v-if="wordDirection === 'toEnglish'">{{ englishWord }}</p>
+          <p v-if="languageDirection === 'toEnglish'">{{ englishWord }}</p>
           <p v-else>{{ koreanWord }}</p>
         </div>
       </div>
@@ -38,8 +62,6 @@
         </div>
       </div>
       <button @click="generateWord">Next Word</button>
-      <input id="flashcardModeToggle" type="checkbox" v-model="flashcardMode" />
-      <label for="flashcardModeToggle">Flashcard Mode</label>
       <button v-if="flashcardMode" :disabled="showAnswer" @click="showAnswer = true">Show Answer</button>
     </main-panel>
   </div>
@@ -71,7 +93,7 @@ export default {
       englishWord: "",
       koreanWord: "",
       flashcardMode: false,
-      wordDirection: "toEnglish",
+      languageDirection: "toEnglish",
       showAnswer: false
     };
   },
