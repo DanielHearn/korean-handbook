@@ -100,6 +100,9 @@ export default {
   watch: {
     id: function() {
       this.loadCategory();
+    },
+    flashcardMode: function() {
+      this.showAnswer = false;
     }
   },
   computed: {
