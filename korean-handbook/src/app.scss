@@ -55,12 +55,13 @@ body {
 .grid {
   display: flex;
   flex-direction: column;
+  padding-left: 0;
   .grid-header {
     font-weight: $medium-weight;
   }
   .grid-item {
     display: grid;
-    grid-gap: 5vw;
+    row-gap: 2em;
     grid-template-columns: repeat(auto-fit, minmax(min-content, 8em));
   }
 }

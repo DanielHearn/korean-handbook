@@ -9,20 +9,25 @@ export default new Router({
   base: __dirname,
   routes: [
     {
-      path: '/',
       name: 'home',
+      path: '/',
       props: false,
       component: Home
     },
     {
-      path: '/random-words',
-      name: 'about',
-      props: false,
+      name: 'randomWordCat',
+      path: '/random-words/:id',
+      props: true,
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "randomWords" */ './views/RandomWords.vue')
+    },
+    {
+      name: 'randomWordsHome',
+      path: '/random-words',
+      redirect: '/random-words/all'
     },
     {
       name: 'infoCat',

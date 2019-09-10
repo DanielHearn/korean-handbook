@@ -1,5 +1,122 @@
 <template>
-  <div class="main home">
-    <h1>Random Words</h1>
+  <div class="main random-words">
+    <side-panel>
+      <h2>Categories</h2>
+      <input v-model="categoryFilter" type="text" placeholder="Search category" />
+      <button @click="categoryFilter = ''">Clear Search</button>
+      <ul v-if="Object.keys(filteredCategories).length">
+        <li>
+          <router-link :to="`/random-words/all`">All</router-link>
+        </li>
+        <li v-for="category in filteredCategories" :key="category.id">
+          <router-link :to="`/random-words/${category.id}`">{{ category.name }}</router-link>
+        </li>
+      </ul>
+      <ul v-else>
+        <li>No results found for category search</li>
+      </ul>
+    </side-panel>
+    <main-panel>
+      <h1>Random Words</h1>
+      <h2>{{ category.name }}</h2>
+      <div>
+        <div>
+          <p>{{ englishWord }}</p>
+        </div>
+        <div>
+          <p>{{ koreanWord }}</p>
+        </div>
+      </div>
+      <button @click="generateWord">Next Word</button>
+    </main-panel>
   </div>
 </template>
+
+
+<script>
+import { Categories } from "./../static/categories.js";
+import MainPanel from "./../components/MainPanel.vue";
+import SidePanel from "./../components/SidePanel.vue";
+
+export default {
+  name: "random-words",
+  components: {
+    MainPanel,
+    SidePanel
+  },
+  props: {
+    id: {
+      type: String,
+      required: false,
+      default: ""
+    }
+  },
+  data: function() {
+    return {
+      category: [],
+      categoryFilter: "",
+      englishWord: "",
+      koreanWord: ""
+    };
+  },
+  watch: {
+    id: function() {
+      this.loadCategory();
+    }
+  },
+  computed: {
+    filteredCategories: function() {
+      const filteredCats = {};
+      Object.keys(Categories)
+        .filter(
+          cat =>
+            cat.toLowerCase().indexOf(this.categoryFilter.toLowerCase()) > -1
+        )
+        .reduce((obj, cat) => {
+          filteredCats[cat] = Categories[cat];
+        }, {});
+      return filteredCats;
+    }
+  },
+  methods: {
+    loadCategory: function() {
+      if (this.id === "all") {
+        this.category = {
+          name: "All",
+          id: "all",
+          words: []
+        };
+      } else if (Categories.hasOwnProperty(this.id)) {
+        this.category = Categories[this.id];
+      }
+
+      this.generateWord();
+    },
+    generateWord: function() {
+      if (this.id === "all") {
+        const categoriesKeys = Object.keys(Categories);
+        const categoryIndex =
+          Math.floor(Math.random() * (categoriesKeys.length - 1)) + 1;
+        const category = Categories[categoriesKeys[categoryIndex]];
+        this.setWordFromCategory(category);
+      } else if (Categories.hasOwnProperty(this.id)) {
+        const category = Categories[this.id];
+        this.setWordFromCategory(category);
+      }
+    },
+    setWordFromCategory(category) {
+      if (category.words && category.words.length) {
+        const wordIndex =
+          Math.floor(Math.random() * (category.words.length - 1)) + 1;
+        const word = category.words[wordIndex];
+        this.englishWord = word.e;
+        this.koreanWord = word.k;
+      }
+    }
+  },
+  mounted: function() {
+    this.loadCategory();
+    this.generateWord();
+  }
+};
+</script>

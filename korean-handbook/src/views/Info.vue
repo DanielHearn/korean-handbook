@@ -21,10 +21,12 @@
           <li class="grid-item grid-header">
             <p>English</p>
             <p>Korean</p>
+            <p v-if="category.note_header">{{ category.note_header }}</p>
           </li>
           <li class="grid-item" v-for="word in category.words" :key="word.e">
             <p>{{ word.e }}</p>
             <p>{{ word.k }}</p>
+            <p v-if="word.n">{{ word.n }}</p>
           </li>
         </ul>
       </div>
