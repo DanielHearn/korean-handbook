@@ -12,10 +12,20 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./../variables.scss";
+
 .side-panel {
   width: 15em;
   overflow-y: scroll;
   padding: 1em;
+  background: $dark;
+  color: $white;
+  a {
+    color: $white;
+    &:visited {
+      color: $white;
+    }
+  }
 }
 
 @media screen and (max-width: 40em) {

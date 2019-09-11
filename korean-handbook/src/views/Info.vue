@@ -4,12 +4,16 @@
       <h2>Categories</h2>
       <input v-model="categoryFilter" type="text" placeholder="Search category" />
       <button @click="categoryFilter = ''">Clear Search</button>
-      <ul v-if="Object.keys(filteredCategories).length">
-        <li v-for="category in filteredCategories" :key="category.id">
+      <ul class="text-list" v-if="Object.keys(filteredCategories).length">
+        <li
+          v-for="category in filteredCategories"
+          :key="category.id"
+          :class="{active: id === category.id}"
+        >
           <router-link :to="`/info/${category.id}`">{{ category.name }}</router-link>
         </li>
       </ul>
-      <ul v-else>
+      <ul class="text-list" v-else>
         <li>No results found for category search</li>
       </ul>
     </side-panel>

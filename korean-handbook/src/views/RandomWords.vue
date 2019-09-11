@@ -4,20 +4,24 @@
       <h2>Categories</h2>
       <input v-model="categoryFilter" type="text" placeholder="Search category" />
       <button @click="categoryFilter = ''">Clear Search</button>
-      <ul v-if="Object.keys(filteredCategories).length">
-        <li>
+      <ul class="text-list" v-if="Object.keys(filteredCategories).length">
+        <li :class="{active: id === 'all'}">
           <router-link :to="`/random-words/all`">All</router-link>
         </li>
-        <li v-for="category in filteredCategories" :key="category.id">
+        <li
+          v-for="category in filteredCategories"
+          :key="category.id"
+          :class="{active: id === category.id}"
+        >
           <router-link :to="`/random-words/${category.id}`">{{ category.name }}</router-link>
         </li>
       </ul>
-      <ul v-else>
+      <ul class="text-list" v-else>
         <li>No results found for category search</li>
       </ul>
     </side-panel>
     <main-panel>
-      <h1>Random Words</h1>
+      <h1>Random Word Generator</h1>
       <h2>{{ category.name }}</h2>
       <div style="display: flex;">
         <input id="flashcardModeToggle" type="checkbox" v-model="flashcardMode" />

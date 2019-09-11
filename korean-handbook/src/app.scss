@@ -6,6 +6,7 @@ body {
   width: 100vw;
   margin: 0;
   overflow: hidden;
+  color: $darker;
 }
 
 #app {
@@ -52,6 +53,25 @@ body {
   width: 100%;
 }
 
+.text-list {
+  list-style: none;
+  padding-left: 0;
+  li {
+    display: flex;
+    flex: 1 auto;
+    &.active a {
+      color: $accent;
+    }
+  }
+  a {
+    padding: 0.2em 0;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 .grid {
   display: flex;
   flex-direction: column;
@@ -63,6 +83,7 @@ body {
     display: grid;
     row-gap: 2em;
     grid-template-columns: repeat(auto-fit, minmax(min-content, 8em));
+    border-bottom: 2px $light-grey solid;
   }
 }
 
