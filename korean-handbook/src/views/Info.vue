@@ -21,6 +21,7 @@
       <h1>Info</h1>
       <div v-if="id">
         <h2>{{ category.name }}</h2>
+        <h3>{{ category.korean }}</h3>
         <ul class="grid">
           <li class="grid-item grid-header">
             <p>English</p>

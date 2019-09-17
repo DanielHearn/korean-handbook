@@ -23,6 +23,7 @@
     <main-panel>
       <h1>Random Word Generator</h1>
       <h2>{{ category.name }}</h2>
+      <h3 v-if="category.korean">{{ category.korean }}</h3>
       <div style="display: flex;">
         <input id="flashcardModeToggle" type="checkbox" v-model="flashcardMode" />
         <label for="flashcardModeToggle">Flashcard Mode</label>
@@ -76,6 +77,7 @@
 import { Categories } from "./../static/categories.js";
 import MainPanel from "./../components/MainPanel.vue";
 import SidePanel from "./../components/SidePanel.vue";
+import { getIndexFromArray } from "./../utilities.js";
 
 export default {
   name: "random-words",
@@ -140,8 +142,9 @@ export default {
     generateWord: function() {
       if (this.id === "all") {
         const categoriesKeys = Object.keys(Categories);
-        const categoryIndex =
-          Math.floor(Math.random() * (categoriesKeys.length - 1)) + 1;
+        const categoryIndex = getIndexFromArray(categoriesKeys);
+        console.log(categoriesKeys.length);
+        console.log(categoryIndex);
         const category = Categories[categoriesKeys[categoryIndex]];
         this.setWordFromCategory(category);
       } else if (Categories.hasOwnProperty(this.id)) {
@@ -154,8 +157,7 @@ export default {
     },
     setWordFromCategory(category) {
       if (category.words && category.words.length) {
-        const wordIndex =
-          Math.floor(Math.random() * (category.words.length - 1)) + 1;
+        const wordIndex = getIndexFromArray(category.words);
         const word = category.words[wordIndex];
         this.englishWord = word.e;
         this.koreanWord = word.k;
