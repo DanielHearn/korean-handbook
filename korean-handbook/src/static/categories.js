@@ -2,6 +2,7 @@ export const Categories = {
   conjunctions: {
     name: 'Conjunctions',
     id: 'conjunctions',
+    korean: '접속사',
     words: [
       { e: 'but', k: '그렇지만' },
       { e: 'however', k: '아무리' },
@@ -17,6 +18,7 @@ export const Categories = {
   verbs: {
     name: 'Essential Verbs',
     id: 'verbs',
+    korean: '동사',
     words: [
       { e: 'To answer', k: '대답하다' },
       { e: 'To arrive', k: '도착하다' },
@@ -52,6 +54,7 @@ export const Categories = {
   continents: {
     name: 'Continents',
     id: 'continents',
+    korean: '대륙',
     words: [
       { e: 'Europe', k: '유럽' },
       { e: 'Asia', k: '아시아' },
@@ -67,6 +70,7 @@ export const Categories = {
   months: {
     name: 'Months',
     id: 'months',
+    korean: '달',
     words: [
       { e: 'January', k: '일월' },
       { e: 'February', k: '이월' },
@@ -89,6 +93,7 @@ export const Categories = {
   time: {
     name: 'Time',
     id: 'time',
+    korean: '시간',
     words: [
       { e: 'This week', k: '이번 주에' },
       { e: 'This (Week/Month)', k: '이번' },
@@ -116,6 +121,7 @@ export const Categories = {
   seasons: {
     name: 'Seasons',
     id: 'seasons',
+    korean: '계절',
     words: [
       { e: 'Winter', k: '겨울' },
       { e: 'Fall/Autumn', k: '가을' },
@@ -127,6 +133,7 @@ export const Categories = {
   weather: {
     name: 'Weather',
     id: 'weather',
+    korean: '날씨',
     words: [
       { e: 'Blizzard', k: '눈바람' },
       { e: 'Climate', k: '기후' },
@@ -163,6 +170,7 @@ export const Categories = {
   buildings: {
     name: 'Buildings/Locations',
     id: 'buildings',
+    korean: '건물',
     words: [
       { e: 'Airport', k: '공항' },
       { e: 'Apartment', k: '아파트' },
@@ -219,6 +227,7 @@ export const Categories = {
   furniture: {
     name: 'Furniture',
     id: 'furniture',
+    korean: '가구',
     words: [
       { e: 'Bed', k: '침대' },
       { e: 'Bookshelf', k: '책장' },
@@ -237,6 +246,7 @@ export const Categories = {
   counter_words: {
     name: 'Counter Words',
     id: 'counter_words',
+    korean: '수분류사',
     note_header: 'Number System',
     words: [
       { e: 'Age, Years old', k: '살', n: 'Native' },
@@ -288,6 +298,7 @@ export const Categories = {
   transportation: {
     name: 'Transportation',
     id: 'transportation',
+    korean: '교통 수단',
     words: [
       { e: 'Airplane', k: '비행기' },
       { e: 'Bike/Bicycle', k: '자전거' },
@@ -313,5 +324,144 @@ export const Categories = {
       { e: 'Wheel', k: '바퀴' },
       { e: 'Windshield', k: '앞유리' }
     ]
+  },
+  sino_korean_numbers: {
+    name: 'Sino Korean Numbers',
+    id: 'sino_korean_numbers',
+    korean: '숫자',
+    words: [
+      { e: '0', k: '영, 령, 공' },
+      { e: '1', k: '일' },
+      { e: '2', k: '이' },
+      { e: '3', k: '삼' },
+      { e: '4', k: '사' },
+      { e: '5', k: '오' },
+      { e: '6', k: '육' },
+      { e: '7', k: '칠' },
+      { e: '8', k: '팔' },
+      { e: '9', k: '구' },
+      { e: '10', k: '십' },
+      { e: '11', k: '십일' },
+      { e: '12', k: '십이' },
+      { e: '13', k: '십삼' },
+      { e: '14', k: '십사' },
+      { e: '15', k: '십오' },
+      { e: '16', k: '십육' },
+      { e: '17', k: '십칠' },
+      { e: '18', k: '십팔' },
+      { e: '19', k: '십구' },
+      { e: '20', k: '이십' },
+      { e: '30', k: '삼십' },
+      { e: '40', k: '사십' },
+      { e: '50', k: '오십' },
+      { e: '60', k: '육십' },
+      { e: '70', k: '칠십' },
+      { e: '80', k: '팔십' },
+      { e: '90', k: '구십' },
+      { e: '100', k: '백' },
+      { e: '1000', k: '천' },
+      { e: '10000', k: '만' },
+      { e: '100000000', k: '억' }
+    ]
+  },
+  native_korean_numbers: {
+    name: 'Native Korean Numbers',
+    id: 'native_korean_numbers',
+    korean: '한국어 숫자',
+    words: [
+      { e: '1', k: '하나' },
+      { e: '2', k: '둘' },
+      { e: '3', k: '셋' },
+      { e: '4', k: '넷' },
+      { e: '5', k: '다섯' },
+      { e: '6', k: '여섯' },
+      { e: '7', k: '일곱' },
+      { e: '8', k: '여덟' },
+      { e: '9', k: '아홉' },
+      { e: '10', k: '열' },
+      { e: '11', k: '열하나' },
+      { e: '12', k: '열둘' },
+      { e: '13', k: '열셋' },
+      { e: '14', k: '열넷' },
+      { e: '15', k: '열다섯' },
+      { e: '16', k: '열여섯' },
+      { e: '17', k: '열일곱' },
+      { e: '18', k: '열여덟' },
+      { e: '19', k: '열아홉' },
+      { e: '20', k: '스물' },
+      { e: '30', k: '서른' },
+      { e: '40', k: '마흔' },
+      { e: '50', k: '쉰' },
+      { e: '60', k: '예순' },
+      { e: '70', k: '일흔' },
+      { e: '80', k: '여든' },
+      { e: '90', k: '아흔' }
+    ]
+  },
+  directions: {
+    name: 'Directions / Locations',
+    id: 'directions',
+    korean: '방향',
+    words: [{ e: 'Airplane', k: '비행기' }]
+  },
+  days_of_the_week: {
+    name: 'Days of the Week',
+    id: 'days_of_the_week',
+    korean: '날',
+    words: [{ e: 'Airplane', k: '비행기' }]
+  },
+  jobs: {
+    name: 'Jobs / Occupations',
+    id: 'jobs',
+    korean: '직업',
+    words: [{ e: 'Airplane', k: '비행기' }]
+  },
+  animals: {
+    name: 'Animals / Pets',
+    id: 'animals',
+    korean: '동물 / 애완동물',
+    words: [{ e: 'Airplane', k: '비행기' }]
+  },
+  countries: {
+    name: 'Countries',
+    id: 'countries',
+    korean: '나라',
+    words: [{ e: 'Airplane', k: '비행기' }]
+  },
+  colors: {
+    name: 'Colors',
+    id: 'colors',
+    korean: '색깔',
+    words: [{ e: 'Airplane', k: '비행기' }]
+  },
+  basic_hanja: {
+    name: 'Basic Hanja',
+    id: 'basic_hanja',
+    korean: '한자',
+    words: [{ e: 'Airplane', k: '비행기' }]
+  },
+  family: {
+    name: 'Family',
+    id: 'family',
+    korean: '가족',
+    words: [{ e: 'Airplane', k: '비행기' }]
+  },
+  consonants: {
+    name: 'Consonants',
+    id: 'consonants',
+    korean: '자음',
+    words: [{ e: 'Airplane', k: '비행기' }]
+  },
+  vowels: {
+    name: 'Vowels',
+    id: 'vowels',
+    korean: '모음',
+    words: [{ e: 'Airplane', k: '비행기' }]
+  },
+  parts_of_the_body: {
+    name: 'Parts of the Body',
+    id: 'parts_of_the_body',
+    korean: '몸 부위들',
+    words: [{ e: 'Airplane', k: '비행기' }]
   }
 }
