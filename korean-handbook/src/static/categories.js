@@ -402,13 +402,32 @@ export const Categories = {
     name: 'Directions / Locations',
     id: 'directions',
     korean: '방향',
-    words: [{ e: 'Airplane', k: '비행기' }]
+    words: [
+      { e: 'North', k: '북쪽' },
+      { e: 'West', k: '서쪽' },
+      { e: 'South', k: '남쪽' },
+      { e: 'East', k: '동쪽' },
+      { e: 'Left', k: '왼쪽' },
+      { e: 'Right', k: '오른쪽' },
+      { e: 'Front', k: '앞' },
+      { e: 'Back', k: '뒤' },
+      { e: 'Above', k: '위에' },
+      { e: 'Below', k: '아래에' }
+    ]
   },
   days_of_the_week: {
     name: 'Days of the Week',
     id: 'days_of_the_week',
     korean: '날',
-    words: [{ e: 'Airplane', k: '비행기' }]
+    words: [
+      { e: 'Monday', k: '월요일' },
+      { e: 'Tuesday', k: '화요일' },
+      { e: 'Wednesday', k: '수요일' },
+      { e: 'Thursday', k: '목요일' },
+      { e: 'Friday', k: '금요일' },
+      { e: 'Saturday', k: '토요일' },
+      { e: 'Sunday', k: '일요일' }
+    ]
   },
   jobs: {
     name: 'Jobs / Occupations',
