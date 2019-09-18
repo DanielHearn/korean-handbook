@@ -66,8 +66,14 @@ body {
   a {
     padding: 0.2em 0;
     text-decoration: none;
+    font-weight: $semi-bold-weight;
     &:hover {
       text-decoration: underline;
+    }
+  }
+  &.no-results {
+    p {
+      font-weight: $regular-weight;
     }
   }
 }

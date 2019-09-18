@@ -16,8 +16,10 @@
           <router-link :to="`/random-words/${category.id}`">{{ category.name }}</router-link>
         </li>
       </ul>
-      <ul class="text-list" v-else>
-        <li>No results found for category search</li>
+      <ul class="text-list no-results" v-else>
+        <li>
+          <p>No results found for category search</p>
+        </li>
       </ul>
     </side-panel>
     <main-panel>
@@ -143,8 +145,6 @@ export default {
       if (this.id === "all") {
         const categoriesKeys = Object.keys(Categories);
         const categoryIndex = getIndexFromArray(categoriesKeys);
-        console.log(categoriesKeys.length);
-        console.log(categoryIndex);
         const category = Categories[categoriesKeys[categoryIndex]];
         this.setWordFromCategory(category);
       } else if (Categories.hasOwnProperty(this.id)) {

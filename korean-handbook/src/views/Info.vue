@@ -13,8 +13,10 @@
           <router-link :to="`/info/${category.id}`">{{ category.name }}</router-link>
         </li>
       </ul>
-      <ul class="text-list" v-else>
-        <li>No results found for category search</li>
+      <ul class="text-list no-results" v-else>
+        <li>
+          <p>No results found for category search</p>
+        </li>
       </ul>
     </side-panel>
     <main-panel>
