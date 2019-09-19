@@ -26,50 +26,7 @@
       <h1>Random Word Generator</h1>
       <h2>{{ category.name }}</h2>
       <h3 v-if="category.korean">{{ category.korean }}</h3>
-      <div style="display: flex;">
-        <input id="flashcardModeToggle" type="checkbox" v-model="flashcardMode" />
-        <label for="flashcardModeToggle">Flashcard Mode</label>
-      </div>
-      <div style="display: flex;" v-if="flashcardMode">
-        <div style="display: flex;">
-          <input
-            id="languageDirectionToggle"
-            type="radio"
-            value="toEnglish"
-            v-model="languageDirection"
-          />
-          <label for="languageDirectionToggle">To English</label>
-        </div>
-        <div style="display: flex;">
-          <input
-            id="languageDirectionToggle"
-            type="radio"
-            value="toKorean"
-            v-model="languageDirection"
-          />
-          <label for="languageDirectionToggle">To Korean</label>
-        </div>
-      </div>
-      <div v-if="flashcardMode">
-        <div>
-          <p v-if="languageDirection === 'toEnglish'">{{ koreanWord }}</p>
-          <p v-else>{{ englishWord }}</p>
-        </div>
-        <div v-if="showAnswer">
-          <p v-if="languageDirection === 'toEnglish'">{{ englishWord }}</p>
-          <p v-else>{{ koreanWord }}</p>
-        </div>
-      </div>
-      <div v-else>
-        <div>
-          <p>{{ koreanWord }}</p>
-        </div>
-        <div>
-          <p>{{ englishWord }}</p>
-        </div>
-      </div>
-      <button @click="generateWord">Next Word</button>
-      <button v-if="flashcardMode" :disabled="showAnswer" @click="showAnswer = true">Show Answer</button>
+      <random-word-generator :category="category" :categories="$options.categories" />
     </main-panel>
   </div>
 </template>
@@ -79,14 +36,16 @@
 import { Categories } from "./../static/categories.js";
 import MainPanel from "./../components/MainPanel.vue";
 import SidePanel from "./../components/SidePanel.vue";
-import { getIndexFromArray } from "./../utilities.js";
+import RandomWordGenerator from "./../components/RandomWordGenerator.vue";
 
 export default {
   name: "random-words",
   components: {
     MainPanel,
-    SidePanel
+    SidePanel,
+    RandomWordGenerator
   },
+  categories: Categories,
   props: {
     id: {
       type: String,
@@ -96,21 +55,13 @@ export default {
   },
   data: function() {
     return {
-      category: [],
-      categoryFilter: "",
-      englishWord: "",
-      koreanWord: "",
-      flashcardMode: false,
-      languageDirection: "toEnglish",
-      showAnswer: false
+      category: {},
+      categoryFilter: ""
     };
   },
   watch: {
     id: function() {
       this.loadCategory();
-    },
-    flashcardMode: function() {
-      this.showAnswer = false;
     }
   },
   computed: {
@@ -138,35 +89,10 @@ export default {
       } else if (Categories.hasOwnProperty(this.id)) {
         this.category = Categories[this.id];
       }
-
-      this.generateWord();
-    },
-    generateWord: function() {
-      if (this.id === "all") {
-        const categoriesKeys = Object.keys(Categories);
-        const categoryIndex = getIndexFromArray(categoriesKeys);
-        const category = Categories[categoriesKeys[categoryIndex]];
-        this.setWordFromCategory(category);
-      } else if (Categories.hasOwnProperty(this.id)) {
-        const category = Categories[this.id];
-        this.setWordFromCategory(category);
-      }
-      if (this.flashcardMode) {
-        this.showAnswer = false;
-      }
-    },
-    setWordFromCategory(category) {
-      if (category.words && category.words.length) {
-        const wordIndex = getIndexFromArray(category.words);
-        const word = category.words[wordIndex];
-        this.englishWord = word.e;
-        this.koreanWord = word.k;
-      }
     }
   },
   mounted: function() {
     this.loadCategory();
-    this.generateWord();
   }
 };
 </script>
