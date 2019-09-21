@@ -582,17 +582,27 @@ export const Categories = {
       { e: 'Zebra', k: '얼룩말' }
     ]
   },
-  countries: {
-    name: 'Countries',
-    id: 'countries',
-    korean: '나라',
-    words: [{ e: 'Airplane', k: '비행기' }]
-  },
   colors: {
     name: 'Colors',
     id: 'colors',
     korean: '색깔',
-    words: [{ e: 'Airplane', k: '비행기' }]
+    words: [
+      { e: 'Colour', k: '색깔' },
+      { e: 'Red', k: '빨간색' },
+      { e: 'Gold', k: '금색' },
+      { e: 'Silver', k: '은색' },
+      { e: 'Brown', k: '갈색' },
+      { e: 'Navy', k: '남색' },
+      { e: 'White', k: '하얀색' },
+      { e: 'Grey', k: '회색' },
+      { e: 'Purple', k: '보라색' },
+      { e: 'Orange', k: '주황색' },
+      { e: 'Pink', k: '분홍색' },
+      { e: 'Black', k: '검은색' },
+      { e: 'Blue', k: '파란색' },
+      { e: 'Green', k: '초록색' },
+      { e: 'Yellow', k: '노란색' }
+    ]
   },
   basic_hanja: {
     name: 'Basic Hanja',
@@ -625,3 +635,11 @@ export const Categories = {
     words: [{ e: 'Airplane', k: '비행기' }]
   }
 }
+
+/*
+countries: {
+  name: 'Countries',
+  id: 'countries',
+  korean: '나라',
+  words: [{ e: 'Airplane', k: '비행기' }]
+}, */
