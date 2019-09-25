@@ -26,20 +26,20 @@
     </div>
     <div v-if="flashcardMode">
       <div>
-        <p v-if="languageDirection === 'toEnglish'">{{ koreanWord }}</p>
-        <p v-else>{{ englishWord }}</p>
+        <p v-if="languageDirection === 'toEnglish'">{{ word.k }}</p>
+        <p v-else>{{ work.e }}</p>
       </div>
       <div v-if="showAnswer">
-        <p v-if="languageDirection === 'toEnglish'">{{ englishWord }}</p>
-        <p v-else>{{ koreanWord }}</p>
+        <p v-if="languageDirection === 'toEnglish'">{{ word.e }}</p>
+        <p v-else>{{ word.k }}</p>
       </div>
     </div>
     <div v-else>
       <div>
-        <p>{{ koreanWord }}</p>
+        <p>{{ word.k }}</p>
       </div>
       <div>
-        <p>{{ englishWord }}</p>
+        <p>{{ word.e }}</p>
       </div>
     </div>
     <button @click="generateWord">Next Word</button>
@@ -74,8 +74,7 @@ export default {
   },
   data: function() {
     return {
-      englishWord: "",
-      koreanWord: "",
+      word: { e: "", k: "" },
       flashcardMode: false,
       languageDirection: "toEnglish",
       showAnswer: false
@@ -86,7 +85,6 @@ export default {
       this.showAnswer = false;
     },
     "category.id": function() {
-      console.log("change");
       this.generateWord();
     }
   },
@@ -106,11 +104,20 @@ export default {
       }
     },
     setWordFromCategory(category) {
+      const currentWordIndex = category.words.indexOf(this.word);
       if (category.words && category.words.length) {
-        const wordIndex = getIndexFromArray(category.words);
-        const word = category.words[wordIndex];
-        this.englishWord = word.e;
-        this.koreanWord = word.k;
+        if (currentWordIndex > 0) {
+          // currently shown word is part of new category so filter it out
+          let filteredWords = category.words.slice();
+          filteredWords.splice(currentWordIndex, 1);
+          const wordIndex = getIndexFromArray(category.words);
+          const word = category.words[wordIndex];
+          this.word = word;
+        } else {
+          const wordIndex = getIndexFromArray(category.words);
+          const word = category.words[wordIndex];
+          this.word = word;
+        }
       }
     }
   }
