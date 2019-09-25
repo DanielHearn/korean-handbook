@@ -604,12 +604,6 @@ export const Categories = {
       { e: 'Yellow', k: '노란색' }
     ]
   },
-  basic_hanja: {
-    name: 'Basic Hanja',
-    id: 'basic_hanja',
-    korean: '한자',
-    words: [{ e: 'Airplane', k: '비행기' }]
-  },
   family: {
     name: 'Family',
     id: 'family',

@@ -91,6 +91,9 @@ export default {
     loadCategory: function() {
       if (Categories.hasOwnProperty(this.id)) {
         this.category = Categories[this.id];
+      } else if (this.id.length) {
+        console.error("No category for current id");
+        this.$router.push({ path: "/info", params: { id: "all" } });
       }
     }
   },

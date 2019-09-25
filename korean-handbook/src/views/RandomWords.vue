@@ -88,6 +88,9 @@ export default {
         };
       } else if (Categories.hasOwnProperty(this.id)) {
         this.category = Categories[this.id];
+      } else if (this.id.length && this.id !== "all") {
+        console.error("No category for current id");
+        this.$router.push({ path: "/random-words/all", params: { id: "all" } });
       }
     }
   },
