@@ -608,7 +608,30 @@ export const Categories = {
     name: 'Family',
     id: 'family',
     korean: '가족',
-    words: [{ e: 'Airplane', k: '비행기' }]
+    words: [
+      { e: 'Mum', k: '엄마' },
+      { e: 'Mother', k: '어머니' },
+      { e: 'Dad', k: '아빠' },
+      { e: 'Father', k: '아버지' },
+      { e: 'Parents', k: '부모님' },
+      { e: 'Adult', k: '어른' },
+      { e: 'Baby', k: '아기' },
+      { e: 'Child', k: '아이, 어린이' },
+      { e: 'Family', k: '가족' },
+      { e: 'Cousin', k: '사촌' },
+      { e: 'Grandfather', k: '할아버지' },
+      { e: 'Grandparents', k: '조부모님' },
+      { e: 'Grandmother', k: '할머니' },
+      { e: 'Relatives', k: '친척' },
+      { e: 'Husband', k: '남편' },
+      { e: 'Wife', k: '부인' },
+      { e: 'Younger sister', k: '여동생' },
+      { e: 'Younger brother', k: '남동생' },
+      { e: 'Older brother (as male)', k: '형' },
+      { e: 'Older brother (as female)', k: '오빠' },
+      { e: 'Older sister (as male)', k: '누나' },
+      { e: 'Older sister (as female)', k: '언니' }
+    ]
   },
   consonants: {
     name: 'Consonants',
