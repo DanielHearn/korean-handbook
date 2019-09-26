@@ -637,7 +637,28 @@ export const Categories = {
     name: 'Consonants',
     id: 'consonants',
     korean: '자음',
-    words: [{ e: 'Airplane', k: '비행기' }]
+    note_header: 'Name',
+    words: [
+      { e: 'g / k', k: 'ㄱ', n: '기역' },
+      { e: 'kk', k: 'ㄲ', n: '쌍기역' },
+      { e: 'n', k: 'ㄴ', n: '니은' },
+      { e: 'd', k: 'ㄷ', n: '디귿' },
+      { e: 'tt', k: 'ㄸ', n: '쌍디귿' },
+      { e: 'r, l', k: 'ㄹ', n: '리을' },
+      { e: 'm', k: 'ㅁ', n: '미음' },
+      { e: 'b', k: 'ㅂ', n: '비읍' },
+      { e: 'pp', k: 'ㅃ', n: '쌍비읍' },
+      { e: 's', k: 'ㅅ', n: '시옷' },
+      { e: 'ss', k: 'ㅆ', n: '쌍시옷' },
+      { e: '-, ng', k: 'ㅇ', n: '이응' },
+      { e: 'j', k: 'ㅈ', n: '지읒' },
+      { e: 'jj', k: 'ㅉ', n: '쌍지읒' },
+      { e: 'ch', k: 'ㅊ', n: '치읓' },
+      { e: 'k', k: 'ㅋ', n: '키읔' },
+      { e: 't', k: 'ㅌ', n: '티읕' },
+      { e: 'p', k: 'ㅍ', n: '피읖' },
+      { e: 'h', k: 'ㅎ', n: '히읗' }
+    ]
   },
   vowels: {
     name: 'Vowels',
