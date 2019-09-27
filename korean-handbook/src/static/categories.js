@@ -664,7 +664,29 @@ export const Categories = {
     name: 'Vowels',
     id: 'vowels',
     korean: '모음',
-    words: [{ e: 'Airplane', k: '비행기' }]
+    words: [
+      { e: 'a', k: 'ㅏ' },
+      { e: 'ae', k: 'ㅐ' },
+      { e: 'ya', k: 'ㅑ' },
+      { e: 'yae', k: 'ㅒ' },
+      { e: 'eo', k: 'ㅓ' },
+      { e: 'e', k: 'ㅔ' },
+      { e: 'yeo', k: 'ㅕ' },
+      { e: 'ye', k: 'ㅖ' },
+      { e: 'o', k: 'ㅗ' },
+      { e: 'wa', k: 'ㅘ' },
+      { e: 'wae', k: 'ㅘ' },
+      { e: 'oe', k: 'ㅚ' },
+      { e: 'yo', k: 'ㅛ' },
+      { e: 'u', k: 'ㅜ' },
+      { e: 'wo', k: 'ㅝ' },
+      { e: 'we', k: 'ㅞ' },
+      { e: 'wi', k: 'ㅟ' },
+      { e: 'yu', k: 'ㅠ' },
+      { e: 'eu', k: 'ㅡ' },
+      { e: 'ui', k: 'ㅢ' },
+      { e: 'i', k: 'ㅣ' }
+    ]
   },
   parts_of_the_body: {
     name: 'Parts of the Body',
