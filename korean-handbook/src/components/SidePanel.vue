@@ -15,17 +15,10 @@ export default {
 @import "./../variables.scss";
 
 .side-panel {
-  width: 15em;
-  overflow-y: scroll;
+  width: 22em;
   padding: 1em;
   background: $dark;
   color: $white;
-  a {
-    color: $white;
-    &:visited {
-      color: $white;
-    }
-  }
 }
 
 @media screen and (max-width: 40em) {

@@ -92,7 +92,7 @@ body {
   a {
     padding: 0.2em 0;
     text-decoration: none;
-    font-weight: $semi-bold-weight;
+    font-weight: $regular-weight;
     &:hover {
       text-decoration: underline;
     }
@@ -108,6 +108,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-left: 0;
+  font-size: $s-size;s
   .grid-header {
     font-weight: $medium-weight;
   }
@@ -116,6 +117,105 @@ body {
     row-gap: 2em;
     grid-template-columns: repeat(auto-fit, minmax(min-content, 8em));
     border-bottom: 2px $light-grey solid;
+  }
+}
+
+input {
+  background: $grey;
+  border-radius: 4px;
+  color: $light-grey;
+  border: 0;
+  padding: 0.4em 0.6em;
+  font-family: rubik, sans-serif;
+  font-size: $s-size;
+  &[type="text"]::placeholder {
+    color: $light-grey;
+  }
+}
+
+button {
+  border: 0;
+  background: $dark-grey;
+  color: $white;
+  border-radius: 4px;
+  padding: 0.4em 0.6em;
+  font-family: rubik, sans-serif;
+  cursor: pointer;
+  transition: background $transition-slow;
+  &:hover {
+    background: $darker-grey;
+  }
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  input {
+    border-radius: 0;
+    width: 100%;
+  }
+  .button--search {
+    border-radius: 0 4px 4px 0;
+    padding: 0.4em 1em;
+  }
+  .button--close {
+    border-radius: 4px 0 0 4px;
+    padding: 0.4em 0.4em;
+  }
+}
+
+.page-header {
+  padding-top: 1em;
+  .heading {
+    margin: 0;
+  }
+  .sub-heading {
+    margin: 0;
+    color: $dark-grey;
+  }
+}
+
+.page-type-heading {
+  font-size: $m-size;
+  font-weight: $medium-weight;
+}
+
+.heading {
+  font-size: $l-size;
+  font-weight: $bold-weight;
+}
+
+.sub-heading {
+  font-size: $m-size;
+  font-weight: $bold-weight;
+}
+
+.search-list {
+  .text-list {
+    .list-item {
+      padding: 0.1em 0.3em;
+      border-radius: 4px;
+      transition: background $transition-fast;
+      a {
+        color: $white;
+        font-size: $s-size;
+        font-weight: $regular-weight;
+        width: 100%;
+        a:visited {
+          color: $white;
+        }
+      }
+      &.active {
+        text-decoration: underline;
+        background: $accent;
+      }
+      &:hover:not(.active) {
+        background: $grey;
+      }
+      p {
+        margin: 0;
+      }
+    }
   }
 }
 

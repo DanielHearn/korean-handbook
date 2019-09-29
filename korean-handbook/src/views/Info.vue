@@ -1,29 +1,41 @@
 <template>
   <div class="main info">
     <side-panel>
-      <h2>Categories</h2>
-      <input v-model="categoryFilter" type="text" placeholder="Search category" />
-      <button @click="categoryFilter = ''">Clear Search</button>
-      <ul class="text-list" v-if="Object.keys(filteredCategories).length">
-        <li
-          v-for="category in filteredCategories"
-          :key="category.id"
-          :class="{active: id === category.id}"
-        >
-          <router-link :to="`/info/${category.id}`">{{ category.name }}</router-link>
-        </li>
-      </ul>
-      <ul class="text-list no-results" v-else>
-        <li>
-          <p>No results found for category search</p>
-        </li>
-      </ul>
+      <h2 class="heading">Categories</h2>
+      <div class="search-form">
+        <button class="button--close" @click="categoryFilter = ''">
+          <i class="material-icons">close</i>
+        </button>
+        <input v-model="categoryFilter" type="text" placeholder="Search category" />
+        <button class="button--search">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+      <div class="search-list">
+        <ul class="text-list" v-if="Object.keys(filteredCategories).length">
+          <li
+            v-for="category in filteredCategories"
+            :key="category.id"
+            :class="{active: id === category.id}"
+            class="list-item"
+          >
+            <router-link :to="`/info/${category.id}`">{{ category.name }}</router-link>
+          </li>
+        </ul>
+        <ul class="text-list no-results" v-else>
+          <li class="list-item">
+            <p>No results found for category search</p>
+          </li>
+        </ul>
+      </div>
     </side-panel>
     <main-panel>
-      <h1>Info</h1>
       <div v-if="id">
-        <h2>{{ category.name }}</h2>
-        <h3>{{ category.korean }}</h3>
+        <div class="page-header">
+          <h1 class="page-type-heading">Info</h1>
+          <h2 class="heading">{{ category.name }}</h2>
+          <h3 class="sub-heading">{{ category.korean }}</h3>
+        </div>
         <ul class="grid">
           <li class="grid-item grid-header">
             <p>English</p>
@@ -38,7 +50,10 @@
         </ul>
       </div>
       <div v-else>
-        <p>Help text</p>
+        <div class="page-header">
+          <h2 class="heading">Info</h2>
+        </div>
+        <p>Select a category from the category selection menu to look at a selection of words from the selected category.</p>
       </div>
     </main-panel>
   </div>

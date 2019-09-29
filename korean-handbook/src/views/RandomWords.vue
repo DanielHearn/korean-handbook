@@ -1,31 +1,43 @@
 <template>
   <div class="main random-words">
     <side-panel>
-      <h2>Categories</h2>
-      <input v-model="categoryFilter" type="text" placeholder="Search category" />
-      <button @click="categoryFilter = ''">Clear Search</button>
-      <ul class="text-list" v-if="Object.keys(filteredCategories).length">
-        <li :class="{active: id === 'all'}">
-          <router-link :to="`/random-words/all`">All</router-link>
-        </li>
-        <li
-          v-for="category in filteredCategories"
-          :key="category.id"
-          :class="{active: id === category.id}"
-        >
-          <router-link :to="`/random-words/${category.id}`">{{ category.name }}</router-link>
-        </li>
-      </ul>
-      <ul class="text-list no-results" v-else>
-        <li>
-          <p>No results found for category search</p>
-        </li>
-      </ul>
+      <h2 class="heading">Categories</h2>
+      <div class="search-form">
+        <button class="button--close" @click="categoryFilter = ''">
+          <i class="material-icons">close</i>
+        </button>
+        <input v-model="categoryFilter" type="text" placeholder="Search category" />
+        <button class="button--search">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+      <div class="search-list">
+        <ul class="text-list" v-if="Object.keys(filteredCategories).length">
+          <li :class="{active: id === 'all'}" class="list-item">
+            <router-link :to="`/random-words/all`">All</router-link>
+          </li>
+          <li
+            v-for="category in filteredCategories"
+            :key="category.id"
+            :class="{active: id === category.id}"
+            class="list-item"
+          >
+            <router-link :to="`/random-words/${category.id}`">{{ category.name }}</router-link>
+          </li>
+        </ul>
+        <ul class="text-list no-results" v-else>
+          <li class="list-item">
+            <p>No results found for category search</p>
+          </li>
+        </ul>
+      </div>
     </side-panel>
     <main-panel>
-      <h1>Random Word Generator</h1>
-      <h2>{{ category.name }}</h2>
-      <h3 v-if="category.korean">{{ category.korean }}</h3>
+      <div class="page-header">
+        <h1 class="page-type-heading">Random Word Generator</h1>
+        <h2 class="heading">{{ category.name }}</h2>
+        <h3 class="sub-heading" v-if="category.korean">{{ category.korean }}</h3>
+      </div>
       <random-word-generator :category="category" :categories="$options.categories" />
     </main-panel>
   </div>
