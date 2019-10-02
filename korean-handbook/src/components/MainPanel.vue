@@ -12,6 +12,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./../variables.scss";
+
 .main-panel {
   display: flex;
   flex-direction: column;
@@ -21,5 +23,7 @@ export default {
   height: 100%;
   overflow-y: scroll;
   box-sizing: border-box;
+  z-index: 10;
+  background: $white;
 }
 </style>

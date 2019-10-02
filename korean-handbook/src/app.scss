@@ -94,7 +94,7 @@ body {
     text-decoration: none;
     font-weight: $regular-weight;
     &:hover {
-      text-decoration: underline;
+      //text-decoration: underline;
     }
   }
   &.no-results {
@@ -206,7 +206,7 @@ button {
         }
       }
       &.active {
-        text-decoration: underline;
+        //text-decoration: underline;
         background: $accent;
       }
       &:hover:not(.active) {

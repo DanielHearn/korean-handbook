@@ -19,6 +19,7 @@ export default {
   padding: 1em;
   background: $dark;
   color: $white;
+  z-index: 1;
 }
 
 @media screen and (max-width: 40em) {

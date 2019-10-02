@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import { capitalizeWords } from './utilities.js'
 
 Vue.use(Router)
 
-export default new Router({
+const titleEnd = ' - The Korean Handbook'
+
+const router = new Router({
   mode: 'history',
   base: __dirname,
   routes: [
@@ -12,7 +15,12 @@ export default new Router({
       name: 'home',
       path: '/',
       props: false,
-      component: Home
+      component: Home,
+      meta: {
+        title: route => {
+          return `Home${titleEnd}`
+        }
+      }
     },
     {
       name: 'randomWordCat',
@@ -22,7 +30,13 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "randomWords" */ './views/RandomWords.vue')
+        import(/* webpackChunkName: "randomWords" */ './views/RandomWords.vue'),
+      meta: {
+        title: route => {
+          const id = capitalizeWords(route.params.id)
+          return `${id} - Random Words${titleEnd}`
+        }
+      }
     },
     {
       name: 'randomWordsHome',
@@ -34,21 +48,45 @@ export default new Router({
       path: '/info/:id',
       props: true,
       component: () =>
-        import(/* webpackChunkName: "info" */ './views/Info.vue')
+        import(/* webpackChunkName: "info" */ './views/Info.vue'),
+      meta: {
+        title: route => {
+          const id = capitalizeWords(route.params.id)
+          return `${id} - Info${titleEnd}`
+        }
+      }
     },
     {
       name: 'infoHome',
       path: '/info/',
       props: false,
       component: () =>
-        import(/* webpackChunkName: "info" */ './views/Info.vue')
+        import(/* webpackChunkName: "info" */ './views/Info.vue'),
+      meta: {
+        title: route => {
+          return `Info${titleEnd}`
+        }
+      }
     },
     {
       name: '404',
       path: '*',
       props: false,
       component: () =>
-        import(/* webpackChunkName: "randomWords" */ './views/404.vue')
+        import(/* webpackChunkName: "randomWords" */ './views/404.vue'),
+      meta: {
+        title: route => {
+          return `404${titleEnd}`
+        }
+      }
     }
   ]
+})
+
+export default router
+
+router.afterEach((to, from) => {
+  Vue.nextTick(() => {
+    document.title = to.meta.title(to)
+  })
 })
