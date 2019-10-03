@@ -60,6 +60,11 @@ body {
   display: flex;
   flex-direction: column;
   padding: 1em;
+  align-items: center;
+  box-sizing: border-box;
+  .home-content {
+    max-width: 60em;
+  }
   .intro {}
   .intro-links {
     display: flex;
@@ -68,15 +73,36 @@ body {
       margin: 0;
       list-style: none;
       padding: 0;
-      display: flex;
-      flex: 1 auto;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1em;
+      width: 100%;
       li {
         display: flex;
         flex: 1 auto;
+        justify-content: center;
+        &:hover {
+          a {
+            text-decoration: underline;
+          }
+        }
+        a {
+          display: flex;
+          flex: 1 auto;
+          justify-content: center;
+          color: $white;
+          text-decoration: none;
+          padding: 5em 1em;
+          background: $accent;
+        }
       }
     }
   }
+}
+
+.update-list {
+  padding: 0;
+  list-style: none;
 }
 
 .text-list {
@@ -222,5 +248,10 @@ button {
 @media screen and (max-width: 40em) {
   .main {
     flex-direction: column;
+    .intro-links {
+      ul {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
   }
 }
