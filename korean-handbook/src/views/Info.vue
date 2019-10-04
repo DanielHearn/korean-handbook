@@ -36,13 +36,25 @@
           <h2 class="heading">{{ category.name }}</h2>
           <h3 class="sub-heading">{{ category.korean }}</h3>
         </div>
+        <div class="search-form search--info">
+          <button class="button--close" @click="wordFilter = ''">
+            <i class="material-icons">close</i>
+          </button>
+          <input v-model="wordFilter" type="text" placeholder="Search category" />
+          <button class="button--search">
+            <i class="material-icons">search</i>
+          </button>
+        </div>
         <ul class="grid">
-          <li class="grid-item grid-header">
+          <li class="grid-item grid-header" v-if="filteredWords.length">
             <p>English</p>
             <p>Korean</p>
             <p v-if="category.note_header">{{ category.note_header }}</p>
           </li>
-          <li class="grid-item" v-for="word in category.words" :key="word.e">
+          <li v-else class="grid-notice">
+            <p>No results for search.</p>
+          </li>
+          <li class="grid-item" v-for="word in filteredWords" :key="word.e">
             <p>{{ word.e }}</p>
             <p>{{ word.k }}</p>
             <p v-if="word.n">{{ word.n }}</p>
@@ -79,13 +91,18 @@ export default {
   },
   data: function() {
     return {
-      category: [],
-      categoryFilter: ""
+      category: {},
+      filteredWords: [],
+      categoryFilter: "",
+      wordFilter: ""
     };
   },
   watch: {
     id: function() {
       this.loadCategory();
+    },
+    wordFilter: function() {
+      this.filterWords();
     }
   },
   computed: {
@@ -106,9 +123,31 @@ export default {
     loadCategory: function() {
       if (Categories.hasOwnProperty(this.id)) {
         this.category = Categories[this.id];
+        this.filteredWords = this.category.words;
+        this.wordFilter = "";
       } else if (this.id.length) {
         console.error("No category for current id");
         this.$router.push({ path: "/info", params: { id: "all" } });
+      }
+    },
+    filterWords: function() {
+      if (this.category.words) {
+        this.filteredWords = [];
+        const filter = this.wordFilter.toLowerCase();
+
+        for (let word of this.category.words) {
+          let matchesFilter = false;
+          if (
+            word.e.toLowerCase().includes(filter) ||
+            word.k.toLowerCase().includes(filter)
+          ) {
+            matchesFilter = true;
+          }
+
+          if (matchesFilter) {
+            this.filteredWords.push(word);
+          }
+        }
       }
     }
   },
