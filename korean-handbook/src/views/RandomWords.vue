@@ -13,6 +13,9 @@
       </div>
       <div class="search-list">
         <ul class="text-list" v-if="Object.keys(filteredCategories).length">
+          <li v-if="categoryFilter" class="list-item">
+            <p>{{ Object.keys(filteredCategories).length }} results found.</p>
+          </li>
           <li :class="{active: id === 'all'}" class="list-item">
             <router-link :to="`/random-words/all`">All</router-link>
           </li>

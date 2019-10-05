@@ -7,7 +7,14 @@
 <script>
 export default {
   name: "side-panel",
-  props: {}
+  props: {},
+  data: {
+    open: {
+      type: Boolean,
+      required: false,
+      default: ""
+    }
+  }
 };
 </script>
 
@@ -20,6 +27,11 @@ export default {
   background: $dark;
   color: $white;
   z-index: 1;
+  height: 100%;
+  .search-list {
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
 }
 
 @media screen and (max-width: 40em) {

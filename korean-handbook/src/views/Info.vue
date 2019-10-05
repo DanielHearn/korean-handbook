@@ -13,6 +13,9 @@
       </div>
       <div class="search-list">
         <ul class="text-list" v-if="Object.keys(filteredCategories).length">
+          <li v-if="categoryFilter" class="list-item">
+            <p>{{ Object.keys(filteredCategories).length }} results found.</p>
+          </li>
           <li
             v-for="category in filteredCategories"
             :key="category.id"
@@ -24,7 +27,7 @@
         </ul>
         <ul class="text-list no-results" v-else>
           <li class="list-item">
-            <p>No results found for category search</p>
+            <p>No results found for category search.</p>
           </li>
         </ul>
       </div>
@@ -46,6 +49,9 @@
           </button>
         </div>
         <ul class="grid">
+          <li v-if="filteredWords.length && wordFilter.length" class="grid-notice">
+            <p>{{filteredWords.length}} results for search.</p>
+          </li>
           <li class="grid-item grid-header" v-if="filteredWords.length">
             <p>English</p>
             <p>Korean</p>
@@ -54,7 +60,7 @@
           <li v-else class="grid-notice">
             <p>No results for search.</p>
           </li>
-          <li class="grid-item" v-for="word in filteredWords" :key="word.e">
+          <li class="grid-item" v-for="word in filteredWords" :key="word.e+word.k">
             <p>{{ word.e }}</p>
             <p>{{ word.k }}</p>
             <p v-if="word.n">{{ word.n }}</p>
