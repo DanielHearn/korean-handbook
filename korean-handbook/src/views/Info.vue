@@ -143,7 +143,6 @@ export default {
         this.filteredWords = this.category.words;
         this.wordFilter = "";
       } else if (this.id.length) {
-        console.error("No category for current id");
         this.$router.push({ path: "/info", params: { id: "all" } });
       }
     },
