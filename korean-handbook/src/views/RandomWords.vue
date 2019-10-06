@@ -1,6 +1,6 @@
 <template>
   <div class="main random-words">
-    <side-panel>
+    <side-panel :mobile="mobile" v-on:side-panel-toggle="toggleSidePanel">
       <h2 class="heading">Categories</h2>
       <div class="search-form">
         <button class="button--close" @click="categoryFilter = ''">
@@ -66,17 +66,28 @@ export default {
       type: String,
       required: false,
       default: ""
+    },
+    mobile: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   data: function() {
     return {
       category: {},
-      categoryFilter: ""
+      categoryFilter: "",
+      sidePanelOpen: false
     };
   },
   watch: {
     id: function() {
       this.loadCategory();
+    },
+    mobile: function() {
+      if (!this.mobile) {
+        this.sidePanelOpen = false;
+      }
     }
   },
   computed: {
@@ -104,7 +115,6 @@ export default {
       } else if (Categories.hasOwnProperty(this.id)) {
         this.category = Categories[this.id];
       } else if (this.id.length && this.id !== "all") {
-        console.error("No category for current id");
         this.$router.push({ path: "/random-words/all", params: { id: "all" } });
       }
     }

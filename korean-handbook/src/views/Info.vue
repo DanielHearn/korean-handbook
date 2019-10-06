@@ -1,6 +1,6 @@
 <template>
   <div class="main info">
-    <side-panel>
+    <side-panel :mobile="mobile" v-on:side-panel-toggle="toggleSidePanel">
       <h2 class="heading">Categories</h2>
       <div class="search-form">
         <button class="button--close" @click="categoryFilter = ''">
@@ -32,7 +32,7 @@
         </ul>
       </div>
     </side-panel>
-    <main-panel>
+    <main-panel :class="{'hidden': sidePanelOpen}">
       <div v-if="id">
         <div class="page-header">
           <h1 class="page-type-heading">Info</h1>
@@ -93,6 +93,11 @@ export default {
       type: String,
       required: false,
       default: ""
+    },
+    mobile: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   data: function() {
@@ -100,7 +105,8 @@ export default {
       category: {},
       filteredWords: [],
       categoryFilter: "",
-      wordFilter: ""
+      wordFilter: "",
+      sidePanelOpen: false
     };
   },
   watch: {
@@ -109,6 +115,11 @@ export default {
     },
     wordFilter: function() {
       this.filterWords();
+    },
+    mobile: function() {
+      if (!this.mobile) {
+        this.sidePanelOpen = false;
+      }
     }
   },
   computed: {
@@ -155,6 +166,9 @@ export default {
           }
         }
       }
+    },
+    toggleSidePanel: function(value) {
+      this.sidePanelOpen = value;
     }
   },
   mounted: function() {
