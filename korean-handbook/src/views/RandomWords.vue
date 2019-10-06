@@ -1,7 +1,7 @@
 <template>
   <div class="main random-words">
-    <side-panel :mobile="mobile" v-on:side-panel-toggle="toggleSidePanel">
-      <h2 class="heading">Categories</h2>
+    <side-panel :mobile="mobile" :title="'Categories'" v-on:side-panel-toggle="toggleSidePanel">
+      <h2 v-if="!mobile" class="heading">Categories</h2>
       <div class="search-form">
         <button class="button--close" @click="categoryFilter = ''">
           <i class="material-icons">close</i>
@@ -35,7 +35,7 @@
         </ul>
       </div>
     </side-panel>
-    <main-panel>
+    <main-panel :class="{'hidden': sidePanelOpen}">
       <div class="page-header">
         <h1 class="page-type-heading">Random Word Generator</h1>
         <h2 class="heading">{{ category.name }}</h2>
@@ -117,6 +117,9 @@ export default {
       } else if (this.id.length && this.id !== "all") {
         this.$router.push({ path: "/random-words/all", params: { id: "all" } });
       }
+    },
+    toggleSidePanel: function(value) {
+      this.sidePanelOpen = value;
     }
   },
   mounted: function() {

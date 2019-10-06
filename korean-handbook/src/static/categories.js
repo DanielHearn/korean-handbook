@@ -735,7 +735,7 @@ export const Categories = {
       { e: 'Bone', k: '뼈' },
       { e: 'Skin', k: '살갗' },
       { e: 'Lungs', k: '허파' },
-      { e: 'Hair', k: '털' },
+      { e: 'Hair', k: '머리카락' },
       { e: 'Brain', k: '뇌' },
       { e: 'Skull', k: '머리뼈' },
       { e: 'Spine', k: '척주' },

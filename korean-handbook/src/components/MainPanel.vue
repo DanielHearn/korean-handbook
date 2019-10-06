@@ -26,4 +26,10 @@ export default {
   z-index: 10;
   background: $white;
 }
+
+@media screen and (max-width: 40em) {
+  .main-panel {
+    padding: 1em;
+  }
+}
 </style>

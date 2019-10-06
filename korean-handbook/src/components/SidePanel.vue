@@ -1,7 +1,12 @@
 <template>
-  <div class="side-panel">
-    <button v-if="this.$store.state.mobile" @click="toggleOpen">Toggle</button>
-    <slot></slot>
+  <div class="side-panel" :class="{'mobile': mobile, 'active': open}">
+    <div v-if="mobile" class="mobile-header">
+      <p class="sub-heading">{{ title }}</p>
+      <button @click="toggleOpen">Toggle</button>
+    </div>
+    <div class="side-panel-content" :class="{'hidden': !open && this.$store.state.mobile}">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -13,6 +18,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    title: {
+      type: String,
+      required: false,
+      default: ""
     }
   },
   data: function() {
@@ -49,6 +59,28 @@ export default {
   display: flex;
   flex: 1 auto;
   flex-direction: column;
+  &.mobile {
+    height: 3em;
+    padding: 0.5em 1em;
+    &.active {
+      height: 100%;
+    }
+  }
+  .mobile-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .sub-heading {
+      margin: 0;
+    }
+  }
+  .side-panel-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 1em;
+  }
   .search-list {
     margin-top: 1em;
     margin-bottom: 2em;

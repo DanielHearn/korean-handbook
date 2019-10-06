@@ -144,6 +144,9 @@ body {
     row-gap: 2em;
     grid-template-columns: repeat(auto-fit, minmax(min-content, 8em));
     border-bottom: 2px $light-grey solid;
+    p {
+      word-break: break-word;
+    }
   }
   .grid-notice {
     list-style: none;
@@ -279,6 +282,13 @@ button {
     .intro-links {
       ul {
         grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    .grid {
+      .grid-item {
+        display: grid;
+        row-gap: 1em;
+        grid-template-columns: repeat(auto-fit, minmax(min-content, 5em));
       }
     }
   }

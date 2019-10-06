@@ -1,7 +1,7 @@
 <template>
   <div class="main info">
-    <side-panel :mobile="mobile" v-on:side-panel-toggle="toggleSidePanel">
-      <h2 class="heading">Categories</h2>
+    <side-panel :mobile="mobile" :title="'Categories'" v-on:side-panel-toggle="toggleSidePanel">
+      <h2 v-if="!mobile" class="heading">Categories</h2>
       <div class="search-form">
         <button class="button--close" @click="categoryFilter = ''">
           <i class="material-icons">close</i>
