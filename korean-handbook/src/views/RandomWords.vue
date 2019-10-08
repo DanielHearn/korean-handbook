@@ -41,7 +41,9 @@
         <h2 class="heading">{{ category.name }}</h2>
         <h3 class="sub-heading" v-if="category.korean">{{ category.korean }}</h3>
       </div>
-      <random-word-generator :category="category" :categories="$options.categories" />
+      <div class="page-content">
+        <random-word-generator :category="category" :categories="$options.categories" />
+      </div>
     </main-panel>
   </div>
 </template>

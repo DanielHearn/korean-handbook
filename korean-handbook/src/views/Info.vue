@@ -1,12 +1,18 @@
 <template>
   <div class="main info">
-    <side-panel :mobile="mobile" :title="'Categories'" v-on:side-panel-toggle="toggleSidePanel">
+    <side-panel
+      :mobile="mobile"
+      :title="'Categories'"
+      v-on:side-panel-toggle="toggleSidePanel"
+      v-slot="{ open }"
+    >
       <h2 v-if="!mobile" class="heading">Categories</h2>
+      <p>{{open}}</p>
       <div class="search-form">
         <button class="button--close" @click="categoryFilter = ''">
           <i class="material-icons">close</i>
         </button>
-        <input v-model="categoryFilter" type="text" placeholder="Search category" />
+        <input v-model="categoryFilter" type="text" placeholder="Search categories" />
         <button class="button--search">
           <i class="material-icons">search</i>
         </button>
@@ -33,46 +39,50 @@
       </div>
     </side-panel>
     <main-panel :class="{'hidden': sidePanelOpen}">
-      <div v-if="id">
+      <template v-if="id">
         <div class="page-header">
           <h1 class="page-type-heading">Info</h1>
           <h2 class="heading">{{ category.name }}</h2>
           <h3 class="sub-heading">{{ category.korean }}</h3>
+          <div class="search-form search--info">
+            <button class="button--close" @click="wordFilter = ''">
+              <i class="material-icons">close</i>
+            </button>
+            <input v-model="wordFilter" type="text" placeholder="Search category" />
+            <button class="button--search">
+              <i class="material-icons">search</i>
+            </button>
+          </div>
         </div>
-        <div class="search-form search--info">
-          <button class="button--close" @click="wordFilter = ''">
-            <i class="material-icons">close</i>
-          </button>
-          <input v-model="wordFilter" type="text" placeholder="Search category" />
-          <button class="button--search">
-            <i class="material-icons">search</i>
-          </button>
+        <div class="page-content">
+          <ul class="grid">
+            <li v-if="filteredWords.length && wordFilter.length" class="grid-notice">
+              <p>{{filteredWords.length}} results for search.</p>
+            </li>
+            <li class="grid-item grid-header" v-if="filteredWords.length">
+              <p>English</p>
+              <p>Korean</p>
+              <p v-if="category.note_header">{{ category.note_header }}</p>
+            </li>
+            <li v-else class="grid-notice">
+              <p>No results for search.</p>
+            </li>
+            <li class="grid-item" v-for="word in filteredWords" :key="word.e+word.k">
+              <p>{{ word.e }}</p>
+              <p>{{ word.k }}</p>
+              <p v-if="word.n">{{ word.n }}</p>
+            </li>
+          </ul>
         </div>
-        <ul class="grid">
-          <li v-if="filteredWords.length && wordFilter.length" class="grid-notice">
-            <p>{{filteredWords.length}} results for search.</p>
-          </li>
-          <li class="grid-item grid-header" v-if="filteredWords.length">
-            <p>English</p>
-            <p>Korean</p>
-            <p v-if="category.note_header">{{ category.note_header }}</p>
-          </li>
-          <li v-else class="grid-notice">
-            <p>No results for search.</p>
-          </li>
-          <li class="grid-item" v-for="word in filteredWords" :key="word.e+word.k">
-            <p>{{ word.e }}</p>
-            <p>{{ word.k }}</p>
-            <p v-if="word.n">{{ word.n }}</p>
-          </li>
-        </ul>
-      </div>
-      <div v-else>
+      </template>
+      <template v-else>
         <div class="page-header">
           <h2 class="heading">Info</h2>
         </div>
-        <p>Select a category from the category selection menu to look at a selection of words from the selected category.</p>
-      </div>
+        <div class="page-content">
+          <p>Select a category from the category selection menu to look at a selection of words from the selected category.</p>
+        </div>
+      </template>
     </main-panel>
   </div>
 </template>
