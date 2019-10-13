@@ -501,9 +501,9 @@ export const Categories = {
     ]
   },
   animals: {
-    name: 'Animals / Pets',
+    name: 'Animals',
     id: 'animals',
-    korean: '동물 / 애완동물',
+    korean: '동물',
     words: [
       { e: 'Ant', k: '개미' },
       { e: 'Badger', k: '오소리' },
