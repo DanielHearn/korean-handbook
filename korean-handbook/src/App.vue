@@ -71,7 +71,7 @@
         </div>
         <template v-if="$store.state.mobile">
           <div class="nav-links--mobile">
-            <button>
+            <button @click="toggleMobileMenu">
               <i class="material-icons">menu</i>
             </button>
           </div>
@@ -82,8 +82,16 @@
             <router-link to="/random-words/all">Random Words</router-link>
             <router-link to="/info/">Info</router-link>
           </div>
-          <div></div>
         </template>
+      </div>
+    </div>
+    <div v-if="$store.state.mobileMenu" class="mobile-menu">
+      <div class="mobile-menu-content">
+        <div class="nav-links">
+          <router-link to="/">Home</router-link>
+          <router-link to="/random-words/all">Random Words</router-link>
+          <router-link to="/info/">Info</router-link>
+        </div>
       </div>
     </div>
     <router-view :mobile="$store.state.mobile" />
@@ -97,6 +105,14 @@ export default {
   methods: {
     checkScreenSize: function() {
       this.$store.commit("setMobile", window.innerWidth <= 640);
+    },
+    toggleMobileMenu: function() {
+      this.$store.commit("setMobileMenu", !this.$store.state.mobileMenu);
+    }
+  },
+  watch: {
+    $route: function(to, from) {
+      this.$store.commit("setMobileMenu", false);
     }
   },
   mounted: function() {

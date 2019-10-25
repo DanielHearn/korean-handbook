@@ -19,7 +19,7 @@ body {
 #nav {
   display: flex;
   flex-direction: row;
-  height: 3em;
+  height: $nav-height;
   width: 100%;
   z-index: 5;
   background: $accent;
@@ -62,6 +62,22 @@ body {
     a {
       margin: 0;
     }
+  }
+}
+
+.mobile-menu {
+  width: 100vw;
+  height: calc(100vh - #{$nav-height});
+  position: fixed;
+  display: block;
+  background: $grey;
+  z-index: 20;
+  top: $nav-height;
+  padding: 1em;
+  .mobile-menu-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

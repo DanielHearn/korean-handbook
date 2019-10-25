@@ -38,6 +38,12 @@ export default {
       if (!this.mobile) {
         this.open = false;
       }
+    },
+    $route: function(to, from) {
+      if (this.mobile) {
+        this.open = false;
+        this.$emit("side-panel-toggle", this.open);
+      }
     }
   },
   methods: {

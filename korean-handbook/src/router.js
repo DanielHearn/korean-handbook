@@ -29,8 +29,7 @@ const router = new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "randomWords" */ './views/RandomWords.vue'),
+      component: () => import(/* webpackChunkName: "randomWords" */ './views/RandomWords.vue'),
       meta: {
         title: route => {
           const id = capitalizeWords(route.params.id)
@@ -47,8 +46,7 @@ const router = new Router({
       name: 'infoCat',
       path: '/info/:id',
       props: true,
-      component: () =>
-        import(/* webpackChunkName: "info" */ './views/Info.vue'),
+      component: () => import(/* webpackChunkName: "info" */ './views/Info.vue'),
       meta: {
         title: route => {
           const id = capitalizeWords(route.params.id)
@@ -60,8 +58,7 @@ const router = new Router({
       name: 'infoHome',
       path: '/info/',
       props: false,
-      component: () =>
-        import(/* webpackChunkName: "info" */ './views/Info.vue'),
+      component: () => import(/* webpackChunkName: "info" */ './views/Info.vue'),
       meta: {
         title: route => {
           return `Info${titleEnd}`
@@ -72,8 +69,7 @@ const router = new Router({
       name: '404',
       path: '*',
       props: false,
-      component: () =>
-        import(/* webpackChunkName: "randomWords" */ './views/404.vue'),
+      component: () => import(/* webpackChunkName: "randomWords" */ './views/404.vue'),
       meta: {
         title: route => {
           return `404${titleEnd}`
