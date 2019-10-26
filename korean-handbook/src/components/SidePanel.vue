@@ -88,7 +88,9 @@ export default {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding-top: 1em;
+    .heading:first-child {
+      margin-top: 0;
+    }
   }
   .search-list {
     margin-top: 1em;

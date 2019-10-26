@@ -7,7 +7,6 @@
       v-slot="{ open }"
     >
       <h2 v-if="!mobile" class="heading">Categories</h2>
-      <p>{{open}}</p>
       <div class="search-form">
         <button class="button--close" @click="categoryFilter = ''">
           <i class="material-icons">close</i>
@@ -53,18 +52,20 @@
               <i class="material-icons">search</i>
             </button>
           </div>
+          <ul class="grid grid--header">
+            <li class="grid-item grid-header" v-if="filteredWords.length">
+              <p>English</p>
+              <p>Korean</p>
+              <p v-if="category.note_header">{{ category.note_header }}</p>
+            </li>
+          </ul>
         </div>
         <div class="page-content">
           <ul class="grid">
             <li v-if="filteredWords.length && wordFilter.length" class="grid-notice">
               <p>{{filteredWords.length}} results for search.</p>
             </li>
-            <li class="grid-item grid-header" v-if="filteredWords.length">
-              <p>English</p>
-              <p>Korean</p>
-              <p v-if="category.note_header">{{ category.note_header }}</p>
-            </li>
-            <li v-else class="grid-notice">
+            <li v-if="!filteredWords.length && wordFilter.length" class="grid-notice">
               <p>No results for search.</p>
             </li>
             <li class="grid-item" v-for="word in filteredWords" :key="word.e+word.k">

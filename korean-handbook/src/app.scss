@@ -34,7 +34,6 @@ body {
     box-sizing: border-box;
     flex-direction: row;
     height: 3em;
-    max-width: 60em;
     padding: 0 0.5em;
     box-sizing: border-box;
     flex: 1 auto;
@@ -43,7 +42,7 @@ body {
       margin: 0 1em;
       color: $white;
       text-decoration: none;
-      font-size: $m-size;
+      font-size: $s-size;
       &:visited {
         color: $white;
       }
@@ -70,14 +69,30 @@ body {
   height: calc(100vh - #{$nav-height});
   position: fixed;
   display: block;
-  background: $grey;
+  background: $darker-grey;
   z-index: 20;
   top: $nav-height;
-  padding: 1em;
   .mobile-menu-content {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      a {
+        margin: 0 1em;
+        color: $white;
+        font-weight: $medium-weight;
+        text-decoration: none;
+        font-size: $m-size;
+        margin: 1em 0;
+      }
+    }
   }
 }
 
@@ -86,6 +101,7 @@ body {
   flex-direction: row;
   height: 100%;
   width: 100%;
+  background: $white;
 }
 
 .button--logo {
@@ -108,7 +124,16 @@ body {
   .home-content {
     max-width: 60em;
   }
-  .intro {}
+  .intro {
+    h1 {
+      font-size: $l-size;
+      font-weight: $bold-weight;
+    }
+    h2 {
+      font-size: $m-size;
+      font-weight: $bold-weight;
+    }
+  }
   .intro-links {
     display: flex;
     flex: 1 auto;
@@ -136,6 +161,7 @@ body {
           color: $white;
           text-decoration: none;
           padding: 5em 1em;
+          font-weight: $medium-weight;
           background: $accent;
         }
       }
@@ -204,6 +230,15 @@ body {
   .grid-notice {
     list-style: none;
     font-weight: $medium-weight;
+  }
+  &--header {
+    margin-top: 0.5em;
+    .grid-item {
+      border: none;
+    }
+    p {
+      margin: 0.5em 0.5em 0 0;
+    }
   }
 }
 

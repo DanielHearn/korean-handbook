@@ -82,6 +82,7 @@
             <router-link to="/random-words/all">Random Words</router-link>
             <router-link to="/info/">Info</router-link>
           </div>
+          <div></div>
         </template>
       </div>
     </div>
@@ -105,6 +106,10 @@ export default {
   methods: {
     checkScreenSize: function() {
       this.$store.commit("setMobile", window.innerWidth <= 640);
+      this.$store.commit(
+        "setMobileMenu",
+        this.$store.state.mobileMenu && window.innerWidth <= 640
+      );
     },
     toggleMobileMenu: function() {
       this.$store.commit("setMobileMenu", !this.$store.state.mobileMenu);
