@@ -395,6 +395,13 @@ button {
   line-height: 1.2;
 }
 
+button {
+  &:disabled, &:disabled:hover {
+    background: $grey;
+    cursor: not-allowed;
+  }
+}
+
 *::-webkit-scrollbar {
   width: 12px;
 }
