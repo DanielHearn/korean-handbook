@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import './../../scss/variables.scss';
 
 body {
   font-family: 'Rubik', sans-serif;
@@ -176,6 +176,7 @@ body {
   li {
     .sub-heading {
       margin-bottom: 0.5em;
+      font-size: $s-size;
     }
     .update-list--content {
       margin-top: 0;
@@ -338,14 +339,14 @@ button {
 }
 
 .page-type-heading {
-  font-size: $m-size;
+  font-size: $s-size;
   font-weight: $medium-weight;
   margin: 0.25em 0;
 }
 
 .heading {
   font-size: $l-size;
-  font-weight: $bold-weight;
+  font-weight: $medium-weight;
 }
 
 .sub-heading {

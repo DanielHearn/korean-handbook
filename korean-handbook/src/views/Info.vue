@@ -78,7 +78,7 @@
       </template>
       <template v-else>
         <div class="page-header">
-          <h2 class="heading">Info</h2>
+          <h1 class="page-type-heading">Info</h1>
         </div>
         <div class="page-content">
           <p>Select a category from the category selection menu to look at a selection of words from the selected category.</p>

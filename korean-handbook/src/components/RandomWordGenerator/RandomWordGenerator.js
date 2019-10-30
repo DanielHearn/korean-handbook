@@ -1,4 +1,4 @@
-import { getRandomIndexFromArray } from './../../utilities.js'
+import { getRandomIndexFromArray } from './../../static/utilities.js'
 
 export default {
   name: 'random-word-generator',
