@@ -1,7 +1,7 @@
 <template>
   <div class="main random-words">
     <side-panel :mobile="mobile" :title="'Categories'" v-on:side-panel-toggle="toggleSidePanel">
-      <h2 v-if="!mobile" class="heading">Categories</h2>
+      <h2 v-if="!mobile" class="sub-heading">Categories</h2>
       <div class="search-form">
         <button class="button--close" @click="categoryFilter = ''">
           <i class="material-icons">close</i>
@@ -51,9 +51,9 @@
 
 <script>
 import { Categories } from "./../static/categories.js";
-import MainPanel from "./../components/MainPanel.vue";
-import SidePanel from "./../components/SidePanel.vue";
-import RandomWordGenerator from "./../components/RandomWordGenerator.vue";
+import MainPanel from "./../components/MainPanel/MainPanel.vue";
+import SidePanel from "./../components/SidePanel/SidePanel.vue";
+import RandomWordGenerator from "./../components/RandomWordGenerator/RandomWordGenerator.vue";
 
 export default {
   name: "random-words",

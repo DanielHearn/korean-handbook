@@ -6,7 +6,7 @@
       v-on:side-panel-toggle="toggleSidePanel"
       v-slot="{ open }"
     >
-      <h2 v-if="!mobile" class="heading">Categories</h2>
+      <h2 v-if="!mobile" class="sub-heading">Categories</h2>
       <div class="search-form">
         <button class="button--close" @click="categoryFilter = ''">
           <i class="material-icons">close</i>
@@ -90,8 +90,8 @@
 
 <script>
 import { Categories } from "./../static/categories.js";
-import MainPanel from "./../components/MainPanel.vue";
-import SidePanel from "./../components/SidePanel.vue";
+import MainPanel from "./../components/MainPanel/MainPanel.vue";
+import SidePanel from "./../components/SidePanel/SidePanel.vue";
 
 export default {
   name: "info",
