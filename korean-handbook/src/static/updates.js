@@ -1,14 +1,14 @@
 export const Updates = [
   {
-    date: '4rd October 2019',
-    description: 'Add new home page design.'
+    date: '12th May 2018',
+    description: 'Released version 2.'
   },
   {
-    date: '3rd October 2019',
-    description: 'Add dynamic titles'
+    date: '4th January 2018',
+    description: 'Added random word generator.'
   },
   {
-    date: '2rd October 2019',
-    description: 'Started new design'
+    date: '25th October 2017',
+    description: 'Released version 1.'
   }
 ]
