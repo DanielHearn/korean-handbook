@@ -4,7 +4,8 @@
       <input id="flashcardModeToggle" type="checkbox" v-model="flashcardMode" />
       <label for="flashcardModeToggle">Flashcard Mode</label>
     </div>
-    <div style="display: flex;" v-if="flashcardMode">
+    <div style="display: flex; flex-direction: column;" v-if="flashcardMode">
+      <p>Test your knowledge by testing if you know the translation of the word shown below.</p>
       <div style="display: flex;">
         <input
           id="languageDirectionToggle"
@@ -24,12 +25,12 @@
         <label for="languageDirectionToggle">To Korean</label>
       </div>
     </div>
-    <div v-if="flashcardMode">
-      <div>
+    <div v-if="flashcardMode" class="flashcards">
+      <div class="flashcard">
         <p v-if="languageDirection === 'toEnglish'">{{ word.k }}</p>
-        <p v-else>{{ work.e }}</p>
+        <p v-else>{{ word.e }}</p>
       </div>
-      <div v-if="showAnswer">
+      <div v-if="showAnswer" class="flashcard">
         <p v-if="languageDirection === 'toEnglish'">{{ word.e }}</p>
         <p v-else>{{ word.k }}</p>
       </div>
@@ -42,8 +43,15 @@
         <p>{{ word.e }}</p>
       </div>
     </div>
-    <button @click="generateWord">Next Word</button>
-    <button v-if="flashcardMode" :disabled="showAnswer" @click="showAnswer = true">Show Answer</button>
+    <div class="actions">
+      <button class="button--primary" @click="generateWord">Next Word</button>
+      <button
+        class="button--secondary"
+        v-if="flashcardMode"
+        :disabled="showAnswer"
+        @click="showAnswer = true"
+      >Show Answer</button>
+    </div>
   </div>
 </template>
 

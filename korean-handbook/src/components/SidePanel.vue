@@ -71,6 +71,9 @@ export default {
   &.mobile {
     height: 3.5em;
     padding: 0.5em 1em;
+    .search-form {
+      margin-top: 0.5em;
+    }
     &.active {
       height: 100%;
     }
