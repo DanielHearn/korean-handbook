@@ -22,9 +22,11 @@
           The site is developed by
           <a
             href="https://www.danielhearn.co.uk"
+            class="text-link"
           >Daniel Hearn</a>, the site's source code can be found on
           <a
             href="https://github.com/DanielHearn/Korean-Handbook"
+            class="text-link"
           >GitHub</a>.
         </p>
       </div>

@@ -302,10 +302,37 @@ button {
 .actions {
   display: flex;
   flex-direction: row;
+  margin-top: 0.5em;
   button {
     margin-right: 0.5em;
   }
 }
+
+.options {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  background: $light-grey;
+  button {
+    margin-right: 0.5em;
+  }
+  .option {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.text-link {
+  text-decoration: none;
+  color: $accent;
+  font-weight: $medium-weight;
+  &:hover, &:visited {
+    text-decoration: none;
+    color: $accent;
+  }
+}
+
 
 .search-form {
   display: flex;

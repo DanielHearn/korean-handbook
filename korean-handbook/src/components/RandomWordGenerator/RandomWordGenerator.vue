@@ -1,28 +1,33 @@
 <template>
   <div>
-    <div style="display: flex;">
-      <input id="flashcardModeToggle" type="checkbox" v-model="flashcardMode" />
-      <label for="flashcardModeToggle">Flashcard Mode</label>
-    </div>
-    <div style="display: flex; flex-direction: column;" v-if="flashcardMode">
-      <p>Test your knowledge by testing if you know the translation of the word shown below.</p>
-      <div style="display: flex;">
-        <input
-          id="languageDirectionToggle"
-          type="radio"
-          value="toEnglish"
-          v-model="languageDirection"
-        />
-        <label for="languageDirectionToggle">To English</label>
+    <div class="options">
+      <div class="option">
+        <input id="flashcardModeToggle" type="checkbox" v-model="flashcardMode" />
+        <label for="flashcardModeToggle">Flashcard Mode</label>
       </div>
-      <div style="display: flex;">
-        <input
-          id="languageDirectionToggle"
-          type="radio"
-          value="toKorean"
-          v-model="languageDirection"
-        />
-        <label for="languageDirectionToggle">To Korean</label>
+      <div v-if="flashcardMode" class="flashcardmode">
+        <p>Test your knowledge by testing if you know the translation of the word shown below.</p>
+        <div>
+          <input
+            id="languageDirectionToggle"
+            type="radio"
+            value="toEnglish"
+            v-model="languageDirection"
+          />
+          <label for="languageDirectionToggle">To English</label>
+        </div>
+        <div>
+          <input
+            id="languageDirectionToggle"
+            type="radio"
+            value="toKorean"
+            v-model="languageDirection"
+          />
+          <label for="languageDirectionToggle">To Korean</label>
+        </div>
+      </div>
+      <div v-else>
+        <p>Learn random words from categories of words.</p>
       </div>
     </div>
     <div v-if="flashcardMode" class="flashcards">
@@ -35,11 +40,11 @@
         <p v-else>{{ word.k }}</p>
       </div>
     </div>
-    <div v-else>
-      <div>
+    <div v-else class="flashcards">
+      <div class="flashcard">
         <p>{{ word.k }}</p>
       </div>
-      <div>
+      <div class="flashcard">
         <p>{{ word.e }}</p>
       </div>
     </div>
@@ -56,3 +61,7 @@
 </template>
 
 <script src="./RandomWordGenerator.js"></script>
+
+<style lang="scss">
+@import "./RandomWordGenerator.scss";
+</style>
