@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/korean-handbook/precache-manifest.dc7cc4dc00ba6da24a040e88e1adcb8d.js"
+  "/precache-manifest.44b271b363a25abb6262b61f7a338518.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "korean-handbook"});
