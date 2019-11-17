@@ -40,7 +40,7 @@
     <main-panel :class="{'hidden': sidePanelOpen}">
       <template v-if="id">
         <div class="page-header">
-          <h1 class="page-type-heading">Info</h1>
+          <h1 class="page-type-heading">Word Categories</h1>
           <h2 class="heading">{{ category.name }}</h2>
           <h3 class="sub-heading">{{ category.korean }}</h3>
           <div class="search-form search--info">

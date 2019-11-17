@@ -65,17 +65,9 @@ const router = new Router({
         }
       }
     },
-    {
-      name: '404',
-      path: '*',
-      props: false,
-      component: () => import(/* webpackChunkName: "randomWords" */ './../views/404.vue'),
-      meta: {
-        title: route => {
-          return `404${titleEnd}`
-        }
-      }
-    }
+    { path: '/tool/', redirect: '/' },
+    { path: '/tool/random-korean-words', redirect: '/random-words' },
+    { path: '*', redirect: '/' }
   ]
 })
 

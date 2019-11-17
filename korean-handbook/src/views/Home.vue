@@ -8,10 +8,10 @@
       <div class="intro-links">
         <ul>
           <li>
-            <router-link to="/random-words/all">Random Words</router-link>
+            <router-link to="/random-words/all">Random Word Generator</router-link>
           </li>
           <li>
-            <router-link to="/info/">Info</router-link>
+            <router-link to="/info/">Word Categories</router-link>
           </li>
         </ul>
       </div>

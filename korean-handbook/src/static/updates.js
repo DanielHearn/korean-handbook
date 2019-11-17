@@ -1,5 +1,9 @@
 export const Updates = [
   {
+    date: '17th November 2019',
+    description: 'Released version 3.'
+  },
+  {
     date: '12th May 2018',
     description: 'Released version 2.'
   },

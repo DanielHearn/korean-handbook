@@ -80,7 +80,7 @@
           <div class="nav-links">
             <router-link to="/">Home</router-link>
             <router-link to="/random-words/all">Random Words</router-link>
-            <router-link to="/info/">Info</router-link>
+            <router-link to="/info/">Words</router-link>
           </div>
           <div></div>
         </template>
@@ -91,7 +91,7 @@
         <div class="nav-links">
           <router-link to="/">Home</router-link>
           <router-link to="/random-words/all">Random Words</router-link>
-          <router-link to="/info/">Info</router-link>
+          <router-link to="/info/">Words</router-link>
         </div>
       </div>
     </div>
