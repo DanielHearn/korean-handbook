@@ -4,7 +4,7 @@
 
 Live at www.thekoreanhandbook.com
 
-Built with Django, SCSS and Vue2 for the tool apps
+Built with Django, SCSS and Vue for the tool apps
 Uses material icons 
 
 ### Contributions
