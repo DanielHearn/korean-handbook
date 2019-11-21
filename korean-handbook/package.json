@@ -44,7 +44,10 @@
       "@vue/prettier"
     ],
     "rules": {
-      "semi": 0
+      "semi": 0,
+      "quotes": [
+        "single"
+      ]
     },
     "parserOptions": {
       "parser": "babel-eslint"
