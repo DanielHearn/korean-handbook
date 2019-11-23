@@ -3,8 +3,14 @@ import App from './components/App/App.vue'
 import router from './static/router'
 import store from './static/store'
 import './static/registerServiceWorker'
+import VueAnalytics from 'vue-analytics'
 
 Vue.config.productionTip = false
+
+Vue.use(VueAnalytics, {
+  id: 'UA-108490580-1',
+  router
+})
 
 new Vue({
   router,
