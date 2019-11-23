@@ -4,8 +4,8 @@
 
 Live at www.thekoreanhandbook.com
 
-Built with Django, SCSS and Vue for the tool apps
-Uses material icons 
+Single page app built with Vue, Vuex, Vue Router, SCSS.
+Uses material icons.
 
 ### Contributions
 
