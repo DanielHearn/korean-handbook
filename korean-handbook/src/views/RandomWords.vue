@@ -14,7 +14,7 @@
       <div class="search-list">
         <ul class="text-list" v-if="Object.keys(filteredCategories).length">
           <li v-if="categoryFilter" class="list-item">
-            <p>{{ Object.keys(filteredCategories).length }} results found.</p>
+            <p class="text">{{ Object.keys(filteredCategories).length }} results found.</p>
           </li>
           <li :class="{active: id === 'all'}" class="list-item">
             <router-link :to="`/random-words/all`">All</router-link>
@@ -30,7 +30,7 @@
         </ul>
         <ul class="text-list no-results" v-else>
           <li class="list-item">
-            <p>No results found for category search</p>
+            <p class="text">No results found for category search</p>
           </li>
         </ul>
       </div>
@@ -40,7 +40,7 @@
         <h1 class="page-type-heading">Random Word Generator</h1>
         <h2 class="heading">{{ category.name }}</h2>
         <h3 class="sub-heading" v-if="category.korean">{{ category.korean }}</h3>
-        <p>Learn random words from categories of words.</p>
+        <p class="text">Learn random words from categories of words.</p>
       </div>
       <div class="page-content">
         <random-word-generator :category="category" :categories="$options.categories" />

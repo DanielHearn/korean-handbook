@@ -126,7 +126,7 @@ body {
   }
   .intro {
     h1 {
-      font-size: $l-size;
+      font-size: $l-size*1.25;
       font-weight: $bold-weight;
     }
     h2 {
@@ -137,34 +137,31 @@ body {
   .intro-links {
     display: flex;
     flex: 1 auto;
-    ul {
-      margin: 0;
-      list-style: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 1em;
-      width: 100%;
-      li {
-        display: flex;
-        flex: 1 auto;
-        justify-content: center;
-        &:hover {
-          a {
-            text-decoration: underline;
-          }
-        }
-        a {
-          display: flex;
-          flex: 1 auto;
-          justify-content: center;
-          color: $white;
-          text-decoration: none;
-          padding: 0.5em;
-          font-size: $s-size;
-          font-weight: $medium-weight;
-          background: $accent;
-        }
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    .intro-link {
+      &:hover {
+        text-decoration: underline;
+      }
+      a {
+        text-decoration: none;
+      }
+      .link-main {
+        font-size: $m-size;
+        font-weight: $medium-weight;
+        color: $accent;
+        margin: 0;
+      }
+      .link-description {
+        font-size: $s-size;
+        font-weight: $regular-weight;
+        text-decoration: none;
+        color: $darker;
+        margin-top: 0.5em;
       }
     }
   }
@@ -313,7 +310,7 @@ button {
   flex-direction: column;
   margin: 0.5em 0;
   padding: 0.5em;
-  background: $light-grey;
+  background: $off-white;
   button {
     margin-right: 0.5em;
   }
@@ -328,7 +325,7 @@ button {
   color: $accent;
   font-weight: $medium-weight;
   &:hover, &:visited {
-    text-decoration: none;
+    text-decoration: underline;
     color: $accent;
   }
 }
@@ -379,6 +376,10 @@ button {
 .sub-heading {
   font-size: $m-size;
   font-weight: $medium-weight;
+}
+
+.text {
+  font-size: $s-size;
 }
 
 .search-list {
@@ -440,12 +441,13 @@ button {
 }
 
 @media screen and (max-width: 40em) {
+  .text {
+    font-size: 1.05em;
+  }
   .main {
     flex-direction: column;
     .intro-links {
-      ul {
-        grid-template-columns: repeat(1, 1fr);
-      }
+      grid-template-columns: repeat(1, 1fr);
     }
     .page-header {
       padding: 1em;

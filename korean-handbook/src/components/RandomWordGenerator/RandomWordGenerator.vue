@@ -3,7 +3,7 @@
     <div class="options">
       <div class="option">
         <input id="flashcardModeToggle" type="checkbox" v-model="flashcardMode" />
-        <label for="flashcardModeToggle">Flashcard Mode</label>
+        <label for="flashcardModeToggle" class="text">Flashcard Mode</label>
       </div>
       <div v-if="flashcardMode" class="flashcardmode">
         <div>
@@ -13,7 +13,7 @@
             value="toEnglish"
             v-model="languageDirection"
           />
-          <label for="englishDirectionToggle">To English</label>
+          <label for="englishDirectionToggle" class="text">To English</label>
         </div>
         <div>
           <input
@@ -22,34 +22,34 @@
             value="toKorean"
             v-model="languageDirection"
           />
-          <label for="koreanDirectionToggle">To Korean</label>
+          <label for="koreanDirectionToggle" class="text">To Korean</label>
         </div>
       </div>
       <div v-else>
-        <p>Activate flashcard mode to test if you know the translations of words.</p>
+        <p class="text">Activate flashcard mode to test if you know the translations of words.</p>
       </div>
     </div>
     <div v-if="flashcardMode" class="flashcards">
       <div class="flashcard">
-        <p v-if="languageDirection === 'toEnglish'">{{ word.k }}</p>
-        <p v-else>{{ word.e }}</p>
+        <p v-if="languageDirection === 'toEnglish'" class="text">{{ word.k }}</p>
+        <p v-else class="text">{{ word.e }}</p>
       </div>
       <div class="flashcard">
         <template v-if="showAnswer">
-          <p v-if="languageDirection === 'toEnglish'">{{ word.e }}</p>
-          <p v-else>{{ word.k }}</p>
+          <p v-if="languageDirection === 'toEnglish'" class="text">{{ word.e }}</p>
+          <p v-else class="text">{{ word.k }}</p>
         </template>
         <template v-else>
-          <p>Click the 'Show Answer' button to view the translation</p>
+          <p class="text">Click the 'Show Answer' button to view the translation</p>
         </template>
       </div>
     </div>
     <div v-else class="flashcards">
       <div class="flashcard">
-        <p>{{ word.k }}</p>
+        <p class="text">{{ word.k }}</p>
       </div>
       <div class="flashcard">
-        <p>{{ word.e }}</p>
+        <p class="text">{{ word.e }}</p>
       </div>
     </div>
     <div class="actions">

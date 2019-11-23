@@ -19,7 +19,7 @@
       <div class="search-list">
         <ul class="text-list" v-if="Object.keys(filteredCategories).length">
           <li v-if="categoryFilter" class="list-item">
-            <p>{{ Object.keys(filteredCategories).length }} results found.</p>
+            <p class="text">{{ Object.keys(filteredCategories).length }} results found.</p>
           </li>
           <li
             v-for="category in filteredCategories"
@@ -32,7 +32,7 @@
         </ul>
         <ul class="text-list no-results" v-else>
           <li class="list-item">
-            <p>No results found for category search.</p>
+            <p class="text">No results found for category search.</p>
           </li>
         </ul>
       </div>
@@ -54,34 +54,36 @@
           </div>
           <ul class="grid grid--header">
             <li class="grid-item grid-header" v-if="filteredWords.length">
-              <p>English</p>
-              <p>Korean</p>
-              <p v-if="category.note_header">{{ category.note_header }}</p>
+              <p class="text">English</p>
+              <p class="text">Korean</p>
+              <p v-if="category.note_header" class="text">{{ category.note_header }}</p>
             </li>
           </ul>
         </div>
         <div class="page-content">
           <ul class="grid">
             <li v-if="filteredWords.length && wordFilter.length" class="grid-notice">
-              <p>{{filteredWords.length}} results for search.</p>
+              <p class="text">{{filteredWords.length}} results for search.</p>
             </li>
             <li v-if="!filteredWords.length && wordFilter.length" class="grid-notice">
-              <p>No results for search.</p>
+              <p class="text">No results for search.</p>
             </li>
             <li class="grid-item" v-for="word in filteredWords" :key="word.e+word.k">
-              <p>{{ word.e }}</p>
-              <p>{{ word.k }}</p>
-              <p v-if="word.n">{{ word.n }}</p>
+              <p class="text">{{ word.e }}</p>
+              <p class="text">{{ word.k }}</p>
+              <p v-if="word.n" class="text">{{ word.n }}</p>
             </li>
           </ul>
         </div>
       </template>
       <template v-else>
         <div class="page-header">
-          <h1 class="page-type-heading">Info</h1>
+          <h1 class="page-type-heading">Word Categories</h1>
         </div>
         <div class="page-content">
-          <p>Select a category from the category selection menu to look at a selection of words from the selected category.</p>
+          <p
+            class="text"
+          >Select a category from the category selection menu to look at a selection of words from the selected category.</p>
         </div>
       </template>
     </main-panel>
