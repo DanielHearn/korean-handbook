@@ -40,6 +40,7 @@
         <h1 class="page-type-heading">Random Word Generator</h1>
         <h2 class="heading">{{ category.name }}</h2>
         <h3 class="sub-heading" v-if="category.korean">{{ category.korean }}</h3>
+        <p>Learn random words from categories of words.</p>
       </div>
       <div class="page-content">
         <random-word-generator :category="category" :categories="$options.categories" />

@@ -6,28 +6,27 @@
         <label for="flashcardModeToggle">Flashcard Mode</label>
       </div>
       <div v-if="flashcardMode" class="flashcardmode">
-        <p>Test your knowledge by testing if you know the translation of the word shown below.</p>
         <div>
           <input
-            id="languageDirectionToggle"
+            id="englishDirectionToggle"
             type="radio"
             value="toEnglish"
             v-model="languageDirection"
           />
-          <label for="languageDirectionToggle">To English</label>
+          <label for="englishDirectionToggle">To English</label>
         </div>
         <div>
           <input
-            id="languageDirectionToggle"
+            id="koreanDirectionToggle"
             type="radio"
             value="toKorean"
             v-model="languageDirection"
           />
-          <label for="languageDirectionToggle">To Korean</label>
+          <label for="koreanDirectionToggle">To Korean</label>
         </div>
       </div>
       <div v-else>
-        <p>Learn random words from categories of words.</p>
+        <p>Activate flashcard mode to test if you know the translations of words.</p>
       </div>
     </div>
     <div v-if="flashcardMode" class="flashcards">
@@ -35,9 +34,14 @@
         <p v-if="languageDirection === 'toEnglish'">{{ word.k }}</p>
         <p v-else>{{ word.e }}</p>
       </div>
-      <div v-if="showAnswer" class="flashcard">
-        <p v-if="languageDirection === 'toEnglish'">{{ word.e }}</p>
-        <p v-else>{{ word.k }}</p>
+      <div class="flashcard">
+        <template v-if="showAnswer">
+          <p v-if="languageDirection === 'toEnglish'">{{ word.e }}</p>
+          <p v-else>{{ word.k }}</p>
+        </template>
+        <template v-else>
+          <p>Click the 'Show Answer' button to view the translation</p>
+        </template>
       </div>
     </div>
     <div v-else class="flashcards">
