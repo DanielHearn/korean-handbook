@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{'home': $route.path === '/'}">
     <div id="nav">
       <div class="nav-content">
         <div class="nav-logo">
