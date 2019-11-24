@@ -8,11 +8,11 @@ Vue.config.productionTip = false
 
 Vue.use(VueAnalytics, {
   id: 'UA-108490580-1',
-  router
+  router,
 })
 
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
 }).$mount('#app')

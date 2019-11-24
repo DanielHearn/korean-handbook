@@ -6,5 +6,4 @@
 
 <script src="./MainPanel.js"></script>
 
-<style lang="scss" src="./MainPanel.scss">
-</style>
+<style lang="scss" src="./MainPanel.scss"></style>

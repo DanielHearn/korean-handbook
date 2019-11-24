@@ -1,8 +1,8 @@
-export const getRandomIndexFromArray = function (array) {
+export const getRandomIndexFromArray = function(array) {
   return Math.floor(Math.random() * (array.length - 1))
 }
 
-export const capitalizeWords = function (string) {
+export const capitalizeWords = function(string) {
   const words = string.replace(/_/g, ' ').split(' ')
   const cleanedWords = []
 

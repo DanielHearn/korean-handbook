@@ -2,7 +2,11 @@
   <div>
     <div class="options">
       <div class="option">
-        <input id="flashcardModeToggle" type="checkbox" v-model="flashcardMode" />
+        <input
+          id="flashcardModeToggle"
+          type="checkbox"
+          v-model="flashcardMode"
+        />
         <label for="flashcardModeToggle" class="text">Flashcard Mode</label>
       </div>
       <div v-if="flashcardMode" class="flashcardmode">
@@ -26,21 +30,29 @@
         </div>
       </div>
       <div v-else>
-        <p class="text">Activate flashcard mode to test if you know the translations of words.</p>
+        <p class="text">
+          Activate flashcard mode to test if you know the translations of words.
+        </p>
       </div>
     </div>
     <div v-if="flashcardMode" class="flashcards">
       <div class="flashcard">
-        <p v-if="languageDirection === 'toEnglish'" class="text">{{ word.k }}</p>
+        <p v-if="languageDirection === 'toEnglish'" class="text">
+          {{ word.k }}
+        </p>
         <p v-else class="text">{{ word.e }}</p>
       </div>
       <div class="flashcard">
         <template v-if="showAnswer">
-          <p v-if="languageDirection === 'toEnglish'" class="text">{{ word.e }}</p>
+          <p v-if="languageDirection === 'toEnglish'" class="text">
+            {{ word.e }}
+          </p>
           <p v-else class="text">{{ word.k }}</p>
         </template>
         <template v-else>
-          <p class="text">Click the 'Show Answer' button to view the translation</p>
+          <p class="text">
+            Click the 'Show Answer' button to view the translation
+          </p>
         </template>
       </div>
     </div>
@@ -53,13 +65,17 @@
       </div>
     </div>
     <div class="actions">
-      <button class="button--primary" @click="generateWord">Next Word</button>
+      <button class="button--primary" @click="generateWord">
+        Next Word
+      </button>
       <button
         class="button--secondary"
         v-if="flashcardMode"
         :disabled="showAnswer"
         @click="showAnswer = true"
-      >Show Answer</button>
+      >
+        Show Answer
+      </button>
     </div>
   </div>
 </template>
@@ -67,5 +83,5 @@
 <script src="./RandomWordGenerator.js"></script>
 
 <style lang="scss">
-@import "./RandomWordGenerator.scss";
+@import './RandomWordGenerator.scss';
 </style>

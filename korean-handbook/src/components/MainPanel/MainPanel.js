@@ -1,4 +1,4 @@
 export default {
   name: 'main-panel',
-  props: {}
+  props: {},
 }

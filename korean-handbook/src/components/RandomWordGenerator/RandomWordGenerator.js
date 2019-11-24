@@ -10,36 +10,36 @@ export default {
         return {
           name: '',
           id: '',
-          words: []
+          words: [],
         }
-      }
+      },
     },
     categories: {
       type: Object,
       required: true,
       default: () => {
         return {}
-      }
-    }
+      },
+    },
   },
-  data: function () {
+  data: function() {
     return {
       word: { e: '', k: '' },
       flashcardMode: false,
       languageDirection: 'toEnglish',
-      showAnswer: false
+      showAnswer: false,
     }
   },
   watch: {
-    flashcardMode: function () {
+    flashcardMode: function() {
       this.showAnswer = false
     },
-    'category.id': function () {
+    'category.id': function() {
       this.generateWord()
-    }
+    },
   },
   methods: {
-    generateWord: function () {
+    generateWord: function() {
       if (this.category.id === 'all') {
         const categoriesKeys = Object.keys(this.categories)
         const categoryIndex = getRandomIndexFromArray(categoriesKeys)
@@ -53,13 +53,13 @@ export default {
         this.showAnswer = false
       }
     },
-    setWordFromCategory (category) {
+    setWordFromCategory(category) {
       const filteredWords = category.words.filter(word => word !== this.word)
       if (filteredWords.length) {
         const wordIndex = getRandomIndexFromArray(filteredWords)
         const word = filteredWords[wordIndex]
         this.word = word
       }
-    }
-  }
+    },
+  },
 }

@@ -19,8 +19,8 @@ const router = new Router({
       meta: {
         title: route => {
           return `Home${titleEnd}`
-        }
-      }
+        },
+      },
     },
     {
       name: 'randomWordCat',
@@ -29,46 +29,49 @@ const router = new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "randomWords" */ './../views/RandomWords.vue'),
+      component: () =>
+        import(/* webpackChunkName: "randomWords" */ './../views/RandomWords.vue'),
       meta: {
         title: route => {
           const id = capitalizeWords(route.params.id)
           return `${id} - Random Words${titleEnd}`
-        }
-      }
+        },
+      },
     },
     {
       name: 'randomWordsHome',
       path: '/random-words',
-      redirect: '/random-words/all'
+      redirect: '/random-words/all',
     },
     {
       name: 'infoCat',
       path: '/info/:id',
       props: true,
-      component: () => import(/* webpackChunkName: "info" */ './../views/Info.vue'),
+      component: () =>
+        import(/* webpackChunkName: "info" */ './../views/Info.vue'),
       meta: {
         title: route => {
           const id = capitalizeWords(route.params.id)
           return `${id} - Info${titleEnd}`
-        }
-      }
+        },
+      },
     },
     {
       name: 'infoHome',
       path: '/info/',
       props: false,
-      component: () => import(/* webpackChunkName: "info" */ './../views/Info.vue'),
+      component: () =>
+        import(/* webpackChunkName: "info" */ './../views/Info.vue'),
       meta: {
         title: route => {
           return `Info${titleEnd}`
-        }
-      }
+        },
+      },
     },
     { path: '/tool/', redirect: '/' },
     { path: '/tool/random-korean-words', redirect: '/random-words' },
-    { path: '*', redirect: '/' }
-  ]
+    { path: '*', redirect: '/' },
+  ],
 })
 
 export default router

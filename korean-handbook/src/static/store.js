@@ -6,15 +6,15 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     mobile: false,
-    mobileMenu: false
+    mobileMenu: false,
   },
   mutations: {
-    setMobile (state, value) {
+    setMobile(state, value) {
       state.mobile = value
     },
-    setMobileMenu (state, value) {
+    setMobileMenu(state, value) {
       state.mobileMenu = value
-    }
+    },
   },
-  actions: {}
+  actions: {},
 })

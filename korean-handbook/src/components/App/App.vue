@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{'home': $route.path === '/'}">
+  <div id="app" :class="{ home: $route.path === '/' }">
     <div id="nav">
       <div class="nav-content">
         <div class="nav-logo">
@@ -19,7 +19,11 @@
             >
               <defs id="defs2" />
               <metadata id="metadata5" />
-              <g transform="translate(0,-100)" id="layer3" style="display: inline;">
+              <g
+                transform="translate(0,-100)"
+                id="layer3"
+                style="display: inline;"
+              >
                 <g
                   transform="matrix(1.6607495,0,0,1.6607495,-27.391721,-97.587624)"
                   id="g5688"
@@ -99,9 +103,8 @@
   </div>
 </template>
 
-<script src="./App.js">
-</script>
+<script src="./App.js"></script>
 
 <style lang="scss">
-@import "./App.scss";
+@import './App.scss';
 </style>

@@ -4,36 +4,36 @@ export default {
     mobile: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     title: {
       type: String,
       required: false,
-      default: ''
-    }
+      default: '',
+    },
   },
-  data: function () {
+  data: function() {
     return {
-      open: false
+      open: false,
     }
   },
   watch: {
-    mobile: function () {
+    mobile: function() {
       if (!this.mobile) {
         this.open = false
       }
     },
-    $route: function (to, from) {
+    $route: function(to, from) {
       if (this.mobile) {
         this.open = false
         this.$emit('side-panel-toggle', this.open)
       }
-    }
+    },
   },
   methods: {
-    toggleOpen: function () {
+    toggleOpen: function() {
       this.open = !this.open
       this.$emit('side-panel-toggle', this.open)
-    }
-  }
+    },
+  },
 }

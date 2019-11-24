@@ -12,8 +12,8 @@ export const Categories = {
       { e: 'but, still', k: '그래도' },
       { e: 'but, however', k: '하지만' },
       { e: 'so, therefore', k: '그래서' },
-      { e: 'and', k: '그리고' }
-    ]
+      { e: 'and', k: '그리고' },
+    ],
   },
   verbs: {
     name: 'Essential Verbs',
@@ -48,8 +48,8 @@ export const Categories = {
       { e: 'To enter', k: '들어오다' },
       { e: 'To exercise', k: '운동하다' },
       { e: 'To exit', k: '나가다' },
-      { e: 'To flight', k: '싸우다' }
-    ]
+      { e: 'To flight', k: '싸우다' },
+    ],
   },
   continents: {
     name: 'Continents',
@@ -64,8 +64,8 @@ export const Categories = {
       { e: 'Oceania', k: '오세아니아' },
       { e: 'Antartica', k: '남국' },
       { e: 'Earth', k: '지구' },
-      { e: 'Continent', k: '대륙' }
-    ]
+      { e: 'Continent', k: '대륙' },
+    ],
   },
   months: {
     name: 'Months',
@@ -87,8 +87,8 @@ export const Categories = {
       { e: 'Month', k: '달' },
       { e: 'Month Counter', k: '월' },
       { e: 'Last Month', k: '지난달' },
-      { e: 'Next Month', k: '다음 달' }
-    ]
+      { e: 'Next Month', k: '다음 달' },
+    ],
   },
   time: {
     name: 'Time',
@@ -115,8 +115,8 @@ export const Categories = {
       { e: '2 minutes', k: '이분' },
       { e: 'Minute', k: '분' },
       { e: '2 Seconds', k: '이초' },
-      { e: 'Second', k: '초' }
-    ]
+      { e: 'Second', k: '초' },
+    ],
   },
   seasons: {
     name: 'Seasons',
@@ -127,8 +127,8 @@ export const Categories = {
       { e: 'Fall/Autumn', k: '가을' },
       { e: 'Summer', k: '여름' },
       { e: 'Spring', k: '봄' },
-      { e: 'Season', k: '계절' }
-    ]
+      { e: 'Season', k: '계절' },
+    ],
   },
   weather: {
     name: 'Weather',
@@ -164,8 +164,8 @@ export const Categories = {
       { e: 'To be warm', k: '따뜻하다' },
       { e: 'Typhoon', k: '태풍' },
       { e: 'Weather', k: '날씨' },
-      { e: 'Wind', k: '바람' }
-    ]
+      { e: 'Wind', k: '바람' },
+    ],
   },
   buildings: {
     name: 'Buildings/Locations',
@@ -221,8 +221,8 @@ export const Categories = {
       { e: 'Swimming Pool', k: '수영장' },
       { e: 'Theater', k: '극장' },
       { e: 'Train Station', k: '기차역' },
-      { e: 'University', k: '대학교' }
-    ]
+      { e: 'University', k: '대학교' },
+    ],
   },
   furniture: {
     name: 'Furniture',
@@ -240,8 +240,8 @@ export const Categories = {
       { e: 'Footrest', k: '발판' },
       { e: 'Nightstand', k: '침실용 탁자' },
       { e: 'Sofa', k: '소파' },
-      { e: 'Table', k: '식탁' }
-    ]
+      { e: 'Table', k: '식탁' },
+    ],
   },
   counter_words: {
     name: 'Counter Words',
@@ -292,8 +292,8 @@ export const Categories = {
       { e: 'Vehicles, Machinery', k: '대', n: 'Native' },
       { e: 'Weeks', k: '주일', n: 'Sino Korean' },
       { e: 'Won (currency)', k: '원', n: 'Sino Korean' },
-      { e: 'Years', k: '년', n: 'Sino Korean' }
-    ]
+      { e: 'Years', k: '년', n: 'Sino Korean' },
+    ],
   },
   transportation: {
     name: 'Transportation',
@@ -322,8 +322,8 @@ export const Categories = {
       { e: 'Trunk', k: '트렁크' },
       { e: 'Van', k: '승합차' },
       { e: 'Wheel', k: '바퀴' },
-      { e: 'Windshield', k: '앞유리' }
-    ]
+      { e: 'Windshield', k: '앞유리' },
+    ],
   },
   sino_korean_numbers: {
     name: 'Sino Korean Numbers',
@@ -361,8 +361,8 @@ export const Categories = {
       { e: '100', k: '백' },
       { e: '1000', k: '천' },
       { e: '10000', k: '만' },
-      { e: '100000000', k: '억' }
-    ]
+      { e: '100000000', k: '억' },
+    ],
   },
   native_korean_numbers: {
     name: 'Native Korean Numbers',
@@ -395,8 +395,8 @@ export const Categories = {
       { e: '60', k: '예순' },
       { e: '70', k: '일흔' },
       { e: '80', k: '여든' },
-      { e: '90', k: '아흔' }
-    ]
+      { e: '90', k: '아흔' },
+    ],
   },
   directions: {
     name: 'Directions / Locations',
@@ -412,8 +412,8 @@ export const Categories = {
       { e: 'Front', k: '앞' },
       { e: 'Back', k: '뒤' },
       { e: 'Above', k: '위에' },
-      { e: 'Below', k: '아래에' }
-    ]
+      { e: 'Below', k: '아래에' },
+    ],
   },
   days_of_the_week: {
     name: 'Days of the Week',
@@ -426,8 +426,8 @@ export const Categories = {
       { e: 'Thursday', k: '목요일' },
       { e: 'Friday', k: '금요일' },
       { e: 'Saturday', k: '토요일' },
-      { e: 'Sunday', k: '일요일' }
-    ]
+      { e: 'Sunday', k: '일요일' },
+    ],
   },
   jobs: {
     name: 'Jobs / Occupations',
@@ -497,8 +497,8 @@ export const Categories = {
       { e: 'Translator', k: '번역가' },
       { e: 'Veterinarian', k: '수의사' },
       { e: 'Waiter', k: '웨이터' },
-      { e: 'Writer', k: '작가' }
-    ]
+      { e: 'Writer', k: '작가' },
+    ],
   },
   animals: {
     name: 'Animals',
@@ -579,8 +579,8 @@ export const Categories = {
       { e: 'Water Buffalo', k: '물소' },
       { e: 'Whale', k: '고래' },
       { e: 'Wolf', k: '늑대' },
-      { e: 'Zebra', k: '얼룩말' }
-    ]
+      { e: 'Zebra', k: '얼룩말' },
+    ],
   },
   colors: {
     name: 'Colors',
@@ -601,8 +601,8 @@ export const Categories = {
       { e: 'Black', k: '검은색' },
       { e: 'Blue', k: '파란색' },
       { e: 'Green', k: '초록색' },
-      { e: 'Yellow', k: '노란색' }
-    ]
+      { e: 'Yellow', k: '노란색' },
+    ],
   },
   family: {
     name: 'Family',
@@ -630,8 +630,8 @@ export const Categories = {
       { e: 'Older brother (as male)', k: '형' },
       { e: 'Older brother (as female)', k: '오빠' },
       { e: 'Older sister (as male)', k: '누나' },
-      { e: 'Older sister (as female)', k: '언니' }
-    ]
+      { e: 'Older sister (as female)', k: '언니' },
+    ],
   },
   consonants: {
     name: 'Consonants',
@@ -657,8 +657,8 @@ export const Categories = {
       { e: 'k', k: 'ㅋ', n: '키읔' },
       { e: 't', k: 'ㅌ', n: '티읕' },
       { e: 'p', k: 'ㅍ', n: '피읖' },
-      { e: 'h', k: 'ㅎ', n: '히읗' }
-    ]
+      { e: 'h', k: 'ㅎ', n: '히읗' },
+    ],
   },
   vowels: {
     name: 'Vowels',
@@ -685,8 +685,8 @@ export const Categories = {
       { e: 'yu', k: 'ㅠ' },
       { e: 'eu', k: 'ㅡ' },
       { e: 'ui', k: 'ㅢ' },
-      { e: 'i', k: 'ㅣ' }
-    ]
+      { e: 'i', k: 'ㅣ' },
+    ],
   },
   parts_of_the_body: {
     name: 'Parts of the Body',
@@ -739,9 +739,9 @@ export const Categories = {
       { e: 'Brain', k: '뇌' },
       { e: 'Skull', k: '머리뼈' },
       { e: 'Spine', k: '척주' },
-      { e: 'Heart', k: '심장' }
-    ]
-  }
+      { e: 'Heart', k: '심장' },
+    ],
+  },
 }
 
 /*

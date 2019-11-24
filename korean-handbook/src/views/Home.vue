@@ -3,15 +3,21 @@
     <div class="home-content">
       <div class="intro">
         <h1>The Korean Handbook</h1>
-        <h2>Collection of Korean language learning tools and information.</h2>
+        <h2>
+          Collection of Korean language learning tools and information.
+        </h2>
       </div>
       <div>
         <p class="heading">Content</p>
         <div class="intro-links">
           <div class="intro-link">
             <router-link to="/random-words/all">
-              <p class="link-main text-link">Random Word Generator</p>
-              <p class="link-description">Learn random words and test your knowledge.</p>
+              <p class="link-main text-link">
+                Random Word Generator
+              </p>
+              <p class="link-description">
+                Learn random words and test your knowledge.
+              </p>
             </router-link>
           </div>
           <div class="intro-link">
@@ -25,16 +31,16 @@
       <div>
         <p class="heading">About</p>
         <p class="text">
-          The Korean Handbook is an open-source site providing tools and information to aid in learning Korean.
-          The site is developed by
-          <a
-            href="https://www.danielhearn.co.uk"
-            class="text-link"
-          >Daniel Hearn</a>, the site's source code can be found on
+          The Korean Handbook is an open-source site providing tools and
+          information to aid in learning Korean. The site is developed by
+          <a href="https://www.danielhearn.co.uk" class="text-link"
+            >Daniel Hearn</a
+          >, the site's source code can be found on
           <a
             href="https://github.com/DanielHearn/Korean-Handbook"
             class="text-link"
-          >GitHub</a>.
+            >GitHub</a
+          >.
         </p>
       </div>
       <div>
@@ -54,12 +60,11 @@
   </div>
 </template>
 
-
 <script>
-import { Updates } from "./../static/updates.js";
+import { Updates } from './../static/updates.js'
 
 export default {
-  name: "home",
-  updates: Updates
-};
+  name: 'home',
+  updates: Updates,
+}
 </script>
