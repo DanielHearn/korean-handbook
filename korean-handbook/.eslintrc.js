@@ -8,6 +8,7 @@ module.exports = {
     semi: [2, 'never'],
     quotes: [2, 'single'],
     prettier: 'off',
+    'space-before-function-paren': ['error', 'never'],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
