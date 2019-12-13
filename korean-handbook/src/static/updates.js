@@ -1,5 +1,9 @@
 export const Updates = [
   {
+    date: '13th December 2019',
+    changes: ['Fixed PWA updating.'],
+  },
+  {
     date: '23rd November 2019',
     changes: ['Fixed flashcard mode options within the random word generator.'],
   },
