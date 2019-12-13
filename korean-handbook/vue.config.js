@@ -1,6 +1,9 @@
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/' : '/',
   pwa: {
-    serviceWorker: false,
+    serviceWorker: true,
+    workboxOptions: {
+      skipWaiting: true,
+    },
   },
 }

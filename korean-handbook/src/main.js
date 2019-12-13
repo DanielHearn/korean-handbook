@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './components/App/App.vue'
 import router from './static/router'
 import store from './static/store'
+import './static/registerServiceWorker'
 import VueAnalytics from 'vue-analytics'
 
 Vue.config.productionTip = false
