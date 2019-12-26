@@ -33,7 +33,7 @@
         <p class="text">
           The Korean Handbook is an open-source site providing tools and
           information to aid in learning Korean. The site is developed by
-          <a href="https://www.danielhearn.co.uk" class="text-link"
+          <a href="https://danielhearn.co.uk" class="text-link"
             >Daniel Hearn</a
           >, the site's source code can be found on
           <a
