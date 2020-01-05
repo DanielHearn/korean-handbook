@@ -156,11 +156,12 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1em;
     .intro-link {
-      &:hover {
-        text-decoration: underline;
-      }
       a {
         text-decoration: none;
+        color: $darker;
+        &:hover p {
+          text-decoration: underline;
+        }
       }
       .link-main {
         font-size: $m-size;
