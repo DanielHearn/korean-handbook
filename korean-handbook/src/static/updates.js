@@ -1,7 +1,7 @@
 export const Updates = [
   {
     date: '13th December 2019',
-    changes: ['Fixed PWA updating.'],
+    changes: ['Fixed app content updating.'],
   },
   {
     date: '23rd November 2019',
