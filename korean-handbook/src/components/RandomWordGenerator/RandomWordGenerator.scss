@@ -4,5 +4,9 @@
   .flashcard {
     background: $off-white;
     padding: 0.5em;
+    font-weight: $regular-weight;
+    .text {
+      margin: 0.4em 0;
+    }
   }
 }

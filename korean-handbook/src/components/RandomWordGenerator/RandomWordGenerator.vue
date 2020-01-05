@@ -28,6 +28,9 @@
           />
           <label for="koreanDirectionToggle" class="text">To Korean</label>
         </div>
+        <p class="text">
+          Select the language direction for the flashcards.
+        </p>
       </div>
       <div v-else>
         <p class="text">
