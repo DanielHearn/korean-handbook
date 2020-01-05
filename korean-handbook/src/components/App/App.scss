@@ -21,6 +21,7 @@ body {
     #nav {
       top: 0;
       position: fixed;
+      left: 0;
     }
     .main {
       margin-top: 2em;
@@ -135,6 +136,9 @@ body {
   box-sizing: border-box;
   .home-content {
     max-width: 60em;
+    & > div {
+      padding: 0.5em 0;
+    }
   }
   .intro {
     h1 {
@@ -232,7 +236,6 @@ body {
 .grid {
   display: flex;
   flex-direction: column;
-  font-size: $s-size;
   margin: 0;
   padding: 0;
   .grid-header {
@@ -276,8 +279,9 @@ input {
   color: $light-grey;
   border: 0;
   padding: 0.4em 0.6em;
+  letter-spacing: 0.025em;
   font-family: rubik, sans-serif;
-  font-size: $s-size;
+  font-size: 1.1em;
   &[type="text"]::placeholder {
     color: $light-grey;
   }
@@ -388,6 +392,7 @@ button {
 .heading {
   font-size: $l-size;
   font-weight: $medium-weight;
+  margin-bottom: 0.5em;
 }
 
 .sub-heading {
@@ -414,6 +419,7 @@ button {
         font-size: $s-size;
         font-weight: $regular-weight;
         width: 100%;
+        user-select: none;
         a:visited {
           color: $white;
         }
@@ -461,9 +467,8 @@ button {
 }
 
 @media screen and (max-width: 40em) {
-  
   .text {
-    font-size: 1.05em;
+    font-size: 1em;
   }
   .main {
     flex-direction: column;
