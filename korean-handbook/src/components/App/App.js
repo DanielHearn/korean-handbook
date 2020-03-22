@@ -1,12 +1,20 @@
+const mobileWidth = 700
+
 export default {
   name: 'app',
   props: {},
+  data: function() {
+    return {
+      windowWidth: window.innerWidth
+    }
+  },
   methods: {
     checkScreenSize: function() {
-      this.$store.commit('setMobile', window.innerWidth <= 640)
+      this.windowWidth = window.innerWidth
+      this.$store.commit('setMobile', this.windowWidth <= mobileWidth)
       this.$store.commit(
         'setMobileMenu',
-        this.$store.state.mobileMenu && window.innerWidth <= 640
+        this.$store.state.mobileMenu && this.windowWidth <= mobileWidth
       )
     },
     toggleMobileMenu: function() {

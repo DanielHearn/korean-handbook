@@ -67,6 +67,13 @@ body {
       &.router-link-exact-active {
         text-decoration: underline;
       }
+      &.title {
+        font-weight: $medium-weight;
+        font-size: $m-size;
+        position: absolute;
+        text-decoration: none;;
+        margin: 0 0 0 3em;
+      }
     }
   }
   .nav-logo {
@@ -483,7 +490,7 @@ button {
   background: $grey;
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 700px) {
   .text {
     font-size: 1em;
   }
