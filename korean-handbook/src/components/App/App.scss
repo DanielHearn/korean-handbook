@@ -56,6 +56,7 @@ body {
       color: $white;
       text-decoration: none;
       font-size: $s-size;
+      font-weight: $regular-weight;
       &:visited {
         color: $white;
       }
@@ -144,10 +145,12 @@ body {
     h1 {
       font-size: $l-size*1.25;
       font-weight: $bold-weight;
+      margin-bottom: 0.25em;
     }
     h2 {
       font-size: $m-size;
       font-weight: $medium-weight;
+      margin-top: 0;
     }
   }
   .intro-links {
@@ -160,9 +163,13 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1em;
     .intro-link {
+      background: $accent;
+      color: $white;
       a {
+        display: flex;
+        flex-direction: column;
         text-decoration: none;
-        color: $darker;
+        padding: 1.5em 1em;
         &:hover p {
           text-decoration: underline;
         }
@@ -170,15 +177,15 @@ body {
       .link-main {
         font-size: $m-size;
         font-weight: $medium-weight;
-        color: $accent;
+        color: $white;
         margin: 0;
       }
       .link-description {
         font-size: $s-size;
         font-weight: $regular-weight;
         text-decoration: none;
-        color: $darker;
-        margin-top: 0.5em;
+        color: $white;
+        margin: 0;
       }
     }
   }
@@ -187,6 +194,7 @@ body {
 .update-list {
   padding: 0;
   list-style: none;
+  margin: 0;
   li {
     .sub-heading {
       margin-bottom: 0.5em;
@@ -223,6 +231,14 @@ body {
     p {
       font-weight: $regular-weight;
     }
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  p:not(.heading) {
+    margin-top: 0;
   }
 }
 
@@ -393,6 +409,7 @@ button {
   font-size: $l-size;
   font-weight: $medium-weight;
   margin-bottom: 0.5em;
+  margin-top: 1em;
 }
 
 .sub-heading {

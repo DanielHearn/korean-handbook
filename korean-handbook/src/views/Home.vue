@@ -1,14 +1,11 @@
 <template>
   <div class="main home">
     <div class="home-content">
-      <div class="intro">
+      <div class="block intro">
         <h1>The Korean Handbook</h1>
         <h2>
           Collection of Korean language learning tools and information.
         </h2>
-      </div>
-      <div>
-        <p class="heading">Content</p>
         <div class="intro-links">
           <div class="intro-link">
             <router-link to="/random-words/all">
@@ -28,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="block">
         <p class="heading">About</p>
         <p class="text">
           The Korean Handbook is an open-source site providing tools and
@@ -40,10 +37,10 @@
             href="https://github.com/DanielHearn/Korean-Handbook"
             class="text-link"
             >GitHub</a
-          >.
+          >. Contributions for new content and interface improvements are welcome.
         </p>
       </div>
-      <div>
+      <div class="block">
         <p class="heading">Site Updates</p>
         <ul class="update-list">
           <li v-for="update in $options.updates" :key="update.date">
