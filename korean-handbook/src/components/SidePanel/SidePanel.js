@@ -11,6 +11,11 @@ export default {
       required: false,
       default: '',
     },
+    openInitially: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data: function() {
     return {
@@ -29,11 +34,15 @@ export default {
         this.$emit('side-panel-toggle', this.open)
       }
     },
+    openInitially: function() {
+      this.open = true
+      this.$emit('side-panel-toggle', this.open)
+    }
   },
   methods: {
     toggleOpen: function() {
       this.open = !this.open
       this.$emit('side-panel-toggle', this.open)
     },
-  },
+  }
 }

@@ -54,7 +54,7 @@
         <h3 class="sub-heading" v-if="category.korean">
           {{ category.korean }}
         </h3>
-        <p class="text">Learn random words from categories of words.</p>
+        <p class="text">Learn random words from categories of words. <span v-if="mobile">Press the down arrow above to open the word category menu and change category by clicking a category from the list of categories.</span><span v-else>Change word categories using the category menu on the left by clicking a category from the list of categories.</span></p>
       </div>
       <div class="page-content">
         <random-word-generator

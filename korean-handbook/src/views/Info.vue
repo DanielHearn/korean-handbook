@@ -3,8 +3,8 @@
     <side-panel
       :mobile="mobile"
       :title="'Categories'"
+      :open-initially="sidePanelOpenInitially"
       v-on:side-panel-toggle="toggleSidePanel"
-      v-slot="{ open }"
     >
       <h2 v-if="!mobile" class="sub-heading">Categories</h2>
       <div class="search-form">
@@ -147,6 +147,7 @@ export default {
       categoryFilter: '',
       wordFilter: '',
       sidePanelOpen: false,
+      sidePanelOpenInitially: false
     }
   },
   watch: {
@@ -212,6 +213,10 @@ export default {
   },
   mounted: function() {
     this.loadCategory()
+
+    if (this.mobile && !Object.keys(this.category).length) {
+      this.sidePanelOpenInitially = true
+    }
   },
 }
 </script>

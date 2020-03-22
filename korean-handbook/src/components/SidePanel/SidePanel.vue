@@ -2,7 +2,7 @@
   <div class="side-panel" :class="{ mobile: mobile, active: open }">
     <div v-if="mobile" class="mobile-header">
       <p class="sub-heading">{{ title }}</p>
-      <button @click="toggleOpen">
+      <button @click="toggleOpen" ref="input">
         <i v-if="open" class="material-icons">keyboard_arrow_up</i>
         <i v-else class="material-icons">keyboard_arrow_down</i>
       </button>
