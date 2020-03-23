@@ -1,7 +1,7 @@
 # Korean Handbook
 
 ## A website that teaches the basics of the Korean language though tool apps and information pages
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b25769fb-6b58-4d51-9f44-bd8ad087d15e/deploy-status)](https://app.netlify.com/sites/koreanhandbook/deploys)
 Live at www.thekoreanhandbook.com
 
 Single page app built with Vue, Vuex, Vue Router, SCSS.
@@ -9,6 +9,8 @@ Uses material icons.
 
 ## Todo
 1. Unit tests
+2. E2E tests
+3. UI improvements to random word generator
 
 ## Commands
 
