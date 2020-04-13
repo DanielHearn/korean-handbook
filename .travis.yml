@@ -1,0 +1,15 @@
+sudo: required
+language: node_js
+node_js:
+- '8'
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - node_modules
+install:
+- npm install
+script:
+- npm test:unit
+- npm test:e2e
