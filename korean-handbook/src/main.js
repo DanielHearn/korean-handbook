@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from './components/App/App.vue'
 import router from './static/router'
-import store from './static/store'
 import './static/registerServiceWorker'
 import VueAnalytics from 'vue-analytics'
+import { storeConfig } from './static/store.js'
 
 Vue.config.productionTip = false
 
@@ -11,6 +11,10 @@ Vue.use(VueAnalytics, {
   id: 'UA-108490580-1',
   router,
 })
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store(storeConfig)
 
 new Vue({
   router,

@@ -4,7 +4,7 @@
   "description": "Live at www.thekoreanhandbook.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd ./korean-handbook && npm run-script test:unit"
   },
   "repository": {
     "type": "git",

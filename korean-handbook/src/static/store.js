@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
+export const storeConfig = {
   state: {
     mobile: false,
     mobileMenu: false,
@@ -17,4 +15,4 @@ export default new Vuex.Store({
     },
   },
   actions: {},
-})
+}
