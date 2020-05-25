@@ -1,7 +1,7 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 import App from './components/App/App.vue'
 import router from './static/router'
-import './static/registerServiceWorker'
 import VueAnalytics from 'vue-analytics'
 import { storeConfig } from './static/store.js'
 

@@ -5,7 +5,7 @@ export default {
   props: {},
   data: function() {
     return {
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
     }
   },
   methods: {
@@ -22,7 +22,7 @@ export default {
     },
   },
   watch: {
-    $route: function(to, from) {
+    $route: function() {
       this.$store.commit('setMobileMenu', false)
     },
   },
