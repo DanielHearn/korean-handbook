@@ -85,6 +85,12 @@ body {
   }
   .nav-links--mobile {
     margin-right: 0.5em;
+    button {
+      background: $darker-grey;
+      &:hover {
+        background: $dark;
+      }
+    }
   }
 }
 
@@ -93,7 +99,7 @@ body {
   height: calc(100vh - #{$nav-height});
   position: fixed;
   display: block;
-  background: $darker-grey;
+  background: $dark;
   z-index: 20;
   top: $nav-height;
   .mobile-menu-content {
@@ -115,6 +121,9 @@ body {
         text-decoration: none;
         font-size: $m-size;
         margin: 1em 0;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
