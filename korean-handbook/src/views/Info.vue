@@ -67,7 +67,7 @@
             </button>
           </div>
           <ul class="grid grid--header">
-            <li class="grid-item grid-header" v-if="filteredWords.length">
+            <li class="grid-item grid-header" >
               <p class="text">English</p>
               <p class="text">Korean</p>
               <p v-if="category.note_header" class="text">
