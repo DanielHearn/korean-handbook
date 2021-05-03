@@ -17,7 +17,7 @@ const router = new Router({
       props: false,
       component: Home,
       meta: {
-        title: route => {
+        title: () => {
           return `Home${titleEnd}`
         },
       },
@@ -63,7 +63,7 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "info" */ './../views/Info.vue'),
       meta: {
-        title: route => {
+        title: () => {
           return `Info${titleEnd}`
         },
       },
@@ -76,7 +76,7 @@ const router = new Router({
 
 export default router
 
-router.afterEach((to, from) => {
+router.afterEach(to => {
   Vue.nextTick(() => {
     document.title = to.meta.title(to)
   })

@@ -83,6 +83,9 @@ body {
       margin: 0;
     }
   }
+  .nav-links--mobile {
+    margin-right: 0.5em;
+  }
 }
 
 .mobile-menu {
@@ -417,6 +420,9 @@ button {
     margin: 0;
     color: $dark-grey;
   }
+  .text {
+    margin-bottom: 0;
+  }
 }
 
 .page-type-heading {
@@ -488,7 +494,7 @@ button {
 
 button {
   &:disabled, &:disabled:hover {
-    background: $grey;
+    background: $off-whiter;
     cursor: not-allowed;
   }
 }
@@ -506,6 +512,9 @@ button {
 @media screen and (max-width: 700px) {
   .text {
     font-size: 1em;
+  }
+  .random {
+    margin-bottom: 10em;
   }
   .main {
     flex-direction: column;

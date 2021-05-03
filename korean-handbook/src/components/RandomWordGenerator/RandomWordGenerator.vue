@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="random">
     <div class="options">
+      <p class="sub-heading">Options</p>
       <div class="option">
         <input
           id="flashcardModeToggle"
@@ -10,6 +11,9 @@
         <label for="flashcardModeToggle" class="text">Flashcard Mode</label>
       </div>
       <div v-if="flashcardMode" class="flashcardmode">
+        <p class="text">
+          Select the language direction for the flashcards.
+        </p>
         <div>
           <input
             id="englishDirectionToggle"
@@ -17,7 +21,7 @@
             value="toEnglish"
             v-model="languageDirection"
           />
-          <label for="englishDirectionToggle" class="text">To English</label>
+          <label for="englishDirectionToggle" class="text">Korean To English</label>
         </div>
         <div>
           <input
@@ -26,26 +30,20 @@
             value="toKorean"
             v-model="languageDirection"
           />
-          <label for="koreanDirectionToggle" class="text">To Korean</label>
+          <label for="koreanDirectionToggle" class="text">English To Korean</label>
         </div>
-        <p class="text">
-          Select the language direction for the flashcards.
-        </p>
-      </div>
-      <div v-else>
-        <p class="text">
-          Activate flashcard mode to test if you know the translations of words.
-        </p>
       </div>
     </div>
-    <div v-if="flashcardMode" class="flashcards">
-      <div class="flashcard">
+    <div 
+      v-if="flashcardMode" class="flashcards flashcards--test"
+      @click="showAnswer = true">
+      <div class="flashcard flashcard--light">
         <p v-if="languageDirection === 'toEnglish'" class="text">
           {{ word.k }}
         </p>
         <p v-else class="text">{{ word.e }}</p>
       </div>
-      <div class="flashcard">
+      <div class="flashcard flashcard--dark">
         <template v-if="showAnswer">
           <p v-if="languageDirection === 'toEnglish'" class="text">
             {{ word.e }}
@@ -54,16 +52,16 @@
         </template>
         <template v-else>
           <p class="text">
-            Click the 'Show Answer' button to view the translation
+            Click the for the translation
           </p>
         </template>
       </div>
     </div>
     <div v-else class="flashcards">
-      <div class="flashcard">
+      <div class="flashcard flashcard--light">
         <p class="text">{{ word.k }}</p>
       </div>
-      <div class="flashcard">
+      <div class="flashcard flashcard--dark">
         <p class="text">{{ word.e }}</p>
       </div>
     </div>

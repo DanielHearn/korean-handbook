@@ -146,7 +146,7 @@ export default {
       categoryFilter: '',
       wordFilter: '',
       sidePanelOpen: false,
-      sidePanelOpenInitially: false
+      sidePanelOpenInitially: false,
     }
   },
   watch: {
