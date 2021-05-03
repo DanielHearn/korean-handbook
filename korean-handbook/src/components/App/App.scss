@@ -285,7 +285,6 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  margin-bottom: 2em;
   padding: 0;
   .grid-header {
     font-weight: $medium-weight;
@@ -536,6 +535,9 @@ button {
     }
     .page-content {
       padding: 0.5em 1em;
+      .grid {
+        margin-bottom: 2em;
+      }
     }
     .grid {
       .grid-item {
