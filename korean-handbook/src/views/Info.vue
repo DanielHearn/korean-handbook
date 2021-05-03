@@ -108,8 +108,7 @@
         </div>
         <div class="page-content">
           <p class="text">
-            Select a category from the category selection menu to look at a
-            selection of words from the selected category.
+            Select a category from the category selection menu.
           </p>
         </div>
       </template>

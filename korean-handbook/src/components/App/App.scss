@@ -176,12 +176,13 @@ body {
         display: flex;
         flex-direction: column;
         text-decoration: none;
-        padding: 1.5em 1em;
+        padding: 3em 1em;
         &:hover p {
           text-decoration: underline;
         }
       }
       .link-main {
+        display: flex;
         font-size: $m-size;
         font-weight: $medium-weight;
         color: $white;
@@ -194,6 +195,16 @@ body {
         color: $white;
         margin: 0;
       }
+      .link-icon {
+        margin-right: 0.25em;
+      }
+    }
+    .intro-item {
+      background: #f6f6f6;
+      padding: 1em;
+      .heading {
+        margin-top: 0;
+      }
     }
   }
 }
@@ -202,6 +213,8 @@ body {
   padding: 0;
   list-style: none;
   margin: 0;
+  overflow-y: scroll;
+  max-height: 200px;
   li {
     .sub-heading {
       margin-bottom: 0.5em;
