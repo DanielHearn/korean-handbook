@@ -52,7 +52,7 @@
         </template>
         <template v-else>
           <p class="text">
-            Click the for the translation
+            Click for the translation
           </p>
         </template>
       </div>
