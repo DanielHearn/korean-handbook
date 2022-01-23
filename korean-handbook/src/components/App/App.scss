@@ -16,17 +16,6 @@ body {
   padding: 0;
   overflow: hidden;
   color: $darker;
-  &.home {
-    height: initial;
-    #nav {
-      top: 0;
-      position: fixed;
-      left: 0;
-    }
-    .main {
-      margin-top: 2em;
-    }
-  }
 }
 
 #nav {
@@ -98,16 +87,9 @@ body {
 
 .home {
   display: flex;
-  flex-direction: column;
-  padding: 1em;
+  flex-direction: row;
   align-items: center;
   box-sizing: border-box;
-  .home-content {
-    max-width: 60em;
-    & > div {
-      padding: 0.5em 0;
-    }
-  }
   .intro {
     h1 {
       font-size: $l-size*1.25;
@@ -121,13 +103,11 @@ body {
     }
   }
   .intro-links {
-    display: flex;
     flex: 1 auto;
-    margin: 0;
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(250px, 450px));
     grid-gap: 1em;
     .intro-link {
       background: $accent;
@@ -136,7 +116,7 @@ body {
         display: flex;
         flex-direction: column;
         text-decoration: none;
-        padding: 3em 1em;
+        padding: 4em 1em;
         &:hover p {
           text-decoration: underline;
         }
@@ -226,7 +206,7 @@ body {
   overflow-y: scroll;
   height: 100%;
   box-sizing: border-box;
-  padding: 0.5em 2em;
+  padding: 1em 2em;
 }
 
 .grid {

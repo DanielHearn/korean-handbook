@@ -79,7 +79,7 @@
       </div>
     </div>
     <div v-if="mobile" class="mobile-header">
-      <p class="sub-heading">{{ title }}</p>
+      <p v-if="title" class="sub-heading">{{ title }}</p>
       <button @click="toggleOpen" ref="input">
         <i v-if="open" class="material-icons">keyboard_arrow_up</i>
         <i v-else class="material-icons">keyboard_arrow_down</i>

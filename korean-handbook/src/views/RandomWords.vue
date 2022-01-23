@@ -5,20 +5,22 @@
       :title="'Categories'"
       v-on:side-panel-toggle="toggleSidePanel"
     >
-      <h2 v-if="!mobile" class="sub-heading">Categories</h2>
-      <div class="search-form">
-        <button class="button--close" @click="categoryFilter = ''">
-          <i class="material-icons">close</i>
-        </button>
-        <input
-          v-model="categoryFilter"
-          type="text"
-          placeholder="Search categories"
-        />
-        <button class="button--search">
-          <i class="material-icons">search</i>
-        </button>
-      </div>
+      <template  v-slot:header>
+        <h2 v-if="!mobile" class="sub-heading">Categories</h2>
+        <div class="search-form">
+          <button class="button--close" @click="categoryFilter = ''">
+            <i class="material-icons">close</i>
+          </button>
+          <input
+            v-model="categoryFilter"
+            type="text"
+            placeholder="Search categories"
+          />
+          <button class="button--search">
+            <i class="material-icons">search</i>
+          </button>
+        </div>
+      </template>
       <div class="search-list">
         <ul class="text-list" v-if="Object.keys(filteredCategories).length">
           <li :class="{ active: id === 'all' }" class="list-item">
