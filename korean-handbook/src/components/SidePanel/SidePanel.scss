@@ -2,7 +2,6 @@
 
 .side-panel {
   width: 22em;
-  padding: 1em;
   background: $dark;
   color: $white;
   z-index: 1;
@@ -11,8 +10,9 @@
   flex: 1 auto;
   flex-direction: column;
   &.mobile {
-    height: 3.5em;
-    padding: 0.5em 1em;
+    .mobile-header {
+      padding: 0.5em 1em;
+    }
     .search-form {
       margin-top: 0.5em;
     }
@@ -29,16 +29,20 @@
       margin: 0;
     }
   }
+  .side-panel-header {
+    padding: 1em;
+    background: $darker;
+  }
   .side-panel-content {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 1em;
     .sub-heading:first-child {
       margin-top: 0;
     }
   }
   .search-list {
-    margin-top: 1em;
     margin-bottom: 6em;
   }
 }

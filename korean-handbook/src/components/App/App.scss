@@ -46,13 +46,11 @@ body {
     flex-direction: column;
     box-sizing: border-box;
     flex-direction: row;
-    height: 3em;
     padding: 0 0.5em;
     box-sizing: border-box;
     flex: 1 auto;
     justify-content: space-between;
     a {
-      margin: 0 1em;
       color: $white;
       text-decoration: none;
       font-size: $s-size;
@@ -62,69 +60,19 @@ body {
       }
       &:hover {
         color: $white;
-        text-decoration: underline;
-      }
-      &.router-link-exact-active {
-        text-decoration: underline;
       }
       &.title {
         font-weight: $medium-weight;
         font-size: $m-size;
-        position: absolute;
-        text-decoration: none;;
-        margin: 0 0 0 3em;
+        text-decoration: none;
       }
     }
   }
   .nav-logo {
-    width: 3em;
-    height: 2.5em;
+    width: 2.5em;
+    height: 2em;
     a {
       margin: 0;
-    }
-  }
-  .nav-links--mobile {
-    margin-right: 0.5em;
-    button {
-      background: $darker-grey;
-      &:hover {
-        background: $dark;
-      }
-    }
-  }
-}
-
-.mobile-menu {
-  width: 100vw;
-  height: calc(100vh - #{$nav-height});
-  position: fixed;
-  display: block;
-  background: $dark;
-  z-index: 20;
-  top: $nav-height;
-  .mobile-menu-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 1em;
-    .nav-links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      a {
-        margin: 0 1em;
-        color: $white;
-        font-weight: $medium-weight;
-        text-decoration: none;
-        font-size: $m-size;
-        margin: 1em 0;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
     }
   }
 }
@@ -450,6 +398,7 @@ button {
 .sub-heading {
   font-size: $m-size;
   font-weight: $medium-weight;
+  margin-top: 0;
 }
 
 .text {
