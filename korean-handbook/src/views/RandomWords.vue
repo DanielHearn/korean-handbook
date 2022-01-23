@@ -13,7 +13,7 @@
         <input
           v-model="categoryFilter"
           type="text"
-          placeholder="Search category"
+          placeholder="Search categories"
         />
         <button class="button--search">
           <i class="material-icons">search</i>

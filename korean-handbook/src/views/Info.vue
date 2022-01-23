@@ -60,7 +60,7 @@
             <input
               v-model="wordFilter"
               type="text"
-              placeholder="Search category"
+              placeholder="Search words"
             />
             <button class="button--search">
               <i class="material-icons">search</i>
