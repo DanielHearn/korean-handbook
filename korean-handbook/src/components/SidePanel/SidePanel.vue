@@ -74,7 +74,7 @@
               </svg>
             </router-link>
           </div>
-          <router-link to="/" class="title">The Korean Handbook</router-link>
+          <router-link to="/" class="title">{{!mobile ? 'The ' : ''}}Korean Handbook</router-link>
         </div>
       </div>
     </div>
@@ -95,7 +95,7 @@
       class="side-panel-content"
       :class="{ hidden: !open && mobile }"
     >
-      <slot></slot>
+      <slot name="content"></slot>
     </div>
   </div>
 </template>

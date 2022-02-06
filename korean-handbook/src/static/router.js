@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './../views/Home.vue'
-import { capitalizeWords } from './utilities.js'
 
 Vue.use(Router)
 
@@ -23,50 +22,59 @@ const router = new Router({
       },
     },
     {
-      name: 'randomWordCat',
-      path: '/random-words/:id',
-      props: true,
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      name: 'content_random',
+      path: '/content/:id/random',
+      props:  route => ({ id: route.params.id, content: 'random' }),
       component: () =>
-        import(/* webpackChunkName: "randomWords" */ './../views/RandomWords.vue'),
+        import(/* webpackChunkName: "info" */ './../views/Content.vue'),
       meta: {
-        title: route => {
-          const id = capitalizeWords(route.params.id)
-          return `${id} - Random Words${titleEnd}`
+        title: () => {
+          return `Random ${titleEnd}`
         },
       },
+    },
+    {
+      name: 'content_info',
+      path: '/content/:id/info',
+      props:  route => ({ id: route.params.id, content: 'info' }),
+      component: () =>
+        import(/* webpackChunkName: "info" */ './../views/Content.vue'),
+      meta: {
+        title: () => {
+          return `Info ${titleEnd}`
+        },
+      },
+    },
+    {
+      name: 'content',
+      path: '/content/:id/',
+      redirect: to => {
+        return `/content/${to.params.id}/info`
+      }
+    },
+    {
+      name: 'randomWordCat',
+      path: '/random-words/:id',
+      redirect: to => {
+        return `/content/${to.params.id}/random`
+      }
     },
     {
       name: 'randomWordsHome',
       path: '/random-words',
-      redirect: '/random-words/all',
+      redirect: '/content/all',
     },
     {
       name: 'infoCat',
       path: '/info/:id',
-      props: true,
-      component: () =>
-        import(/* webpackChunkName: "info" */ './../views/Info.vue'),
-      meta: {
-        title: route => {
-          const id = capitalizeWords(route.params.id)
-          return `${id} - Info${titleEnd}`
-        },
-      },
+      redirect: to => {
+        return `/content/${to.params.id}/info`
+      }
     },
     {
       name: 'infoHome',
       path: '/info/',
-      props: false,
-      component: () =>
-        import(/* webpackChunkName: "info" */ './../views/Info.vue'),
-      meta: {
-        title: () => {
-          return `Info${titleEnd}`
-        },
-      },
+      redirect: '/'
     },
     { path: '/tool/', redirect: '/' },
     { path: '/tool/random-korean-words', redirect: '/random-words' },

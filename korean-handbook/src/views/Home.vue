@@ -20,16 +20,16 @@
       </template>
     </side-panel>
     <main-panel>
-      <div class="page-header">
+      <header-panel>
         <h1>The Korean Handbook</h1>
         <h2>
           Collection of Korean language learning tools and information.
         </h2>
-      </div> 
+      </header-panel> 
       <div class="page-content">
         <div class="intro-links">
           <div class="intro-link">
-            <router-link to="/random-words/all">
+            <router-link to="/content/conjunctions/random">
               <p class="link-main text-link">
                 <span class="link-icon"><i class="material-icons">shuffle</i></span>
                 Random Word Generator
@@ -40,7 +40,7 @@
             </router-link>
           </div>
           <div class="intro-link">
-            <router-link to="/info/">
+            <router-link to="/content/conjunctions/info">
               <p class="link-main text-link">
                 <span class="link-icon"><i class="material-icons">list</i></span>
                 Word Categories
@@ -57,12 +57,19 @@
 <script>
 import MainPanel from './../components/MainPanel/MainPanel.vue'
 import SidePanel from './../components/SidePanel/SidePanel.vue'
+import HeaderPanel from './../components/HeaderPanel/HeaderPanel.vue'
 
 export default {
   name: 'home',
   components: {
     MainPanel,
     SidePanel,
+    HeaderPanel
   },
+  computed: {
+    mobile() {
+      return this.$store.state.mobile
+    }
+  }
 }
 </script>
