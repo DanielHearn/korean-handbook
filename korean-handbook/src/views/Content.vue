@@ -50,8 +50,12 @@
       <header-panel>
         <h1>{{ category.name }}</h1>
         <h2>
-          <router-link :to="`/content/${id}/info`">Info</router-link>
-          <router-link :to="`/content/${id}/random`">Random</router-link>
+          <Tabs
+            :items="[
+              {name: 'Info', slug: 'info', url: `/content/${id}/info`},
+              {name: 'Random', slug: 'random', url: `/content/${id}/random`}
+            ]"
+            :selected="content"/>
         </h2>
       </header-panel>
     </main-panel>
@@ -63,6 +67,7 @@ import { Categories } from './../static/categories.js'
 import MainPanel from './../components/MainPanel/MainPanel.vue'
 import SidePanel from './../components/SidePanel/SidePanel.vue'
 import HeaderPanel from './../components/HeaderPanel/HeaderPanel.vue'
+import Tabs from './../components/Tabs/Tabs.vue'
 
 export default {
   name: 'info',
@@ -70,6 +75,7 @@ export default {
     MainPanel,
     SidePanel,
     HeaderPanel,
+    Tabs,
   },
   props: {
     id: {
