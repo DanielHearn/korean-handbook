@@ -58,6 +58,9 @@
             :selected="content"/>
         </h2>
       </header-panel>
+      <div class="page-content" v-if="category">
+        <Table v-if="content === 'info'" :rows="category.words" :columns="category.columns"/>
+      </div>
     </main-panel>
   </div>
 </template>
@@ -68,6 +71,7 @@ import MainPanel from './../components/MainPanel/MainPanel.vue'
 import SidePanel from './../components/SidePanel/SidePanel.vue'
 import HeaderPanel from './../components/HeaderPanel/HeaderPanel.vue'
 import Tabs from './../components/Tabs/Tabs.vue'
+import Table from './../components/Table/Table.vue'
 
 export default {
   name: 'info',
@@ -76,6 +80,7 @@ export default {
     SidePanel,
     HeaderPanel,
     Tabs,
+    Table
   },
   props: {
     id: {
@@ -96,7 +101,7 @@ export default {
   },
   data: function() {
     return {
-      category: {},
+      category: null,
       categoryFilter: '',
       sidePanelOpen: false,
       sidePanelOpenInitially: false,
@@ -116,7 +121,6 @@ export default {
     loadCategory: function() {
       if (Categories.hasOwnProperty(this.id)) {
         this.category = Categories[this.id]
-        this.filteredWords = this.category.words
       } else if (this.id.length) {
         this.$router.push({ path: '/' })
       }

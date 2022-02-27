@@ -209,41 +209,6 @@ body {
   padding: 1em 2em;
 }
 
-.grid {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  .grid-header {
-    font-weight: $medium-weight;
-  }
-  .grid-item {
-    display: grid;
-    row-gap: 2em;
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 8em));
-    border-bottom: 2px $light-grey solid;
-    p {
-      word-break: break-word;
-    }
-  }
-  .grid-notice {
-    list-style: none;
-    font-weight: $medium-weight;
-  }
-  &:not(&--header) .grid-item:last-of-type {
-    margin-bottom: 5em;
-  }
-  &--header {
-    margin-top: 0.5em;
-    .grid-item {
-      border: none;
-    }
-    p {
-      margin: 0.5em 0.5em 0 0;
-    }
-  }
-}
-
 .search--info {
   max-width: 20em;
   margin-top: 1em;
