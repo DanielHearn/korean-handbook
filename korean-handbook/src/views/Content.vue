@@ -8,19 +8,11 @@
     >
       <template v-slot:header>
         <h2 v-if="!mobile" class="sub-heading">Categories</h2>
-        <div class="search-form">
-          <button class="button--close" @click="categoryFilter = ''">
-            <i class="material-icons">close</i>
-          </button>
-          <input
-            v-model="categoryFilter"
-            type="text"
-            placeholder="Search categories"
-          />
-          <button class="button--search">
-            <i class="material-icons">search</i>
-          </button>
-        </div>
+        <Search
+          :value="categoryFilter"
+          placeholder="Search categories"
+          v-on:search="searchCategories"
+        />
       </template>
       <template v-slot:content>
         <div class="search-list">
@@ -46,7 +38,7 @@
         </div>
       </template>
     </side-panel>
-    <main-panel :class="{ hidden: sidePanelOpen }">
+    <main-panel v-if="category" :class="{ hidden: sidePanelOpen }">
       <header-panel>
         <h1>{{ category.name }}</h1>
         <h2>
@@ -72,15 +64,17 @@ import SidePanel from './../components/SidePanel/SidePanel.vue'
 import HeaderPanel from './../components/HeaderPanel/HeaderPanel.vue'
 import Tabs from './../components/Tabs/Tabs.vue'
 import Table from './../components/Table/Table.vue'
+import Search from './../components/Search/Search.vue'
 
 export default {
-  name: 'info',
+  name: 'content',
   components: {
     MainPanel,
     SidePanel,
     HeaderPanel,
     Tabs,
-    Table
+    Table,
+    Search
   },
   props: {
     id: {
@@ -128,6 +122,9 @@ export default {
     toggleSidePanel: function(value) {
       this.sidePanelOpen = value
     },
+    searchCategories: function(value) {
+      this.categoryFilter = value;
+    }
   },
   computed: {
     filteredCategories: function() {

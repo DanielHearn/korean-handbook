@@ -292,24 +292,6 @@ button {
   }
 }
 
-
-.search-form {
-  display: flex;
-  flex-direction: row;
-  input {
-    border-radius: 0;
-    width: 100%;
-  }
-  .button--search {
-    border-radius: 0 4px 4px 0;
-    padding: 0.4em 1em;
-  }
-  .button--close {
-    border-radius: 4px 0 0 4px;
-    padding: 0.4em 0.4em;
-  }
-}
-
 .heading {
   font-size: $l-size;
   font-weight: $medium-weight;

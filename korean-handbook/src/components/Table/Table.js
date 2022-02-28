@@ -1,5 +1,11 @@
+
+import Search from '../Search/Search.vue'
+
 export default {
   name: 'table',
+  components: {
+    Search
+  },
   props: {
     columns: {
       type: Array,
@@ -49,5 +55,8 @@ export default {
         }
         }
     },
+    searchRows: function(value) {
+      this.search = value;
+    }
   },
 }
