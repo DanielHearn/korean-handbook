@@ -57,6 +57,7 @@
           :rows="category.words"
           :columns="category.columns"
         />
+        <RandomWordGenerator v-if="content === 'random'" :category="category" />
       </div>
     </main-panel>
   </div>
@@ -70,6 +71,7 @@ import HeaderPanel from './../components/HeaderPanel/HeaderPanel.vue'
 import Tabs from './../components/Tabs/Tabs.vue'
 import Table from './../components/Table/Table.vue'
 import Search from './../components/Search/Search.vue'
+import RandomWordGenerator from './../components/RandomWordGenerator/RandomWordGenerator.vue'
 
 export default {
   name: 'content',
@@ -80,6 +82,7 @@ export default {
     Tabs,
     Table,
     Search,
+    RandomWordGenerator,
   },
   props: {
     id: {

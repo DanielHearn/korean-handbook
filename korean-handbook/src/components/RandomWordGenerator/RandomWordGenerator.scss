@@ -1,23 +1,24 @@
 @import './../../scss/variables.scss';
 
 .random {
-  .flashcards {
-    .flashcard {
-      background: $off-white;
-      padding: 0.5em;
-      .text {
-        margin: 0.4em 0;
-      }
-      &--dark {
-        background: $off-whiter;
-      }
-    }
+  &-flashcards {
     &--test {
       cursor: pointer;
     }
   }
+
+  &-flashcard {
+    background: $off-white;
+    padding: 0.5em;
+    .text {
+      margin: 0.4em 0;
+    }
+    &--dark {
+      background: $off-whiter;
+    }
+  }
   
-  .options {
+  &-options {
     input {
       width: 14px;
       height: 14px;
@@ -26,12 +27,13 @@
       margin-top: 0;
       margin-bottom: 0.5em;
     }
-    .option {
-      display: flex;
-      align-items: center;
-    }
     p {
       margin: 0.25em 0 0 0;
     }
+  }
+  
+  &-option {
+    display: flex;
+    align-items: center;
   }
 }

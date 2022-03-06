@@ -1,4 +1,5 @@
 import { getRandomIndexFromArray } from './../../static/utilities.js'
+import { Categories } from './../../static/categories.js'
 
 export default {
   name: 'random-word-generator',
@@ -6,20 +7,6 @@ export default {
     category: {
       type: Object,
       required: true,
-      default: () => {
-        return {
-          name: '',
-          id: '',
-          words: [],
-        }
-      },
-    },
-    categories: {
-      type: Object,
-      required: true,
-      default: () => {
-        return {}
-      },
     },
   },
   data: function() {
@@ -34,20 +21,19 @@ export default {
     flashcardMode: function() {
       this.showAnswer = false
     },
-    'category.id': function() {
+    category: function() {
       this.generateWord()
     },
   },
   methods: {
     generateWord: function() {
       if (this.category.id === 'all') {
-        const categoriesKeys = Object.keys(this.categories)
+        const categoriesKeys = Object.keys(Categories)
         const categoryIndex = getRandomIndexFromArray(categoriesKeys)
-        const category = this.categories[categoriesKeys[categoryIndex]]
+        const category = Categories[categoriesKeys[categoryIndex]]
         this.setWordFromCategory(category)
-      } else if (this.categories.hasOwnProperty(this.category.id)) {
-        const category = this.categories[this.category.id]
-        this.setWordFromCategory(category)
+      } else {
+        this.setWordFromCategory(this.category)
       }
       if (this.flashcardMode) {
         this.showAnswer = false
@@ -61,5 +47,8 @@ export default {
         this.word = word
       }
     },
+  },
+  mounted() {
+    this.generateWord()
   },
 }

@@ -1,8 +1,8 @@
 <template>
   <div class="random">
-    <div class="options">
+    <div class="random-options">
       <p class="sub-heading">Options</p>
-      <div class="option">
+      <div class="random-option">
         <input
           id="flashcardModeToggle"
           type="checkbox"
@@ -10,7 +10,7 @@
         />
         <label for="flashcardModeToggle" class="text">Flashcard Mode</label>
       </div>
-      <div v-if="flashcardMode" class="flashcardmode">
+      <div v-if="flashcardMode">
         <p class="text">
           Select the language direction for the flashcards.
         </p>
@@ -40,16 +40,16 @@
     </div>
     <div
       v-if="flashcardMode"
-      class="flashcards flashcards--test"
+      class="random-flashcards random-flashcards--test"
       @click="showAnswer = true"
     >
-      <div class="flashcard flashcard--light">
+      <div class="random-flashcard random-flashcard--light">
         <p v-if="languageDirection === 'toEnglish'" class="text">
           {{ word.k }}
         </p>
         <p v-else class="text">{{ word.e }}</p>
       </div>
-      <div class="flashcard flashcard--dark">
+      <div class="random-flashcard random-flashcard--dark">
         <template v-if="showAnswer">
           <p v-if="languageDirection === 'toEnglish'" class="text">
             {{ word.e }}
@@ -63,11 +63,11 @@
         </template>
       </div>
     </div>
-    <div v-else class="flashcards">
-      <div class="flashcard flashcard--light">
+    <div v-else class="random-flashcards">
+      <div class="random-flashcard random-flashcard--light">
         <p class="text">{{ word.k }}</p>
       </div>
-      <div class="flashcard flashcard--dark">
+      <div class="random-flashcard random-flashcard--dark">
         <p class="text">{{ word.e }}</p>
       </div>
     </div>
