@@ -74,7 +74,7 @@
               </svg>
             </router-link>
           </div>
-          <router-link to="/" class="title">{{!mobile ? 'The ' : ''}}Korean Handbook</router-link>
+          <router-link to="/" class="title">Korean Handbook</router-link>
         </div>
       </div>
     </div>
