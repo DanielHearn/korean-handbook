@@ -28,6 +28,14 @@ export default {
     search: function() {
       this.filterWords()
     },
+    columns: function() {
+      this.search = ''
+      this.filterWords()
+    },
+    rows: function() {
+      this.search = ''
+      this.filterWords()
+    },
   },
   methods: {
     filterWords: function() {
