@@ -358,11 +358,12 @@ button {
     .intro-links {
       grid-template-columns: repeat(1, 1fr);
     }
-    .page-header {
-      padding: 1em;
+    .header-panel {
+      padding: 0.5em;
     }
     .page-content {
-      padding: 0.5em 1em;
+      margin: 0.5em 0;
+      padding: 0 0.5em 0.5em 0.5em;
       .grid {
         margin-bottom: 2em;
       }

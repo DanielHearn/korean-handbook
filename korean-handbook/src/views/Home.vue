@@ -1,6 +1,6 @@
 <template>
   <div class="main home">
-    <side-panel :mobile="mobile" :open-initially="true">
+    <side-panel :mobile="mobile" :open-initially="true" title="About">
       <template v-slot:header>
         <p class="text">
           The Korean Handbook provides tools and information to aid in learning

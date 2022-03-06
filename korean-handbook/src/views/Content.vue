@@ -2,7 +2,7 @@
   <div class="main info">
     <side-panel
       :mobile="mobile"
-      :title="'Categories'"
+      title="Categories"
       :open-initially="sidePanelOpenInitially"
       v-on:side-panel-toggle="toggleSidePanel"
     >
