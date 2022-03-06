@@ -18,7 +18,7 @@
         v-if="!filteredWords.length && search.length"
         class="grid-notice"
       >
-        <p class="text">No resultgits for search.</p>
+        <p class="text">No results for search.</p>
       </li>
       <li
         class="grid-item"

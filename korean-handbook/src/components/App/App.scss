@@ -149,23 +149,6 @@ body {
   }
 }
 
-.update-list {
-  padding: 0;
-  list-style: none;
-  margin: 0;
-  overflow-y: scroll;
-  max-height: 200px;
-  li {
-    .sub-heading {
-      margin-bottom: 0.5em;
-      font-size: $s-size;
-    }
-    .update-list--content {
-      margin-top: 0;
-    }
-  }
-}
-
 .text-list {
   list-style: none;
   padding-left: 0;
@@ -183,9 +166,6 @@ body {
     padding: 0.2em 0;
     text-decoration: none;
     font-weight: $regular-weight;
-    &:hover {
-      //text-decoration: underline;
-    }
   }
   &.no-results {
     p {
@@ -206,12 +186,7 @@ body {
   overflow-y: scroll;
   height: 100%;
   box-sizing: border-box;
-  padding: 1em 2em;
-}
-
-.search--info {
-  max-width: 20em;
-  margin-top: 1em;
+  margin: 1em 2em;
 }
 
 input {
