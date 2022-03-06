@@ -5,7 +5,7 @@
       :title="'Categories'"
       v-on:side-panel-toggle="toggleSidePanel"
     >
-      <template  v-slot:header>
+      <template v-slot:header>
         <h2 v-if="!mobile" class="sub-heading">Categories</h2>
         <div class="search-form">
           <button class="button--close" @click="categoryFilter = ''">
@@ -51,7 +51,11 @@
         <h3 class="sub-heading" v-if="category.korean">
           {{ category.korean }}
         </h3>
-        <p class="text">Learn words from categories. <span v-if="mobile">Change the category from the dropdown above.</span><span v-else>Change the category on the left.</span></p>
+        <p class="text">
+          Learn words from categories.
+          <span v-if="mobile">Change the category from the dropdown above.</span
+          ><span v-else>Change the category on the left.</span>
+        </p>
       </div>
       <div class="page-content">
         <random-word-generator

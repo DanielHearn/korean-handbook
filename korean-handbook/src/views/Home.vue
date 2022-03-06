@@ -1,15 +1,11 @@
 <template>
   <div class="main home">
-    <side-panel
-      :mobile="mobile"
-      :open-initially="true"
-    >
+    <side-panel :mobile="mobile" :open-initially="true">
       <template v-slot:header>
         <p class="text">
-          The Korean Handbook provides tools and
-          information to aid in learning Korean. Developed by
-          <a href="https://danielhearn.co.uk" class="text-link"
-            >Daniel Hearn</a
+          The Korean Handbook provides tools and information to aid in learning
+          Korean. Developed by
+          <a href="https://danielhearn.co.uk" class="text-link">Daniel Hearn</a
           >, the source code is on
           <a
             href="https://github.com/DanielHearn/Korean-Handbook"
@@ -25,13 +21,15 @@
         <h2>
           Collection of Korean language learning tools and information.
         </h2>
-      </header-panel> 
+      </header-panel>
       <div class="page-content">
         <div class="intro-links">
           <div class="intro-link">
             <router-link to="/content/conjunctions/random">
               <p class="link-main text-link">
-                <span class="link-icon"><i class="material-icons">shuffle</i></span>
+                <span class="link-icon"
+                  ><i class="material-icons">shuffle</i></span
+                >
                 Random Word Generator
               </p>
               <p class="link-description">
@@ -42,7 +40,9 @@
           <div class="intro-link">
             <router-link to="/content/conjunctions/info">
               <p class="link-main text-link">
-                <span class="link-icon"><i class="material-icons">list</i></span>
+                <span class="link-icon"
+                  ><i class="material-icons">list</i></span
+                >
                 Word Categories
               </p>
               <p class="link-description">Learn new words.</p>
@@ -64,12 +64,12 @@ export default {
   components: {
     MainPanel,
     SidePanel,
-    HeaderPanel
+    HeaderPanel,
   },
   computed: {
     mobile() {
       return this.$store.state.mobile
-    }
-  }
+    },
+  },
 }
 </script>

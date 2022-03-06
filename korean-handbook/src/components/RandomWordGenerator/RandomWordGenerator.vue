@@ -21,7 +21,9 @@
             value="toEnglish"
             v-model="languageDirection"
           />
-          <label for="englishDirectionToggle" class="text">Korean To English</label>
+          <label for="englishDirectionToggle" class="text"
+            >Korean To English</label
+          >
         </div>
         <div>
           <input
@@ -30,13 +32,17 @@
             value="toKorean"
             v-model="languageDirection"
           />
-          <label for="koreanDirectionToggle" class="text">English To Korean</label>
+          <label for="koreanDirectionToggle" class="text"
+            >English To Korean</label
+          >
         </div>
       </div>
     </div>
-    <div 
-      v-if="flashcardMode" class="flashcards flashcards--test"
-      @click="showAnswer = true">
+    <div
+      v-if="flashcardMode"
+      class="flashcards flashcards--test"
+      @click="showAnswer = true"
+    >
       <div class="flashcard flashcard--light">
         <p v-if="languageDirection === 'toEnglish'" class="text">
           {{ word.k }}

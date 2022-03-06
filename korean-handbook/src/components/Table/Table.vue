@@ -1,23 +1,24 @@
 <template>
   <div class="table">
     <ul class="grid grid--header">
-        <Search
-          :value="search"
-          placeholder="Search words"
-          v-on:search="searchRows"
-        />
-      <li class="grid-item grid-header" >
-        <p class="text" 
+      <Search
+        :value="search"
+        placeholder="Search words"
+        v-on:search="searchRows"
+      />
+      <li class="grid-item grid-header">
+        <p
+          class="text"
           v-for="column in columns"
           :data-slug="column.id"
-          :key="column.id">{{column.name}}</p>
+          :key="column.id"
+        >
+          {{ column.name }}
+        </p>
       </li>
     </ul>
     <ul class="grid">
-      <li
-        v-if="!filteredWords.length && search.length"
-        class="grid-notice"
-      >
+      <li v-if="!filteredWords.length && search.length" class="grid-notice">
         <p class="text">No results for search.</p>
       </li>
       <li
@@ -25,9 +26,9 @@
         v-for="word in filteredWords"
         :key="word.e + word.k"
       >
-        <p class="text" 
-          v-for="column in columns"
-          :key="column.id">{{ word[column.id] }}</p>
+        <p class="text" v-for="column in columns" :key="column.id">
+          {{ word[column.id] }}
+        </p>
       </li>
     </ul>
   </div>

@@ -3,10 +3,7 @@ export const Categories = {
     name: 'Conjunctions',
     id: 'conjunctions',
     korean: '접속사',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'but', k: '그렇지만' },
       { e: 'however', k: '아무리' },
@@ -23,10 +20,7 @@ export const Categories = {
     name: 'Essential Verbs',
     id: 'verbs',
     korean: '동사',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'To answer', k: '대답하다' },
       { e: 'To arrive', k: '도착하다' },
@@ -63,10 +57,7 @@ export const Categories = {
     name: 'Continents',
     id: 'continents',
     korean: '대륙',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Europe', k: '유럽' },
       { e: 'Asia', k: '아시아' },
@@ -83,10 +74,7 @@ export const Categories = {
     name: 'Months',
     id: 'months',
     korean: '달',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'January', k: '일월' },
       { e: 'February', k: '이월' },
@@ -110,10 +98,7 @@ export const Categories = {
     name: 'Time',
     id: 'time',
     korean: '시간',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'This week', k: '이번 주에' },
       { e: 'This (Week/Month)', k: '이번' },
@@ -130,7 +115,7 @@ export const Categories = {
       { e: 'For 2 minutes', k: '이분 동안' },
       { e: 'For an amount of time', k: '동안' },
       { e: 'Time', k: '시간' },
-      { e: 'Three o\'clock', k: '세 시' },
+      { e: "Three o'clock", k: '세 시' },
       { e: 'Hour', k: '시간' },
       { e: '2 minutes', k: '이분' },
       { e: 'Minute', k: '분' },
@@ -142,10 +127,7 @@ export const Categories = {
     name: 'Seasons',
     id: 'seasons',
     korean: '계절',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Winter', k: '겨울' },
       { e: 'Fall/Autumn', k: '가을' },
@@ -158,10 +140,7 @@ export const Categories = {
     name: 'Weather',
     id: 'weather',
     korean: '날씨',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Blizzard', k: '눈바람' },
       { e: 'Climate', k: '기후' },
@@ -199,10 +178,7 @@ export const Categories = {
     name: 'Buildings/Locations',
     id: 'buildings',
     korean: '건물',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Airport', k: '공항' },
       { e: 'Apartment', k: '아파트' },
@@ -260,10 +236,7 @@ export const Categories = {
     name: 'Furniture',
     id: 'furniture',
     korean: '가구',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Bed', k: '침대' },
       { e: 'Bookshelf', k: '책장' },
@@ -284,9 +257,9 @@ export const Categories = {
     id: 'counter_words',
     korean: '수분류사',
     columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'},
-      {id: 'n', name: 'Number System'}
+      { id: 'e', name: 'English' },
+      { id: 'k', name: 'Korean' },
+      { id: 'n', name: 'Number System' },
     ],
     words: [
       { e: 'Age, Years old', k: '살', n: 'Native' },
@@ -313,7 +286,7 @@ export const Categories = {
       { e: 'Months', k: '개월', n: 'Sino Korean' },
       { e: 'Months', k: '달', n: 'Native' },
       { e: 'Number', k: '번', n: 'Sino Korean' },
-      { e: 'O\'clock', k: '시', n: 'Native' },
+      { e: "O'clock", k: '시', n: 'Native' },
       { e: 'Packs of cigarettes', k: '갑', n: 'Native' },
       { e: 'Packs, Sacks', k: '봉지', n: 'Native' },
       { e: 'People (Formal)', k: '분', n: 'Native' },
@@ -339,10 +312,7 @@ export const Categories = {
     name: 'Transportation',
     id: 'transportation',
     korean: '교통 수단',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Airplane', k: '비행기' },
       { e: 'Bike/Bicycle', k: '자전거' },
@@ -373,10 +343,7 @@ export const Categories = {
     name: 'Sino Korean Numbers',
     id: 'sino_korean_numbers',
     korean: '숫자',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: '0', k: '영, 령, 공' },
       { e: '1', k: '일' },
@@ -416,10 +383,7 @@ export const Categories = {
     name: 'Native Korean Numbers',
     id: 'native_korean_numbers',
     korean: '한국어 숫자',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: '1', k: '하나' },
       { e: '2', k: '둘' },
@@ -454,10 +418,7 @@ export const Categories = {
     name: 'Directions / Locations',
     id: 'directions',
     korean: '방향',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'North', k: '북쪽' },
       { e: 'West', k: '서쪽' },
@@ -475,10 +436,7 @@ export const Categories = {
     name: 'Days of the Week',
     id: 'days_of_the_week',
     korean: '날',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Monday', k: '월요일' },
       { e: 'Tuesday', k: '화요일' },
@@ -493,10 +451,7 @@ export const Categories = {
     name: 'Jobs / Occupations',
     id: 'jobs',
     korean: '직업',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Accountant', k: '회계사' },
       { e: 'Actor', k: '남자배우' },
@@ -568,10 +523,7 @@ export const Categories = {
     name: 'Animals',
     id: 'animals',
     korean: '동물',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Ant', k: '개미' },
       { e: 'Badger', k: '오소리' },
@@ -654,10 +606,7 @@ export const Categories = {
     name: 'Colors',
     id: 'colors',
     korean: '색깔',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Colour', k: '색깔' },
       { e: 'Red', k: '빨간색' },
@@ -680,10 +629,7 @@ export const Categories = {
     name: 'Family',
     id: 'family',
     korean: '가족',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'}
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Mum', k: '엄마' },
       { e: 'Mother', k: '어머니' },
@@ -714,9 +660,9 @@ export const Categories = {
     id: 'consonants',
     korean: '자음',
     columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'},
-      {id: 'n', name: 'Name'}
+      { id: 'e', name: 'English' },
+      { id: 'k', name: 'Korean' },
+      { id: 'n', name: 'Name' },
     ],
     words: [
       { e: 'g / k', k: 'ㄱ', n: '기역' },
@@ -744,10 +690,7 @@ export const Categories = {
     name: 'Vowels',
     id: 'vowels',
     korean: '모음',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'},
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'a', k: 'ㅏ' },
       { e: 'ae', k: 'ㅐ' },
@@ -776,10 +719,7 @@ export const Categories = {
     name: 'Parts of the Body',
     id: 'parts_of_the_body',
     korean: '몸 부위들',
-    columns: [
-      {id: 'e', name: 'English'},
-      {id: 'k', name: 'Korean'},
-    ],
+    columns: [{ id: 'e', name: 'English' }, { id: 'k', name: 'Korean' }],
     words: [
       { e: 'Body', k: '몸' },
       { e: 'Head', k: '머리' },

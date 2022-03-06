@@ -44,14 +44,19 @@
         <h2>
           <Tabs
             :items="[
-              {name: 'Info', slug: 'info', url: `/content/${id}/info`},
-              {name: 'Random', slug: 'random', url: `/content/${id}/random`}
+              { name: 'Info', slug: 'info', url: `/content/${id}/info` },
+              { name: 'Random', slug: 'random', url: `/content/${id}/random` },
             ]"
-            :selected="content"/>
+            :selected="content"
+          />
         </h2>
       </header-panel>
       <div class="page-content" v-if="category">
-        <Table v-if="content === 'info'" :rows="category.words" :columns="category.columns"/>
+        <Table
+          v-if="content === 'info'"
+          :rows="category.words"
+          :columns="category.columns"
+        />
       </div>
     </main-panel>
   </div>
@@ -74,7 +79,7 @@ export default {
     HeaderPanel,
     Tabs,
     Table,
-    Search
+    Search,
   },
   props: {
     id: {
@@ -123,8 +128,8 @@ export default {
       this.sidePanelOpen = value
     },
     searchCategories: function(value) {
-      this.categoryFilter = value;
-    }
+      this.categoryFilter = value
+    },
   },
   computed: {
     filteredCategories: function() {

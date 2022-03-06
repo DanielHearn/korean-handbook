@@ -28,7 +28,7 @@ export default {
         this.open = false
       }
     },
-    $route: function(to, from) {
+    $route: function() {
       if (this.mobile) {
         this.open = false
         this.$emit('side-panel-toggle', this.open)
@@ -37,12 +37,12 @@ export default {
     openInitially: function() {
       this.open = true
       this.$emit('side-panel-toggle', this.open)
-    }
+    },
   },
   methods: {
     toggleOpen: function() {
       this.open = !this.open
       this.$emit('side-panel-toggle', this.open)
     },
-  }
+  },
 }

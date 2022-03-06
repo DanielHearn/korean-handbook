@@ -1,10 +1,9 @@
-
 import Search from '../Search/Search.vue'
 
 export default {
   name: 'table',
   components: {
-    Search
+    Search,
   },
   props: {
     columns: {
@@ -43,9 +42,9 @@ export default {
         if (!this.search.length) {
           this.filteredWords = this.rows
         } else {
-          const newWords = [] 
+          const newWords = []
           const filter = this.search.toLowerCase()
-  
+
           for (let word of this.rows) {
             let matchesFilter = false
             if (
@@ -54,17 +53,17 @@ export default {
             ) {
               matchesFilter = true
             }
-  
+
             if (matchesFilter) {
               newWords.push(word)
             }
           }
           this.filteredWords = newWords
         }
-        }
+      }
     },
     searchRows: function(value) {
-      this.search = value;
-    }
+      this.search = value
+    },
   },
 }

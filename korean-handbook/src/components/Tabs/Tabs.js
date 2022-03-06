@@ -19,11 +19,16 @@ export default {
   },
   methods: {
     updateDash() {
-      const targetRef = this.$refs.items.querySelector(`[data-slug="${this.selected}"]`);
-     
-      this.dashWidth = targetRef.offsetWidth;
-      this.dashPosition = targetRef.offsetLeft + targetRef.offsetWidth / 2 - targetRef.offsetWidth / 2;
-    }
+      const targetRef = this.$refs.items.querySelector(
+        `[data-slug="${this.selected}"]`
+      )
+
+      this.dashWidth = targetRef.offsetWidth
+      this.dashPosition =
+        targetRef.offsetLeft +
+        targetRef.offsetWidth / 2 -
+        targetRef.offsetWidth / 2
+    },
   },
   mounted: function() {
     this.updateDash()

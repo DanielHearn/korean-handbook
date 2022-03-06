@@ -1,6 +1,6 @@
 <template>
   <div class="side-panel" :class="{ mobile: mobile, active: open }">
-     <div id="nav">
+    <div id="nav">
       <div class="nav-content">
         <div style="display: flex; align-items: center;">
           <div class="nav-logo">
@@ -85,16 +85,10 @@
         <i v-else class="material-icons">keyboard_arrow_down</i>
       </button>
     </div>
-    <div
-      class="side-panel-header"
-      v-if="!mobile || mobile && open"
-    >
+    <div class="side-panel-header" v-if="!mobile || (mobile && open)">
       <slot name="header"></slot>
     </div>
-    <div
-      class="side-panel-content"
-      :class="{ hidden: !open && mobile }"
-    >
+    <div class="side-panel-content" :class="{ hidden: !open && mobile }">
       <slot name="content"></slot>
     </div>
   </div>

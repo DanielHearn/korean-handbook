@@ -24,7 +24,7 @@ const router = new Router({
     {
       name: 'content_random',
       path: '/content/:id/random',
-      props:  route => ({ id: route.params.id, content: 'random' }),
+      props: route => ({ id: route.params.id, content: 'random' }),
       component: () =>
         import(/* webpackChunkName: "info" */ './../views/Content.vue'),
       meta: {
@@ -36,7 +36,7 @@ const router = new Router({
     {
       name: 'content_info',
       path: '/content/:id/info',
-      props:  route => ({ id: route.params.id, content: 'info' }),
+      props: route => ({ id: route.params.id, content: 'info' }),
       component: () =>
         import(/* webpackChunkName: "info" */ './../views/Content.vue'),
       meta: {
@@ -50,14 +50,14 @@ const router = new Router({
       path: '/content/:id/',
       redirect: to => {
         return `/content/${to.params.id}/info`
-      }
+      },
     },
     {
       name: 'randomWordCat',
       path: '/random-words/:id',
       redirect: to => {
         return `/content/${to.params.id}/random`
-      }
+      },
     },
     {
       name: 'randomWordsHome',
@@ -69,12 +69,12 @@ const router = new Router({
       path: '/info/:id',
       redirect: to => {
         return `/content/${to.params.id}/info`
-      }
+      },
     },
     {
       name: 'infoHome',
       path: '/info/',
-      redirect: '/'
+      redirect: '/',
     },
     { path: '/tool/', redirect: '/' },
     { path: '/tool/random-korean-words', redirect: '/random-words' },
