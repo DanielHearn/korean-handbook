@@ -15,27 +15,11 @@
         />
       </template>
       <template v-slot:content>
-        <div class="search-list">
-          <ul class="text-list" v-if="Object.keys(filteredCategories).length">
-            <li
-              v-for="category in filteredCategories"
-              :key="category.id"
-              :class="{ active: id === category.id }"
-              class="list-item"
-            >
-              <router-link :to="`/content/${category.id}/${content}`">{{
-                category.name
-              }}</router-link>
-            </li>
-          </ul>
-          <ul class="text-list no-results" v-else>
-            <li class="list-item">
-              <p class="text">
-                No results found for category search.
-              </p>
-            </li>
-          </ul>
-        </div>
+        <List
+          :items="filteredCategories"
+          :activeID="id"
+          noResultsText="No results found for category search."
+        />
       </template>
     </side-panel>
     <main-panel v-if="category" :class="{ hidden: sidePanelOpen }">
@@ -72,6 +56,7 @@ import Tabs from './../components/Tabs/Tabs.vue'
 import Table from './../components/Table/Table.vue'
 import Search from './../components/Search/Search.vue'
 import RandomWordGenerator from './../components/RandomWordGenerator/RandomWordGenerator.vue'
+import List from './../components/List/List.vue'
 
 export default {
   name: 'content',
@@ -83,6 +68,7 @@ export default {
     Table,
     Search,
     RandomWordGenerator,
+    List,
   },
   props: {
     id: {
@@ -136,16 +122,26 @@ export default {
   },
   computed: {
     filteredCategories: function() {
-      const filteredCats = {}
-      Object.keys(Categories)
-        .filter(
+      const createListItem = cats =>
+        cats.map(cat => {
+          return {
+            name: cat.name,
+            id: cat.id,
+            link: `/content/${cat.id}/${this.content}`,
+          }
+        })
+
+      if (!this.categoryFilter.length) {
+        return createListItem(Object.values(Categories))
+      }
+
+      return createListItem(
+        Object.values(Categories).filter(
           cat =>
-            cat.toLowerCase().indexOf(this.categoryFilter.toLowerCase()) > -1
+            cat.name.toLowerCase().indexOf(this.categoryFilter.toLowerCase()) >
+            -1
         )
-        .reduce((obj, cat) => {
-          filteredCats[cat] = Categories[cat]
-        }, {})
-      return filteredCats
+      )
     },
   },
   mounted: function() {
