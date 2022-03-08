@@ -1,11 +1,13 @@
 <template>
   <div class="table">
     <ul class="grid grid--header">
-      <Search
-        :value="search"
-        placeholder="Search words"
-        v-on:search="searchRows"
-      />
+      <div class="grid-search">
+        <Search
+          :value="search"
+          placeholder="Search words"
+          v-on:search="searchRows"
+        />
+      </div>
       <li class="grid-item grid-header">
         <p
           class="text"
