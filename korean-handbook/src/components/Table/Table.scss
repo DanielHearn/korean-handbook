@@ -25,6 +25,9 @@
       p {
         word-break: break-word;
       }
+      &:last-child {
+        border-bottom: none;
+      }
     }
     .grid-notice {
       list-style: none;
