@@ -224,6 +224,9 @@ button {
   font-weight: $medium-weight;
   font-size: $s-size;
   font-size: $s-size;
+  &:hover {
+    background: $accent-dark;
+  }
 }
 
 .button--secondary {
