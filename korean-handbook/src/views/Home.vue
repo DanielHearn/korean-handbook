@@ -1,5 +1,5 @@
 <template>
-  <div class="main home">
+  <div class="main home-page">
     <side-panel :mobile="mobile" :open-initially="true" title="About">
       <template v-slot:header>
         <p class="text">

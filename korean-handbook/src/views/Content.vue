@@ -1,5 +1,5 @@
 <template>
-  <div class="main info">
+  <div :class="`main ${content}-page`">
     <side-panel
       :mobile="mobile"
       title="Categories"

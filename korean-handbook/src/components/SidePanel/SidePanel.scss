@@ -1,6 +1,6 @@
 @import "./../../scss/variables.scss";
 
-.home .mobile .side-panel-content {
+.home-page .mobile .side-panel-content {
   display: none;
 }
 
@@ -23,6 +23,10 @@
     &.active {
       height: 100%;
     }
+    .side-panel-header {
+      display: flex;
+      flex: 1;
+    }
   }
   .mobile-header {
     display: flex;
@@ -36,6 +40,7 @@
   .side-panel-header {
     padding: 1em;
     background: $darker;
+    
   }
   .side-panel-content {
     display: flex;

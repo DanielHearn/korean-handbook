@@ -85,7 +85,7 @@ body {
   }
 }
 
-.home {
+.home-page {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -329,7 +329,6 @@ button {
     }
     .page-content {
       margin: 0.5em 0;
-      padding: 0 0.5em 0.5em 0.5em;
     }
     .grid {
       .grid-item {
@@ -339,7 +338,12 @@ button {
       }
     }
   }
-  .home .intro-links .intro-link a {
+  .home-page .intro-links .intro-link a {
     padding: 2.5em 1em;
+  }
+  .random-page, .home-page {
+    .page-content {
+      padding: 0.5em 1em;
+    }
   }
 }
