@@ -1,5 +1,9 @@
 @import "./../../scss/variables.scss";
 
+.home .mobile .side-panel-content {
+  display: none;
+}
+
 .side-panel {
   width: 22em;
   background: $dark;
@@ -36,14 +40,14 @@
   .side-panel-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    padding: 1em;
+    overflow: hidden;
     .sub-heading:first-child {
       margin-top: 0;
     }
   }
   .search-list {
-    margin-bottom: 6em;
+    padding: 1em;
+    box-sizing: border-box;
   }
 }
 

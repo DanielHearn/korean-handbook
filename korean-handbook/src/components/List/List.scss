@@ -1,13 +1,13 @@
 @import "./../../scss/variables.scss";
 
 .search-list {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 100%;
   display: flex;
   flex: 1 auto;
   .text-list {
     .list-item {
-      padding: 0.1em 0.3em;
+      padding: 0.1em 0.5em;
       border-radius: 4px;
       transition: background $transition-fast;
       a {
@@ -28,9 +28,6 @@
       }
       p {
         margin: 0;
-      }
-      &:last-of-type {
-        margin-bottom: 5em;
       }
     }
   }
