@@ -30,5 +30,8 @@
         margin: 0;
       }
     }
+    &.no-results .list-item:hover {
+      background: unset;
+    }
   }
 }
