@@ -13,14 +13,13 @@ beforeEach(() => {
 
 describe('SidePanel.vue', () => {
   it('renders props.mobile when passed', () => {
-    const msg = 'new message'
     const wrapper = shallowMount(SidePanel, {
       propsData: {
         mobile: true,
-        title: 'Panel Title'
+        title: 'Panel Title',
       },
       store,
-      localVue
+      localVue,
     })
     expect(wrapper.find('.mobile-header').exists()).toBe(true)
     expect(wrapper.find('.sub-heading').text()).toBe('Panel Title')
