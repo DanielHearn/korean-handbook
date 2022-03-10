@@ -1,5 +1,8 @@
 <template>
-  <div id="app" :class="{ 'home-page': $route.path === '/' }">
+  <div
+    id="app"
+    :class="{ 'home-page': $route.path === '/', mobile: $store.state.mobile }"
+  >
     <router-view :mobile="$store.state.mobile" />
   </div>
 </template>

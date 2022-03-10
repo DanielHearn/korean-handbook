@@ -28,7 +28,12 @@
         v-for="word in filteredWords"
         :key="word.e + word.k"
       >
-        <p class="text" v-for="column in columns" :key="column.id">
+        <p
+          class="text"
+          v-for="column in columns"
+          :key="column.id"
+          :data-slug="column.id"
+        >
           {{ word[column.id] }}
         </p>
       </li>

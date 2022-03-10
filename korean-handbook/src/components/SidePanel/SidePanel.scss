@@ -13,21 +13,6 @@
   display: flex;
   flex: 1 auto;
   flex-direction: column;
-  &.mobile {
-    .mobile-header {
-      padding: 0.5em 1em;
-    }
-    .search-form {
-      margin-top: 0.5em;
-    }
-    &.active {
-      height: 100%;
-    }
-    .side-panel-header {
-      display: flex;
-      flex: 1;
-    }
-  }
   .mobile-header {
     display: flex;
     flex-direction: row;
@@ -53,6 +38,24 @@
   .search-list {
     padding: 1em;
     box-sizing: border-box;
+  }
+}
+
+.mobile {
+  .side-panel {
+    .mobile-header {
+      padding: 0.5em 1em;
+    }
+    .search-form {
+      margin-top: 0.5em;
+    }
+    &.active {
+      height: 100%;
+    }
+    .side-panel-header {
+      display: flex;
+      flex: 1;
+    }
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="side-panel" :class="{ mobile: mobile, active: open }">
+  <div class="side-panel" :class="{ active: open }">
     <div id="nav">
       <div class="nav-content">
         <div style="display: flex; align-items: center;">

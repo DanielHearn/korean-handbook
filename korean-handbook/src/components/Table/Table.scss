@@ -51,3 +51,9 @@
     }
   }
 }
+
+.mobile {
+  p[data-slug="n"] {
+    display: none;
+  }
+}
