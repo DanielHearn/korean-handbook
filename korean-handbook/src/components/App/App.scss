@@ -236,30 +236,6 @@ button {
   font-size: $s-size;
 }
 
-.actions {
-  display: flex;
-  flex-direction: row;
-  margin-top: 0.5em;
-  button {
-    margin-right: 0.5em;
-  }
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  margin: 0.5em 0;
-  padding: 0.5em;
-  background: $off-white;
-  button {
-    margin-right: 0.5em;
-  }
-  .option {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
 .text-link {
   text-decoration: none;
   color: $accent;
@@ -285,6 +261,9 @@ button {
 
 .text {
   font-size: $s-size;
+  &--bold {
+    font-weight: $medium-weight;
+  }
 }
 
 .hidden {

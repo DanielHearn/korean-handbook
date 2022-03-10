@@ -20,7 +20,7 @@
             <p v-else class="text">{{ word.k }}</p>
           </template>
           <template v-else>
-            <p class="text">
+            <p class="text text--bold">
               Click for the translation
             </p>
           </template>
@@ -70,7 +70,7 @@
           </div>
         </div>
       </div>
-      <div class="actions">
+      <div class="random-actions">
         <button class="button--primary" @click="generateWord">
           Next Word
         </button>
