@@ -1,0 +1,33 @@
+@import './../../scss/variables.scss';
+
+.match {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+  &-words {
+    display: grid;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+    grid-template-columns: 1fr 1fr;
+  }
+  &-column {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+  }
+  &-word {
+    &--active {
+      button  {
+        background: grey;
+      }
+    }
+    &--completed {
+      button  {
+        background: green;
+      }
+    }
+  }
+}

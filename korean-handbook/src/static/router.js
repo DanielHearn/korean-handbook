@@ -46,6 +46,18 @@ const router = new Router({
       },
     },
     {
+      name: 'content_info',
+      path: '/content/:id/match',
+      props: route => ({ id: route.params.id, content: 'match' }),
+      component: () =>
+        import(/* webpackChunkName: "info" */ './../views/Content.vue'),
+      meta: {
+        title: () => {
+          return `Match ${titleEnd}`
+        },
+      },
+    },
+    {
       name: 'content',
       path: '/content/:id/',
       redirect: to => {

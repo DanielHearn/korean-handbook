@@ -48,6 +48,19 @@
               <p class="link-description">Learn new words.</p>
             </router-link>
           </div>
+          <div class="intro-link">
+            <router-link to="/content/conjunctions/match">
+              <p class="link-main text-link">
+                <span class="link-icon"
+                  ><i class="material-icons">compare_arrows</i></span
+                >
+                Match
+              </p>
+              <p class="link-description">
+                Match English words to their Korean translation.
+              </p>
+            </router-link>
+          </div>
         </div>
       </div>
     </main-panel>

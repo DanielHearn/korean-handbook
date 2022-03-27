@@ -30,6 +30,11 @@
             :items="[
               { name: 'Info', slug: 'info', url: `/content/${id}/info` },
               { name: 'Random', slug: 'random', url: `/content/${id}/random` },
+              {
+                name: 'Match',
+                slug: 'match',
+                url: `/content/${id}/match`,
+              },
             ]"
             :selected="content"
           />
@@ -42,6 +47,7 @@
           :columns="category.columns"
         />
         <RandomWordGenerator v-if="content === 'random'" :category="category" />
+        <Match v-if="content === 'match'" :category="category" />
       </div>
     </main-panel>
   </div>
@@ -57,6 +63,7 @@ import Table from './../components/Table/Table.vue'
 import Search from './../components/Search/Search.vue'
 import RandomWordGenerator from './../components/RandomWordGenerator/RandomWordGenerator.vue'
 import List from './../components/List/List.vue'
+import Match from './../components/Match/Match.vue'
 
 export default {
   name: 'content',
@@ -69,6 +76,7 @@ export default {
     Search,
     RandomWordGenerator,
     List,
+    Match,
   },
   props: {
     id: {
