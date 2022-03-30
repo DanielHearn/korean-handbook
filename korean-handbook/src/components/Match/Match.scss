@@ -17,17 +17,25 @@
     flex-direction: column;
     list-style-type: none;
     padding: 0;
+    margin-right: 1em;
   }
   &-word {
-    &--active {
+    margin-bottom: 0.75em;
+    &--active:not(&--completed) {
       button  {
-        background: grey;
+        background: $accent;
       }
     }
     &--completed {
       button  {
-        background: green;
+        background: $green;
+        &:hover {
+          background: $green;
+        }
       }
     }
+  }
+  .button--secondary {
+    font-weight: 500;
   }
 }

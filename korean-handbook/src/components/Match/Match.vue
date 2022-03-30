@@ -14,6 +14,7 @@
           <button
             :disabled="completed[word.id]"
             @click="onWordClick('e', word.id)"
+            class="button--secondary"
           >
             {{ word.word }}
           </button>
@@ -32,6 +33,7 @@
           <button
             :disabled="completed[word.id]"
             @click="onWordClick('k', word.id)"
+            class="button--secondary"
           >
             {{ word.word }}
           </button>
@@ -42,6 +44,7 @@
       <button
         :disabled="Object.keys(completed).length < this.NUMBER_OF_WORDS"
         @click="nextWords()"
+        class="button--primary"
       >
         Next words
       </button>
