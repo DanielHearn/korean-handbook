@@ -15,6 +15,7 @@ export default {
   data: function() {
     return {
       completed: {},
+      completedWords: [],
       englishWords: [],
       koreanWords: [],
       selected: { e: null, k: null },
@@ -30,6 +31,15 @@ export default {
           if (selected.e === selected.k) {
             this.completed[selected.e] = true
             this.selected = { e: null, k: null }
+            this.completedWords = Object.keys(this.completed).map(key => {
+              const e = this.englishWords[key]
+              const k = this.koreanWords[key]
+              return {
+                id: `${e}_${k}`,
+                e: this.englishWords[key].word,
+                k: this.koreanWords[key].word,
+              }
+            })
           } else {
             this.selected = { e: null, k: null }
           }
@@ -72,7 +82,7 @@ export default {
       }
       if (this.selected[wordKey] === id) {
         this.selected[wordKey] = null
-      } else if (!this.selected[wordKey]) {
+      } else if (this.selected[wordKey] === null) {
         this.selected[wordKey] = id
       }
     },

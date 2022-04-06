@@ -40,6 +40,22 @@
         </li>
       </ul>
     </div>
+    <div class="match-completed">
+      <ul class="match-column">
+        <li
+          class="match-word match-english match-word--completed"
+          v-for="word in completedWords"
+          :key="word.id"
+        >
+          <button class="button--secondary">
+            <div>{{ word.e }}</div>
+            <div>
+              {{ word.k }}
+            </div>
+          </button>
+        </li>
+      </ul>
+    </div>
     <div class="match-actions">
       <button
         :disabled="Object.keys(completed).length < this.NUMBER_OF_WORDS"
