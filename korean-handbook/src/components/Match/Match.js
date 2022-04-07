@@ -19,11 +19,12 @@ export default {
       englishWords: [],
       koreanWords: [],
       selected: { e: null, k: null },
+      numberOfWords: NUMBER_OF_WORDS,
     }
   },
   watch: {
     category: function() {
-      this.generateWords()
+      this.reset()
     },
     selected: {
       handler(selected) {
@@ -32,12 +33,12 @@ export default {
             this.completed[selected.e] = true
             this.selected = { e: null, k: null }
             this.completedWords = Object.keys(this.completed).map(key => {
-              const e = this.englishWords[key]
-              const k = this.koreanWords[key]
+              const e = this.englishWords[key].word
+              const k = this.koreanWords[key].word
               return {
                 id: `${e}_${k}`,
-                e: this.englishWords[key].word,
-                k: this.koreanWords[key].word,
+                e: e,
+                k: k,
               }
             })
           } else {
@@ -53,13 +54,26 @@ export default {
       const newWords = []
       const newWordIndexes = []
       const words = this.category.words
-      while (newWords.length < NUMBER_OF_WORDS) {
-        const wordIndex = getRandomIndexFromArray(words)
-        if (!newWordIndexes.includes(wordIndex)) {
-          newWords.push(words[wordIndex])
-          newWordIndexes.push(wordIndex)
+      this.numberOfWords =
+        this.category.words.length <= NUMBER_OF_WORDS
+          ? this.category.words.length
+          : NUMBER_OF_WORDS
+      if (this.category.words.length <= NUMBER_OF_WORDS) {
+        words.forEach((word, i) => {
+          newWords.push(word)
+          newWordIndexes.push(i)
+        })
+      } else {
+        while (newWords.length <= this.numberOfWords) {
+          const wordIndex = getRandomIndexFromArray(words)
+          if (!newWordIndexes.includes(wordIndex)) {
+            newWords.push(words[wordIndex])
+            newWordIndexes.push(wordIndex)
+          }
+          console.log(newWords)
         }
       }
+      console.log('done')
       const englishWords = shuffleArray(
         newWords.map((word, i) => {
           return { id: i, word: word.e }
@@ -86,13 +100,21 @@ export default {
         this.selected[wordKey] = id
       }
     },
+    reset: function() {
+      this.completed = {}
+      this.selected = { e: null, k: null }
+      this.englishWords = []
+      this.koreanWords = []
+      this.completedWords = []
+      this.numberOfWords =
+        this.category.words.length <= NUMBER_OF_WORDS
+          ? this.category.words.length
+          : NUMBER_OF_WORDS
+      this.generateWords()
+    },
     nextWords: function() {
-      if (Object.keys(this.completed).length === NUMBER_OF_WORDS) {
-        this.completed = {}
-        this.selected = { e: null, k: null }
-        this.englishWords = []
-        this.koreanWords = []
-        this.generateWords()
+      if (Object.keys(this.completed).length === this.numberOfWords) {
+        this.reset()
       }
     },
   },
@@ -100,6 +122,9 @@ export default {
     this.generateWords()
   },
   created() {
-    this.NUMBER_OF_WORDS = NUMBER_OF_WORDS
+    this.numberOfWords =
+      this.category.words.length <= NUMBER_OF_WORDS
+        ? this.category.words.length
+        : NUMBER_OF_WORDS
   },
 }

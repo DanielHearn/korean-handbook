@@ -58,7 +58,7 @@
     </div>
     <div class="match-actions">
       <button
-        :disabled="Object.keys(completed).length < this.NUMBER_OF_WORDS"
+        :disabled="Object.keys(completed).length < this.numberOfWords"
         @click="nextWords()"
         class="button--primary"
       >
