@@ -35,6 +35,11 @@
                 slug: 'match',
                 url: `/content/${id}/match`,
               },
+              {
+                name: 'Test',
+                slug: 'test',
+                url: `/content/${id}/test`,
+              },
             ]"
             :selected="content"
           />
@@ -48,6 +53,7 @@
         />
         <RandomWordGenerator v-if="content === 'random'" :category="category" />
         <Match v-if="content === 'match'" :category="category" />
+        <Test v-if="content === 'test'" :category="category" />
       </div>
     </main-panel>
   </div>
@@ -64,6 +70,7 @@ import Search from './../components/Search/Search.vue'
 import RandomWordGenerator from './../components/RandomWordGenerator/RandomWordGenerator.vue'
 import List from './../components/List/List.vue'
 import Match from './../components/Match/Match.vue'
+import Test from './../components/Test/Test.vue'
 
 export default {
   name: 'content',
@@ -77,6 +84,7 @@ export default {
     RandomWordGenerator,
     List,
     Match,
+    Test,
   },
   props: {
     id: {

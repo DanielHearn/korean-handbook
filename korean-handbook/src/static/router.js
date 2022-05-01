@@ -46,7 +46,7 @@ const router = new Router({
       },
     },
     {
-      name: 'content_info',
+      name: 'content_match',
       path: '/content/:id/match',
       props: route => ({ id: route.params.id, content: 'match' }),
       component: () =>
@@ -54,6 +54,18 @@ const router = new Router({
       meta: {
         title: () => {
           return `Match ${titleEnd}`
+        },
+      },
+    },
+    {
+      name: 'content_test',
+      path: '/content/:id/test',
+      props: route => ({ id: route.params.id, content: 'test' }),
+      component: () =>
+        import(/* webpackChunkName: "info" */ './../views/Content.vue'),
+      meta: {
+        title: () => {
+          return `Test ${titleEnd}`
         },
       },
     },

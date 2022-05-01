@@ -70,10 +70,8 @@ export default {
             newWords.push(words[wordIndex])
             newWordIndexes.push(wordIndex)
           }
-          console.log(newWords)
         }
       }
-      console.log('done')
       const englishWords = shuffleArray(
         newWords.map((word, i) => {
           return { id: i, word: word.e }
