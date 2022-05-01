@@ -3,12 +3,24 @@
     <div class="test-word">
       {{ word.e }}
     </div>
-    <div class="test-word">
-      {{ generatedCharacters }}
-    </div>
+    <ul class="test-words">
+      <li
+        class="test-choice"
+        v-for="character in generatedCharacters[currentStep]"
+        :key="`${word.e}_${character}_${currentStep}`"
+      >
+        <button
+          :disabled="selected[character]"
+          class="button--secondary"
+          @click="selectCharacter(character)"
+        >
+          {{ character }}
+        </button>
+      </li>
+    </ul>
     <div class="test-actions">
       <button
-        :disabled="this.currentStep < this.numberOfSteps"
+        :disabled="!completed"
         @click="nextWord()"
         class="button--primary"
       >

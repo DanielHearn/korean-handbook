@@ -14,8 +14,10 @@ export default {
       word: null,
       numberOfCharacters: NUMBER_OF_CHARACTERS,
       generatedCharacters: {},
-      currentStep: 0,
+      selected: {},
+      currentStep: 1,
       numberOfSteps: 0,
+      completed: false,
     }
   },
   watch: {
@@ -27,7 +29,9 @@ export default {
     reset: function() {
       this.word = null
       this.generatedCharacters = {}
-      this.currentStep = 0
+      this.currentStep = 1
+      this.completed = false
+      this.selected = {}
       this.generateWord()
     },
     generateWord: function() {
@@ -46,9 +50,14 @@ export default {
 
       let i = 0
       while (i < this.numberOfSteps) {
-        const charactersForStep = Array.from(
-          new Array(NUMBER_OF_CHARACTERS)
-        ).map(() => koreanLetters[getRandomIndexFromArray(koreanLetters)])
+        let charactersForStep = Array.from(new Array(NUMBER_OF_CHARACTERS)).map(
+          () => koreanLetters[getRandomIndexFromArray(koreanLetters)]
+        )
+        charactersForStep = charactersForStep.filter(
+          (character, index) =>
+            character !== ' ' && charactersForStep.indexOf(character) !== index
+        )
+        charactersForStep.push(newWord.k[i])
         this.generatedCharacters[i + 1] = charactersForStep
         i++
       }
@@ -58,6 +67,17 @@ export default {
     nextWord: function() {
       if (this.currentStep === this.numberOfSteps) {
         this.reset()
+      }
+    },
+    selectCharacter: function(character) {
+      if (character === this.word.k[this.currentStep - 1]) {
+        if (this.currentStep === this.numberOfSteps) {
+          this.completed = true
+        } else {
+          this.currentStep++
+        }
+      } else {
+        this.selected[character] = true
       }
     },
   },
