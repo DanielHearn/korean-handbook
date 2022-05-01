@@ -61,6 +61,19 @@
               </p>
             </router-link>
           </div>
+          <div class="intro-link">
+            <router-link to="/content/conjunctions/test">
+              <p class="link-main text-link">
+                <span class="link-icon"
+                  ><i class="material-icons">school</i></span
+                >
+                Test
+              </p>
+              <p class="link-description">
+                Test your knowledge of Korean words.
+              </p>
+            </router-link>
+          </div>
         </div>
       </div>
     </main-panel>
