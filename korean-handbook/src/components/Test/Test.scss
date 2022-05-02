@@ -5,4 +5,29 @@
   flex-direction: column;
   max-width: 500px;
   width: 100%;
+
+  &-characters {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-character {
+    margin-right: 0.5em;
+  }
+
+  &-choices {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-choice {
+    margin-right: 0.5em;
+  }
+  .test-button--selected {
+    background-color: pink;
+  }
 }

@@ -1,17 +1,30 @@
 <template>
   <div class="test" v-if="word">
-    <div class="test-word">
-      {{ word.e }}
-    </div>
-    <ul class="test-words">
+    <div class="test-word">{{ word.e }}</div>
+    <ul class="test-characters">
+      <li
+        class="test-character"
+        v-for="(character, i) in word.k"
+        :key="`${word.k}_${character}_${currentStep}`"
+      >
+        <span v-if="i < currentStep - 1 || completed">
+          {{ character }}
+        </span>
+        <span v-else>
+          _
+        </span>
+      </li>
+    </ul>
+    <ul class="test-choices">
       <li
         class="test-choice"
         v-for="character in generatedCharacters[currentStep]"
-        :key="`${word.e}_${character}_${currentStep}`"
+        :key="`${word.k}_${character}_${currentStep}`"
       >
         <button
-          :disabled="selected[character]"
+          :disabled="completed || selected[character]"
           class="button--secondary"
+          :class="{}"
           @click="selectCharacter(character)"
         >
           {{ character }}

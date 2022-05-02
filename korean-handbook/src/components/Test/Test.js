@@ -1,4 +1,7 @@
-import { getRandomIndexFromArray } from '../../static/utilities.js'
+import {
+  getRandomIndexFromArray,
+  shuffleArray,
+} from '../../static/utilities.js'
 import { NUMBER_OF_CHARACTERS } from './constants'
 
 export default {
@@ -40,25 +43,33 @@ export default {
       const newWord = words[wordIndex]
       this.numberOfSteps = newWord.k.length
 
-      let koreanLetters = []
+      let koreanCharacters = []
       for (const otherWordIndex in words) {
         if (otherWordIndex !== wordIndex) {
           const otherWord = words[otherWordIndex]
-          koreanLetters = koreanLetters.concat([...otherWord.k])
+          koreanCharacters = koreanCharacters.concat([...otherWord.k])
         }
       }
 
       let i = 0
       while (i < this.numberOfSteps) {
-        let charactersForStep = Array.from(new Array(NUMBER_OF_CHARACTERS)).map(
-          () => koreanLetters[getRandomIndexFromArray(koreanLetters)]
-        )
-        charactersForStep = charactersForStep.filter(
-          (character, index) =>
-            character !== ' ' && charactersForStep.indexOf(character) !== index
-        )
-        charactersForStep.push(newWord.k[i])
-        this.generatedCharacters[i + 1] = charactersForStep
+        const letter = newWord.k[i]
+        let charactersForStep = []
+        while (charactersForStep.length < NUMBER_OF_CHARACTERS - 1) {
+          const newCharacter =
+            koreanCharacters[getRandomIndexFromArray(koreanCharacters)]
+          console.log(newCharacter)
+          if (
+            !charactersForStep.includes(newCharacter) &&
+            newCharacter !== ' ' &&
+            newCharacter !== letter
+          ) {
+            charactersForStep.push(newCharacter)
+          }
+        }
+
+        charactersForStep.push(letter)
+        this.generatedCharacters[i + 1] = shuffleArray(charactersForStep)
         i++
       }
 
@@ -71,13 +82,14 @@ export default {
     },
     selectCharacter: function(character) {
       if (character === this.word.k[this.currentStep - 1]) {
+        this.selected = {}
         if (this.currentStep === this.numberOfSteps) {
           this.completed = true
         } else {
           this.currentStep++
         }
       } else {
-        this.selected[character] = true
+        this.selected = { ...this.selected, [character]: true }
       }
     },
   },
