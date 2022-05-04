@@ -58,7 +58,6 @@ export default {
         while (charactersForStep.length < NUMBER_OF_CHARACTERS - 1) {
           const newCharacter =
             koreanCharacters[getRandomIndexFromArray(koreanCharacters)]
-          console.log(newCharacter)
           if (
             !charactersForStep.includes(newCharacter) &&
             newCharacter !== ' ' &&
