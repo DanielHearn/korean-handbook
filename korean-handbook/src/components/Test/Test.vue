@@ -3,37 +3,39 @@
     <div class="match-info">
       Select the correct character for each part of the word.
     </div>
-    <div class="test-word">{{ word.e }}</div>
-    <ul class="test-characters">
-      <li
-        class="test-character"
-        v-for="(character, i) in word.k"
-        :key="`${word.k}_${character}_${currentStep}`"
-      >
-        <span v-if="i < currentStep - 1 || completed">
-          {{ character }}
-        </span>
-        <span v-else>
-          _
-        </span>
-      </li>
-    </ul>
-    <ul class="test-choices">
-      <li
-        class="test-choice"
-        v-for="character in generatedCharacters[currentStep]"
-        :key="`${word.k}_${character}_${currentStep}`"
-      >
-        <button
-          :disabled="completed || selected[character]"
-          class="button--secondary"
-          :class="{}"
-          @click="selectCharacter(character)"
+    <div class="test-content">
+      <div class="test-word">{{ word.e }}</div>
+      <ul class="test-characters">
+        <li
+          class="test-character"
+          v-for="(character, i) in word.k"
+          :key="`${word.k}_${character}_${currentStep}`"
         >
-          {{ character }}
-        </button>
-      </li>
-    </ul>
+          <span v-if="i < currentStep - 1 || completed">
+            {{ character }}
+          </span>
+          <span v-else>
+            _
+          </span>
+        </li>
+      </ul>
+      <ul class="test-choices">
+        <li
+          class="test-choice"
+          v-for="character in generatedCharacters[currentStep]"
+          :key="`${word.k}_${character}_${currentStep}`"
+        >
+          <button
+            :disabled="completed || selected[character]"
+            class="button--secondary"
+            :class="{}"
+            @click="selectCharacter(character)"
+          >
+            {{ character }}
+          </button>
+        </li>
+      </ul>
+    </div>
     <div class="test-actions">
       <button
         :disabled="!completed"
