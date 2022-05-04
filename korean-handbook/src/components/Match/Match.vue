@@ -1,5 +1,8 @@
 <template>
   <div class="match">
+    <div class="match-info">
+      Match each English word to their Korean translation.
+    </div>
     <div class="match-words">
       <ul class="match-column">
         <li
