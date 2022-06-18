@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './../views/Home.vue'
+import Home from '../views/Home.vue'
 
 Vue.use(Router)
 
@@ -26,7 +26,7 @@ const router = new Router({
       path: '/content/:id/random',
       props: route => ({ id: route.params.id, content: 'random' }),
       component: () =>
-        import(/* webpackChunkName: "info" */ './../views/Content.vue'),
+        import(/* webpackChunkName: "info" */ '../views/Content.vue'),
       meta: {
         title: () => {
           return `Random ${titleEnd}`
@@ -38,7 +38,7 @@ const router = new Router({
       path: '/content/:id/info',
       props: route => ({ id: route.params.id, content: 'info' }),
       component: () =>
-        import(/* webpackChunkName: "info" */ './../views/Content.vue'),
+        import(/* webpackChunkName: "info" */ '../views/Content.vue'),
       meta: {
         title: () => {
           return `Info ${titleEnd}`
@@ -50,7 +50,7 @@ const router = new Router({
       path: '/content/:id/match',
       props: route => ({ id: route.params.id, content: 'match' }),
       component: () =>
-        import(/* webpackChunkName: "info" */ './../views/Content.vue'),
+        import(/* webpackChunkName: "info" */ '../views/Content.vue'),
       meta: {
         title: () => {
           return `Match ${titleEnd}`
@@ -62,7 +62,7 @@ const router = new Router({
       path: '/content/:id/test',
       props: route => ({ id: route.params.id, content: 'test' }),
       component: () =>
-        import(/* webpackChunkName: "info" */ './../views/Content.vue'),
+        import(/* webpackChunkName: "info" */ '../views/Content.vue'),
       meta: {
         title: () => {
           return `Test ${titleEnd}`

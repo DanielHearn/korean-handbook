@@ -1,31 +1,21 @@
-# Korean Handbook
+# korean-handbook
 
-## A website that teaches the basics of the Korean language though tool apps and information pages
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b25769fb-6b58-4d51-9f44-bd8ad087d15e/deploy-status)](https://app.netlify.com/sites/koreanhandbook/deploys)
-Live at www.thekoreanhandbook.com
-
-Single page app built with Vue, Vuex, Vue Router, SCSS.
-Uses material icons.
-
-
-## Commands
-
-### Project setup
+## Project setup
 ```
 npm install
 ```
 
-### Compiles for development
+### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles for production
+### Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Run  tests
+### Run your tests
 ```
 npm run test
 ```
@@ -35,16 +25,15 @@ npm run test
 npm run lint
 ```
 
-### Run end-to-end tests
+### Run your end-to-end tests
 ```
 npm run test:e2e
 ```
 
-### Run unit tests
+### Run your unit tests
 ```
 npm run test:unit
 ```
 
-### Contributions
-
-Contributions are welcome for corrections and new word categories.
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
