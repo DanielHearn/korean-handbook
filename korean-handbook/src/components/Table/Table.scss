@@ -2,7 +2,7 @@
 
 .table {
   background: $off-white;
-  border-radius: $border-radius 0;
+  border-radius: $border-radius 0 0 $border-radius;
   overflow: hidden;
 
   .grid {
