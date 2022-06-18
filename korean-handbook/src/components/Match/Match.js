@@ -15,6 +15,7 @@ export default {
   data: function() {
     return {
       completed: {},
+      unsortedWords: [],
       completedWords: [],
       englishWords: [],
       koreanWords: [],
@@ -32,15 +33,14 @@ export default {
           if (selected.e === selected.k) {
             this.completed[selected.e] = true
             this.selected = { e: null, k: null }
-            this.completedWords = Object.keys(this.completed).map(key => {
-              const e = this.englishWords[key].word
-              const k = this.koreanWords[key].word
-              return {
-                id: `${e}_${k}`,
-                e: e,
-                k: k,
-              }
-            })
+            const word = this.unsortedWords[selected.e]
+            this.completedWords = [
+              {
+                id: `${word.e}_${word.k}`,
+                e: word.e,
+                k: word.k,
+              },
+            ].concat(this.completedWords)
           } else {
             this.selected = { e: null, k: null }
           }
@@ -64,7 +64,7 @@ export default {
           newWordIndexes.push(i)
         })
       } else {
-        while (newWords.length <= this.numberOfWords) {
+        while (newWords.length < this.numberOfWords) {
           const wordIndex = getRandomIndexFromArray(words)
           if (!newWordIndexes.includes(wordIndex)) {
             newWords.push(words[wordIndex])
@@ -82,6 +82,7 @@ export default {
           return { id: i, word: word.k }
         })
       )
+      this.unsortedWords = newWords
       this.englishWords = englishWords
       this.koreanWords = koreanWords
     },
@@ -104,6 +105,7 @@ export default {
       this.englishWords = []
       this.koreanWords = []
       this.completedWords = []
+      this.unsortedWords = []
       this.numberOfWords =
         this.category.words.length <= NUMBER_OF_WORDS
           ? this.category.words.length
