@@ -16,6 +16,9 @@
 
   &-character {
     margin-right: 0.5em;
+    &--active {
+      background: $light-grey;
+    }
   }
 
   &-choices {

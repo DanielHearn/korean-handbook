@@ -10,6 +10,9 @@
           class="test-character"
           v-for="(character, i) in word.k"
           :key="`${word.k}_${character}_${currentStep}`"
+          :class="{
+            'test-character--active': completed ? false : i === currentStep - 1,
+          }"
         >
           <span v-if="i < currentStep - 1 || completed">
             {{ character }}
@@ -28,7 +31,6 @@
           <button
             :disabled="completed || selected[character]"
             class="button--secondary"
-            :class="{}"
             @click="selectCharacter(character)"
           >
             {{ character }}
