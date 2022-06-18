@@ -7,10 +7,6 @@ Live at www.thekoreanhandbook.com
 Single page app built with Vue, Vuex, Vue Router, SCSS.
 Uses material icons.
 
-## Todo
-1. Unit tests
-2. E2E tests
-3. UI improvements to random word generator
 
 ## Commands
 
