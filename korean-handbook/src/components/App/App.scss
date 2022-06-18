@@ -112,14 +112,16 @@ body {
     .intro-link {
       background: $accent;
       color: $white;
+      border-radius: $border-radius;
+      transition: background $transition-slow;
+      &:hover {
+        background: $accent-dark;
+      }
       a {
         display: flex;
         flex-direction: column;
         text-decoration: none;
         padding: 4em 1em;
-        &:hover p {
-          text-decoration: underline;
-        }
       }
       .link-main {
         display: flex;
@@ -134,6 +136,9 @@ body {
         text-decoration: none;
         color: $white;
         margin: 0;
+      }
+      .text-link:hover {
+        text-decoration: none;
       }
       .link-icon {
         margin-right: 0.25em;
@@ -191,7 +196,7 @@ body {
 
 input {
   background: $grey;
-  border-radius: 4px;
+  border-radius: $border-radius;
   color: $light-grey;
   border: 0;
   padding: 0.4em 0.6em;
@@ -207,7 +212,7 @@ button {
   border: 0;
   background: $dark-grey;
   color: $white;
-  border-radius: 4px;
+  border-radius: $border-radius;
   padding: 0.4em 0.6em;
   font-family: rubik, sans-serif;
   user-select: none;
@@ -240,9 +245,12 @@ button {
   text-decoration: none;
   color: $accent;
   font-weight: $medium-weight;
-  &:hover, &:visited {
+  &:hover {
     text-decoration: underline;
     color: $accent;
+  }
+  &:visited {
+    text-decoration: none;
   }
 }
 
