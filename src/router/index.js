@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';
+import HomePage from '../views/HomePage/HomePage.vue';
 
 const titleEnd = ' - The Korean Handbook';
 
@@ -8,7 +8,7 @@ const routes = [
     name: 'home',
     path: '/',
     props: false,
-    component: Home,
+    component: HomePage,
     meta: {
       title: () => {
         return `Home ${titleEnd}`;
@@ -19,7 +19,7 @@ const routes = [
     name: 'content_random',
     path: '/content/:id/random',
     props: (route) => ({ id: route.params.id, content: 'random' }),
-    component: () => import(/* webpackChunkName: "info" */ '../views/Content.vue'),
+    component: () => import(/* webpackChunkName: "info" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
       title: () => {
         return `Random ${titleEnd}`;
@@ -30,7 +30,7 @@ const routes = [
     name: 'content_info',
     path: '/content/:id/info',
     props: (route) => ({ id: route.params.id, content: 'info' }),
-    component: () => import(/* webpackChunkName: "info" */ '../views/Content.vue'),
+    component: () => import(/* webpackChunkName: "info" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
       title: () => {
         return `Info ${titleEnd}`;
@@ -41,7 +41,7 @@ const routes = [
     name: 'content_match',
     path: '/content/:id/match',
     props: (route) => ({ id: route.params.id, content: 'match' }),
-    component: () => import(/* webpackChunkName: "info" */ '../views/Content.vue'),
+    component: () => import(/* webpackChunkName: "info" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
       title: () => {
         return `Match ${titleEnd}`;
@@ -52,7 +52,7 @@ const routes = [
     name: 'content_test',
     path: '/content/:id/test',
     props: (route) => ({ id: route.params.id, content: 'test' }),
-    component: () => import(/* webpackChunkName: "info" */ '../views/Content.vue'),
+    component: () => import(/* webpackChunkName: "info" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
       title: () => {
         return `Test ${titleEnd}`;
