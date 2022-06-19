@@ -73,12 +73,11 @@ module.exports = {
     'prettier-vue/prettier': [
       'error',
       {
-        // Override all options of `prettier` here
-        // @see https://prettier.io/docs/en/options.html
-        printWidth: 100,
-        singleQuote: true,
-        semi: true,
         trailingComma: 'es5',
+        tabWidth: 2,
+        semi: true,
+        singleQuote: true,
+        printWidth: 100,
       },
     ],
   },
