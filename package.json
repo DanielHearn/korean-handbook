@@ -22,7 +22,7 @@
     "core-js": "^3.8.3",
     "pinia": "^2.0.14",
     "vue": "^3.2.13",
-    "vue-analytics": "^5.22.1",
+    "vue-gtag": "^2.0.1",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
