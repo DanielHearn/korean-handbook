@@ -1,11 +1,9 @@
+import { mapState, mapActions } from 'pinia';
+import { useMobileStore } from '@/stores/mobile';
+
 export default {
   name: 'side-panel',
   props: {
-    mobile: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
     title: {
       type: String,
       required: false,
@@ -16,6 +14,9 @@ export default {
       required: false,
       default: false,
     },
+  },
+  computed: {
+    ...mapState(useMobileStore, ['mobile']),
   },
   data: function () {
     return {

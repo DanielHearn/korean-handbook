@@ -56,6 +56,9 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'pinia';
+import { useMobileStore } from '@/stores/mobile';
+
 import { Categories } from './../static/categories.js';
 import MainPanel from './../components/MainPanel/MainPanel.vue';
 import SidePanel from './../components/SidePanel/SidePanel.vue';
@@ -93,11 +96,6 @@ export default {
       required: false,
       default: 'info',
     },
-    mobile: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
   },
   data: function () {
     return {
@@ -108,6 +106,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(useMobileStore, ['mobile']),
     filteredCategories: function () {
       const createListItem = (cats) =>
         cats.map((cat) => {
