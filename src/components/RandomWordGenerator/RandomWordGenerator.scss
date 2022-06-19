@@ -8,7 +8,7 @@
   height: 300px;
   border-radius: $border-radius;
   overflow: hidden;
-  
+
   &-flashcards {
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@
       background: $off-whiter;
     }
   }
-  
+
   &-options {
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@
       margin: 0.25em 0 0 0;
     }
   }
-  
+
   &-actions {
     display: flex;
     flex-direction: row;
@@ -76,7 +76,6 @@
     align-items: center;
   }
 }
-
 
 @media screen and (max-width: 700px) {
   .random {

@@ -92,7 +92,7 @@ body {
   box-sizing: border-box;
   .intro {
     h1 {
-      font-size: $l-size*1.25;
+      font-size: $l-size * 1.25;
       font-weight: $bold-weight;
       margin-bottom: 0.25em;
     }
@@ -203,7 +203,7 @@ input {
   letter-spacing: 0.025em;
   font-family: rubik, sans-serif;
   font-size: 1.1em;
-  &[type="text"]::placeholder {
+  &[type='text']::placeholder {
     color: $light-grey;
   }
 }
@@ -283,7 +283,8 @@ button {
 }
 
 button {
-  &:disabled, &:disabled:hover {
+  &:disabled,
+  &:disabled:hover {
     background: $off-whiter;
     cursor: not-allowed;
   }
@@ -293,7 +294,7 @@ button {
   width: 12px;
 }
 *::-webkit-scrollbar-track {
-  background: $dark-grey; 
+  background: $dark-grey;
 }
 *::-webkit-scrollbar-thumb {
   background: $grey;
@@ -328,7 +329,10 @@ button {
   .home-page .intro-links .intro-link a {
     padding: 2.5em 1em;
   }
-  .random-page, .home-page, .match-page, .test-page {
+  .random-page,
+  .home-page,
+  .match-page,
+  .test-page {
     .page-content {
       padding: 0.5em 1em;
     }

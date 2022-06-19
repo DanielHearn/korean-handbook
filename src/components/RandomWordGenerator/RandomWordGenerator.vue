@@ -20,9 +20,7 @@
             <p v-else class="text">{{ word.k }}</p>
           </template>
           <template v-else>
-            <p class="text text--bold">
-              Click for the translation
-            </p>
+            <p class="text text--bold">Click for the translation</p>
           </template>
         </div>
       </div>
@@ -38,45 +36,35 @@
     <div class="random-options">
       <div>
         <div class="random-option">
-          <input
-            id="flashcardModeToggle"
-            type="checkbox"
-            v-model="flashcardMode"
-          />
+          <input id="flashcardModeToggle" v-model="flashcardMode" type="checkbox" />
           <label for="flashcardModeToggle" class="text">Flashcard Mode</label>
         </div>
         <div v-if="flashcardMode">
           <div>
             <input
               id="englishDirectionToggle"
+              v-model="languageDirection"
               type="radio"
               value="toEnglish"
-              v-model="languageDirection"
             />
-            <label for="englishDirectionToggle" class="text"
-              >Korean To English</label
-            >
+            <label for="englishDirectionToggle" class="text">Korean To English</label>
           </div>
           <div>
             <input
               id="koreanDirectionToggle"
+              v-model="languageDirection"
               type="radio"
               value="toKorean"
-              v-model="languageDirection"
             />
-            <label for="koreanDirectionToggle" class="text"
-              >English To Korean</label
-            >
+            <label for="koreanDirectionToggle" class="text">English To Korean</label>
           </div>
         </div>
       </div>
       <div class="random-actions">
-        <button class="button--primary" @click="generateWord">
-          Next Word
-        </button>
+        <button class="button--primary" @click="generateWord">Next Word</button>
         <button
-          class="button--secondary"
           v-if="flashcardMode"
+          class="button--secondary"
           :disabled="showAnswer"
           @click="showAnswer = true"
         >

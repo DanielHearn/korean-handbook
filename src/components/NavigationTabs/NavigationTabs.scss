@@ -1,0 +1,44 @@
+@import './../../scss/variables.scss';
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  color: $darker;
+  position: relative;
+  &-items {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  &-item {
+    display: flex;
+    margin-right: 0.25em;
+    font-weight: 600;
+    font-size: 1em;
+    transition: color 0.06s linear;
+    user-select: none;
+    &:hover {
+      cursor: pointer;
+      color: $accent;
+    }
+    &--selected {
+      color: $accent;
+    }
+    a {
+      color: $darker;
+      text-decoration: none;
+      padding: 0.5em 0.75em;
+      &:visited {
+        text-decoration: none;
+      }
+    }
+  }
+  &-dash {
+    height: 4px;
+    width: 40px;
+    background: $accent;
+    position: absolute;
+    bottom: 0;
+    transition: transform 200ms, width 0.1s ease-in;
+  }
+}

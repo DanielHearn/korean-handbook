@@ -1,0 +1,65 @@
+@import './../../scss/variables.scss';
+
+.table {
+  background: $off-white;
+  border-radius: $border-radius 0 0 $border-radius;
+  overflow: hidden;
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0.5em 1em;
+    .grid-header {
+      font-weight: $medium-weight;
+      padding: 0.5em 1em;
+      background: #dddddd;
+    }
+    .grid-search {
+      background: $dark;
+      padding: 0.5em 1em;
+    }
+    .grid-item {
+      display: grid;
+      row-gap: 2em;
+      column-gap: 1em;
+      grid-template-columns: repeat(auto-fit, minmax(min-content, 8em));
+      border-bottom: 2px #dddddd solid;
+      p {
+        word-break: break-word;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    .grid-notice {
+      list-style: none;
+      font-weight: $regular-weight;
+    }
+    &--header {
+      position: sticky;
+      top: 0;
+      background: $white;
+      border-bottom: 2px #dddddd solid;
+      padding: 0;
+      .grid-item {
+        border: none;
+      }
+      .search-form {
+        max-width: 400px;
+      }
+      p {
+        margin: 0.5em 0.5em 0 0;
+      }
+    }
+  }
+}
+
+.mobile {
+  p[data-slug='n'] {
+    display: none;
+  }
+  .table {
+    border-radius: 0;
+  }
+}

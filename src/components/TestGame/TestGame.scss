@@ -1,0 +1,49 @@
+@import './../../scss/variables.scss';
+
+.test {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+
+  &-characters {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2em;
+  }
+
+  &-character {
+    margin-right: 0.5em;
+    &--active {
+      background: $light-grey;
+    }
+  }
+
+  &-choices {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    list-style: none;
+  }
+
+  &-choice {
+    margin-right: 0.5em;
+  }
+
+  &-content {
+    padding-top: 1em;
+  }
+
+  &-word {
+    font-weight: 600;
+    font-size: 1.2em;
+  }
+
+  .test-button--selected {
+    background-color: pink;
+  }
+}

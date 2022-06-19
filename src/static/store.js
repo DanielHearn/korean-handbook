@@ -5,11 +5,11 @@ export const storeConfig = {
   },
   mutations: {
     setMobile(state, value) {
-      state.mobile = value
+      state.mobile = value;
     },
     setMobileMenu(state, value) {
-      state.mobileMenu = value
+      state.mobileMenu = value;
     },
   },
   actions: {},
-}
+};

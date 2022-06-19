@@ -1,0 +1,37 @@
+@import './../../scss/variables.scss';
+
+.search-list {
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex: 1 auto;
+  .text-list {
+    .list-item {
+      padding: 0.1em 0.5em;
+      border-radius: $border-radius;
+      transition: background $transition-fast;
+      a {
+        color: $white;
+        font-size: $s-size;
+        font-weight: $regular-weight;
+        width: 100%;
+        user-select: none;
+        a:visited {
+          color: $white;
+        }
+      }
+      &.active {
+        background: $accent;
+      }
+      &:hover:not(.active) {
+        background: $grey;
+      }
+      p {
+        margin: 0;
+      }
+    }
+    &.no-results .list-item:hover {
+      background: unset;
+    }
+  }
+}

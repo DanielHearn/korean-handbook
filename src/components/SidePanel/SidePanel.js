@@ -17,32 +17,32 @@ export default {
       default: false,
     },
   },
-  data: function() {
+  data: function () {
     return {
       open: false,
-    }
+    };
   },
   watch: {
-    mobile: function() {
+    mobile: function () {
       if (!this.mobile) {
-        this.open = false
+        this.open = false;
       }
     },
-    $route: function() {
+    $route: function () {
       if (this.mobile) {
-        this.open = false
-        this.$emit('side-panel-toggle', this.open)
+        this.open = false;
+        this.$emit('side-panel-toggle', this.open);
       }
     },
-    openInitially: function() {
-      this.open = true
-      this.$emit('side-panel-toggle', this.open)
+    openInitially: function () {
+      this.open = true;
+      this.$emit('side-panel-toggle', this.open);
     },
   },
   methods: {
-    toggleOpen: function() {
-      this.open = !this.open
-      this.$emit('side-panel-toggle', this.open)
+    toggleOpen: function () {
+      this.open = !this.open;
+      this.$emit('side-panel-toggle', this.open);
     },
   },
-}
+};

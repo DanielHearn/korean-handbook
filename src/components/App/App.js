@@ -1,33 +1,37 @@
-const mobileWidth = 700
+import { mapState, mapActions } from 'pinia';
+import { useMobileStore } from '@/stores/mobile';
+
+const mobileWidth = 700;
 
 export default {
   name: 'app',
   props: {},
-  data: function() {
+  computed: {
+    ...mapState(useMobileStore, ['mobile', 'mobileMenu']),
+  },
+  data: function () {
     return {
       windowWidth: window.innerWidth,
-    }
+    };
   },
   methods: {
-    checkScreenSize: function() {
-      this.windowWidth = window.innerWidth
-      this.$store.commit('setMobile', this.windowWidth <= mobileWidth)
-      this.$store.commit(
-        'setMobileMenu',
-        this.$store.state.mobileMenu && this.windowWidth <= mobileWidth
-      )
+    ...mapActions(useMobileStore, ['setMobile', 'setMobileMenu']),
+    checkScreenSize: function () {
+      this.windowWidth = window.innerWidth;
+      this.setMobile(this.windowWidth <= mobileWidth);
+      this.setMobileMenu(this.mobileMenu ? this.windowWidth <= mobileWidth : false);
     },
-    toggleMobileMenu: function() {
-      this.$store.commit('setMobileMenu', !this.$store.state.mobileMenu)
+    toggleMobileMenu: function () {
+      this.setMobileMenu(!this.mobileMenu);
     },
   },
   watch: {
-    $route: function() {
-      this.$store.commit('setMobileMenu', false)
+    $route: function () {
+      this.setMobileMenu(false);
     },
   },
-  mounted: function() {
-    this.checkScreenSize()
-    window.addEventListener('resize', this.checkScreenSize)
+  mounted: function () {
+    this.checkScreenSize();
+    window.addEventListener('resize', this.checkScreenSize);
   },
-}
+};

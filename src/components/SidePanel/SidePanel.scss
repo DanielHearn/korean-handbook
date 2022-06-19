@@ -1,4 +1,4 @@
-@import "./../../scss/variables.scss";
+@import './../../scss/variables.scss';
 
 .home-page .mobile .side-panel-content {
   display: none;
@@ -25,7 +25,6 @@
   .side-panel-header {
     padding: 1em;
     background: $darker;
-    
   }
   .side-panel-content {
     display: flex;
