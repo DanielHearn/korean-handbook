@@ -11,7 +11,7 @@ const routes = [
     component: Home,
     meta: {
       title: () => {
-        return `Home${titleEnd}`;
+        return `Home ${titleEnd}`;
       },
     },
   },
@@ -100,12 +100,9 @@ const router = createRouter({
   routes,
 });
 
-export default router;
+router.afterEach((to, from, next) => {
+  document.title = to.meta.title(to);
+  next();
+});
 
-/*
-router.afterEach((to) => {
-  Vue.nextTick(() => {
-    document.title = to.meta.title(to)
-  })
-})
-*/
+export default router;
