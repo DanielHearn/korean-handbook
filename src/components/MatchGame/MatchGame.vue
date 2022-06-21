@@ -2,44 +2,38 @@
   <div class="match">
     <div class="match-info">Match each English word to their Korean translation.</div>
     <div class="match-words">
-      <ul class="match-column">
-        <li
-          v-for="word in englishWords"
-          :key="word.e"
+      <li v-for="(word, i) in englishWords" :key="word.e" class="match-row">
+        <div
           class="match-word match-english"
           :class="{
-            'match-word--active': selected.e !== null && selected.e === word.id,
-            'match-word--completed': completed[word.id],
+            'match-word--active': selected.e !== null && selected.e === englishWords[i].id,
+            'match-word--completed': completed[englishWords[i].id],
           }"
         >
           <button
-            :disabled="completed[word.id]"
+            :disabled="completed[englishWords[i].id]"
             class="button--secondary"
-            @click="onWordClick('e', word.id)"
+            @click="onWordClick('e', englishWords[i].id)"
           >
-            {{ word.word }}
+            {{ englishWords[i].word }}
           </button>
-        </li>
-      </ul>
-      <ul class="match-column">
-        <li
-          v-for="word in koreanWords"
-          :key="word.e"
+        </div>
+        <div
           class="match-word match-korean"
           :class="{
-            'match-word--active': selected.k !== null && selected.k === word.id,
-            'match-word--completed': completed[word.id],
+            'match-word--active': selected.k !== null && selected.k === koreanWords[i].id,
+            'match-word--completed': completed[koreanWords[i].id],
           }"
         >
           <button
-            :disabled="completed[word.id]"
+            :disabled="completed[koreanWords[i].id]"
             class="button--secondary"
-            @click="onWordClick('k', word.id)"
+            @click="onWordClick('k', koreanWords[i].id)"
           >
-            {{ word.word }}
+            {{ koreanWords[i].word }}
           </button>
-        </li>
-      </ul>
+        </div>
+      </li>
     </div>
     <div class="match-actions">
       <button
@@ -52,8 +46,8 @@
     </div>
     <div v-if="completedWords.length > 0" class="match-completed">
       <div class="match-info">Completed</div>
-      <ul class="match-column">
-        <li
+      <ul class="match-row">
+        <div
           v-for="word in completedWords"
           :key="word.id"
           class="match-word match-english match-word--completed"
@@ -64,7 +58,7 @@
               {{ word.k }}
             </div>
           </button>
-        </li>
+        </div>
       </ul>
     </div>
   </div>
