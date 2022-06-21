@@ -103,7 +103,6 @@ body {
     }
   }
   .intro-links {
-    flex: 1 auto;
     list-style: none;
     padding: 0;
     display: grid;
@@ -194,9 +193,10 @@ body {
   margin: 1em 2em;
 }
 
-.random-page, .match-page, .test-page {
+.home-page, .random-page, .match-page, .test-page {
   .page-content {
     display: flex;
+    align-items: flex-start;
     justify-content: center;
   }
 }
