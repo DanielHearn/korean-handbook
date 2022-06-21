@@ -21,6 +21,9 @@
   }
   &-word {
     margin-bottom: 0.75em;
+    button {
+      width: 100%;
+    }
     &--active:not(&--completed) {
       button {
         background: $accent;
@@ -37,6 +40,11 @@
     }
   }
   &-completed {
+    padding-top: 2em;
+    .match-info {
+      font-weight: $medium-weight;
+      padding-bottom: 0.75em;
+    }
     button {
       min-width: 250px;
       opacity: 1;

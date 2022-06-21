@@ -41,7 +41,17 @@
         </li>
       </ul>
     </div>
-    <div class="match-completed">
+    <div class="match-actions">
+      <button
+        :disabled="Object.keys(completed).length < numberOfWords"
+        class="button--primary"
+        @click="nextWords()"
+      >
+        Next words
+      </button>
+    </div>
+    <div v-if="completedWords.length > 0" class="match-completed">
+      <div class="match-info">Completed</div>
       <ul class="match-column">
         <li
           v-for="word in completedWords"
@@ -56,15 +66,6 @@
           </button>
         </li>
       </ul>
-    </div>
-    <div class="match-actions">
-      <button
-        :disabled="Object.keys(completed).length < numberOfWords"
-        class="button--primary"
-        @click="nextWords()"
-      >
-        Next words
-      </button>
     </div>
   </div>
 </template>
