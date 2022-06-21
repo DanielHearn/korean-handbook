@@ -194,6 +194,13 @@ body {
   margin: 1em 2em;
 }
 
+.random-page, .match-page, .test-page {
+  .page-content {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 input {
   background: $grey;
   border-radius: $border-radius;
