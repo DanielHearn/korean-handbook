@@ -102,7 +102,9 @@ const router = createRouter({
 
 router.afterEach((to, from, next) => {
   document.title = to.meta.title(to);
-  next();
+  if (next) {
+    next();
+  }
 });
 
 export default router;
