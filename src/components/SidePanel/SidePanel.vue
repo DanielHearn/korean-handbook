@@ -1,6 +1,6 @@
 <template>
   <div class="side-panel" :class="{ active: open }">
-    <div id="nav">
+    <div class="side-panel-nav">
       <div class="nav-content">
         <div style="display: flex; align-items: center">
           <div class="nav-logo">
@@ -106,16 +106,9 @@
               </svg>
             </router-link>
           </div>
-          <router-link to="/" class="title">Korean Handbook</router-link>
+          <router-link v-if="!mobile" to="/" class="side-panel-title">Korean Handbook</router-link>
         </div>
       </div>
-    </div>
-    <div v-if="mobile" class="mobile-header">
-      <p v-if="title" class="sub-heading">{{ title }}</p>
-      <button ref="input" @click="toggleOpen">
-        <i v-if="open" class="material-icons">keyboard_arrow_up</i>
-        <i v-else class="material-icons">keyboard_arrow_down</i>
-      </button>
     </div>
     <div v-if="!mobile || (mobile && open)" class="side-panel-header">
       <slot name="header"></slot>

@@ -5,6 +5,10 @@ body {
   overflow-x: hidden;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 #app {
   display: flex;
   flex: 1 auto;
@@ -16,62 +20,15 @@ body {
   padding: 0;
   overflow: hidden;
   color: $darker;
-}
-
-#nav {
-  display: flex;
-  flex-direction: row;
-  height: $nav-height;
-  width: 100%;
-  z-index: 5;
-  background: $accent;
-  justify-content: center;
-  align-items: center;
-  .nav-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    box-sizing: border-box;
-    flex-direction: row;
-    padding: 0 0.5em;
-    box-sizing: border-box;
-    flex: 1 auto;
-    justify-content: space-between;
-    a {
-      color: $white;
-      text-decoration: none;
-      font-size: $s-size;
-      font-weight: $regular-weight;
-      &:visited {
-        color: $white;
-      }
-      &:hover {
-        color: $white;
-      }
-      &.title {
-        font-weight: $medium-weight;
-        font-size: $m-size;
-        text-decoration: none;
-      }
-    }
-  }
-  .nav-logo {
-    width: 2.5em;
-    height: 2em;
-    a {
-      margin: 0;
-    }
-  }
+  background: $off-white;
 }
 
 .main {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: 100%;
   width: 100%;
-  background: $white;
 }
 
 .button--logo {
@@ -85,21 +42,39 @@ body {
   }
 }
 
+.random-page,
+.info-page,
+.match-page,
+.test-page {
+  .page-content {
+    margin-bottom: calc($spacing * 4);
+  }
+}
+
 .home-page {
   display: flex;
   flex-direction: row;
   align-items: center;
   box-sizing: border-box;
-  .intro {
+  .header-panel {
     h1 {
-      font-size: $l-size * 1.25;
+      font-size: $xl-size;
       font-weight: $bold-weight;
       margin-bottom: 0.25em;
     }
     h2 {
       font-size: $m-size;
       font-weight: $medium-weight;
+      color: $darker-grey;
       margin-top: 0;
+    }
+  }
+  .page-content {
+    flex: none;
+    &:last-of-type {
+      margin-top: 0;
+      height: auto;
+      flex: initial;
     }
   }
   .intro-links {
@@ -109,18 +84,20 @@ body {
     grid-template-columns: repeat(2, minmax(250px, 450px));
     grid-gap: 1em;
     .intro-link {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      text-decoration: none;
+      height: 160px;
+      padding: 0 $spacing;
       background: $accent;
       color: $white;
       border-radius: $border-radius;
       transition: background $transition-slow;
       &:hover {
-        background: $accent-dark;
-      }
-      a {
-        display: flex;
-        flex-direction: column;
         text-decoration: none;
-        padding: 4em 1em;
+        background: $accent-dark;
       }
       .link-main {
         display: flex;
@@ -173,7 +150,7 @@ body {
   }
   &.no-results {
     p {
-      font-weight: $regular-weight;
+      font-weight: 400;
     }
   }
 }
@@ -187,18 +164,18 @@ body {
 }
 
 .page-content {
-  overflow-y: auto;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  padding: $spacing * 2;
   box-sizing: border-box;
-  margin: 1em 2em;
-}
-
-.home-page, .random-page, .match-page, .test-page {
-  .page-content {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
+  background: $white;
+  border-radius: $border-radius;
+  margin-top: calc($spacing * 2);
+  margin-bottom: calc($spacing * 2);
+  overflow: hidden;
 }
 
 input {
@@ -209,7 +186,7 @@ input {
   padding: 0.4em 0.6em;
   letter-spacing: 0.025em;
   font-family: rubik, sans-serif;
-  font-size: 1.1em;
+  font-size: $s-size;
   &[type='text']::placeholder {
     color: $light-grey;
   }
@@ -217,7 +194,7 @@ input {
 
 button {
   border: 0;
-  background: $dark-grey;
+  background: $darker-grey;
   color: $white;
   border-radius: $border-radius;
   padding: 0.4em 0.6em;
@@ -243,7 +220,7 @@ button {
 
 .button--secondary {
   padding: 0.6em 0.8em;
-  background: $dark-grey;
+  background: $darker-grey;
   font-weight: $medium-weight;
   font-size: $s-size;
 }
@@ -307,23 +284,95 @@ button {
   background: $grey;
 }
 
-@media screen and (max-width: 700px) {
-  .text {
-    font-size: 1em;
+.mobile-category-menu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: $darker;
+  z-index: 100;
+  padding: $spacing;
+  overflow: hidden;
+  .search-form {
+    padding-bottom: $spacing;
   }
-  .random {
-    margin-bottom: 10em;
+  .heading {
+    color: $white;
+    margin: 0 0 $spacing 0;
+    text-align: center;
+  }
+  .no-results {
+    color: $white;
+  }
+}
+
+.category-open, .category-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px;
+  z-index: 999;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.category-open {
+  color: $darker;
+}
+
+.category-close {
+  color: $white;
+}
+
+#app.mobile {
+  background: $white;
+  .text {
+    font-size: 1rem;
+  }
+  .main-panel {
+    margin: 0;
+  }
+  .home-page {
+    h1 {
+      font-size: $xl-size-mobile;
+    }
+    h2 {
+      font-size: $s-size-mobile;
+      text-align: left;
+      font-weight: $regular-weight;
+    }
+  }
+  .intro-links {
+    .text-link {
+      font-size: $l-size-mobile;
+    }
+    .link-description {
+      font-size: $s-size-mobile;
+    }
+  }
+  .header-panel {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   .main {
     flex-direction: column;
     .intro-links {
       grid-template-columns: repeat(1, 1fr);
+      width: 100%;
+    }
+    .intro-link {
+      height: 100px;
     }
     .header-panel {
-      padding: 0.5em;
+      padding: $spacing;
+      padding-bottom: 0;
     }
     .page-content {
-      margin: 0.5em 0 0 0;
+      padding: $spacing;
+      margin: 0;
+      overflow: auto !important;
     }
     .grid {
       .grid-item {
@@ -333,15 +382,56 @@ button {
       }
     }
   }
-  .home-page .intro-links .intro-link a {
-    padding: 2.5em 1em;
-  }
   .random-page,
   .home-page,
   .match-page,
   .test-page {
     .page-content {
-      padding: 0.5em 1em;
+      padding: $spacing;
+    }
+  }
+ .main.home-page {
+    .page-content {
+      overflow: initial !important;
+    }
+    .main-panel {
+      overflow: auto !important;
+      padding-bottom: $spacing;
+    }
+  }
+  .tabs { 
+    width: 100%;
+    height: 4em;
+    &-item {
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      a {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 12px;
+      }
+      &--selected {
+        a {
+          color: $accent;
+          background: $white;
+        }
+      }
+    }
+    &-items {
+      display: grid;
+      row-gap: 1em;
+      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      width: 100%;
+    }
+  }
+  .random {
+    .random-flashcard {
+      height: 60px;
     }
   }
 }

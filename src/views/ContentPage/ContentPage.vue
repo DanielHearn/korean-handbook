@@ -1,6 +1,7 @@
 <template>
   <div :class="`main ${content}-page`">
     <side-panel
+      v-if="!mobile"
       :mobile="mobile"
       title="Categories"
       :open-initially="sidePanelOpenInitially"
@@ -24,25 +25,13 @@
     </side-panel>
     <main-panel v-if="category" :class="{ hidden: sidePanelOpen }">
       <header-panel>
-        <h1>{{ category.name }}</h1>
+        <h1>{{ mobile ? title : category.name }}</h1>
+        <i v-if="mobile && !categoryMenu" class="category-open material-icons" @click="openSearch"
+          >manage_search</i
+        >
+        <h2 v-if="mobile">{{ category.name }}</h2>
         <h2>
-          <NavigationTabs
-            :items="[
-              { name: 'Info', slug: 'info', url: `/content/${id}/info` },
-              { name: 'Random', slug: 'random', url: `/content/${id}/random` },
-              {
-                name: 'Match',
-                slug: 'match',
-                url: `/content/${id}/match`,
-              },
-              {
-                name: 'Test',
-                slug: 'test',
-                url: `/content/${id}/test`,
-              },
-            ]"
-            :selected="content"
-          />
+          <NavigationTabs v-if="!mobile && tabs" :items="tabs" :selected="content" />
         </h2>
       </header-panel>
       <div v-if="category" class="page-content">
@@ -52,6 +41,21 @@
         <TestGame v-if="content === 'test'" :category="category" />
       </div>
     </main-panel>
+    <NavigationTabs v-if="mobile && tabs" :items="tabs" :selected="content" />
+    <div v-if="mobile && categoryMenu" class="mobile-category-menu">
+      <i class="category-close material-icons" @click="closeSearch">close</i>
+      <h2 class="heading">Categories</h2>
+      <SearchInput
+        :value="categoryFilter"
+        placeholder="Search categories"
+        @search="searchCategories"
+      />
+      <SearchList
+        :items="filteredCategories"
+        :active-i-d="id"
+        no-results-text="No results found for category search."
+      />
+    </div>
   </div>
 </template>
 

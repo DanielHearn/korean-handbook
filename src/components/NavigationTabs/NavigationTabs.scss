@@ -17,19 +17,27 @@
     font-size: 1em;
     transition: color 0.06s linear;
     user-select: none;
-    &:hover {
+    &:hover, &:active {
       cursor: pointer;
-      color: $accent;
+      background: $off-white;
     }
     &--selected {
       color: $accent;
+      background: $off-white;
     }
     a {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
       color: $darker;
       text-decoration: none;
       padding: 0.5em 0.75em;
       &:visited {
         text-decoration: none;
+      }
+      i {
+        padding-right: calc($spacing / 4);
       }
     }
   }

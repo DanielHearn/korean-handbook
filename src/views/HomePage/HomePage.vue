@@ -1,14 +1,5 @@
 <template>
   <div class="main home-page">
-    <side-panel :mobile="mobile" :open-initially="true" title="About">
-      <template #header>
-        <p class="text">
-          The Korean Handbook provides tools and information to aid in learning Korean. Developed by
-          <a href="https://danielhearn.co.uk" class="text-link">Daniel Hearn</a>, the source code is
-          on <a href="https://github.com/DanielHearn/Korean-Handbook" class="text-link">GitHub</a>.
-        </p>
-      </template>
-    </side-panel>
     <main-panel>
       <header-panel>
         <h1>The Korean Handbook</h1>
@@ -16,45 +7,31 @@
       </header-panel>
       <div class="page-content">
         <div class="intro-links">
-          <div class="intro-link">
-            <router-link to="/content/conjunctions/random">
-              <p class="link-main text-link">
-                <span class="link-icon"><i class="material-icons">shuffle</i></span>
-                Random Word Generator
-              </p>
-              <p class="link-description">Learn random words and test your knowledge.</p>
-            </router-link>
-          </div>
-          <div class="intro-link">
-            <router-link to="/content/conjunctions/info">
-              <p class="link-main text-link">
-                <span class="link-icon"><i class="material-icons">list</i></span>
-                Word Categories
-              </p>
-              <p class="link-description">Learn new words.</p>
-            </router-link>
-          </div>
-          <div class="intro-link">
-            <router-link to="/content/conjunctions/match">
-              <p class="link-main text-link">
-                <span class="link-icon"><i class="material-icons">compare_arrows</i></span>
-                Match
-              </p>
-              <p class="link-description">Match English words to their Korean translation.</p>
-            </router-link>
-          </div>
-          <div class="intro-link">
-            <router-link to="/content/conjunctions/test">
-              <p class="link-main text-link">
-                <span class="link-icon"><i class="material-icons">school</i></span>
-                Test
-              </p>
-              <p class="link-description">Test your knowledge of Korean words.</p>
-            </router-link>
-          </div>
+          <router-link
+            v-for="link in introLinks"
+            :key="`${link.slug}`"
+            :to="`/content/conjunctions/${link.slug}`"
+            class="intro-link"
+          >
+            <p class="link-main text-link">
+              <span class="link-icon"
+                ><i class="material-icons">{{ link.icon }}</i></span
+              >
+              {{ link.name }}
+            </p>
+            <p class="link-description">{{ link.description }}</p>
+          </router-link>
         </div>
       </div>
+      <div class="page-content">
+        <p class="text">
+          The Korean Handbook provides tools and information to aid in learning Korean. Developed by
+          <a href="https://danielhearn.co.uk" class="text-link">Daniel Hearn</a>, the source code is
+          on <a href="https://github.com/DanielHearn/Korean-Handbook" class="text-link">GitHub</a>.
+        </p>
+      </div>
     </main-panel>
+    <NavigationTabs v-if="mobile && tabs" :items="tabs" selected="home" />
   </div>
 </template>
 

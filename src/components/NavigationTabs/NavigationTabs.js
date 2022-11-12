@@ -1,3 +1,6 @@
+import { mapState } from 'pinia';
+import { useMobileStore } from '@/stores/mobile';
+
 export default {
   name: 'tabs',
   props: {
@@ -17,8 +20,15 @@ export default {
       dashWidth: 0,
     };
   },
+  computed: {
+    ...mapState(useMobileStore, ['mobile']),
+  },
   methods: {
     updateDash() {
+      if (this.mobile) {
+        return false;
+      }
+
       const targetRef = this.$refs.items.querySelector(`[data-slug="${this.selected}"]`);
 
       this.dashWidth = targetRef.offsetWidth;
@@ -27,6 +37,8 @@ export default {
     },
   },
   mounted: function () {
-    this.updateDash();
+    if (!this.mobile) {
+      this.updateDash();
+    }
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{ 'home-page': $route.path === '/', mobile: mobile }">
+  <div id="app" :class="{ mobile: mobile }">
     <router-view :mobile="mobile" />
   </div>
 </template>

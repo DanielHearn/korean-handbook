@@ -10,4 +10,4 @@ app.use(router);
 app.use(VueGtag, {
   config: { id: 'UA-108490580-1' },
 });
-app.mount('#app');
+app.mount('#korean-handbook-vue');

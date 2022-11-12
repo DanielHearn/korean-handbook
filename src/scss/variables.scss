@@ -1,20 +1,33 @@
+
 $accent: #5d61da;
 $accent-dark: #5356b8;
-$darker: #222;
+$off-white: #f1f1f1;
+$darkest: #232528;
+$darker: #2A2B2D;
+$dark-grey: #676770;
+$darker-grey: #4E4E57;
+$darkest-grey: #353539;
+$white: #FFFFFF;
+
+$green: #80CB3E;
+
+// TODO REMOVE
 $dark: #353539;
-$darker-grey: #45454e;
-$dark-grey: #4e4e57;
 $grey: #676770;
 $light-grey: #ececec;
-$white: #fefefe;
-$off-white: #f3f3f3;
 $off-whiter: #e6e6e6;
 
-$green: #67cf31;
+$xl-size: 2.375rem;
+$l-size: 1.625rem;
+$m-size: 1.375rem;
+$s-size: 1.125rem;
 
-$l-size: 1.5em;
-$m-size: 1.25em;
-$s-size: 1.1em;
+$xxl-size-mobile: 1.875rem;
+$xl-size-mobile: 1.625rem;
+$l-size-mobile: 1.375rem;
+$m-size-mobile: 1.125rem;
+$s-size-mobile: 1rem;
+$xs-size-mobile: 0.875rem;
 
 $transition-slow: 0.15s;
 $transition-fast: 0.05s;
@@ -25,4 +38,5 @@ $regular-weight: 500;
 
 $nav-height: 3em;
 
-$border-radius: 6px;
+$spacing: 1rem;
+$border-radius: calc($spacing / 2);

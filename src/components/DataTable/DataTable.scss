@@ -3,6 +3,9 @@
 .table {
   background: $off-white;
   border-radius: $border-radius 0 0 $border-radius;
+  width: 100%;
+  border-radius: $border-radius;
+  overflow: auto;
 
   .grid {
     display: flex;

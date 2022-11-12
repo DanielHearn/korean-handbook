@@ -7,6 +7,7 @@ export const useMobileStore = defineStore('mobile', {
     return {
       mobile: false,
       mobileMenu: false,
+      categoryMenu: false,
     };
   },
   actions: {
@@ -15,6 +16,9 @@ export const useMobileStore = defineStore('mobile', {
     },
     setMobileMenu(payload) {
       this.mobileMenu = payload;
+    },
+    setCategoryMenu(payload) {
+      this.categoryMenu = payload;
     },
   },
 });

@@ -1,10 +1,14 @@
 @import './../../scss/variables.scss';
 
 .header-panel {
-  padding: 1em 2em;
-  top: 0;
-  position: sticky;
-  background: $off-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  background: $white;
+  padding: $spacing * 2;
+  border-radius: $border-radius;
   .heading {
     margin: 0;
   }

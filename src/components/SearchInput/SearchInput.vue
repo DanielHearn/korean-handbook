@@ -1,6 +1,7 @@
 <template>
   <div class="search-form">
     <button
+      v-if="value.length"
       class="button--close"
       @click="
         () => {
