@@ -1,5 +1,5 @@
 <template>
-  <div class="search-form">
+  <div class="search-form" :class="{ 'search-form--active': value.length }">
     <button
       v-if="value.length"
       class="button--close"

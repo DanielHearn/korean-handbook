@@ -13,13 +13,20 @@
             :to="`/content/conjunctions/${link.slug}`"
             class="intro-link"
           >
-            <p class="link-main text-link">
-              <span class="link-icon"
-                ><i class="material-icons">{{ link.icon }}</i></span
-              >
+            <p v-if="!mobile" class="link-main text-link">
+              <span class="link-icon">
+                <i class="material-icons">{{ link.icon }}</i>
+              </span>
               {{ link.name }}
             </p>
-            <p class="link-description">{{ link.description }}</p>
+            <p v-if="!mobile" class="link-description">{{ link.description }}</p>
+            <span v-if="mobile" class="link-icon">
+              <i class="material-icons">{{ link.icon }}</i>
+            </span>
+            <div v-if="mobile">
+              <p class="link-main">{{ link.name }}</p>
+              <p class="link-description">{{ link.description }}</p>
+            </div>
           </router-link>
         </div>
       </div>

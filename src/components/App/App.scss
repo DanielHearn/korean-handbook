@@ -114,7 +114,7 @@ html, body, #korean-handbook-vue {
       }
       .link-description {
         font-size: $s-size;
-        font-weight: $regular-weight;
+        font-weight: $thin-weight;
         text-decoration: none;
         color: $white;
         margin: 0;
@@ -356,6 +356,15 @@ button {
     .link-description {
       font-size: $s-size-mobile;
     }
+    .intro-link {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .link-icon {
+      padding-right: Calc($spacing / 2);
+    }
   }
   .header-panel {
     justify-content: center;
@@ -370,13 +379,19 @@ button {
     }
     .intro-link {
       height: 100px;
+      .link-main {
+        font-size: $m-size-mobile;
+      }
+      .link-description {
+        font-size: $xs-size-mobile;
+      }
     }
     .header-panel {
       padding: $spacing;
       padding-bottom: 0;
     }
     .page-content {
-      padding: $spacing;
+      padding: 0 $spacing $spacing $spacing;
       margin: 0;
       overflow: auto !important;
     }
@@ -394,6 +409,18 @@ button {
   .test-page {
     .page-content {
       padding: $spacing;
+    }
+  }
+  .info-page {
+    .page-content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .grid-search {
+      background: none;
+    }
+    .search-form {
+      max-width: 100%;
     }
   }
  .main.home-page {
