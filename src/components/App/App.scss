@@ -9,13 +9,19 @@ body {
   box-sizing: border-box;
 }
 
+html, body, #korean-handbook-vue {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 #app {
   display: flex;
   flex: 1 auto;
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
