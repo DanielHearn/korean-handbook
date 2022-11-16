@@ -298,7 +298,7 @@ button {
   flex-direction: column;
   background: $darker;
   z-index: 100;
-  padding: $spacing;
+  padding: Calc($spacing / 2) $spacing;
   overflow: hidden;
   .search-form {
     padding-bottom: $spacing;
