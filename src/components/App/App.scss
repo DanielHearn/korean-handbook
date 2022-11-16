@@ -378,7 +378,7 @@ button {
       width: 100%;
     }
     .intro-link {
-      height: 100px;
+      height: 90px;
       .link-main {
         font-size: $m-size-mobile;
       }
@@ -391,7 +391,7 @@ button {
       padding-bottom: 0;
     }
     .page-content {
-      padding: 0 $spacing $spacing $spacing;
+      padding: $spacing;
       margin: 0;
       overflow: auto !important;
     }
@@ -426,6 +426,9 @@ button {
  .main.home-page {
     .page-content {
       overflow: initial !important;
+      &:last-child {
+        padding-top: 0;
+      }
     }
     .main-panel {
       overflow: auto !important;
@@ -466,5 +469,8 @@ button {
     .random-flashcard {
       height: 60px;
     }
+  }
+  .button--primary, .button--secondary, input {
+    font-size: $xs-size-mobile;
   }
 }

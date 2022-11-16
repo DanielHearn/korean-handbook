@@ -1,6 +1,6 @@
 <template>
   <div class="match">
-    <div class="match-info">Match each English word to their Korean translation.</div>
+    <p class="text">Match each English word to their Korean translation.</p>
     <div class="match-words">
       <li v-for="(word, i) in englishWords" :key="word.e" class="match-row">
         <div

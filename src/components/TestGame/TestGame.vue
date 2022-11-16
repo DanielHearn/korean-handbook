@@ -1,6 +1,6 @@
 <template>
   <div v-if="word" class="test">
-    <div class="match-info">Select the correct character for each part of the word.</div>
+    <p class="text">Select the correct character for each part of the word.</p>
     <div class="test-content">
       <div class="test-word">{{ word.e }}</div>
       <ul class="test-characters">
