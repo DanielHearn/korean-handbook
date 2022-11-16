@@ -26,28 +26,28 @@ export const generateTabs = (mobile = false, id = 'conjunctions') => {
       slug: 'info',
       url: `/content/${id}/info`,
       icon: 'list',
-      description: 'Learn new words',
+      description: 'Learn new words from categories',
     },
     {
       name: 'Random',
       slug: 'random',
       url: `/content/${id}/random`,
       icon: 'shuffle',
-      description: 'Learn words and test your knowledge',
+      description: 'Learn random words',
     },
     {
       name: 'Match',
       slug: 'match',
       url: `/content/${id}/match`,
       icon: 'compare_arrows',
-      description: 'Watch Korean words to their translation',
+      description: 'Match Korean words to English',
     },
     {
       name: 'Test',
       slug: 'test',
       url: `/content/${id}/test`,
       icon: 'school',
-      description: 'Test your knowledge of Korean words',
+      description: 'Spell Korean words',
     },
   ];
 
