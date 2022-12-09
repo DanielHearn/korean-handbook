@@ -1,5 +1,5 @@
 <template>
-  <div class="option-row" :class="{ 'option-row--slim': slim }">
+  <div class="option-row">
     <div class="option-row__details">
       <div class="option-row__title text text--bold">{{ title }}</div>
       <div v-if="description" class="option-row__description text">{{ description }}</div>

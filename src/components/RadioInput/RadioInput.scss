@@ -1,0 +1,28 @@
+@import './../../scss/variables.scss';
+
+.radio-input {
+  cursor: pointer;
+  input {
+    display: none
+  }
+  &__input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: $light-grey;
+    border-radius: 50%;
+  }
+  &__selection {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: $light-grey;
+  }
+  &--active {
+    .radio-input__selection {
+      background: $accent;
+    }
+  }
+}

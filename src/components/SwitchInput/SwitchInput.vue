@@ -1,12 +1,11 @@
 <template>
   <div class="switch-input" :class="{ 'switch-input--active': value }">
     <input
-      id="flashcardModeToggle"
-      v-model="flashcardMode"
+      v-model="value"
       type="checkbox"
       @change="
         () => {
-          $emit('change', !flashcardMode);
+          $emit('change', !value);
         }
       "
     />
@@ -14,7 +13,7 @@
       class="switch-input__input"
       @click="
         () => {
-          $emit('change', !flashcardMode);
+          $emit('change', !value);
         }
       "
     >

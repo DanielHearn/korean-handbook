@@ -42,20 +42,10 @@
           <switch-input :value="flashcardMode" @change="toggleFlashcardMode" />
         </option-row>
         <option-row v-if="flashcardMode" title="Korean To English" :slim="true">
-          <input
-            id="englishDirectionToggle"
-            v-model="languageDirection"
-            type="radio"
-            value="toEnglish"
-          />
+          <radio-input :value="languageDirection === 'toEnglish'" @change="toEnglish" />
         </option-row>
         <option-row v-if="flashcardMode" title="English To Korean" :slim="true">
-          <input
-            id="koreanDirectionToggle"
-            v-model="languageDirection"
-            type="radio"
-            value="toKorean"
-          />
+          <radio-input :value="languageDirection === 'toKorean'" @change="toKorean" />
         </option-row>
       </div>
       <div class="random-actions">

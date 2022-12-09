@@ -1,4 +1,5 @@
 import SwitchInput from '../SwitchInput/SwitchInput.vue';
+import RadioInput from '../RadioInput/RadioInput.vue';
 import OptionRow from '../OptionRow/OptionRow.vue';
 import { getRandomIndexFromArray } from './../../static/utilities.js';
 import { Categories } from './../../static/categories.js';
@@ -7,6 +8,7 @@ export default {
   name: 'random-word-generator',
   components: {
     SwitchInput,
+    RadioInput,
     OptionRow,
   },
   props: {
@@ -55,6 +57,12 @@ export default {
     },
     toggleFlashcardMode() {
       this.flashcardMode = !this.flashcardMode;
+    },
+    toEnglish() {
+      this.languageDirection = 'toEnglish';
+    },
+    toKorean() {
+      this.languageDirection = 'toKorean';
     },
   },
   mounted() {
