@@ -49,4 +49,7 @@
     bottom: 0;
     transition: transform 200ms, width 0.1s ease-in;
   }
+  &--mobile {
+    z-index: 10;
+  }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs">
+  <div class="tabs" :class="{ 'tabs--mobile': mobile }">
     <div ref="items" class="tabs-items">
       <div
         v-for="item in items"
