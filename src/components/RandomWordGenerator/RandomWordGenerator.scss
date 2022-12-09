@@ -46,7 +46,7 @@
     flex: 1;
     padding: $spacing 0;
     user-select: none;
-    max-width: 40rem;
+    max-width: 40rem;;
     input {
       width: 14px;
       height: 14px;
@@ -63,7 +63,7 @@
   &-actions {
     display: flex;
     flex-direction: row;
-    margin-top: Calc($spacing * 2);
+    margin-top: $spacing;
     button {
       margin-right: Calc($spacing / 2);
     }

@@ -13,9 +13,10 @@
             'test-character--completed': i < currentStep - 1 || completed,
           }"
         >
-          <span v-if="i < currentStep - 1 || completed">
+          <p v-if="i < currentStep - 1 || completed">
             {{ character }}
-          </span>
+          </p>
+          <span v-else> </span>
         </li>
       </ul>
       <ul class="test-choices">
