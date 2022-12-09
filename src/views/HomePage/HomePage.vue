@@ -3,7 +3,7 @@
     <main-panel>
       <header-panel>
         <h1>The Korean Handbook</h1>
-        <h2>Collection of Korean language learning tools and information.</h2>
+        <h2 v-if="!mobile">Collection of Korean language learning tools and information.</h2>
       </header-panel>
       <div class="page-content">
         <div class="intro-links">
