@@ -2,7 +2,7 @@
 
 .side-panel {
   width: 22rem;
-  background: $dark;
+  background: $darker;
   color: $white;
   z-index: 1;
   display: flex;
@@ -11,7 +11,6 @@
   border-radius: $border-radius;
   .side-panel-header {
     padding: 1em;
-    background: $darker;
   }
   .side-panel-content {
     display: flex;

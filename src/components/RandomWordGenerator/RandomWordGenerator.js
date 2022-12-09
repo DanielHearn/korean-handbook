@@ -1,8 +1,14 @@
+import SwitchInput from '../SwitchInput/SwitchInput.vue';
+import OptionRow from '../OptionRow/OptionRow.vue';
 import { getRandomIndexFromArray } from './../../static/utilities.js';
 import { Categories } from './../../static/categories.js';
 
 export default {
   name: 'random-word-generator',
+  components: {
+    SwitchInput,
+    OptionRow,
+  },
   props: {
     category: {
       type: Object,
@@ -46,6 +52,9 @@ export default {
         const word = filteredWords[wordIndex];
         this.word = word;
       }
+    },
+    toggleFlashcardMode() {
+      this.flashcardMode = !this.flashcardMode;
     },
   },
   mounted() {

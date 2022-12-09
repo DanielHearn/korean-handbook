@@ -1,0 +1,26 @@
+@import './../../scss/variables.scss';
+
+.switch-input {
+  cursor: pointer;
+  input {
+    display: none
+  }
+  &__input {
+    width: 4rem;
+    height: 1.5rem;
+    background: $light-grey;
+    border-radius: Calc($border-radius / 2);
+  }
+  &__selection {
+    width: 2rem;
+    height: 1.5rem;
+    border-radius: Calc($border-radius / 2);
+    background: $dark-grey;
+  }
+  &--active {
+    .switch-input__selection {
+      margin-left: 2rem;
+      background: $accent;
+    }
+  }
+}
