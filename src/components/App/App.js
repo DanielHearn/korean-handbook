@@ -1,7 +1,7 @@
 import { mapState, mapActions } from 'pinia';
 import { useMobileStore } from '@/stores/mobile';
 
-const mobileWidth = 700;
+const mobileWidth = 850;
 
 export default {
   name: 'app',
