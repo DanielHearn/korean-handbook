@@ -34,6 +34,7 @@
       button {
         background: $green;
         opacity: 0.7;
+        cursor: initial;
         &:hover {
           background: $green;
         }
@@ -41,7 +42,7 @@
     }
   }
   &-completed {
-    padding-top: 2em;
+    padding-top: $spacing;
     .match-info {
       font-weight: $medium-weight;
       padding-bottom: 0.75em;
@@ -53,10 +54,11 @@
     }
     button {
       min-width: 250px;
-      opacity: 1;
+      text-align: left;
+      cursor: initial;
     }
     ul {
-      margin: 0 0 1em 0;
+      margin: 0;
     }
   }
   .button--secondary {

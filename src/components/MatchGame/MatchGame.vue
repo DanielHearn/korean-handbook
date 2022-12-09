@@ -1,7 +1,7 @@
 <template>
   <div class="match">
     <p class="text">Match each English word to their Korean translation.</p>
-    <div class="match-words">
+    <div v-if="completedWords.length !== numberOfWords" class="match-words">
       <li v-for="(word, i) in englishWords" :key="word.e" class="match-row">
         <div
           class="match-word match-english"
@@ -35,6 +35,19 @@
         </div>
       </li>
     </div>
+    <div v-else class="match-completed">
+      <ul class="match-row">
+        <div
+          v-for="word in completedWords"
+          :key="word.id"
+          class="match-word match-english match-word--completed"
+        >
+          <button class="button--secondary">
+            <div>{{ word.e }}: {{ word.k }}</div>
+          </button>
+        </div>
+      </ul>
+    </div>
     <div class="match-actions">
       <button
         :disabled="Object.keys(completed).length < numberOfWords"
@@ -43,23 +56,6 @@
       >
         Next words
       </button>
-    </div>
-    <div v-if="completedWords.length > 0" class="match-completed">
-      <div class="match-info">Completed</div>
-      <ul class="match-row">
-        <div
-          v-for="word in completedWords"
-          :key="word.id"
-          class="match-word match-english match-word--completed"
-        >
-          <button class="button--secondary">
-            <div>{{ word.e }}</div>
-            <div>
-              {{ word.k }}
-            </div>
-          </button>
-        </div>
-      </ul>
     </div>
   </div>
 </template>
