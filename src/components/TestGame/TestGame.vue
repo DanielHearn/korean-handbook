@@ -10,12 +10,12 @@
           class="test-character"
           :class="{
             'test-character--active': completed ? false : i === currentStep - 1,
+            'test-character--completed': i < currentStep - 1 || completed,
           }"
         >
           <span v-if="i < currentStep - 1 || completed">
             {{ character }}
           </span>
-          <span v-else> _ </span>
         </li>
       </ul>
       <ul class="test-choices">
