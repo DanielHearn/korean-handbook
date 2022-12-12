@@ -77,6 +77,7 @@ html, body, #korean-handbook-vue {
   }
   .page-content {
     flex: none;
+    padding: calc($spacing * 2);
     &:last-of-type {
       margin-top: 0;
       height: auto;
@@ -175,7 +176,6 @@ html, body, #korean-handbook-vue {
   align-items: center;
   flex: 1;
   width: 100%;
-  padding: $spacing * 2;
   box-sizing: border-box;
   background: $white;
   border-radius: $border-radius;
@@ -331,6 +331,35 @@ button {
   color: $white;
 }
 
+.tool {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  &-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    padding: calc($spacing * 2);
+  }
+  &-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: calc($spacing * 2) $spacing;
+    border-top: 2px $off-white solid;
+    gap: $spacing;
+  }
+  &-options {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: $spacing 0;
+  }
+}
+
 #app.mobile {
   background: $white;
   .text {
@@ -340,6 +369,9 @@ button {
     margin: 0;
   }
   .home-page {
+    .page-content {
+      padding: $spacing;
+    }
     h1 {
       font-size: $xl-size-mobile;
     }
@@ -376,6 +408,14 @@ button {
       margin: 0;
     }
   }
+  .tool {
+    &-content {
+      padding: $spacing;
+    }
+    &-actions {
+      padding: calc($spacing * 2) $spacing;
+    }
+  }
   .main {
     flex-direction: column;
     .intro-links {
@@ -392,7 +432,6 @@ button {
       }
     }
     .page-content {
-      padding: $spacing;
       margin: 0;
       overflow: auto !important;
     }
@@ -404,19 +443,7 @@ button {
       }
     }
   }
-  .random-page,
-  .home-page,
-  .match-page,
-  .test-page {
-    .page-content {
-      padding: $spacing;
-    }
-  }
   .info-page {
-    .page-content {
-      padding-left: 0;
-      padding-right: 0;
-    }
     .grid-search {
       background: none;
       padding-top: 0;

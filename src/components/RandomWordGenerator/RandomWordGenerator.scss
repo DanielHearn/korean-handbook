@@ -21,6 +21,7 @@
   &-content {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
 
   &-flashcard {
@@ -57,15 +58,6 @@
     }
     p {
       margin: Calc($spacing / 4) 0 0 0;
-    }
-  }
-
-  &-actions {
-    display: flex;
-    flex-direction: row;
-    margin-top: $spacing;
-    button {
-      margin-right: Calc($spacing / 2);
     }
   }
 
