@@ -23,4 +23,17 @@
       background: $accent;
     }
   }
+  &:hover {
+    .switch-input__input {
+      background: $off-whiter;
+    }
+    .switch-input__selection {
+      background: $darker-grey;
+    }
+  }
+  &:hover.switch-input--active {
+    .switch-input__selection {
+      background: $accent-dark;
+    }
+  }
 }
