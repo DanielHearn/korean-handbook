@@ -35,20 +35,18 @@
         </div>
       </div>
       <div class="tool-options">
-        <div>
-          <option-row
-            title="Flashcard Mode"
-            description="Practice your knowledge before viewing the translation"
-          >
-            <switch-input :value="flashcardMode" @change="toggleFlashcardMode" />
-          </option-row>
-          <option-row v-if="flashcardMode" title="Korean To English" :slim="true">
-            <radio-input :value="languageDirection === 'toEnglish'" @change="toEnglish" />
-          </option-row>
-          <option-row v-if="flashcardMode" title="English To Korean" :slim="true">
-            <radio-input :value="languageDirection === 'toKorean'" @change="toKorean" />
-          </option-row>
-        </div>
+        <option-row
+          title="Flashcard Mode"
+          description="Practice your knowledge before viewing the translation"
+        >
+          <switch-input :value="flashcardMode" @change="toggleFlashcardMode" />
+        </option-row>
+        <option-row v-if="flashcardMode" title="Korean To English" :slim="true">
+          <radio-input :value="languageDirection === 'toEnglish'" @change="toEnglish" />
+        </option-row>
+        <option-row v-if="flashcardMode" title="English To Korean" :slim="true">
+          <radio-input :value="languageDirection === 'toKorean'" @change="toKorean" />
+        </option-row>
       </div>
     </div>
     <div class="tool-actions">

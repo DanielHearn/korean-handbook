@@ -356,7 +356,25 @@ button {
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: $spacing 0;
+    padding-top: calc($spacing * 2);
+    user-select: none;
+    max-width: 40rem;
+    input {
+      width: 14px;
+      height: 14px;
+    }
+    .sub-heading {
+      margin-top: 0;
+      margin-bottom: Calc($spacing / 2);
+    }
+    p {
+      margin: Calc($spacing / 4) 0 0 0;
+    }
+  
+    &-option {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
