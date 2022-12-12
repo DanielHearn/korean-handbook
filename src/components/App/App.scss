@@ -433,9 +433,15 @@ button {
   .tool {
     &-content {
       padding: $spacing;
+      margin-bottom: calc(10rem);
     }
     &-actions {
       padding: calc($spacing * 2) $spacing;
+      margin-bottom: 4rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: $white;
     }
   }
   .main {
@@ -488,7 +494,7 @@ button {
   }
   .tabs { 
     width: 100%;
-    height: 4em;
+    height: 4rem;
     background: $off-white;
     &-item {
       flex: 1;
