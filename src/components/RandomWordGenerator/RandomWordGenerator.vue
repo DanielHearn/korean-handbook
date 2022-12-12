@@ -1,7 +1,10 @@
 <template>
-  <div class="tool">
+  <div class="tool random">
     <div class="tool-content">
       <div class="random-content">
+        <p class="tool-instructions text">
+          Practice learning random words show in the flashcard below.
+        </p>
         <div
           v-if="flashcardMode"
           class="random-flashcards random-flashcards--test"

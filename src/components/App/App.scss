@@ -376,6 +376,10 @@ button {
       align-items: center;
     }
   }
+  &-instructions {
+    margin: 0;
+    text-align: center;
+  }
 }
 
 #app.mobile {

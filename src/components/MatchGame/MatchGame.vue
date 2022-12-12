@@ -2,7 +2,7 @@
   <div class="tool">
     <div class="tool-content">
       <div class="match">
-        <p class="text">Match each English word to their Korean translation.</p>
+        <p class="tool-instructions text">Match each English word to their Korean translation.</p>
         <div v-if="completedWords.length !== numberOfWords" class="match-words">
           <li v-for="(word, i) in englishWords" :key="word.e" class="match-row">
             <div

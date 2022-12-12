@@ -2,7 +2,9 @@
   <div class="tool">
     <div class="tool-content">
       <div v-if="word" class="test">
-        <p class="text">Select the correct character for each part of the word.</p>
+        <p class="tool-instructions text">
+          Select the correct character for each part of the word.
+        </p>
         <div class="test-content">
           <div class="test-word">{{ word.e }}</div>
           <ul class="test-characters">
