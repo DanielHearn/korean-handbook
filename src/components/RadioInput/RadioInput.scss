@@ -25,4 +25,14 @@
       background: $accent;
     }
   }
+  &:hover {
+    .radio-input__selection {
+      background: $off-whiter;
+    }
+  }
+  &:hover.radio-input--active {
+    .radio-input__selection {
+      background: $accent-dark;
+    }
+  }
 }
