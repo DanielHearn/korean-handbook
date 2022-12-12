@@ -284,10 +284,13 @@ button {
   width: 12px;
 }
 *::-webkit-scrollbar-track {
-  background: $dark-grey;
+  background: $off-whiter;
 }
 *::-webkit-scrollbar-thumb {
   background: $grey;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: $darker-grey;
 }
 
 .mobile-category-menu {
