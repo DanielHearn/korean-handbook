@@ -393,6 +393,9 @@ button {
   .main-panel {
     margin: 0;
   }
+  .page-content {
+    border-radius: 0;
+  }
   .home-page {
     .page-content {
       padding: $spacing;
