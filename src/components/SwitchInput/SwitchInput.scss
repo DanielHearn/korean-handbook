@@ -6,20 +6,23 @@
     display: none
   }
   &__input {
-    width: 4rem;
-    height: 1.5rem;
+    width: 3.2rem;
+    height: 1.2rem;
     background: $light-grey;
     border-radius: Calc($border-radius / 2);
   }
   &__selection {
-    width: 2rem;
-    height: 1.5rem;
+    width: 1.5rem;
+    height: 1rem;
+    top: 0.1rem;
+    left: 0.1rem;
+    position: relative;
     border-radius: Calc($border-radius / 2);
     background: $dark-grey;
   }
   &--active {
     .switch-input__selection {
-      margin-left: 2rem;
+      left: 1.5rem;
       background: $accent;
     }
   }

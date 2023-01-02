@@ -1,3 +1,6 @@
+import { mapState } from 'pinia';
+import { useMobileStore } from '@/stores/mobile';
+
 export default {
   name: 'OptionRow',
   props: {
@@ -16,5 +19,8 @@ export default {
       required: false,
       default: false,
     },
+  },
+  computed: {
+    ...mapState(useMobileStore, ['mobile']),
   },
 };

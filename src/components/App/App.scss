@@ -362,6 +362,7 @@ button {
     padding-top: calc($spacing * 2);
     user-select: none;
     max-width: 40rem;
+    width: 100%;
     input {
       width: 14px;
       height: 14px;
@@ -430,7 +431,7 @@ button {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding : Calc($spacing / 2) $spacing;
+    padding: $spacing;
     padding-bottom: 0;
     h2 {
       margin: 0;
@@ -442,7 +443,7 @@ button {
       margin-bottom: calc(10rem);
     }
     &-actions {
-      padding: calc($spacing * 2) $spacing;
+      padding: calc($spacing * 1.25) $spacing;
       margin-bottom: 3.6rem;
       position: fixed;
       bottom: 0;
@@ -457,7 +458,7 @@ button {
       width: 100%;
     }
     .intro-link {
-      height: 90px;
+      height: 80px;
       .link-main {
         font-size: $m-size-mobile;
       }

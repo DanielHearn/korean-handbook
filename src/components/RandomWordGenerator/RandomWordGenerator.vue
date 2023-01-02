@@ -41,6 +41,7 @@
         <option-row
           title="Flashcard Mode"
           description="Practice your knowledge before viewing the translation"
+          :slim="true"
         >
           <switch-input :value="flashcardMode" @change="toggleFlashcardMode" />
         </option-row>
