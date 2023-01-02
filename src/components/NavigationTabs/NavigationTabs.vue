@@ -12,7 +12,7 @@
         @click="updateDash"
       >
         <router-link :to="item.url"
-          ><i v-if="item.icon" class="material-icons">{{ item.icon }}</i
+          ><i v-if="item.icon && mobile" class="material-icons">{{ item.icon }}</i
           >{{ item.name }}</router-link
         >
       </div>
