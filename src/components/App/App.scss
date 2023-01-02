@@ -487,7 +487,7 @@ button {
       .grid-item {
         display: grid;
         row-gap: 1em;
-        grid-template-columns: repeat(auto-fit, minmax(min-content, 5em));
+        grid-template-columns: 50% 50%;
       }
     }
   }
