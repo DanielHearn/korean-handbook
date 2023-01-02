@@ -33,8 +33,7 @@
       <div class="page-content">
         <p class="text">
           The Korean Handbook provides tools and information to aid in learning Korean. Developed by
-          <a href="https://danielhearn.co.uk" class="text-link">Daniel Hearn</a>, the source code is
-          on <a href="https://github.com/DanielHearn/Korean-Handbook" class="text-link">GitHub</a>.
+          <a href="https://danielhearn.co.uk" class="text-link">Daniel Hearn</a>.
         </p>
       </div>
     </main-panel>
