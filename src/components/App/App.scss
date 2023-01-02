@@ -280,22 +280,12 @@ button {
   }
 }
 
-*::-webkit-scrollbar {
-  width: 12px;
-}
-*::-webkit-scrollbar-track {
-  background: $off-whiter;
-}
-*::-webkit-scrollbar-thumb {
-  background: $grey;
-}
-*::-webkit-scrollbar-thumb:hover {
-  background: $darker-grey;
-}
-
-.mobile-category-menu {
+#app:not(.mobile) {
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
   *::-webkit-scrollbar-track {
-    background: $dark;
+    background: $off-whiter;
   }
   *::-webkit-scrollbar-thumb {
     background: $grey;
