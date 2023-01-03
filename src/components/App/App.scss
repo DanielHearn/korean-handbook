@@ -65,6 +65,9 @@ html, body, #korean-handbook-vue {
   .main-panel {
     margin-left: $spacing * 2;
   }
+  .text {
+    margin: 0;
+  }
   .header-panel {
     h1 {
       font-size: $xl-size;
@@ -99,7 +102,7 @@ html, body, #korean-handbook-vue {
       align-items: flex-start;
       justify-content: center;
       text-decoration: none;
-      height: 160px;
+      height: 120px;
       padding: 0 $spacing;
       background: $accent;
       color: $white;
