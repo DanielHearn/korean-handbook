@@ -4,4 +4,5 @@ export const TITLES = {
   match: 'Match',
   test: 'Test',
   home: 'Home',
+  typing: 'Typing',
 };

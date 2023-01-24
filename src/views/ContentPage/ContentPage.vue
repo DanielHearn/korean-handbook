@@ -39,6 +39,7 @@
         <RandomWordGenerator v-if="content === 'random'" :category="category" />
         <MatchGame v-if="content === 'match'" :category="category" />
         <TestGame v-if="content === 'test'" :category="category" />
+        <TypingGame v-if="content === 'typing'" :category="category" />
       </div>
     </main-panel>
     <NavigationTabs v-if="mobile && tabs" :items="tabs" :selected="content" />

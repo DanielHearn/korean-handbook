@@ -12,6 +12,7 @@ import RandomWordGenerator from '../../components/RandomWordGenerator/RandomWord
 import SearchList from '../../components/SearchList/SearchList.vue';
 import MatchGame from '../../components/MatchGame/MatchGame.vue';
 import TestGame from '../../components/TestGame/TestGame.vue';
+import TypingGame from '../../components/TypingGame/TypingGame.vue';
 import { generateTabs } from '@/static/utilities';
 import { TITLES } from '@/static/constants';
 
@@ -28,6 +29,7 @@ export default {
     SearchList,
     MatchGame,
     TestGame,
+    TypingGame,
   },
   props: {
     id: {

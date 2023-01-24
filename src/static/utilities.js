@@ -49,6 +49,13 @@ export const generateTabs = (mobile = false, id = 'conjunctions') => {
       icon: 'school',
       description: 'Spell Korean words',
     },
+    {
+      name: 'Typing',
+      slug: 'typing',
+      url: `/content/${id}/typing`,
+      icon: 'keyboard_alt',
+      description: 'Practice typing Korean words',
+    },
   ];
 
   if (mobile) {

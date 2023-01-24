@@ -19,7 +19,8 @@ const routes = [
     name: 'content_random',
     path: '/content/:id/random',
     props: (route) => ({ id: route.params.id, content: 'random' }),
-    component: () => import(/* webpackChunkName: "info" */ '../views/ContentPage/ContentPage.vue'),
+    component: () =>
+      import(/* webpackChunkName: "random" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
       title: () => {
         return `Random ${titleEnd}`;
@@ -41,7 +42,7 @@ const routes = [
     name: 'content_match',
     path: '/content/:id/match',
     props: (route) => ({ id: route.params.id, content: 'match' }),
-    component: () => import(/* webpackChunkName: "info" */ '../views/ContentPage/ContentPage.vue'),
+    component: () => import(/* webpackChunkName: "match" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
       title: () => {
         return `Match ${titleEnd}`;
@@ -52,10 +53,22 @@ const routes = [
     name: 'content_test',
     path: '/content/:id/test',
     props: (route) => ({ id: route.params.id, content: 'test' }),
-    component: () => import(/* webpackChunkName: "info" */ '../views/ContentPage/ContentPage.vue'),
+    component: () => import(/* webpackChunkName: "test" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
       title: () => {
         return `Test ${titleEnd}`;
+      },
+    },
+  },
+  {
+    name: 'content typing',
+    path: '/content/:id/typing',
+    props: (route) => ({ id: route.params.id, content: 'typing' }),
+    component: () =>
+      import(/* webpackChunkName: "typing" */ '../views/ContentPage/ContentPage.vue'),
+    meta: {
+      title: () => {
+        return `Typnig Game - ${titleEnd}`;
       },
     },
   },
