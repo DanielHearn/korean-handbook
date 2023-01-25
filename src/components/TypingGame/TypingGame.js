@@ -1,5 +1,7 @@
 import { getRandomIndexFromArray, shuffleArray } from '../../static/utilities.js';
 import TextInput from '../../components/TextInput/TextInput.vue';
+import { mapState } from 'pinia';
+import { useMobileStore } from '@/stores/mobile';
 
 const DURATION = 60;
 
@@ -70,6 +72,7 @@ export default {
         return `0:${this.time}`;
       }
     },
+    ...mapState(useMobileStore, ['mobile']),
   },
   methods: {
     reset: function () {

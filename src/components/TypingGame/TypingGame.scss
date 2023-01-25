@@ -38,7 +38,6 @@
     flex-wrap: wrap;
     font-size: $l-size;
     align-items: center;
-    height: 8em;
     justify-content: space-between;
     flex-wrap: nowrap;
     padding: $spacing;
@@ -63,12 +62,15 @@
     &--hidden {
       visibility: hidden;
     }
+    &:not(:last-child) {
+      margin-bottom: $spacing;
+    }
   }
   &-letter {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    min-width: 24px;
+    min-width: 1rem;
     padding: calc($spacing * 0.5) calc($spacing * 0.25);
     &--valid {
       background: $green;
@@ -90,12 +92,13 @@
     padding: $spacing;
     background: $dark;
     border-radius: 0 0 $border-radius $border-radius;
-    min-height: 4em;
+    min-height: 4rem;
     .text-input {
       width: 100%;
     }
   }
   &-completionText {
     font-size: $m-size;
+    margin-bottom: 3rem;
   }
 }

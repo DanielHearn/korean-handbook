@@ -7,7 +7,7 @@
         :class="{ 'TypingGame--completed': completed, 'TypingGame--closeToFinish': time <= 15 }"
       >
         <p class="tool-instructions text">
-          Type the Korean words below. Check how to enable Korean keyboard on your device.
+          Type the Korean words below. Check how to enable a Korean keyboard on your device.
         </p>
         <div class="TypingGame-container">
           <div class="TypingGame-stats">
@@ -20,6 +20,7 @@
           </div>
           <div v-if="!completed" class="TypingGame-words">
             <div
+              v-if="!mobile"
               class="TypingGame-word TypingGame-word--prevWord"
               :class="{ 'TypingGame-word--hidden': !prevWord }"
             >
@@ -68,7 +69,7 @@
         </div>
       </div>
     </div>
-    <div class="tool-actions">
+    <div v-if="!mobile" class="tool-actions">
       <button class="button--primary" @click="reset()">Reset</button>
     </div>
   </div>
