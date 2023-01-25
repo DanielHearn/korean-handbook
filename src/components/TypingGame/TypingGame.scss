@@ -52,7 +52,9 @@
     background: $white;
     padding: calc($spacing * 0.5);
     border-radius: $border-radius;
+    position: relative;
     &--prevWord {
+      opacity: 0.5;
       background: $green;
     }
     &--nextWord {
@@ -70,6 +72,10 @@
     &--selected {
       background: #cfcfff;
     }
+  }
+  &-arrow {
+    position: absolute;
+    left: -48px;
   }
   &-input {
     display: flex;

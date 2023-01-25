@@ -25,7 +25,10 @@
             >
               {{ prevWord ? prevWord.k : '-----' }}
             </div>
-            <div class="TypingGame-word TypingGame-word--currWord">{{ currWord.k }}</div>
+            <div class="TypingGame-word TypingGame-word--currWord">
+              {{ currWord.k
+              }}<span class="TypingGame-arrow"> <i class="material-icons">arrow_forward</i></span>
+            </div>
             <div class="TypingGame-word TypingGame-word--nextWord">
               {{ nextWord.k }}
             </div>

@@ -95,7 +95,6 @@ export default {
       this.prevWord = this.currWord;
       this.currWord = this.nextWord;
       this.nextWord = this.getRandomWord();
-      console.log('reset');
       this.value = '';
       this.wordsCompleted++;
     },
