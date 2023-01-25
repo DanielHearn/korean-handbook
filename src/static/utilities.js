@@ -50,7 +50,7 @@ export const generateTabs = (mobile = false, id = 'conjunctions') => {
       description: 'Spell Korean words',
     },
     {
-      name: 'Typing',
+      name: 'Type',
       slug: 'typing',
       url: `/content/${id}/typing`,
       icon: 'keyboard_alt',
