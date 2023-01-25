@@ -4,7 +4,7 @@
       :value="value"
       type="text"
       :placeholder="placeholder"
-      @input="(value) => $emit('change', value.target.value)"
+      @input="(e) => $emit('change', e.target.value)"
     />
   </div>
 </template>
