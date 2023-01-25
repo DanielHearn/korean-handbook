@@ -50,9 +50,9 @@
     flex-direction: row;
     flex-wrap: nowrap;
     background: $white;
-    padding: calc($spacing * 0.5);
     border-radius: $border-radius;
     position: relative;
+    align-items: center;
     &--prevWord {
       opacity: 0.5;
       background: $green;
@@ -69,11 +69,13 @@
     flex-direction: row;
     flex-wrap: nowrap;
     min-width: 24px;
-    &--selected {
-      background: #cfcfff;
+    padding: calc($spacing * 0.5) calc($spacing * 0.25);
+    &--valid {
+      background: $green;
     }
   }
   &-arrow {
+    display: flex;
     position: absolute;
     left: -48px;
   }

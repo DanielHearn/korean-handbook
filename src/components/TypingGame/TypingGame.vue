@@ -23,14 +23,31 @@
               class="TypingGame-word TypingGame-word--prevWord"
               :class="{ 'TypingGame-word--hidden': !prevWord }"
             >
-              {{ prevWord ? prevWord.k : '-----' }}
+              <template v-if="prevWord?.k">
+                <div v-for="(letter, i) in prevWord.k" :key="i" class="TypingGame-letter">
+                  {{ letter }}
+                </div>
+              </template>
+              <div v-else>-----</div>
             </div>
             <div class="TypingGame-word TypingGame-word--currWord">
-              {{ currWord.k
-              }}<span class="TypingGame-arrow"> <i class="material-icons">arrow_forward</i></span>
+              <div
+                v-for="(letter, i) in currWord.k"
+                :key="i"
+                class="TypingGame-letter"
+                :class="{
+                  'TypingGame-letter--valid': matchingLetters[i] === true,
+                  'TypingGame-letter--invalid': matchingLetters[i] === false,
+                }"
+              >
+                {{ letter }}
+              </div>
+              <span class="TypingGame-arrow"> <i class="material-icons">arrow_forward</i></span>
             </div>
             <div class="TypingGame-word TypingGame-word--nextWord">
-              {{ nextWord.k }}
+              <div v-for="(letter, i) in nextWord.k" :key="i" class="TypingGame-letter">
+                {{ letter }}
+              </div>
             </div>
           </div>
           <div v-else class="TypingGame-words">

@@ -24,6 +24,7 @@ export default {
       time: DURATION,
       value: '',
       wordsCompleted: 0,
+      matchingLetters: {},
     };
   },
   watch: {
@@ -44,6 +45,18 @@ export default {
     value: function () {
       if (this.value && this.value === this.currWord.k) {
         this.moveToNextWords();
+      } else {
+        const matchingLetters = {};
+        for (const i in this.currWord.k) {
+          if (this.value.length && this.value[i]) {
+            if (this.value[i] === this.currWord.k[i]) {
+              matchingLetters[i] = true;
+            } else {
+              matchingLetters[i] = false;
+            }
+          }
+        }
+        this.matchingLetters = matchingLetters;
       }
     },
   },
@@ -67,6 +80,7 @@ export default {
       this.started = false;
       this.value = '';
       this.wordsCompleted = 0;
+      this.matchingLetters = {};
       this.resetTimer();
       this.start();
     },
@@ -97,6 +111,7 @@ export default {
       this.nextWord = this.getRandomWord();
       this.value = '';
       this.wordsCompleted++;
+      this.matchingLetters = {};
     },
     valueChange: function (newValue) {
       if (!this.started) {
