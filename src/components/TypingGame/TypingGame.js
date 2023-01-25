@@ -103,8 +103,7 @@ export default {
       if (!this.started) {
         this.started = true;
       }
-      if (typeof newValue === 'string') {
-        console.log('change');
+      if (typeof newValue === 'string' && !this.completed) {
         this.value = newValue;
       }
     },

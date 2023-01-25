@@ -37,7 +37,12 @@
             <button class="button--primary" @click="reset()">Try Again</button>
           </div>
           <div class="TypingGame-input">
-            <TextInput :value="value" placeholder="Type here to start" @change="valueChange" />
+            <TextInput
+              v-if="!completed"
+              :value="value"
+              placeholder="Type here to start"
+              @change="valueChange"
+            />
           </div>
         </div>
       </div>

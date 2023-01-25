@@ -72,8 +72,16 @@
     }
   }
   &-input {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
     padding: $spacing;
     background: $dark;
     border-radius: 0 0 $border-radius $border-radius;
+    min-height: 4em;
+    .text-input {
+      width: 100%;
+    }
   }
 }
