@@ -73,6 +73,9 @@
     &--valid {
       background: $green;
     }
+    &--invalid {
+      background: $red;
+    }
   }
   &-arrow {
     display: flex;

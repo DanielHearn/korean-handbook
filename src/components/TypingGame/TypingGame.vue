@@ -37,7 +37,8 @@
                 class="TypingGame-letter"
                 :class="{
                   'TypingGame-letter--valid': matchingLetters[i] === true,
-                  'TypingGame-letter--invalid': matchingLetters[i] === false,
+                  'TypingGame-letter--invalid':
+                    matchingLetters[i] === false && i < value?.length - 1,
                 }"
               >
                 {{ letter }}
