@@ -51,7 +51,7 @@
             </div>
           </div>
           <div v-else class="TypingGame-words">
-            <div class="TypingGame-word">
+            <div class="TypingGame-completionText">
               You completed {{ wordsCompleted }} words in one minute.
             </div>
             <button class="button--primary" @click="reset()">Try Again</button>
