@@ -463,7 +463,7 @@ button {
   .main {
     flex-direction: column;
     .intro-links {
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: 1fr 1fr;
       width: 100%;
     }
     .intro-link {
@@ -473,6 +473,9 @@ button {
       }
       .link-description {
         font-size: $xs-size-mobile;
+      }
+      &:last-child {
+        grid-column-start: span 2;
       }
     }
     .page-content {

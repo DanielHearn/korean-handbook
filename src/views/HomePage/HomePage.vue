@@ -8,7 +8,7 @@
       <div class="page-content">
         <div class="intro-links">
           <router-link
-            v-for="link in introLinks"
+            v-for="(link, i) in introLinks"
             :key="`${link.slug}`"
             :to="`/content/conjunctions/${link.slug}`"
             class="intro-link"
@@ -25,7 +25,7 @@
             </span>
             <div v-if="mobile">
               <p class="link-main">{{ link.name }}</p>
-              <p class="link-description">{{ link.description }}</p>
+              <p v-if="i > 3" class="link-description">{{ link.description }}</p>
             </div>
           </router-link>
         </div>
