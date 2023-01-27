@@ -68,7 +68,7 @@ const routes = [
       import(/* webpackChunkName: "typing" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
       title: () => {
-        return `Typnig Game - ${titleEnd}`;
+        return `Typing Game - ${titleEnd}`;
       },
     },
   },
