@@ -124,6 +124,7 @@ export default {
         this.value = newValue;
       }
     },
+    normalizeKorean: (koreanString) => koreanString?.normalize('NFC') || '',
   },
   mounted() {
     this.reset();

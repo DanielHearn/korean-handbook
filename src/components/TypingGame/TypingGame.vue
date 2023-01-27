@@ -24,7 +24,7 @@
               class="TypingGame-word TypingGame-word--prevWord"
               :class="{ 'TypingGame-word--hidden': !prevWord }"
             >
-              <template v-if="prevWord?.k">
+              <template v-if="normalizeKorean(prevWord?.k)">
                 <div v-for="(letter, i) in prevWord.k" :key="i" class="TypingGame-letter">
                   {{ letter }}
                 </div>
@@ -33,7 +33,7 @@
             </div>
             <div class="TypingGame-word TypingGame-word--currWord">
               <div
-                v-for="(letter, i) in currWord.k"
+                v-for="(letter, i) in normalizeKorean(currWord.k)"
                 :key="i"
                 class="TypingGame-letter"
                 :class="{
@@ -47,7 +47,11 @@
               <span class="TypingGame-arrow"> <i class="material-icons">arrow_forward</i></span>
             </div>
             <div class="TypingGame-word TypingGame-word--nextWord">
-              <div v-for="(letter, i) in nextWord.k" :key="i" class="TypingGame-letter">
+              <div
+                v-for="(letter, i) in normalizeKorean(nextWord.k)"
+                :key="i"
+                class="TypingGame-letter"
+              >
                 {{ letter }}
               </div>
             </div>
