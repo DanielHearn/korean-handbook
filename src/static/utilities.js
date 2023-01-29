@@ -19,7 +19,7 @@ export const shuffleArray = function (array) {
     .map(({ value }) => value);
 };
 
-export const generateTabs = (mobile = false, id = 'conjunctions') => {
+export const generateTabs = (mobile = false, id = 'top_100') => {
   let tabs = [
     {
       name: 'Learn',

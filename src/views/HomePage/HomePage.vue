@@ -10,7 +10,7 @@
           <router-link
             v-for="(link, i) in introLinks"
             :key="`${link.slug}`"
-            :to="`/content/conjunctions/${link.slug}`"
+            :to="`/content/top_100/${link.slug}`"
             class="intro-link"
           >
             <p v-if="!mobile" class="link-main text-link">
