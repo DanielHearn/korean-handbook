@@ -90,8 +90,8 @@ export default {
     runTimer: function () {
       if (this.time > 0 && this.started && !this.completed) {
         setTimeout(() => {
-          this.time -= 1;
           if (this.started) {
+            this.time -= 1;
             this.runTimer();
           }
         }, 1000);
