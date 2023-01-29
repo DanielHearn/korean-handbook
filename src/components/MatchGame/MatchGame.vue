@@ -10,6 +10,7 @@
               :class="{
                 'match-word--active': selected.e !== null && selected.e === englishWords[i].id,
                 'match-word--completed': completed[englishWords[i].id],
+                'match-word--incorrect': englishWords[i].id === incorrect?.e,
               }"
             >
               <button
@@ -25,6 +26,7 @@
               :class="{
                 'match-word--active': selected.k !== null && selected.k === koreanWords[i].id,
                 'match-word--completed': completed[koreanWords[i].id],
+                'match-word--incorrect': koreanWords[i].id === incorrect?.k,
               }"
             >
               <button

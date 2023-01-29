@@ -17,7 +17,9 @@ export default {
       englishWords: [],
       koreanWords: [],
       selected: { e: null, k: null },
+      incorrect: null,
       numberOfWords: NUMBER_OF_WORDS,
+      incorrectTimerID: null,
     };
   },
   watch: {
@@ -26,8 +28,13 @@ export default {
     },
     selected: {
       handler(selected) {
+        if (selected.e || selected.k) {
+          this.resetIncorrect();
+        }
+
         if (selected.e !== null && selected.k !== null) {
           if (selected.e === selected.k) {
+            this.resetIncorrect();
             this.completed[selected.e] = true;
             this.selected = { e: null, k: null };
             const word = this.unsortedWords[selected.e];
@@ -39,6 +46,7 @@ export default {
               },
             ].concat(this.completedWords);
           } else {
+            this.setIncorrect(selected);
             this.selected = { e: null, k: null };
           }
         }
@@ -100,6 +108,7 @@ export default {
       this.koreanWords = [];
       this.completedWords = [];
       this.unsortedWords = [];
+      this.incorrect = null;
       this.numberOfWords =
         this.category.words.length <= NUMBER_OF_WORDS
           ? this.category.words.length
@@ -110,6 +119,22 @@ export default {
       if (Object.keys(this.completed).length === this.numberOfWords) {
         this.reset();
       }
+    },
+    setIncorrect: function (selected) {
+      this.incorrect = {
+        e: selected.e,
+        k: selected.k,
+      };
+      this.incorrectTimerID = setTimeout(() => {
+        this.incorrect = null;
+        this.incorrectTimerIDl;
+      }, 750);
+    },
+    resetIncorrect: function () {
+      if (this.incorrectTimerID) {
+        clearTimeout(this.incorrectTimerID);
+      }
+      this.incorrect = null;
     },
   },
   mounted() {

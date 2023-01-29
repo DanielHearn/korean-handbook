@@ -94,7 +94,7 @@ export const Categories = {
       { e: 'All / Everything', k: '다' },
       { e: 'A little', k: '좀' },
       { e: 'To hold', k: '들다' },
-      { e: 'To want,hope', k: '싶다' },
+      { e: 'To want, hope', k: '싶다' },
       { e: 'To show', k: '보이다' },
       { e: 'To have / To take', k: '가지다' },
       { e: 'Together', k: '함께' },

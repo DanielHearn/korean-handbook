@@ -39,6 +39,9 @@
         }
       }
     }
+    &--incorrect button{
+      background: $red;
+    }
   }
   &-completed {
     padding-top: $spacing;
