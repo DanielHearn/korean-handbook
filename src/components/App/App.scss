@@ -350,7 +350,6 @@ button {
   &-content {
     display: flex;
     flex-direction: column;
-    flex: 1;
     align-items: center;
     padding: calc($spacing * 2);
   }
@@ -450,6 +449,7 @@ button {
     &-content {
       padding: $spacing;
       margin-bottom: 5rem;
+      flex: 1;
     }
     &-actions {
       padding: calc($spacing * 1.25) $spacing;
