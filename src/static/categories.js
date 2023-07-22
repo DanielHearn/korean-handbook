@@ -978,6 +978,30 @@ export const Categories = {
       { e: 'Shot', k: '샷' },
     ],
   },
+  shapes: {
+    name: 'Shapes',
+    id: 'shapes',
+    korean: '모양들',
+    columns: [
+      { id: 'e', name: 'English' },
+      { id: 'k', name: 'Korean' },
+    ],
+    words: [
+      { e: 'Square', k: '네모' },
+      { e: 'Rectangle', k: '직사각형' },
+      { e: 'Circle', k: '원' },
+      { e: 'Oval', k: '타원' },
+      { e: 'Triangle', k: '삼각형, 세모' },
+      { e: 'Line', k: '선' },
+      { e: 'Straight line', k: '직선' },
+      { e: 'Pentagon', k: '오각형' },
+      { e: 'Hexagon', k: '육각형' },
+      { e: 'Heptagon', k: '칠각형' },
+      { e: 'Octagon', k: '팔각형' },
+      { e: 'Polygon', k: '다각형' },
+      { e: 'Crescent', k: '초승달' },
+    ],
+  },
 };
 
 /*
