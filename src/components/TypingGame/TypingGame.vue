@@ -15,7 +15,7 @@
               {{ timeString }}
             </div>
             <div v-if="started" class="TypingGame-words-complete">
-              {{ wordsCompleted }} words completed
+              {{ wordsCompleted }} {{ wordsCompleted === 1 ? 'word' : 'words' }} completed
             </div>
           </div>
           <div v-if="!completed" class="TypingGame-words">
@@ -58,7 +58,8 @@
           </div>
           <div v-else class="TypingGame-words">
             <div class="TypingGame-completionText">
-              You completed {{ wordsCompleted }} words in one minute.
+              You completed {{ wordsCompleted }} {{ wordsCompleted === 1 ? 'word' : 'words' }} in
+              one minute.
             </div>
             <button class="button--primary" @click="reset()">Try Again</button>
           </div>
