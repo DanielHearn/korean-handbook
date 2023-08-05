@@ -1123,6 +1123,606 @@ export const Categories = {
       { e: 'Customs duties', k: '관세' },
     ],
   },
+  bathroom: {
+    name: 'Bathroom',
+    id: 'bathroom',
+    korean: '욕실',
+    columns: [
+      { id: 'e', name: 'English' },
+      { id: 'k', name: 'Korean' },
+    ],
+    words: [
+      {
+        e: '욕실',
+        k: 'bathroom',
+      },
+      {
+        e: '싱크대',
+        k: 'sink',
+      },
+      {
+        e: '변기',
+        k: 'toilet',
+      },
+      {
+        e: '치약',
+        k: 'toothpaste',
+      },
+      {
+        e: '칫솔',
+        k: 'toothbrush',
+      },
+      {
+        e: '샴푸',
+        k: 'shampoo',
+      },
+      {
+        e: '비누',
+        k: 'soap',
+      },
+      {
+        e: '수건',
+        k: 'towel',
+      },
+      {
+        e: '화장지',
+        k: 'toilet paper',
+      },
+      {
+        e: '드라이기',
+        k: 'hairdryer',
+      },
+      {
+        e: '빗',
+        k: 'comb',
+      },
+      {
+        e: '거울',
+        k: 'mirror',
+      },
+      {
+        e: '샤워',
+        k: 'shower',
+      },
+      {
+        e: '목욕통',
+        k: 'bathtub',
+      },
+      {
+        e: '구강청결제',
+        k: 'mouthwash',
+      },
+      {
+        e: '치실',
+        k: 'floss',
+      },
+      {
+        e: '비누거품',
+        k: 'soap bubble',
+      },
+      {
+        e: '샤워가운',
+        k: 'bathrobe',
+      },
+      {
+        e: '변기솔',
+        k: 'toilet brush',
+      },
+      {
+        e: '면도기',
+        k: 'razor',
+      },
+      {
+        e: '면도날',
+        k: 'razor blade',
+      },
+      {
+        e: '위생',
+        k: 'hygiene',
+      },
+      {
+        e: '대걸레',
+        k: 'mop',
+      },
+      {
+        e: '양동이',
+        k: 'bucket',
+      },
+    ],
+  },
+  kitchen: {
+    name: 'Kitchen',
+    id: 'kitchen',
+    korean: '부엌',
+    columns: [
+      { id: 'e', name: 'English' },
+      { id: 'k', name: 'Korean' },
+    ],
+    words: [
+      {
+        e: '부엌',
+        k: 'kitchen',
+      },
+      {
+        e: '오븐',
+        k: 'oven',
+      },
+      {
+        e: '냉장고',
+        k: 'refrigerator',
+      },
+      {
+        e: '가스레인지',
+        k: 'stove',
+      },
+      {
+        e: '전자레인지',
+        k: 'microwave oven',
+      },
+      {
+        e: '식기세척기',
+        k: 'dishwasher',
+      },
+      {
+        e: '커피머신',
+        k: 'coffee machine',
+      },
+      {
+        e: '주전자',
+        k: 'kettle',
+      },
+      {
+        e: '컵',
+        k: 'glass',
+      },
+      {
+        e: '냄비',
+        k: 'pot',
+      },
+      {
+        e: '후라이팬',
+        k: 'pan',
+      },
+      {
+        e: '물병',
+        k: 'jug',
+      },
+      {
+        e: '앞치마',
+        k: 'apron',
+      },
+      {
+        e: '티스푼',
+        k: 'teaspoon',
+      },
+      {
+        e: '수저세트',
+        k: 'cutlery',
+      },
+      {
+        e: '포크',
+        k: 'fork',
+      },
+      {
+        e: '숟가락',
+        k: 'spoon',
+      },
+      {
+        e: '칼',
+        k: 'knife',
+      },
+      {
+        e: '젓가락',
+        k: 'chopstick',
+      },
+      {
+        e: '접시',
+        k: 'plate',
+      },
+      {
+        e: '냉동실',
+        k: 'freezer',
+      },
+      {
+        e: '토스터기',
+        k: 'toaster',
+      },
+      {
+        e: '찬장',
+        k: 'kitchen cabinet',
+      },
+      {
+        e: '행주',
+        k: 'dish cloth',
+      },
+      {
+        e: '주방 세제',
+        k: 'dishwashing liquid',
+      },
+      {
+        e: '스폰지',
+        k: 'sponge',
+      },
+      {
+        e: '수도꼭지',
+        k: 'tap',
+      },
+      {
+        e: '싱크대',
+        k: 'sink',
+      },
+      {
+        e: '강판',
+        k: 'grater',
+      },
+      {
+        e: '거품기',
+        k: 'whisk',
+      },
+      {
+        e: '소금 뿌리개',
+        k: 'salt shaker',
+      },
+      {
+        e: '체',
+        k: 'sieve',
+      },
+      {
+        e: '밀방망이',
+        k: 'rolling pin',
+      },
+      {
+        e: '그릇',
+        k: 'bowl',
+      },
+      {
+        e: '베이킹 트레이',
+        k: 'baking tray',
+      },
+      {
+        e: '빨대',
+        k: 'drinking straw',
+      },
+      {
+        e: '병따개',
+        k: 'can opener',
+      },
+      {
+        e: '받침',
+        k: 'saucer',
+      },
+      {
+        e: '깔때기',
+        k: 'funnel',
+      },
+      {
+        e: '오븐용 장갑',
+        k: 'oven mitt',
+      },
+      {
+        e: '식탁보',
+        k: 'tablecloth',
+      },
+      {
+        e: '냅킨',
+        k: 'napkin',
+      },
+      {
+        e: '종이 타월',
+        k: 'paper towel',
+      },
+    ],
+  },
+  law_and_crime: {
+    name: 'Law and Crime ',
+    id: 'law_and_crime',
+    korean: '법와 범죄',
+    columns: [
+      { id: 'e', name: 'English' },
+      { id: 'k', name: 'Korean' },
+    ],
+    words: [
+      {
+        e: '법정',
+        k: 'court',
+      },
+      {
+        e: '법',
+        k: 'law',
+      },
+      {
+        e: '범죄',
+        k: 'crime',
+      },
+      {
+        e: '재소자',
+        k: 'prisoner',
+      },
+      {
+        e: '도둑',
+        k: 'thief',
+      },
+      {
+        e: '지문',
+        k: 'fingerprint',
+      },
+      {
+        e: '소송',
+        k: 'lawsuit',
+      },
+      {
+        e: '체험판',
+        k: 'trial',
+      },
+      {
+        e: '경찰관',
+        k: 'policeman',
+      },
+      {
+        e: '수갑',
+        k: 'handcuffs',
+      },
+      {
+        e: '변호사',
+        k: 'lawyer',
+      },
+      {
+        e: '판사',
+        k: 'judge',
+      },
+      {
+        e: '정의',
+        k: 'justice',
+      },
+      {
+        e: '피해자',
+        k: 'victim',
+      },
+      {
+        e: '증인',
+        k: 'witness',
+      },
+      {
+        e: '폭력',
+        k: 'violence',
+      },
+      {
+        e: '의심',
+        k: 'suspect',
+      },
+      {
+        e: '반대',
+        k: 'objection',
+      },
+      {
+        e: '인질',
+        k: 'hostage',
+      },
+      {
+        e: '인종차별',
+        k: 'racism',
+      },
+      {
+        e: '남용',
+        k: 'abuse',
+      },
+      {
+        e: '사기',
+        k: 'fraud',
+      },
+      {
+        e: '살인',
+        k: 'murder',
+      },
+      {
+        e: '불평',
+        k: 'complaint',
+      },
+      {
+        e: '처벌',
+        k: 'punishment',
+      },
+      {
+        e: '헌법',
+        k: 'constitution',
+      },
+      {
+        e: '결백',
+        k: 'innocence',
+      },
+      {
+        e: '경찰',
+        k: 'police',
+      },
+      {
+        e: '증거',
+        k: 'evidence',
+      },
+      {
+        e: '테러',
+        k: 'terrorism',
+      },
+      {
+        e: '모욕',
+        k: 'insult',
+      },
+      {
+        e: '조직폭력단',
+        k: 'mob',
+      },
+      {
+        e: '판결',
+        k: 'verdict',
+      },
+      {
+        e: '배심원',
+        k: 'jury',
+      },
+      {
+        e: '살인자',
+        k: 'murderer',
+      },
+      {
+        e: '자객',
+        k: 'assassin',
+      },
+      {
+        e: '테러리스트',
+        k: 'terrorist',
+      },
+      {
+        e: '인권',
+        k: 'human rights',
+      },
+      {
+        e: '진술',
+        k: 'statement',
+      },
+      {
+        e: '순찰대',
+        k: 'patrol',
+      },
+      {
+        e: '작전',
+        k: 'operation',
+      },
+    ],
+  },
+  music: {
+    name: 'Music',
+    id: 'music',
+    korean: '음악',
+    columns: [
+      { id: 'e', name: 'English' },
+      { id: 'k', name: 'Korean' },
+    ],
+    words: [
+      {
+        e: '음악',
+        k: 'music',
+      },
+      {
+        e: '마이크',
+        k: 'microphone',
+      },
+      {
+        e: '헤드폰',
+        k: 'headphones',
+      },
+      {
+        e: '스피커',
+        k: 'speaker',
+      },
+      {
+        e: '무대',
+        k: 'stage',
+      },
+      {
+        e: '녹음',
+        k: 'recording',
+      },
+      {
+        e: '악기',
+        k: 'instrument',
+      },
+      {
+        e: '기타',
+        k: 'guitar',
+      },
+      {
+        e: '플루트',
+        k: 'flute',
+      },
+      {
+        e: '바이올린',
+        k: 'violin',
+      },
+      {
+        e: '피아노',
+        k: 'piano',
+      },
+      {
+        e: '드럼',
+        k: 'drum',
+      },
+      {
+        e: '가수',
+        k: 'singer',
+      },
+      {
+        e: '작곡가',
+        k: 'composer',
+      },
+      {
+        e: '음악밴드',
+        k: 'music band',
+      },
+      {
+        e: '앨범',
+        k: 'album',
+      },
+      {
+        e: '노래',
+        k: 'song',
+      },
+      {
+        e: '가사',
+        k: 'lyrics',
+      },
+      {
+        e: '선율',
+        k: 'melody',
+      },
+      {
+        e: '리듬',
+        k: 'rhythm',
+      },
+      {
+        e: '콘서트',
+        k: 'concert',
+      },
+      {
+        e: '합창단',
+        k: 'choir',
+      },
+      {
+        e: '관현악단',
+        k: 'orchestra',
+      },
+      {
+        e: '드러머',
+        k: 'drummer',
+      },
+      {
+        e: '발레',
+        k: 'ballet',
+      },
+      {
+        e: '오페라',
+        k: 'opera',
+      },
+      {
+        e: '뮤지컬',
+        k: 'musical',
+      },
+      {
+        e: '재즈',
+        k: 'jazz',
+      },
+      {
+        e: '교향곡',
+        k: 'symphony',
+      },
+      {
+        e: '하프',
+        k: 'harp',
+      },
+      {
+        e: '이중주',
+        k: 'duet',
+      },
+    ],
+  },
 };
 
 /*
@@ -1130,5 +1730,9 @@ countries: {
   name: 'Countries',
   id: 'countries',
   korean: '나라',
+  columns: [
+    { id: 'e', name: 'English' },
+    { id: 'k', name: 'Korean' },
+  ],
   words: [{ e: 'Airplane', k: '비행기' }]
 }, */
