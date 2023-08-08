@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../views/HomePage/HomePage.vue';
+import { Categories } from '@/static/categories';
 
 const titleEnd = ' - The Korean Handbook';
 
@@ -22,8 +23,8 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "random" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
-      title: () => {
-        return `Random ${titleEnd}`;
+      title: (to, category) => {
+        return `Random - ${category.name}${titleEnd}`;
       },
     },
   },
@@ -33,8 +34,8 @@ const routes = [
     props: (route) => ({ id: route.params.id, content: 'info' }),
     component: () => import(/* webpackChunkName: "info" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
-      title: () => {
-        return `Info ${titleEnd}`;
+      title: (to, category) => {
+        return `Learn - ${category.name}${titleEnd}`;
       },
     },
   },
@@ -44,8 +45,8 @@ const routes = [
     props: (route) => ({ id: route.params.id, content: 'match' }),
     component: () => import(/* webpackChunkName: "match" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
-      title: () => {
-        return `Match ${titleEnd}`;
+      title: (to, category) => {
+        return `Match - ${category.name}${titleEnd}`;
       },
     },
   },
@@ -55,8 +56,8 @@ const routes = [
     props: (route) => ({ id: route.params.id, content: 'test' }),
     component: () => import(/* webpackChunkName: "test" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
-      title: () => {
-        return `Test ${titleEnd}`;
+      title: (to, category) => {
+        return `Test - ${category.name}${titleEnd}`;
       },
     },
   },
@@ -67,8 +68,8 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "typing" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
-      title: () => {
-        return `Typing Game - ${titleEnd}`;
+      title: (to, category) => {
+        return `Type - Game ${category.name}${titleEnd}`;
       },
     },
   },
@@ -114,7 +115,11 @@ const router = createRouter({
 });
 
 router.afterEach((to, from, next) => {
-  document.title = to.meta.title(to);
+  let category = null;
+  if (to.params.id) {
+    category = Categories[to.params.id];
+  }
+  document.title = to.meta.title(to, category);
   if (next) {
     next();
   }
