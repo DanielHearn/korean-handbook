@@ -1,7 +1,6 @@
 {
   "name": "korean-handbook",
   "version": "1.0.0",
-  "description": "Live at www.thekoreanhandbook.com",
   "main": "index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
