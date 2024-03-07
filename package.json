@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/DanielHearn/Korean-Handbook/issues"
   },
-  "homepage": "https://github.com/DanielHearn/Korean-Handbook#readme",
+  "homepage": "https://danielhearn.co.uk/korean-handbook/",
   "dependencies": {
     "core-js": "^3.8.3",
     "pinia": "^2.0.14",
