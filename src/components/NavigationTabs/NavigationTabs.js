@@ -32,9 +32,11 @@ export default {
       const targetRef = this.$refs.items?.querySelector(`[data-slug="${this.selected}"]`);
 
       if (targetRef) {
-        this.dashWidth = targetRef.offsetWidth;
-        this.dashPosition =
-          targetRef.offsetLeft + targetRef.offsetWidth / 2 - targetRef.offsetWidth / 2;
+        const targetLink = targetRef.querySelector('a');
+        const spacingWidth = parseFloat(getComputedStyle(targetLink).borderRightWidth);
+
+        this.dashWidth = targetLink.offsetWidth - spacingWidth;
+        this.dashPosition = targetRef.offsetLeft;
       }
     },
   },

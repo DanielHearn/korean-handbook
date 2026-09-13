@@ -3,13 +3,16 @@
 body {
   margin: 0;
   overflow-x: hidden;
+  background: $off-white;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html, body, #korean-handbook-vue {
+html,
+body,
+#korean-handbook-vue {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -35,6 +38,7 @@ html, body, #korean-handbook-vue {
   justify-content: center;
   height: 100%;
   width: 100%;
+  gap: calc($spacing * 2);
 }
 
 .button--logo {
@@ -184,23 +188,27 @@ html, body, #korean-handbook-vue {
   width: 100%;
   box-sizing: border-box;
   background: $white;
+  border: 1px solid $off-whiter;
   border-radius: $border-radius;
-  margin-top: calc($spacing * 2);
-  margin-bottom: calc($spacing * 2);
+  margin-bottom: $spacing;
   overflow: hidden;
 }
 
 input {
   background: $grey;
   border-radius: $border-radius;
-  color: $light-grey;
-  border: 0;
-  padding: 0.4em 0.6em;
+  color: $white;
+  border: 1px solid transparent;
+  padding: 0.55em 0.7em;
   letter-spacing: 0.025em;
   font-family: rubik, sans-serif;
   font-size: $s-size;
   &[type='text']::placeholder {
     color: $light-grey;
+  }
+  &:focus {
+    outline: 2px solid $accent;
+    outline-offset: -2px;
   }
 }
 
@@ -209,13 +217,13 @@ button {
   background: $darker-grey;
   color: $white;
   border-radius: $border-radius;
-  padding: 0.4em 0.6em;
+  padding: 0.5em 0.7em;
   font-family: rubik, sans-serif;
   user-select: none;
   cursor: pointer;
   transition: background $transition-slow;
   &:hover {
-    background: $darker-grey;
+    background: $darkest-grey;
   }
 }
 
@@ -324,7 +332,8 @@ button {
   }
 }
 
-.category-open, .category-close {
+.category-open,
+.category-close {
   position: absolute;
   top: 0;
   right: 0;
@@ -381,7 +390,7 @@ button {
     p {
       margin: Calc($spacing / 4) 0 0 0;
     }
-  
+
     &-option {
       display: flex;
       align-items: center;
@@ -397,6 +406,9 @@ button {
   background: $white;
   .text {
     font-size: 1rem;
+  }
+  .main {
+    gap: 0;
   }
   .main-panel {
     margin: 0;
@@ -499,7 +511,7 @@ button {
       max-width: 100%;
     }
   }
- .main.home-page {
+  .main.home-page {
     .page-content {
       overflow: initial !important;
       &:last-child {
@@ -511,11 +523,11 @@ button {
       padding-bottom: $spacing;
     }
   }
-  .tabs { 
+  .tabs {
     width: 100%;
     height: 4rem;
     background: $white;
-    box-shadow: 0px -4px 8px 1px rgb(103 103 103 / 10%);
+    border-top: 1px solid $off-whiter;
     &-item {
       flex: 1;
       align-items: center;

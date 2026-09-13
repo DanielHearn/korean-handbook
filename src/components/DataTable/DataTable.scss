@@ -16,6 +16,7 @@
       font-weight: $medium-weight;
       padding: calc($spacing / 2) $spacing;
       background: $off-whiter;
+      color: $darker-grey;
     }
     .grid-search {
       background: $dark;
@@ -27,7 +28,7 @@
       column-gap: $spacing;
       padding: $spacing;
       grid-template-columns: repeat(auto-fit, minmax(min-content, 10em));
-      border-bottom: 2px $off-white solid;
+      border-bottom: 1px $off-white solid;
       p {
         word-break: break-word;
         margin: 0;

@@ -20,6 +20,9 @@
       }
       &.active {
         background: $accent;
+        a {
+          font-weight: $medium-weight;
+        }
       }
       &:hover:not(.active) {
         background: $grey;
