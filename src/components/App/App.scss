@@ -290,6 +290,8 @@ button {
   &:disabled,
   &:disabled:hover {
     background: $off-whiter;
+    color: $darker-grey;
+    opacity: 0.7;
     cursor: not-allowed;
   }
 }

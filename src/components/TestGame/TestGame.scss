@@ -7,6 +7,15 @@
   width: 100%;
   text-align: center;
 
+  &-label {
+    display: block;
+    color: $darker-grey;
+    font-size: $s-size;
+    font-weight: $medium-weight;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
   &-characters {
     display: flex;
     flex-direction: row;
@@ -14,7 +23,7 @@
     padding: 0;
     list-style: none;
     font-size: $xl-size;
-    margin: Calc($spacing / 2) 0;
+    margin: $spacing 0 0;
   }
 
   &-character {
@@ -23,10 +32,11 @@
     align-items: center;
     justify-content: flex-end;
     //margin-right: Calc($spacing / 2);
-    width: 3rem;
-    height: 3.5rem;
+    width: 3.25rem;
+    height: 3.75rem;
     &--active {
-      border: 2px $dark-grey solid;
+      border: 2px $accent solid;
+      background: rgba(93, 97, 218, 0.08);
       border-radius: $border-radius;
       span {
         display: none !important;
@@ -46,6 +56,7 @@
     }
     p {
       margin: 0;
+      color: $darker;
     }
   }
 
@@ -54,12 +65,21 @@
     flex-direction: row;
     justify-content: center;
     padding: 0;
-    margin: $spacing 0;
+    margin: $spacing 0 0;
     list-style: none;
   }
 
   &-choice {
-    margin-right: 0.5em;
+    margin: 0 0.35em;
+    button {
+      min-width: 3.25rem;
+      border: 1px solid $darker-grey;
+      transition: background $transition-slow, border-color $transition-slow;
+      &:hover:not(:disabled) {
+        border-color: $accent;
+        background: $accent;
+      }
+    }
   }
 
   &-content {
@@ -67,13 +87,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: calc($spacing * 1.5);
+  }
+
+  &-prompt,
+  &-progress,
+  &-choices-panel {
+    padding: $spacing * 1.25;
+    border: 1px solid $off-whiter;
+    border-radius: $border-radius;
+    background: $white;
+  }
+
+  &-prompt {
+    background: $off-white;
   }
 
   &-word {
     font-weight: 600;
     text-align: center;
     font-size: $m-size;
-    padding-bottom: Calc($spacing / 2);
+    padding-top: Calc($spacing / 2);
   }
 
   &-actions {
