@@ -36,7 +36,7 @@
       </header-panel>
       <div v-if="category" class="page-content">
         <DataTable v-if="content === 'info'" :rows="category.words" :columns="category.columns" />
-        <RandomWordGenerator v-if="content === 'random'" :category="category" />
+        <RandomWordGenerator v-if="content === 'flashcard'" :category="category" />
         <MatchGame v-if="content === 'match'" :category="category" />
         <TestGame v-if="content === 'test'" :category="category" />
         <TypingGame v-if="content === 'typing'" :category="category" />

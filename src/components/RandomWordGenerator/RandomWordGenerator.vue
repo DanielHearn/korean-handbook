@@ -2,9 +2,7 @@
   <div class="tool random">
     <div class="tool-content">
       <div class="random-content">
-        <p class="tool-instructions text">
-          Practice learning random words show in the flashcard below.
-        </p>
+        <p class="tool-instructions text">Practice learning words with the flashcard below.</p>
         <div
           v-if="flashcardMode"
           class="random-flashcards random-flashcards--test"
@@ -24,7 +22,7 @@
               <p v-else class="text">{{ word.k }}</p>
             </template>
             <template v-else>
-              <p class="text text--bold">Click for the translation</p>
+              <p class="text text--bold">Click for translation</p>
             </template>
           </div>
         </div>
@@ -37,20 +35,23 @@
           </div>
         </div>
       </div>
-      <div class="tool-options">
-        <option-row
-          title="Flashcard Mode"
-          description="Practice your knowledge before viewing the translation"
-          :slim="true"
-        >
-          <switch-input :value="flashcardMode" @change="toggleFlashcardMode" />
-        </option-row>
-        <option-row v-if="flashcardMode" title="Korean To English" :slim="true">
-          <radio-input :value="languageDirection === 'toEnglish'" @change="toEnglish" />
-        </option-row>
-        <option-row v-if="flashcardMode" title="English To Korean" :slim="true">
-          <radio-input :value="languageDirection === 'toKorean'" @change="toKorean" />
-        </option-row>
+      <div class="random-options">
+        <h2 class="random-options__heading">Practice settings</h2>
+        <div class="tool-options">
+          <option-row
+            title="Flashcard Mode"
+            description="Practice your knowledge before viewing the translation"
+            :slim="true"
+          >
+            <switch-input :value="flashcardMode" @change="toggleFlashcardMode" />
+          </option-row>
+          <option-row v-if="flashcardMode" title="Korean To English" :slim="true">
+            <radio-input :value="languageDirection === 'toEnglish'" @change="toEnglish" />
+          </option-row>
+          <option-row v-if="flashcardMode" title="English To Korean" :slim="true">
+            <radio-input :value="languageDirection === 'toKorean'" @change="toKorean" />
+          </option-row>
+        </div>
       </div>
     </div>
     <div class="tool-actions">

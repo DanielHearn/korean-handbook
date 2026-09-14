@@ -1,6 +1,6 @@
 export const TITLES = {
   info: 'Learn',
-  random: 'Random',
+  flashcard: 'Flashcard',
   match: 'Match',
   test: 'Test',
   home: 'Home',

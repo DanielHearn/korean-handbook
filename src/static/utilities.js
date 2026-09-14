@@ -29,11 +29,11 @@ export const generateTabs = (mobile = false, id = 'top_100') => {
       description: 'Learn new words from categories',
     },
     {
-      name: 'Random',
-      slug: 'random',
-      url: `/content/${id}/random`,
+      name: 'Flashcard',
+      slug: 'flashcard',
+      url: `/content/${id}/flashcard`,
       icon: 'shuffle',
-      description: 'Learn random words',
+      description: 'Practice with flashcards',
     },
     {
       name: 'Match',

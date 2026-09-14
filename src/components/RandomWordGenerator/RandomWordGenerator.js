@@ -20,7 +20,7 @@ export default {
   data: function () {
     return {
       word: { e: '', k: '' },
-      flashcardMode: false,
+      flashcardMode: true,
       languageDirection: 'toEnglish',
       showAnswer: false,
     };

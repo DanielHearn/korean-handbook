@@ -17,14 +17,14 @@ const routes = [
     },
   },
   {
-    name: 'content_random',
-    path: '/content/:id/random',
-    props: (route) => ({ id: route.params.id, content: 'random' }),
+    name: 'content_flashcard',
+    path: '/content/:id/flashcard',
+    props: (route) => ({ id: route.params.id, content: 'flashcard' }),
     component: () =>
-      import(/* webpackChunkName: "random" */ '../views/ContentPage/ContentPage.vue'),
+      import(/* webpackChunkName: "flashcard" */ '../views/ContentPage/ContentPage.vue'),
     meta: {
       title: (to, category) => {
-        return `Random - ${category.name}${titleEnd}`;
+        return `Flashcard - ${category.name}${titleEnd}`;
       },
     },
   },
@@ -81,16 +81,16 @@ const routes = [
     },
   },
   {
-    name: 'randomWordCat',
+    name: 'flashcardCat',
     path: '/random-words/:id',
     redirect: (to) => {
-      return `/content/${to.params.id}/random`;
+      return `/content/${to.params.id}/flashcard`;
     },
   },
   {
-    name: 'randomWordsHome',
+    name: 'flashcardsHome',
     path: '/random-words',
-    redirect: '/content/all',
+    redirect: '/content/all/flashcard',
   },
   {
     name: 'infoCat',
@@ -105,7 +105,8 @@ const routes = [
     redirect: '/',
   },
   { path: '/tool/', redirect: '/' },
-  { path: '/tool/random-korean-words', redirect: '/random-words' },
+  { path: '/tool/random-korean-words', redirect: '/content/all/flashcard' },
+  { path: '/content/:id/random', redirect: (to) => `/content/${to.params.id}/flashcard` },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 

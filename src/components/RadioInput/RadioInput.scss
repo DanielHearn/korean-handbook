@@ -3,7 +3,7 @@
 .radio-input {
   cursor: pointer;
   input {
-    display: none
+    display: none;
   }
   &__input {
     display: flex;
@@ -11,28 +11,42 @@
     justify-content: center;
     width: 1.4rem;
     height: 1.4rem;
-    background: $light-grey;
+    background: $white;
+    border: 2px solid $grey;
     border-radius: 50%;
   }
   &__selection {
-    width: 1rem;
-    height: 1rem;
+    width: 0.8rem;
+    height: 0.8rem;
     border-radius: 50%;
-    background: $light-grey;
+    background: $dark-grey;
+    visibility: hidden;
   }
   &--active {
+    .radio-input__input {
+      border-color: $accent;
+    }
     .radio-input__selection {
       background: $accent;
+      visibility: visible;
     }
   }
   &:hover {
+    .radio-input__input {
+      border-color: $darker-grey;
+    }
     .radio-input__selection {
-      background: $off-whiter;
+      background: $darker-grey;
+      visibility: visible;
     }
   }
   &:hover.radio-input--active {
+    .radio-input__input {
+      border-color: $accent-dark;
+    }
     .radio-input__selection {
       background: $accent-dark;
+      visibility: visible;
     }
   }
 }

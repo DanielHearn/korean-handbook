@@ -1,6 +1,10 @@
 @import './../../scss/variables.scss';
 
 .random {
+  .tool-content {
+    gap: calc($spacing * 3);
+  }
+
   &-flashcards {
     display: flex;
     flex-direction: column;
@@ -19,15 +23,40 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
+    gap: calc($spacing * 3);
+  }
+
+  &-options {
+    width: 100%;
+    max-width: 40rem;
+    padding: $spacing * 1.5 $spacing * 2;
+    border: 1px solid $off-whiter;
+    border-radius: $border-radius;
+    background: $off-white;
+    &__heading {
+      margin: 0 0 $spacing;
+      color: $darker-grey;
+      font-size: $s-size;
+      font-weight: $medium-weight;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .tool-options {
+      padding: 0;
+    }
   }
 
   &-flashcard {
-    background: $off-white;
+    background: $white;
+    border: 1px solid $off-whiter;
     padding: Calc($spacing / 2);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 120px;
+    &:first-child {
+      border-radius: $border-radius $border-radius 0 0;
+    }
     .text {
       font-size: 1.2em;
       margin: Calc($spacing / 2) 0;
@@ -35,9 +64,11 @@
     &--dark {
       background: $off-whiter;
       font-weight: $regular-weight;
+      border-top: 0;
+      border-radius: 0 0 $border-radius $border-radius;
     }
   }
-  
+
   .text {
     margin: 0;
   }
