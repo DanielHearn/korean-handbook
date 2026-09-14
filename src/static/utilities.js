@@ -58,9 +58,5 @@ export const generateTabs = (mobile = false, id = 'top_100') => {
     },
   ];
 
-  if (mobile) {
-    tabs = [{ name: 'Home', slug: 'home', url: `/`, icon: 'home' }, ...tabs];
-  }
-
   return tabs;
 };
