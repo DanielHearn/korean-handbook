@@ -74,7 +74,16 @@
   &--mobile {
     z-index: 10;
     .tabs-item a {
+      width: 100%;
+      flex: 1 1 auto;
+      border-right: 0;
       padding-bottom: 0;
+      text-align: center;
+      text-decoration: none !important;
+      &:hover,
+      &:focus {
+        text-decoration: none !important;
+      }
     }
   }
 }

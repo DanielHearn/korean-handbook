@@ -39,18 +39,15 @@
             </div>
           </li>
         </div>
-        <div v-else class="match-completed">
-          <ul class="match-row">
-            <div
-              v-for="word in completedWords"
-              :key="word.id"
-              class="match-word match-english match-word--completed"
-            >
-              <button class="button--secondary">
-                <div>{{ word.e }}: {{ word.k }}</div>
-              </button>
-            </div>
-          </ul>
+        <div v-if="completedWords.length" class="match-completed">
+          <div v-if="completedWords.length === numberOfWords" class="match-finished">
+            <p class="text">All pairs matched.</p>
+          </div>
+          <div v-for="word in completedWords" :key="word.id" class="match-pair">
+            <span>{{ word.e }}</span>
+            <i class="material-icons" aria-hidden="true">link</i>
+            <span>{{ word.k }}</span>
+          </div>
         </div>
       </div>
     </div>
