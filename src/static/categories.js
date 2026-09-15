@@ -560,7 +560,7 @@ export const Categories = {
     ],
   },
   directions: {
-    name: 'Directions / Locations',
+    name: 'Directions',
     id: 'directions',
     korean: '방향',
     columns: [
@@ -599,7 +599,7 @@ export const Categories = {
     ],
   },
   jobs: {
-    name: 'Jobs / Occupations',
+    name: 'Jobs',
     id: 'jobs',
     korean: '직업',
     columns: [
@@ -1042,9 +1042,9 @@ export const Categories = {
       { e: 'Device', k: '장치' },
     ],
   },
-  feelings: {
-    name: 'Feelings & Emotions',
-    id: 'feelings',
+  emotions: {
+    name: 'Emotions',
+    id: 'emotions',
     korean: '감정',
     columns: [
       { id: 'e', name: 'English' },
