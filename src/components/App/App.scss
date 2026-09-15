@@ -319,15 +319,53 @@ button {
   flex-direction: column;
   background: $darker;
   z-index: 100;
-  padding: Calc($spacing / 2) $spacing;
+  padding: $spacing * 1.25 $spacing;
   overflow: hidden;
+  .category-close {
+    padding: $spacing * 0.75;
+  }
   .search-form {
-    padding-bottom: $spacing;
+    padding: 0 0 $spacing;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   .heading {
     color: $white;
-    margin: 0 0 $spacing 0;
-    text-align: center;
+    margin: 0 3rem $spacing 0;
+    font-size: $s-size;
+    letter-spacing: 0.04em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  .search-list {
+    padding: $spacing * 0.75 0;
+    .text-list {
+      padding: 0;
+      .list-item {
+        min-height: 2.5rem;
+        padding: 0;
+        margin-bottom: 0.25rem;
+        border-left: 3px solid transparent;
+        border-radius: 0 $border-radius $border-radius 0;
+        transition: background $transition-fast, border-color $transition-fast;
+        a {
+          display: flex;
+          align-items: center;
+          padding: 0.55rem 0.75rem;
+          color: rgba(255, 255, 255, 0.86);
+        }
+        &.active {
+          border-left-color: $accent;
+          background: rgba(93, 97, 218, 0.22);
+          a {
+            color: $white;
+            font-weight: $medium-weight;
+          }
+        }
+        &:hover:not(.active) {
+          background: rgba(255, 255, 255, 0.08);
+        }
+      }
+    }
   }
   .no-results {
     color: $white;
@@ -457,6 +495,7 @@ button {
     padding-bottom: 0;
     h2 {
       margin: 0;
+      padding-bottom: 0.25rem;
     }
   }
   .tool {
