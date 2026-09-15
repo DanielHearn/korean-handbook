@@ -6,9 +6,7 @@
         class="TypingGame"
         :class="{ 'TypingGame--completed': completed, 'TypingGame--closeToFinish': time <= 15 }"
       >
-        <p class="tool-instructions text">
-          Type the Korean words below. Check how to enable a Korean keyboard on your device.
-        </p>
+        <p class="tool-instructions text">Type the Korean words below</p>
         <div class="TypingGame-container">
           <div class="TypingGame-stats">
             <div class="TypingGame-time">

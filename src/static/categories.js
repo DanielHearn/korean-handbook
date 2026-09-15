@@ -1,8 +1,8 @@
 export const Categories = {
   top_100: {
-    name: 'Top 100 Common Words',
+    name: 'Top 100 Words',
     id: 'top_100',
-    korean: 'Top 100 Common Words',
+    korean: 'Top 100 Words',
     columns: [
       { id: 'e', name: 'English' },
       { id: 'k', name: 'Korean' },
@@ -305,7 +305,7 @@ export const Categories = {
     ],
   },
   buildings: {
-    name: 'Buildings/Locations',
+    name: 'Buildings',
     id: 'buildings',
     korean: '건물',
     columns: [
@@ -479,7 +479,7 @@ export const Categories = {
     ],
   },
   sino_korean_numbers: {
-    name: 'Sino Korean Numbers',
+    name: 'Sino Numbers',
     id: 'sino_korean_numbers',
     korean: '숫자',
     columns: [
@@ -522,7 +522,7 @@ export const Categories = {
     ],
   },
   native_korean_numbers: {
-    name: 'Native Korean Numbers',
+    name: 'Native Numbers',
     id: 'native_korean_numbers',
     korean: '한국어 숫자',
     columns: [

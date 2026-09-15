@@ -566,6 +566,9 @@ button {
     }
   }
   .table {
-    margin-top: $spacing;
+    margin-top: $spacing / 2;
+  }
+  .random-content {
+    gap: 0;
   }
 }

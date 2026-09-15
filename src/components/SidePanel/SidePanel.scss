@@ -10,7 +10,14 @@
   margin: $spacing;
   border-radius: $border-radius;
   .side-panel-header {
-    padding: $spacing;
+    padding: $spacing * 1.25 $spacing;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    .sub-heading {
+      margin-bottom: $spacing;
+      font-size: $s-size;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
   }
   .side-panel-content {
     display: flex;
@@ -21,8 +28,34 @@
     }
   }
   .search-list {
-    padding: 1em;
+    padding: $spacing * 0.75;
     box-sizing: border-box;
+    .text-list {
+      padding: 0;
+      .list-item {
+        min-height: 2.5rem;
+        padding: 0;
+        margin-bottom: 0.1rem;
+        border-left: 3px solid transparent;
+        border-radius: 0 $border-radius $border-radius 0;
+        a {
+          display: flex;
+          align-items: center;
+          padding: 0.55rem 0.75rem;
+          color: rgba(255, 255, 255, 0.86);
+        }
+        &.active {
+          border-left-color: $accent;
+          background: rgba(93, 97, 218, 0.22);
+          a {
+            color: $white;
+          }
+        }
+        &:hover:not(.active) {
+          background: rgba(255, 255, 255, 0.08);
+        }
+      }
+    }
   }
   .side-panel-nav {
     display: flex;
@@ -43,10 +76,15 @@
       flex-direction: column;
       box-sizing: border-box;
       flex-direction: row;
-      padding: 0 0.5em;
+      padding: 1rem;
       box-sizing: border-box;
       flex: 1 auto;
       justify-content: space-between;
+      .side-panel-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
       a {
         color: $white;
         text-decoration: none;
@@ -60,12 +98,24 @@
           color: $white;
         }
       }
+      .side-panel-title {
+        font-size: $s-size;
+        font-weight: $bold-weight;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+      }
     }
     .nav-logo {
-      width: 2.5em;
-      height: 2em;
+      width: 2.25rem;
+      height: 2.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       a {
         margin: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
       }
     }
   }

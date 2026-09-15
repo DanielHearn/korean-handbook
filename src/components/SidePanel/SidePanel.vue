@@ -2,7 +2,7 @@
   <div class="side-panel" :class="{ active: open }">
     <div class="side-panel-nav">
       <div class="nav-content">
-        <div style="display: flex; align-items: center">
+        <div class="side-panel-brand">
           <div class="nav-logo">
             <router-link to="/" class="button--logo">
               <svg
