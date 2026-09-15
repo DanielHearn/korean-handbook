@@ -6,6 +6,15 @@
   max-width: 500px;
   width: 100%;
   text-align: center;
+
+  &-label {
+    display: block;
+    color: $darker-grey;
+    font-size: $s-size;
+    font-weight: $medium-weight;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
   &--closeToFinish {
     .TypingGame-timer {
       color: $red;
@@ -21,6 +30,7 @@
   &-container {
     display: flex;
     flex-direction: column;
+    gap: $spacing;
     border-radius: $border-radius;
   }
   &-stats {
@@ -29,7 +39,18 @@
     justify-content: space-between;
     font-size: $m-size;
     font-weight: bold;
-    padding: $spacing;
+    padding: $spacing * 1.25 $spacing * 1.5;
+    border: 1px solid $off-whiter;
+    border-radius: $border-radius;
+    background: $white;
+  }
+  &-time {
+    display: flex;
+    align-items: baseline;
+    gap: calc($spacing / 2);
+    .TypingGame-label {
+      display: inline;
+    }
   }
   &-words {
     display: flex;
@@ -39,9 +60,11 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-    padding: $spacing;
+    padding: $spacing * 1.5;
     background: $off-white;
-    border-radius: $border-radius $border-radius 0 0;
+    border: 1px solid $off-whiter;
+    border-radius: $border-radius;
+    gap: $spacing;
   }
   &-word {
     display: flex;
@@ -52,11 +75,11 @@
     position: relative;
     align-items: center;
     &--prevWord {
-      opacity: 0.5;
-      background: $green;
+      opacity: 0.55;
+      background: rgba(121, 182, 68, 0.16);
     }
     &--nextWord {
-      opacity: 0.5;
+      opacity: 0.55;
     }
     &--hidden {
       visibility: hidden;
@@ -70,7 +93,8 @@
     flex-direction: row;
     flex-wrap: nowrap;
     min-width: 1rem;
-    padding: calc($spacing * 0.5) calc($spacing * 0.25);
+    padding: calc($spacing * 0.5) calc($spacing * 0.35);
+    border-radius: 0.2rem;
     &--valid {
       background: $green;
     }
@@ -88,10 +112,15 @@
     flex-direction: column;
     justify-self: center;
     align-items: center;
-    padding: $spacing;
+    padding: $spacing * 1.25 $spacing * 1.5;
     background: $dark;
-    border-radius: 0 0 $border-radius $border-radius;
+    border-radius: $border-radius;
     min-height: 4rem;
+    gap: calc($spacing / 2);
+    .TypingGame-label {
+      color: $white;
+      opacity: 0.8;
+    }
     .text-input {
       width: 100%;
     }

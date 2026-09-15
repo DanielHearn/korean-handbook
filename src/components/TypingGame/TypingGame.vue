@@ -11,14 +11,17 @@
         </p>
         <div class="TypingGame-container">
           <div class="TypingGame-stats">
-            <div class="TypingGame-timer">
-              {{ timeString }}
+            <div class="TypingGame-time">
+              <span class="TypingGame-label">Time remaining</span>
+              <div class="TypingGame-timer">{{ timeString }}</div>
             </div>
             <div v-if="started" class="TypingGame-words-complete">
+              <span class="TypingGame-label">Progress</span>
               {{ wordsCompleted }} {{ wordsCompleted === 1 ? 'word' : 'words' }} completed
             </div>
           </div>
           <div v-if="!completed" class="TypingGame-words">
+            <span class="TypingGame-label">Word sequence</span>
             <div
               v-if="!mobile"
               class="TypingGame-word TypingGame-word--prevWord"
@@ -57,19 +60,16 @@
             </div>
           </div>
           <div v-else class="TypingGame-words">
+            <span class="TypingGame-label">Session complete</span>
             <div class="TypingGame-completionText">
               You completed {{ wordsCompleted }} {{ wordsCompleted === 1 ? 'word' : 'words' }} in
               one minute.
             </div>
             <button class="button--primary" @click="reset()">Try Again</button>
           </div>
-          <div class="TypingGame-input">
-            <TextInput
-              v-if="!completed"
-              :value="value"
-              placeholder="Type here to start"
-              @change="valueChange"
-            />
+          <div v-if="!completed" class="TypingGame-input">
+            <span class="TypingGame-label">Type the Korean word</span>
+            <TextInput :value="value" placeholder="Type here to start" @change="valueChange" />
           </div>
         </div>
       </div>
