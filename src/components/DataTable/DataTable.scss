@@ -2,8 +2,8 @@
 
 .table {
   background: $white;
-  border-radius: $border-radius 0 0 $border-radius;
   width: 100%;
+  border: 1px solid $off-whiter;
   border-radius: $border-radius;
   overflow: auto;
 
@@ -14,13 +14,20 @@
     padding: 0;
     .grid-header {
       font-weight: $medium-weight;
-      padding: calc($spacing / 2) $spacing;
-      background: $off-whiter;
+      padding: $spacing * 0.75 $spacing;
+      background: $off-white;
       color: $darker-grey;
+      border-bottom: 1px solid $off-whiter;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
     }
     .grid-search {
-      background: $dark;
-      padding: calc($spacing / 2) $spacing;
+      background: $white;
+      padding: $spacing;
+      border-bottom: 1px solid $off-whiter;
+      .search-form {
+        margin: 0;
+      }
     }
     .grid-item {
       display: grid;
@@ -29,9 +36,14 @@
       padding: $spacing;
       grid-template-columns: repeat(auto-fit, minmax(min-content, 10em));
       border-bottom: 1px $off-white solid;
+      transition: background $transition-fast;
+      &:hover {
+        background: rgba(93, 97, 218, 0.04);
+      }
       p {
         word-break: break-word;
         margin: 0;
+        line-height: 1.45;
       }
       &:last-child {
         border-bottom: none;
@@ -57,7 +69,7 @@
         max-width: 400px;
       }
       p {
-        margin: calc($spacing / 2) calc($spacing / 2) 0 0;
+        margin: 0 calc($spacing / 2) 0 0;
       }
     }
   }
