@@ -1,5 +1,13 @@
 <template>
-  <div class="radio-input" :class="{ 'radio-input--active': value }">
+  <div
+    class="radio-input"
+    :class="{ 'radio-input--active': value }"
+    @click="
+      () => {
+        $emit('change', !value);
+      }
+    "
+  >
     <input
       v-model="value"
       type="radio"
@@ -9,14 +17,7 @@
         }
       "
     />
-    <div
-      class="radio-input__input"
-      @click="
-        () => {
-          $emit('change', !value);
-        }
-      "
-    >
+    <div class="radio-input__input">
       <div class="radio-input__selection"></div>
     </div>
   </div>

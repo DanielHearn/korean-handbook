@@ -199,7 +199,8 @@ input {
   border-radius: $border-radius;
   color: $white;
   border: 1px solid transparent;
-  padding: 0.55em 0.7em;
+  min-height: 2.75rem;
+  padding: 0.65em 0.85em;
   letter-spacing: 0.025em;
   font-family: rubik, sans-serif;
   font-size: $s-size;
@@ -217,7 +218,8 @@ button {
   background: $darker-grey;
   color: $white;
   border-radius: $border-radius;
-  padding: 0.5em 0.7em;
+  min-height: 2.75rem;
+  padding: 0.65em 1em;
   font-family: rubik, sans-serif;
   user-select: none;
   cursor: pointer;
@@ -228,10 +230,9 @@ button {
 }
 
 .button--primary {
-  padding: 0.6em 0.8em;
+  padding: 0.65em 1em;
   background: $accent;
   font-weight: $medium-weight;
-  font-size: $s-size;
   font-size: $s-size;
   &:hover {
     background: $accent-dark;
@@ -239,7 +240,7 @@ button {
 }
 
 .button--secondary {
-  padding: 0.6em 0.8em;
+  padding: 0.65em 1em;
   background: $darker-grey;
   font-weight: $medium-weight;
   font-size: $s-size;

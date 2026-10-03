@@ -1,5 +1,13 @@
 <template>
-  <div class="switch-input" :class="{ 'switch-input--active': value }">
+  <div
+    class="switch-input"
+    :class="{ 'switch-input--active': value }"
+    @click="
+      () => {
+        $emit('change', !value);
+      }
+    "
+  >
     <input
       v-model="value"
       type="checkbox"
@@ -9,14 +17,7 @@
         }
       "
     />
-    <div
-      class="switch-input__input"
-      @click="
-        () => {
-          $emit('change', !value);
-        }
-      "
-    >
+    <div class="switch-input__input">
       <div class="switch-input__selection"></div>
     </div>
   </div>
